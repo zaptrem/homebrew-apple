@@ -168,7 +168,7 @@ end
 
 __END__
 diff --git a/configure b/configure
-index 2d57c7e085d..bfa6e1885a1 100755
+index 2d57c7e..bfa6e18 100755
 --- wine/configure
 +++ wine/configure
 @@ -950,6 +950,9 @@ enable_amstream
@@ -209,7 +209,7 @@ index 2d57c7e085d..bfa6e1885a1 100755
  wine_fn_config_makefile dlls/windows.globalization/tests enable_tests
  wine_fn_config_makefile dlls/windows.media.devices enable_windows_media_devices
 diff --git a/configure.ac b/configure.ac
-index 50c50d15eda..8fad7462dd9 100644
+index 50c50d1..8fad746 100644
 --- wine/configure.ac
 +++ wine/configure.ac
 @@ -2424,6 +2424,8 @@ WINE_CONFIG_MAKEFILE(dlls/apisetschema)
@@ -231,7 +231,7 @@ index 50c50d15eda..8fad7462dd9 100644
  WINE_CONFIG_MAKEFILE(dlls/windows.globalization/tests)
  WINE_CONFIG_MAKEFILE(dlls/windows.media.devices)
 diff --git a/dlls/advapi32/advapi.c b/dlls/advapi32/advapi.c
-index 6497ea22f4e..f7d6e973252 100644
+index 6497ea2..f7d6e97 100644
 --- wine/dlls/advapi32/advapi.c
 +++ wine/dlls/advapi32/advapi.c
 @@ -32,6 +32,7 @@
@@ -294,7 +294,7 @@ index 6497ea22f4e..f7d6e973252 100644
 +    return ERROR_SUCCESS;
 +}
 diff --git a/dlls/advapi32/advapi32.spec b/dlls/advapi32/advapi32.spec
-index 3b5f587d40e..1c3f59bb7ee 100644
+index 3b5f587..1c3f59b 100644
 --- wine/dlls/advapi32/advapi32.spec
 +++ wine/dlls/advapi32/advapi32.spec
 @@ -553,8 +553,8 @@
@@ -320,7 +320,7 @@ index 3b5f587d40e..1c3f59bb7ee 100644
  # @ stub PerfQueryCounterSetRegistrationInfo
  # @ stub PerfQueryInstance
 diff --git a/dlls/advapi32/tests/perf.c b/dlls/advapi32/tests/perf.c
-index fc07a09d327..34b6e952842 100644
+index fc07a09..34b6e95 100644
 --- wine/dlls/advapi32/tests/perf.c
 +++ wine/dlls/advapi32/tests/perf.c
 @@ -25,9 +25,31 @@
@@ -451,7 +451,7 @@ index fc07a09d327..34b6e952842 100644
 +    test_perf_counters();
  }
 diff --git a/dlls/advapi32/tests/security.c b/dlls/advapi32/tests/security.c
-index 135a45f7727..83b84d392c7 100644
+index 135a45f..83b84d3 100644
 --- wine/dlls/advapi32/tests/security.c
 +++ wine/dlls/advapi32/tests/security.c
 @@ -1898,6 +1898,9 @@ static void test_token_attr(void)
@@ -466,14 +466,14 @@ index 135a45f7727..83b84d392c7 100644
  
 diff --git a/dlls/api-ms-win-core-psm-appnotify-l1-1-0/Makefile.in b/dlls/api-ms-win-core-psm-appnotify-l1-1-0/Makefile.in
 new file mode 100644
-index 00000000000..8a3d2ad98cb
+index 0000000..8a3d2ad
 --- /dev/null
 +++ wine/dlls/api-ms-win-core-psm-appnotify-l1-1-0/Makefile.in
 @@ -0,0 +1 @@
 +MODULE    = api-ms-win-core-psm-appnotify-l1-1-0.dll
 diff --git a/dlls/api-ms-win-core-psm-appnotify-l1-1-0/api-ms-win-core-psm-appnotify-l1-1-0.spec b/dlls/api-ms-win-core-psm-appnotify-l1-1-0/api-ms-win-core-psm-appnotify-l1-1-0.spec
 new file mode 100644
-index 00000000000..8b069d66e62
+index 0000000..8b069d6
 --- /dev/null
 +++ wine/dlls/api-ms-win-core-psm-appnotify-l1-1-0/api-ms-win-core-psm-appnotify-l1-1-0.spec
 @@ -0,0 +1,2 @@
@@ -481,14 +481,14 @@ index 00000000000..8b069d66e62
 +@ stub UnregisterAppStateChangeNotification
 diff --git a/dlls/api-ms-win-power-base-l1-1-0/Makefile.in b/dlls/api-ms-win-power-base-l1-1-0/Makefile.in
 new file mode 100644
-index 00000000000..8b26d4be82f
+index 0000000..8b26d4b
 --- /dev/null
 +++ wine/dlls/api-ms-win-power-base-l1-1-0/Makefile.in
 @@ -0,0 +1 @@
 +MODULE    = api-ms-win-power-base-l1-1-0.dll
 diff --git a/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec b/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec
 new file mode 100644
-index 00000000000..dd056946ac6
+index 0000000..dd05694
 --- /dev/null
 +++ wine/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec
 @@ -0,0 +1,5 @@
@@ -499,7 +499,7 @@ index 00000000000..dd056946ac6
 +@ stub PowerUnregisterSuspendResumeNotification
 diff --git a/dlls/atiadlxx/Makefile.in b/dlls/atiadlxx/Makefile.in
 new file mode 100644
-index 00000000000..fd9b8abf626
+index 0000000..fd9b8ab
 --- /dev/null
 +++ wine/dlls/atiadlxx/Makefile.in
 @@ -0,0 +1,8 @@
@@ -513,7 +513,7 @@ index 00000000000..fd9b8abf626
 +	atiadlxx_main.c
 diff --git a/dlls/atiadlxx/atiadlxx.spec b/dlls/atiadlxx/atiadlxx.spec
 new file mode 100644
-index 00000000000..222fb744c57
+index 0000000..222fb74
 --- /dev/null
 +++ wine/dlls/atiadlxx/atiadlxx.spec
 @@ -0,0 +1,1138 @@
@@ -1657,7 +1657,7 @@ index 00000000000..222fb744c57
 +@ stub SendX2
 diff --git a/dlls/atiadlxx/atiadlxx_main.c b/dlls/atiadlxx/atiadlxx_main.c
 new file mode 100644
-index 00000000000..9f8873876e9
+index 0000000..9f88738
 --- /dev/null
 +++ wine/dlls/atiadlxx/atiadlxx_main.c
 @@ -0,0 +1,752 @@
@@ -2414,7 +2414,7 @@ index 00000000000..9f8873876e9
 +    return ADL_ERR_NOT_SUPPORTED;
 +}
 diff --git a/dlls/crypt32/base64.c b/dlls/crypt32/base64.c
-index 11fb137ed91..b61ed7ff8cc 100644
+index 11fb137..b61ed7f 100644
 --- wine/dlls/crypt32/base64.c
 +++ wine/dlls/crypt32/base64.c
 @@ -241,6 +241,63 @@ static BOOL BinaryToBase64A(const BYTE *pbBinary,
@@ -2643,7 +2643,7 @@ index 11fb137ed91..b61ed7ff8cc 100644
      case CRYPT_STRING_HEXADDR:
      case CRYPT_STRING_HEXASCIIADDR:
 diff --git a/dlls/crypt32/cert.c b/dlls/crypt32/cert.c
-index ad39b7d18c7..b57cc685212 100644
+index ad39b7d..b57cc68 100644
 --- wine/dlls/crypt32/cert.c
 +++ wine/dlls/crypt32/cert.c
 @@ -1006,6 +1006,7 @@ BOOL WINAPI CryptAcquireCertificatePrivateKey(PCCERT_CONTEXT pCert,
@@ -2655,7 +2655,7 @@ index ad39b7d18c7..b57cc685212 100644
  }
  
 diff --git a/dlls/crypt32/chain.c b/dlls/crypt32/chain.c
-index cf244f2ac6c..4a60e9a60ff 100644
+index cf244f2..4a60e9a 100644
 --- wine/dlls/crypt32/chain.c
 +++ wine/dlls/crypt32/chain.c
 @@ -3696,6 +3696,44 @@ static BYTE msPubKey4[] = {
@@ -2747,7 +2747,7 @@ index cf244f2ac6c..4a60e9a60ff 100644
                  &root->pCertInfo->SubjectPublicKeyInfo, &msPubKey)) isMSRoot = TRUE;
      }
 diff --git a/dlls/crypt32/decode.c b/dlls/crypt32/decode.c
-index 762d1b54661..19643194b49 100644
+index 762d1b5..1964319 100644
 --- wine/dlls/crypt32/decode.c
 +++ wine/dlls/crypt32/decode.c
 @@ -3874,7 +3874,7 @@ static BOOL WINAPI CRYPT_AsnDecodeCertPolicyConstraints(
@@ -3109,7 +3109,7 @@ index 762d1b54661..19643194b49 100644
   LPCSTR lpszStructType, const BYTE *pbEncoded, DWORD cbEncoded, DWORD dwFlags,
   CRYPT_DECODE_PARA *pDecodePara, void *pvStructInfo, DWORD *pcbStructInfo)
 diff --git a/dlls/crypt32/encode.c b/dlls/crypt32/encode.c
-index 8086ad2fc0a..8968eb9f15a 100644
+index 8086ad2..8968eb9 100644
 --- wine/dlls/crypt32/encode.c
 +++ wine/dlls/crypt32/encode.c
 @@ -4500,7 +4500,7 @@ static BOOL WINAPI CRYPT_AsnEncodeCertId(DWORD dwCertEncodingType,
@@ -3122,7 +3122,7 @@ index 8086ad2fc0a..8968eb9f15a 100644
   PCRYPT_ENCODE_PARA pEncodePara, BYTE *pbEncoded, DWORD *pcbEncoded)
  {
 diff --git a/dlls/crypt32/object.c b/dlls/crypt32/object.c
-index 8123ed73351..4440c9e0498 100644
+index 8123ed7..4440c9e 100644
 --- wine/dlls/crypt32/object.c
 +++ wine/dlls/crypt32/object.c
 @@ -643,7 +643,7 @@ static BOOL CRYPT_QueryEmbeddedMessageObject(DWORD dwObjectType,
@@ -3135,7 +3135,7 @@ index 8123ed73351..4440c9e0498 100644
              ERR("Could not create temp file.\n");
              SetLastError(ERROR_OUTOFMEMORY);
 diff --git a/dlls/crypt32/str.c b/dlls/crypt32/str.c
-index 277aeb70d4a..d74df308e4a 100644
+index 277aeb7..d74df30 100644
 --- wine/dlls/crypt32/str.c
 +++ wine/dlls/crypt32/str.c
 @@ -29,77 +29,45 @@
@@ -4175,7 +4175,7 @@ index 277aeb70d4a..d74df308e4a 100644
      return ret;
  }
 diff --git a/dlls/crypt32/tests/base64.c b/dlls/crypt32/tests/base64.c
-index a1517b294ad..e81a57c576d 100644
+index a1517b2..e81a57c 100644
 --- wine/dlls/crypt32/tests/base64.c
 +++ wine/dlls/crypt32/tests/base64.c
 @@ -23,7 +23,6 @@
@@ -4910,7 +4910,7 @@ index a1517b294ad..e81a57c576d 100644
 +    test_CryptStringToBinary();
  }
 diff --git a/dlls/crypt32/tests/cert.c b/dlls/crypt32/tests/cert.c
-index 3cdb5e5ceea..882bb4a0723 100644
+index 3cdb5e5..882bb4a 100644
 --- wine/dlls/crypt32/tests/cert.c
 +++ wine/dlls/crypt32/tests/cert.c
 @@ -554,7 +554,7 @@ static void testCertProperties(void)
@@ -5973,7 +5973,7 @@ index 3cdb5e5ceea..882bb4a0723 100644
      BCryptCloseAlgorithmProvider(alg, 0);
      BCryptDestroyKey(bkey);
 diff --git a/dlls/crypt32/tests/chain.c b/dlls/crypt32/tests/chain.c
-index 9ed1b28bf70..32f00801799 100644
+index 9ed1b28..32f0080 100644
 --- wine/dlls/crypt32/tests/chain.c
 +++ wine/dlls/crypt32/tests/chain.c
 @@ -4958,6 +4958,13 @@ static const ChainPolicyCheck msRootPolicyCheck[] = {
@@ -6008,7 +6008,7 @@ index 9ed1b28bf70..32f00801799 100644
  
  static void testVerifyCertChainPolicy(void)
 diff --git a/dlls/crypt32/tests/encode.c b/dlls/crypt32/tests/encode.c
-index 9dabe58efba..527e663860a 100644
+index 9dabe58..527e663 100644
 --- wine/dlls/crypt32/tests/encode.c
 +++ wine/dlls/crypt32/tests/encode.c
 @@ -2315,10 +2315,10 @@ static const BYTE modulus1[] = { 0,0,0,1,1,1,1,1 };
@@ -6402,7 +6402,7 @@ index 9dabe58efba..527e663860a 100644
  }
  
 diff --git a/dlls/crypt32/tests/main.c b/dlls/crypt32/tests/main.c
-index 19dde3fb28f..1b125e89d50 100644
+index 19dde3f..1b125e8 100644
 --- wine/dlls/crypt32/tests/main.c
 +++ wine/dlls/crypt32/tests/main.c
 @@ -349,7 +349,7 @@ static void test_getDefaultCryptProv(void)
@@ -6415,7 +6415,7 @@ index 19dde3fb28f..1b125e89d50 100644
              continue;
          }
 diff --git a/dlls/crypt32/tests/message.c b/dlls/crypt32/tests/message.c
-index fa4790a2a6b..e6339553e52 100644
+index fa4790a..e633955 100644
 --- wine/dlls/crypt32/tests/message.c
 +++ wine/dlls/crypt32/tests/message.c
 @@ -688,14 +688,14 @@ static void test_hash_message(void)
@@ -6490,7 +6490,7 @@ index fa4790a2a6b..e6339553e52 100644
  }
  
 diff --git a/dlls/crypt32/tests/msg.c b/dlls/crypt32/tests/msg.c
-index f779d70695e..16f7402c613 100644
+index f779d70..16f7402 100644
 --- wine/dlls/crypt32/tests/msg.c
 +++ wine/dlls/crypt32/tests/msg.c
 @@ -274,14 +274,14 @@ static void check_param(LPCSTR test, HCRYPTMSG msg, DWORD param,
@@ -6511,7 +6511,7 @@ index f779d70695e..16f7402c613 100644
  
  static void test_data_msg_open(void)
 diff --git a/dlls/crypt32/tests/object.c b/dlls/crypt32/tests/object.c
-index 22936d3738d..a3c7c8c0743 100644
+index 22936d3..a3c7c8c 100644
 --- wine/dlls/crypt32/tests/object.c
 +++ wine/dlls/crypt32/tests/object.c
 @@ -95,130 +95,10 @@ L"MIIBiQYJKoZIhvcNAQcCoIIBejCCAXYCAQExDjAMBggqhkiG9w0CBQUAMBMGCSqG"
@@ -6673,7 +6673,7 @@ index 22936d3738d..a3c7c8c0743 100644
  
  START_TEST(object)
 diff --git a/dlls/crypt32/tests/oid.c b/dlls/crypt32/tests/oid.c
-index 9520e8c5a4a..715d76b9c31 100644
+index 9520e8c..715d76b 100644
 --- wine/dlls/crypt32/tests/oid.c
 +++ wine/dlls/crypt32/tests/oid.c
 @@ -152,14 +152,14 @@ static void test_oidFunctionSet(void)
@@ -6694,7 +6694,7 @@ index 9520e8c5a4a..715d76b9c31 100644
          }
      }
 diff --git a/dlls/crypt32/tests/store.c b/dlls/crypt32/tests/store.c
-index 00c2cae19e0..20d10a110f9 100644
+index 00c2cae..20d10a1 100644
 --- wine/dlls/crypt32/tests/store.c
 +++ wine/dlls/crypt32/tests/store.c
 @@ -216,7 +216,7 @@ static void testMemStore(void)
@@ -6842,7 +6842,7 @@ index 00c2cae19e0..20d10a110f9 100644
          CertFreeCertificateContext(linked);
          compareStore(store2, "file store -> file store",
 diff --git a/dlls/crypt32/tests/str.c b/dlls/crypt32/tests/str.c
-index a94381591c0..5fb05bdb836 100644
+index a943815..5fb05bd 100644
 --- wine/dlls/crypt32/tests/str.c
 +++ wine/dlls/crypt32/tests/str.c
 @@ -31,7 +31,6 @@ typedef struct _CertRDNAttrEncoding {
@@ -7738,7 +7738,7 @@ index a94381591c0..5fb05bdb836 100644
 +    test_CertGetNameString();
  }
 diff --git a/dlls/crypt32/unixlib.c b/dlls/crypt32/unixlib.c
-index 069cb049851..9a36d12f293 100644
+index 069cb04..9a36d12 100644
 --- wine/dlls/crypt32/unixlib.c
 +++ wine/dlls/crypt32/unixlib.c
 @@ -95,21 +95,7 @@ static NTSTATUS process_attach( void *args )
@@ -7765,7 +7765,7 @@ index 069cb049851..9a36d12f293 100644
          ERR_(winediag)( "failed to load libgnutls, no support for pfx import/export\n" );
          return STATUS_DLL_NOT_FOUND;
 diff --git a/dlls/cryptnet/cryptnet_main.c b/dlls/cryptnet/cryptnet_main.c
-index 6654ef77c8c..19de1ed2d8e 100644
+index 6654ef7..19de1ed 100644
 --- wine/dlls/cryptnet/cryptnet_main.c
 +++ wine/dlls/cryptnet/cryptnet_main.c
 @@ -1690,6 +1690,15 @@ static DWORD verify_cert_revocation_from_dist_points_ext(const CRYPT_DATA_BLOB *
@@ -7843,7 +7843,7 @@ index 6654ef77c8c..19de1ed2d8e 100644
          if (pRevPara && pRevPara->hCrlStore && pRevPara->pIssuerCert)
          {
 diff --git a/dlls/kernel32/kernel32.spec b/dlls/kernel32/kernel32.spec
-index 2ae9ccdc93f..3626c74099e 100644
+index 2ae9ccd..3626c74 100644
 --- wine/dlls/kernel32/kernel32.spec
 +++ wine/dlls/kernel32/kernel32.spec
 @@ -370,6 +370,7 @@
@@ -7863,7 +7863,7 @@ index 2ae9ccdc93f..3626c74099e 100644
  @ stdcall -import SetThreadPreferredUILanguages(long ptr ptr)
  @ stdcall -import SetThreadPriority(long long)
 diff --git a/dlls/kernelbase/kernelbase.spec b/dlls/kernelbase/kernelbase.spec
-index 00012198eb6..ae6bc842f7b 100644
+index 0001219..ae6bc84 100644
 --- wine/dlls/kernelbase/kernelbase.spec
 +++ wine/dlls/kernelbase/kernelbase.spec
 @@ -269,7 +269,7 @@
@@ -7894,7 +7894,7 @@ index 00012198eb6..ae6bc842f7b 100644
  @ stdcall SetThreadPreferredUILanguages(long ptr ptr)
  @ stdcall SetThreadPriority(long long)
 diff --git a/dlls/kernelbase/memory.c b/dlls/kernelbase/memory.c
-index e5ad1e5ad64..83a40a7cd5a 100644
+index e5ad1e5..83a40a7 100644
 --- wine/dlls/kernelbase/memory.c
 +++ wine/dlls/kernelbase/memory.c
 @@ -49,6 +49,19 @@ WINE_DECLARE_DEBUG_CHANNEL(globalmem);
@@ -7942,7 +7942,7 @@ index e5ad1e5ad64..83a40a7cd5a 100644
   * CPU functions
   ***********************************************************************/
 diff --git a/dlls/kernelbase/thread.c b/dlls/kernelbase/thread.c
-index 1c878474acb..3f61ae46776 100644
+index 1c87847..3f61ae4 100644
 --- wine/dlls/kernelbase/thread.c
 +++ wine/dlls/kernelbase/thread.c
 @@ -606,6 +606,25 @@ LANGID WINAPI DECLSPEC_HOTPATCH SetThreadUILanguage( LANGID langid )
@@ -7972,7 +7972,7 @@ index 1c878474acb..3f61ae46776 100644
   *           SuspendThread   (kernelbase.@)
   */
 diff --git a/dlls/mfmediaengine/Makefile.in b/dlls/mfmediaengine/Makefile.in
-index a0e944c0633..bd273aafdab 100644
+index a0e944c..bd273aa 100644
 --- wine/dlls/mfmediaengine/Makefile.in
 +++ wine/dlls/mfmediaengine/Makefile.in
 @@ -1,4 +1,6 @@
@@ -7983,7 +7983,7 @@ index a0e944c0633..bd273aafdab 100644
  
  EXTRADLLFLAGS = -Wb,--prefer-native
 diff --git a/dlls/mfmediaengine/main.c b/dlls/mfmediaengine/main.c
-index a191448b69f..98504c5e269 100644
+index a191448..98504c5 100644
 --- wine/dlls/mfmediaengine/main.c
 +++ wine/dlls/mfmediaengine/main.c
 @@ -29,8 +29,6 @@
@@ -9737,7 +9737,7 @@ index a191448b69f..98504c5e269 100644
      return S_OK;
  }
 diff --git a/dlls/mfmediaengine/tests/Makefile.in b/dlls/mfmediaengine/tests/Makefile.in
-index 421b75587a0..13bbef64df2 100644
+index 421b755..13bbef6 100644
 --- wine/dlls/mfmediaengine/tests/Makefile.in
 +++ wine/dlls/mfmediaengine/tests/Makefile.in
 @@ -1,5 +1,6 @@
@@ -9749,7 +9749,7 @@ index 421b75587a0..13bbef64df2 100644
  C_SRCS = \
  	mfmediaengine.c
 diff --git a/dlls/mfmediaengine/tests/mfmediaengine.c b/dlls/mfmediaengine/tests/mfmediaengine.c
-index 008ee58849c..096f6e3f2a5 100644
+index 008ee58..096f6e3 100644
 --- wine/dlls/mfmediaengine/tests/mfmediaengine.c
 +++ wine/dlls/mfmediaengine/tests/mfmediaengine.c
 @@ -29,9 +29,8 @@
@@ -10789,7 +10789,7 @@ index 008ee58849c..096f6e3f2a5 100644
      IMFMediaEngineClassFactory_Release(factory);
  
 diff --git a/dlls/mfplat/Makefile.in b/dlls/mfplat/Makefile.in
-index 4515d652c58..79af7650de6 100644
+index 4515d65..79af765 100644
 --- wine/dlls/mfplat/Makefile.in
 +++ wine/dlls/mfplat/Makefile.in
 @@ -1,7 +1,7 @@
@@ -10804,7 +10804,7 @@ index 4515d652c58..79af7650de6 100644
  
 diff --git a/dlls/mfplat/aac_decoder.c b/dlls/mfplat/aac_decoder.c
 new file mode 100644
-index 00000000000..97f2824039d
+index 0000000..97f2824
 --- /dev/null
 +++ wine/dlls/mfplat/aac_decoder.c
 @@ -0,0 +1,620 @@
@@ -11430,7 +11430,7 @@ index 00000000000..97f2824039d
 +}
 diff --git a/dlls/mfplat/audioconvert.c b/dlls/mfplat/audioconvert.c
 new file mode 100644
-index 00000000000..2e16c9c78f5
+index 0000000..2e16c9c
 --- /dev/null
 +++ wine/dlls/mfplat/audioconvert.c
 @@ -0,0 +1,910 @@
@@ -12345,7 +12345,7 @@ index 00000000000..2e16c9c78f5
 +    return S_OK;
 +}
 diff --git a/dlls/mfplat/buffer.c b/dlls/mfplat/buffer.c
-index eada3df18ad..9081dc39eab 100644
+index eada3df..9081dc3 100644
 --- wine/dlls/mfplat/buffer.c
 +++ wine/dlls/mfplat/buffer.c
 @@ -18,8 +18,6 @@
@@ -12650,7 +12650,7 @@ index eada3df18ad..9081dc39eab 100644
          FIXME("Major type %s is not supported.\n", debugstr_guid(&major));
 diff --git a/dlls/mfplat/colorconvert.c b/dlls/mfplat/colorconvert.c
 new file mode 100644
-index 00000000000..92322e877ec
+index 0000000..92322e8
 --- /dev/null
 +++ wine/dlls/mfplat/colorconvert.c
 @@ -0,0 +1,901 @@
@@ -13557,7 +13557,7 @@ index 00000000000..92322e877ec
 +}
 diff --git a/dlls/mfplat/decode_transform.c b/dlls/mfplat/decode_transform.c
 new file mode 100644
-index 00000000000..fb7f432923f
+index 0000000..fb7f432
 --- /dev/null
 +++ wine/dlls/mfplat/decode_transform.c
 @@ -0,0 +1,1218 @@
@@ -14781,7 +14781,7 @@ index 00000000000..fb7f432923f
 +}
 diff --git a/dlls/mfplat/gst_guids.h b/dlls/mfplat/gst_guids.h
 new file mode 100644
-index 00000000000..ea859586d7f
+index 0000000..ea85958
 --- /dev/null
 +++ wine/dlls/mfplat/gst_guids.h
 @@ -0,0 +1,23 @@
@@ -14810,7 +14810,7 @@ index 00000000000..ea859586d7f
 +DEFINE_GUID(WINESUBTYPE_Gstreamer, 0xffffffff, 0x128f, 0x4dd1, 0xad, 0x22, 0xbe, 0xcf, 0xa6, 0x6c, 0xe7, 0xaa);
 diff --git a/dlls/mfplat/gst_private.h b/dlls/mfplat/gst_private.h
 new file mode 100644
-index 00000000000..c6b256b4fdd
+index 0000000..c6b256b
 --- /dev/null
 +++ wine/dlls/mfplat/gst_private.h
 @@ -0,0 +1,217 @@
@@ -15033,7 +15033,7 @@ index 00000000000..c6b256b4fdd
 +#endif /* __GST_PRIVATE_INCLUDED__ */
 diff --git a/dlls/mfplat/h264_decoder.c b/dlls/mfplat/h264_decoder.c
 new file mode 100644
-index 00000000000..f6a4d47188f
+index 0000000..f6a4d47
 --- /dev/null
 +++ wine/dlls/mfplat/h264_decoder.c
 @@ -0,0 +1,727 @@
@@ -15765,7 +15765,7 @@ index 00000000000..f6a4d47188f
 +    return S_OK;
 +}
 diff --git a/dlls/mfplat/main.c b/dlls/mfplat/main.c
-index cee052defeb..83fc8549e24 100644
+index cee052d..83fc854 100644
 --- wine/dlls/mfplat/main.c
 +++ wine/dlls/mfplat/main.c
 @@ -36,6 +36,7 @@
@@ -17278,7 +17278,7 @@ index cee052defeb..83fc8549e24 100644
  
 diff --git a/dlls/mfplat/media_source.c b/dlls/mfplat/media_source.c
 new file mode 100644
-index 00000000000..82a6da1bcbf
+index 0000000..82a6da1
 --- /dev/null
 +++ wine/dlls/mfplat/media_source.c
 @@ -0,0 +1,2006 @@
@@ -19289,7 +19289,7 @@ index 00000000000..82a6da1bcbf
 +    return hr;
 +}
 diff --git a/dlls/mfplat/mediatype.c b/dlls/mfplat/mediatype.c
-index b36a44d1e1c..4f24ccbd237 100644
+index b36a44d..4f24ccb 100644
 --- wine/dlls/mfplat/mediatype.c
 +++ wine/dlls/mfplat/mediatype.c
 @@ -25,6 +25,8 @@
@@ -19638,7 +19638,7 @@ index b36a44d1e1c..4f24ccbd237 100644
          return E_INVALIDARG;
 diff --git a/dlls/mfplat/mfplat.c b/dlls/mfplat/mfplat.c
 new file mode 100644
-index 00000000000..3ec45d7de4e
+index 0000000..3ec45d7
 --- /dev/null
 +++ wine/dlls/mfplat/mfplat.c
 @@ -0,0 +1,1036 @@
@@ -20679,7 +20679,7 @@ index 00000000000..3ec45d7de4e
 +    }
 +}
 diff --git a/dlls/mfplat/mfplat.spec b/dlls/mfplat/mfplat.spec
-index 31c80f596c2..44d98a957e2 100644
+index 31c80f5..44d98a9 100644
 --- wine/dlls/mfplat/mfplat.spec
 +++ wine/dlls/mfplat/mfplat.spec
 @@ -20,7 +20,7 @@
@@ -20710,7 +20710,7 @@ index 31c80f596c2..44d98a957e2 100644
  @ stdcall MFTUnregister(int128)
  @ stdcall MFTUnregisterLocal(ptr)
 diff --git a/dlls/mfplat/mfplat_private.h b/dlls/mfplat/mfplat_private.h
-index 8418c8eb2ef..b646d9e7cbb 100644
+index 8418c8e..b646d9e 100644
 --- wine/dlls/mfplat/mfplat_private.h
 +++ wine/dlls/mfplat/mfplat_private.h
 @@ -128,13 +128,11 @@ static inline const char *debugstr_propvar(const PROPVARIANT *v)
@@ -20739,7 +20739,7 @@ index 8418c8eb2ef..b646d9e7cbb 100644
      return wine_dbgstr_an((char *)&format, 4);
 diff --git a/dlls/mfplat/quartz_parser.c b/dlls/mfplat/quartz_parser.c
 new file mode 100644
-index 00000000000..e9a3b00016d
+index 0000000..e9a3b00
 --- /dev/null
 +++ wine/dlls/mfplat/quartz_parser.c
 @@ -0,0 +1,1945 @@
@@ -22689,7 +22689,7 @@ index 00000000000..e9a3b00016d
 +    return S_OK;
 +}
 diff --git a/dlls/mfplat/queue.c b/dlls/mfplat/queue.c
-index 6ee0df37dce..8279929b46e 100644
+index 6ee0df3..8279929 100644
 --- wine/dlls/mfplat/queue.c
 +++ wine/dlls/mfplat/queue.c
 @@ -16,7 +16,13 @@
@@ -22744,7 +22744,7 @@ index 6ee0df37dce..8279929b46e 100644
  }
 diff --git a/dlls/mfplat/rsrc.rc b/dlls/mfplat/rsrc.rc
 new file mode 100644
-index 00000000000..592bcb01138
+index 0000000..592bcb0
 --- /dev/null
 +++ wine/dlls/mfplat/rsrc.rc
 @@ -0,0 +1,28 @@
@@ -22777,7 +22777,7 @@ index 00000000000..592bcb01138
 +/* @makedep: winegstreamer.rgs */
 +1 WINE_REGISTRY winegstreamer.rgs
 diff --git a/dlls/mfplat/sample.c b/dlls/mfplat/sample.c
-index 8ef80eb5f24..04c68c87199 100644
+index 8ef80eb..04c68c8 100644
 --- wine/dlls/mfplat/sample.c
 +++ wine/dlls/mfplat/sample.c
 @@ -25,6 +25,7 @@
@@ -22905,7 +22905,7 @@ index 8ef80eb5f24..04c68c87199 100644
      EnterCriticalSection(&allocator->cs);
  
 diff --git a/dlls/mfplat/tests/Makefile.in b/dlls/mfplat/tests/Makefile.in
-index ae9cc378933..d5ef14e88f0 100644
+index ae9cc37..d5ef14e 100644
 --- wine/dlls/mfplat/tests/Makefile.in
 +++ wine/dlls/mfplat/tests/Makefile.in
 @@ -1,3 +1,4 @@
@@ -22914,7 +22914,7 @@ index ae9cc378933..d5ef14e88f0 100644
  IMPORTS   = ole32 mfplat user32 d3d9 dxva2 mfuuid propsys uuid strmiids
  
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index 8d21f2ed60e..20577453fe3 100644
+index 8d21f2e..2057745 100644
 --- wine/dlls/mfplat/tests/mfplat.c
 +++ wine/dlls/mfplat/tests/mfplat.c
 @@ -72,7 +72,7 @@ static void _expect_ref(IUnknown *obj, ULONG ref, int line)
@@ -30025,7 +30025,7 @@ index 8d21f2ed60e..20577453fe3 100644
      test_d3d12_surface_buffer();
 diff --git a/dlls/mfplat/unix_private.h b/dlls/mfplat/unix_private.h
 new file mode 100644
-index 00000000000..88566ab1db5
+index 0000000..88566ab
 --- /dev/null
 +++ wine/dlls/mfplat/unix_private.h
 @@ -0,0 +1,37 @@
@@ -30068,7 +30068,7 @@ index 00000000000..88566ab1db5
 +#endif /* __WINE_WINEGSTREAMER_UNIX_PRIVATE_H */
 diff --git a/dlls/mfplat/unixlib.h b/dlls/mfplat/unixlib.h
 new file mode 100644
-index 00000000000..e39cf54fd08
+index 0000000..e39cf54
 --- /dev/null
 +++ wine/dlls/mfplat/unixlib.h
 @@ -0,0 +1,354 @@
@@ -30428,7 +30428,7 @@ index 00000000000..e39cf54fd08
 +#endif /* __WINE_WINEGSTREAMER_UNIXLIB_H */
 diff --git a/dlls/mfplat/wg_parser.c b/dlls/mfplat/wg_parser.c
 new file mode 100644
-index 00000000000..cbd037e42c8
+index 0000000..cbd037e
 --- /dev/null
 +++ wine/dlls/mfplat/wg_parser.c
 @@ -0,0 +1,2584 @@
@@ -33018,7 +33018,7 @@ index 00000000000..cbd037e42c8
 +};
 diff --git a/dlls/mfplat/wg_transform.c b/dlls/mfplat/wg_transform.c
 new file mode 100644
-index 00000000000..b080894dbe4
+index 0000000..b080894
 --- /dev/null
 +++ wine/dlls/mfplat/wg_transform.c
 @@ -0,0 +1,630 @@
@@ -33654,7 +33654,7 @@ index 00000000000..b080894dbe4
 +}
 diff --git a/dlls/mfplat/winegstreamer.rgs b/dlls/mfplat/winegstreamer.rgs
 new file mode 100644
-index 00000000000..923ba673f8c
+index 0000000..923ba67
 --- /dev/null
 +++ wine/dlls/mfplat/winegstreamer.rgs
 @@ -0,0 +1,14 @@
@@ -33674,7 +33674,7 @@ index 00000000000..923ba673f8c
 +}
 diff --git a/dlls/mfplat/winegstreamer.spec b/dlls/mfplat/winegstreamer.spec
 new file mode 100644
-index 00000000000..bc6a390f8b1
+index 0000000..bc6a390
 --- /dev/null
 +++ wine/dlls/mfplat/winegstreamer.spec
 @@ -0,0 +1,6 @@
@@ -33686,7 +33686,7 @@ index 00000000000..bc6a390f8b1
 +@ stdcall winegstreamer_create_wm_sync_reader(ptr)
 diff --git a/dlls/mfplat/winegstreamer_classes.idl b/dlls/mfplat/winegstreamer_classes.idl
 new file mode 100644
-index 00000000000..5762430a5cd
+index 0000000..5762430
 --- /dev/null
 +++ wine/dlls/mfplat/winegstreamer_classes.idl
 @@ -0,0 +1,93 @@
@@ -33785,7 +33785,7 @@ index 00000000000..5762430a5cd
 +coclass CColorConvertDMO { }
 diff --git a/dlls/mfplat/wm_asyncreader.c b/dlls/mfplat/wm_asyncreader.c
 new file mode 100644
-index 00000000000..a7ad6a6c45c
+index 0000000..a7ad6a6
 --- /dev/null
 +++ wine/dlls/mfplat/wm_asyncreader.c
 @@ -0,0 +1,1590 @@
@@ -35381,7 +35381,7 @@ index 00000000000..a7ad6a6c45c
 +}
 diff --git a/dlls/mfplat/wm_reader.c b/dlls/mfplat/wm_reader.c
 new file mode 100644
-index 00000000000..cb667c957b4
+index 0000000..cb667c9
 --- /dev/null
 +++ wine/dlls/mfplat/wm_reader.c
 @@ -0,0 +1,2170 @@
@@ -37557,7 +37557,7 @@ index 00000000000..cb667c957b4
 +}
 diff --git a/dlls/mfplat/wm_syncreader.c b/dlls/mfplat/wm_syncreader.c
 new file mode 100644
-index 00000000000..b03aa69d030
+index 0000000..b03aa69
 --- /dev/null
 +++ wine/dlls/mfplat/wm_syncreader.c
 @@ -0,0 +1,407 @@
@@ -37970,7 +37970,7 @@ index 00000000000..b03aa69d030
 +}
 diff --git a/dlls/mfplat/wma_decoder.c b/dlls/mfplat/wma_decoder.c
 new file mode 100644
-index 00000000000..021d0beb935
+index 0000000..021d0be
 --- /dev/null
 +++ wine/dlls/mfplat/wma_decoder.c
 @@ -0,0 +1,861 @@
@@ -38836,7 +38836,7 @@ index 00000000000..021d0beb935
 +    return S_OK;
 +}
 diff --git a/dlls/mfreadwrite/reader.c b/dlls/mfreadwrite/reader.c
-index e7b7b555e68..ea0058bd175 100644
+index e7b7b55..ea0058b 100644
 --- wine/dlls/mfreadwrite/reader.c
 +++ wine/dlls/mfreadwrite/reader.c
 @@ -2472,6 +2472,92 @@ failed:
@@ -38956,7 +38956,7 @@ index e7b7b555e68..ea0058bd175 100644
      IMFSourceResolver_Release(resolver);
      if (props)
 diff --git a/dlls/ntdll/loader.c b/dlls/ntdll/loader.c
-index fd0af32ec82..51c619b7f8c 100644
+index fd0af32..51c619b 100644
 --- wine/dlls/ntdll/loader.c
 +++ wine/dlls/ntdll/loader.c
 @@ -2294,6 +2294,12 @@ static NTSTATUS build_module( LPCWSTR load_path, const UNICODE_STRING *nt_name,
@@ -38984,7 +38984,7 @@ index fd0af32ec82..51c619b7f8c 100644
  #endif
          break;
 diff --git a/dlls/ntdll/unix/loader.c b/dlls/ntdll/unix/loader.c
-index e086c88e993..d5901d862a9 100644
+index e086c88..d5901d8 100644
 --- wine/dlls/ntdll/unix/loader.c
 +++ wine/dlls/ntdll/unix/loader.c
 @@ -1544,6 +1544,44 @@ NTSTATUS WINAPI __wine_unix_call( unixlib_handle_t handle, unsigned int code, vo
@@ -39055,7 +39055,7 @@ index e086c88e993..d5901d862a9 100644
      ntdll_init_syscalls( 0, &syscall_table, p__wine_syscall_dispatcher );
      status = p__wine_set_unix_funcs( NTDLL_UNIXLIB_VERSION, &unix_funcs );
 diff --git a/dlls/ntdll/unix/security.c b/dlls/ntdll/unix/security.c
-index 2955355353e..02f8c24269d 100644
+index 2955355..02f8c24 100644
 --- wine/dlls/ntdll/unix/security.c
 +++ wine/dlls/ntdll/unix/security.c
 @@ -230,6 +230,7 @@ NTSTATUS WINAPI NtQueryInformationToken( HANDLE token, TOKEN_INFORMATION_CLASS c
@@ -39103,7 +39103,7 @@ index 2955355353e..02f8c24269d 100644
      case TokenLinkedToken:
          SERVER_START_REQ( create_linked_token )
 diff --git a/dlls/ntdll/unix/signal_x86_64.c b/dlls/ntdll/unix/signal_x86_64.c
-index 3d85d46abfc..b434950ed50 100644
+index 3d85d46..b434950 100644
 --- wine/dlls/ntdll/unix/signal_x86_64.c
 +++ wine/dlls/ntdll/unix/signal_x86_64.c
 @@ -2949,6 +2949,20 @@ static void usr1_handler( int signal, siginfo_t *siginfo, void *ucontext )
@@ -39137,7 +39137,7 @@ index 3d85d46abfc..b434950ed50 100644
  
   error:
 diff --git a/dlls/ntdll/unixlib.h b/dlls/ntdll/unixlib.h
-index cb184431f82..1ea1a3b4d18 100644
+index cb18443..1ea1a3b 100644
 --- wine/dlls/ntdll/unixlib.h
 +++ wine/dlls/ntdll/unixlib.h
 @@ -26,7 +26,7 @@
@@ -39161,7 +39161,7 @@ index cb184431f82..1ea1a3b4d18 100644
  
  #endif /* __NTDLL_UNIXLIB_H */
 diff --git a/dlls/qcap/Makefile.in b/dlls/qcap/Makefile.in
-index b61a4a05ab2..634bcca2ff4 100644
+index b61a4a0..634bcca 100644
 --- wine/dlls/qcap/Makefile.in
 +++ wine/dlls/qcap/Makefile.in
 @@ -1,3 +1,4 @@
@@ -39170,7 +39170,7 @@ index b61a4a05ab2..634bcca2ff4 100644
  UNIXLIB   = qcap.so
  IMPORTS   = strmbase strmiids uuid ole32 oleaut32
 diff --git a/dlls/qcap/audiorecord.c b/dlls/qcap/audiorecord.c
-index a6f27cf4f26..c77a214b06b 100644
+index a6f27cf..c77a214 100644
 --- wine/dlls/qcap/audiorecord.c
 +++ wine/dlls/qcap/audiorecord.c
 @@ -115,7 +115,13 @@ static HRESULT WINAPI PPB_Load(IPersistPropertyBag *iface, IPropertyBag *pPropBa
@@ -39189,7 +39189,7 @@ index a6f27cf4f26..c77a214b06b 100644
  
      return hr;
 diff --git a/dlls/qcap/avico.c b/dlls/qcap/avico.c
-index 2a347bd2027..e8a452fc7f5 100644
+index 2a347bd..e8a452f 100644
 --- wine/dlls/qcap/avico.c
 +++ wine/dlls/qcap/avico.c
 @@ -142,7 +142,7 @@ static HRESULT avi_compressor_init_stream(struct strmbase_filter *iface)
@@ -39280,7 +39280,7 @@ index 2a347bd2027..e8a452fc7f5 100644
      TRACE("Created AVI compressor %p.\n", object);
      *out = &object->filter.IUnknown_inner;
 diff --git a/dlls/qcap/avimux.c b/dlls/qcap/avimux.c
-index 2e8c2a96681..fe4add83b7c 100644
+index 2e8c2a9..fe4add8 100644
 --- wine/dlls/qcap/avimux.c
 +++ wine/dlls/qcap/avimux.c
 @@ -684,7 +684,7 @@ static ULONG WINAPI ConfigAviMux_Release(IConfigAviMux *iface)
@@ -39373,7 +39373,7 @@ index 2e8c2a96681..fe4add83b7c 100644
              wine_dbgstr_longlong(q.TimeStamp));
      return E_NOTIMPL;
 diff --git a/dlls/qcap/capturegraph.c b/dlls/qcap/capturegraph.c
-index 45cef802ba2..157cfc6178d 100644
+index 45cef80..157cfc6 100644
 --- wine/dlls/qcap/capturegraph.c
 +++ wine/dlls/qcap/capturegraph.c
 @@ -104,17 +104,16 @@ fnCaptureGraphBuilder2_AddRef(ICaptureGraphBuilder2 * iface)
@@ -39434,7 +39434,7 @@ index 45cef802ba2..157cfc6178d 100644
  }
  
 diff --git a/dlls/qcap/filewriter.c b/dlls/qcap/filewriter.c
-index bc63abcb8cb..e49e6039604 100644
+index bc63abc..e49e603 100644
 --- wine/dlls/qcap/filewriter.c
 +++ wine/dlls/qcap/filewriter.c
 @@ -68,27 +68,26 @@ static HRESULT WINAPI file_writer_sink_receive(struct strmbase_sink *iface, IMed
@@ -39482,7 +39482,7 @@ index bc63abcb8cb..e49e6039604 100644
      }
      filter->file = file;
 diff --git a/dlls/qcap/tests/Makefile.in b/dlls/qcap/tests/Makefile.in
-index 6e2fb2d4d2a..3fc00bf05ff 100644
+index 6e2fb2d..3fc00bf 100644
 --- wine/dlls/qcap/tests/Makefile.in
 +++ wine/dlls/qcap/tests/Makefile.in
 @@ -1,3 +1,4 @@
@@ -39491,7 +39491,7 @@ index 6e2fb2d4d2a..3fc00bf05ff 100644
  IMPORTS   = strmbase strmiids uuid oleaut32 ole32 advapi32 msvfw32
  
 diff --git a/dlls/qcap/tests/audiorecord.c b/dlls/qcap/tests/audiorecord.c
-index 5705925a50d..350ae986b44 100644
+index 5705925..350ae98 100644
 --- wine/dlls/qcap/tests/audiorecord.c
 +++ wine/dlls/qcap/tests/audiorecord.c
 @@ -39,7 +39,7 @@ static void check_interface_(unsigned int line, void *iface_ptr, REFIID iid, BOO
@@ -39712,7 +39712,7 @@ index 5705925a50d..350ae986b44 100644
      }
  
 diff --git a/dlls/qcap/tests/avico.c b/dlls/qcap/tests/avico.c
-index abd4fa8e5e7..332ca5a8e7d 100644
+index abd4fa8..332ca5a 100644
 --- wine/dlls/qcap/tests/avico.c
 +++ wine/dlls/qcap/tests/avico.c
 @@ -35,7 +35,7 @@ static void check_interface_(unsigned int line, void *iface_ptr, REFIID iid, BOO
@@ -40319,7 +40319,7 @@ index abd4fa8e5e7..332ca5a8e7d 100644
  
          if (!memcmp(name, test_display_name, 11 * sizeof(WCHAR)))
 diff --git a/dlls/qcap/tests/avimux.c b/dlls/qcap/tests/avimux.c
-index 8d11c5cbf04..70575281cee 100644
+index 8d11c5c..7057528 100644
 --- wine/dlls/qcap/tests/avimux.c
 +++ wine/dlls/qcap/tests/avimux.c
 @@ -30,7 +30,7 @@ static IBaseFilter *create_avi_mux(void)
@@ -41159,7 +41159,7 @@ index 8d11c5cbf04..70575281cee 100644
  
  START_TEST(avimux)
 diff --git a/dlls/qcap/tests/capturegraph.c b/dlls/qcap/tests/capturegraph.c
-index 1fade929331..cdd9a27828a 100644
+index 1fade92..cdd9a27 100644
 --- wine/dlls/qcap/tests/capturegraph.c
 +++ wine/dlls/qcap/tests/capturegraph.c
 @@ -29,7 +29,7 @@ static ICaptureGraphBuilder2 *create_capture_graph(void)
@@ -41860,7 +41860,7 @@ index 1fade929331..cdd9a27828a 100644
  
  START_TEST(capturegraph)
 diff --git a/dlls/qcap/tests/filewriter.c b/dlls/qcap/tests/filewriter.c
-index 3713af1a43a..d6dbc3faded 100644
+index 3713af1..d6dbc3f 100644
 --- wine/dlls/qcap/tests/filewriter.c
 +++ wine/dlls/qcap/tests/filewriter.c
 @@ -28,7 +28,7 @@ static IBaseFilter *create_file_writer(void)
@@ -42616,7 +42616,7 @@ index 3713af1a43a..d6dbc3faded 100644
  
  START_TEST(filewriter)
 diff --git a/dlls/qcap/tests/qcap.c b/dlls/qcap/tests/qcap.c
-index a1e3e31bfff..d1b2cb810f4 100644
+index a1e3e31..d1b2cb8 100644
 --- wine/dlls/qcap/tests/qcap.c
 +++ wine/dlls/qcap/tests/qcap.c
 @@ -499,7 +499,7 @@ static HRESULT WINAPI EnumPins_Next(IEnumPins *iface,
@@ -42936,7 +42936,7 @@ index a1e3e31bfff..d1b2cb810f4 100644
  
  START_TEST(qcap)
 diff --git a/dlls/qcap/tests/smartteefilter.c b/dlls/qcap/tests/smartteefilter.c
-index a25889d2a4d..b6ba3ca75c9 100644
+index a25889d..b6ba3ca 100644
 --- wine/dlls/qcap/tests/smartteefilter.c
 +++ wine/dlls/qcap/tests/smartteefilter.c
 @@ -30,7 +30,7 @@ static IBaseFilter *create_smart_tee(void)
@@ -44119,7 +44119,7 @@ index a25889d2a4d..b6ba3ca75c9 100644
  
  START_TEST(smartteefilter)
 diff --git a/dlls/qcap/tests/videocapture.c b/dlls/qcap/tests/videocapture.c
-index 41b2cbc6a3f..c44070b0bd5 100644
+index 41b2cbc..c44070b 100644
 --- wine/dlls/qcap/tests/videocapture.c
 +++ wine/dlls/qcap/tests/videocapture.c
 @@ -39,7 +39,7 @@ static void check_interface_(unsigned int line, void *iface_ptr, REFIID iid, BOO
@@ -44672,7 +44672,7 @@ index 41b2cbc6a3f..c44070b0bd5 100644
          test_connection(moniker);
  
 diff --git a/dlls/qcap/v4l.c b/dlls/qcap/v4l.c
-index 577cc829329..ae663389d14 100644
+index 577cc82..ae66338 100644
 --- wine/dlls/qcap/v4l.c
 +++ wine/dlls/qcap/v4l.c
 @@ -558,8 +558,8 @@ static NTSTATUS v4l_device_create( void *args )
@@ -44687,7 +44687,7 @@ index 577cc829329..ae663389d14 100644
      *params->device = (ULONG_PTR)device;
      return S_OK;
 diff --git a/dlls/qcap/vfwcapture.c b/dlls/qcap/vfwcapture.c
-index d842117e9a5..6b82af9d155 100644
+index d842117..6b82af9 100644
 --- wine/dlls/qcap/vfwcapture.c
 +++ wine/dlls/qcap/vfwcapture.c
 @@ -165,9 +165,9 @@ static DWORD WINAPI stream_thread(void *arg)
@@ -44848,7 +44848,7 @@ index d842117e9a5..6b82af9d155 100644
  
      return E_NOTIMPL;
 diff --git a/dlls/quartz/Makefile.in b/dlls/quartz/Makefile.in
-index e7e1b43da79..81db98e639d 100644
+index e7e1b43..81db98e 100644
 --- wine/dlls/quartz/Makefile.in
 +++ wine/dlls/quartz/Makefile.in
 @@ -1,3 +1,4 @@
@@ -44857,7 +44857,7 @@ index e7e1b43da79..81db98e639d 100644
  IMPORTLIB = quartz
  IMPORTS   = strmiids dxguid strmbase uuid dsound msacm32 msvfw32 ole32 oleaut32 rpcrt4 user32 gdi32 advapi32
 diff --git a/dlls/quartz/acmwrapper.c b/dlls/quartz/acmwrapper.c
-index 8e1b5e6b773..a07bdfef0ca 100644
+index 8e1b5e6..a07bdfe 100644
 --- wine/dlls/quartz/acmwrapper.c
 +++ wine/dlls/quartz/acmwrapper.c
 @@ -110,7 +110,7 @@ static HRESULT WINAPI acm_wrapper_sink_Receive(struct strmbase_sink *iface, IMed
@@ -44956,7 +44956,7 @@ index 8e1b5e6b773..a07bdfef0ca 100644
      strmbase_passthrough_init(&object->passthrough, (IUnknown *)&object->source.pin.IPin_iface);
      ISeekingPassThru_Init(&object->passthrough.ISeekingPassThru_iface, FALSE,
 diff --git a/dlls/quartz/avidec.c b/dlls/quartz/avidec.c
-index 8cc729748c1..3d947e1b1bf 100644
+index 8cc7297..3d947e1 100644
 --- wine/dlls/quartz/avidec.c
 +++ wine/dlls/quartz/avidec.c
 @@ -101,13 +101,14 @@ static HRESULT WINAPI avi_decompressor_sink_Receive(struct strmbase_sink *iface,
@@ -45115,7 +45115,7 @@ index 8cc729748c1..3d947e1b1bf 100644
      strmbase_passthrough_init(&object->passthrough, (IUnknown *)&object->source.pin.IPin_iface);
      ISeekingPassThru_Init(&object->passthrough.ISeekingPassThru_iface, FALSE,
 diff --git a/dlls/quartz/dsoundrender.c b/dlls/quartz/dsoundrender.c
-index 1abd4bdbcec..df40d1254ee 100644
+index 1abd4bd..df40d12 100644
 --- wine/dlls/quartz/dsoundrender.c
 +++ wine/dlls/quartz/dsoundrender.c
 @@ -126,7 +126,7 @@ static void DSoundRender_UpdatePositions(struct dsound_render *This, DWORD *seqw
@@ -45285,7 +45285,7 @@ index 1abd4bdbcec..df40d1254ee 100644
  
      return E_NOTIMPL;
 diff --git a/dlls/quartz/filesource.c b/dlls/quartz/filesource.c
-index 6ffae606df4..e5e7b482984 100644
+index 6ffae60..e5e7b48 100644
 --- wine/dlls/quartz/filesource.c
 +++ wine/dlls/quartz/filesource.c
 @@ -217,7 +217,7 @@ BOOL get_media_type(const WCHAR *filename, GUID *majortype, GUID *subtype, GUID
@@ -45359,7 +45359,7 @@ index 6ffae606df4..e5e7b482984 100644
  
      ret = sync_read(filter->file, offset, length, buffer, &read_len);
 diff --git a/dlls/quartz/filtergraph.c b/dlls/quartz/filtergraph.c
-index a99fdc80ba6..5f1b80d12cf 100644
+index a99fdc8..5f1b80d 100644
 --- wine/dlls/quartz/filtergraph.c
 +++ wine/dlls/quartz/filtergraph.c
 @@ -61,6 +61,7 @@ struct filter
@@ -46910,7 +46910,7 @@ index a99fdc80ba6..5f1b80d12cf 100644
          return hr;
      }
 diff --git a/dlls/quartz/filtermapper.c b/dlls/quartz/filtermapper.c
-index 149bc8d1716..a95f0ca7832 100644
+index 149bc8d..a95f0ca 100644
 --- wine/dlls/quartz/filtermapper.c
 +++ wine/dlls/quartz/filtermapper.c
 @@ -76,7 +76,7 @@ static ULONG WINAPI enum_reg_filters_AddRef(IEnumRegFilters *iface)
@@ -47249,7 +47249,7 @@ index 149bc8d1716..a95f0ca7832 100644
      prf2 = CoTaskMemAlloc(sizeof(*prf2));
      if (!prf2)
 diff --git a/dlls/quartz/main.c b/dlls/quartz/main.c
-index c5302db6ced..ed7080b76b9 100644
+index c5302db..ed7080b 100644
 --- wine/dlls/quartz/main.c
 +++ wine/dlls/quartz/main.c
 @@ -260,13 +260,13 @@ const char * qzdebugstr_guid( const GUID * id )
@@ -47288,7 +47288,7 @@ index c5302db6ced..ed7080b76b9 100644
      if (!buffer) return 0;
      swprintf(error, ARRAY_SIZE(error), L"Error: 0x%lx", hr);
 diff --git a/dlls/quartz/memallocator.c b/dlls/quartz/memallocator.c
-index 87869b4d6b2..531fbe874cf 100644
+index 87869b4..531fbe8 100644
 --- wine/dlls/quartz/memallocator.c
 +++ wine/dlls/quartz/memallocator.c
 @@ -135,7 +135,7 @@ static ULONG WINAPI BaseMemAllocator_AddRef(IMemAllocator * iface)
@@ -47465,7 +47465,7 @@ index 87869b4d6b2..531fbe874cf 100644
      }
  
 diff --git a/dlls/quartz/passthrough.c b/dlls/quartz/passthrough.c
-index 4627b2d26f8..2f8fe9dc370 100644
+index 4627b2d..2f8fe9d 100644
 --- wine/dlls/quartz/passthrough.c
 +++ wine/dlls/quartz/passthrough.c
 @@ -66,7 +66,7 @@ static ULONG WINAPI seeking_passthrough_AddRef(IUnknown *iface)
@@ -47487,7 +47487,7 @@ index 4627b2d26f8..2f8fe9dc370 100644
      {
          strmbase_passthrough_cleanup(&passthrough->passthrough);
 diff --git a/dlls/quartz/regsvr.c b/dlls/quartz/regsvr.c
-index d035f8673fb..649e25e7327 100644
+index d035f86..649e25e 100644
 --- wine/dlls/quartz/regsvr.c
 +++ wine/dlls/quartz/regsvr.c
 @@ -127,7 +127,7 @@ static HRESULT register_filters(struct regsvr_filter const *list)
@@ -47500,7 +47500,7 @@ index d035f8673fb..649e25e7327 100644
  		break;
  	    }
 diff --git a/dlls/quartz/systemclock.c b/dlls/quartz/systemclock.c
-index 729122fec46..f579ae754ea 100644
+index 729122f..f579ae7 100644
 --- wine/dlls/quartz/systemclock.c
 +++ wine/dlls/quartz/systemclock.c
 @@ -25,7 +25,7 @@
@@ -47568,7 +47568,7 @@ index 729122fec46..f579ae754ea 100644
      EnterCriticalSection(&clock->cs);
  
 diff --git a/dlls/quartz/tests/Makefile.in b/dlls/quartz/tests/Makefile.in
-index 423abc78ef6..a47eec8bfd2 100644
+index 423abc7..a47eec8 100644
 --- wine/dlls/quartz/tests/Makefile.in
 +++ wine/dlls/quartz/tests/Makefile.in
 @@ -1,3 +1,4 @@
@@ -47577,7 +47577,7 @@ index 423abc78ef6..a47eec8bfd2 100644
  IMPORTS   = strmbase advapi32 d3d9 dsound msdmo msvfw32 ole32 oleaut32 user32 uuid winmm
  
 diff --git a/dlls/quartz/tests/acmwrapper.c b/dlls/quartz/tests/acmwrapper.c
-index caeca61ae50..31b32b53ac9 100644
+index caeca61..31b32b5 100644
 --- wine/dlls/quartz/tests/acmwrapper.c
 +++ wine/dlls/quartz/tests/acmwrapper.c
 @@ -27,7 +27,7 @@ static IBaseFilter *create_acm_wrapper(void)
@@ -48028,7 +48028,7 @@ index caeca61ae50..31b32b53ac9 100644
  
  START_TEST(acmwrapper)
 diff --git a/dlls/quartz/tests/avidec.c b/dlls/quartz/tests/avidec.c
-index 46ce5d9eeda..ac1078bf59b 100644
+index 46ce5d9..ac1078b 100644
 --- wine/dlls/quartz/tests/avidec.c
 +++ wine/dlls/quartz/tests/avidec.c
 @@ -35,7 +35,7 @@ static IBaseFilter *create_avi_dec(void)
@@ -49294,7 +49294,7 @@ index 46ce5d9eeda..ac1078bf59b 100644
  
  START_TEST(avidec)
 diff --git a/dlls/quartz/tests/avisplit.c b/dlls/quartz/tests/avisplit.c
-index 8b7e8a222b0..06c2f5fed3c 100644
+index 8b7e8a2..06c2f5f 100644
 --- wine/dlls/quartz/tests/avisplit.c
 +++ wine/dlls/quartz/tests/avisplit.c
 @@ -32,7 +32,7 @@ static IBaseFilter *create_avi_splitter(void)
@@ -50818,7 +50818,7 @@ index 8b7e8a222b0..06c2f5fed3c 100644
  
  START_TEST(avisplit)
 diff --git a/dlls/quartz/tests/dsoundrender.c b/dlls/quartz/tests/dsoundrender.c
-index 269c590f8ee..03e6b8413d5 100644
+index 269c590..03e6b84 100644
 --- wine/dlls/quartz/tests/dsoundrender.c
 +++ wine/dlls/quartz/tests/dsoundrender.c
 @@ -36,7 +36,7 @@ static IBaseFilter *create_dsound_render(void)
@@ -52044,7 +52044,7 @@ index 269c590f8ee..03e6b8413d5 100644
  
      test_property_bag();
 diff --git a/dlls/quartz/tests/filesource.c b/dlls/quartz/tests/filesource.c
-index c383d9f6579..4162e248937 100644
+index c383d9f..4162e24 100644
 --- wine/dlls/quartz/tests/filesource.c
 +++ wine/dlls/quartz/tests/filesource.c
 @@ -29,7 +29,7 @@ static IBaseFilter *create_file_source(void)
@@ -53321,7 +53321,7 @@ index c383d9f6579..4162e248937 100644
  
  START_TEST(filesource)
 diff --git a/dlls/quartz/tests/filtergraph.c b/dlls/quartz/tests/filtergraph.c
-index 0e9a398ad2c..a83bfde0806 100644
+index 0e9a398..a83bfde 100644
 --- wine/dlls/quartz/tests/filtergraph.c
 +++ wine/dlls/quartz/tests/filtergraph.c
 @@ -42,10 +42,10 @@ static WCHAR *create_file(const WCHAR *name, const char *data, DWORD size)
@@ -57689,7 +57689,7 @@ index 0e9a398ad2c..a83bfde0806 100644
      CoUninitialize();
      test_render_with_multithread();
 diff --git a/dlls/quartz/tests/filtermapper.c b/dlls/quartz/tests/filtermapper.c
-index 3c492845389..f1a942b1d25 100644
+index 3c49284..f1a942b 100644
 --- wine/dlls/quartz/tests/filtermapper.c
 +++ wine/dlls/quartz/tests/filtermapper.c
 @@ -35,7 +35,7 @@ static IFilterMapper3 *create_mapper(void)
@@ -58067,7 +58067,7 @@ index 3c492845389..f1a942b1d25 100644
  
  START_TEST(filtermapper)
 diff --git a/dlls/quartz/tests/memallocator.c b/dlls/quartz/tests/memallocator.c
-index 37df9a24bd2..164f3af47f4 100644
+index 37df9a2..164f3af 100644
 --- wine/dlls/quartz/tests/memallocator.c
 +++ wine/dlls/quartz/tests/memallocator.c
 @@ -27,7 +27,7 @@ static IMemAllocator *create_allocator(void)
@@ -58802,7 +58802,7 @@ index 37df9a24bd2..164f3af47f4 100644
      IMediaSample2_Release(sample2);
      IMediaSample_Release(sample);
 diff --git a/dlls/quartz/tests/mpegsplit.c b/dlls/quartz/tests/mpegsplit.c
-index b2cced84c68..0809c5f861f 100644
+index b2cced8..0809c5f 100644
 --- wine/dlls/quartz/tests/mpegsplit.c
 +++ wine/dlls/quartz/tests/mpegsplit.c
 @@ -32,7 +32,7 @@ static IBaseFilter *create_mpeg_splitter(void)
@@ -60510,7 +60510,7 @@ index b2cced84c68..0809c5f861f 100644
  
  START_TEST(mpegsplit)
 diff --git a/dlls/quartz/tests/passthrough.c b/dlls/quartz/tests/passthrough.c
-index 0e542d1733a..ce7365928e5 100644
+index 0e542d1..ce73659 100644
 --- wine/dlls/quartz/tests/passthrough.c
 +++ wine/dlls/quartz/tests/passthrough.c
 @@ -74,53 +74,53 @@ static void test_aggregation(void)
@@ -60584,7 +60584,7 @@ index 0e542d1733a..ce7365928e5 100644
  
  START_TEST(passthrough)
 diff --git a/dlls/quartz/tests/systemclock.c b/dlls/quartz/tests/systemclock.c
-index 65bc406f35f..3b39d2aadb4 100644
+index 65bc406..3b39d2a 100644
 --- wine/dlls/quartz/tests/systemclock.c
 +++ wine/dlls/quartz/tests/systemclock.c
 @@ -27,7 +27,7 @@ static IReferenceClock *create_system_clock(void)
@@ -60814,7 +60814,7 @@ index 65bc406f35f..3b39d2aadb4 100644
      ok(WaitForSingleObject(event, 0) == WAIT_TIMEOUT, "Event should not be signaled.\n");
  
 diff --git a/dlls/quartz/tests/videorenderer.c b/dlls/quartz/tests/videorenderer.c
-index c76dae15e91..5625971426b 100644
+index c76dae1..5625971 100644
 --- wine/dlls/quartz/tests/videorenderer.c
 +++ wine/dlls/quartz/tests/videorenderer.c
 @@ -20,7 +20,6 @@
@@ -63530,7 +63530,7 @@ index c76dae15e91..5625971426b 100644
  
  START_TEST(videorenderer)
 diff --git a/dlls/quartz/tests/vmr7.c b/dlls/quartz/tests/vmr7.c
-index 88c82bec0d3..efc876a845c 100644
+index 88c82be..efc876a 100644
 --- wine/dlls/quartz/tests/vmr7.c
 +++ wine/dlls/quartz/tests/vmr7.c
 @@ -23,7 +23,6 @@
@@ -66614,7 +66614,7 @@ index 88c82bec0d3..efc876a845c 100644
  
  START_TEST(vmr7)
 diff --git a/dlls/quartz/tests/vmr9.c b/dlls/quartz/tests/vmr9.c
-index 405f7ee89ba..a0ccb4898a9 100644
+index 405f7ee..a0ccb48 100644
 --- wine/dlls/quartz/tests/vmr9.c
 +++ wine/dlls/quartz/tests/vmr9.c
 @@ -27,7 +27,6 @@
@@ -70517,7 +70517,7 @@ index 405f7ee89ba..a0ccb4898a9 100644
      }
      IBaseFilter_Release(filter);
 diff --git a/dlls/quartz/tests/waveparser.c b/dlls/quartz/tests/waveparser.c
-index 1c86a39c730..fee93b33f5f 100644
+index 1c86a39..fee93b3 100644
 --- wine/dlls/quartz/tests/waveparser.c
 +++ wine/dlls/quartz/tests/waveparser.c
 @@ -30,7 +30,7 @@ static IBaseFilter *create_wave_parser(void)
@@ -71492,7 +71492,7 @@ index 1c86a39c730..fee93b33f5f 100644
  
  START_TEST(waveparser)
 diff --git a/dlls/quartz/videorenderer.c b/dlls/quartz/videorenderer.c
-index f725a9998ce..1dbb8a02181 100644
+index f725a99..1dbb8a0 100644
 --- wine/dlls/quartz/videorenderer.c
 +++ wine/dlls/quartz/videorenderer.c
 @@ -92,7 +92,7 @@ static HRESULT video_renderer_render(struct strmbase_renderer *iface, IMediaSamp
@@ -71550,7 +71550,7 @@ index f725a9998ce..1dbb8a02181 100644
  
      video_window_init(&object->window, &IVideoWindow_VTable,
 diff --git a/dlls/quartz/vmr9.c b/dlls/quartz/vmr9.c
-index 2330f8fc0c9..4bde811c6d7 100644
+index 2330f8f..4bde811 100644
 --- wine/dlls/quartz/vmr9.c
 +++ wine/dlls/quartz/vmr9.c
 @@ -33,7 +33,6 @@
@@ -72261,7 +72261,7 @@ index 2330f8fc0c9..4bde811c6d7 100644
      object->IVMRSurfaceAllocator9_iface.lpVtbl = &VMR9_SurfaceAllocator;
  
 diff --git a/dlls/quartz/window.c b/dlls/quartz/window.c
-index 3e19d9b582e..5b172d5f108 100644
+index 3e19d9b..5b172d5 100644
 --- wine/dlls/quartz/window.c
 +++ wine/dlls/quartz/window.c
 @@ -105,7 +105,7 @@ HRESULT video_window_create_window(struct video_window *window)
@@ -72610,7 +72610,7 @@ index 3e19d9b582e..5b172d5f108 100644
  
  void video_window_init(struct video_window *window, const IVideoWindowVtbl *vtbl,
 diff --git a/dlls/windows.gaming.input/Makefile.in b/dlls/windows.gaming.input/Makefile.in
-index 1e0ce5c360c..3ec3dd0d864 100644
+index 1e0ce5c..3ec3dd0 100644
 --- wine/dlls/windows.gaming.input/Makefile.in
 +++ wine/dlls/windows.gaming.input/Makefile.in
 @@ -2,13 +2,19 @@ MODULE = windows.gaming.input.dll
@@ -72635,7 +72635,7 @@ index 1e0ce5c360c..3ec3dd0d864 100644
  IDL_SRCS = \
 diff --git a/dlls/windows.gaming.input/async.c b/dlls/windows.gaming.input/async.c
 new file mode 100644
-index 00000000000..862886195ba
+index 0000000..8628861
 --- /dev/null
 +++ wine/dlls/windows.gaming.input/async.c
 @@ -0,0 +1,647 @@
@@ -73287,7 +73287,7 @@ index 00000000000..862886195ba
 +    return S_OK;
 +}
 diff --git a/dlls/windows.gaming.input/classes.idl b/dlls/windows.gaming.input/classes.idl
-index ca3bd5d8dd7..3172def88f5 100644
+index ca3bd5d..3172def 100644
 --- wine/dlls/windows.gaming.input/classes.idl
 +++ wine/dlls/windows.gaming.input/classes.idl
 @@ -29,6 +29,7 @@ import "asyncinfo.idl";
@@ -73306,7 +73306,7 @@ index ca3bd5d8dd7..3172def88f5 100644
  #include "windows.gaming.input.custom.idl"
 diff --git a/dlls/windows.gaming.input/condition_effect.c b/dlls/windows.gaming.input/condition_effect.c
 new file mode 100644
-index 00000000000..c3a5a1fcd8b
+index 0000000..c3a5a1f
 --- /dev/null
 +++ wine/dlls/windows.gaming.input/condition_effect.c
 @@ -0,0 +1,288 @@
@@ -73600,7 +73600,7 @@ index 00000000000..c3a5a1fcd8b
 +IInspectable *condition_effect_factory = (IInspectable *)&condition_statics.IActivationFactory_iface;
 diff --git a/dlls/windows.gaming.input/constant_effect.c b/dlls/windows.gaming.input/constant_effect.c
 new file mode 100644
-index 00000000000..15763b30d67
+index 0000000..15763b3
 --- /dev/null
 +++ wine/dlls/windows.gaming.input/constant_effect.c
 @@ -0,0 +1,275 @@
@@ -73880,7 +73880,7 @@ index 00000000000..15763b30d67
 +
 +IInspectable *constant_effect_factory = (IInspectable *)&constant_statics.IActivationFactory_iface;
 diff --git a/dlls/windows.gaming.input/controller.c b/dlls/windows.gaming.input/controller.c
-index 03a3ae398cf..bd3d441c445 100644
+index 03a3ae3..bd3d441 100644
 --- wine/dlls/windows.gaming.input/controller.c
 +++ wine/dlls/windows.gaming.input/controller.c
 @@ -99,7 +99,7 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
@@ -73929,7 +73929,7 @@ index 03a3ae398cf..bd3d441c445 100644
  static HRESULT WINAPI raw_controller_get_HardwareProductId( IRawGameController *iface, UINT16 *value )
 diff --git a/dlls/windows.gaming.input/force_feedback.c b/dlls/windows.gaming.input/force_feedback.c
 new file mode 100644
-index 00000000000..f7a233b46d4
+index 0000000..f7a233b
 --- /dev/null
 +++ wine/dlls/windows.gaming.input/force_feedback.c
 @@ -0,0 +1,801 @@
@@ -74735,7 +74735,7 @@ index 00000000000..f7a233b46d4
 +    return hr;
 +}
 diff --git a/dlls/windows.gaming.input/gamepad.c b/dlls/windows.gaming.input/gamepad.c
-index 0c38fb5cd1a..8dab9a62d09 100644
+index 0c38fb5..8dab9a6 100644
 --- wine/dlls/windows.gaming.input/gamepad.c
 +++ wine/dlls/windows.gaming.input/gamepad.c
 @@ -61,6 +61,7 @@ struct gamepad
@@ -74799,7 +74799,7 @@ index 0c38fb5cd1a..8dab9a62d09 100644
  
      TRACE( "created Gamepad %p\n", impl );
 diff --git a/dlls/windows.gaming.input/main.c b/dlls/windows.gaming.input/main.c
-index 21808d9c2ad..a20630cd20b 100644
+index 21808d9..a20630c 100644
 --- wine/dlls/windows.gaming.input/main.c
 +++ wine/dlls/windows.gaming.input/main.c
 @@ -185,6 +185,15 @@ HRESULT WINAPI DllGetActivationFactory( HSTRING class_str, IActivationFactory **
@@ -74820,7 +74820,7 @@ index 21808d9c2ad..a20630cd20b 100644
  }
 diff --git a/dlls/windows.gaming.input/periodic_effect.c b/dlls/windows.gaming.input/periodic_effect.c
 new file mode 100644
-index 00000000000..8633a8fb9b9
+index 0000000..8633a8f
 --- /dev/null
 +++ wine/dlls/windows.gaming.input/periodic_effect.c
 @@ -0,0 +1,326 @@
@@ -75151,7 +75151,7 @@ index 00000000000..8633a8fb9b9
 +
 +IInspectable *periodic_effect_factory = (IInspectable *)&periodic_statics.IActivationFactory_iface;
 diff --git a/dlls/windows.gaming.input/private.h b/dlls/windows.gaming.input/private.h
-index 58b2040d3de..f53d5b5bc37 100644
+index 58b2040..f53d5b5 100644
 --- wine/dlls/windows.gaming.input/private.h
 +++ wine/dlls/windows.gaming.input/private.h
 @@ -25,11 +25,13 @@
@@ -75216,7 +75216,7 @@ index 58b2040d3de..f53d5b5bc37 100644
 +    return wine_dbg_sprintf( "[%f, %f, %f]", vector->X, vector->Y, vector->Z );
 +}
 diff --git a/dlls/windows.gaming.input/provider.c b/dlls/windows.gaming.input/provider.c
-index 69098e8abb6..d0472727224 100644
+index 69098e8..d047272 100644
 --- wine/dlls/windows.gaming.input/provider.c
 +++ wine/dlls/windows.gaming.input/provider.c
 @@ -141,21 +141,37 @@ static HRESULT WINAPI wine_provider_GetTrustLevel( IWineGameControllerProvider *
@@ -75324,7 +75324,7 @@ index 69098e8abb6..d0472727224 100644
          provider = &entry->IGameControllerProvider_iface;
          manager_on_provider_removed( provider );
 diff --git a/dlls/windows.gaming.input/provider.idl b/dlls/windows.gaming.input/provider.idl
-index 865a149eaa5..e7b6e96b8aa 100644
+index 865a149..e7b6e96 100644
 --- wine/dlls/windows.gaming.input/provider.idl
 +++ wine/dlls/windows.gaming.input/provider.idl
 @@ -22,6 +22,7 @@
@@ -75490,7 +75490,7 @@ index 865a149eaa5..e7b6e96b8aa 100644
  
      [
 diff --git a/dlls/windows.gaming.input/racing_wheel.c b/dlls/windows.gaming.input/racing_wheel.c
-index b4635d03153..d646ca26c03 100644
+index b4635d0..d646ca2 100644
 --- wine/dlls/windows.gaming.input/racing_wheel.c
 +++ wine/dlls/windows.gaming.input/racing_wheel.c
 @@ -99,7 +99,7 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
@@ -75518,7 +75518,7 @@ index b4635d03153..d646ca26c03 100644
  static HRESULT WINAPI racing_wheel_GetButtonLabel( IRacingWheel *iface, enum RacingWheelButtons button,
 diff --git a/dlls/windows.gaming.input/ramp_effect.c b/dlls/windows.gaming.input/ramp_effect.c
 new file mode 100644
-index 00000000000..fadcf151c04
+index 0000000..fadcf15
 --- /dev/null
 +++ wine/dlls/windows.gaming.input/ramp_effect.c
 @@ -0,0 +1,278 @@
@@ -75801,7 +75801,7 @@ index 00000000000..fadcf151c04
 +
 +IInspectable *ramp_effect_factory = (IInspectable *)&ramp_statics.IActivationFactory_iface;
 diff --git a/dlls/windows.gaming.input/vector.c b/dlls/windows.gaming.input/vector.c
-index db1a9057682..8958b07c0f2 100644
+index db1a905..8958b07 100644
 --- wine/dlls/windows.gaming.input/vector.c
 +++ wine/dlls/windows.gaming.input/vector.c
 @@ -54,7 +54,7 @@ static HRESULT WINAPI iterator_QueryInterface( IIterator_IInspectable *iface, RE
@@ -75833,7 +75833,7 @@ index db1a9057682..8958b07c0f2 100644
  }
 diff --git a/dlls/windows.gaming.ui.gamebar/Makefile.in b/dlls/windows.gaming.ui.gamebar/Makefile.in
 new file mode 100644
-index 00000000000..a0eefc4b951
+index 0000000..a0eefc4
 --- /dev/null
 +++ wine/dlls/windows.gaming.ui.gamebar/Makefile.in
 @@ -0,0 +1,8 @@
@@ -75847,7 +75847,7 @@ index 00000000000..a0eefc4b951
 +	classes.idl
 diff --git a/dlls/windows.gaming.ui.gamebar/classes.idl b/dlls/windows.gaming.ui.gamebar/classes.idl
 new file mode 100644
-index 00000000000..ef10fcb6283
+index 0000000..ef10fcb
 --- /dev/null
 +++ wine/dlls/windows.gaming.ui.gamebar/classes.idl
 @@ -0,0 +1,33 @@
@@ -75886,7 +75886,7 @@ index 00000000000..ef10fcb6283
 +#include "windows.gaming.ui.idl"
 diff --git a/dlls/windows.gaming.ui.gamebar/main.c b/dlls/windows.gaming.ui.gamebar/main.c
 new file mode 100644
-index 00000000000..ec6b442cfc0
+index 0000000..ec6b442
 --- /dev/null
 +++ wine/dlls/windows.gaming.ui.gamebar/main.c
 @@ -0,0 +1,282 @@
@@ -76174,7 +76174,7 @@ index 00000000000..ec6b442cfc0
 +}
 diff --git a/dlls/windows.gaming.ui.gamebar/tests/Makefile.in b/dlls/windows.gaming.ui.gamebar/tests/Makefile.in
 new file mode 100644
-index 00000000000..67d70eee241
+index 0000000..67d70ee
 --- /dev/null
 +++ wine/dlls/windows.gaming.ui.gamebar/tests/Makefile.in
 @@ -0,0 +1,5 @@
@@ -76185,7 +76185,7 @@ index 00000000000..67d70eee241
 +	gamebar.c
 diff --git a/dlls/windows.gaming.ui.gamebar/tests/gamebar.c b/dlls/windows.gaming.ui.gamebar/tests/gamebar.c
 new file mode 100644
-index 00000000000..14fcb05284f
+index 0000000..14fcb05
 --- /dev/null
 +++ wine/dlls/windows.gaming.ui.gamebar/tests/gamebar.c
 @@ -0,0 +1,91 @@
@@ -76282,7 +76282,7 @@ index 00000000000..14fcb05284f
 +}
 diff --git a/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec b/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec
 new file mode 100644
-index 00000000000..20a8bfa98ea
+index 0000000..20a8bfa
 --- /dev/null
 +++ wine/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec
 @@ -0,0 +1,3 @@
@@ -76290,7 +76290,7 @@ index 00000000000..20a8bfa98ea
 +@ stdcall -private DllGetActivationFactory(ptr ptr)
 +@ stdcall -private DllGetClassObject(ptr ptr ptr)
 diff --git a/dlls/wined3d/adapter_vk.c b/dlls/wined3d/adapter_vk.c
-index f1ccb987750..423faa25648 100644
+index f1ccb98..423faa2 100644
 --- wine/dlls/wined3d/adapter_vk.c
 +++ wine/dlls/wined3d/adapter_vk.c
 @@ -2264,7 +2264,7 @@ static enum wined3d_feature_level feature_level_from_caps(const struct shader_ca
@@ -76303,7 +76303,7 @@ index f1ccb987750..423faa25648 100644
      return WINED3D_FEATURE_LEVEL_NONE;
  }
 diff --git a/dlls/winegstreamer/Makefile.in b/dlls/winegstreamer/Makefile.in
-index 3524cffb399..1b7caa769eb 100644
+index 3524cff..1b7caa7 100644
 --- wine/dlls/winegstreamer/Makefile.in
 +++ wine/dlls/winegstreamer/Makefile.in
 @@ -1,19 +1,22 @@
@@ -76333,7 +76333,7 @@ index 3524cffb399..1b7caa769eb 100644
  	wm_asyncreader.c \
 diff --git a/dlls/winegstreamer/aac_decoder.c b/dlls/winegstreamer/aac_decoder.c
 new file mode 100644
-index 00000000000..97f2824039d
+index 0000000..97f2824
 --- /dev/null
 +++ wine/dlls/winegstreamer/aac_decoder.c
 @@ -0,0 +1,620 @@
@@ -76958,7 +76958,7 @@ index 00000000000..97f2824039d
 +    return S_OK;
 +}
 diff --git a/dlls/winegstreamer/audioconvert.c b/dlls/winegstreamer/audioconvert.c
-index d5723cdf58f..2e16c9c78f5 100644
+index d5723cd..2e16c9c 100644
 --- wine/dlls/winegstreamer/audioconvert.c
 +++ wine/dlls/winegstreamer/audioconvert.c
 @@ -35,6 +35,11 @@ struct audio_converter
@@ -77571,7 +77571,7 @@ index d5723cdf58f..2e16c9c78f5 100644
  }
 diff --git a/dlls/winegstreamer/colorconvert.c b/dlls/winegstreamer/colorconvert.c
 new file mode 100644
-index 00000000000..92322e877ec
+index 0000000..92322e8
 --- /dev/null
 +++ wine/dlls/winegstreamer/colorconvert.c
 @@ -0,0 +1,901 @@
@@ -78478,7 +78478,7 @@ index 00000000000..92322e877ec
 +}
 diff --git a/dlls/winegstreamer/decode_transform.c b/dlls/winegstreamer/decode_transform.c
 new file mode 100644
-index 00000000000..fb7f432923f
+index 0000000..fb7f432
 --- /dev/null
 +++ wine/dlls/winegstreamer/decode_transform.c
 @@ -0,0 +1,1218 @@
@@ -79701,7 +79701,7 @@ index 00000000000..fb7f432923f
 +    return S_OK;
 +}
 diff --git a/dlls/winegstreamer/gst_private.h b/dlls/winegstreamer/gst_private.h
-index f5da807a2ab..c6b256b4fdd 100644
+index f5da807..c6b256b 100644
 --- wine/dlls/winegstreamer/gst_private.h
 +++ wine/dlls/winegstreamer/gst_private.h
 @@ -39,7 +39,7 @@
@@ -79830,7 +79830,7 @@ index f5da807a2ab..c6b256b4fdd 100644
  struct wm_stream
  {
 diff --git a/dlls/winegstreamer/h264_decoder.c b/dlls/winegstreamer/h264_decoder.c
-index 8bfa15529db..f6a4d47188f 100644
+index 8bfa155..f6a4d47 100644
 --- wine/dlls/winegstreamer/h264_decoder.c
 +++ wine/dlls/winegstreamer/h264_decoder.c
 @@ -23,17 +23,18 @@
@@ -80550,7 +80550,7 @@ index 8bfa15529db..f6a4d47188f 100644
  
      *ret = &decoder->IMFTransform_iface;
 diff --git a/dlls/winegstreamer/main.c b/dlls/winegstreamer/main.c
-index d88a462d81e..219fde82dc6 100644
+index d88a462..219fde8 100644
 --- wine/dlls/winegstreamer/main.c
 +++ wine/dlls/winegstreamer/main.c
 @@ -25,9 +25,7 @@
@@ -80889,7 +80889,7 @@ index d88a462d81e..219fde82dc6 100644
      return S_OK;
  }
 diff --git a/dlls/winegstreamer/media_source.c b/dlls/winegstreamer/media_source.c
-index f07b83f413e..82a6da1bcbf 100644
+index f07b83f..82a6da1 100644
 --- wine/dlls/winegstreamer/media_source.c
 +++ wine/dlls/winegstreamer/media_source.c
 @@ -105,7 +105,6 @@ struct media_source
@@ -81321,7 +81321,7 @@ index f07b83f413e..82a6da1bcbf 100644
      }
  }
 diff --git a/dlls/winegstreamer/mfplat.c b/dlls/winegstreamer/mfplat.c
-index 97e27bb7301..3ec45d7de4e 100644
+index 97e27bb..3ec45d7 100644
 --- wine/dlls/winegstreamer/mfplat.c
 +++ wine/dlls/winegstreamer/mfplat.c
 @@ -29,6 +29,8 @@
@@ -81996,7 +81996,7 @@ index 97e27bb7301..3ec45d7de4e 100644
 +    }
  }
 diff --git a/dlls/winegstreamer/quartz_parser.c b/dlls/winegstreamer/quartz_parser.c
-index 7b82f3efbc9..e9a3b00016d 100644
+index 7b82f3e..e9a3b00 100644
 --- wine/dlls/winegstreamer/quartz_parser.c
 +++ wine/dlls/winegstreamer/quartz_parser.c
 @@ -29,8 +29,8 @@
@@ -82318,7 +82318,7 @@ index 7b82f3efbc9..e9a3b00016d 100644
      free(This->sources);
      This->sources = NULL;
 diff --git a/dlls/winegstreamer/unix_private.h b/dlls/winegstreamer/unix_private.h
-index 7bce8263aaf..88566ab1db5 100644
+index 7bce826..88566ab 100644
 --- wine/dlls/winegstreamer/unix_private.h
 +++ wine/dlls/winegstreamer/unix_private.h
 @@ -23,14 +23,11 @@
@@ -82338,7 +82338,7 @@ index 7bce8263aaf..88566ab1db5 100644
  extern NTSTATUS wg_transform_create(void *args) DECLSPEC_HIDDEN;
  extern NTSTATUS wg_transform_destroy(void *args) DECLSPEC_HIDDEN;
 diff --git a/dlls/winegstreamer/unixlib.h b/dlls/winegstreamer/unixlib.h
-index f4e2ea4966b..e39cf54fd08 100644
+index f4e2ea4..e39cf54 100644
 --- wine/dlls/winegstreamer/unixlib.h
 +++ wine/dlls/winegstreamer/unixlib.h
 @@ -37,8 +37,6 @@ struct wg_format
@@ -82552,7 +82552,7 @@ index f4e2ea4966b..e39cf54fd08 100644
      unix_wg_transform_destroy,
  
 diff --git a/dlls/winegstreamer/wg_parser.c b/dlls/winegstreamer/wg_parser.c
-index 48b88a4b11c..cbd037e42c8 100644
+index 48b88a4..cbd037e 100644
 --- wine/dlls/winegstreamer/wg_parser.c
 +++ wine/dlls/winegstreamer/wg_parser.c
 @@ -30,6 +30,7 @@
@@ -84342,7 +84342,7 @@ index 48b88a4b11c..cbd037e42c8 100644
      X(wg_transform_destroy),
  
 diff --git a/dlls/winegstreamer/wg_transform.c b/dlls/winegstreamer/wg_transform.c
-index 49c7bfaa927..b080894dbe4 100644
+index 49c7bfa..b080894 100644
 --- wine/dlls/winegstreamer/wg_transform.c
 +++ wine/dlls/winegstreamer/wg_transform.c
 @@ -32,98 +32,315 @@
@@ -85202,7 +85202,7 @@ index 49c7bfaa927..b080894dbe4 100644
 +    return S_OK;
  }
 diff --git a/dlls/winegstreamer/winegstreamer_classes.idl b/dlls/winegstreamer/winegstreamer_classes.idl
-index 347ee906a52..5762430a5cd 100644
+index 347ee90..5762430 100644
 --- wine/dlls/winegstreamer/winegstreamer_classes.idl
 +++ wine/dlls/winegstreamer/winegstreamer_classes.idl
 @@ -78,4 +78,16 @@ coclass CWMADecMediaObject {};
@@ -85224,7 +85224,7 @@ index 347ee906a52..5762430a5cd 100644
 +]
 +coclass CColorConvertDMO { }
 diff --git a/dlls/winegstreamer/wm_asyncreader.c b/dlls/winegstreamer/wm_asyncreader.c
-index 947b3307a3a..a7ad6a6c45c 100644
+index 947b330..a7ad6a6 100644
 --- wine/dlls/winegstreamer/wm_asyncreader.c
 +++ wine/dlls/winegstreamer/wm_asyncreader.c
 @@ -66,7 +66,7 @@ static void open_stream(struct async_reader *reader, IWMReaderCallback *callback
@@ -85560,7 +85560,7 @@ index 947b3307a3a..a7ad6a6c45c 100644
  }
  
 diff --git a/dlls/winegstreamer/wm_reader.c b/dlls/winegstreamer/wm_reader.c
-index 57ba8633a84..cb667c957b4 100644
+index 57ba863..cb667c9 100644
 --- wine/dlls/winegstreamer/wm_reader.c
 +++ wine/dlls/winegstreamer/wm_reader.c
 @@ -24,7 +24,7 @@ static struct wm_stream *get_stream_by_output_number(struct wm_reader *reader, D
@@ -85984,7 +85984,7 @@ index 57ba8633a84..cb667c957b4 100644
      }
  
 diff --git a/dlls/winegstreamer/wm_syncreader.c b/dlls/winegstreamer/wm_syncreader.c
-index c7cccd52c4f..b03aa69d030 100644
+index c7cccd5..b03aa69 100644
 --- wine/dlls/winegstreamer/wm_syncreader.c
 +++ wine/dlls/winegstreamer/wm_syncreader.c
 @@ -65,7 +65,7 @@ static HRESULT WINAPI WMSyncReader_Close(IWMSyncReader2 *iface)
@@ -86110,7 +86110,7 @@ index c7cccd52c4f..b03aa69d030 100644
  }
  
 diff --git a/dlls/winegstreamer/wma_decoder.c b/dlls/winegstreamer/wma_decoder.c
-index 57b0f204f9e..021d0beb935 100644
+index 57b0f20..021d0be 100644
 --- wine/dlls/winegstreamer/wma_decoder.c
 +++ wine/dlls/winegstreamer/wma_decoder.c
 @@ -1,4 +1,4 @@
@@ -87012,7 +87012,7 @@ index 57b0f204f9e..021d0beb935 100644
      decoder->outer = outer ? outer : &decoder->IUnknown_inner;
  
 diff --git a/dlls/winemac.drv/macdrv_main.c b/dlls/winemac.drv/macdrv_main.c
-index 50e926c6aaa..fce8e102387 100644
+index 50e926c..fce8e10 100644
 --- wine/dlls/winemac.drv/macdrv_main.c
 +++ wine/dlls/winemac.drv/macdrv_main.c
 @@ -507,3 +507,62 @@ BOOL macdrv_SystemParametersInfo( UINT action, UINT int_param, void *ptr_param,
@@ -87080,7 +87080,7 @@ index 50e926c6aaa..fce8e102387 100644
 +#endif
 \ No newline at end of file
 diff --git a/dlls/wintrust/softpub.c b/dlls/wintrust/softpub.c
-index 53df5e7fe60..06b178a98b9 100644
+index 53df5e7..06b178a 100644
 --- wine/dlls/wintrust/softpub.c
 +++ wine/dlls/wintrust/softpub.c
 @@ -830,16 +830,93 @@ static DWORD WINTRUST_VerifySigner(CRYPT_PROVIDER_DATA *data, DWORD signerIdx)
@@ -87204,7 +87204,7 @@ index 53df5e7fe60..06b178a98b9 100644
  
      if (data->fOpenedFile &&
 diff --git a/dlls/wintrust/tests/softpub.c b/dlls/wintrust/tests/softpub.c
-index 8195e6006b1..77e15b2feb4 100644
+index 8195e60..77e15b2 100644
 --- wine/dlls/wintrust/tests/softpub.c
 +++ wine/dlls/wintrust/tests/softpub.c
 @@ -1123,6 +1123,476 @@ static const BYTE SelfSignedFile64[] =
@@ -87808,7 +87808,7 @@ index 8195e6006b1..77e15b2feb4 100644
 +    test_multiple_signatures();
  }
 diff --git a/dlls/wintrust/wintrust_main.c b/dlls/wintrust/wintrust_main.c
-index 33695008b24..925ae7ca85a 100644
+index 3369500..925ae7c 100644
 --- wine/dlls/wintrust/wintrust_main.c
 +++ wine/dlls/wintrust/wintrust_main.c
 @@ -294,6 +294,10 @@ static LONG WINTRUST_DefaultVerify(HWND hwnd, GUID *actionID,
@@ -87823,7 +87823,7 @@ index 33695008b24..925ae7ca85a 100644
          provData->hWndParent = GetDesktopWindow();
      else
 diff --git a/include/Makefile.in b/include/Makefile.in
-index 19d0088e431..99d74baec43 100644
+index 19d0088..99d74ba 100644
 --- wine/include/Makefile.in
 +++ wine/include/Makefile.in
 @@ -414,6 +414,7 @@ SOURCES = \
@@ -87847,7 +87847,7 @@ index 19d0088e431..99d74baec43 100644
  	windows.h \
 diff --git a/include/distversion.h b/include/distversion.h
 new file mode 100644
-index 00000000000..b8a3724b76b
+index 0000000..b8a3724
 --- /dev/null
 +++ wine/include/distversion.h
 @@ -0,0 +1,12 @@
@@ -87866,7 +87866,7 @@ index 00000000000..b8a3724b76b
 \ No newline at end of file
 diff --git a/include/memoryapi.h b/include/memoryapi.h
 new file mode 100644
-index 00000000000..6728b832fa7
+index 0000000..6728b83
 --- /dev/null
 +++ wine/include/memoryapi.h
 @@ -0,0 +1,46 @@
@@ -87917,7 +87917,7 @@ index 00000000000..6728b832fa7
 +BOOL WINAPI QueryVirtualMemoryInformation(HANDLE process,const void *addr,
 +        WIN32_MEMORY_INFORMATION_CLASS info_class, void *info, SIZE_T size, SIZE_T *ret_size);
 diff --git a/include/perflib.h b/include/perflib.h
-index eb65f0802a4..40704aeb6f7 100644
+index eb65f08..40704ae 100644
 --- wine/include/perflib.h
 +++ wine/include/perflib.h
 @@ -83,6 +83,28 @@ typedef struct _PROVIDER_CONTEXT {
@@ -87962,7 +87962,7 @@ index eb65f0802a4..40704aeb6f7 100644
  }       /* extern "C" */
  #endif
 diff --git a/include/processthreadsapi.h b/include/processthreadsapi.h
-index 8cdaff4796a..d266b7a727b 100644
+index 8cdaff4..d266b7a 100644
 --- wine/include/processthreadsapi.h
 +++ wine/include/processthreadsapi.h
 @@ -23,8 +23,23 @@
@@ -87990,7 +87990,7 @@ index 8cdaff4796a..d266b7a727b 100644
  #ifdef __cplusplus
  }
 diff --git a/include/winbase.h b/include/winbase.h
-index c8c893d8c91..55a5c59c364 100644
+index c8c893d..55a5c59 100644
 --- wine/include/winbase.h
 +++ wine/include/winbase.h
 @@ -45,6 +45,7 @@ extern "C" {
@@ -88002,7 +88002,7 @@ index c8c893d8c91..55a5c59c364 100644
    /* Windows Exit Procedure flag values */
  #define	WEP_FREE_DLL        0
 diff --git a/include/wincrypt.h b/include/wincrypt.h
-index db2c30c7d68..29735f6225d 100644
+index db2c30c..29735f6 100644
 --- wine/include/wincrypt.h
 +++ wine/include/wincrypt.h
 @@ -21,8 +21,6 @@
@@ -88044,7 +88044,7 @@ index db2c30c7d68..29735f6225d 100644
  #endif
 diff --git a/include/windows.foundation.numerics.idl b/include/windows.foundation.numerics.idl
 new file mode 100644
-index 00000000000..eca99ca29bc
+index 0000000..eca99ca
 --- /dev/null
 +++ wine/include/windows.foundation.numerics.idl
 @@ -0,0 +1,39 @@
@@ -88088,7 +88088,7 @@ index 00000000000..eca99ca29bc
 +    };
 +}
 diff --git a/include/windows.gaming.input.forcefeedback.idl b/include/windows.gaming.input.forcefeedback.idl
-index 432b60a5592..82fb083b34b 100644
+index 432b60a..82fb083 100644
 --- wine/include/windows.gaming.input.forcefeedback.idl
 +++ wine/include/windows.gaming.input.forcefeedback.idl
 @@ -20,23 +20,41 @@
@@ -88305,7 +88305,7 @@ index 432b60a5592..82fb083b34b 100644
 +    }
  }
 diff --git a/include/windows.gaming.input.idl b/include/windows.gaming.input.idl
-index fdae3aa70b1..5fc5265247d 100644
+index fdae3aa..5fc5265 100644
 --- wine/include/windows.gaming.input.idl
 +++ wine/include/windows.gaming.input.idl
 @@ -446,6 +446,19 @@ namespace Windows.Gaming.Input {
@@ -88330,7 +88330,7 @@ index fdae3aa70b1..5fc5265247d 100644
          exclusiveto(Windows.Gaming.Input.RacingWheel),
 diff --git a/include/windows.gaming.ui.idl b/include/windows.gaming.ui.idl
 new file mode 100644
-index 00000000000..730f5dd90f7
+index 0000000..730f5dd
 --- /dev/null
 +++ wine/include/windows.gaming.ui.idl
 @@ -0,0 +1,61 @@
@@ -88396,7 +88396,7 @@ index 00000000000..730f5dd90f7
 +    }
 +}
 diff --git a/include/wine/server_protocol.h b/include/wine/server_protocol.h
-index 8e5ffb8dc9a..b0b49271367 100644
+index 8e5ffb8..b0b4927 100644
 --- wine/include/wine/server_protocol.h
 +++ wine/include/wine/server_protocol.h
 @@ -4526,6 +4526,8 @@ struct get_token_groups_request
@@ -88417,7 +88417,7 @@ index 8e5ffb8dc9a..b0b49271367 100644
  
  /* ### protocol_version end ### */
 diff --git a/include/wine/strmbase.h b/include/wine/strmbase.h
-index 4d569e1fc6c..02cd1c50e6e 100644
+index 4d569e1..02cd1c5 100644
 --- wine/include/wine/strmbase.h
 +++ wine/include/wine/strmbase.h
 @@ -38,7 +38,6 @@ struct strmbase_pin
@@ -88446,7 +88446,7 @@ index 4d569e1fc6c..02cd1c50e6e 100644
      IUnknown *outer_unk;
      LONG refcount;
 diff --git a/include/wintrust.h b/include/wintrust.h
-index 28df37c1626..eeb149822b4 100644
+index 28df37c..eeb1498 100644
 --- wine/include/wintrust.h
 +++ wine/include/wintrust.h
 @@ -19,8 +19,6 @@
@@ -88475,7 +88475,7 @@ index 28df37c1626..eeb149822b4 100644
 -
  #endif
 diff --git a/libs/strmbase/Makefile.in b/libs/strmbase/Makefile.in
-index 8b6ea8a3b43..c9b4a9ebb5c 100644
+index 8b6ea8a..c9b4a9e 100644
 --- wine/libs/strmbase/Makefile.in
 +++ wine/libs/strmbase/Makefile.in
 @@ -1,3 +1,4 @@
@@ -88484,7 +88484,7 @@ index 8b6ea8a3b43..c9b4a9ebb5c 100644
  
  C_SRCS = \
 diff --git a/libs/strmbase/dispatch.c b/libs/strmbase/dispatch.c
-index 061655d4693..562c8c12ee6 100644
+index 061655d..562c8c1 100644
 --- wine/libs/strmbase/dispatch.c
 +++ wine/libs/strmbase/dispatch.c
 @@ -46,7 +46,7 @@ HRESULT strmbase_get_typeinfo(enum strmbase_type_id tid, ITypeInfo **ret)
@@ -88506,7 +88506,7 @@ index 061655d4693..562c8c12ee6 100644
          }
          if (InterlockedCompareExchangePointer((void **)(control_typeinfo + tid), typeinfo, NULL))
 diff --git a/libs/strmbase/filter.c b/libs/strmbase/filter.c
-index ee41611a198..b30ef6daf4f 100644
+index ee41611..b30ef6d 100644
 --- wine/libs/strmbase/filter.c
 +++ wine/libs/strmbase/filter.c
 @@ -87,7 +87,7 @@ static ULONG WINAPI enum_pins_AddRef(IEnumPins *iface)
@@ -88651,7 +88651,7 @@ index ee41611a198..b30ef6daf4f 100644
      filter->outer_unk = outer ? outer : &filter->IUnknown_inner;
      filter->refcount = 1;
 diff --git a/libs/strmbase/mediatype.c b/libs/strmbase/mediatype.c
-index 33af6f2e636..6f66999c390 100644
+index 33af6f2..6f66999 100644
 --- wine/libs/strmbase/mediatype.c
 +++ wine/libs/strmbase/mediatype.c
 @@ -60,7 +60,7 @@ static const char *debugstr_fourcc(DWORD fourcc)
@@ -88745,7 +88745,7 @@ index 33af6f2e636..6f66999c390 100644
      }
      else
 diff --git a/libs/strmbase/pin.c b/libs/strmbase/pin.c
-index 03330837477..36b3fdf1425 100644
+index 0333083..36b3fdf 100644
 --- wine/libs/strmbase/pin.c
 +++ wine/libs/strmbase/pin.c
 @@ -97,7 +97,7 @@ static ULONG WINAPI enum_media_types_AddRef(IEnumMediaTypes *iface)
@@ -88866,7 +88866,7 @@ index 03330837477..36b3fdf1425 100644
      pin->pFuncsTable = func_table;
      pin->pAllocator = pin->preferred_allocator = allocator;
 diff --git a/libs/strmbase/pospass.c b/libs/strmbase/pospass.c
-index 03cb7783f97..7478c0e67c5 100644
+index 03cb778..7478c0e 100644
 --- wine/libs/strmbase/pospass.c
 +++ wine/libs/strmbase/pospass.c
 @@ -296,11 +296,7 @@ static HRESULT WINAPI MediaSeekingPassThru_ConvertTimeFormat(IMediaSeeking * ifa
@@ -88922,7 +88922,7 @@ index 03cb7783f97..7478c0e67c5 100644
  
      if (SUCCEEDED(hr = strmbase_get_typeinfo(IMediaPosition_tid, &typeinfo)))
 diff --git a/libs/strmbase/renderer.c b/libs/strmbase/renderer.c
-index dc421f499ed..da257555a19 100644
+index dc421f4..da25755 100644
 --- wine/libs/strmbase/renderer.c
 +++ wine/libs/strmbase/renderer.c
 @@ -526,7 +526,7 @@ static HRESULT WINAPI quality_control_Notify(IQualityControl *iface, IBaseFilter
@@ -88935,7 +88935,7 @@ index dc421f499ed..da257555a19 100644
  
      if (filter->qc_sink)
 diff --git a/libs/strmbase/seeking.c b/libs/strmbase/seeking.c
-index b3991f0a5b3..67ef660ba3d 100644
+index b3991f0..67ef660 100644
 --- wine/libs/strmbase/seeking.c
 +++ wine/libs/strmbase/seeking.c
 @@ -220,10 +220,7 @@ HRESULT WINAPI SourceSeekingImpl_SetPositions(IMediaSeeking * iface, LONGLONG *
@@ -88960,7 +88960,7 @@ index b3991f0a5b3..67ef660ba3d 100644
      This->llCurrent = llNewCurrent;
      This->llStop = llNewStop;
 diff --git a/libs/strmiids/strmiids.c b/libs/strmiids/strmiids.c
-index 1a7005bde3c..d07da38bb16 100644
+index 1a7005b..d07da38 100644
 --- wine/libs/strmiids/strmiids.c
 +++ wine/libs/strmiids/strmiids.c
 @@ -39,4 +39,4 @@
@@ -88971,7 +88971,7 @@ index 1a7005bde3c..d07da38bb16 100644
 +#include "videoacc.h"
 \ No newline at end of file
 diff --git a/loader/preloader_mac.c b/loader/preloader_mac.c
-index 8b924f78c15..412bd638a3a 100644
+index 8b924f7..412bd63 100644
 --- wine/loader/preloader_mac.c
 +++ wine/loader/preloader_mac.c
 @@ -299,6 +299,7 @@ void *wld_munmap( void *start, size_t len );
@@ -89000,7 +89000,7 @@ index 8b924f78c15..412bd638a3a 100644
      if (!(mod = pdlopen( argv[1], RTLD_NOW )))
          fatal_error( "%s: could not load binary\n", argv[1] );
 diff --git a/server/protocol.def b/server/protocol.def
-index 6232eebd261..d89a750811a 100644
+index 6232eeb..d89a750 100644
 --- wine/server/protocol.def
 +++ wine/server/protocol.def
 @@ -3202,6 +3202,7 @@ enum caret_state
@@ -89012,7 +89012,7 @@ index 6232eebd261..d89a750811a 100644
      data_size_t     attr_len;     /* length needed to store attrs */
      data_size_t     sid_len;      /* length needed to store sids */
 diff --git a/server/request.h b/server/request.h
-index 6f9f6a8dfc7..d124ba07fc7 100644
+index 6f9f6a8..d124ba0 100644
 --- wine/server/request.h
 +++ wine/server/request.h
 @@ -1995,7 +1995,8 @@ C_ASSERT( sizeof(struct get_token_sid_request) == 24 );
@@ -89026,7 +89026,7 @@ index 6f9f6a8dfc7..d124ba07fc7 100644
  C_ASSERT( FIELD_OFFSET(struct get_token_groups_reply, sid_len) == 12 );
  C_ASSERT( sizeof(struct get_token_groups_reply) == 16 );
 diff --git a/server/token.c b/server/token.c
-index 76a6bc279a5..b6a2d841093 100644
+index 76a6bc2..7b3dc03 100644
 --- wine/server/token.c
 +++ wine/server/token.c
 @@ -82,7 +82,6 @@ static const struct sid local_sid = { SID_REVISION, 1, SECURITY_LOCAL_SID_AUTHOR
@@ -89037,16 +89037,101 @@ index 76a6bc279a5..b6a2d841093 100644
  
  static struct luid prev_luid_value = { 1000, 0 };
  
-@@ -745,7 +744,7 @@ struct token *token_create_admin( unsigned primary, int impersonation_level, int
+@@ -128,15 +127,9 @@ struct privilege
+ 
+ struct group
+ {
+-    struct list entry;
+-    unsigned    enabled  : 1; /* is the sid currently enabled? */
+-    unsigned    def      : 1; /* is the sid enabled by default? */
+-    unsigned    logon    : 1; /* is this a logon sid? */
+-    unsigned    mandatory: 1; /* is this sid always enabled? */
+-    unsigned    owner    : 1; /* can this sid be an owner of an object? */
+-    unsigned    resource : 1; /* is this a domain-local group? */
+-    unsigned    deny_only: 1; /* is this a sid that should be use for denying only? */
+-    struct sid  sid;
++    struct list    entry;
++    unsigned int   attrs;
++    struct sid     sid;
+ };
+ 
+ static void token_dump( struct object *obj, int verbose );
+@@ -150,7 +143,6 @@ static const struct object_ops token_ops =
+     no_add_queue,              /* add_queue */
+     NULL,                      /* remove_queue */
+     NULL,                      /* signaled */
+-    NULL,                      /* get_esync_fd */
+     NULL,                      /* satisfied */
+     no_signal,                 /* signal */
+     no_get_fd,                 /* get_fd */
+@@ -524,17 +516,11 @@ static struct token *create_token( unsigned int primary, unsigned int session_id
+                 release_object( token );
+                 return NULL;
+             }
++            group->attrs = groups[i].attrs;
+             copy_sid( &group->sid, groups[i].sid );
+-            group->enabled = TRUE;
+-            group->def = TRUE;
+-            group->logon = (groups[i].attrs & SE_GROUP_LOGON_ID) != 0;
+-            group->mandatory = (groups[i].attrs & SE_GROUP_MANDATORY) != 0;
+-            group->owner = (groups[i].attrs & SE_GROUP_OWNER) != 0;
+-            group->resource = FALSE;
+-            group->deny_only = FALSE;
+             list_add_tail( &token->groups, &group->entry );
+             /* Use first owner capable group as owner and primary group */
+-            if (!token->primary_group && group->owner)
++            if (!token->primary_group && (group->attrs & SE_GROUP_OWNER))
+             {
+                 token->owner = &group->sid;
+                 token->primary_group = &group->sid;
+@@ -629,9 +615,8 @@ struct token *token_duplicate( struct token *src_token, unsigned primary,
+         memcpy( newgroup, group, size );
+         if (filter_group( group, remove_groups, remove_group_count ))
+         {
+-            newgroup->enabled = 0;
+-            newgroup->def = 0;
+-            newgroup->deny_only = 1;
++            newgroup->attrs &= ~(SE_GROUP_ENABLED | SE_GROUP_ENABLED_BY_DEFAULT);
++            newgroup->attrs |= SE_GROUP_USE_FOR_DENY_ONLY;
+         }
+         list_add_tail( &token->groups, &newgroup->entry );
+         if (src_token->primary_group == &group->sid)
+@@ -745,9 +730,9 @@ struct token *token_create_admin( unsigned primary, int impersonation_level, int
      struct sid alias_admins_sid = { SID_REVISION, 2, SECURITY_NT_AUTHORITY, { SECURITY_BUILTIN_DOMAIN_RID, DOMAIN_ALIAS_RID_ADMINS }};
      struct sid alias_users_sid = { SID_REVISION, 2, SECURITY_NT_AUTHORITY, { SECURITY_BUILTIN_DOMAIN_RID, DOMAIN_ALIAS_RID_USERS }};
      /* on Windows, this value changes every time the user logs on */
 -    struct sid logon_sid = { SID_REVISION, 3, SECURITY_NT_AUTHORITY, { SECURITY_LOGON_IDS_RID, 0, 1 /* FIXME: should be randomly generated when tokens are inherited by new processes */ }};
 +    struct sid logon_sid = { SID_REVISION, 3, SECURITY_NT_AUTHORITY, { SECURITY_LOGON_IDS_RID, 0, 0 /* FIXME: should be randomly generated when tokens are inherited by new processes */ }};
      const struct sid *user_sid = security_unix_uid_to_sid( getuid() );
-     struct acl *default_dacl = create_default_dacl( user_sid );
+-    struct acl *default_dacl = create_default_dacl( user_sid );
++    struct acl *default_dacl = create_default_dacl( &domain_users_sid );
      const struct luid_attr admin_privs[] =
-@@ -1368,9 +1367,6 @@ DECL_HANDLER(get_token_sid)
+     {
+         { SeChangeNotifyPrivilege, SE_PRIVILEGE_ENABLED },
+@@ -889,8 +874,8 @@ int token_sid_present( struct token *token, const struct sid *sid, int deny )
+ 
+     LIST_FOR_EACH_ENTRY( group, &token->groups, struct group, entry )
+     {
+-        if (!group->enabled) continue;
+-        if (group->deny_only && !deny) continue;
++        if (!(group->attrs & SE_GROUP_ENABLED)) continue;
++        if (!deny && (group->attrs & SE_GROUP_USE_FOR_DENY_ONLY)) continue;
+         if (equal_sid( &group->sid, sid )) return TRUE;
+     }
+ 
+@@ -1059,9 +1044,9 @@ const struct acl *token_get_default_dacl( struct token *token )
+     return token->default_dacl;
+ }
+ 
+-const struct sid *token_get_user( struct token *token )
++const struct sid *token_get_owner( struct token *token )
+ {
+-    return token->user;
++    return token->owner;
+ }
+ 
+ const struct sid *token_get_primary_group( struct token *token )
+@@ -1368,9 +1353,6 @@ DECL_HANDLER(get_token_sid)
          case TokenOwner:
              sid = token->owner;
              break;
@@ -89056,7 +89141,7 @@ index 76a6bc279a5..b6a2d841093 100644
          default:
              set_error( STATUS_INVALID_PARAMETER );
              break;
-@@ -1398,6 +1394,7 @@ DECL_HANDLER(get_token_groups)
+@@ -1398,6 +1380,7 @@ DECL_HANDLER(get_token_groups)
  
          LIST_FOR_EACH_ENTRY( group, &token->groups, const struct group, entry )
          {
@@ -89064,16 +89149,34 @@ index 76a6bc279a5..b6a2d841093 100644
              group_count++;
              reply->sid_len += sid_len( &group->sid );
          }
-@@ -1420,6 +1417,7 @@ DECL_HANDLER(get_token_groups)
-                     if (group->deny_only) *attr_ptr |= SE_GROUP_USE_FOR_DENY_ONLY;
-                     if (group->resource) *attr_ptr |= SE_GROUP_RESOURCE;
-                     if (group->logon) *attr_ptr |= SE_GROUP_LOGON_ID;
+@@ -1412,16 +1395,9 @@ DECL_HANDLER(get_token_groups)
+             {
+                 LIST_FOR_EACH_ENTRY( group, &token->groups, const struct group, entry )
+                 {
+-                    *attr_ptr = 0;
+-                    if (group->mandatory) *attr_ptr |= SE_GROUP_MANDATORY;
+-                    if (group->def) *attr_ptr |= SE_GROUP_ENABLED_BY_DEFAULT;
+-                    if (group->enabled) *attr_ptr |= SE_GROUP_ENABLED;
+-                    if (group->owner) *attr_ptr |= SE_GROUP_OWNER;
+-                    if (group->deny_only) *attr_ptr |= SE_GROUP_USE_FOR_DENY_ONLY;
+-                    if (group->resource) *attr_ptr |= SE_GROUP_RESOURCE;
+-                    if (group->logon) *attr_ptr |= SE_GROUP_LOGON_ID;
 +                    if (req->attr_mask && !(group->attrs & req->attr_mask)) continue;
                      sid = copy_sid( sid, &group->sid );
-                     attr_ptr++;
+-                    attr_ptr++;
++                    *attr_ptr++ = group->attrs;
                  }
+             }
+         }
+@@ -1527,4 +1503,4 @@ DECL_HANDLER(create_linked_token)
+         }
+         release_object( token );
+     }
+-}
++}
+\ No newline at end of file
 diff --git a/server/trace.c b/server/trace.c
-index 62a1a4a2368..50433115728 100644
+index 62a1a4a..5043311 100644
 --- wine/server/trace.c
 +++ wine/server/trace.c
 @@ -3889,6 +3889,7 @@ static void dump_get_token_sid_reply( const struct get_token_sid_reply *req )
@@ -89085,7 +89188,7 @@ index 62a1a4a2368..50433115728 100644
  
  static void dump_get_token_groups_reply( const struct get_token_groups_reply *req )
 diff --git a/tools/make_specfiles b/tools/make_specfiles
-index 3c4c40544b8..cdaf0ccf209 100755
+index 3c4c405..cdaf0cc 100755
 --- wine/tools/make_specfiles
 +++ wine/tools/make_specfiles
 @@ -139,6 +139,11 @@ my @dll_groups =
