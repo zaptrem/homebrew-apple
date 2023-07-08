@@ -167,140 +167,2459 @@ class GamePortingToolkit < Formula
 end
 
 __END__
-diff --git a/include/distversion.h b/include/distversion.h
+diff --git a/.editorconfig b/.editorconfig
 new file mode 100644
-index 00000000000..b8a3724b76b
+index 00000000000..82f57343ad0
 --- /dev/null
-+++ wine/include/distversion.h
-@@ -0,0 +1,12 @@
-+/* ---------------------------------------------------------------
-+*   distversion.c
-+*
-+* Copyright 2013, CodeWeavers, Inc.
-+*
-+* Information from DISTVERSION which needs to find
-+* its way into the wine tree.
-+* --------------------------------------------------------------- */
++++ b/.editorconfig
+@@ -0,0 +1,14 @@
++root = true
 +
-+#define WINDEBUG_WHAT_HAPPENED_MESSAGE "This can be caused by a problem in the program or a deficiency in Wine. You may want to check <a href=\"http://www.codeweavers.com/compatibility/\">http://www.codeweavers.com/compatibility/</a> for tips about running this application."
++# Defaults
++[*]
++indent_style = space
++indent_size = 4
++tab_width = 8
++charset = utf-8
++insert_final_newline = true
++max_line_length = 100
 +
-+#define WINDEBUG_USER_SUGGESTION_MESSAGE "If this problem is not present under Windows and has not been reported yet, you can save the detailed information to a file using the \"Save As\" button, then <a href=\"http://www.codeweavers.com/support/tickets/enter/\">file a bug report</a> and attach that file to the report."
-\ No newline at end of file
--- 
-2.39.2 (Apple Git-144)
-
++[Makefile*]
++indent_style = tab
++indent_size = 8
+diff --git a/.mailmap b/.mailmap
+new file mode 100644
+index 00000000000..c545fa05d81
+--- /dev/null
++++ b/.mailmap
+@@ -0,0 +1,177 @@
++Adam Sacarny <magicbox@bestweb.net>
++Albert den Haan <albertd@corel.ca>
++Alexander Nicolaysen Sørnes <alex@thehandofagony.com>
++Alexander Nicolaysen Sørnes <alexsornes@gmail.com>
++Alexandru Balut <alexandru.balut@gmail.com>
++Américo José Melo <mmodem00@gmail.com>
++András Kovács <andras@csevego.net>
++Andreas Rosenberg <andreas.rosenberg@apis.de>
++Andrew Johnston <johnstonam@logica.com>
++Antonio Codazzi <f_sophia@libero.it>
++Bang Jun-Young <junyoung@mogua.com>
++Bernhard Rosenkränzer <bero@lindev.ch>
++Bernhard Übelacker <bernhardu@mailbox.org>
++Byeong-Sik Jeon <bsjeon@hanmail.net>
++Carlos Lozano <clozano@andago.com>
++Caron Wills <caron@codeweavers.com>
++Charles Davis <cdavis@codeweavers.com>
++Christopher Gautier <krys@via.ecp.fr>
++David A. Cuthbert <dacut@ece.cmu.edu>
++David Heidelberger <david@ixit.cz>
++Dennis Björklund <db@zigo.dhs.org>
++Dennis Björklund <dennisb@cs.chalmers.se>
++Dimitrie O. Paun <dimi@bigfoot.com>
++Dimitrie O. Paun <dimi@lattica.com>
++EA Durbin <eadurbin@freebsd.org>
++Eduardo García <eduardo.garcia@gmx.com>
++Erich Hoover <erich.e.hoover@gmail.com>
++Erich Hoover <erich.e.hoover@wine-staging.com>
++Erwin Wolff <erwinwolffnl@microformatica.com>
++Esme Povirk <vincent@codeweavers.com>
++Evgeny Putin <evcalipt@etersoft.ru>
++Fatih Aşıcı <fasici@linux-sevenler.org>
++Fernando Martins <fernando@cmartins.nl>
++François Gouget <fgouget@codeweavers.com>
++François Gouget <fgouget@free.fr>
++François Gouget <fgouget@multimania.com>
++François Gouget <fgouget@psn.net>
++Gerhard W. Gruber <sparhawk@gmx.at>
++Gerold Jens Wucherpfennig <gjwucherpfennig@gmx.net>
++Ge van Geldorp <ggeldorp@vmware.com>
++Gregory M. Turner <gmturner007@ameritech.net>
++Gustavo Noronha Silva <kov@debian.org>
++Guy Albertelli <galberte@neo.lrun.com>
++Guy Albertelli <guy@codeweavers.com>
++György 'Nog' Jeney <nog@sdf.lonestar.org>
++Henri Verbeet <hverbeet@gmail.com>
++Hermès Bélusca-Maïto <hermes.belusca@sfr.fr>
++Hervé Chanal <chanal_herve@yahoo.fr>
++Hirofumi Katayama <katayama.hirofumi.mz@gmail.com>
++Hiroshi Tanabe <hirokun_dayomon@infoseek.to>
++Huw D. M. Davies <daviesh@abacus.physics.ox.ac.uk>
++Huw D. M. Davies <daviesh@huw-davies-computer.local>
++Huw D. M. Davies <h.davies1@physics.ox.ac.uk>
++Huw D. M. Davies <h.davies@codeweavers.com>
++Huw D. M. Davies <hdavies@codeweavers.com>
++Huw D. M. Davies <hdavies@codeweavwers.com>
++Huw D. M. Davies <huw@codewavers.com>
++Huw D. M. Davies <huw@codeweavers>
++Huw D. M. Davies <huw@codeweavers.com>
++Hwang YunSong (황윤성) <hys545@dreamwiz.com>
++Ivan de Saedeleer <Ivands@sympatico.ca>
++Ivan Leo Puoti <ivanleo@gmail.com>
++Ivan Leo Puoti <puoti@inwind.it>
++Ivan Sinitsin <ivan@etersoft.ru>
++J A Gow <J.A.Gow@furrybubble.co.uk>
++Jan Djarv <Jan.Djarv@mbox200.swipnet.se>
++Jason Edmeades <jason@edmeades.me.uk>
++Jean Labrousse <jlabrous@altern.org>
++Jeff Latimer <jeffl@defcen.gov.au>
++Jérôme Gardou <jerome.gardou@gmail.com>
++John Klehm <cjohn@klehm.net>
++John R. Sheets <jsheets@codeweavers.com>
++Jörg Höhle <Joerg-Cyril.Hoehle@t-systems.com>
++Jörg Mayer <jmayer@loplof.de>
++Jörg Mayer <jmayer@telesun2.telemation.de>
++Jose Marcos López Caravaca <jose.lopez@upcnet.upc.es>
++Joshua Thielen <thielen@netprince.net>
++Józef Kucia <joseph.kucia@gmail.com>
++Julio César Gázquez <jgazquez@dld.net>
++Kevin Puetz <PuetzKevinA@JohnDeere.com>
++Kirill K. Smirnov <Kirill.K.Smirnov@star.math.spbu.ru>
++Kirill K. Smirnov <kirill.k.smirnov@gmail.com>
++Kolbjørn Fredheim <hightower@tregt.net>
++Lawson Whitney <lawson_whitney@juno.com>
++Lionel Debroux <Lionel_Debroux@pc-debroux>
++Louis Lenders <xerox_xerox2000@yahoo.co.uk>
++Lucas Fialho Zawacki <lfzawacki@gmail.com>
++Luis Carlos Busquets Pérez <luis.busquets@ilidium.com>
++Luis Carlos Busquets Pérez <luiscar2001@yahoo.es>
++Mariusz Pluciński <vshader@gmail.com>
++Mark G. Adams <mark@transgaming.com>
++Markus Gömmel <m.goemmel@compulab.de>
++Martin Storsjö <martin@martin.st>
++Matej Špindler <matej.spindler@gmail.com>
++Matej Špindler <spindler.matej@gmail.com>
++Matthew Finnicum <mattfinn@gmail.com>
++Maxime Bellengé <maxime.bellenge@gmail.com>
++Max TenEyck Woodbury <max@mtew.isa-geek.net>
++Michael McCormack <mike@codeweavers.com>
++Michael McCormack <mike_mccormack@looksmart.com.au>
++Michael McCormack <mike_mccormack@start.com.au>
++Michael McCormack <mikem@codeweavers.com>
++Michael Müller <michael@fds-team.de>
++Michael Veksler <mveksler@techunix.technion.ac.il>
++Michael Wetherell <mike.wetherell@ntlworld.com>
++Mikołaj Zalewski <mikolajz@google.com>
++Mounir Idrassi <mounir.idrassi@idrix.fr>
++Nathan Gallaher <ngallaher@deepthought.org>
++Nathan Zorich <wfilardo@fuse.net>
++Niclas Karlsson <nkarlsso@ra.abo.fi>
++Nicolas Brouard <nicolas.brouard@libertysurf.fr>
++Norman Stevens <norman@arcady.u-net.com>
++Oldřich Jedlička <oldium.pro@seznam.cz>
++Ove Kåven <ovehk@ping.uio.no>
++Ove Kåven <ovek@arcticnet.no>
++Ove Kåven <ovek@transgaming.com>
++Panagiotis Christeas <p_christ@hol.gr>
++Peter Ganten <peter@ganten.org>
++Piotr Pawłow <pp@siedziba.pl>
++Qingdoa Daoo <qingdao33122@yahoo.com>
++Ragnvald Maartmann-Moe IV <despair@adelphia.net>
++Reece H. Dunn <msclrhd@gmail.com>
++Reece H. Dunn <msclrhd@googlemail.com>
++Robert 'Admiral' Coeyman <admiral@corner.net>
++Robert Riggs <rriggs@tesser.com>
++Robert Shearman <rob@codeweavers.com>
++Robert Shearman <robertshearman@gmail.com>
++Roman Pišl <rpisl@seznam.cz>
++Sato Kazuyuki <kazus@sunfish.suginami.tokyo.jp>
++Sergei Ivanov <sergei@corel.ca>
++Sergei Ivanov <sergei@corel.com>
++Sergey Turchanov <plumber@print.vlad.ru>
++Sergey Turchanov <turchanov@otvprim.ru>
++Sergey Turchanov <turchanov@usa.net>
++Stefan Dösinger <stefan@codeweavers.com>
++Stephan Beuze <fbiggun@hotmail.com>
++Stéphane Loeuillet <leroutier@gmail.com>
++Stephen Langasek <vorlon@dodds.net>
++Sunil Mohan Adapa <sunilmohan@fsf.org.in>
++Sylvain St-Germain <sylvain@macadamian.com>
++Sylvain St-Germain <sylvain@macadamian.com.epfl.ch>
++Thomas Spear <speeddymon@gmail.com>
++Thomas Weidenmüller <info@w3seek.de>
++Thomas Weidenmüller <thomas@reactsoft.com>
++Thomas Weidenmüller <w3seek@reactos.com>
++Thomas Weidenmüller <w3seek@reactos.org>
++Thomas Weidenmüller <wine-patches@reactsoft.com>
++Tomasz Jezierski <developers@tefnet.pl>
++Victor Martinez Calvo <vmartinez@reactos.org>
++Vikram Kumar <vik@zone81.com>
++Vladimir Bespalov <vlad.botanic@gmail.com>
++Wei Xie <xiewei@linuxdeepin.com>
++William Poetra Yoga Hadisoesen <williampoetra@yahoo.com>
++Won Kyu Park <wkpark@kldp.org>
++Yuri Kozlov <yuriy.kozlov@gmail.com>
++Zachary Brown <zac@zacbrown.org>
++Zoltan Nagy <nagyzoli@drotposta.hu>
++unidentified <9700584@cs.stadia.fi>
++unidentified <develop@stueben.com>
++unidentified <f.gockel@t-online.de>
++unidentified <ghutchis@cisco.com>
++unidentified <hamish_nospam@yahoo.com>
++unidentified <jimregan@litsu.ie>
++unidentified <jodaman@cegt201.bradley.edu>
++unidentified <larstiq@larstiq.dyndns.org>
++unidentified <ma@technoprint.ch>
++unidentified <mirq@ziemniak.ustronie.pw.edu.pl>
++unidentified <o112w8r02@sneakemail.com>
++unidentified <orin@pinhead.cc>
++unidentified <pofis@portugalmail.pt>
++unidentified <smil@mechatronika.hu>
++unidentified <therapy@endorphin.org>
++unidentified <TTarrant@Etnoteam.It>
++unidentified <wine@frotz.org>
++unidentified <wine@gc2.kloepfer.org>
++unidentified <wine.larry.engholm@xoxy.net>
++unidentified <zombi82@hot.ee>
 diff --git a/configure b/configure
-index 2d57c7e085d..b9b57c0d509 100755
---- wine/configure
-+++ wine/configure
-@@ -950,6 +950,7 @@ enable_amstream
+index 2d57c7e085d..bfa6e1885a1 100755
+--- a/configure
++++ b/configure
+@@ -950,6 +950,9 @@ enable_amstream
  enable_apisetschema
  enable_apphelp
  enable_appwiz_cpl
++enable_atiadlxx
++enable_api_ms_win_core_psm_appnotify_l1_1_0
 +enable_api_ms_win_power_base_l1_1_0
  enable_atl
  enable_atl100
  enable_atl110
-@@ -21776,6 +21777,7 @@ wine_fn_config_makefile dlls/apisetschema enable_apisetschema
+@@ -1421,6 +1424,7 @@ enable_wimgapi
+ enable_win32u
+ enable_windows_devices_enumeration
+ enable_windows_gaming_input
++enable_windows_gaming_ui_gamebar
+ enable_windows_globalization
+ enable_windows_media_devices
+ enable_windows_media_speech
+@@ -21776,6 +21780,9 @@ wine_fn_config_makefile dlls/apisetschema enable_apisetschema
  wine_fn_config_makefile dlls/apphelp enable_apphelp
  wine_fn_config_makefile dlls/apphelp/tests enable_tests
  wine_fn_config_makefile dlls/appwiz.cpl enable_appwiz_cpl
++wine_fn_config_makefile dlls/atiadlxx enable_atiadlxx
++wine_fn_config_makefile dlls/api-ms-win-core-psm-appnotify-l1-1-0 enable_api_ms_win_core_psm_appnotify_l1_1_0
 +wine_fn_config_makefile dlls/api-ms-win-power-base-l1-1-0 enable_api_ms_win_power_base_l1_1_0
  wine_fn_config_makefile dlls/atl enable_atl
  wine_fn_config_makefile dlls/atl/tests enable_tests
  wine_fn_config_makefile dlls/atl100 enable_atl100
+@@ -22525,6 +22532,8 @@ wine_fn_config_makefile dlls/windebug.dll16 enable_win16
+ wine_fn_config_makefile dlls/windows.devices.enumeration enable_windows_devices_enumeration
+ wine_fn_config_makefile dlls/windows.gaming.input enable_windows_gaming_input
+ wine_fn_config_makefile dlls/windows.gaming.input/tests enable_tests
++wine_fn_config_makefile dlls/windows.gaming.ui.gamebar enable_windows_gaming_ui_gamebar 
++wine_fn_config_makefile dlls/windows.gaming.ui.gamebar/tests enable_tests
+ wine_fn_config_makefile dlls/windows.globalization enable_windows_globalization
+ wine_fn_config_makefile dlls/windows.globalization/tests enable_tests
+ wine_fn_config_makefile dlls/windows.media.devices enable_windows_media_devices
 diff --git a/configure.ac b/configure.ac
-diff --git a/configure.ac b/configure.ac
-index 50c50d15eda..58063421cce 100644
---- wine/configure.ac
-+++ wine/configure.ac
-@@ -2424,6 +2424,7 @@ WINE_CONFIG_MAKEFILE(dlls/apisetschema)
+index 50c50d15eda..8fad7462dd9 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -2424,6 +2424,8 @@ WINE_CONFIG_MAKEFILE(dlls/apisetschema)
  WINE_CONFIG_MAKEFILE(dlls/apphelp)
  WINE_CONFIG_MAKEFILE(dlls/apphelp/tests)
  WINE_CONFIG_MAKEFILE(dlls/appwiz.cpl)
++WINE_CONFIG_MAKEFILE(dlls/atiadlxx)
 +WINE_CONFIG_MAKEFILE(dlls/api-ms-win-power-base-l1-1-0)
  WINE_CONFIG_MAKEFILE(dlls/atl)
  WINE_CONFIG_MAKEFILE(dlls/atl/tests)
  WINE_CONFIG_MAKEFILE(dlls/atl100)
-diff --git a/dlls/api-ms-win-power-base-l1-1-0/Makefile.in b/dlls/api-ms-win-power-base-l1-1-0/Makefile.in
-new file mode 100644
-index 00000000000..8b26d4be82f
---- /dev/null
-+++ wine/dlls/api-ms-win-power-base-l1-1-0/Makefile.in
-@@ -0,0 +1 @@
-+MODULE    = api-ms-win-power-base-l1-1-0.dll
-diff --git a/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec b/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec
-new file mode 100644
-index 00000000000..dd056946ac6
---- /dev/null
-+++ wine/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec
-@@ -0,0 +1,5 @@
-+@ stdcall CallNtPowerInformation(long ptr long ptr long) powrprof.CallNtPowerInformation
-+@ stdcall GetPwrCapabilities(ptr) powrprof.GetPwrCapabilities
-+@ stdcall PowerDeterminePlatformRoleEx(long) powrprof.PowerDeterminePlatformRoleEx
-+@ stdcall PowerRegisterSuspendResumeNotification(long ptr ptr) powrprof.PowerRegisterSuspendResumeNotification
-+@ stub PowerUnregisterSuspendResumeNotification
-diff --git a/tools/make_specfiles b/tools/make_specfiles
-index 3c4c40544b8..cdaf0ccf209 100755
---- wine/tools/make_specfiles
-+++ wine/tools/make_specfiles
-@@ -139,6 +139,11 @@ my @dll_groups =
-   "sppc",
-   "slc",
-  ],
-+ [
-+    "ntdll",
-+    "powrprof",
-+    "api-ms-win-power-base-l1-1-0",
-+ ]
- );
+@@ -3173,6 +3175,8 @@ WINE_CONFIG_MAKEFILE(dlls/windebug.dll16,enable_win16)
+ WINE_CONFIG_MAKEFILE(dlls/windows.devices.enumeration)
+ WINE_CONFIG_MAKEFILE(dlls/windows.gaming.input)
+ WINE_CONFIG_MAKEFILE(dlls/windows.gaming.input/tests)
++WINE_CONFIG_MAKEFILE(dlls/windows.gaming.ui.gamebar)
++WINE_CONFIG_MAKEFILE(dlls/windows.gaming.ui.gamebar/tests)
+ WINE_CONFIG_MAKEFILE(dlls/windows.globalization)
+ WINE_CONFIG_MAKEFILE(dlls/windows.globalization/tests)
+ WINE_CONFIG_MAKEFILE(dlls/windows.media.devices)
+diff --git a/dlls/advapi32/advapi.c b/dlls/advapi32/advapi.c
+index 6497ea22f4e..f7d6e973252 100644
+--- a/dlls/advapi32/advapi.c
++++ b/dlls/advapi32/advapi.c
+@@ -32,6 +32,7 @@
+ #include "winerror.h"
+ #include "wincred.h"
+ #include "wct.h"
++#include "perflib.h"
  
- my $update_flags = 0;
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/configure b/configure
-index b9b57c0d509..24f958073a0 100755
---- wine/configure
-+++ wine/configure
-@@ -950,6 +950,7 @@ enable_amstream
- enable_apisetschema
- enable_apphelp
- enable_appwiz_cpl
-+enable_api_ms_win_core_psm_appnotify_l1_1_0
- enable_api_ms_win_power_base_l1_1_0
- enable_atl
- enable_atl100
-@@ -21777,6 +21778,7 @@ wine_fn_config_makefile dlls/apisetschema enable_apisetschema
- wine_fn_config_makefile dlls/apphelp enable_apphelp
- wine_fn_config_makefile dlls/apphelp/tests enable_tests
- wine_fn_config_makefile dlls/appwiz.cpl enable_appwiz_cpl
-+wine_fn_config_makefile dlls/api-ms-win-core-psm-appnotify-l1-1-0 enable_api_ms_win_core_psm_appnotify_l1_1_0
- wine_fn_config_makefile dlls/api-ms-win-power-base-l1-1-0 enable_api_ms_win_power_base_l1_1_0
- wine_fn_config_makefile dlls/atl enable_atl
- wine_fn_config_makefile dlls/atl/tests enable_tests
+ #include "wine/debug.h"
+ 
+@@ -334,3 +335,50 @@ BOOL WINAPI GetThreadWaitChain(HWCT handle, DWORD_PTR ctx, DWORD flags, DWORD th
+     SetLastError(ERROR_NOT_SUPPORTED);
+     return FALSE;
+ }
++
++ULONG WINAPI PerfCloseQueryHandle( HANDLE query )
++{
++    FIXME( "query %p stub.\n", query );
++
++    return ERROR_SUCCESS;
++}
++
++ULONG WINAPI PerfOpenQueryHandle( const WCHAR *machine, HANDLE *query )
++{
++    FIXME( "machine %s, query %p.\n", debugstr_w(machine), query );
++
++    if (!query) return ERROR_INVALID_PARAMETER;
++    *query = (HANDLE)0xdeadbeef;
++
++    return ERROR_SUCCESS;
++}
++
++ULONG WINAPI PerfAddCounters( HANDLE query, PERF_COUNTER_IDENTIFIER *id, DWORD size )
++{
++    FIXME( "query %p, id %p, size %lu stub.\n", query, id, size );
++
++    if (!id || size < sizeof(*id) || id->Size < sizeof(*id)) return ERROR_INVALID_PARAMETER;
++
++    id->Status = ERROR_WMI_GUID_NOT_FOUND;
++    return ERROR_SUCCESS;
++}
++
++ULONG WINAPI PerfQueryCounterData( HANDLE query, PERF_DATA_HEADER *data, DWORD data_size, DWORD *size_needed )
++{
++    FIXME( "query %p, data %p, data_size %lu, size_needed %p stub.\n", query, data, data_size, size_needed );
++
++    if (!size_needed) return ERROR_INVALID_PARAMETER;
++
++    *size_needed = sizeof(PERF_DATA_HEADER);
++
++    if (!data || data_size < sizeof(PERF_DATA_HEADER)) return ERROR_NOT_ENOUGH_MEMORY;
++
++    data->dwTotalSize = sizeof(PERF_DATA_HEADER);
++    data->dwNumCounters = 0;
++    QueryPerformanceCounter( (LARGE_INTEGER *)&data->PerfTimeStamp );
++    QueryPerformanceFrequency( (LARGE_INTEGER *)&data->PerfFreq );
++    GetSystemTimeAsFileTime( (FILETIME *)&data->PerfTime100NSec );
++    FileTimeToSystemTime( (FILETIME *)&data->PerfTime100NSec, &data->SystemTime );
++
++    return ERROR_SUCCESS;
++}
+diff --git a/dlls/advapi32/advapi32.spec b/dlls/advapi32/advapi32.spec
+index 3b5f587d40e..1c3f59bb7ee 100644
+--- a/dlls/advapi32/advapi32.spec
++++ b/dlls/advapi32/advapi32.spec
+@@ -553,8 +553,8 @@
+ @ stdcall -ret64 -import OpenTraceW(ptr)
+ # @ stub OperationEnd
+ # @ stub OperationStart
+-# @ stub PerfAddCounters
+-# @ stub PerfCloseQueryHandle
++@ stdcall PerfAddCounters(long ptr long)
++@ stdcall PerfCloseQueryHandle(long)
+ @ stdcall -import PerfCreateInstance(long ptr wstr long)
+ # @ stub PerfDecrementULongCounterValue
+ # @ stub PerfDecrementULongLongCounterValue
+@@ -564,8 +564,8 @@
+ # @ stub PerfEnumerateCounterSetInstances
+ # @ stub PerfIncrementULongCounterValue
+ # @ stub PerfIncrementULongLongCounterValue
+-# @ stub PerfOpenQueryHandle
+-# @ stub PerfQueryCounterData
++@ stdcall PerfOpenQueryHandle(wstr ptr)
++@ stdcall PerfQueryCounterData(long ptr long ptr)
+ # @ stub PerfQueryCounterInfo
+ # @ stub PerfQueryCounterSetRegistrationInfo
+ # @ stub PerfQueryInstance
+diff --git a/dlls/advapi32/tests/perf.c b/dlls/advapi32/tests/perf.c
+index fc07a09d327..34b6e952842 100644
+--- a/dlls/advapi32/tests/perf.c
++++ b/dlls/advapi32/tests/perf.c
+@@ -25,9 +25,31 @@
+ #include "winerror.h"
+ #include "perflib.h"
+ #include "winperf.h"
++#include "winternl.h"
+ 
+ #include "wine/test.h"
+ 
++#include "initguid.h"
++
++#define DEFINE_FUNCTION(name) static typeof(name) *p##name;
++DEFINE_FUNCTION(PerfCloseQueryHandle);
++DEFINE_FUNCTION(PerfOpenQueryHandle);
++DEFINE_FUNCTION(PerfAddCounters);
++DEFINE_FUNCTION(PerfQueryCounterData);
++#undef DEFINE_FUNCTION
++
++static void init_functions(void)
++{
++    HANDLE hadvapi = GetModuleHandleA("advapi32.dll");
++
++#define GET_FUNCTION(name) p##name = (void *)GetProcAddress(hadvapi, #name)
++    GET_FUNCTION(PerfCloseQueryHandle);
++    GET_FUNCTION(PerfOpenQueryHandle);
++    GET_FUNCTION(PerfAddCounters);
++    GET_FUNCTION(PerfQueryCounterData);
++#undef GET_FUNCTION
++}
++
+ static ULONG WINAPI test_provider_callback(ULONG code, void *buffer, ULONG size)
+ {
+     ok(0, "Provider callback called.\n");
+@@ -188,7 +210,94 @@ void test_provider_init(void)
+     ok(!ret, "Got unexpected ret %lu.\n", ret);
+ }
+ 
++DEFINE_GUID(TestCounterGUID, 0x12345678, 0x1234, 0x5678, 0x12, 0x34, 0x11, 0x11, 0x22, 0x22, 0x33, 0x33);
++
++static ULONG64 trunc_nttime_ms(ULONG64 t)
++{
++    return (t / 10000) * 10000;
++}
++
++static void test_perf_counters(void)
++{
++    LARGE_INTEGER freq, qpc1, qpc2, nttime1, nttime2, systime;
++    char buffer[sizeof(PERF_COUNTER_IDENTIFIER) + 8];
++    PERF_COUNTER_IDENTIFIER *counter_id;
++    PERF_DATA_HEADER dh;
++    HANDLE query;
++    DWORD size;
++    ULONG ret;
++
++    if (!pPerfOpenQueryHandle)
++    {
++        win_skip("PerfOpenQueryHandle not found.\n");
++        return;
++    }
++
++    ret = pPerfOpenQueryHandle(NULL, NULL);
++    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
++    ret = pPerfOpenQueryHandle(NULL, &query);
++    ok(!ret, "got ret %lu.\n", ret);
++
++    counter_id = (PERF_COUNTER_IDENTIFIER *)buffer;
++    memset(buffer, 0, sizeof(buffer));
++
++    counter_id->CounterSetGuid = TestCounterGUID;
++    counter_id->CounterId = PERF_WILDCARD_COUNTER;
++    counter_id->InstanceId = PERF_WILDCARD_COUNTER;
++
++    ret = pPerfAddCounters(query, counter_id, sizeof(*counter_id));
++    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
++
++    counter_id->Size = sizeof(*counter_id);
++    ret = pPerfAddCounters(query, counter_id, 8);
++    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
++    ret = pPerfAddCounters(query, counter_id, sizeof(*counter_id));
++    ok(!ret, "got ret %lu.\n", ret);
++    ok(counter_id->Status == ERROR_WMI_GUID_NOT_FOUND, "got Status %#lx.\n", counter_id->Status);
++
++    ret = pPerfQueryCounterData(query, NULL, 0, NULL);
++    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
++
++    size = 0xdeadbeef;
++    ret = pPerfQueryCounterData(query, NULL, 0, &size);
++    ok(ret == ERROR_NOT_ENOUGH_MEMORY, "got ret %lu.\n", ret);
++    ok(size == sizeof(dh), "got size %lu.\n", size);
++
++    ret = pPerfQueryCounterData(query, &dh, sizeof(dh), NULL);
++    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
++
++    QueryPerformanceFrequency(&freq);
++    QueryPerformanceCounter(&qpc1);
++    NtQuerySystemTime(&nttime1);
++
++    size = 0xdeadbeef;
++    ret = pPerfQueryCounterData(query, &dh, sizeof(dh), &size);
++    QueryPerformanceCounter(&qpc2);
++    NtQuerySystemTime(&nttime2);
++    SystemTimeToFileTime(&dh.SystemTime, (FILETIME *)&systime);
++    ok(!ret, "got ret %lu.\n", ret);
++    ok(size == sizeof(dh), "got size %lu.\n", size);
++    ok(dh.dwTotalSize == sizeof(dh), "got dwTotalSize %lu.\n", dh.dwTotalSize);
++    ok(!dh.dwNumCounters, "got dwNumCounters %lu.\n", dh.dwNumCounters);
++    ok(dh.PerfFreq == freq.QuadPart, "got PerfFreq %I64u.\n", dh.PerfFreq);
++    ok(dh.PerfTimeStamp >= qpc1.QuadPart && dh.PerfTimeStamp <= qpc2.QuadPart,
++            "got PerfTimeStamp %I64u, qpc1 %I64u, qpc2 %I64u.\n",
++            dh.PerfTimeStamp, qpc1.QuadPart, qpc2.QuadPart);
++    ok(dh.PerfTime100NSec >= nttime1.QuadPart && dh.PerfTime100NSec <= nttime2.QuadPart,
++            "got PerfTime100NSec %I64u, nttime1 %I64u, nttime2 %I64u.\n",
++            dh.PerfTime100NSec, nttime1.QuadPart, nttime2.QuadPart);
++    ok(systime.QuadPart >= trunc_nttime_ms(nttime1.QuadPart) && systime.QuadPart <= trunc_nttime_ms(nttime2.QuadPart),
++            "got systime %I64u, nttime1 %I64u, nttime2 %I64u, %d.\n",
++            systime.QuadPart, nttime1.QuadPart, nttime2.QuadPart, dh.SystemTime.wMilliseconds);
++
++    ret = pPerfCloseQueryHandle(query);
++    ok(!ret, "got ret %lu.\n", ret);
++}
++
+ START_TEST(perf)
+ {
++    init_functions();
++
+     test_provider_init();
++    test_perf_counters();
+ }
+diff --git a/dlls/advapi32/tests/security.c b/dlls/advapi32/tests/security.c
+index 135a45f7727..83b84d392c7 100644
+--- a/dlls/advapi32/tests/security.c
++++ b/dlls/advapi32/tests/security.c
+@@ -1898,6 +1898,9 @@ static void test_token_attr(void)
+                 /* S-1-5-5-0-XXXXXX */
+                 ret = IsWellKnownSid(Groups->Groups[0].Sid, WinLogonIdsSid);
+                 ok(ret, "Unknown SID\n");
++                
++                ok(Groups->Groups[0].Attributes == (SE_GROUP_MANDATORY | SE_GROUP_ENABLED_BY_DEFAULT | SE_GROUP_ENABLED | SE_GROUP_LOGON_ID),
++                    "got %lx\n", Groups->Groups[0].Attributes);
+             }
+         }
+ 
 diff --git a/dlls/api-ms-win-core-psm-appnotify-l1-1-0/Makefile.in b/dlls/api-ms-win-core-psm-appnotify-l1-1-0/Makefile.in
 new file mode 100644
 index 00000000000..8a3d2ad98cb
 --- /dev/null
-+++ wine/dlls/api-ms-win-core-psm-appnotify-l1-1-0/Makefile.in
++++ b/dlls/api-ms-win-core-psm-appnotify-l1-1-0/Makefile.in
 @@ -0,0 +1 @@
 +MODULE    = api-ms-win-core-psm-appnotify-l1-1-0.dll
 diff --git a/dlls/api-ms-win-core-psm-appnotify-l1-1-0/api-ms-win-core-psm-appnotify-l1-1-0.spec b/dlls/api-ms-win-core-psm-appnotify-l1-1-0/api-ms-win-core-psm-appnotify-l1-1-0.spec
 new file mode 100644
 index 00000000000..8b069d66e62
 --- /dev/null
-+++ wine/dlls/api-ms-win-core-psm-appnotify-l1-1-0/api-ms-win-core-psm-appnotify-l1-1-0.spec
++++ b/dlls/api-ms-win-core-psm-appnotify-l1-1-0/api-ms-win-core-psm-appnotify-l1-1-0.spec
 @@ -0,0 +1,2 @@
 +@ stub RegisterAppStateChangeNotification
 +@ stub UnregisterAppStateChangeNotification
--- 
-2.39.2 (Apple Git-144)
-
+diff --git a/dlls/api-ms-win-power-base-l1-1-0/Makefile.in b/dlls/api-ms-win-power-base-l1-1-0/Makefile.in
+new file mode 100644
+index 00000000000..8b26d4be82f
+--- /dev/null
++++ b/dlls/api-ms-win-power-base-l1-1-0/Makefile.in
+@@ -0,0 +1 @@
++MODULE    = api-ms-win-power-base-l1-1-0.dll
+diff --git a/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec b/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec
+new file mode 100644
+index 00000000000..dd056946ac6
+--- /dev/null
++++ b/dlls/api-ms-win-power-base-l1-1-0/api-ms-win-power-base-l1-1-0.spec
+@@ -0,0 +1,5 @@
++@ stdcall CallNtPowerInformation(long ptr long ptr long) powrprof.CallNtPowerInformation
++@ stdcall GetPwrCapabilities(ptr) powrprof.GetPwrCapabilities
++@ stdcall PowerDeterminePlatformRoleEx(long) powrprof.PowerDeterminePlatformRoleEx
++@ stdcall PowerRegisterSuspendResumeNotification(long ptr ptr) powrprof.PowerRegisterSuspendResumeNotification
++@ stub PowerUnregisterSuspendResumeNotification
+diff --git a/dlls/atiadlxx/Makefile.in b/dlls/atiadlxx/Makefile.in
+new file mode 100644
+index 00000000000..fd9b8abf626
+--- /dev/null
++++ b/dlls/atiadlxx/Makefile.in
+@@ -0,0 +1,8 @@
++EXTRADEFS = -DWINE_NO_LONG_TYPES
++MODULE = atiadlxx.dll
++IMPORTS = dxgi
++
++EXTRADLLFLAGS = -mno-cygwin -Wb,--prefer-native
++
++C_SRCS = \
++	atiadlxx_main.c
+diff --git a/dlls/atiadlxx/atiadlxx.spec b/dlls/atiadlxx/atiadlxx.spec
+new file mode 100644
+index 00000000000..222fb744c57
+--- /dev/null
++++ b/dlls/atiadlxx/atiadlxx.spec
+@@ -0,0 +1,1138 @@
++@ stub ADL2_ADC_CurrentProfileFromDrv_Get
++@ stub ADL2_ADC_Display_AdapterDeviceProfileEx_Get
++@ stub ADL2_ADC_DrvDataToProfile_Copy
++@ stub ADL2_ADC_FindClosestMode_Get
++@ stub ADL2_ADC_IsDevModeEqual_Get
++@ stub ADL2_ADC_Profile_Apply
++@ stub ADL2_APO_AudioDelayAdjustmentInfo_Get
++@ stub ADL2_APO_AudioDelay_Restore
++@ stub ADL2_APO_AudioDelay_Set
++@ stub ADL2_AdapterLimitation_Caps
++@ stub ADL2_AdapterX2_Caps
++@ stub ADL2_Adapter_AMDAndNonAMDDIsplayClone_Get
++@ stdcall ADL2_Adapter_ASICFamilyType_Get(long long ptr ptr)
++@ stub ADL2_Adapter_ASICInfo_Get
++@ stub ADL2_Adapter_Accessibility_Get
++@ stub ADL2_Adapter_AceDefaults_Restore
++@ stub ADL2_Adapter_Active_Get
++@ stub ADL2_Adapter_Active_Set
++@ stub ADL2_Adapter_Active_SetPrefer
++@ stdcall ADL2_Adapter_AdapterInfoX2_Get(long ptr)
++@ stub ADL2_Adapter_AdapterInfoX3_Get
++@ stdcall ADL2_Adapter_AdapterInfoX4_Get(long long ptr ptr)
++@ stdcall ADL2_Adapter_AdapterInfo_Get(long ptr long)
++@ stub ADL2_Adapter_AdapterList_Disable
++@ stub ADL2_Adapter_AdapterLocationPath_Get
++@ stub ADL2_Adapter_Aspects_Get
++@ stub ADL2_Adapter_AudioChannelSplitConfiguration_Get
++@ stub ADL2_Adapter_AudioChannelSplit_Disable
++@ stub ADL2_Adapter_AudioChannelSplit_Enable
++@ stub ADL2_Adapter_BigSw_Info_Get
++@ stub ADL2_Adapter_BlackAndWhiteLevelSupport_Get
++@ stub ADL2_Adapter_BlackAndWhiteLevel_Get
++@ stub ADL2_Adapter_BlackAndWhiteLevel_Set
++@ stub ADL2_Adapter_BoardLayout_Get
++@ stub ADL2_Adapter_Caps
++@ stub ADL2_Adapter_ChipSetInfo_Get
++@ stub ADL2_Adapter_CloneTypes_Get
++@ stub ADL2_Adapter_ConfigMemory_Cap
++@ stub ADL2_Adapter_ConfigMemory_Get
++@ stub ADL2_Adapter_ConfigureState_Get
++@ stub ADL2_Adapter_ConnectionData_Get
++@ stub ADL2_Adapter_ConnectionData_Remove
++@ stub ADL2_Adapter_ConnectionData_Set
++@ stub ADL2_Adapter_ConnectionState_Get
++@ stub ADL2_Adapter_CrossDisplayPlatformInfo_Get
++@ stub ADL2_Adapter_CrossGPUClone_Disable
++@ stub ADL2_Adapter_CrossdisplayAdapterRole_Caps
++@ stub ADL2_Adapter_CrossdisplayInfoX2_Set
++@ stub ADL2_Adapter_CrossdisplayInfo_Get
++@ stub ADL2_Adapter_CrossdisplayInfo_Set
++@ stub ADL2_Adapter_CrossfireX2_Get
++@ stub ADL2_Adapter_Crossfire_Caps
++@ stub ADL2_Adapter_Crossfire_Get
++@ stub ADL2_Adapter_Crossfire_Set
++@ stub ADL2_Adapter_DefaultAudioChannelTable_Load
++@ stub ADL2_Adapter_Desktop_Caps
++@ stub ADL2_Adapter_Desktop_SupportedSLSGridTypes_Get
++@ stub ADL2_Adapter_DeviceID_Get
++@ stub ADL2_Adapter_DisplayAudioEndpoint_Enable
++@ stub ADL2_Adapter_DisplayAudioEndpoint_Mute
++@ stub ADL2_Adapter_DisplayAudioInfo_Get
++@ stub ADL2_Adapter_DisplayGTCCaps_Get
++@ stub ADL2_Adapter_Display_Caps
++@ stub ADL2_Adapter_DriverSettings_Get
++@ stub ADL2_Adapter_DriverSettings_Set
++@ stub ADL2_Adapter_ECC_ErrorInjection_Set
++@ stub ADL2_Adapter_ECC_ErrorRecords_Get
++@ stub ADL2_Adapter_EDC_ErrorInjection_Set
++@ stub ADL2_Adapter_EDC_ErrorRecords_Get
++@ stub ADL2_Adapter_EDIDManagement_Caps
++@ stub ADL2_Adapter_EmulationMode_Set
++@ stub ADL2_Adapter_ExtInfo_Get
++@ stub ADL2_Adapter_Feature_Caps
++@ stub ADL2_Adapter_FrameMetrics_Caps
++@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Disable
++@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Enable
++@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Get
++@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Start
++@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Stop
++@ stub ADL2_Adapter_FrameMetrics_Get
++@ stub ADL2_Adapter_FrameMetrics_Start
++@ stub ADL2_Adapter_FrameMetrics_Stop
++@ stub ADL2_Adapter_Gamma_Get
++@ stub ADL2_Adapter_Gamma_Set
++@ stdcall ADL2_Adapter_Graphic_Core_Info_Get(ptr long ptr)
++@ stub ADL2_Adapter_HBC_Caps
++@ stub ADL2_Adapter_HBM_ECC_UC_Check
++@ stub ADL2_Adapter_Headless_Get
++@ stub ADL2_Adapter_ID_Get
++@ stub ADL2_Adapter_IsGamingDriver_Info_Get
++@ stub ADL2_Adapter_LocalDisplayConfig_Get
++@ stub ADL2_Adapter_LocalDisplayConfig_Set
++@ stub ADL2_Adapter_LocalDisplayState_Get
++@ stub ADL2_Adapter_MVPU_Set
++@ stub ADL2_Adapter_MaxCursorSize_Get
++@ stdcall ADL2_Adapter_MemoryInfo2_Get(long long ptr)
++@ stdcall ADL2_Adapter_MemoryInfo_Get(ptr long ptr)
++@ stub ADL2_Adapter_MirabilisSupport_Get
++@ stub ADL2_Adapter_ModeSwitch
++@ stub ADL2_Adapter_ModeTimingOverride_Caps
++@ stub ADL2_Adapter_Modes_ReEnumerate
++@ stub ADL2_Adapter_NumberOfActivatableSources_Get
++@ stdcall ADL2_Adapter_NumberOfAdapters_Get(ptr ptr)
++@ stub ADL2_Adapter_ObservedClockInfo_Get
++@ stub ADL2_Adapter_PMLog_Start
++@ stub ADL2_Adapter_PMLog_Stop
++@ stub ADL2_Adapter_PMLog_Support_Get
++@ stub ADL2_Adapter_PreFlipPostProcessing_Disable
++@ stub ADL2_Adapter_PreFlipPostProcessing_Enable
++@ stub ADL2_Adapter_PreFlipPostProcessing_Get_Status
++@ stub ADL2_Adapter_PreFlipPostProcessing_Select_LUT_Algorithm
++@ stub ADL2_Adapter_PreFlipPostProcessing_Select_LUT_Buffer
++@ stub ADL2_Adapter_PreFlipPostProcessing_Unselect_LUT_Buffer
++@ stub ADL2_Adapter_Primary_Get
++@ stub ADL2_Adapter_Primary_Set
++@ stub ADL2_Adapter_RAS_ErrorInjection_Set
++@ stub ADL2_Adapter_RegValueInt_Get
++@ stub ADL2_Adapter_RegValueInt_Set
++@ stub ADL2_Adapter_RegValueString_Get
++@ stub ADL2_Adapter_RegValueString_Set
++@ stub ADL2_Adapter_SWInfo_Get
++@ stub ADL2_Adapter_Speed_Caps
++@ stub ADL2_Adapter_Speed_Get
++@ stub ADL2_Adapter_Speed_Set
++@ stub ADL2_Adapter_SupportedConnections_Get
++@ stub ADL2_Adapter_TRNG_Get
++@ stub ADL2_Adapter_Tear_Free_Cap
++@ stub ADL2_Adapter_VRAMUsage_Get
++@ stub ADL2_Adapter_VariBrightEnable_Set
++@ stub ADL2_Adapter_VariBrightLevel_Get
++@ stub ADL2_Adapter_VariBrightLevel_Set
++@ stub ADL2_Adapter_VariBright_Caps
++@ stub ADL2_Adapter_VerndorID_Int_get
++@ stub ADL2_Adapter_VideoBiosInfo_Get
++@ stub ADL2_Adapter_VideoTheaterModeInfo_Get
++@ stub ADL2_Adapter_VideoTheaterModeInfo_Set
++@ stub ADL2_Adapter_XConnectSupport_Get
++@ stub ADL2_ApplicationProfilesX2_AppInterceptionList_Set
++@ stub ADL2_ApplicationProfilesX2_AppStartStopInfo_Get
++@ stub ADL2_ApplicationProfiles_AppInterceptionList_Set
++@ stub ADL2_ApplicationProfiles_AppInterception_Set
++@ stub ADL2_ApplicationProfiles_AppStartStopInfo_Get
++@ stub ADL2_ApplicationProfiles_AppStartStop_Resume
++@ stub ADL2_ApplicationProfiles_Applications_Get
++@ stub ADL2_ApplicationProfiles_ConvertToCompact
++@ stub ADL2_ApplicationProfiles_DriverAreaPrivacy_Get
++@ stub ADL2_ApplicationProfiles_GetCustomization
++@ stub ADL2_ApplicationProfiles_HitListsX2_Get
++@ stub ADL2_ApplicationProfiles_HitListsX3_Get
++@ stub ADL2_ApplicationProfiles_HitLists_Get
++@ stub ADL2_ApplicationProfiles_ProfileApplicationX2_Assign
++@ stub ADL2_ApplicationProfiles_ProfileApplication_Assign
++@ stub ADL2_ApplicationProfiles_ProfileOfAnApplicationX2_Search
++@ stub ADL2_ApplicationProfiles_ProfileOfAnApplication_InMemorySearch
++@ stub ADL2_ApplicationProfiles_ProfileOfAnApplication_Search
++@ stub ADL2_ApplicationProfiles_Profile_Create
++@ stub ADL2_ApplicationProfiles_Profile_Exist
++@ stub ADL2_ApplicationProfiles_Profile_Remove
++@ stub ADL2_ApplicationProfiles_PropertyType_Get
++@ stub ADL2_ApplicationProfiles_Release_Get
++@ stub ADL2_ApplicationProfiles_RemoveApplication
++@ stub ADL2_ApplicationProfiles_StatusInfo_Get
++@ stub ADL2_ApplicationProfiles_System_Reload
++@ stub ADL2_ApplicationProfiles_User_Load
++@ stub ADL2_ApplicationProfiles_User_Unload
++@ stub ADL2_Audio_CurrentSampleRate_Get
++@ stub ADL2_AutoTuningResult_Get
++@ stub ADL2_BOOST_Settings_Get
++@ stub ADL2_BOOST_Settings_Set
++@ stub ADL2_Blockchain_BlockchainMode_Caps
++@ stub ADL2_Blockchain_BlockchainMode_Get
++@ stub ADL2_Blockchain_BlockchainMode_Set
++@ stub ADL2_Blockchain_Hashrate_Set
++@ stub ADL2_CDS_UnsafeMode_Set
++@ stub ADL2_CHILL_SettingsX2_Get
++@ stub ADL2_CHILL_SettingsX2_Set
++@ stub ADL2_CV_DongleSettings_Get
++@ stub ADL2_CV_DongleSettings_Reset
++@ stub ADL2_CV_DongleSettings_Set
++@ stub ADL2_Chill_Caps_Get
++@ stub ADL2_Chill_Settings_Get
++@ stub ADL2_Chill_Settings_Notify
++@ stub ADL2_Chill_Settings_Set
++@ stub ADL2_CustomFan_Caps
++@ stub ADL2_CustomFan_Get
++@ stub ADL2_CustomFan_Set
++@ stub ADL2_DELAG_Settings_Get
++@ stub ADL2_DELAG_Settings_Set
++@ stub ADL2_DFP_AllowOnlyCETimings_Get
++@ stub ADL2_DFP_AllowOnlyCETimings_Set
++@ stub ADL2_DFP_BaseAudioSupport_Get
++@ stub ADL2_DFP_GPUScalingEnable_Get
++@ stub ADL2_DFP_GPUScalingEnable_Set
++@ stub ADL2_DFP_HDMISupport_Get
++@ stub ADL2_DFP_MVPUAnalogSupport_Get
++@ stub ADL2_DFP_PixelFormat_Caps
++@ stub ADL2_DFP_PixelFormat_Get
++@ stub ADL2_DFP_PixelFormat_Set
++@ stub ADL2_DVRSupport_Get
++@ stub ADL2_Desktop_DOPP_Enable
++@ stub ADL2_Desktop_DOPP_EnableX2
++@ stub ADL2_Desktop_Detach
++@ stub ADL2_Desktop_Device_Create
++@ stub ADL2_Desktop_Device_Destroy
++@ stub ADL2_Desktop_ExclusiveModeX2_Get
++@ stub ADL2_Desktop_HardwareCursor_SetBitmap
++@ stub ADL2_Desktop_HardwareCursor_SetPosition
++@ stub ADL2_Desktop_HardwareCursor_Toggle
++@ stub ADL2_Desktop_PFPAComplete_Set
++@ stub ADL2_Desktop_PFPAState_Get
++@ stub ADL2_Desktop_PrimaryInfo_Get
++@ stub ADL2_Desktop_TextureState_Get
++@ stub ADL2_Desktop_Texture_Enable
++@ stub ADL2_Device_PMLog_Device_Create
++@ stub ADL2_Device_PMLog_Device_Destroy
++@ stub ADL2_DisplayScaling_Set
++@ stub ADL2_Display_AdapterID_Get
++@ stub ADL2_Display_AdjustCaps_Get
++@ stub ADL2_Display_AdjustmentCoherent_Get
++@ stub ADL2_Display_AdjustmentCoherent_Set
++@ stub ADL2_Display_AudioMappingInfo_Get
++@ stub ADL2_Display_AvivoColor_Get
++@ stub ADL2_Display_AvivoCurrentColor_Set
++@ stub ADL2_Display_AvivoDefaultColor_Set
++@ stub ADL2_Display_BackLight_Get
++@ stub ADL2_Display_BackLight_Set
++@ stub ADL2_Display_BezelOffsetSteppingSize_Get
++@ stub ADL2_Display_BezelOffset_Set
++@ stub ADL2_Display_BezelSupported_Validate
++@ stub ADL2_Display_Capabilities_Get
++@ stub ADL2_Display_ColorCaps_Get
++@ stub ADL2_Display_ColorDepth_Get
++@ stub ADL2_Display_ColorDepth_Set
++@ stub ADL2_Display_ColorTemperatureSourceDefault_Get
++@ stub ADL2_Display_ColorTemperatureSource_Get
++@ stub ADL2_Display_ColorTemperatureSource_Set
++@ stub ADL2_Display_Color_Get
++@ stub ADL2_Display_Color_Set
++@ stub ADL2_Display_ConnectedDisplays_Get
++@ stub ADL2_Display_ContainerID_Get
++@ stub ADL2_Display_ControllerOverlayAdjustmentCaps_Get
++@ stub ADL2_Display_ControllerOverlayAdjustmentData_Get
++@ stub ADL2_Display_ControllerOverlayAdjustmentData_Set
++@ stub ADL2_Display_CustomizedModeListNum_Get
++@ stub ADL2_Display_CustomizedModeList_Get
++@ stub ADL2_Display_CustomizedMode_Add
++@ stub ADL2_Display_CustomizedMode_Delete
++@ stub ADL2_Display_CustomizedMode_Validate
++@ stub ADL2_Display_DCE_Get
++@ stub ADL2_Display_DCE_Set
++@ stub ADL2_Display_DDCBlockAccess_Get
++@ stdcall ADL2_Display_DDCInfo2_Get(ptr long long ptr)
++@ stub ADL2_Display_DDCInfo_Get
++@ stub ADL2_Display_Deflicker_Get
++@ stub ADL2_Display_Deflicker_Set
++@ stub ADL2_Display_DeviceConfig_Get
++@ stub ADL2_Display_DisplayContent_Cap
++@ stub ADL2_Display_DisplayContent_Get
++@ stub ADL2_Display_DisplayContent_Set
++@ stdcall ADL2_Display_DisplayInfo_Get(ptr long ptr ptr long)
++@ stub ADL2_Display_DisplayMapConfigX2_Set
++@ stdcall ADL2_Display_DisplayMapConfig_Get(ptr long ptr ptr ptr ptr long)
++@ stub ADL2_Display_DisplayMapConfig_PossibleAddAndRemove
++@ stub ADL2_Display_DisplayMapConfig_Set
++@ stub ADL2_Display_DisplayMapConfig_Validate
++@ stub ADL2_Display_DitherState_Get
++@ stub ADL2_Display_DitherState_Set
++@ stub ADL2_Display_Downscaling_Caps
++@ stub ADL2_Display_DpMstAuxMsg_Get
++@ stub ADL2_Display_DpMstInfo_Get
++@ stub ADL2_Display_DummyVirtual_Destroy
++@ stub ADL2_Display_DummyVirtual_Get
++@ stub ADL2_Display_EdidData_Get
++@ stub ADL2_Display_EdidData_Set
++@ stub ADL2_Display_EnumDisplays_Get
++@ stub ADL2_Display_FilterSVideo_Get
++@ stub ADL2_Display_FilterSVideo_Set
++@ stub ADL2_Display_ForcibleDisplay_Get
++@ stub ADL2_Display_ForcibleDisplay_Set
++@ stub ADL2_Display_FormatsOverride_Get
++@ stub ADL2_Display_FormatsOverride_Set
++@ stub ADL2_Display_FreeSyncState_Get
++@ stub ADL2_Display_FreeSyncState_Set
++@ stdcall ADL2_Display_FreeSync_Cap(ptr long long ptr)
++@ stub ADL2_Display_GamutMapping_Get
++@ stub ADL2_Display_GamutMapping_Reset
++@ stub ADL2_Display_GamutMapping_Set
++@ stub ADL2_Display_Gamut_Caps
++@ stub ADL2_Display_Gamut_Get
++@ stub ADL2_Display_Gamut_Set
++@ stub ADL2_Display_HDCP_Get
++@ stub ADL2_Display_HDCP_Set
++@ stub ADL2_Display_HDRState_Get
++@ stub ADL2_Display_HDRState_Set
++@ stub ADL2_Display_ImageExpansion_Get
++@ stub ADL2_Display_ImageExpansion_Set
++@ stub ADL2_Display_InfoPacket_Get
++@ stub ADL2_Display_InfoPacket_Set
++@ stub ADL2_Display_IsVirtual_Get
++@ stub ADL2_Display_LCDRefreshRateCapability_Get
++@ stub ADL2_Display_LCDRefreshRateOptions_Get
++@ stub ADL2_Display_LCDRefreshRateOptions_Set
++@ stub ADL2_Display_LCDRefreshRate_Get
++@ stub ADL2_Display_LCDRefreshRate_Set
++@ stub ADL2_Display_Limits_Get
++@ stub ADL2_Display_MVPUCaps_Get
++@ stub ADL2_Display_MVPUStatus_Get
++@ stub ADL2_Display_ModeTimingOverrideInfo_Get
++@ stub ADL2_Display_ModeTimingOverrideListX2_Get
++@ stub ADL2_Display_ModeTimingOverrideListX3_Get
++@ stub ADL2_Display_ModeTimingOverrideList_Get
++@ stub ADL2_Display_ModeTimingOverrideX2_Get
++@ stub ADL2_Display_ModeTimingOverrideX2_Set
++@ stub ADL2_Display_ModeTimingOverrideX3_Get
++@ stub ADL2_Display_ModeTimingOverride_Delete
++@ stub ADL2_Display_ModeTimingOverride_Get
++@ stub ADL2_Display_ModeTimingOverride_Set
++@ stdcall ADL2_Display_Modes_Get(ptr long long ptr ptr)
++@ stub ADL2_Display_Modes_Set
++@ stub ADL2_Display_Modes_X2_Get
++@ stub ADL2_Display_MonitorPowerState_Set
++@ stub ADL2_Display_NativeAUXChannel_Access
++@ stub ADL2_Display_NeedWorkaroundFor5Clone_Get
++@ stub ADL2_Display_NumberOfDisplays_Get
++@ stub ADL2_Display_ODClockConfig_Set
++@ stub ADL2_Display_ODClockInfo_Get
++@ stub ADL2_Display_Overlap_NotifyAdjustment
++@ stub ADL2_Display_Overlap_Set
++@ stub ADL2_Display_Overscan_Get
++@ stub ADL2_Display_Overscan_Set
++@ stub ADL2_Display_PixelFormatDefault_Get
++@ stub ADL2_Display_PixelFormat_Get
++@ stub ADL2_Display_PixelFormat_Set
++@ stub ADL2_Display_Position_Get
++@ stub ADL2_Display_Position_Set
++@ stub ADL2_Display_PossibleMapping_Get
++@ stub ADL2_Display_PossibleMode_Get
++@ stub ADL2_Display_PowerXpressActiveGPU_Get
++@ stub ADL2_Display_PowerXpressActiveGPU_Set
++@ stub ADL2_Display_PowerXpressActvieGPUR2_Get
++@ stub ADL2_Display_PowerXpressVersion_Get
++@ stub ADL2_Display_PowerXpress_AutoSwitchConfig_Get
++@ stub ADL2_Display_PowerXpress_AutoSwitchConfig_Set
++@ stub ADL2_Display_PreferredMode_Get
++@ stub ADL2_Display_PreservedAspectRatio_Get
++@ stub ADL2_Display_PreservedAspectRatio_Set
++@ stub ADL2_Display_Property_Get
++@ stub ADL2_Display_Property_Set
++@ stub ADL2_Display_RcDisplayAdjustment
++@ stub ADL2_Display_ReGammaCoefficients_Get
++@ stub ADL2_Display_ReGammaCoefficients_Set
++@ stub ADL2_Display_ReducedBlanking_Get
++@ stub ADL2_Display_ReducedBlanking_Set
++@ stub ADL2_Display_RegammaR1_Get
++@ stub ADL2_Display_RegammaR1_Set
++@ stub ADL2_Display_Regamma_Get
++@ stub ADL2_Display_Regamma_Set
++@ stub ADL2_Display_SLSBuilder_CommonMode_Get
++@ stub ADL2_Display_SLSBuilder_Create
++@ stub ADL2_Display_SLSBuilder_DisplaysCanBeNextCandidateInSLS_Get
++@ stub ADL2_Display_SLSBuilder_DisplaysCanBeNextCandidateToEnabled_Get
++@ stub ADL2_Display_SLSBuilder_Get
++@ stub ADL2_Display_SLSBuilder_IsActive_Notify
++@ stub ADL2_Display_SLSBuilder_MaxSLSLayoutSize_Get
++@ stub ADL2_Display_SLSBuilder_TimeOut_Get
++@ stub ADL2_Display_SLSBuilder_Update
++@ stub ADL2_Display_SLSGrid_Caps
++@ stub ADL2_Display_SLSMapConfigX2_Delete
++@ stub ADL2_Display_SLSMapConfigX2_Get
++@ stub ADL2_Display_SLSMapConfig_Create
++@ stub ADL2_Display_SLSMapConfig_Delete
++@ stub ADL2_Display_SLSMapConfig_Get
++@ stub ADL2_Display_SLSMapConfig_ImageCropType_Set
++@ stub ADL2_Display_SLSMapConfig_Rearrange
++@ stub ADL2_Display_SLSMapConfig_SetState
++@ stub ADL2_Display_SLSMapConfig_SupportedImageCropType_Get
++@ stub ADL2_Display_SLSMapConfig_Valid
++@ stub ADL2_Display_SLSMapIndexList_Get
++@ stub ADL2_Display_SLSMapIndex_Get
++@ stub ADL2_Display_SLSMiddleMode_Get
++@ stub ADL2_Display_SLSMiddleMode_Set
++@ stub ADL2_Display_SLSRecords_Get
++@ stub ADL2_Display_Sharpness_Caps
++@ stub ADL2_Display_Sharpness_Get
++@ stub ADL2_Display_Sharpness_Info_Get
++@ stub ADL2_Display_Sharpness_Set
++@ stub ADL2_Display_Size_Get
++@ stub ADL2_Display_Size_Set
++@ stub ADL2_Display_SourceContentAttribute_Get
++@ stub ADL2_Display_SourceContentAttribute_Set
++@ stub ADL2_Display_SplitDisplay_Caps
++@ stub ADL2_Display_SplitDisplay_Get
++@ stub ADL2_Display_SplitDisplay_RestoreDesktopConfiguration
++@ stub ADL2_Display_SplitDisplay_Set
++@ stub ADL2_Display_SupportedColorDepth_Get
++@ stub ADL2_Display_SupportedPixelFormat_Get
++@ stub ADL2_Display_SwitchingCapability_Get
++@ stub ADL2_Display_TVCaps_Get
++@ stub ADL2_Display_TargetTimingX2_Get
++@ stub ADL2_Display_TargetTiming_Get
++@ stub ADL2_Display_UnderScan_Auto_Get
++@ stub ADL2_Display_UnderScan_Auto_Set
++@ stub ADL2_Display_UnderscanState_Get
++@ stub ADL2_Display_UnderscanState_Set
++@ stub ADL2_Display_UnderscanSupport_Get
++@ stub ADL2_Display_Underscan_Get
++@ stub ADL2_Display_Underscan_Set
++@ stub ADL2_Display_Vector_Get
++@ stub ADL2_Display_ViewPort_Cap
++@ stub ADL2_Display_ViewPort_Get
++@ stub ADL2_Display_ViewPort_Set
++@ stub ADL2_Display_VirtualType_Get
++@ stub ADL2_Display_WriteAndReadI2C
++@ stub ADL2_Display_WriteAndReadI2CLargePayload
++@ stub ADL2_Display_WriteAndReadI2CRev_Get
++@ stub ADL2_ElmCompatibilityMode_Caps
++@ stub ADL2_ElmCompatibilityMode_Status_Get
++@ stub ADL2_ElmCompatibilityMode_Status_Set
++@ stub ADL2_ExclusiveModeGet
++@ stub ADL2_FPS_Caps
++@ stub ADL2_FPS_Settings_Get
++@ stub ADL2_FPS_Settings_Reset
++@ stub ADL2_FPS_Settings_Set
++@ stub ADL2_Feature_Settings_Get
++@ stub ADL2_Feature_Settings_Set
++@ stub ADL2_Flush_Driver_Data
++@ stub ADL2_GPUVMPageSize_Info_Get
++@ stub ADL2_GPUVMPageSize_Info_Set
++@ stub ADL2_GPUVerInfo_Get
++@ stub ADL2_GcnAsicInfo_Get
++@ stub ADL2_Graphics_IsDetachableGraphicsPlatform_Get
++@ stub ADL2_Graphics_IsGfx9AndAbove
++@ stub ADL2_Graphics_MantleVersion_Get
++@ stub ADL2_Graphics_Platform_Get
++@ stdcall ADL2_Graphics_VersionsX2_Get(ptr ptr)
++@ stub ADL2_Graphics_Versions_Get
++@ stub ADL2_Graphics_VulkanVersion_Get
++@ stub ADL2_HybridGraphicsGPU_Set
++@ stub ADL2_MGPUSLS_Status_Set
++@ stub ADL2_MMD_FeatureList_Get
++@ stub ADL2_MMD_FeatureValuesX2_Get
++@ stub ADL2_MMD_FeatureValuesX2_Set
++@ stub ADL2_MMD_FeatureValues_Get
++@ stub ADL2_MMD_FeatureValues_Set
++@ stub ADL2_MMD_FeaturesX2_Caps
++@ stub ADL2_MMD_Features_Caps
++@ stub ADL2_MMD_VideoAdjustInfo_Get
++@ stub ADL2_MMD_VideoAdjustInfo_Set
++@ stub ADL2_MMD_VideoColor_Caps
++@ stub ADL2_MMD_VideoColor_Get
++@ stub ADL2_MMD_VideoColor_Set
++@ stub ADL2_MMD_Video_Caps
++@ stub ADL2_Main_ControlX2_Create
++@ stdcall ADL2_Main_Control_Create(ptr long ptr)
++@ stdcall ADL2_Main_Control_Destroy()
++@ stub ADL2_Main_Control_GetProcAddress
++@ stub ADL2_Main_Control_IsFunctionValid
++@ stub ADL2_Main_Control_Refresh
++@ stub ADL2_Main_LogDebug_Set
++@ stub ADL2_Main_LogError_Set
++@ stub ADL2_New_QueryPMLogData_Get
++@ stub ADL2_Overdrive5_CurrentActivity_Get
++@ stub ADL2_Overdrive5_FanSpeedInfo_Get
++@ stub ADL2_Overdrive5_FanSpeedToDefault_Set
++@ stub ADL2_Overdrive5_FanSpeed_Get
++@ stub ADL2_Overdrive5_FanSpeed_Set
++@ stdcall ADL2_Overdrive5_ODParameters_Get(ptr long ptr)
++@ stub ADL2_Overdrive5_ODPerformanceLevels_Get
++@ stub ADL2_Overdrive5_ODPerformanceLevels_Set
++@ stub ADL2_Overdrive5_PowerControlAbsValue_Caps
++@ stub ADL2_Overdrive5_PowerControlAbsValue_Get
++@ stub ADL2_Overdrive5_PowerControlAbsValue_Set
++@ stub ADL2_Overdrive5_PowerControlInfo_Get
++@ stub ADL2_Overdrive5_PowerControl_Caps
++@ stub ADL2_Overdrive5_PowerControl_Get
++@ stub ADL2_Overdrive5_PowerControl_Set
++@ stub ADL2_Overdrive5_Temperature_Get
++@ stub ADL2_Overdrive5_ThermalDevices_Enum
++@ stub ADL2_Overdrive6_AdvancedFan_Caps
++@ stub ADL2_Overdrive6_CapabilitiesEx_Get
++@ stub ADL2_Overdrive6_Capabilities_Get
++@ stub ADL2_Overdrive6_ControlI2C
++@ stub ADL2_Overdrive6_CurrentPower_Get
++@ stub ADL2_Overdrive6_CurrentStatus_Get
++@ stub ADL2_Overdrive6_FanPWMLimitData_Get
++@ stub ADL2_Overdrive6_FanPWMLimitData_Set
++@ stub ADL2_Overdrive6_FanPWMLimitRangeInfo_Get
++@ stub ADL2_Overdrive6_FanSpeed_Get
++@ stub ADL2_Overdrive6_FanSpeed_Reset
++@ stub ADL2_Overdrive6_FanSpeed_Set
++@ stub ADL2_Overdrive6_FuzzyController_Caps
++@ stub ADL2_Overdrive6_MaxClockAdjust_Get
++@ stub ADL2_Overdrive6_PowerControlInfo_Get
++@ stub ADL2_Overdrive6_PowerControlInfo_Get_X2
++@ stub ADL2_Overdrive6_PowerControl_Caps
++@ stub ADL2_Overdrive6_PowerControl_Get
++@ stub ADL2_Overdrive6_PowerControl_Set
++@ stub ADL2_Overdrive6_StateEx_Get
++@ stub ADL2_Overdrive6_StateEx_Set
++@ stub ADL2_Overdrive6_StateInfo_Get
++@ stub ADL2_Overdrive6_State_Reset
++@ stub ADL2_Overdrive6_State_Set
++@ stub ADL2_Overdrive6_TargetTemperatureData_Get
++@ stub ADL2_Overdrive6_TargetTemperatureData_Set
++@ stub ADL2_Overdrive6_TargetTemperatureRangeInfo_Get
++@ stub ADL2_Overdrive6_TemperatureEx_Get
++@ stub ADL2_Overdrive6_Temperature_Get
++@ stub ADL2_Overdrive6_ThermalController_Caps
++@ stub ADL2_Overdrive6_ThermalLimitUnlock_Get
++@ stub ADL2_Overdrive6_ThermalLimitUnlock_Set
++@ stub ADL2_Overdrive6_VoltageControlInfo_Get
++@ stub ADL2_Overdrive6_VoltageControl_Get
++@ stub ADL2_Overdrive6_VoltageControl_Set
++@ stub ADL2_Overdrive8_Current_SettingX2_Get
++@ stub ADL2_Overdrive8_Current_SettingX3_Get
++@ stub ADL2_Overdrive8_Current_Setting_Get
++@ stub ADL2_Overdrive8_Init_SettingX2_Get
++@ stub ADL2_Overdrive8_Init_Setting_Get
++@ stub ADL2_Overdrive8_PMLogSenorRange_Caps
++@ stub ADL2_Overdrive8_PMLogSenorType_Support_Get
++@ stub ADL2_Overdrive8_PMLog_ShareMemory_Read
++@ stub ADL2_Overdrive8_PMLog_ShareMemory_Start
++@ stub ADL2_Overdrive8_PMLog_ShareMemory_Stop
++@ stub ADL2_Overdrive8_PMLog_ShareMemory_Support
++@ stub ADL2_Overdrive8_Setting_Set
++@ stub ADL2_OverdriveN_AutoWattman_Caps
++@ stub ADL2_OverdriveN_AutoWattman_Get
++@ stub ADL2_OverdriveN_AutoWattman_Set
++@ stub ADL2_OverdriveN_CapabilitiesX2_Get
++@ stub ADL2_OverdriveN_Capabilities_Get
++@ stub ADL2_OverdriveN_CountOfEvents_Get
++@ stub ADL2_OverdriveN_FanControl_Get
++@ stub ADL2_OverdriveN_FanControl_Set
++@ stub ADL2_OverdriveN_MemoryClocksX2_Get
++@ stub ADL2_OverdriveN_MemoryClocksX2_Set
++@ stub ADL2_OverdriveN_MemoryClocks_Get
++@ stub ADL2_OverdriveN_MemoryClocks_Set
++@ stub ADL2_OverdriveN_MemoryTimingLevel_Get
++@ stub ADL2_OverdriveN_MemoryTimingLevel_Set
++@ stub ADL2_OverdriveN_PerformanceStatus_Get
++@ stub ADL2_OverdriveN_PowerLimit_Get
++@ stub ADL2_OverdriveN_PowerLimit_Set
++@ stub ADL2_OverdriveN_SCLKAutoOverClock_Get
++@ stub ADL2_OverdriveN_SCLKAutoOverClock_Set
++@ stub ADL2_OverdriveN_SettingsExt_Get
++@ stub ADL2_OverdriveN_SettingsExt_Set
++@ stub ADL2_OverdriveN_SystemClocksX2_Get
++@ stub ADL2_OverdriveN_SystemClocksX2_Set
++@ stub ADL2_OverdriveN_SystemClocks_Get
++@ stub ADL2_OverdriveN_SystemClocks_Set
++@ stub ADL2_OverdriveN_Temperature_Get
++@ stub ADL2_OverdriveN_Test_Set
++@ stub ADL2_OverdriveN_ThrottleNotification_Get
++@ stub ADL2_OverdriveN_ZeroRPMFan_Get
++@ stub ADL2_OverdriveN_ZeroRPMFan_Set
++@ stdcall ADL2_Overdrive_Caps(ptr long ptr ptr ptr)
++@ stub ADL2_PPLogSettings_Get
++@ stub ADL2_PPLogSettings_Set
++@ stub ADL2_PPW_Caps
++@ stub ADL2_PPW_Status_Get
++@ stub ADL2_PPW_Status_Set
++@ stub ADL2_PageMigration_Settings_Get
++@ stub ADL2_PageMigration_Settings_Set
++@ stub ADL2_PerGPU_GDEvent_Register
++@ stub ADL2_PerGPU_GDEvent_UnRegister
++@ stub ADL2_PerfTuning_Status_Get
++@ stub ADL2_PerfTuning_Status_Set
++@ stub ADL2_PerformanceTuning_Caps
++@ stub ADL2_PowerStates_Get
++@ stub ADL2_PowerXpress_AncillaryDevices_Get
++@ stub ADL2_PowerXpress_Config_Caps
++@ stub ADL2_PowerXpress_Configuration_Get
++@ stub ADL2_PowerXpress_ExtendedBatteryMode_Caps
++@ stub ADL2_PowerXpress_ExtendedBatteryMode_Get
++@ stub ADL2_PowerXpress_ExtendedBatteryMode_Set
++@ stub ADL2_PowerXpress_LongIdleDetect_Get
++@ stub ADL2_PowerXpress_LongIdleDetect_Set
++@ stub ADL2_PowerXpress_PowerControlMode_Get
++@ stub ADL2_PowerXpress_PowerControlMode_Set
++@ stub ADL2_PowerXpress_Scheme_Get
++@ stub ADL2_PowerXpress_Scheme_Set
++@ stub ADL2_RIS_Settings_Get
++@ stub ADL2_RIS_Settings_Set
++@ stub ADL2_RegisterEvent
++@ stub ADL2_RegisterEventX2
++@ stub ADL2_Remap
++@ stub ADL2_RemoteDisplay_Destroy
++@ stub ADL2_RemoteDisplay_Display_Acquire
++@ stub ADL2_RemoteDisplay_Display_Release
++@ stub ADL2_RemoteDisplay_Display_Release_All
++@ stub ADL2_RemoteDisplay_Hdcp20_Create
++@ stub ADL2_RemoteDisplay_Hdcp20_Destroy
++@ stub ADL2_RemoteDisplay_Hdcp20_Notify
++@ stub ADL2_RemoteDisplay_Hdcp20_Process
++@ stub ADL2_RemoteDisplay_IEPort_Set
++@ stub ADL2_RemoteDisplay_Initialize
++@ stub ADL2_RemoteDisplay_Nofitiation_Register
++@ stub ADL2_RemoteDisplay_Notification_UnRegister
++@ stub ADL2_RemoteDisplay_Support_Caps
++@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_InUse_Get
++@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_Info_Get
++@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_RadioState_Get
++@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Change
++@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Get
++@ stub ADL2_RemoteDisplay_WFDDeviceInfo_Get
++@ stub ADL2_RemoteDisplay_WFDDeviceName_Change
++@ stub ADL2_RemoteDisplay_WFDDevice_StatusInfo_Get
++@ stub ADL2_RemoteDisplay_WFDDiscover_Start
++@ stub ADL2_RemoteDisplay_WFDDiscover_Stop
++@ stub ADL2_RemoteDisplay_WFDLink_Connect
++@ stub ADL2_RemoteDisplay_WFDLink_Creation_Accept
++@ stub ADL2_RemoteDisplay_WFDLink_Disconnect
++@ stub ADL2_RemoteDisplay_WFDLink_WPS_Process
++@ stub ADL2_RemoteDisplay_WFDWDSPSettings_Set
++@ stub ADL2_RemoteDisplay_WirelessDisplayEnableDisable_Commit
++@ stub ADL2_RemotePlay_ControlFlags_Set
++@ stub ADL2_ScreenPoint_AudioMappingInfo_Get
++@ stub ADL2_Send
++@ stub ADL2_SendX2
++@ stub ADL2_Stereo3D_2DPackedFormat_Set
++@ stub ADL2_Stereo3D_3DCursorOffset_Get
++@ stub ADL2_Stereo3D_3DCursorOffset_Set
++@ stub ADL2_Stereo3D_CurrentFormat_Get
++@ stub ADL2_Stereo3D_Info_Get
++@ stub ADL2_Stereo3D_Modes_Get
++@ stub ADL2_SwitchableGraphics_Applications_Get
++@ stub ADL2_TV_Standard_Get
++@ stub ADL2_TV_Standard_Set
++@ stub ADL2_TurboSyncSupport_Get
++@ stub ADL2_UnRegisterEvent
++@ stub ADL2_UnRegisterEventX2
++@ stub ADL2_User_Settings_Notify
++@ stub ADL2_WS_Overdrive_Caps
++@ stub ADL2_Win_IsHybridAI
++@ stub ADL2_Workstation_8BitGrayscale_Get
++@ stub ADL2_Workstation_8BitGrayscale_Set
++@ stub ADL2_Workstation_AdapterNumOfGLSyncConnectors_Get
++@ stub ADL2_Workstation_Caps
++@ stub ADL2_Workstation_DeepBitDepthX2_Get
++@ stub ADL2_Workstation_DeepBitDepthX2_Set
++@ stub ADL2_Workstation_DeepBitDepth_Get
++@ stub ADL2_Workstation_DeepBitDepth_Set
++@ stub ADL2_Workstation_DisplayGLSyncMode_Get
++@ stub ADL2_Workstation_DisplayGLSyncMode_Set
++@ stub ADL2_Workstation_DisplayGenlockCapable_Get
++@ stub ADL2_Workstation_ECCData_Get
++@ stub ADL2_Workstation_ECCX2_Get
++@ stub ADL2_Workstation_ECC_Caps
++@ stub ADL2_Workstation_ECC_Get
++@ stub ADL2_Workstation_ECC_Set
++@ stub ADL2_Workstation_GLSyncCounters_Get
++@ stub ADL2_Workstation_GLSyncGenlockConfiguration_Get
++@ stub ADL2_Workstation_GLSyncGenlockConfiguration_Set
++@ stub ADL2_Workstation_GLSyncModuleDetect_Get
++@ stub ADL2_Workstation_GLSyncModuleInfo_Get
++@ stub ADL2_Workstation_GLSyncPortState_Get
++@ stub ADL2_Workstation_GLSyncPortState_Set
++@ stub ADL2_Workstation_GLSyncSupportedTopology_Get
++@ stub ADL2_Workstation_GlobalEDIDPersistence_Get
++@ stub ADL2_Workstation_GlobalEDIDPersistence_Set
++@ stub ADL2_Workstation_LoadBalancing_Caps
++@ stub ADL2_Workstation_LoadBalancing_Get
++@ stub ADL2_Workstation_LoadBalancing_Set
++@ stub ADL2_Workstation_RAS_ErrorCounts_Get
++@ stub ADL2_Workstation_RAS_ErrorCounts_Reset
++@ stub ADL2_Workstation_SDISegmentList_Get
++@ stub ADL2_Workstation_SDI_Caps
++@ stub ADL2_Workstation_SDI_Get
++@ stub ADL2_Workstation_SDI_Set
++@ stub ADL2_Workstation_Stereo_Get
++@ stub ADL2_Workstation_Stereo_Set
++@ stub ADL2_Workstation_UnsupportedDisplayModes_Enable
++@ stub ADL_ADC_CurrentProfileFromDrv_Get
++@ stub ADL_ADC_Display_AdapterDeviceProfileEx_Get
++@ stub ADL_ADC_DrvDataToProfile_Copy
++@ stub ADL_ADC_FindClosestMode_Get
++@ stub ADL_ADC_IsDevModeEqual_Get
++@ stub ADL_ADC_Profile_Apply
++@ stub ADL_APO_AudioDelayAdjustmentInfo_Get
++@ stub ADL_APO_AudioDelay_Restore
++@ stub ADL_APO_AudioDelay_Set
++@ stub ADL_AdapterLimitation_Caps
++@ stub ADL_AdapterX2_Caps
++@ stdcall ADL_Adapter_ASICFamilyType_Get(long ptr ptr)
++@ stub ADL_Adapter_ASICInfo_Get
++@ stub ADL_Adapter_Accessibility_Get
++@ stub ADL_Adapter_Active_Get
++@ stub ADL_Adapter_Active_Set
++@ stub ADL_Adapter_Active_SetPrefer
++@ stub ADL_Adapter_AdapterInfoX2_Get
++@ stdcall ADL_Adapter_AdapterInfo_Get(ptr long)
++@ stub ADL_Adapter_AdapterList_Disable
++@ stub ADL_Adapter_Aspects_Get
++@ stub ADL_Adapter_AudioChannelSplitConfiguration_Get
++@ stub ADL_Adapter_AudioChannelSplit_Disable
++@ stub ADL_Adapter_AudioChannelSplit_Enable
++@ stub ADL_Adapter_BigSw_Info_Get
++@ stub ADL_Adapter_BlackAndWhiteLevelSupport_Get
++@ stub ADL_Adapter_BlackAndWhiteLevel_Get
++@ stub ADL_Adapter_BlackAndWhiteLevel_Set
++@ stub ADL_Adapter_BoardLayout_Get
++@ stub ADL_Adapter_Caps
++@ stub ADL_Adapter_ChipSetInfo_Get
++@ stub ADL_Adapter_ConfigMemory_Cap
++@ stub ADL_Adapter_ConfigMemory_Get
++@ stub ADL_Adapter_ConfigureState_Get
++@ stub ADL_Adapter_ConnectionData_Get
++@ stub ADL_Adapter_ConnectionData_Remove
++@ stub ADL_Adapter_ConnectionData_Set
++@ stub ADL_Adapter_ConnectionState_Get
++@ stub ADL_Adapter_CrossDisplayPlatformInfo_Get
++@ stub ADL_Adapter_CrossdisplayAdapterRole_Caps
++@ stub ADL_Adapter_CrossdisplayInfoX2_Set
++@ stub ADL_Adapter_CrossdisplayInfo_Get
++@ stub ADL_Adapter_CrossdisplayInfo_Set
++@ stub ADL_Adapter_CrossfireX2_Get
++@ stdcall ADL_Adapter_Crossfire_Caps(long ptr ptr ptr)
++@ stdcall ADL_Adapter_Crossfire_Get(long ptr ptr)
++@ stub ADL_Adapter_Crossfire_Set
++@ stub ADL_Adapter_DefaultAudioChannelTable_Load
++@ stub ADL_Adapter_DisplayAudioEndpoint_Enable
++@ stub ADL_Adapter_DisplayAudioEndpoint_Mute
++@ stub ADL_Adapter_DisplayAudioInfo_Get
++@ stub ADL_Adapter_DisplayGTCCaps_Get
++@ stub ADL_Adapter_Display_Caps
++@ stub ADL_Adapter_DriverSettings_Get
++@ stub ADL_Adapter_DriverSettings_Set
++@ stub ADL_Adapter_EDIDManagement_Caps
++@ stub ADL_Adapter_EmulationMode_Set
++@ stub ADL_Adapter_ExtInfo_Get
++@ stub ADL_Adapter_Gamma_Get
++@ stub ADL_Adapter_Gamma_Set
++@ stub ADL_Adapter_ID_Get
++@ stub ADL_Adapter_LocalDisplayConfig_Get
++@ stub ADL_Adapter_LocalDisplayConfig_Set
++@ stub ADL_Adapter_LocalDisplayState_Get
++@ stub ADL_Adapter_MaxCursorSize_Get
++@ stub ADL_Adapter_MemoryInfo2_Get
++@ stdcall ADL_Adapter_MemoryInfo_Get(long ptr)
++@ stub ADL_Adapter_MirabilisSupport_Get
++@ stub ADL_Adapter_ModeSwitch
++@ stub ADL_Adapter_ModeTimingOverride_Caps
++@ stub ADL_Adapter_Modes_ReEnumerate
++@ stub ADL_Adapter_NumberOfActivatableSources_Get
++@ stdcall ADL_Adapter_NumberOfAdapters_Get(ptr)
++@ stdcall ADL_Adapter_ObservedClockInfo_Get(long ptr ptr)
++@ stdcall ADL_Adapter_ObservedGameClockInfo_Get(ptr long ptr ptr ptr ptr)
++@ stdcall ADL_Adapter_Primary_Get(long)
++@ stub ADL_Adapter_Primary_Set
++@ stub ADL_Adapter_RegValueInt_Get
++@ stub ADL_Adapter_RegValueInt_Set
++@ stub ADL_Adapter_RegValueString_Get
++@ stub ADL_Adapter_RegValueString_Set
++@ stub ADL_Adapter_SWInfo_Get
++@ stub ADL_Adapter_Speed_Caps
++@ stub ADL_Adapter_Speed_Get
++@ stub ADL_Adapter_Speed_Set
++@ stub ADL_Adapter_SupportedConnections_Get
++@ stub ADL_Adapter_Tear_Free_Cap
++@ stub ADL_Adapter_VariBrightEnable_Set
++@ stub ADL_Adapter_VariBrightLevel_Get
++@ stub ADL_Adapter_VariBrightLevel_Set
++@ stub ADL_Adapter_VariBright_Caps
++@ stub ADL_Adapter_VideoBiosInfo_Get
++@ stub ADL_Adapter_VideoTheaterModeInfo_Get
++@ stub ADL_Adapter_VideoTheaterModeInfo_Set
++@ stub ADL_ApplicationProfiles_Applications_Get
++@ stub ADL_ApplicationProfiles_ConvertToCompact
++@ stub ADL_ApplicationProfiles_DriverAreaPrivacy_Get
++@ stub ADL_ApplicationProfiles_GetCustomization
++@ stub ADL_ApplicationProfiles_HitListsX2_Get
++@ stub ADL_ApplicationProfiles_HitLists_Get
++@ stub ADL_ApplicationProfiles_ProfileApplicationX2_Assign
++@ stub ADL_ApplicationProfiles_ProfileApplication_Assign
++@ stub ADL_ApplicationProfiles_ProfileOfAnApplicationX2_Search
++@ stub ADL_ApplicationProfiles_ProfileOfAnApplication_InMemorySearch
++@ stub ADL_ApplicationProfiles_ProfileOfAnApplication_Search
++@ stub ADL_ApplicationProfiles_Profile_Create
++@ stub ADL_ApplicationProfiles_Profile_Exist
++@ stub ADL_ApplicationProfiles_Profile_Remove
++@ stub ADL_ApplicationProfiles_PropertyType_Get
++@ stub ADL_ApplicationProfiles_Release_Get
++@ stub ADL_ApplicationProfiles_RemoveApplication
++@ stub ADL_ApplicationProfiles_StatusInfo_Get
++@ stub ADL_ApplicationProfiles_System_Reload
++@ stub ADL_ApplicationProfiles_User_Load
++@ stub ADL_ApplicationProfiles_User_Unload
++@ stub ADL_Audio_CurrentSampleRate_Get
++@ stub ADL_CDS_UnsafeMode_Set
++@ stub ADL_CV_DongleSettings_Get
++@ stub ADL_CV_DongleSettings_Reset
++@ stub ADL_CV_DongleSettings_Set
++@ stub ADL_DFP_AllowOnlyCETimings_Get
++@ stub ADL_DFP_AllowOnlyCETimings_Set
++@ stub ADL_DFP_BaseAudioSupport_Get
++@ stub ADL_DFP_GPUScalingEnable_Get
++@ stub ADL_DFP_GPUScalingEnable_Set
++@ stub ADL_DFP_HDMISupport_Get
++@ stub ADL_DFP_MVPUAnalogSupport_Get
++@ stub ADL_DFP_PixelFormat_Caps
++@ stub ADL_DFP_PixelFormat_Get
++@ stub ADL_DFP_PixelFormat_Set
++@ stub ADL_DisplayScaling_Set
++@ stub ADL_Display_AdapterID_Get
++@ stub ADL_Display_AdjustCaps_Get
++@ stub ADL_Display_AdjustmentCoherent_Get
++@ stub ADL_Display_AdjustmentCoherent_Set
++@ stub ADL_Display_AudioMappingInfo_Get
++@ stub ADL_Display_AvivoColor_Get
++@ stub ADL_Display_AvivoCurrentColor_Set
++@ stub ADL_Display_AvivoDefaultColor_Set
++@ stub ADL_Display_BackLight_Get
++@ stub ADL_Display_BackLight_Set
++@ stub ADL_Display_BezelOffsetSteppingSize_Get
++@ stub ADL_Display_BezelOffset_Set
++@ stub ADL_Display_BezelSupported_Validate
++@ stub ADL_Display_Capabilities_Get
++@ stub ADL_Display_ColorCaps_Get
++@ stub ADL_Display_ColorDepth_Get
++@ stub ADL_Display_ColorDepth_Set
++@ stub ADL_Display_ColorTemperatureSource_Get
++@ stub ADL_Display_ColorTemperatureSource_Set
++@ stub ADL_Display_Color_Get
++@ stub ADL_Display_Color_Set
++@ stub ADL_Display_ConnectedDisplays_Get
++@ stub ADL_Display_ContainerID_Get
++@ stub ADL_Display_ControllerOverlayAdjustmentCaps_Get
++@ stub ADL_Display_ControllerOverlayAdjustmentData_Get
++@ stub ADL_Display_ControllerOverlayAdjustmentData_Set
++@ stub ADL_Display_CurrentPixelClock_Get
++@ stub ADL_Display_CustomizedModeListNum_Get
++@ stub ADL_Display_CustomizedModeList_Get
++@ stub ADL_Display_CustomizedMode_Add
++@ stub ADL_Display_CustomizedMode_Delete
++@ stub ADL_Display_CustomizedMode_Validate
++@ stub ADL_Display_DCE_Get
++@ stub ADL_Display_DCE_Set
++@ stub ADL_Display_DDCBlockAccess_Get
++@ stub ADL_Display_DDCInfo2_Get
++@ stub ADL_Display_DDCInfo_Get
++@ stub ADL_Display_Deflicker_Get
++@ stub ADL_Display_Deflicker_Set
++@ stub ADL_Display_DeviceConfig_Get
++@ stub ADL_Display_DisplayContent_Cap
++@ stub ADL_Display_DisplayContent_Get
++@ stub ADL_Display_DisplayContent_Set
++@ stdcall ADL_Display_DisplayInfo_Get(long long ptr long)
++@ stdcall ADL_Display_DisplayMapConfig_Get(long ptr ptr ptr ptr long)
++@ stub ADL_Display_DisplayMapConfig_PossibleAddAndRemove
++@ stub ADL_Display_DisplayMapConfig_Set
++@ stub ADL_Display_DisplayMapConfig_Validate
++@ stub ADL_Display_DitherState_Get
++@ stub ADL_Display_DitherState_Set
++@ stub ADL_Display_Downscaling_Caps
++@ stub ADL_Display_DpMstInfo_Get
++@ stdcall ADL_Display_EdidData_Get(long long ptr)
++@ stub ADL_Display_EdidData_Set
++@ stub ADL_Display_EnumDisplays_Get
++@ stub ADL_Display_FilterSVideo_Get
++@ stub ADL_Display_FilterSVideo_Set
++@ stub ADL_Display_ForcibleDisplay_Get
++@ stub ADL_Display_ForcibleDisplay_Set
++@ stub ADL_Display_FormatsOverride_Get
++@ stub ADL_Display_FormatsOverride_Set
++@ stub ADL_Display_FreeSyncState_Get
++@ stub ADL_Display_FreeSyncState_Set
++@ stub ADL_Display_FreeSync_Cap
++@ stub ADL_Display_GamutMapping_Get
++@ stub ADL_Display_GamutMapping_Reset
++@ stub ADL_Display_GamutMapping_Set
++@ stub ADL_Display_Gamut_Caps
++@ stub ADL_Display_Gamut_Get
++@ stub ADL_Display_Gamut_Set
++@ stub ADL_Display_ImageExpansion_Get
++@ stub ADL_Display_ImageExpansion_Set
++@ stub ADL_Display_InfoPacket_Get
++@ stub ADL_Display_InfoPacket_Set
++@ stub ADL_Display_LCDRefreshRateCapability_Get
++@ stub ADL_Display_LCDRefreshRateOptions_Get
++@ stub ADL_Display_LCDRefreshRateOptions_Set
++@ stub ADL_Display_LCDRefreshRate_Get
++@ stub ADL_Display_LCDRefreshRate_Set
++@ stub ADL_Display_Limits_Get
++@ stub ADL_Display_MVPUCaps_Get
++@ stub ADL_Display_MVPUStatus_Get
++@ stub ADL_Display_ModeTimingOverrideInfo_Get
++@ stub ADL_Display_ModeTimingOverrideListX2_Get
++@ stub ADL_Display_ModeTimingOverrideList_Get
++@ stub ADL_Display_ModeTimingOverrideX2_Get
++@ stub ADL_Display_ModeTimingOverride_Delete
++@ stub ADL_Display_ModeTimingOverride_Get
++@ stub ADL_Display_ModeTimingOverride_Set
++@ stub ADL_Display_Modes_Get
++@ stub ADL_Display_Modes_Set
++@ stub ADL_Display_MonitorPowerState_Set
++@ stub ADL_Display_NativeAUXChannel_Access
++@ stub ADL_Display_NeedWorkaroundFor5Clone_Get
++@ stub ADL_Display_NumberOfDisplays_Get
++@ stub ADL_Display_ODClockConfig_Set
++@ stub ADL_Display_ODClockInfo_Get
++@ stub ADL_Display_Overlap_Set
++@ stub ADL_Display_Overscan_Get
++@ stub ADL_Display_Overscan_Set
++@ stub ADL_Display_PixelClockAllowableRange_Set
++@ stub ADL_Display_PixelClockCaps_Get
++@ stub ADL_Display_PixelFormat_Get
++@ stub ADL_Display_PixelFormat_Set
++@ stub ADL_Display_Position_Get
++@ stub ADL_Display_Position_Set
++@ stub ADL_Display_PossibleMapping_Get
++@ stub ADL_Display_PossibleMode_Get
++@ stub ADL_Display_PowerXpressActiveGPU_Get
++@ stub ADL_Display_PowerXpressActiveGPU_Set
++@ stub ADL_Display_PowerXpressActvieGPUR2_Get
++@ stub ADL_Display_PowerXpressVersion_Get
++@ stub ADL_Display_PowerXpress_AutoSwitchConfig_Get
++@ stub ADL_Display_PowerXpress_AutoSwitchConfig_Set
++@ stub ADL_Display_PreservedAspectRatio_Get
++@ stub ADL_Display_PreservedAspectRatio_Set
++@ stub ADL_Display_Property_Get
++@ stub ADL_Display_Property_Set
++@ stub ADL_Display_RcDisplayAdjustment
++@ stub ADL_Display_ReGammaCoefficients_Get
++@ stub ADL_Display_ReGammaCoefficients_Set
++@ stub ADL_Display_ReducedBlanking_Get
++@ stub ADL_Display_ReducedBlanking_Set
++@ stub ADL_Display_RegammaR1_Get
++@ stub ADL_Display_RegammaR1_Set
++@ stub ADL_Display_Regamma_Get
++@ stub ADL_Display_Regamma_Set
++@ stub ADL_Display_SLSGrid_Caps
++@ stub ADL_Display_SLSMapConfigX2_Get
++@ stub ADL_Display_SLSMapConfig_Create
++@ stub ADL_Display_SLSMapConfig_Delete
++@ stub ADL_Display_SLSMapConfig_Get
++@ stub ADL_Display_SLSMapConfig_Rearrange
++@ stub ADL_Display_SLSMapConfig_SetState
++@ stub ADL_Display_SLSMapIndexList_Get
++@ stub ADL_Display_SLSMapIndex_Get
++@ stub ADL_Display_SLSMiddleMode_Get
++@ stub ADL_Display_SLSMiddleMode_Set
++@ stub ADL_Display_SLSRecords_Get
++@ stub ADL_Display_Sharpness_Caps
++@ stub ADL_Display_Sharpness_Get
++@ stub ADL_Display_Sharpness_Info_Get
++@ stub ADL_Display_Sharpness_Set
++@ stub ADL_Display_Size_Get
++@ stub ADL_Display_Size_Set
++@ stub ADL_Display_SourceContentAttribute_Get
++@ stub ADL_Display_SourceContentAttribute_Set
++@ stub ADL_Display_SplitDisplay_Caps
++@ stub ADL_Display_SplitDisplay_Get
++@ stub ADL_Display_SplitDisplay_RestoreDesktopConfiguration
++@ stub ADL_Display_SplitDisplay_Set
++@ stub ADL_Display_SupportedColorDepth_Get
++@ stub ADL_Display_SupportedPixelFormat_Get
++@ stub ADL_Display_SwitchingCapability_Get
++@ stub ADL_Display_TVCaps_Get
++@ stub ADL_Display_TargetTiming_Get
++@ stub ADL_Display_UnderScan_Auto_Get
++@ stub ADL_Display_UnderScan_Auto_Set
++@ stub ADL_Display_Underscan_Get
++@ stub ADL_Display_Underscan_Set
++@ stub ADL_Display_Vector_Get
++@ stub ADL_Display_ViewPort_Cap
++@ stub ADL_Display_ViewPort_Get
++@ stub ADL_Display_ViewPort_Set
++@ stub ADL_Display_WriteAndReadI2C
++@ stub ADL_Display_WriteAndReadI2CLargePayload
++@ stub ADL_Display_WriteAndReadI2CRev_Get
++@ stub ADL_Flush_Driver_Data
++@ stdcall ADL_Graphics_Platform_Get(ptr)
++@ stdcall ADL_Graphics_Versions_Get(ptr)
++@ stub ADL_MMD_FeatureList_Get
++@ stub ADL_MMD_FeatureValuesX2_Get
++@ stub ADL_MMD_FeatureValuesX2_Set
++@ stub ADL_MMD_FeatureValues_Get
++@ stub ADL_MMD_FeatureValues_Set
++@ stub ADL_MMD_FeaturesX2_Caps
++@ stub ADL_MMD_Features_Caps
++@ stub ADL_MMD_VideoAdjustInfo_Get
++@ stub ADL_MMD_VideoAdjustInfo_Set
++@ stub ADL_MMD_VideoColor_Caps
++@ stub ADL_MMD_VideoColor_Get
++@ stub ADL_MMD_VideoColor_Set
++@ stub ADL_MMD_Video_Caps
++@ stub ADL_Main_ControlX2_Create
++@ stdcall ADL_Main_Control_Create(ptr long)
++@ stdcall ADL_Main_Control_Destroy()
++@ stub ADL_Main_Control_GetProcAddress
++@ stub ADL_Main_Control_IsFunctionValid
++@ stub ADL_Main_Control_Refresh
++@ stub ADL_Main_LogDebug_Set
++@ stub ADL_Main_LogError_Set
++@ stub ADL_Overdrive5_CurrentActivity_Get
++@ stub ADL_Overdrive5_FanSpeedInfo_Get
++@ stub ADL_Overdrive5_FanSpeedToDefault_Set
++@ stub ADL_Overdrive5_FanSpeed_Get
++@ stub ADL_Overdrive5_FanSpeed_Set
++@ stdcall ADL_Overdrive5_ODParameters_Get(long ptr)
++@ stub ADL_Overdrive5_ODPerformanceLevels_Get
++@ stub ADL_Overdrive5_ODPerformanceLevels_Set
++@ stub ADL_Overdrive5_PowerControlAbsValue_Caps
++@ stub ADL_Overdrive5_PowerControlAbsValue_Get
++@ stub ADL_Overdrive5_PowerControlAbsValue_Set
++@ stub ADL_Overdrive5_PowerControlInfo_Get
++@ stub ADL_Overdrive5_PowerControl_Caps
++@ stub ADL_Overdrive5_PowerControl_Get
++@ stub ADL_Overdrive5_PowerControl_Set
++@ stub ADL_Overdrive5_Temperature_Get
++@ stub ADL_Overdrive5_ThermalDevices_Enum
++@ stub ADL_Overdrive6_AdvancedFan_Caps
++@ stub ADL_Overdrive6_CapabilitiesEx_Get
++@ stub ADL_Overdrive6_Capabilities_Get
++@ stub ADL_Overdrive6_CurrentStatus_Get
++@ stub ADL_Overdrive6_FanPWMLimitData_Get
++@ stub ADL_Overdrive6_FanPWMLimitData_Set
++@ stub ADL_Overdrive6_FanPWMLimitRangeInfo_Get
++@ stub ADL_Overdrive6_FanSpeed_Get
++@ stub ADL_Overdrive6_FanSpeed_Reset
++@ stub ADL_Overdrive6_FanSpeed_Set
++@ stub ADL_Overdrive6_FuzzyController_Caps
++@ stub ADL_Overdrive6_MaxClockAdjust_Get
++@ stub ADL_Overdrive6_PowerControlInfo_Get
++@ stub ADL_Overdrive6_PowerControl_Caps
++@ stub ADL_Overdrive6_PowerControl_Get
++@ stub ADL_Overdrive6_PowerControl_Set
++@ stub ADL_Overdrive6_StateEx_Get
++@ stub ADL_Overdrive6_StateEx_Set
++@ stub ADL_Overdrive6_StateInfo_Get
++@ stub ADL_Overdrive6_State_Reset
++@ stub ADL_Overdrive6_State_Set
++@ stub ADL_Overdrive6_TargetTemperatureData_Get
++@ stub ADL_Overdrive6_TargetTemperatureData_Set
++@ stub ADL_Overdrive6_TargetTemperatureRangeInfo_Get
++@ stub ADL_Overdrive6_Temperature_Get
++@ stub ADL_Overdrive6_ThermalController_Caps
++@ stub ADL_Overdrive6_ThermalLimitUnlock_Get
++@ stub ADL_Overdrive6_ThermalLimitUnlock_Set
++@ stub ADL_Overdrive6_VoltageControlInfo_Get
++@ stub ADL_Overdrive6_VoltageControl_Get
++@ stub ADL_Overdrive6_VoltageControl_Set
++@ stub ADL_Overdrive_Caps
++@ stub ADL_PowerXpress_AncillaryDevices_Get
++@ stub ADL_PowerXpress_Config_Caps
++@ stub ADL_PowerXpress_ExtendedBatteryMode_Caps
++@ stub ADL_PowerXpress_ExtendedBatteryMode_Get
++@ stub ADL_PowerXpress_ExtendedBatteryMode_Set
++@ stub ADL_PowerXpress_LongIdleDetect_Get
++@ stub ADL_PowerXpress_LongIdleDetect_Set
++@ stub ADL_PowerXpress_PowerControlMode_Get
++@ stub ADL_PowerXpress_PowerControlMode_Set
++@ stub ADL_PowerXpress_Scheme_Get
++@ stub ADL_PowerXpress_Scheme_Set
++@ stub ADL_Remap
++@ stub ADL_RemoteDisplay_Destroy
++@ stub ADL_RemoteDisplay_Display_Acquire
++@ stub ADL_RemoteDisplay_Display_Release
++@ stub ADL_RemoteDisplay_Display_Release_All
++@ stub ADL_RemoteDisplay_Hdcp20_Create
++@ stub ADL_RemoteDisplay_Hdcp20_Destroy
++@ stub ADL_RemoteDisplay_Hdcp20_Notify
++@ stub ADL_RemoteDisplay_Hdcp20_Process
++@ stub ADL_RemoteDisplay_IEPort_Set
++@ stub ADL_RemoteDisplay_Initialize
++@ stub ADL_RemoteDisplay_Nofitiation_Register
++@ stub ADL_RemoteDisplay_Notification_UnRegister
++@ stub ADL_RemoteDisplay_Support_Caps
++@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_InUse_Get
++@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_Info_Get
++@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_RadioState_Get
++@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Change
++@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Get
++@ stub ADL_RemoteDisplay_WFDDeviceInfo_Get
++@ stub ADL_RemoteDisplay_WFDDeviceName_Change
++@ stub ADL_RemoteDisplay_WFDDevice_StatusInfo_Get
++@ stub ADL_RemoteDisplay_WFDDiscover_Start
++@ stub ADL_RemoteDisplay_WFDDiscover_Stop
++@ stub ADL_RemoteDisplay_WFDLink_Connect
++@ stub ADL_RemoteDisplay_WFDLink_Creation_Accept
++@ stub ADL_RemoteDisplay_WFDLink_Disconnect
++@ stub ADL_RemoteDisplay_WFDLink_WPS_Process
++@ stub ADL_RemoteDisplay_WFDWDSPSettings_Set
++@ stub ADL_RemoteDisplay_WirelessDisplayEnableDisable_Commit
++@ stub ADL_ScreenPoint_AudioMappingInfo_Get
++@ stub ADL_Stereo3D_2DPackedFormat_Set
++@ stub ADL_Stereo3D_3DCursorOffset_Get
++@ stub ADL_Stereo3D_3DCursorOffset_Set
++@ stub ADL_Stereo3D_CurrentFormat_Get
++@ stub ADL_Stereo3D_Info_Get
++@ stub ADL_Stereo3D_Modes_Get
++@ stub ADL_TV_Standard_Get
++@ stub ADL_TV_Standard_Set
++@ stub ADL_Win_IsHybridAI
++@ stub ADL_Workstation_8BitGrayscale_Get
++@ stub ADL_Workstation_8BitGrayscale_Set
++@ stub ADL_Workstation_AdapterNumOfGLSyncConnectors_Get
++@ stub ADL_Workstation_Caps
++@ stub ADL_Workstation_DeepBitDepthX2_Get
++@ stub ADL_Workstation_DeepBitDepthX2_Set
++@ stub ADL_Workstation_DeepBitDepth_Get
++@ stub ADL_Workstation_DeepBitDepth_Set
++@ stub ADL_Workstation_DisplayGLSyncMode_Get
++@ stub ADL_Workstation_DisplayGLSyncMode_Set
++@ stub ADL_Workstation_DisplayGenlockCapable_Get
++@ stub ADL_Workstation_ECCData_Get
++@ stub ADL_Workstation_ECCX2_Get
++@ stub ADL_Workstation_ECC_Caps
++@ stub ADL_Workstation_ECC_Get
++@ stub ADL_Workstation_ECC_Set
++@ stub ADL_Workstation_GLSyncCounters_Get
++@ stub ADL_Workstation_GLSyncGenlockConfiguration_Get
++@ stub ADL_Workstation_GLSyncGenlockConfiguration_Set
++@ stub ADL_Workstation_GLSyncModuleDetect_Get
++@ stub ADL_Workstation_GLSyncModuleInfo_Get
++@ stub ADL_Workstation_GLSyncPortState_Get
++@ stub ADL_Workstation_GLSyncPortState_Set
++@ stub ADL_Workstation_GLSyncSupportedTopology_Get
++@ stub ADL_Workstation_GlobalEDIDPersistence_Get
++@ stub ADL_Workstation_GlobalEDIDPersistence_Set
++@ stub ADL_Workstation_LoadBalancing_Caps
++@ stub ADL_Workstation_LoadBalancing_Get
++@ stub ADL_Workstation_LoadBalancing_Set
++@ stub ADL_Workstation_RAS_Get_Error_Counts
++@ stub ADL_Workstation_RAS_Get_Features
++@ stub ADL_Workstation_RAS_Reset_Error_Counts
++@ stub ADL_Workstation_RAS_Set_Features
++@ stub ADL_Workstation_SDISegmentList_Get
++@ stub ADL_Workstation_SDI_Caps
++@ stub ADL_Workstation_SDI_Get
++@ stub ADL_Workstation_SDI_Set
++@ stub ADL_Workstation_Stereo_Get
++@ stub ADL_Workstation_Stereo_Set
++@ stub ADL_Workstation_UnsupportedDisplayModes_Enable
++@ stub AmdPowerXpressRequestHighPerformance
++@ stub Desktop_Detach
++@ stub Send
++@ stub SendX2
+diff --git a/dlls/atiadlxx/atiadlxx_main.c b/dlls/atiadlxx/atiadlxx_main.c
+new file mode 100644
+index 00000000000..9f8873876e9
+--- /dev/null
++++ b/dlls/atiadlxx/atiadlxx_main.c
+@@ -0,0 +1,752 @@
++/* Headers: https://github.com/GPUOpen-LibrariesAndSDKs/display-library */
++
++#include <stdarg.h>
++#include <stdio.h>
++#include <stdlib.h>
++
++#define COBJMACROS
++#include "windef.h"
++#include "winbase.h"
++#include "winuser.h"
++#include "objbase.h"
++#include "initguid.h"
++#include "wine/debug.h"
++
++#include "dxgi.h"
++
++#define MAX_GPUS 64
++#define VENDOR_AMD 0x1002
++
++#define ADL_OK                            0
++#define ADL_ERR                          -1
++#define ADL_ERR_INVALID_PARAM            -3
++#define ADL_ERR_INVALID_ADL_IDX          -5
++#define ADL_ERR_NOT_SUPPORTED            -8
++#define ADL_ERR_NULL_POINTER             -9
++
++#define ADL_DISPLAY_DISPLAYINFO_DISPLAYCONNECTED            0x00000001
++#define ADL_DISPLAY_DISPLAYINFO_DISPLAYMAPPED               0x00000002
++#define ADL_DISPLAY_DISPLAYINFO_MASK 0x31fff
++
++#define ADL_ASIC_DISCRETE    (1 << 0)
++#define ADL_ASIC_MASK        0xAF
++
++enum ADLPlatForm
++{
++    GRAPHICS_PLATFORM_DESKTOP  = 0,
++    GRAPHICS_PLATFORM_MOBILE   = 1
++};
++#define GRAPHICS_PLATFORM_UNKNOWN -1
++
++
++static IDXGIFactory *dxgi_factory;
++
++WINE_DEFAULT_DEBUG_CHANNEL(atiadlxx);
++
++BOOL WINAPI DllMain(HINSTANCE instance, DWORD reason, void *reserved)
++{
++    TRACE("(%p, %u, %p)\n", instance, reason, reserved);
++
++    switch (reason)
++    {
++    case DLL_PROCESS_ATTACH:
++        DisableThreadLibraryCalls(instance);
++        break;
++    }
++
++    return TRUE;
++}
++
++typedef void *(CALLBACK *ADL_MAIN_MALLOC_CALLBACK)(int);
++typedef void *ADL_CONTEXT_HANDLE;
++
++ADL_MAIN_MALLOC_CALLBACK adl_malloc;
++#define ADL_MAX_PATH 256
++
++typedef struct ADLDDCInfo2 {
++
++} ADLDDCInfo2;
++
++typedef struct ADLFreeSyncCap {
++
++} ADLFreeSyncCap;
++
++typedef struct ADLVersionsInfo
++{
++    char strDriverVer[ADL_MAX_PATH];
++    char strCatalystVersion[ADL_MAX_PATH];
++    char strCatalystWebLink[ADL_MAX_PATH];
++} ADLVersionsInfo, *LPADLVersionsInfo;
++
++typedef struct ADLVersionsInfoX2
++{
++    char strDriverVer[ADL_MAX_PATH];
++    char strCatalystVersion[ADL_MAX_PATH];
++    char strCrimsonVersion[ADL_MAX_PATH];
++    char strCatalystWebLink[ADL_MAX_PATH];
++} ADLVersionsInfoX2, *LPADLVersionsInfoX2;
++
++typedef struct ADLAdapterInfo {
++    int iSize;
++    int iAdapterIndex;
++    char strUDID[ADL_MAX_PATH];
++    int iBusNumber;
++    int iDeviceNumber;
++    int iFunctionNumber;
++    int iVendorID;
++    char strAdapterName[ADL_MAX_PATH];
++    char strDisplayName[ADL_MAX_PATH];
++    int iPresent;
++    int iExist;
++    char strDriverPath[ADL_MAX_PATH];
++    char strDriverPathExt[ADL_MAX_PATH];
++    char strPNPString[ADL_MAX_PATH];
++    int iOSDisplayIndex;
++} ADLAdapterInfo, *LPADLAdapterInfo;
++
++typedef struct ADLAdapterInfoX2 { //Matches ADLAdapterInfo until iInfoMask
++    int iSize;
++    int iAdapterIndex;
++    char strUDID[ADL_MAX_PATH];
++    int iBusNumber;
++    int iDeviceNumber;
++    int iFunctionNumber;
++    int iVendorID;
++    char strAdapterName[ADL_MAX_PATH];
++    char strDisplayName[ADL_MAX_PATH];
++    int iPresent;
++    int iExist;
++    char strDriverPath[ADL_MAX_PATH];
++    char strDriverPathExt[ADL_MAX_PATH];
++    char strPNPString[ADL_MAX_PATH];
++    int iOSDisplayIndex;
++    int iInfoMask;
++    int iInfoValue;
++} ADLAdapterInfoX2, *LPADLAdapterInfoX2;
++
++typedef struct ADLDisplayID
++{
++    int iDisplayLogicalIndex;
++    int iDisplayPhysicalIndex;
++    int iDisplayLogicalAdapterIndex;
++    int iDisplayPhysicalAdapterIndex;
++} ADLDisplayID, *LPADLDisplayID;
++
++typedef struct ADLDisplayInfo
++{
++    ADLDisplayID displayID;
++    int  iDisplayControllerIndex;
++    char strDisplayName[ADL_MAX_PATH];
++    char strDisplayManufacturerName[ADL_MAX_PATH];
++    int  iDisplayType;
++    int  iDisplayOutputType;
++    int  iDisplayConnector;
++    int  iDisplayInfoMask;
++    int  iDisplayInfoValue;
++} ADLDisplayInfo, *LPADLDisplayInfo;
++
++typedef struct ADLCrossfireComb
++{
++    int iNumLinkAdapter;
++    int iAdaptLink[3];
++} ADLCrossfireComb;
++
++typedef struct ADLCrossfireInfo
++{
++  int iErrorCode;
++  int iState;
++  int iSupported;
++} ADLCrossfireInfo;
++
++typedef struct ADLMemoryInfo
++{
++    long long iMemorySize;
++    char strMemoryType[ADL_MAX_PATH];
++    long long iMemoryBandwidth;
++} ADLMemoryInfo, *LPADLMemoryInfo;
++
++typedef struct ADLMemoryInfo2
++{
++    long long iHyperMemorySize;
++    long long iInvisibleMemorySize;
++    long long iMemoryBandwidth;
++    long long iMemorySize;
++    long long iVisibleMemorySize;
++    char strMemoryType[ADL_MAX_PATH];
++} ADLMemoryInfo2, *LPADLMemoryInfo2;
++
++typedef struct ADLDisplayTarget
++{
++    ADLDisplayID displayID;
++    int iDisplayMapIndex;
++    int iDisplayTargetMask;
++    int iDisplayTargetValue;
++} ADLDisplayTarget, *LPADLDisplayTarget;
++
++typedef struct ADLMode
++{
++    int iAdapterIndex;
++    ADLDisplayID displayID;
++    int iXPos;
++    int iYPos;
++    int iXRes;
++    int iYRes;
++    int iColourDepth;
++    float fRefreshRate;
++    int iOrientation;
++    int iModeFlag;
++    int iModeMask;
++    int iModeValue;
++} ADLMode, *LPADLMode;
++
++typedef struct ADLDisplayMap
++{
++    int iDisplayMapIndex;
++    ADLMode displayMode;
++    int iNumDisplayTarget;
++    int iFirstDisplayTargetArrayIndex;
++    int iDisplayMapMask;
++    int iDisplayMapValue;
++} ADLDisplayMap, *LPADLDisplayMap;
++
++typedef struct ADLGraphicInfoCore
++{
++    union
++    {
++        int iNumPEsPerCU;
++        int iNumPEsPerWGP;
++    };
++    union
++    {
++        int iNumCUs;
++        int iNumWGPs;
++    };
++    int iGCGen;
++    int iNumROPs;
++    int iNumSIMDs;
++    int iReserved[11];
++} ADLGraphicInfoCore, *LPADLGraphicInfoCore;
++
++typedef struct ADLODParameterRange
++{
++   int iMin;
++   int iMax;
++   int iStep;
++} ADLODParameterRange;
++  
++typedef struct ADLODParameters
++{
++   int iSize;
++   int iNumberOfPerformanceLevels;
++   int iActivityReportingSupported;
++   int iDiscretePerformanceLevels;
++   int iReserved;
++   ADLODParameterRange sEngineClock;
++   ADLODParameterRange sMemoryClock;
++   ADLODParameterRange sVddc;
++} ADLODParameters;
++
++static const ADLVersionsInfo version = {
++    "22.20.19.16-221003a-384125E-AMD-Software-Adrenalin-Edition",
++    "",
++    "http://support.amd.com/drivers/xml/driver_09_us.xml",
++};
++
++static const ADLVersionsInfoX2 version2 = {
++    "22.20.19.16-221003a-384125E-AMD-Software-Adrenalin-Edition",
++    "",
++    "22.10.1",
++    "http://support.amd.com/drivers/xml/driver_09_us.xml",
++};
++
++int WINAPI ADL_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg);
++int WINAPI ADL2_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg, ADL_CONTEXT_HANDLE *ptr)
++{
++    FIXME("cb %p, arg %d, ptr %p stub!\n", cb, arg, ptr);
++    return ADL_Main_Control_Create(cb, arg);
++}
++
++int WINAPI ADL_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg)
++{
++    FIXME("cb %p, arg %d stub!\n", cb, arg);
++    adl_malloc = cb;
++
++
++    if (SUCCEEDED(CreateDXGIFactory(&IID_IDXGIFactory, (void**) &dxgi_factory)))
++        return ADL_OK;
++    else
++        return ADL_ERR;
++}
++
++int WINAPI ADL_Main_Control_Destroy(void)
++{
++    FIXME("stub!\n");
++
++    if (dxgi_factory != NULL)
++        IUnknown_Release(dxgi_factory);
++
++    return ADL_OK;
++}
++
++int WINAPI ADL2_Main_Control_Destroy(void)
++{
++    FIXME("stub!\n");
++
++    return ADL_OK;
++}
++
++int WINAPI ADL_Adapter_NumberOfAdapters_Get(int *count);
++int WINAPI ADL2_Adapter_NumberOfAdapters_Get(ADL_CONTEXT_HANDLE *ptr, int *count)
++{
++    FIXME("ptr %p, count %p stub!\n", ptr, count);
++    return ADL_Adapter_NumberOfAdapters_Get(count);
++}
++
++int WINAPI ADL2_Graphics_VersionsX2_Get(ADL_CONTEXT_HANDLE *ptr, ADLVersionsInfoX2 *ver)
++{
++    FIXME("ptr %p, ver %p stub!\n", ptr, ver);
++    memcpy(ver, &version2, sizeof(version2));
++    return ADL_OK;
++}
++
++int WINAPI ADL_Graphics_Versions_Get(ADLVersionsInfo *ver)
++{
++    FIXME("ver %p stub!\n", ver);
++    memcpy(ver, &version, sizeof(version));
++    return ADL_OK;
++}
++
++int WINAPI ADL2_Adapter_Graphic_Core_Info_Get(ADL_CONTEXT_HANDLE *ptr, int iAdapterIndex, LPADLGraphicInfoCore pGraphicsInfo)
++{
++    FIXME("ptr %p, iAdapterIndex %u, pGraphicsInfo %p\n", ptr, iAdapterIndex, pGraphicsInfo);
++    return ADL_OK;
++}
++
++int WINAPI ADL2_Overdrive_Caps(ADL_CONTEXT_HANDLE *ptr, int iAdapterIndex, int *iSupported, int *iEnabled, int *iVersion)
++{
++    FIXME("ptr %p, iAdapterIndex %u\n");
++    *iSupported = 0;
++    *iEnabled = 0;
++    *iVersion = 0;
++    return ADL_OK;
++}
++
++int WINAPI ADL_Adapter_NumberOfAdapters_Get(int *count)
++{
++    IDXGIAdapter *adapter;
++
++    FIXME("count %p stub!\n", count);
++
++    *count = 0;
++    while (SUCCEEDED(IDXGIFactory_EnumAdapters(dxgi_factory, *count, &adapter)))
++    {
++        (*count)++;
++        IUnknown_Release(adapter);
++    }
++
++    TRACE("*count = %d\n", *count);
++    return ADL_OK;
++}
++
++static int get_adapter_desc(int adapter_index, DXGI_ADAPTER_DESC *desc)
++{
++    IDXGIAdapter *adapter;
++    HRESULT hr;
++
++    if (FAILED(IDXGIFactory_EnumAdapters(dxgi_factory, adapter_index, &adapter)))
++        return ADL_ERR;
++
++    hr = IDXGIAdapter_GetDesc(adapter, desc);
++
++    IUnknown_Release(adapter);
++
++    return SUCCEEDED(hr) ? ADL_OK : ADL_ERR;
++}
++
++/* yep, seriously */
++static int convert_vendor_id(int id)
++{
++    char str[16];
++    snprintf(str, ARRAY_SIZE(str), "%x", id);
++    return atoi(str);
++}
++
++int WINAPI ADL_Adapter_AdapterInfo_Get(ADLAdapterInfo *adapters, int input_size);
++
++int WINAPI ADL2_Display_EdidData_Get(int adapter_index, int display_index, void* edid_data)
++{
++    FIXME("adapter_index %d, display_index %p, edid_data %p\n", 
++        adapter_index, display_index, edid_data);
++    return ADL_ERR_NOT_SUPPORTED;
++}
++
++int WINAPI ADL2_Adapter_AdapterInfoX2_Get(ADL_CONTEXT_HANDLE handle, ADLAdapterInfo **adapters)
++{
++    FIXME("stub!\n");
++    *adapters = (ADLAdapterInfo*)adl_malloc(sizeof(ADLAdapterInfo) * 1);
++    return ADL_Adapter_AdapterInfo_Get(*adapters, sizeof(ADLAdapterInfo) * 1);
++}
++
++int WINAPI ADL2_Adapter_AdapterInfoX4_Get(ADL_CONTEXT_HANDLE handle, int adapter_index, int *num_adapters, ADLAdapterInfoX2 **info)
++{
++    int status;
++    FIXME("adapter: %u, stub!\n", adapter_index);
++    if (adapter_index == -1)
++    {
++        adapter_index = 0;
++    }
++    if (num_adapters)
++    {
++        *num_adapters = 1;
++    }
++    *info = (ADLAdapterInfoX2*)adl_malloc(sizeof(ADLAdapterInfoX2) * 1);
++    memset(*info, 0, sizeof(ADLAdapterInfoX2));
++    status = ADL_Adapter_AdapterInfo_Get(*info, sizeof(ADLAdapterInfo));
++    if (status == ADL_OK)
++    {
++        info[0]->iInfoMask = 1; 
++        info[0]->iInfoValue = 1;
++    }
++    return status;
++}
++
++int WINAPI ADL2_Adapter_AdapterInfo_Get(ADL_CONTEXT_HANDLE handle, ADLAdapterInfo *adapters, int bufferSize)
++{
++    ADLAdapterInfo adapterInfo;
++    TRACE("stub!");
++    ADL_Adapter_AdapterInfo_Get(&adapterInfo, sizeof(ADLAdapterInfo));
++    if (bufferSize <= sizeof(ADLAdapterInfo))
++    {
++        memcpy(adapters, &adapterInfo, bufferSize);
++        return ADL_OK;
++    }
++
++    return ADL_ERR;
++}
++
++int WINAPI ADL_Adapter_AdapterInfo_Get(ADLAdapterInfo *adapters, int input_size)
++{
++    int count, i, j;
++    DXGI_ADAPTER_DESC adapter_desc;
++
++    FIXME("adapters %p, input_size %d, stub!\n", adapters, input_size);
++
++    ADL_Adapter_NumberOfAdapters_Get(&count);
++
++    if (!adapters) return ADL_ERR_INVALID_PARAM;
++    if (input_size != count * sizeof(ADLAdapterInfo)) return ADL_ERR_INVALID_PARAM;
++
++    memset(adapters, 0, input_size);
++
++    for (i = 0; i < count; i++)
++    {
++        adapters[i].iSize = sizeof(ADLAdapterInfo);
++        adapters[i].iAdapterIndex = i;
++
++        if (get_adapter_desc(i, &adapter_desc) != ADL_OK)
++            return ADL_ERR;
++
++        adapters[i].iVendorID = convert_vendor_id(adapter_desc.VendorId);
++
++        for (j = 0; j < 128; ++j)
++        {
++            adapters[i].strAdapterName[j] = (char)adapter_desc.Description[j];
++            if (adapters[i].strAdapterName[j] == 0)
++               break;
++        }
++    }
++
++    return ADL_OK;
++}
++
++int WINAPI ADL_Display_DisplayInfo_Get(int adapter_index, int *num_displays, ADLDisplayInfo **info, int force_detect)
++{
++    IDXGIAdapter *adapter;
++    IDXGIOutput *output;
++    int i;
++
++    FIXME("adapter %d, num_displays %p, info %p stub!\n", adapter_index, num_displays, info);
++
++    if (info == NULL || num_displays == NULL) return ADL_ERR_NULL_POINTER;
++
++    if (FAILED(IDXGIFactory_EnumAdapters(dxgi_factory, adapter_index, &adapter)))
++        return ADL_ERR_INVALID_PARAM;
++
++    *num_displays = 0;
++
++    while (SUCCEEDED(IDXGIAdapter_EnumOutputs(adapter, *num_displays, &output)))
++    {
++        (*num_displays)++;
++        IUnknown_Release(output);
++    }
++
++    IUnknown_Release(adapter);
++
++    if (*num_displays == 0)
++        return ADL_OK;
++
++    *info = adl_malloc(*num_displays * sizeof(**info));
++    memset(*info, 0, *num_displays * sizeof(**info));
++
++    for (i = 0; i < *num_displays; i++)
++    {
++        (*info)[i].displayID.iDisplayLogicalIndex = i;
++        (*info)[i].iDisplayInfoValue = ADL_DISPLAY_DISPLAYINFO_DISPLAYCONNECTED | ADL_DISPLAY_DISPLAYINFO_DISPLAYMAPPED;
++        (*info)[i].iDisplayInfoMask = (*info)[i].iDisplayInfoValue;
++    }
++
++    return ADL_OK;
++}
++
++int WINAPI ADL2_Display_DisplayInfo_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int *num_displays, ADLDisplayInfo **info, int force_detect)
++{
++    FIXME("adapter: %d, stub!\n", adapter_index);
++    return ADL_Display_DisplayInfo_Get(adapter_index, num_displays, info, force_detect);    
++}
++
++int WINAPI ADL_Adapter_Crossfire_Caps(int adapter_index, int *preffered, int *num_comb, ADLCrossfireComb** comb)
++{
++    FIXME("adapter %d, preffered %p, num_comb %p, comb %p stub!\n", adapter_index, preffered, num_comb, comb);
++    return ADL_ERR;
++}
++
++int WINAPI ADL_Adapter_Crossfire_Get(int adapter_index, ADLCrossfireComb *comb, ADLCrossfireInfo *info)
++{
++    FIXME("adapter %d, comb %p, info %p, stub!\n", adapter_index, comb, info);
++    return ADL_ERR;
++}
++
++int WINAPI ADL_Adapter_ASICFamilyType_Get(int adapter_index, int *asic_type, int *valids)
++{
++    DXGI_ADAPTER_DESC adapter_desc;
++
++    FIXME("adapter %d, asic_type %p, valids %p, stub!\n", adapter_index, asic_type, valids);
++
++    if (asic_type == NULL || valids == NULL)
++        return  ADL_ERR_NULL_POINTER;
++
++    if (get_adapter_desc(adapter_index, &adapter_desc) != ADL_OK)
++        return ADL_ERR_INVALID_ADL_IDX;
++
++    if (adapter_desc.VendorId != VENDOR_AMD)
++        return ADL_ERR_NOT_SUPPORTED;
++
++    *asic_type = ADL_ASIC_DISCRETE;
++    *valids = ADL_ASIC_MASK;
++
++    return ADL_OK;
++}
++
++int WINAPI ADL2_Adapter_ASICFamilyType_Get(ADL_CONTEXT_HANDLE handle, int adapter_index, int *asic_types, int *valids)
++{
++    FIXME("adapter_index: %u, stub!\n", adapter_index);
++    return ADL_Adapter_ASICFamilyType_Get(adapter_index, asic_types, valids);
++}
++
++static int get_max_clock(const char *clock, int default_value)
++{
++    char path[MAX_PATH], line[256];
++    FILE *file;
++    int drm_card, value = 0;
++
++    for (drm_card = 0; drm_card < MAX_GPUS; drm_card++)
++    {
++        sprintf(path, "/sys/class/drm/card%d/device/pp_dpm_%s", drm_card, clock);
++        file = fopen(path, "r");
++
++        if (file == NULL)
++            continue;
++
++        while (fgets(line, sizeof(line), file) != NULL)
++        {
++            char *number;
++
++            number = strchr(line, ' ');
++            if (number == NULL)
++            {
++                WARN("pp_dpm_%s file has unexpected format\n", clock);
++                break;
++            }
++
++            number++;
++            value = max(strtol(number, NULL, 0), value);
++        }
++    }
++
++    if (value != 0)
++        return value;
++
++    return default_value;
++}
++
++/* documented in the "Linux Specific APIs" section, present and used on Windows */
++/* the name and documentation suggests that this returns current freqs, but it's actually max */
++int WINAPI ADL_Adapter_ObservedClockInfo_Get(int adapter_index, int *core_clock, int *memory_clock)
++{
++    DXGI_ADAPTER_DESC adapter_desc;
++
++    FIXME("adapter %d, core_clock %p, memory_clock %p, stub!\n", adapter_index, core_clock, memory_clock);
++
++    if (core_clock == NULL || memory_clock == NULL) return ADL_ERR;
++    if (get_adapter_desc(adapter_index, &adapter_desc) != ADL_OK) return ADL_ERR;
++    if (adapter_desc.VendorId != VENDOR_AMD) return ADL_ERR_INVALID_ADL_IDX;
++
++    /* default values based on RX580 */
++    *core_clock = get_max_clock("sclk", 1350);
++    *memory_clock = get_max_clock("mclk", 2000);
++
++    TRACE("*core_clock: %i, *memory_clock %i\n", *core_clock, *memory_clock);
++
++    return ADL_OK;
++}
++
++int WINAPI ADL_Adapter_ObservedGameClockInfo_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int* base_clock, int* game_clock, int* boost_clock, int* memory_clock)
++{
++    int retStatus;
++    FIXME("adapter: %d, stub!\n", adapter_index);
++    retStatus = ADL_Adapter_ObservedClockInfo_Get(adapter_index, base_clock, memory_clock);
++    if (retStatus == ADL_OK)
++    {
++        *game_clock = *base_clock;
++        *boost_clock = *base_clock;
++
++        TRACE("*base_clock: %i, *game_clock: %i, *boost_clock: %i, *memory_clock: %i\n", 
++                *base_clock, *game_clock, *boost_clock, *memory_clock);
++    }
++    return retStatus;
++}
++
++
++/* documented in the "Linux Specific APIs" section, present and used on Windows */
++int WINAPI ADL_Adapter_MemoryInfo_Get(int adapter_index, ADLMemoryInfo *mem_info)
++{
++    DXGI_ADAPTER_DESC adapter_desc;
++
++    FIXME("adapter %d, mem_info %p stub!\n", adapter_index, mem_info);
++
++    if (mem_info == NULL) return ADL_ERR_NULL_POINTER;
++    if (get_adapter_desc(adapter_index, &adapter_desc) != ADL_OK) return ADL_ERR_INVALID_ADL_IDX;
++    if (adapter_desc.VendorId != VENDOR_AMD) return ADL_ERR;
++
++    mem_info->iMemorySize = adapter_desc.DedicatedVideoMemory;
++    mem_info->iMemoryBandwidth = 256000; /* not exposed on Linux, probably needs a lookup table */
++
++    TRACE("iMemoryBandwidth %s, iMemorySize %s\n",
++            wine_dbgstr_longlong(mem_info->iMemoryBandwidth),
++            wine_dbgstr_longlong(mem_info->iMemorySize));
++    return ADL_OK;
++}
++
++int WINAPI ADL2_Adapter_MemoryInfo_Get(ADL_CONTEXT_HANDLE context, int adapter_index, ADLMemoryInfo *mem_info)
++{
++    FIXME("adapter %d, stub!\n", adapter_index);
++    return ADL_Adapter_MemoryInfo_Get(adapter_index, mem_info);
++}
++
++int WINAPI ADL2_Adapter_MemoryInfo2_Get(ADL_CONTEXT_HANDLE context, int adapter_index, ADLMemoryInfo2 *mem_info)
++{
++    ADLMemoryInfo meminfo1;
++    int status;
++    FIXME("adapter %d, stub!\n", adapter_index);
++    
++    status = ADL2_Adapter_MemoryInfo_Get(context, adapter_index, &meminfo1);
++    if (status == ADL_OK)
++    {
++        mem_info->iHyperMemorySize = 0;
++        mem_info->iInvisibleMemorySize = 0;
++        mem_info->iMemoryBandwidth = meminfo1.iMemoryBandwidth;
++        mem_info->iMemorySize = meminfo1.iMemorySize;
++        mem_info->iVisibleMemorySize = mem_info->iMemorySize;
++        memcpy(mem_info->strMemoryType, meminfo1.strMemoryType, ADL_MAX_PATH);
++    }
++    return status;
++}
++
++int WINAPI ADL_Adapter_Primary_Get(int* adapter_index)
++{
++    FIXME("stub!\n");
++    *adapter_index = 0;
++    return ADL_OK;
++}
++
++int WINAPI ADL_Graphics_Platform_Get(int *platform)
++{
++    DXGI_ADAPTER_DESC adapter_desc;
++    int count, i;
++
++    FIXME("platform %p, stub!\n", platform);
++
++    *platform = GRAPHICS_PLATFORM_UNKNOWN;
++
++    ADL_Adapter_NumberOfAdapters_Get(&count);
++
++    for (i = 0; i < count; i ++)
++    {
++        if (get_adapter_desc(i, &adapter_desc) != ADL_OK)
++            continue;
++
++        if (adapter_desc.VendorId == VENDOR_AMD)
++            *platform = GRAPHICS_PLATFORM_DESKTOP;
++    }
++
++    /* NOTE: The real value can be obtained by doing:
++     * 1. ioctl(DRM_AMDGPU_INFO) with AMDGPU_INFO_DEV_INFO - dev_info.ids_flags & AMDGPU_IDS_FLAGS_FUSION
++     * 2. VkPhysicalDeviceType() if we ever want to use Vulkan directly
++     */
++
++    return ADL_OK;
++}
++
++
++int WINAPI ADL_Display_DisplayMapConfig_Get(int adapter_index, int *display_map_count, ADLDisplayMap **display_maps,
++        int *display_target_count, ADLDisplayTarget **display_targets, int options)
++{
++    FIXME("adapter_index %d, display_map_count %p, display_maps %p, "
++            "display_target_count %p, display_targets %p, options %d stub.\n",
++            adapter_index, display_map_count, display_maps, display_target_count,
++            display_targets, options);
++
++    return ADL_ERR_NOT_SUPPORTED;
++}
++
++int WINAPI ADL2_Display_DisplayMapConfig_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int *display_map_count, ADLDisplayMap **display_maps,
++        int *display_target_count, ADLDisplayTarget **display_targets, int options)
++{
++    FIXME("adapter_index %d, stub!\n", adapter_index);
++    return ADL_Display_DisplayMapConfig_Get(adapter_index, display_map_count, display_maps, display_target_count, display_targets, options);
++}
++
++int WINAPI ADL_Display_EdidData_Get(int adapter_index, int display_index, void* edid_data)
++{
++    FIXME("adapter_index %d, display_index %p, edid_data %p\n", 
++        adapter_index, display_index, edid_data);
++    return ADL_ERR_NOT_SUPPORTED;
++}
++
++int WINAPI ADL2_Display_Modes_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int display_index, int *num_modes, ADLMode *modes)
++{
++    FIXME("adapter: %d, display: %d, stub!\n", adapter_index, display_index);
++    return ADL_ERR_NOT_SUPPORTED;
++}
++
++int WINAPI ADL2_Display_DDCInfo2_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int display_index, ADLDDCInfo2 *info)
++{
++    FIXME("adapter: %d, display: %d, stub!\n", adapter_index, display_index);
++    return ADL_ERR_NOT_SUPPORTED;
++}
++
++int WINAPI ADL2_Display_FreeSync_Cap(ADL_CONTEXT_HANDLE context, int adapter_index, int display_index, ADLFreeSyncCap *cap)
++{
++    FIXME("adapter: %d, display: %d, stub!\n", adapter_index, display_index);
++    return ADL_ERR_NOT_SUPPORTED;
++}
++
++int WINAPI ADL_Overdrive5_ODParameters_Get(int iAdapterIndex, ADLODParameters *lpOdParameters)
++{
++    return ADL_ERR_NOT_SUPPORTED;
++}
++
++int WINAPI ADL2_Overdrive5_ODParameters_Get(ADL_CONTEXT_HANDLE context, int iAdapterIndex, ADLODParameters *lpOdParameters)
++{
++    return ADL_ERR_NOT_SUPPORTED;
++}
 diff --git a/dlls/crypt32/base64.c b/dlls/crypt32/base64.c
 index 11fb137ed91..b61ed7ff8cc 100644
---- wine/dlls/crypt32/base64.c
-+++ wine/dlls/crypt32/base64.c
+--- a/dlls/crypt32/base64.c
++++ b/dlls/crypt32/base64.c
 @@ -241,6 +241,63 @@ static BOOL BinaryToBase64A(const BYTE *pbBinary,
      return ret;
  }
@@ -528,8 +2847,8 @@ index 11fb137ed91..b61ed7ff8cc 100644
      case CRYPT_STRING_HEXASCIIADDR:
 diff --git a/dlls/crypt32/cert.c b/dlls/crypt32/cert.c
 index ad39b7d18c7..b57cc685212 100644
---- wine/dlls/crypt32/cert.c
-+++ wine/dlls/crypt32/cert.c
+--- a/dlls/crypt32/cert.c
++++ b/dlls/crypt32/cert.c
 @@ -1006,6 +1006,7 @@ BOOL WINAPI CryptAcquireCertificatePrivateKey(PCCERT_CONTEXT pCert,
      CryptMemFree(info);
      if (cert_in_store)
@@ -540,8 +2859,8 @@ index ad39b7d18c7..b57cc685212 100644
  
 diff --git a/dlls/crypt32/chain.c b/dlls/crypt32/chain.c
 index cf244f2ac6c..4a60e9a60ff 100644
---- wine/dlls/crypt32/chain.c
-+++ wine/dlls/crypt32/chain.c
+--- a/dlls/crypt32/chain.c
++++ b/dlls/crypt32/chain.c
 @@ -3696,6 +3696,44 @@ static BYTE msPubKey4[] = {
  0xa6,0xc6,0x48,0x4c,0xc3,0x37,0x51,0x23,0xd3,0x27,0xd7,0xb8,0x4e,0x70,0x96,
  0xf0,0xa1,0x44,0x76,0xaf,0x78,0xcf,0x9a,0xe1,0x66,0x13,0x02,0x03,0x01,0x00,
@@ -632,8 +2951,8 @@ index cf244f2ac6c..4a60e9a60ff 100644
      }
 diff --git a/dlls/crypt32/decode.c b/dlls/crypt32/decode.c
 index 762d1b54661..19643194b49 100644
---- wine/dlls/crypt32/decode.c
-+++ wine/dlls/crypt32/decode.c
+--- a/dlls/crypt32/decode.c
++++ b/dlls/crypt32/decode.c
 @@ -3874,7 +3874,7 @@ static BOOL WINAPI CRYPT_AsnDecodeCertPolicyConstraints(
  
  struct DECODED_RSA_PUB_KEY
@@ -994,8 +3313,8 @@ index 762d1b54661..19643194b49 100644
   CRYPT_DECODE_PARA *pDecodePara, void *pvStructInfo, DWORD *pcbStructInfo)
 diff --git a/dlls/crypt32/encode.c b/dlls/crypt32/encode.c
 index 8086ad2fc0a..8968eb9f15a 100644
---- wine/dlls/crypt32/encode.c
-+++ wine/dlls/crypt32/encode.c
+--- a/dlls/crypt32/encode.c
++++ b/dlls/crypt32/encode.c
 @@ -4500,7 +4500,7 @@ static BOOL WINAPI CRYPT_AsnEncodeCertId(DWORD dwCertEncodingType,
      return ret;
  }
@@ -1007,8 +3326,8 @@ index 8086ad2fc0a..8968eb9f15a 100644
  {
 diff --git a/dlls/crypt32/object.c b/dlls/crypt32/object.c
 index 8123ed73351..4440c9e0498 100644
---- wine/dlls/crypt32/object.c
-+++ wine/dlls/crypt32/object.c
+--- a/dlls/crypt32/object.c
++++ b/dlls/crypt32/object.c
 @@ -643,7 +643,7 @@ static BOOL CRYPT_QueryEmbeddedMessageObject(DWORD dwObjectType,
          }
          file = CreateFileW(temp_name, GENERIC_READ | GENERIC_WRITE, 0,
@@ -1020,8 +3339,8 @@ index 8123ed73351..4440c9e0498 100644
              SetLastError(ERROR_OUTOFMEMORY);
 diff --git a/dlls/crypt32/str.c b/dlls/crypt32/str.c
 index 277aeb70d4a..d74df308e4a 100644
---- wine/dlls/crypt32/str.c
-+++ wine/dlls/crypt32/str.c
+--- a/dlls/crypt32/str.c
++++ b/dlls/crypt32/str.c
 @@ -29,77 +29,45 @@
  
  WINE_DEFAULT_DEBUG_CHANNEL(crypt);
@@ -2060,8 +4379,8 @@ index 277aeb70d4a..d74df308e4a 100644
  }
 diff --git a/dlls/crypt32/tests/base64.c b/dlls/crypt32/tests/base64.c
 index a1517b294ad..e81a57c576d 100644
---- wine/dlls/crypt32/tests/base64.c
-+++ wine/dlls/crypt32/tests/base64.c
+--- a/dlls/crypt32/tests/base64.c
++++ b/dlls/crypt32/tests/base64.c
 @@ -23,7 +23,6 @@
  #include <windows.h>
  #include <wincrypt.h>
@@ -2795,8 +5114,8 @@ index a1517b294ad..e81a57c576d 100644
  }
 diff --git a/dlls/crypt32/tests/cert.c b/dlls/crypt32/tests/cert.c
 index 3cdb5e5ceea..882bb4a0723 100644
---- wine/dlls/crypt32/tests/cert.c
-+++ wine/dlls/crypt32/tests/cert.c
+--- a/dlls/crypt32/tests/cert.c
++++ b/dlls/crypt32/tests/cert.c
 @@ -554,7 +554,7 @@ static void testCertProperties(void)
      ok(ret, "CertGetCertificateContextProperty failed: %08lx\n", GetLastError());
      if (ret)
@@ -3858,8 +6177,8 @@ index 3cdb5e5ceea..882bb4a0723 100644
      BCryptDestroyKey(bkey);
 diff --git a/dlls/crypt32/tests/chain.c b/dlls/crypt32/tests/chain.c
 index 9ed1b28bf70..32f00801799 100644
---- wine/dlls/crypt32/tests/chain.c
-+++ wine/dlls/crypt32/tests/chain.c
+--- a/dlls/crypt32/tests/chain.c
++++ b/dlls/crypt32/tests/chain.c
 @@ -4958,6 +4958,13 @@ static const ChainPolicyCheck msRootPolicyCheck[] = {
     { 0, CERT_E_UNTRUSTEDROOT, 0, 0, NULL }, NULL, 0 },
  };
@@ -3893,8 +6212,8 @@ index 9ed1b28bf70..32f00801799 100644
  static void testVerifyCertChainPolicy(void)
 diff --git a/dlls/crypt32/tests/encode.c b/dlls/crypt32/tests/encode.c
 index 9dabe58efba..527e663860a 100644
---- wine/dlls/crypt32/tests/encode.c
-+++ wine/dlls/crypt32/tests/encode.c
+--- a/dlls/crypt32/tests/encode.c
++++ b/dlls/crypt32/tests/encode.c
 @@ -2315,10 +2315,10 @@ static const BYTE modulus1[] = { 0,0,0,1,1,1,1,1 };
  static const BYTE modulus2[] = { 1,1,1,1,1,0,0,0 };
  static const BYTE modulus3[] = { 0x80,1,1,1,1,0,0,0 };
@@ -4287,8 +6606,8 @@ index 9dabe58efba..527e663860a 100644
  
 diff --git a/dlls/crypt32/tests/main.c b/dlls/crypt32/tests/main.c
 index 19dde3fb28f..1b125e89d50 100644
---- wine/dlls/crypt32/tests/main.c
-+++ wine/dlls/crypt32/tests/main.c
+--- a/dlls/crypt32/tests/main.c
++++ b/dlls/crypt32/tests/main.c
 @@ -349,7 +349,7 @@ static void test_getDefaultCryptProv(void)
          prov = pI_CryptGetDefaultCryptProv(test_prov[i].algid);
          if (!prov)
@@ -4300,8 +6619,8 @@ index 19dde3fb28f..1b125e89d50 100644
          }
 diff --git a/dlls/crypt32/tests/message.c b/dlls/crypt32/tests/message.c
 index fa4790a2a6b..e6339553e52 100644
---- wine/dlls/crypt32/tests/message.c
-+++ wine/dlls/crypt32/tests/message.c
+--- a/dlls/crypt32/tests/message.c
++++ b/dlls/crypt32/tests/message.c
 @@ -688,14 +688,14 @@ static void test_hash_message(void)
          /* Actually attempting to get the hashed data fails, perhaps because
           * detached is FALSE.
@@ -4375,8 +6694,8 @@ index fa4790a2a6b..e6339553e52 100644
  
 diff --git a/dlls/crypt32/tests/msg.c b/dlls/crypt32/tests/msg.c
 index f779d70695e..16f7402c613 100644
---- wine/dlls/crypt32/tests/msg.c
-+++ wine/dlls/crypt32/tests/msg.c
+--- a/dlls/crypt32/tests/msg.c
++++ b/dlls/crypt32/tests/msg.c
 @@ -274,14 +274,14 @@ static void check_param(LPCSTR test, HCRYPTMSG msg, DWORD param,
      ret = CryptMsgGetParam(msg, param, 0, NULL, &size);
      ok(ret, "%s: CryptMsgGetParam failed: %08lx\n", test, GetLastError());
@@ -4396,8 +6715,8 @@ index f779d70695e..16f7402c613 100644
  static void test_data_msg_open(void)
 diff --git a/dlls/crypt32/tests/object.c b/dlls/crypt32/tests/object.c
 index 22936d3738d..a3c7c8c0743 100644
---- wine/dlls/crypt32/tests/object.c
-+++ wine/dlls/crypt32/tests/object.c
+--- a/dlls/crypt32/tests/object.c
++++ b/dlls/crypt32/tests/object.c
 @@ -95,130 +95,10 @@ L"MIIBiQYJKoZIhvcNAQcCoIIBejCCAXYCAQExDjAMBggqhkiG9w0CBQUAMBMGCSqG"
  "s+9Z0WbRm8CatppebW9tDVmpqm7pLKAe7sJgvFm+P2MGjckRHSNkku8u/FcppK/g"
  "7pMZOVHkRLgLKPSoDQ==";
@@ -4558,8 +6877,8 @@ index 22936d3738d..a3c7c8c0743 100644
  START_TEST(object)
 diff --git a/dlls/crypt32/tests/oid.c b/dlls/crypt32/tests/oid.c
 index 9520e8c5a4a..715d76b9c31 100644
---- wine/dlls/crypt32/tests/oid.c
-+++ wine/dlls/crypt32/tests/oid.c
+--- a/dlls/crypt32/tests/oid.c
++++ b/dlls/crypt32/tests/oid.c
 @@ -152,14 +152,14 @@ static void test_oidFunctionSet(void)
          ok(ret, "CryptGetDefaultOIDDllList failed: %08lx\n", GetLastError());
          if (ret)
@@ -4579,8 +6898,8 @@ index 9520e8c5a4a..715d76b9c31 100644
      }
 diff --git a/dlls/crypt32/tests/store.c b/dlls/crypt32/tests/store.c
 index 00c2cae19e0..20d10a110f9 100644
---- wine/dlls/crypt32/tests/store.c
-+++ wine/dlls/crypt32/tests/store.c
+--- a/dlls/crypt32/tests/store.c
++++ b/dlls/crypt32/tests/store.c
 @@ -216,7 +216,7 @@ static void testMemStore(void)
          ret = CertSerializeCertificateStoreElement(context, 1, NULL, &size);
          ok(ret, "CertSerializeCertificateStoreElement failed: %08lx\n",
@@ -4727,8 +7046,8 @@ index 00c2cae19e0..20d10a110f9 100644
          compareStore(store2, "file store -> file store",
 diff --git a/dlls/crypt32/tests/str.c b/dlls/crypt32/tests/str.c
 index a94381591c0..5fb05bdb836 100644
---- wine/dlls/crypt32/tests/str.c
-+++ wine/dlls/crypt32/tests/str.c
+--- a/dlls/crypt32/tests/str.c
++++ b/dlls/crypt32/tests/str.c
 @@ -31,7 +31,6 @@ typedef struct _CertRDNAttrEncoding {
      DWORD  dwValueType;
      CERT_RDN_VALUE_BLOB Value;
@@ -5623,8 +7942,8 @@ index a94381591c0..5fb05bdb836 100644
  }
 diff --git a/dlls/crypt32/unixlib.c b/dlls/crypt32/unixlib.c
 index 069cb049851..9a36d12f293 100644
---- wine/dlls/crypt32/unixlib.c
-+++ wine/dlls/crypt32/unixlib.c
+--- a/dlls/crypt32/unixlib.c
++++ b/dlls/crypt32/unixlib.c
 @@ -95,21 +95,7 @@ static NTSTATUS process_attach( void *args )
          setenv("GNUTLS_SYSTEM_PRIORITY_FILE", "/dev/null", 0);
      }
@@ -5650,8 +7969,8 @@ index 069cb049851..9a36d12f293 100644
          return STATUS_DLL_NOT_FOUND;
 diff --git a/dlls/cryptnet/cryptnet_main.c b/dlls/cryptnet/cryptnet_main.c
 index 6654ef77c8c..19de1ed2d8e 100644
---- wine/dlls/cryptnet/cryptnet_main.c
-+++ wine/dlls/cryptnet/cryptnet_main.c
+--- a/dlls/cryptnet/cryptnet_main.c
++++ b/dlls/cryptnet/cryptnet_main.c
 @@ -1690,6 +1690,15 @@ static DWORD verify_cert_revocation_from_dist_points_ext(const CRYPT_DATA_BLOB *
      const CRL_CONTEXT *crl;
      DWORD timeout = 0;
@@ -5726,6380 +8045,19 @@ index 6654ef77c8c..19de1ed2d8e 100644
      {
          if (pRevPara && pRevPara->hCrlStore && pRevPara->pIssuerCert)
          {
-diff --git a/dlls/wintrust/softpub.c b/dlls/wintrust/softpub.c
-index 53df5e7fe60..06b178a98b9 100644
---- wine/dlls/wintrust/softpub.c
-+++ wine/dlls/wintrust/softpub.c
-@@ -830,16 +830,93 @@ static DWORD WINTRUST_VerifySigner(CRYPT_PROVIDER_DATA *data, DWORD signerIdx)
-     return err;
- }
- 
-+static void load_secondary_signatures(CRYPT_PROVIDER_DATA *data, HCRYPTMSG msg)
-+{
-+    CRYPT_PROVIDER_SIGSTATE *s = data->pSigState;
-+    CRYPT_ATTRIBUTES *attrs;
-+    unsigned int i, j;
-+    DWORD size;
-+
-+    if (!CryptMsgGetParam(msg, CMSG_SIGNER_UNAUTH_ATTR_PARAM, 0, NULL, &size))
-+        return;
-+
-+    if (!(attrs = data->psPfns->pfnAlloc(size)))
-+    {
-+        ERR("No memory.\n");
-+        return;
-+    }
-+    if (!CryptMsgGetParam(msg, CMSG_SIGNER_UNAUTH_ATTR_PARAM, 0, attrs, &size))
-+        goto done;
-+
-+    for (i = 0; i < attrs->cAttr; ++i)
-+    {
-+        if (strcmp(attrs->rgAttr[i].pszObjId, szOID_NESTED_SIGNATURE))
-+            continue;
-+
-+        if (!(s->rhSecondarySigs = data->psPfns->pfnAlloc(attrs->rgAttr[i].cValue * sizeof(*s->rhSecondarySigs))))
-+        {
-+            ERR("No memory");
-+            goto done;
-+        }
-+        s->cSecondarySigs = 0;
-+        for (j = 0; j < attrs->rgAttr[i].cValue; ++j)
-+        {
-+            if (!(msg = CryptMsgOpenToDecode(X509_ASN_ENCODING | PKCS_7_ASN_ENCODING, 0, 0, 0, NULL, NULL)))
-+            {
-+                ERR("Could not create crypt message.\n");
-+                goto done;
-+            }
-+            if (!CryptMsgUpdate(msg, attrs->rgAttr[i].rgValue[j].pbData, attrs->rgAttr[i].rgValue[j].cbData, TRUE))
-+            {
-+                ERR("Could not update crypt message, err %lu.\n", GetLastError());
-+                CryptMsgClose(msg);
-+                goto done;
-+            }
-+            s->rhSecondarySigs[j] = msg;
-+            ++s->cSecondarySigs;
-+        }
-+        break;
-+    }
-+done:
-+    data->psPfns->pfnFree(attrs);
-+}
-+
- HRESULT WINAPI SoftpubLoadSignature(CRYPT_PROVIDER_DATA *data)
- {
--    DWORD err;
-+    DWORD err = ERROR_SUCCESS;
- 
-     TRACE("(%p)\n", data);
- 
-     if (!data->padwTrustStepErrors)
-         return S_FALSE;
- 
--    if (data->hMsg)
-+    if (data->pSigState)
-+    {
-+        /* We did not initialize this, probably an unsupported usage. */
-+        FIXME("pSigState %p already initialized.\n", data->pSigState);
-+    }
-+    if (!(data->pSigState = data->psPfns->pfnAlloc(sizeof(*data->pSigState))))
-+    {
-+        err = ERROR_OUTOFMEMORY;
-+    }
-+    else
-+    {
-+        data->pSigState->cbStruct = sizeof(*data->pSigState);
-+        data->pSigState->fSupportMultiSig = TRUE;
-+        data->pSigState->dwCryptoPolicySupport = WSS_SIGTRUST_SUPPORT | WSS_OBJTRUST_SUPPORT | WSS_CERTTRUST_SUPPORT;
-+        if (data->hMsg)
-+        {
-+            data->pSigState->hPrimarySig = CryptMsgDuplicate(data->hMsg);
-+            load_secondary_signatures(data, data->pSigState->hPrimarySig);
-+        }
-+        if (data->pSigSettings)
-+        {
-+            if (data->pSigSettings->dwFlags & WSS_GET_SECONDARY_SIG_COUNT)
-+                data->pSigSettings->cSecondarySigs = data->pSigState->cSecondarySigs;
-+        }
-+    }
-+
-+    if (!err && data->hMsg)
-     {
-         DWORD signerCount, size;
- 
-@@ -859,8 +936,7 @@ HRESULT WINAPI SoftpubLoadSignature(CRYPT_PROVIDER_DATA *data)
-         else
-             err = TRUST_E_NOSIGNATURE;
-     }
--    else
--        err = ERROR_SUCCESS;
-+
-     if (err)
-         data->padwTrustStepErrors[TRUSTERROR_STEP_FINAL_SIGPROV] = err;
-     return !err ? S_OK : S_FALSE;
-@@ -1375,6 +1451,13 @@ HRESULT WINAPI SoftpubCleanup(CRYPT_PROVIDER_DATA *data)
-         data->psPfns->pfnFree(data->u.pPDSip->psIndirectData);
-     }
- 
-+    if (WVT_ISINSTRUCT(CRYPT_PROVIDER_DATA, data->cbStruct, pSigState) && data->pSigState)
-+    {
-+        CryptMsgClose(data->pSigState->hPrimarySig);
-+        for (i = 0; i < data->pSigState->cSecondarySigs; ++i)
-+            CryptMsgClose(data->pSigState->rhSecondarySigs[i]);
-+        data->psPfns->pfnFree(data->pSigState);
-+    }
-     CryptMsgClose(data->hMsg);
- 
-     if (data->fOpenedFile &&
-diff --git a/dlls/wintrust/tests/softpub.c b/dlls/wintrust/tests/softpub.c
-index 8195e6006b1..77e15b2feb4 100644
---- wine/dlls/wintrust/tests/softpub.c
-+++ wine/dlls/wintrust/tests/softpub.c
-@@ -1123,6 +1123,476 @@ static const BYTE SelfSignedFile64[] =
-     0x9C,0x68,0x1A,0x5D,0x92,0xCD,0xD0,0x5F,0x02,0xA1,0x2C,0xD9,0x56,0x20,0x00,0x00
- };
- 
-+/* Self-signed 32 bit .exe, built with mingw-gcc, stripped, signed with signtool
-+ * (certificates generated with a self-signed CA).
-+ *
-+ * small.c:
-+ * int _start()
-+ * {
-+ *     return 0;
-+ * }
-+ *
-+ * i686-w64-mingw32-gcc -s -nodefaultlibs -fno-PIC ./small.c -o sign_3certs.exe
-+ * strip -R .idata -R .rdata -R .edata -R .eh_fram ./sign_3certs.exe
-+ * signtool.exe sign /v /f cert1.pfx /fd SHA256 /t http://timestamp.digicert.com sign_3certs.exe
-+ * signtool.exe sign /v /f cert2.pfx /as /fd SHA256 sign_3certs.exe
-+ * signtool.exe sign /v /f cert3.pfx /as /fd SHA256 sign_3certs.exe */
-+
-+static const BYTE self_signed_3certs[] =
-+{
-+    0x4d,0x5a,0x90,0x00,0x03,0x00,0x00,0x00,0x04,0x00,0x00,0x00,0xff,0xff,0x00,0x00,0xb8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x40,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x0e,0x1f,0xba,0x0e,0x00,0xb4,0x09,0xcd,
-+    0x21,0xb8,0x01,0x4c,0xcd,0x21,0x54,0x68,0x69,0x73,0x20,0x70,0x72,0x6f,0x67,0x72,0x61,0x6d,0x20,0x63,0x61,0x6e,0x6e,0x6f,
-+    0x74,0x20,0x62,0x65,0x20,0x72,0x75,0x6e,0x20,0x69,0x6e,0x20,0x44,0x4f,0x53,0x20,0x6d,0x6f,0x64,0x65,0x2e,0x0d,0x0d,0x0a,
-+    0x24,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x50,0x45,0x00,0x00,0x4c,0x01,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0xe0,0x00,0x0e,0x03,0x0b,0x01,0x02,0x25,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x10,0x00,0x00,0x00,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x00,0x00,0x10,0x00,0x00,0x00,0x02,0x00,0x00,
-+    0x04,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x02,0x00,0x00,
-+    0x76,0x3e,0x00,0x00,0x03,0x00,0x40,0x01,0x00,0x00,0x20,0x00,0x00,0x10,0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x10,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x00,0x00,0x14,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x04,0x00,0x00,0x48,0x26,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x2e,0x74,0x65,0x78,0x74,0x00,0x00,0x00,
-+    0x1c,0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x60,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x55,0x89,0xe5,0xb8,0x00,0x00,0x00,0x00,0x5d,0xc3,0x90,0x90,0xff,0xff,0xff,0xff,
-+    0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xff,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x48,0x26,0x00,0x00,0x00,0x02,0x02,0x00,
-+    0x30,0x82,0x26,0x36,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x07,0x02,0xa0,0x82,0x26,0x27,0x30,0x82,0x26,0x23,0x02,
-+    0x01,0x01,0x31,0x0f,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x30,0x5c,0x06,0x0a,0x2b,
-+    0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x04,0xa0,0x4e,0x30,0x4c,0x30,0x17,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,
-+    0x02,0x01,0x0f,0x30,0x09,0x03,0x01,0x00,0xa0,0x04,0xa2,0x02,0x80,0x00,0x30,0x31,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,
-+    0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x04,0x20,0xdd,0x8b,0xd7,0x29,0x3b,0xae,0x16,0xec,0xbb,0x81,0x80,0x55,0x15,0xd8,0x87,
-+    0xa5,0x3e,0xeb,0x0b,0x74,0x59,0xb6,0x56,0xf1,0x0b,0x2e,0xe1,0xb4,0x42,0x4d,0x8b,0x18,0xa0,0x82,0x16,0x0c,0x30,0x82,0x03,
-+    0x01,0x30,0x82,0x01,0xe9,0xa0,0x03,0x02,0x01,0x02,0x02,0x10,0xd1,0x73,0x97,0xaa,0xa7,0x3a,0x31,0xa2,0x44,0xc0,0x4b,0x40,
-+    0x69,0x40,0x4b,0xfa,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x12,0x31,0x10,0x30,
-+    0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x33,
-+    0x30,0x31,0x37,0x31,0x39,0x33,0x32,0x5a,0x17,0x0d,0x33,0x39,0x31,0x32,0x33,0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,
-+    0x10,0x31,0x0e,0x30,0x0c,0x06,0x03,0x55,0x04,0x03,0x13,0x05,0x63,0x65,0x72,0x74,0x31,0x30,0x82,0x01,0x22,0x30,0x0d,0x06,
-+    0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x03,0x82,0x01,0x0f,0x00,0x30,0x82,0x01,0x0a,0x02,0x82,0x01,
-+    0x01,0x00,0xca,0x9c,0xd9,0xd4,0x25,0xb6,0x45,0x61,0x22,0x8d,0xdf,0xe9,0x11,0x0f,0xa1,0x7e,0x45,0xc5,0x0b,0xd0,0x42,0xfc,
-+    0x1f,0x3e,0xce,0x20,0xfc,0x1b,0x37,0xe4,0x0d,0x06,0x83,0x1c,0x3a,0x71,0x0f,0x75,0xf5,0xe5,0x06,0x33,0x01,0x77,0xda,0xc5,
-+    0xe9,0x2e,0xe3,0x37,0x1e,0x51,0x6e,0x08,0xe2,0x02,0xa1,0x8c,0x11,0xc6,0xfc,0x43,0xa2,0xf5,0x7d,0x74,0x5d,0x5a,0xcc,0x85,
-+    0x27,0x38,0xd4,0xfa,0xad,0xd7,0xf9,0x77,0xe4,0xef,0xdd,0xb0,0xb1,0x3e,0xdc,0xf5,0x5d,0x7e,0x62,0xdf,0x16,0x01,0x88,0xcd,
-+    0xb0,0xfa,0x06,0x24,0xd7,0xce,0xdc,0xe2,0x27,0xab,0xc3,0x0e,0x44,0x59,0x39,0x38,0xae,0x0a,0x5a,0xbd,0x5c,0xfd,0x11,0xed,
-+    0x5e,0xb8,0xd3,0x09,0x9c,0x84,0x80,0x6f,0x38,0xdf,0xd2,0xed,0x12,0x33,0xc9,0x66,0x3e,0x77,0x95,0x40,0xca,0xbb,0x63,0xd8,
-+    0x44,0x62,0x1d,0x60,0xc1,0x0d,0x92,0x18,0x68,0x4c,0xc7,0x26,0x83,0x5b,0x38,0x45,0xda,0x8d,0xe6,0x11,0xd0,0x08,0x79,0x0c,
-+    0x13,0xb8,0xe0,0xab,0xf5,0x78,0xe2,0x45,0xfd,0x42,0x7f,0x33,0xab,0x6d,0x53,0x10,0xa3,0x02,0x3c,0xd3,0x6f,0xaf,0x50,0x2f,
-+    0x20,0xfc,0x92,0xd1,0xab,0x68,0xe8,0x00,0xa0,0x1c,0x4b,0x6f,0x02,0x5a,0xf4,0x1a,0xf1,0x06,0x79,0xa1,0x34,0x8d,0x04,0x5c,
-+    0x0d,0xfe,0x2d,0x3c,0x53,0xb6,0xae,0x80,0x7d,0x98,0xb9,0x02,0x60,0x15,0x2c,0xb2,0xe5,0xc7,0x9b,0xcf,0x78,0x53,0x37,0xd9,
-+    0xbf,0x84,0x04,0xb0,0x61,0x1c,0xea,0x24,0x7b,0xf7,0xcd,0x71,0x45,0x1a,0x00,0x22,0x21,0xa9,0x02,0x03,0x01,0x00,0x01,0xa3,
-+    0x55,0x30,0x53,0x30,0x0c,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x43,0x06,0x03,0x55,0x1d,0x01,
-+    0x04,0x3c,0x30,0x3a,0x80,0x10,0x88,0x17,0xf7,0x38,0x65,0x8b,0x78,0x78,0xf6,0x77,0xe3,0x25,0x47,0x54,0x33,0x4c,0xa1,0x14,
-+    0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x82,0x10,0x2b,0x59,
-+    0xb4,0xc7,0xe2,0xce,0x08,0x97,0x46,0x48,0x32,0x17,0x0f,0x97,0xc5,0x08,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,
-+    0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x01,0x01,0x00,0x9d,0x05,0x0e,0xc5,0xa0,0x5e,0x47,0x18,0x31,0x60,0xf2,0x1b,0x37,0xa4,
-+    0x89,0xf7,0x05,0x3e,0xea,0xc2,0x00,0x9f,0xcb,0xdd,0x28,0xba,0xc9,0x1f,0xfa,0x7a,0x9b,0x24,0x3d,0xb6,0x47,0x80,0xc1,0xa6,
-+    0x67,0x4d,0x48,0x3d,0xe0,0x0b,0x32,0x6a,0xa7,0x93,0xf3,0x40,0x20,0x8a,0xff,0x0f,0x9a,0xe2,0x00,0x95,0xa3,0xb3,0x57,0xc7,
-+    0x11,0xe1,0x28,0xc5,0x63,0x01,0xdf,0x4a,0xd2,0x37,0xb2,0x53,0x09,0x5c,0x4e,0x50,0x4e,0x14,0xb8,0x3e,0xb4,0x52,0xfe,0xa5,
-+    0x5d,0x14,0x3f,0x07,0x4f,0xda,0x9a,0xb9,0xbe,0x40,0xc5,0x3b,0x90,0x54,0x03,0x2e,0x79,0x0e,0x9b,0xf7,0xa9,0x74,0xeb,0x7c,
-+    0x6b,0x71,0x12,0xf2,0xce,0x9f,0xc0,0x3e,0x8a,0x09,0xa4,0x91,0x91,0x93,0x64,0x11,0xcc,0x96,0x7b,0xf9,0xac,0x65,0x6b,0xc3,
-+    0x02,0x1d,0xf8,0x0c,0x82,0x72,0x04,0x19,0x05,0x06,0x33,0x44,0x48,0x4f,0x34,0x13,0x04,0x1e,0x6c,0x11,0xc0,0x7b,0x63,0x32,
-+    0x1e,0xb3,0x4f,0x79,0xfe,0x9d,0xe6,0x3a,0xbe,0x8e,0xa7,0x5f,0x67,0x1d,0xae,0xad,0x58,0x0e,0x53,0xb8,0x15,0xe3,0x85,0x6e,
-+    0x91,0xfe,0x2d,0x81,0x84,0xb9,0xc3,0x23,0x13,0xa0,0x3f,0x72,0xb7,0xb3,0x26,0xda,0x08,0xcf,0x10,0x65,0x1e,0xd5,0x3b,0xf4,
-+    0x8f,0x18,0xe0,0xab,0xe7,0x5e,0xfc,0x62,0x9e,0x7e,0x54,0xf9,0x35,0x5a,0xf8,0xfa,0x1f,0x10,0x6f,0x63,0x3d,0xa2,0xe9,0x8a,
-+    0xd6,0x49,0xc0,0x40,0x0b,0xa1,0x5e,0x83,0xb0,0x01,0xb6,0x03,0x66,0xa5,0x8a,0xb4,0x29,0x06,0xea,0x27,0x0c,0x28,0x88,0xf3,
-+    0x38,0x5e,0x30,0x82,0x05,0x8d,0x30,0x82,0x04,0x75,0xa0,0x03,0x02,0x01,0x02,0x02,0x10,0x0e,0x9b,0x18,0x8e,0xf9,0xd0,0x2d,
-+    0xe7,0xef,0xdb,0x50,0xe2,0x08,0x40,0x18,0x5a,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0c,0x05,0x00,
-+    0x30,0x65,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x15,0x30,0x13,0x06,0x03,0x55,0x04,0x0a,
-+    0x13,0x0c,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x49,0x6e,0x63,0x31,0x19,0x30,0x17,0x06,0x03,0x55,0x04,0x0b,0x13,
-+    0x10,0x77,0x77,0x77,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x31,0x24,0x30,0x22,0x06,0x03,0x55,
-+    0x04,0x03,0x13,0x1b,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x41,0x73,0x73,0x75,0x72,0x65,0x64,0x20,0x49,0x44,0x20,
-+    0x52,0x6f,0x6f,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x38,0x30,0x31,0x30,0x30,0x30,0x30,0x30,0x30,0x5a,
-+    0x17,0x0d,0x33,0x31,0x31,0x31,0x30,0x39,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x62,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,
-+    0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x15,0x30,0x13,0x06,0x03,0x55,0x04,0x0a,0x13,0x0c,0x44,0x69,0x67,0x69,0x43,0x65,0x72,
-+    0x74,0x20,0x49,0x6e,0x63,0x31,0x19,0x30,0x17,0x06,0x03,0x55,0x04,0x0b,0x13,0x10,0x77,0x77,0x77,0x2e,0x64,0x69,0x67,0x69,
-+    0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x31,0x21,0x30,0x1f,0x06,0x03,0x55,0x04,0x03,0x13,0x18,0x44,0x69,0x67,0x69,0x43,
-+    0x65,0x72,0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x52,0x6f,0x6f,0x74,0x20,0x47,0x34,0x30,0x82,0x02,0x22,0x30,
-+    0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x03,0x82,0x02,0x0f,0x00,0x30,0x82,0x02,0x0a,0x02,
-+    0x82,0x02,0x01,0x00,0xbf,0xe6,0x90,0x73,0x68,0xde,0xbb,0xe4,0x5d,0x4a,0x3c,0x30,0x22,0x30,0x69,0x33,0xec,0xc2,0xa7,0x25,
-+    0x2e,0xc9,0x21,0x3d,0xf2,0x8a,0xd8,0x59,0xc2,0xe1,0x29,0xa7,0x3d,0x58,0xab,0x76,0x9a,0xcd,0xae,0x7b,0x1b,0x84,0x0d,0xc4,
-+    0x30,0x1f,0xf3,0x1b,0xa4,0x38,0x16,0xeb,0x56,0xc6,0x97,0x6d,0x1d,0xab,0xb2,0x79,0xf2,0xca,0x11,0xd2,0xe4,0x5f,0xd6,0x05,
-+    0x3c,0x52,0x0f,0x52,0x1f,0xc6,0x9e,0x15,0xa5,0x7e,0xbe,0x9f,0xa9,0x57,0x16,0x59,0x55,0x72,0xaf,0x68,0x93,0x70,0xc2,0xb2,
-+    0xba,0x75,0x99,0x6a,0x73,0x32,0x94,0xd1,0x10,0x44,0x10,0x2e,0xdf,0x82,0xf3,0x07,0x84,0xe6,0x74,0x3b,0x6d,0x71,0xe2,0x2d,
-+    0x0c,0x1b,0xee,0x20,0xd5,0xc9,0x20,0x1d,0x63,0x29,0x2d,0xce,0xec,0x5e,0x4e,0xc8,0x93,0xf8,0x21,0x61,0x9b,0x34,0xeb,0x05,
-+    0xc6,0x5e,0xec,0x5b,0x1a,0xbc,0xeb,0xc9,0xcf,0xcd,0xac,0x34,0x40,0x5f,0xb1,0x7a,0x66,0xee,0x77,0xc8,0x48,0xa8,0x66,0x57,
-+    0x57,0x9f,0x54,0x58,0x8e,0x0c,0x2b,0xb7,0x4f,0xa7,0x30,0xd9,0x56,0xee,0xca,0x7b,0x5d,0xe3,0xad,0xc9,0x4f,0x5e,0xe5,0x35,
-+    0xe7,0x31,0xcb,0xda,0x93,0x5e,0xdc,0x8e,0x8f,0x80,0xda,0xb6,0x91,0x98,0x40,0x90,0x79,0xc3,0x78,0xc7,0xb6,0xb1,0xc4,0xb5,
-+    0x6a,0x18,0x38,0x03,0x10,0x8d,0xd8,0xd4,0x37,0xa4,0x2e,0x05,0x7d,0x88,0xf5,0x82,0x3e,0x10,0x91,0x70,0xab,0x55,0x82,0x41,
-+    0x32,0xd7,0xdb,0x04,0x73,0x2a,0x6e,0x91,0x01,0x7c,0x21,0x4c,0xd4,0xbc,0xae,0x1b,0x03,0x75,0x5d,0x78,0x66,0xd9,0x3a,0x31,
-+    0x44,0x9a,0x33,0x40,0xbf,0x08,0xd7,0x5a,0x49,0xa4,0xc2,0xe6,0xa9,0xa0,0x67,0xdd,0xa4,0x27,0xbc,0xa1,0x4f,0x39,0xb5,0x11,
-+    0x58,0x17,0xf7,0x24,0x5c,0x46,0x8f,0x64,0xf7,0xc1,0x69,0x88,0x76,0x98,0x76,0x3d,0x59,0x5d,0x42,0x76,0x87,0x89,0x97,0x69,
-+    0x7a,0x48,0xf0,0xe0,0xa2,0x12,0x1b,0x66,0x9a,0x74,0xca,0xde,0x4b,0x1e,0xe7,0x0e,0x63,0xae,0xe6,0xd4,0xef,0x92,0x92,0x3a,
-+    0x9e,0x3d,0xdc,0x00,0xe4,0x45,0x25,0x89,0xb6,0x9a,0x44,0x19,0x2b,0x7e,0xc0,0x94,0xb4,0xd2,0x61,0x6d,0xeb,0x33,0xd9,0xc5,
-+    0xdf,0x4b,0x04,0x00,0xcc,0x7d,0x1c,0x95,0xc3,0x8f,0xf7,0x21,0xb2,0xb2,0x11,0xb7,0xbb,0x7f,0xf2,0xd5,0x8c,0x70,0x2c,0x41,
-+    0x60,0xaa,0xb1,0x63,0x18,0x44,0x95,0x1a,0x76,0x62,0x7e,0xf6,0x80,0xb0,0xfb,0xe8,0x64,0xa6,0x33,0xd1,0x89,0x07,0xe1,0xbd,
-+    0xb7,0xe6,0x43,0xa4,0x18,0xb8,0xa6,0x77,0x01,0xe1,0x0f,0x94,0x0c,0x21,0x1d,0xb2,0x54,0x29,0x25,0x89,0x6c,0xe5,0x0e,0x52,
-+    0x51,0x47,0x74,0xbe,0x26,0xac,0xb6,0x41,0x75,0xde,0x7a,0xac,0x5f,0x8d,0x3f,0xc9,0xbc,0xd3,0x41,0x11,0x12,0x5b,0xe5,0x10,
-+    0x50,0xeb,0x31,0xc5,0xca,0x72,0x16,0x22,0x09,0xdf,0x7c,0x4c,0x75,0x3f,0x63,0xec,0x21,0x5f,0xc4,0x20,0x51,0x6b,0x6f,0xb1,
-+    0xab,0x86,0x8b,0x4f,0xc2,0xd6,0x45,0x5f,0x9d,0x20,0xfc,0xa1,0x1e,0xc5,0xc0,0x8f,0xa2,0xb1,0x7e,0x0a,0x26,0x99,0xf5,0xe4,
-+    0x69,0x2f,0x98,0x1d,0x2d,0xf5,0xd9,0xa9,0xb2,0x1d,0xe5,0x1b,0x02,0x03,0x01,0x00,0x01,0xa3,0x82,0x01,0x3a,0x30,0x82,0x01,
-+    0x36,0x30,0x0f,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x05,0x30,0x03,0x01,0x01,0xff,0x30,0x1d,0x06,0x03,0x55,0x1d,
-+    0x0e,0x04,0x16,0x04,0x14,0xec,0xd7,0xe3,0x82,0xd2,0x71,0x5d,0x64,0x4c,0xdf,0x2e,0x67,0x3f,0xe7,0xba,0x98,0xae,0x1c,0x0f,
-+    0x4f,0x30,0x1f,0x06,0x03,0x55,0x1d,0x23,0x04,0x18,0x30,0x16,0x80,0x14,0x45,0xeb,0xa2,0xaf,0xf4,0x92,0xcb,0x82,0x31,0x2d,
-+    0x51,0x8b,0xa7,0xa7,0x21,0x9d,0xf3,0x6d,0xc8,0x0f,0x30,0x0e,0x06,0x03,0x55,0x1d,0x0f,0x01,0x01,0xff,0x04,0x04,0x03,0x02,
-+    0x01,0x86,0x30,0x79,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x01,0x01,0x04,0x6d,0x30,0x6b,0x30,0x24,0x06,0x08,0x2b,0x06,
-+    0x01,0x05,0x05,0x07,0x30,0x01,0x86,0x18,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x6f,0x63,0x73,0x70,0x2e,0x64,0x69,0x67,0x69,
-+    0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x30,0x43,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,0x02,0x86,0x37,0x68,0x74,
-+    0x74,0x70,0x3a,0x2f,0x2f,0x63,0x61,0x63,0x65,0x72,0x74,0x73,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,
-+    0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x41,0x73,0x73,0x75,0x72,0x65,0x64,0x49,0x44,0x52,0x6f,0x6f,0x74,0x43,
-+    0x41,0x2e,0x63,0x72,0x74,0x30,0x45,0x06,0x03,0x55,0x1d,0x1f,0x04,0x3e,0x30,0x3c,0x30,0x3a,0xa0,0x38,0xa0,0x36,0x86,0x34,
-+    0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x63,0x72,0x6c,0x33,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,
-+    0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x41,0x73,0x73,0x75,0x72,0x65,0x64,0x49,0x44,0x52,0x6f,0x6f,0x74,0x43,0x41,
-+    0x2e,0x63,0x72,0x6c,0x30,0x11,0x06,0x03,0x55,0x1d,0x20,0x04,0x0a,0x30,0x08,0x30,0x06,0x06,0x04,0x55,0x1d,0x20,0x00,0x30,
-+    0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0c,0x05,0x00,0x03,0x82,0x01,0x01,0x00,0x70,0xa0,0xbf,0x43,0x5c,
-+    0x55,0xe7,0x38,0x5f,0xa0,0xa3,0x74,0x1b,0x3d,0xb6,0x16,0xd7,0xf7,0xbf,0x57,0x07,0xbd,0x9a,0xac,0xa1,0x87,0x2c,0xec,0x85,
-+    0x5e,0xa9,0x1a,0xbb,0x22,0xf8,0x87,0x1a,0x69,0x54,0x22,0xed,0xa4,0x88,0x77,0x6d,0xbd,0x1a,0x14,0xf4,0x13,0x4a,0x7a,0x2f,
-+    0x2d,0xb7,0x38,0xef,0xf4,0xff,0x80,0xb9,0xf8,0xa1,0xf7,0xf2,0x72,0xde,0x24,0xbc,0x52,0x03,0xc8,0x4e,0xd0,0x2a,0xde,0xfa,
-+    0x2d,0x56,0xcf,0xf9,0xf4,0xf7,0xac,0x30,0x7a,0x9a,0x8b,0xb2,0x5e,0xd4,0xcf,0xd1,0x43,0x44,0x9b,0x43,0x21,0xeb,0x96,0x72,
-+    0xa1,0x48,0xb4,0x99,0xcb,0x9d,0x4f,0xa7,0x06,0x03,0x13,0x77,0x27,0x44,0xd4,0xe7,0x7f,0xe8,0x59,0xa8,0xf0,0xbf,0x2f,0x0b,
-+    0xa6,0xe9,0xf2,0x34,0x3c,0xec,0xf7,0x03,0xc7,0x87,0xa8,0xd2,0x4c,0x40,0x19,0x35,0x46,0x6a,0x69,0x54,0xb0,0xb8,0xa1,0x56,
-+    0x8e,0xec,0xa4,0xd5,0x3d,0xe8,0xb1,0xdc,0xfd,0x1c,0xd8,0xf4,0x77,0x5a,0x5c,0x54,0x8c,0x6f,0xef,0xa1,0x50,0x3d,0xfc,0x76,
-+    0x09,0x68,0x84,0x9f,0x6f,0xca,0xdb,0x20,0x8d,0x35,0x60,0x1c,0x02,0x03,0xcb,0x20,0xb0,0xac,0x58,0xa0,0x0e,0x40,0x63,0xc5,
-+    0x98,0x22,0xc1,0xb2,0x59,0xf5,0x55,0x6b,0xcf,0x27,0xab,0x6c,0x76,0xce,0x6f,0x23,0x2d,0xf4,0x7e,0x71,0x6a,0x23,0x6b,0x22,
-+    0xff,0x12,0xb8,0x54,0x2d,0x27,0x7e,0xd8,0x3a,0xd9,0xf0,0xb6,0x87,0x96,0xfd,0x5b,0xd1,0x5c,0xac,0x18,0xc3,0x4d,0x9f,0x73,
-+    0xb7,0x01,0xa9,0x9f,0x57,0xaa,0x5e,0x28,0xe2,0xb9,0x94,0x30,0x82,0x06,0xae,0x30,0x82,0x04,0x96,0xa0,0x03,0x02,0x01,0x02,
-+    0x02,0x10,0x07,0x36,0x37,0xb7,0x24,0x54,0x7c,0xd8,0x47,0xac,0xfd,0x28,0x66,0x2a,0x5e,0x5b,0x30,0x0d,0x06,0x09,0x2a,0x86,
-+    0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x62,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,
-+    0x31,0x15,0x30,0x13,0x06,0x03,0x55,0x04,0x0a,0x13,0x0c,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x49,0x6e,0x63,0x31,
-+    0x19,0x30,0x17,0x06,0x03,0x55,0x04,0x0b,0x13,0x10,0x77,0x77,0x77,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,
-+    0x6f,0x6d,0x31,0x21,0x30,0x1f,0x06,0x03,0x55,0x04,0x03,0x13,0x18,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x72,
-+    0x75,0x73,0x74,0x65,0x64,0x20,0x52,0x6f,0x6f,0x74,0x20,0x47,0x34,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x33,0x32,0x33,0x30,
-+    0x30,0x30,0x30,0x30,0x30,0x5a,0x17,0x0d,0x33,0x37,0x30,0x33,0x32,0x32,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x63,0x31,
-+    0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x17,0x30,0x15,0x06,0x03,0x55,0x04,0x0a,0x13,0x0e,0x44,
-+    0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x2c,0x20,0x49,0x6e,0x63,0x2e,0x31,0x3b,0x30,0x39,0x06,0x03,0x55,0x04,0x03,0x13,0x32,
-+    0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x47,0x34,0x20,0x52,0x53,0x41,0x34,
-+    0x30,0x39,0x36,0x20,0x53,0x48,0x41,0x32,0x35,0x36,0x20,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x20,
-+    0x43,0x41,0x30,0x82,0x02,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x03,0x82,0x02,
-+    0x0f,0x00,0x30,0x82,0x02,0x0a,0x02,0x82,0x02,0x01,0x00,0xc6,0x86,0x35,0x06,0x49,0xb3,0xc1,0x3d,0x72,0x49,0x51,0x55,0xc7,
-+    0x25,0x03,0xc4,0xf2,0x91,0x37,0xa9,0x97,0x51,0xa1,0xd6,0xd2,0x83,0xd1,0x9e,0x4c,0xa2,0x6d,0xa0,0xb0,0xcc,0x83,0xf9,0x5a,
-+    0xf6,0x11,0xa1,0x44,0x15,0x42,0x5f,0xa4,0x88,0xf3,0x68,0xfa,0x7d,0xf3,0x9c,0x89,0x0b,0x7f,0x9d,0x1f,0x9e,0x0f,0x33,0x1f,
-+    0x50,0x13,0x0b,0x26,0x73,0x96,0x6d,0xf8,0x57,0xa8,0x02,0x7d,0xfd,0x43,0xb4,0x84,0xda,0x11,0xf1,0x73,0xb1,0xb3,0xee,0x2b,
-+    0x80,0x84,0x8a,0x22,0x18,0xdf,0xeb,0xda,0x3d,0xc4,0x17,0x7f,0xab,0x19,0x2b,0x3e,0x42,0xdc,0x67,0x8e,0xea,0x51,0x3d,0xf0,
-+    0xd6,0x56,0xd4,0xe7,0x28,0x2d,0xeb,0xd3,0xb1,0xb5,0x75,0xe7,0x1f,0x06,0x65,0x8d,0x94,0x29,0xd3,0xd9,0xec,0x69,0xdf,0xd9,
-+    0x90,0x87,0x46,0x00,0x7b,0xdb,0x44,0x41,0x89,0xdc,0x7c,0x6a,0x57,0x7a,0xf0,0x37,0x79,0x9f,0x5d,0xac,0xcb,0xe8,0x84,0x64,
-+    0xb4,0x52,0xf2,0x76,0x47,0xf7,0x61,0x83,0x19,0xdd,0x5f,0xb4,0x54,0x0b,0x21,0x68,0x6e,0x37,0x21,0xbb,0x40,0xac,0x5f,0xb2,
-+    0xde,0x4a,0x7d,0xce,0xf5,0x39,0x12,0x67,0xef,0x0e,0xa5,0x63,0x6c,0xe4,0xa6,0xc5,0x1d,0xcd,0x36,0x0d,0x5c,0xd5,0xe6,0x1b,
-+    0xa8,0xc1,0x64,0x74,0x40,0xa7,0xc0,0x72,0xc5,0xba,0x4e,0x1f,0xb1,0xb5,0x58,0x4d,0x79,0xfe,0xd7,0x8f,0x73,0x93,0xac,0x2c,
-+    0x39,0xe2,0xa5,0x48,0xd6,0xf0,0xb0,0x31,0x13,0xa9,0x57,0x29,0x96,0x27,0x2e,0xf5,0x87,0xa6,0x8f,0x4e,0x76,0x15,0x55,0x26,
-+    0x70,0x98,0x26,0x7f,0xa0,0x1a,0x47,0x20,0x43,0xe3,0x43,0x63,0x80,0x7b,0x75,0x6e,0x27,0x25,0x90,0x98,0x3a,0x38,0x11,0xb3,
-+    0xf6,0xf6,0x9e,0xe6,0x3b,0x5b,0xec,0x81,0xde,0x22,0x14,0xd9,0x82,0x2a,0xc7,0x92,0xbf,0xa0,0xde,0xe3,0x3e,0xa2,0x73,0xfa,
-+    0xe7,0x1f,0x5a,0x6c,0x94,0xf2,0x52,0x95,0x11,0x2b,0x58,0x74,0x40,0x28,0xab,0x73,0x43,0xce,0xdf,0x4a,0xa1,0x1c,0x6b,0x38,
-+    0xc5,0x29,0xf3,0xca,0xaa,0x96,0x73,0x42,0x68,0x9f,0xb6,0x46,0xb3,0x9d,0x3a,0xa3,0xd5,0x03,0xe0,0xbf,0xf0,0xa2,0x3c,0xca,
-+    0x42,0xdc,0x18,0x48,0x7f,0x14,0x34,0xcf,0xd2,0x4c,0xab,0xef,0x9b,0x3d,0xfe,0x0e,0xb8,0x64,0x2a,0xfa,0x75,0x28,0x24,0x41,
-+    0xed,0x42,0xbf,0x05,0x9c,0x66,0x49,0x52,0x50,0xf4,0x51,0xf3,0x36,0x49,0x4d,0x8b,0x20,0xd2,0x2c,0x57,0x35,0x79,0x2b,0xa8,
-+    0xf3,0x45,0x60,0xbc,0x23,0x8d,0x58,0xf7,0xdc,0x61,0xde,0x93,0xfe,0x39,0xc0,0xf9,0xb2,0x30,0xa5,0x4c,0xd7,0xe9,0x98,0x4a,
-+    0x58,0x3e,0xd3,0x03,0x88,0xfe,0xb3,0x8f,0xd3,0x5e,0x4b,0x76,0x12,0x51,0x93,0xc9,0x8c,0x0c,0x3b,0x5b,0x8a,0x22,0xa8,0xc1,
-+    0x26,0x08,0xf9,0x14,0x10,0x12,0x03,0x7d,0x5f,0x23,0xbb,0x64,0xe3,0x63,0xe0,0xa6,0xe1,0x3e,0xf6,0xc2,0x74,0xb2,0x3f,0x1e,
-+    0x09,0x76,0xec,0xab,0x5d,0x46,0x75,0xe2,0x60,0xa3,0x58,0x09,0x01,0x28,0x00,0x0e,0x84,0x54,0xee,0xce,0xe9,0x5d,0xc8,0x5e,
-+    0x30,0x12,0xbd,0x46,0x9e,0xb5,0xd3,0x76,0xb9,0xd2,0x0e,0x6b,0x99,0x0c,0xd2,0x33,0xb4,0xcd,0xb1,0x02,0x03,0x01,0x00,0x01,
-+    0xa3,0x82,0x01,0x5d,0x30,0x82,0x01,0x59,0x30,0x12,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x08,0x30,0x06,0x01,0x01,
-+    0xff,0x02,0x01,0x00,0x30,0x1d,0x06,0x03,0x55,0x1d,0x0e,0x04,0x16,0x04,0x14,0xba,0x16,0xd9,0x6d,0x4d,0x85,0x2f,0x73,0x29,
-+    0x76,0x9a,0x2f,0x75,0x8c,0x6a,0x20,0x8f,0x9e,0xc8,0x6f,0x30,0x1f,0x06,0x03,0x55,0x1d,0x23,0x04,0x18,0x30,0x16,0x80,0x14,
-+    0xec,0xd7,0xe3,0x82,0xd2,0x71,0x5d,0x64,0x4c,0xdf,0x2e,0x67,0x3f,0xe7,0xba,0x98,0xae,0x1c,0x0f,0x4f,0x30,0x0e,0x06,0x03,
-+    0x55,0x1d,0x0f,0x01,0x01,0xff,0x04,0x04,0x03,0x02,0x01,0x86,0x30,0x13,0x06,0x03,0x55,0x1d,0x25,0x04,0x0c,0x30,0x0a,0x06,
-+    0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x03,0x08,0x30,0x77,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x01,0x01,0x04,0x6b,0x30,
-+    0x69,0x30,0x24,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,0x01,0x86,0x18,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x6f,0x63,
-+    0x73,0x70,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x30,0x41,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,
-+    0x07,0x30,0x02,0x86,0x35,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x63,0x61,0x63,0x65,0x72,0x74,0x73,0x2e,0x64,0x69,0x67,0x69,
-+    0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,
-+    0x52,0x6f,0x6f,0x74,0x47,0x34,0x2e,0x63,0x72,0x74,0x30,0x43,0x06,0x03,0x55,0x1d,0x1f,0x04,0x3c,0x30,0x3a,0x30,0x38,0xa0,
-+    0x36,0xa0,0x34,0x86,0x32,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x63,0x72,0x6c,0x33,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,
-+    0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x52,0x6f,0x6f,
-+    0x74,0x47,0x34,0x2e,0x63,0x72,0x6c,0x30,0x20,0x06,0x03,0x55,0x1d,0x20,0x04,0x19,0x30,0x17,0x30,0x08,0x06,0x06,0x67,0x81,
-+    0x0c,0x01,0x04,0x02,0x30,0x0b,0x06,0x09,0x60,0x86,0x48,0x01,0x86,0xfd,0x6c,0x07,0x01,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,
-+    0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x02,0x01,0x00,0x7d,0x59,0x8e,0xc0,0x93,0xb6,0x6f,0x98,0xa9,0x44,0x22,
-+    0x01,0x7e,0x66,0xd6,0xd8,0x21,0x42,0xe1,0xb0,0x18,0x2e,0x10,0x4d,0x13,0xcf,0x30,0x53,0xce,0xbf,0x18,0xfb,0xc7,0x50,0x5d,
-+    0xe2,0x4b,0x29,0xfb,0x70,0x8a,0x0d,0xaa,0x29,0x69,0xfc,0x69,0xc1,0xcf,0x1d,0x07,0xe9,0x3e,0x60,0xc8,0xd8,0x0b,0xe5,0x5c,
-+    0x5b,0xd7,0x6d,0x87,0xfa,0x84,0x20,0x25,0x34,0x31,0x67,0xcd,0xb6,0x12,0x96,0x6f,0xc4,0x50,0x4c,0x62,0x1d,0x0c,0x08,0x82,
-+    0xa8,0x16,0xbd,0xa9,0x56,0xcf,0x15,0x73,0x8d,0x01,0x22,0x25,0xce,0x95,0x69,0x3f,0x47,0x77,0xfb,0x72,0x74,0x14,0xd7,0xff,
-+    0xab,0x4f,0x8a,0x2c,0x7a,0xab,0x85,0xcd,0x43,0x5f,0xed,0x60,0xb6,0xaa,0x4f,0x91,0x66,0x9e,0x2c,0x9e,0xe0,0x8a,0xac,0xe5,
-+    0xfd,0x8c,0xbc,0x64,0x26,0x87,0x6c,0x92,0xbd,0x9d,0x7c,0xd0,0x70,0x0a,0x7c,0xef,0xa8,0xbc,0x75,0x4f,0xba,0x5a,0xf7,0xa9,
-+    0x10,0xb2,0x5d,0xe9,0xff,0x28,0x54,0x89,0xf0,0xd5,0x8a,0x71,0x76,0x65,0xda,0xcc,0xf0,0x72,0xa3,0x23,0xfa,0xc0,0x27,0x82,
-+    0x44,0xae,0x99,0x27,0x1b,0xab,0x24,0x1e,0x26,0xc1,0xb7,0xde,0x2a,0xeb,0xf6,0x9e,0xb1,0x79,0x99,0x81,0xa3,0x56,0x86,0xab,
-+    0x0a,0x45,0xc9,0xdf,0xc4,0x8d,0xa0,0xe7,0x98,0xfb,0xfb,0xa6,0x9d,0x72,0xaf,0xc4,0xc7,0xc1,0xc1,0x6a,0x71,0xd9,0xc6,0x13,
-+    0x80,0x09,0xc4,0xb6,0x9f,0xcd,0x87,0x87,0x24,0xbb,0x4f,0xa3,0x49,0xb9,0x77,0x66,0x91,0xf1,0x72,0x9c,0xe9,0x4b,0x02,0x52,
-+    0xa7,0x37,0x7e,0x93,0x53,0xac,0x3b,0x1d,0x08,0x49,0x0f,0x94,0xcd,0x39,0x7a,0xdd,0xff,0x25,0x63,0x99,0x27,0x2c,0x3d,0x3f,
-+    0x6b,0xa7,0xf1,0x66,0xc3,0x41,0xcd,0x4f,0xb6,0x40,0x9b,0x21,0x21,0x40,0xd0,0xb7,0x13,0x24,0xcd,0xdc,0x1d,0x78,0x3a,0xe4,
-+    0x9e,0xad,0xe5,0x34,0x71,0x92,0xd7,0x26,0x6b,0xe4,0x38,0x73,0xab,0xa6,0x01,0x4f,0xbd,0x3f,0x3b,0x78,0xad,0x4c,0xad,0xfb,
-+    0xc4,0x95,0x7b,0xed,0x0a,0x5f,0x33,0x39,0x87,0x41,0x78,0x7a,0x38,0xe9,0x9c,0xe1,0xdd,0x23,0xfd,0x1d,0x28,0xd3,0xc7,0xf9,
-+    0xe8,0xf1,0x98,0x5f,0xfb,0x2b,0xd8,0x7e,0xf2,0x46,0x9d,0x75,0x2c,0x1e,0x27,0x2c,0x26,0xdb,0x6f,0x15,0x7b,0x1e,0x19,0x8b,
-+    0x36,0xb8,0x93,0xd4,0xe6,0xf2,0x17,0x99,0x59,0xca,0x70,0xf0,0x37,0xbf,0x98,0x00,0xdf,0x20,0x16,0x4f,0x27,0xfb,0x60,0x67,
-+    0x16,0xa1,0x66,0xba,0xdd,0x55,0xc0,0x3a,0x29,0x86,0xb0,0x98,0xa0,0x2b,0xed,0x95,0x41,0xb7,0x3a,0xd5,0x15,0x98,0x31,0xb4,
-+    0x62,0x09,0x0f,0x0a,0xbd,0x81,0xd9,0x13,0xfe,0xbf,0xa4,0xd1,0xf3,0x57,0xd9,0xbc,0x04,0xfa,0x82,0xde,0x32,0xdf,0x04,0x89,
-+    0xf0,0x00,0xcd,0x5d,0xc2,0xf9,0xd0,0x23,0x7f,0x00,0x0b,0xe4,0x76,0x02,0x26,0xd9,0xf0,0x65,0x76,0x42,0xa6,0x29,0x87,0x09,
-+    0x47,0x2b,0xe6,0x7f,0x1a,0xa4,0x85,0x0f,0xfc,0x98,0x96,0xf6,0x55,0x54,0x2b,0x1f,0x80,0xfa,0xc0,0xf2,0x0e,0x2b,0xe5,0xd6,
-+    0xfb,0xa9,0x2f,0x44,0x15,0x4a,0xe7,0x13,0x0e,0x1d,0xdb,0x37,0x38,0x1a,0xa1,0x2b,0xf6,0xed,0xd6,0x7c,0xfc,0x30,0x82,0x06,
-+    0xc0,0x30,0x82,0x04,0xa8,0xa0,0x03,0x02,0x01,0x02,0x02,0x10,0x0c,0x4d,0x69,0x72,0x4b,0x94,0xfa,0x3c,0x2a,0x4a,0x3d,0x29,
-+    0x07,0x80,0x3d,0x5a,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x63,0x31,0x0b,0x30,
-+    0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x17,0x30,0x15,0x06,0x03,0x55,0x04,0x0a,0x13,0x0e,0x44,0x69,0x67,
-+    0x69,0x43,0x65,0x72,0x74,0x2c,0x20,0x49,0x6e,0x63,0x2e,0x31,0x3b,0x30,0x39,0x06,0x03,0x55,0x04,0x03,0x13,0x32,0x44,0x69,
-+    0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x47,0x34,0x20,0x52,0x53,0x41,0x34,0x30,0x39,
-+    0x36,0x20,0x53,0x48,0x41,0x32,0x35,0x36,0x20,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x20,0x43,0x41,
-+    0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x32,0x31,0x30,0x30,0x30,0x30,0x30,0x30,0x5a,0x17,0x0d,0x33,0x33,0x31,0x31,0x32,
-+    0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x46,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,
-+    0x11,0x30,0x0f,0x06,0x03,0x55,0x04,0x0a,0x13,0x08,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x31,0x24,0x30,0x22,0x06,0x03,
-+    0x55,0x04,0x03,0x13,0x1b,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x69,0x6d,0x65,0x73,0x74,0x61,0x6d,0x70,0x20,
-+    0x32,0x30,0x32,0x32,0x20,0x2d,0x20,0x32,0x30,0x82,0x02,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,
-+    0x01,0x05,0x00,0x03,0x82,0x02,0x0f,0x00,0x30,0x82,0x02,0x0a,0x02,0x82,0x02,0x01,0x00,0xcf,0xec,0xa5,0x26,0x3a,0xc6,0xa9,
-+    0xf2,0x6b,0xbb,0x8d,0xc1,0x0d,0x9a,0xdb,0xa1,0xe8,0x14,0x85,0x74,0x33,0x1a,0x26,0xac,0xd0,0x1c,0x55,0x1e,0x1e,0x36,0x6d,
-+    0xbc,0x92,0x55,0x0c,0x61,0xf4,0x9d,0x09,0x77,0x3d,0x15,0x96,0x08,0x2f,0x6b,0x64,0xa4,0xfd,0x06,0x83,0x16,0xd7,0x91,0x92,
-+    0x38,0x1c,0x31,0x02,0x96,0xfb,0x72,0xb1,0x97,0x3a,0x55,0xaf,0x33,0xec,0x61,0x8a,0xe9,0xa6,0x28,0xdb,0x90,0x63,0x5c,0xbd,
-+    0x89,0x53,0xe0,0x3a,0x2d,0x8c,0x87,0x42,0xae,0x26,0xa4,0xe4,0xbb,0x78,0x78,0xb9,0x7a,0x16,0xe1,0x56,0xc6,0xc0,0xba,0x64,
-+    0x53,0xbb,0x2a,0x16,0xe7,0x50,0x48,0xbb,0x88,0x69,0x0c,0x88,0xc6,0xf1,0xbe,0xe0,0x2f,0x7d,0x3b,0xb1,0xca,0x53,0x8d,0x40,
-+    0x83,0x1e,0xe7,0xcb,0x72,0x49,0x28,0x1e,0x4c,0x80,0x1e,0x85,0x56,0xe7,0x85,0xed,0xf2,0x61,0xbc,0xaa,0x3a,0x07,0x7d,0xf6,
-+    0xab,0x6e,0xe5,0x66,0xdd,0xe2,0x5c,0xf5,0x2f,0xed,0x8d,0xd4,0x4d,0x95,0x84,0x68,0xe3,0x80,0xcb,0x6a,0x79,0xd1,0xd2,0x10,
-+    0x91,0x46,0x29,0xeb,0x3e,0x26,0xf2,0xb4,0x8c,0xcd,0x4c,0xb9,0x66,0xc8,0xbb,0xaa,0x50,0x38,0x0d,0xe5,0x8c,0x94,0x5d,0x19,
-+    0x5a,0xbf,0xf5,0x7b,0x40,0x6e,0x6f,0x16,0xa8,0x9a,0x9c,0x95,0x47,0x86,0x85,0x79,0x3e,0x0c,0x5e,0x66,0x8c,0x1a,0x0a,0x24,
-+    0xbe,0x9c,0xaa,0xd2,0x9c,0xb6,0xf7,0x4f,0x6e,0x78,0xc4,0x28,0x3f,0xa3,0x1c,0x0f,0x50,0x06,0x37,0xba,0x08,0xd9,0x35,0xa6,
-+    0xb5,0x1e,0xda,0x78,0x58,0x1d,0x39,0xe8,0xf8,0x4c,0x91,0x10,0x96,0x7e,0x4d,0xe1,0xdd,0xc2,0xad,0xa5,0x7e,0xf8,0x2d,0x1b,
-+    0x1f,0xec,0x2b,0x46,0x18,0xa3,0x19,0xf6,0x39,0xf7,0xf5,0xc1,0x4f,0x71,0x2e,0x89,0x03,0x11,0xa2,0x4b,0xbb,0x98,0xbf,0xfa,
-+    0x4f,0xe4,0x7b,0x36,0xef,0x06,0x44,0xe4,0x55,0xff,0x36,0xea,0xe5,0x7c,0x31,0xe7,0xf3,0xc2,0x52,0xc4,0xe6,0x16,0x7b,0x5a,
-+    0x7e,0xa5,0x25,0x73,0xdb,0xc0,0x6a,0x99,0x21,0x2d,0x63,0xe5,0x59,0xf5,0x4d,0x2f,0x90,0x1f,0x27,0xb7,0xd2,0xab,0x14,0xe5,
-+    0x38,0x66,0x87,0x51,0x08,0x6b,0xfb,0x53,0x43,0x39,0xd0,0x64,0xfa,0x56,0xcf,0xe0,0xf4,0x0a,0xe6,0x14,0x6d,0x64,0x78,0xbb,
-+    0x98,0xfd,0x94,0xc3,0x73,0x21,0xf3,0x2f,0xc2,0x2e,0x20,0xd7,0x81,0xac,0xd3,0xf1,0x07,0xd4,0xe1,0xbd,0xd9,0x5d,0x4b,0x6e,
-+    0x31,0x94,0x29,0x8b,0xe6,0x41,0xa4,0x65,0x94,0xc0,0x58,0xe5,0xe5,0x2e,0x29,0x90,0xa6,0xb7,0x61,0x64,0xfa,0xd9,0x20,0x6c,
-+    0x18,0x51,0x60,0xba,0xa6,0x81,0x0f,0x09,0x25,0x53,0xf1,0xbf,0x3b,0xe9,0xab,0x07,0x0e,0x6a,0x07,0x39,0x62,0x19,0xc9,0xd6,
-+    0x85,0x7f,0x13,0xd9,0x8d,0x79,0xcf,0x62,0xc5,0xec,0xe1,0x7b,0xb9,0xcc,0x67,0x13,0x07,0x9a,0xc1,0x78,0xed,0xc6,0x88,0xc8,
-+    0xb0,0x6e,0x32,0x79,0xc7,0x0b,0x59,0x83,0x8d,0xc6,0xee,0xf5,0x2c,0x7c,0x7b,0x8e,0xcb,0x64,0x89,0xf1,0xb1,0xc4,0xb8,0xe7,
-+    0x53,0x5e,0x5f,0x55,0xd2,0x7d,0x19,0x29,0x59,0x03,0x4e,0xfa,0x5d,0xea,0x45,0x73,0x1c,0x84,0x7e,0xd7,0xce,0xe2,0xd4,0x3a,
-+    0x77,0x02,0x03,0x01,0x00,0x01,0xa3,0x82,0x01,0x8b,0x30,0x82,0x01,0x87,0x30,0x0e,0x06,0x03,0x55,0x1d,0x0f,0x01,0x01,0xff,
-+    0x04,0x04,0x03,0x02,0x07,0x80,0x30,0x0c,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x16,0x06,0x03,
-+    0x55,0x1d,0x25,0x01,0x01,0xff,0x04,0x0c,0x30,0x0a,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x03,0x08,0x30,0x20,0x06,0x03,
-+    0x55,0x1d,0x20,0x04,0x19,0x30,0x17,0x30,0x08,0x06,0x06,0x67,0x81,0x0c,0x01,0x04,0x02,0x30,0x0b,0x06,0x09,0x60,0x86,0x48,
-+    0x01,0x86,0xfd,0x6c,0x07,0x01,0x30,0x1f,0x06,0x03,0x55,0x1d,0x23,0x04,0x18,0x30,0x16,0x80,0x14,0xba,0x16,0xd9,0x6d,0x4d,
-+    0x85,0x2f,0x73,0x29,0x76,0x9a,0x2f,0x75,0x8c,0x6a,0x20,0x8f,0x9e,0xc8,0x6f,0x30,0x1d,0x06,0x03,0x55,0x1d,0x0e,0x04,0x16,
-+    0x04,0x14,0x62,0x8a,0xde,0xd0,0x61,0xfc,0x8f,0x31,0x14,0xed,0x97,0x0b,0xcd,0x3d,0x2a,0x94,0x14,0xdf,0x52,0x9c,0x30,0x5a,
-+    0x06,0x03,0x55,0x1d,0x1f,0x04,0x53,0x30,0x51,0x30,0x4f,0xa0,0x4d,0xa0,0x4b,0x86,0x49,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,
-+    0x63,0x72,0x6c,0x33,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,
-+    0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x47,0x34,0x52,0x53,0x41,0x34,0x30,0x39,0x36,0x53,0x48,0x41,0x32,0x35,0x36,
-+    0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x43,0x41,0x2e,0x63,0x72,0x6c,0x30,0x81,0x90,0x06,0x08,0x2b,
-+    0x06,0x01,0x05,0x05,0x07,0x01,0x01,0x04,0x81,0x83,0x30,0x81,0x80,0x30,0x24,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,
-+    0x01,0x86,0x18,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x6f,0x63,0x73,0x70,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,
-+    0x63,0x6f,0x6d,0x30,0x58,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,0x02,0x86,0x4c,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,
-+    0x63,0x61,0x63,0x65,0x72,0x74,0x73,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,
-+    0x69,0x43,0x65,0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x47,0x34,0x52,0x53,0x41,0x34,0x30,0x39,0x36,0x53,0x48,0x41,
-+    0x32,0x35,0x36,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x43,0x41,0x2e,0x63,0x72,0x74,0x30,0x0d,0x06,
-+    0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x02,0x01,0x00,0x55,0xaa,0x2a,0x1a,0xf3,0x46,0xf3,
-+    0x78,0x57,0x37,0x30,0xfc,0x75,0xe3,0x4f,0xd6,0x85,0x23,0xf1,0xfc,0xf9,0x95,0x39,0x9b,0x25,0xe6,0xf7,0x72,0x8a,0x98,0xc3,
-+    0x77,0xd4,0x64,0xfc,0x15,0xfb,0x36,0xc2,0x49,0x51,0x2c,0x78,0x88,0x63,0x55,0x09,0x46,0x39,0x00,0xfc,0x69,0xd4,0xca,0x9b,
-+    0x29,0xfb,0xa3,0x3f,0xc0,0xc9,0x00,0x9b,0x13,0x1d,0xb0,0x98,0x89,0xdc,0x78,0xf2,0xcd,0x7c,0x85,0xcd,0x53,0x9d,0xaf,0x62,
-+    0xe2,0x61,0x66,0xa3,0x14,0x2a,0x45,0x87,0x4a,0x98,0x42,0x2b,0x50,0xfc,0x1b,0xb5,0x9e,0x08,0x30,0x09,0xfa,0xe4,0x2d,0xd7,
-+    0x09,0x89,0x79,0xf9,0x09,0xe6,0x88,0xce,0x7d,0x1b,0xb8,0x6a,0xa2,0x9b,0xc1,0x53,0x60,0x09,0xe8,0xa3,0xb8,0x9d,0xd7,0xad,
-+    0x1f,0x1c,0xb8,0xec,0x98,0x41,0xf0,0xf6,0x0e,0x80,0xfb,0xe4,0xff,0xdf,0x9d,0x10,0xa7,0xeb,0x00,0xba,0x5f,0x4a,0x8f,0x1a,
-+    0x3a,0x52,0xb4,0xea,0xbf,0x09,0x49,0x15,0x35,0x36,0x59,0x9a,0x0f,0x54,0xd2,0xb2,0x1b,0x7f,0x7e,0x5e,0x09,0xad,0x76,0x54,
-+    0x8a,0x74,0x6d,0xca,0xd2,0x05,0x67,0x2b,0x76,0xeb,0xff,0x98,0xb2,0x26,0x95,0x38,0x19,0x88,0x44,0x14,0xe5,0x0a,0x59,0xa2,
-+    0x6b,0xe7,0x22,0x3e,0x44,0x21,0xd2,0x3f,0x1c,0xc0,0x9b,0xed,0x7c,0x48,0xb2,0xd8,0x92,0x0c,0x91,0x4f,0x3c,0x66,0x94,0xaf,
-+    0x5d,0x02,0x53,0xeb,0x9e,0xe2,0x9e,0xe4,0xd3,0x1f,0x86,0x01,0x64,0x9c,0x00,0xc2,0xe9,0x5a,0x74,0x75,0x0d,0x3d,0xe1,0x79,
-+    0x88,0xbf,0x1c,0x01,0x97,0xc9,0x19,0x23,0x80,0xd7,0x36,0x5a,0x5f,0x96,0x16,0xb1,0x63,0x0c,0xc6,0x46,0x40,0x3b,0xce,0x5d,
-+    0x35,0xd4,0x59,0x3e,0x43,0x9a,0x18,0xae,0xc3,0xc9,0xcb,0xc3,0xfb,0x9b,0x13,0x5f,0x6a,0xb5,0xc7,0xe0,0xf3,0x05,0xc3,0x59,
-+    0xdf,0x27,0x62,0x2b,0xde,0x41,0xc9,0x53,0xb9,0xff,0x34,0x10,0x67,0xf6,0x26,0x32,0x98,0x7b,0xfe,0x5c,0x42,0x94,0x81,0x94,
-+    0x82,0x9d,0xac,0x0a,0x8b,0xc6,0x4b,0x15,0x4a,0xd3,0x98,0x90,0x45,0x60,0x33,0x80,0xe0,0x23,0xde,0xf8,0x03,0xa4,0xf6,0x45,
-+    0x47,0xe5,0xce,0xb8,0x03,0x42,0x47,0xe8,0x41,0x36,0x71,0x77,0xad,0xfd,0xa2,0xe8,0x97,0x74,0x4e,0x2e,0xda,0x1e,0x1d,0x8c,
-+    0x5a,0xc8,0x1e,0x9a,0xd5,0xc2,0xf0,0xc6,0x22,0xa8,0x4f,0x9b,0xbd,0xd8,0x1c,0x9a,0x51,0xc4,0x2f,0x9a,0xf6,0x5f,0xa7,0x27,
-+    0x97,0xba,0x96,0x2e,0x85,0x57,0xc0,0x60,0xe7,0x78,0x56,0x7f,0x6a,0xef,0xc2,0x95,0x9a,0x4b,0x11,0x02,0xc8,0x82,0x9c,0xc9,
-+    0x1a,0x05,0x7c,0xba,0x71,0xb5,0x4e,0x7a,0x99,0x6c,0xf4,0xe8,0x9e,0xd4,0x5a,0x98,0xc8,0x9f,0xbf,0x8d,0xbb,0x18,0x5c,0x43,
-+    0xf5,0xd0,0x2a,0xe8,0xe2,0x62,0xee,0x78,0x04,0xdb,0xbd,0xd1,0xfb,0x5b,0x0a,0xa8,0x70,0x7e,0xf0,0x97,0x84,0x78,0xe3,0x08,
-+    0x03,0x5d,0x47,0x2c,0x63,0xa8,0x25,0x38,0x97,0x01,0xd2,0x3f,0x3a,0xda,0xe5,0xe5,0xf6,0xe6,0x9b,0xdc,0x7e,0x2c,0xcc,0xff,
-+    0x17,0x4c,0x4d,0x00,0xa2,0xd8,0xd6,0x01,0x0e,0xb8,0x8b,0xee,0xe6,0xe0,0x72,0x55,0x89,0x2c,0x27,0x19,0x61,0xf6,0x77,0x01,
-+    0x8c,0x31,0x82,0x0f,0x9d,0x30,0x82,0x0f,0x99,0x02,0x01,0x01,0x30,0x26,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,
-+    0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x02,0x10,0xd1,0x73,0x97,0xaa,0xa7,0x3a,0x31,0xa2,0x44,0xc0,0x4b,0x40,
-+    0x69,0x40,0x4b,0xfa,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0xa0,0x5e,0x30,0x10,0x06,
-+    0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x0c,0x31,0x02,0x30,0x00,0x30,0x19,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,
-+    0x0d,0x01,0x09,0x03,0x31,0x0c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x04,0x30,0x2f,0x06,0x09,0x2a,0x86,
-+    0x48,0x86,0xf7,0x0d,0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xcb,0xa1,0x2f,0x7b,0x0f,0x6a,0x14,0x06,0x26,0x77,0x7b,0xee,0xd1,
-+    0x90,0x34,0x1c,0xa7,0xcd,0x94,0x65,0xe0,0xe4,0x24,0x12,0x0c,0x4e,0xa2,0x89,0xeb,0x2d,0xe5,0xbb,0x30,0x0d,0x06,0x09,0x2a,
-+    0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,0x01,0x00,0x73,0xb7,0xdf,0xb4,0xd2,0x60,0x31,0x2d,0x14,0x63,
-+    0x71,0x87,0x5b,0xd9,0xee,0x66,0x85,0x88,0xbe,0x1e,0xc3,0x5e,0x30,0x25,0x62,0x05,0x66,0x6e,0x9b,0x51,0xaa,0x5b,0xee,0xed,
-+    0xe4,0x4c,0x83,0x19,0x7e,0x7b,0x78,0xe0,0x04,0xb5,0xdb,0xb3,0x48,0xba,0xa3,0xa4,0x54,0xb2,0x3e,0xe4,0x99,0xf1,0xb2,0x6e,
-+    0xb7,0x7a,0x44,0x76,0x11,0xb4,0x51,0xae,0xe3,0xec,0xc2,0x43,0x65,0xf5,0x95,0x1c,0x57,0x9e,0x4d,0x49,0x4d,0x4c,0xee,0x09,
-+    0xdd,0xdb,0xab,0xf3,0x14,0x89,0xec,0x6e,0x94,0xd2,0xac,0xd8,0xed,0xe3,0xbb,0x8a,0xf0,0x05,0x9d,0x1d,0xbe,0x8b,0x7f,0x34,
-+    0x63,0xe7,0x87,0x04,0x25,0x5a,0xff,0xc9,0xca,0xa9,0xab,0xd5,0xf2,0x16,0xf6,0x26,0x5d,0xf9,0xf9,0xbf,0xb4,0xce,0x86,0x55,
-+    0xd4,0x95,0x91,0x1e,0x12,0x25,0x36,0x43,0x37,0x6e,0x93,0x14,0xf0,0x86,0xad,0xc6,0x7d,0x07,0x86,0xe5,0x18,0x4f,0x3d,0xe3,
-+    0x92,0x67,0x7b,0x74,0xbf,0xa9,0x71,0x5a,0x49,0xcf,0xf5,0x60,0xf4,0x09,0x65,0x38,0xfd,0x13,0xe2,0x03,0x8a,0x84,0x17,0xc7,
-+    0x83,0x7a,0xd5,0x42,0x95,0x47,0xd8,0x9d,0x76,0x52,0xb5,0xbc,0x11,0x63,0x78,0x53,0x66,0x0e,0x95,0xc8,0xd4,0xfa,0x6e,0x3d,
-+    0x3b,0x1b,0x56,0xf2,0x98,0xc3,0x4c,0xc8,0xdc,0x1f,0x7e,0xa3,0x8b,0x1a,0x3b,0xa6,0x4d,0xed,0x70,0x75,0x55,0xcd,0x0c,0xf9,
-+    0x4e,0xfb,0xa6,0x84,0xcb,0xbc,0xf5,0x28,0x89,0x2e,0x30,0x07,0x8f,0x1d,0x8d,0x10,0x03,0x20,0xe9,0xb0,0x56,0x53,0x9d,0xf9,
-+    0x43,0xfb,0xba,0xb7,0x25,0x5d,0xa1,0x82,0x0d,0xe8,0x30,0x82,0x03,0x1c,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,
-+    0x06,0x31,0x82,0x03,0x0d,0x30,0x82,0x03,0x09,0x02,0x01,0x01,0x30,0x77,0x30,0x63,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,
-+    0x06,0x13,0x02,0x55,0x53,0x31,0x17,0x30,0x15,0x06,0x03,0x55,0x04,0x0a,0x13,0x0e,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,
-+    0x2c,0x20,0x49,0x6e,0x63,0x2e,0x31,0x3b,0x30,0x39,0x06,0x03,0x55,0x04,0x03,0x13,0x32,0x44,0x69,0x67,0x69,0x43,0x65,0x72,
-+    0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x47,0x34,0x20,0x52,0x53,0x41,0x34,0x30,0x39,0x36,0x20,0x53,0x48,0x41,
-+    0x32,0x35,0x36,0x20,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x20,0x43,0x41,0x02,0x10,0x0c,0x4d,0x69,
-+    0x72,0x4b,0x94,0xfa,0x3c,0x2a,0x4a,0x3d,0x29,0x07,0x80,0x3d,0x5a,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,
-+    0x02,0x01,0x05,0x00,0xa0,0x69,0x30,0x18,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x03,0x31,0x0b,0x06,0x09,0x2a,
-+    0x86,0x48,0x86,0xf7,0x0d,0x01,0x07,0x01,0x30,0x1c,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x05,0x31,0x0f,0x17,
-+    0x0d,0x32,0x32,0x30,0x39,0x33,0x30,0x31,0x37,0x35,0x33,0x34,0x33,0x5a,0x30,0x2f,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,
-+    0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xbf,0x5c,0x03,0xc6,0x50,0xb0,0xde,0xd1,0x96,0x6d,0x74,0x64,0xa4,0xda,0x0f,0x51,0x71,
-+    0x0f,0x5a,0x87,0x97,0x78,0x2e,0x17,0x99,0xc6,0xa2,0x7b,0xa7,0x9b,0x75,0xeb,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,
-+    0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,0x02,0x00,0x0e,0xb2,0xbf,0xf0,0xf2,0x35,0x55,0xc7,0x9d,0x49,0xce,0x0a,0xac,0x3a,
-+    0x6a,0xd8,0x85,0xa0,0x2b,0x81,0x97,0x85,0xc2,0x16,0x4d,0x6d,0x77,0x72,0xdf,0x2e,0x0a,0x6b,0x2e,0xbd,0xd6,0xb4,0x66,0x22,
-+    0x7b,0x43,0x1b,0x7e,0x7a,0x1b,0xdb,0x72,0xfb,0x1d,0xd5,0xe9,0x84,0x01,0xe1,0x64,0x15,0x05,0x0d,0xb5,0x85,0x1d,0x93,0xf0,
-+    0xcf,0x72,0x77,0x07,0x30,0x82,0xa9,0x6e,0x9c,0x5d,0xc9,0x39,0xda,0x19,0x9b,0xca,0x34,0x05,0xf0,0xe4,0xd7,0x02,0xbe,0x8a,
-+    0x5f,0x74,0x39,0xe6,0xe9,0xb4,0xdf,0x00,0x4a,0xeb,0xb4,0x0d,0xf6,0xb2,0x5b,0x7f,0x10,0xb1,0xef,0x05,0x53,0xfc,0x74,0x41,
-+    0x5b,0x83,0xeb,0xf9,0x37,0x9f,0x03,0xc2,0x1a,0x98,0x13,0xc9,0x6c,0x1c,0xd8,0x82,0xd8,0xd7,0xbf,0x13,0x07,0x20,0xf9,0xf2,
-+    0xea,0x96,0x46,0xb7,0x2d,0x51,0x2f,0xc3,0x40,0x12,0x3f,0x35,0xeb,0x88,0xfa,0x3c,0x66,0x30,0xd9,0x16,0xe2,0x4b,0x05,0x14,
-+    0x11,0x07,0x9a,0x64,0xc5,0x92,0x01,0xec,0xdb,0x5d,0x01,0x91,0x08,0x4f,0x1e,0xec,0x12,0xdd,0x7d,0xa0,0x32,0x5a,0x84,0x2a,
-+    0x7c,0xb9,0x25,0x34,0x57,0x12,0x0c,0x86,0x2d,0xcd,0x01,0x26,0x85,0x17,0x8c,0x7d,0x07,0x3f,0x2c,0x08,0xb6,0xac,0xc3,0xca,
-+    0x72,0x17,0xfe,0x4c,0xef,0xbb,0x69,0x20,0x11,0x33,0x63,0xf8,0xca,0x0a,0xe1,0x8c,0xf5,0x31,0x4e,0x83,0x87,0xfb,0xa9,0xd2,
-+    0x29,0x4b,0x82,0x84,0x27,0xfa,0x01,0x31,0x48,0xc1,0x25,0xe5,0x51,0x49,0xf5,0x52,0x60,0xdb,0x64,0x08,0x36,0xd2,0x2f,0x4e,
-+    0x7a,0x5d,0x92,0xee,0x06,0xec,0xe4,0x3b,0x5d,0xdc,0xc3,0x49,0xa1,0x8e,0x96,0xa6,0x17,0x00,0x2d,0x0d,0xee,0x6e,0x88,0x16,
-+    0x1e,0xea,0x9c,0x9b,0x55,0x9d,0xea,0x4a,0xa5,0xbb,0x54,0x33,0xaa,0x72,0x8c,0x5f,0xb7,0xe6,0x22,0xe9,0x1d,0xca,0xbc,0x6d,
-+    0xdf,0x7b,0x68,0xb5,0x71,0x3b,0x9f,0xfd,0x2b,0x53,0x35,0xa6,0xbb,0x78,0xf2,0x5a,0x41,0x69,0x52,0x5c,0x47,0xdc,0xf0,0x3e,
-+    0x06,0xef,0x60,0xb6,0xd3,0xb1,0x30,0xda,0x41,0xee,0x5a,0x2e,0x8e,0x24,0x0e,0x1e,0xcd,0x6c,0xa6,0x2e,0x9b,0x3c,0x77,0x02,
-+    0x21,0x86,0x16,0x68,0xfc,0xd6,0x64,0x84,0x46,0x1e,0xd1,0xe6,0x86,0x6f,0xee,0x5f,0x5c,0xca,0xb6,0xc9,0x9b,0xb8,0x03,0x46,
-+    0x1b,0x67,0x52,0x48,0x48,0x1c,0x07,0xad,0xbd,0x3c,0x2f,0x1b,0xd1,0xe3,0xb5,0xba,0x21,0x20,0x3b,0x6d,0xfb,0x30,0xa6,0x6d,
-+    0x2d,0xd7,0xb0,0x67,0xa4,0x19,0x0f,0x38,0xff,0xb0,0xad,0xf0,0xc3,0xb3,0xd7,0x7c,0x92,0xa0,0xe8,0x9c,0x22,0x60,0x0f,0x88,
-+    0x08,0xa7,0xf0,0xfa,0x90,0x45,0x2c,0x26,0xa6,0x88,0x25,0x24,0x7b,0x69,0x23,0x0b,0x20,0x04,0x89,0xd4,0x66,0x89,0x7d,0xb6,
-+    0x50,0x0e,0xb3,0xfe,0xf9,0xd0,0x91,0x2b,0x1d,0x17,0x62,0x6d,0xad,0x8e,0xf9,0x52,0x63,0x8f,0xe9,0x93,0xe6,0xea,0xb8,0xe6,
-+    0xce,0x0c,0x69,0xc9,0x47,0xd7,0x7e,0xb4,0x0d,0x49,0xbe,0xcb,0x05,0xe4,0xac,0x0b,0xd4,0xa1,0x6b,0x66,0x0f,0xff,0xe7,0x01,
-+    0x5a,0x91,0x05,0xa8,0xc0,0x2b,0xda,0xe9,0x5c,0x18,0xfb,0xe3,0x4d,0x60,0x0f,0x34,0x19,0x68,0x30,0x82,0x0a,0xc4,0x06,0x0a,
-+    0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x04,0x01,0x31,0x82,0x0a,0xb4,0x30,0x82,0x05,0x56,0x06,0x09,0x2a,0x86,0x48,0x86,
-+    0xf7,0x0d,0x01,0x07,0x02,0xa0,0x82,0x05,0x47,0x30,0x82,0x05,0x43,0x02,0x01,0x01,0x31,0x0f,0x30,0x0d,0x06,0x09,0x60,0x86,
-+    0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x30,0x5c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x04,0xa0,
-+    0x4e,0x30,0x4c,0x30,0x17,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x0f,0x30,0x09,0x03,0x01,0x00,0xa0,0x04,
-+    0xa2,0x02,0x80,0x00,0x30,0x31,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x04,0x20,0xdd,
-+    0x8b,0xd7,0x29,0x3b,0xae,0x16,0xec,0xbb,0x81,0x80,0x55,0x15,0xd8,0x87,0xa5,0x3e,0xeb,0x0b,0x74,0x59,0xb6,0x56,0xf1,0x0b,
-+    0x2e,0xe1,0xb4,0x42,0x4d,0x8b,0x18,0xa0,0x82,0x03,0x05,0x30,0x82,0x03,0x01,0x30,0x82,0x01,0xe9,0xa0,0x03,0x02,0x01,0x02,
-+    0x02,0x10,0x8d,0x01,0xec,0xa9,0x68,0x41,0x93,0x8f,0x40,0x42,0x93,0x4a,0x72,0x6b,0x03,0xcc,0x30,0x0d,0x06,0x09,0x2a,0x86,
-+    0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,
-+    0x73,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x33,0x30,0x31,0x37,0x32,0x34,0x31,0x39,0x5a,0x17,0x0d,
-+    0x33,0x39,0x31,0x32,0x33,0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x10,0x31,0x0e,0x30,0x0c,0x06,0x03,0x55,0x04,0x03,
-+    0x13,0x05,0x63,0x65,0x72,0x74,0x33,0x30,0x82,0x01,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,
-+    0x05,0x00,0x03,0x82,0x01,0x0f,0x00,0x30,0x82,0x01,0x0a,0x02,0x82,0x01,0x01,0x00,0xf4,0x21,0x90,0xec,0x4a,0x19,0xca,0xa7,
-+    0x1f,0x25,0x80,0x0b,0x92,0x21,0x2d,0x53,0xb4,0x25,0xa3,0x37,0x40,0xae,0xce,0xf1,0x46,0xf6,0xda,0x21,0xd3,0x54,0x8e,0x02,
-+    0x95,0xfe,0x37,0x3a,0xff,0xb9,0x36,0x88,0x70,0xf2,0x33,0x0c,0x5c,0x60,0x36,0xbf,0x8d,0x51,0xef,0x18,0x5d,0x47,0x68,0xbc,
-+    0xda,0xd8,0xf8,0x94,0xaf,0xcf,0xa6,0x48,0x61,0x78,0x04,0xcd,0x73,0x03,0xa0,0x6c,0xdb,0x24,0x94,0x20,0x54,0xbb,0x19,0xf2,
-+    0xb6,0xf9,0x0d,0xf4,0x31,0xbd,0x79,0xb5,0x98,0x12,0xc4,0x62,0x06,0xfb,0x16,0x08,0x51,0xa2,0xbf,0x12,0xcf,0x88,0xf4,0x4c,
-+    0x26,0xec,0x80,0xc7,0xa7,0xeb,0x89,0x24,0x6a,0xe4,0x1e,0x3a,0x1d,0x4a,0x7c,0x42,0xaa,0x03,0x5e,0x47,0xde,0x21,0xc4,0x06,
-+    0x86,0x57,0x0d,0xce,0xe0,0x27,0xf2,0x43,0x56,0x2a,0x60,0x1b,0x18,0xf5,0x03,0x91,0xa4,0xda,0x86,0x1c,0xcb,0x2c,0x2d,0x21,
-+    0x54,0xc5,0xd8,0xe2,0xe2,0x02,0x19,0xb0,0x73,0xe0,0xf8,0x95,0x5c,0x4f,0x1d,0x8f,0xd2,0xe0,0x4a,0x7c,0x20,0x9e,0x29,0xec,
-+    0x05,0x34,0xb0,0x4c,0x1a,0xaf,0x2a,0x01,0xf1,0x0f,0x26,0xdc,0x38,0x68,0x85,0xbd,0xc0,0x73,0xec,0x10,0x17,0x3a,0xd8,0x6d,
-+    0x33,0x3b,0xab,0xd3,0x79,0x61,0x2c,0xac,0x11,0xe1,0x09,0x5e,0xe0,0x7b,0xd3,0xc0,0xb8,0xf8,0xb5,0x9a,0x20,0x68,0xa7,0xf0,
-+    0x66,0x9b,0xc2,0xe8,0x83,0x14,0x7d,0x3c,0x7f,0x7a,0x85,0x95,0xc9,0x05,0x74,0xf4,0xee,0xa9,0x83,0x6a,0x55,0xa5,0x78,0xa8,
-+    0xa8,0xb4,0x6d,0xb1,0xab,0x49,0x50,0xd1,0x02,0x03,0x01,0x00,0x01,0xa3,0x55,0x30,0x53,0x30,0x0c,0x06,0x03,0x55,0x1d,0x13,
-+    0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x43,0x06,0x03,0x55,0x1d,0x01,0x04,0x3c,0x30,0x3a,0x80,0x10,0x88,0x17,0xf7,0x38,
-+    0x65,0x8b,0x78,0x78,0xf6,0x77,0xe3,0x25,0x47,0x54,0x33,0x4c,0xa1,0x14,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,
-+    0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x82,0x10,0x2b,0x59,0xb4,0xc7,0xe2,0xce,0x08,0x97,0x46,0x48,0x32,0x17,
-+    0x0f,0x97,0xc5,0x08,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x01,0x01,0x00,
-+    0x8e,0xe0,0xc9,0x58,0x24,0x1b,0x16,0x6a,0x8a,0x4f,0x67,0xac,0xd7,0x75,0x62,0x53,0x94,0xfc,0xeb,0x8b,0x36,0x2a,0x9f,0x9c,
-+    0x8b,0x8f,0x60,0x42,0xdd,0x37,0x13,0x10,0x5f,0x5a,0x52,0xc8,0xee,0x51,0x92,0x18,0xaf,0x84,0x18,0x5f,0x27,0x69,0xf4,0xde,
-+    0x22,0x4b,0x9c,0xaa,0x18,0x9e,0xde,0x04,0xc0,0xc4,0xfd,0x74,0x08,0x25,0x43,0xbf,0x00,0x1d,0xc2,0xd6,0xb2,0x4e,0xa4,0x4a,
-+    0x73,0xa1,0xff,0x71,0x3d,0xa5,0xf1,0x21,0xcf,0x4d,0xb4,0x5c,0x55,0x54,0x6f,0x94,0x50,0x21,0xbb,0x85,0xcb,0x54,0xeb,0x07,
-+    0xaf,0x74,0x62,0x21,0xf5,0x89,0x43,0xcb,0x10,0x62,0xd6,0xbe,0xc0,0x3a,0xb3,0x6b,0x9f,0x80,0xde,0xe0,0xc0,0x6e,0x8a,0x0a,
-+    0xe7,0x1f,0x08,0x9b,0x89,0x38,0xc2,0x30,0xfa,0xd9,0xc2,0x8c,0xf7,0xbd,0xbd,0xd4,0x6b,0x99,0xbd,0x5f,0x0e,0xb1,0x76,0xd6,
-+    0x5b,0x1f,0x1a,0xd7,0x27,0x5d,0x5b,0x19,0x1c,0x6d,0x5a,0x91,0x81,0x06,0x83,0x82,0x6d,0xaf,0x48,0x70,0x72,0x8b,0x7c,0x8e,
-+    0x57,0xcd,0x35,0x5d,0x7d,0x96,0xe5,0x2d,0x31,0xd2,0xa9,0xf8,0xad,0x9d,0x13,0xb4,0x89,0x75,0x7e,0xbc,0x39,0x11,0x27,0x9d,
-+    0xc3,0x7b,0xf1,0x40,0x2a,0x23,0xed,0x50,0xee,0x10,0x1b,0x97,0x13,0x71,0x1c,0x5a,0x7f,0x06,0xab,0x9b,0x51,0x2b,0x1f,0x85,
-+    0x27,0x99,0x11,0x18,0x62,0x97,0xcb,0x08,0x24,0x6d,0xf5,0x08,0x56,0xb5,0x36,0x00,0xf3,0x6b,0x3d,0xa9,0x13,0xd3,0xcf,0x0c,
-+    0x94,0x6f,0x9e,0x05,0x62,0xeb,0x9c,0x52,0x9d,0x0c,0x15,0x81,0x4d,0x7d,0xe3,0x2f,0x31,0x82,0x01,0xc4,0x30,0x82,0x01,0xc0,
-+    0x02,0x01,0x01,0x30,0x26,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,
-+    0x41,0x02,0x10,0x8d,0x01,0xec,0xa9,0x68,0x41,0x93,0x8f,0x40,0x42,0x93,0x4a,0x72,0x6b,0x03,0xcc,0x30,0x0d,0x06,0x09,0x60,
-+    0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0xa0,0x71,0x30,0x10,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,
-+    0x01,0x0c,0x31,0x02,0x30,0x00,0x30,0x11,0x06,0x0a,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x19,0x04,0x31,0x03,0x02,0x01,
-+    0x02,0x30,0x19,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x03,0x31,0x0c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,
-+    0x37,0x02,0x01,0x04,0x30,0x2f,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xcb,0xa1,0x2f,
-+    0x7b,0x0f,0x6a,0x14,0x06,0x26,0x77,0x7b,0xee,0xd1,0x90,0x34,0x1c,0xa7,0xcd,0x94,0x65,0xe0,0xe4,0x24,0x12,0x0c,0x4e,0xa2,
-+    0x89,0xeb,0x2d,0xe5,0xbb,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,0x01,0x00,
-+    0x68,0xfc,0x34,0xac,0x24,0xe1,0x93,0x00,0xec,0x8d,0x29,0xe1,0x32,0x03,0xe6,0x8a,0xd6,0x39,0x79,0x07,0x85,0x97,0xf4,0xb8,
-+    0x0c,0xf1,0x24,0xa0,0x16,0x09,0x0c,0xf8,0x02,0x40,0x94,0xdb,0x19,0x7a,0x6f,0x91,0xee,0x24,0x36,0x77,0x32,0x02,0xb5,0xd1,
-+    0xf9,0xe0,0xa2,0xdd,0xe0,0xe1,0x14,0x30,0x11,0xe1,0x25,0x02,0x0a,0x7c,0x10,0xdb,0xbd,0xb0,0x4e,0xbb,0x36,0xef,0x87,0xf0,
-+    0x17,0x49,0x77,0x45,0xa0,0x9e,0x47,0x70,0x1a,0xe2,0x87,0x39,0x41,0x24,0x1c,0xe0,0x09,0xb0,0xe0,0xfa,0xc5,0xf3,0xba,0xba,
-+    0x03,0x65,0x64,0xf9,0xa8,0x7d,0xe5,0x0e,0x84,0xc8,0xd1,0xe2,0xf5,0x44,0xa4,0x6f,0x33,0xac,0xbb,0x15,0x3b,0x0a,0x1a,0x04,
-+    0x6e,0xc2,0x54,0xa7,0x78,0x77,0x7d,0x32,0x21,0x4d,0x0c,0x3f,0x7b,0x0a,0x61,0x18,0x58,0xdb,0x59,0x02,0x3f,0xcf,0xb2,0xd0,
-+    0x5c,0xa5,0xea,0x96,0xd4,0x5c,0xd2,0x09,0xd3,0x18,0x61,0x73,0x6e,0x9f,0xdf,0xcb,0x17,0x4f,0xd1,0xc0,0xa2,0x2d,0x8b,0xf5,
-+    0x46,0xdf,0xf8,0xb8,0x4f,0x47,0x98,0xf4,0x44,0xa6,0xa1,0x5b,0xcb,0xfa,0xc1,0x31,0x4e,0xc4,0x03,0xea,0x06,0x1b,0x9b,0x94,
-+    0xa6,0xc8,0x1c,0x7a,0x69,0x3b,0x8d,0x8d,0x83,0x20,0x56,0x18,0xf1,0xe0,0xd2,0xfb,0xbc,0xaf,0xf7,0xdc,0x17,0x3b,0xcd,0xac,
-+    0x2b,0x07,0x86,0xc6,0x7f,0x25,0xc3,0xa2,0x6c,0x7c,0x49,0xa9,0xc1,0xe2,0x5e,0x40,0x05,0xfb,0x2f,0xab,0xd5,0x98,0x3a,0x69,
-+    0xbb,0x83,0x1c,0xbd,0xde,0x55,0xc0,0x74,0x71,0x8d,0xdb,0xc7,0x95,0xf4,0xf5,0xca,0x30,0x82,0x05,0x56,0x06,0x09,0x2a,0x86,
-+    0x48,0x86,0xf7,0x0d,0x01,0x07,0x02,0xa0,0x82,0x05,0x47,0x30,0x82,0x05,0x43,0x02,0x01,0x01,0x31,0x0f,0x30,0x0d,0x06,0x09,
-+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x30,0x5c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,
-+    0x04,0xa0,0x4e,0x30,0x4c,0x30,0x17,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x0f,0x30,0x09,0x03,0x01,0x00,
-+    0xa0,0x04,0xa2,0x02,0x80,0x00,0x30,0x31,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x04,
-+    0x20,0xdd,0x8b,0xd7,0x29,0x3b,0xae,0x16,0xec,0xbb,0x81,0x80,0x55,0x15,0xd8,0x87,0xa5,0x3e,0xeb,0x0b,0x74,0x59,0xb6,0x56,
-+    0xf1,0x0b,0x2e,0xe1,0xb4,0x42,0x4d,0x8b,0x18,0xa0,0x82,0x03,0x05,0x30,0x82,0x03,0x01,0x30,0x82,0x01,0xe9,0xa0,0x03,0x02,
-+    0x01,0x02,0x02,0x10,0xae,0xfb,0x3e,0x08,0x15,0xa4,0xe3,0xa7,0x4d,0x91,0x6a,0x85,0x68,0x5b,0x58,0xa1,0x30,0x0d,0x06,0x09,
-+    0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,
-+    0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x33,0x30,0x31,0x37,0x32,0x33,0x30,0x33,0x5a,
-+    0x17,0x0d,0x33,0x39,0x31,0x32,0x33,0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x10,0x31,0x0e,0x30,0x0c,0x06,0x03,0x55,
-+    0x04,0x03,0x13,0x05,0x63,0x65,0x72,0x74,0x32,0x30,0x82,0x01,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,
-+    0x01,0x01,0x05,0x00,0x03,0x82,0x01,0x0f,0x00,0x30,0x82,0x01,0x0a,0x02,0x82,0x01,0x01,0x00,0xca,0x01,0x2f,0x98,0x69,0x71,
-+    0x64,0x63,0x56,0x38,0xd7,0xc4,0xad,0x64,0x02,0x34,0xd4,0x31,0xc2,0x27,0x5d,0xd7,0x8f,0x72,0xd0,0x70,0x95,0xd9,0x75,0x65,
-+    0x2e,0x8c,0x5b,0x76,0xcd,0x54,0x3f,0xd9,0x0a,0xcc,0x3f,0x03,0x8f,0x74,0x2b,0x8c,0x3d,0x3d,0x4c,0xd3,0xaa,0x3c,0x97,0xf1,
-+    0x44,0x46,0x57,0x92,0xa9,0xdd,0xd9,0xf0,0xc7,0x8b,0x39,0xf5,0x8d,0x28,0x41,0x18,0xaf,0xca,0x99,0xd1,0xf1,0xe4,0xab,0x93,
-+    0x0a,0xb6,0xd4,0xad,0x2b,0x9f,0x60,0x27,0x4c,0xf2,0xc9,0x14,0xde,0xf2,0xc6,0xbe,0x82,0x14,0x83,0x65,0x13,0x9f,0x9c,0x8d,
-+    0xfa,0xac,0x95,0x12,0x00,0xd0,0xa4,0x36,0x4d,0xf0,0x8f,0xfc,0x1a,0x43,0x47,0xc3,0xff,0xce,0x1b,0x24,0xd6,0xcf,0x63,0xd1,
-+    0x41,0x23,0xb8,0x62,0x5f,0x31,0x4e,0x30,0x3f,0x63,0x64,0xff,0x72,0xb5,0x9d,0xe5,0xaa,0x22,0xbc,0x1d,0xb3,0x23,0xc9,0x16,
-+    0x49,0x10,0xed,0x51,0x02,0xd2,0x90,0xc6,0x86,0x47,0x40,0x7e,0xf1,0xcf,0xc1,0x17,0xa0,0x72,0xaf,0x40,0xb1,0x23,0x3d,0x5a,
-+    0xa1,0xf9,0xed,0xc8,0xb6,0x66,0xa7,0x94,0x39,0x09,0x03,0x6d,0x16,0x4e,0xc4,0x2a,0x4b,0x1f,0x5b,0x22,0x39,0xf7,0x60,0x1c,
-+    0x71,0x65,0x4c,0x11,0x29,0x59,0x96,0x5e,0x9e,0xfe,0xaf,0x23,0xd1,0xe3,0x2c,0xce,0xd2,0x31,0x8c,0x80,0x29,0x6c,0x82,0x99,
-+    0xe8,0x68,0xbd,0x7e,0x66,0xaa,0x35,0x0c,0xae,0x61,0xde,0x59,0x7d,0x5b,0x16,0x09,0x07,0x52,0x6a,0x14,0x26,0x3c,0x48,0x3e,
-+    0x03,0xdb,0xd4,0x8a,0xea,0x0e,0x46,0x1a,0x24,0xbd,0x02,0x03,0x01,0x00,0x01,0xa3,0x55,0x30,0x53,0x30,0x0c,0x06,0x03,0x55,
-+    0x1d,0x13,0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x43,0x06,0x03,0x55,0x1d,0x01,0x04,0x3c,0x30,0x3a,0x80,0x10,0x88,0x17,
-+    0xf7,0x38,0x65,0x8b,0x78,0x78,0xf6,0x77,0xe3,0x25,0x47,0x54,0x33,0x4c,0xa1,0x14,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,
-+    0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x82,0x10,0x2b,0x59,0xb4,0xc7,0xe2,0xce,0x08,0x97,0x46,0x48,
-+    0x32,0x17,0x0f,0x97,0xc5,0x08,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x01,
-+    0x01,0x00,0xd1,0x0d,0xdd,0x83,0x0c,0xd8,0xf9,0x0c,0x71,0xe3,0x2f,0x7c,0xc9,0xd7,0x8e,0x33,0x27,0xb6,0x6b,0x34,0x3c,0x41,
-+    0xf0,0x13,0x03,0xd6,0x5a,0xe2,0x55,0x12,0x42,0x06,0x20,0x03,0xb1,0x74,0xc7,0xc0,0x08,0x00,0x21,0xbe,0x90,0xe7,0xfd,0xac,
-+    0xe0,0x67,0x42,0xe7,0x53,0x86,0xcf,0x53,0x55,0x40,0xf1,0xbc,0xfc,0x87,0xab,0x67,0xb6,0x09,0xe1,0xf1,0xa2,0xce,0xf6,0xbf,
-+    0xe6,0x1d,0x43,0x4f,0x41,0xf0,0xf5,0xc0,0xfa,0xc5,0xd2,0x14,0x2d,0xd9,0x23,0x8e,0x9c,0xeb,0x68,0xff,0x3c,0x5f,0x18,0xca,
-+    0x4b,0x09,0xad,0xcd,0xbd,0x23,0x62,0x33,0x4e,0x02,0x10,0xf9,0xe3,0x68,0x6f,0x22,0xb0,0x86,0x0b,0x5a,0xbe,0xd3,0xee,0x8a,
-+    0x0b,0x4c,0x92,0x9e,0x06,0x31,0x1f,0x95,0x4f,0xbf,0x27,0x7f,0x1f,0xcd,0xcc,0x9c,0x70,0xa1,0x51,0x07,0x7a,0x09,0x36,0x3f,
-+    0x0a,0x2f,0x16,0x77,0x26,0x9b,0xb4,0xc9,0x1e,0x86,0xe3,0xb3,0xb7,0xc3,0xcc,0xf1,0x44,0x6e,0x2e,0xf4,0xc9,0x5b,0x23,0x08,
-+    0x0a,0xc0,0xdb,0xc1,0x1a,0x37,0xb3,0xb1,0x91,0xce,0x24,0x26,0x56,0x7f,0x26,0x37,0x88,0xa0,0x02,0x37,0x6e,0x9c,0xca,0xc1,
-+    0x8c,0x19,0x99,0xca,0x6c,0x9a,0x98,0x75,0x89,0xfc,0x6d,0x92,0xfc,0xb5,0x12,0x5b,0x29,0xb1,0x88,0x68,0x3b,0xef,0xf0,0xc0,
-+    0x8f,0x82,0x5e,0x33,0xf9,0x67,0x6b,0xe8,0x60,0x1b,0x14,0xec,0x9c,0xdf,0x21,0x38,0xbb,0x0d,0x3f,0xd9,0xbc,0xd2,0x01,0x2a,
-+    0x92,0x0c,0xc2,0x97,0x2e,0x12,0x22,0x54,0x76,0xeb,0x80,0x51,0x99,0x9d,0x0f,0x26,0x12,0xb7,0x31,0x82,0x01,0xc4,0x30,0x82,
-+    0x01,0xc0,0x02,0x01,0x01,0x30,0x26,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,
-+    0x20,0x43,0x41,0x02,0x10,0xae,0xfb,0x3e,0x08,0x15,0xa4,0xe3,0xa7,0x4d,0x91,0x6a,0x85,0x68,0x5b,0x58,0xa1,0x30,0x0d,0x06,
-+    0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0xa0,0x71,0x30,0x10,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,
-+    0x37,0x02,0x01,0x0c,0x31,0x02,0x30,0x00,0x30,0x11,0x06,0x0a,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x19,0x04,0x31,0x03,
-+    0x02,0x01,0x01,0x30,0x19,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x03,0x31,0x0c,0x06,0x0a,0x2b,0x06,0x01,0x04,
-+    0x01,0x82,0x37,0x02,0x01,0x04,0x30,0x2f,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xcb,
-+    0xa1,0x2f,0x7b,0x0f,0x6a,0x14,0x06,0x26,0x77,0x7b,0xee,0xd1,0x90,0x34,0x1c,0xa7,0xcd,0x94,0x65,0xe0,0xe4,0x24,0x12,0x0c,
-+    0x4e,0xa2,0x89,0xeb,0x2d,0xe5,0xbb,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,
-+    0x01,0x00,0x26,0x76,0xb3,0xf2,0xc9,0xb1,0x73,0x13,0xb5,0xd2,0xc5,0xb7,0x01,0x5c,0xc6,0x94,0x38,0x9f,0xc7,0x57,0x56,0x95,
-+    0xb0,0xf4,0x6d,0xc2,0xd4,0x6a,0xf1,0x4d,0x09,0xa1,0x51,0xa6,0x91,0xf0,0x0e,0x84,0xc0,0x2c,0x74,0xa3,0x97,0x1f,0x41,0xe0,
-+    0x4a,0xfa,0x1a,0x78,0xa9,0xd5,0x3c,0x85,0x29,0x2b,0xaf,0xbb,0xc3,0x61,0x0d,0x50,0x20,0x20,0xf5,0x80,0x0d,0x6a,0x15,0x4b,
-+    0x38,0x6c,0x55,0xd9,0xf9,0xd0,0x44,0x22,0x46,0x98,0xe6,0x07,0xd4,0xba,0x3d,0x9d,0x50,0xa7,0x8e,0x1f,0xa8,0x82,0x25,0x7e,
-+    0x39,0xda,0xe1,0x49,0xc7,0x24,0x3f,0x31,0xfb,0x4b,0xba,0x75,0xdb,0x10,0x0a,0xbe,0xc5,0xad,0x3e,0x30,0x16,0x9b,0x15,0xbb,
-+    0xc0,0x59,0xf2,0xf5,0x4f,0xf5,0x56,0xc6,0x28,0xd0,0x1e,0x7d,0x8f,0x2e,0x2b,0xb6,0x76,0x94,0x52,0x87,0x99,0xa3,0x66,0x3d,
-+    0x94,0x0d,0x73,0xb0,0xd5,0xd4,0x76,0x5b,0x69,0x95,0x0a,0x16,0x4f,0x5c,0xf4,0x95,0x5b,0x42,0x45,0x04,0x5c,0x53,0xb7,0x1a,
-+    0x61,0x6c,0x82,0xdc,0x95,0x94,0x38,0x64,0x34,0x01,0x98,0x2e,0xf8,0xcf,0xf8,0x66,0xae,0xba,0xf8,0x70,0x9e,0x9e,0xde,0xa2,
-+    0x7f,0x56,0x8d,0xd9,0x6a,0x7b,0x41,0x02,0x46,0x05,0x5c,0xba,0xed,0x43,0x98,0x56,0x39,0x52,0xc0,0x0b,0x3c,0xe1,0x7d,0x1b,
-+    0xf5,0xac,0x03,0x5b,0xbb,0x7a,0x65,0x80,0x4b,0xcb,0xb7,0x51,0xa7,0x19,0x8a,0x38,0x75,0x76,0x75,0xc2,0x1f,0x12,0xc4,0x68,
-+    0x96,0xe0,0x89,0x9f,0x37,0x3d,0xab,0xfd,0x6b,0x03,0xb3,0xa1,0x51,0xf8,0x69,0x17,0xea,0xff,0x00,0x00,0x00,0x00,0x00,0x00,
-+};
-+
- static void call_winverify(WCHAR *pathW, LONG *status, BOOL hash_only)
- {
-     static GUID WVTPolicyGUID = WINTRUST_ACTION_GENERIC_VERIFY_V2;
-@@ -1312,6 +1782,116 @@ static void test_get_known_usages(void)
-      "expected ERROR_INVALID_PARAMETER, got %ld\n", GetLastError());
- }
- 
-+static void test_multiple_signatures(void)
-+{
-+    static const BYTE serials[][16] =
-+    {
-+        { 0xfa, 0x4b, 0x40, 0x69, 0x40, 0x4b, 0xc0, 0x44, 0xa2, 0x31, 0x3a, 0xa7, 0xaa, 0x97, 0x73, 0xd1, },
-+        { 0xcc, 0x03, 0x6b, 0x72, 0x4a, 0x93, 0x42, 0x40, 0x8f, 0x93, 0x41, 0x68, 0xa9, 0xec, 0x01, 0x8d, },
-+        { 0xa1, 0x58, 0x5b, 0x68, 0x85, 0x6a, 0x91, 0x4d, 0xa7, 0xe3, 0xa4, 0x15, 0x08, 0x3e, 0xfb, 0xae, },
-+    };
-+    static GUID WVTPolicyGUID = WINTRUST_ACTION_GENERIC_VERIFY_V2;
-+    WINTRUST_SIGNATURE_SETTINGS settings = { sizeof(settings) };
-+    WINTRUST_FILE_INFO file_info = { sizeof(file_info) };
-+    WINTRUST_DATA data = { sizeof(data) };
-+    CRYPT_PROVIDER_DATA *prov;
-+    WCHAR pathW[MAX_PATH];
-+    CERT_INFO *cert_info;
-+    unsigned int i;
-+    BYTE buf[4096];
-+    DWORD written;
-+    LONG status;
-+    HANDLE file;
-+    DWORD size;
-+    BOOL bret;
-+
-+    file = create_temp_file(pathW);
-+    ok(file != INVALID_HANDLE_VALUE, "Failed to create temporary file.\n");
-+    bret = WriteFile(file, self_signed_3certs, sizeof(self_signed_3certs), &written, NULL);
-+    ok(bret, "Failed, err %lu.\n", GetLastError());
-+    CloseHandle(file);
-+
-+    file_info.pcwszFilePath = pathW;
-+    data.dwUIChoice = WTD_UI_NONE;
-+    data.fdwRevocationChecks = WTD_REVOKE_NONE;
-+    data.dwUnionChoice = WTD_CHOICE_FILE;
-+    data.pFile = &file_info;
-+    data.dwStateAction = WTD_STATEACTION_VERIFY;
-+    data.dwProvFlags = 0;
-+    data.pSignatureSettings = &settings;
-+
-+    settings.cSecondarySigs = 0xcccccccc;
-+    settings.dwVerifiedSigIndex = 0xcccccccc;
-+    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
-+    todo_wine ok(status == CERT_E_UNTRUSTEDROOT || status == CERT_E_CHAINING, "Failed, ret %#lx\n", status);
-+    ok(settings.cSecondarySigs == 0xcccccccc, "Got %lu.\n", settings.cSecondarySigs);
-+    todo_wine ok(settings.dwVerifiedSigIndex == 2, "Got %lu.\n", settings.dwVerifiedSigIndex);
-+
-+    prov = (CRYPT_PROVIDER_DATA *)data.hWVTStateData;
-+    ok(prov->cbStruct == sizeof(*prov), "Got size %lu.\n", prov->cbStruct);
-+    ok(prov->csSigners == 1, "Got %lu.\n", prov->csSigners);
-+    ok(prov->pSigSettings == &settings, "Got %p, expected %p.\n", prov->pSigSettings, &settings);
-+    ok(!!prov->pSigState, "Got %p, expected %p.\n", prov->pSigSettings, &settings);
-+    if (prov->cbStruct == sizeof(*prov) && prov->pSigState)
-+    {
-+        ok(prov->pSigState->cbStruct == sizeof(*prov->pSigState)
-+                || broken(prov->pSigState->cbStruct == offsetof(CRYPT_PROVIDER_SIGSTATE, iAttemptCount)) /* Win7 */,
-+                "Got %lu.\n", prov->pSigState->cbStruct);
-+        ok(prov->pSigState->fSupportMultiSig, "Got %d.\n", prov->pSigState->fSupportMultiSig);
-+        ok(prov->pSigState->dwCryptoPolicySupport == (WSS_SIGTRUST_SUPPORT | WSS_OBJTRUST_SUPPORT
-+                | WSS_CERTTRUST_SUPPORT), "Got %#lx.\n", prov->pSigState->dwCryptoPolicySupport);
-+        ok(prov->pSigState->cSecondarySigs == 2, "Got %lu.\n", prov->pSigState->cSecondarySigs);
-+
-+        size = sizeof(buf);
-+        bret = CryptMsgGetParam(prov->pSigState->hPrimarySig, CMSG_SIGNER_CERT_INFO_PARAM, 0, buf, &size);
-+        ok(bret, "Failed, err %#lx.\n", GetLastError());
-+        cert_info = (CERT_INFO *)buf;
-+        ok(cert_info->SerialNumber.cbData == sizeof(serials[0]), "Got %lu.\n", cert_info->SerialNumber.cbData);
-+        ok(!memcmp(cert_info->SerialNumber.pbData, serials[0], sizeof(serials[0])), "Data does not match.\n");
-+        for (i = 0; i < prov->pSigState->cSecondarySigs; ++i)
-+        {
-+            bret = CryptMsgGetParam(prov->pSigState->rhSecondarySigs[i], CMSG_SIGNER_CERT_INFO_PARAM, 0, buf, &size);
-+            ok(bret, "Failed, err %#lx.\n", GetLastError());
-+            ok(cert_info->SerialNumber.cbData == sizeof(serials[0]), "Got %lu.\n", cert_info->SerialNumber.cbData);
-+            ok(!memcmp(cert_info->SerialNumber.pbData, serials[i + 1], sizeof(serials[0])), "Data does not match.\n");
-+        }
-+    }
-+
-+    data.dwStateAction = WTD_STATEACTION_CLOSE;
-+    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
-+    ok(status == S_OK, "Failed, ret %#lx\n", status);
-+
-+    data.dwStateAction = WTD_STATEACTION_VERIFY;
-+    settings.dwFlags = WSS_GET_SECONDARY_SIG_COUNT;
-+    settings.cSecondarySigs = 0xcccccccc;
-+    settings.dwVerifiedSigIndex = 0xcccccccc;
-+    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
-+    todo_wine ok(status == CERT_E_UNTRUSTEDROOT || status == CERT_E_CHAINING, "Failed, ret %#lx\n", status);
-+    ok(settings.cSecondarySigs == 2, "Got %lu.\n", settings.cSecondarySigs);
-+    todo_wine ok(settings.dwVerifiedSigIndex == 2, "Got %lu.\n", settings.dwVerifiedSigIndex);
-+
-+    data.dwStateAction = WTD_STATEACTION_CLOSE;
-+    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
-+    ok(status == S_OK, "Failed, ret %#lx\n", status);
-+
-+    data.dwStateAction = WTD_STATEACTION_VERIFY;
-+    settings.dwFlags = WSS_VERIFY_SPECIFIC | WSS_GET_SECONDARY_SIG_COUNT;
-+    settings.cSecondarySigs = 0xcccccccc;
-+    settings.dwVerifiedSigIndex = 0xcccccccc;
-+    settings.dwIndex = 1;
-+    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
-+    todo_wine ok(status == CERT_E_UNTRUSTEDROOT || status == CERT_E_CHAINING, "Failed, ret %#lx\n", status);
-+    ok(settings.cSecondarySigs == 2, "Got %lu.\n", settings.cSecondarySigs);
-+    todo_wine ok(settings.dwVerifiedSigIndex == 1, "Got %lu.\n", settings.dwVerifiedSigIndex);
-+    settings.dwIndex = 0;
-+
-+    data.dwStateAction = WTD_STATEACTION_CLOSE;
-+    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
-+    ok(status == S_OK, "Failed, ret %#lx\n", status);
-+
-+    DeleteFileW(pathW);
-+}
-+
- START_TEST(softpub)
- {
-     InitFunctionPtrs();
-@@ -1320,4 +1900,5 @@ START_TEST(softpub)
-     test_wintrust();
-     test_wintrust_digest();
-     test_get_known_usages();
-+    test_multiple_signatures();
- }
-diff --git a/dlls/wintrust/wintrust_main.c b/dlls/wintrust/wintrust_main.c
-index 33695008b24..925ae7ca85a 100644
---- wine/dlls/wintrust/wintrust_main.c
-+++ wine/dlls/wintrust/wintrust_main.c
-@@ -294,6 +294,10 @@ static LONG WINTRUST_DefaultVerify(HWND hwnd, GUID *actionID,
- 
-     data->hWVTStateData = provData;
-     provData->pWintrustData = data;
-+
-+    if (WVT_ISINSTRUCT(WINTRUST_DATA, data->cbStruct, pSignatureSettings))
-+        provData->pSigSettings = data->pSignatureSettings;
-+
-     if (hwnd == INVALID_HANDLE_VALUE)
-         provData->hWndParent = GetDesktopWindow();
-     else
-diff --git a/include/wincrypt.h b/include/wincrypt.h
-index db2c30c7d68..29735f6225d 100644
---- wine/include/wincrypt.h
-+++ wine/include/wincrypt.h
-@@ -21,8 +21,6 @@
- #ifndef __WINE_WINCRYPT_H
- #define __WINE_WINCRYPT_H
- 
--#include "wine/winheader_enter.h"
--
- #ifdef __cplusplus
- extern "C" {
- #endif
-@@ -1088,6 +1086,7 @@ typedef struct _CERT_CHAIN_POLICY_STATUS {
- #define CERT_CHAIN_POLICY_TRUST_TESTROOT_FLAG                    0x00004000
- #define CERT_CHAIN_POLICY_ALLOW_TESTROOT_FLAG                    0x00008000
- #define MICROSOFT_ROOT_CERT_CHAIN_POLICY_ENABLE_TEST_ROOT_FLAG   0x00010000
-+#define MICROSOFT_ROOT_CERT_CHAIN_POLICY_CHECK_APPLICATION_ROOT_FLAG 0x00020000
- 
- typedef struct _AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {
-     DWORD             cbSize;
-@@ -3353,8 +3352,10 @@ typedef struct _CTL_FIND_SUBJECT_PARA
- #define CERT_NAME_URL_TYPE              7
- #define CERT_NAME_UPN_TYPE              8
- 
--#define CERT_NAME_ISSUER_FLAG           0x00000001
--#define CERT_NAME_DISABLE_IE4_UTF8_FLAG 0x00010000
-+#define CERT_NAME_ISSUER_FLAG              0x00000001
-+#define CERT_NAME_SEARCH_ALL_NAMES_FLAG    0x00000002
-+#define CERT_NAME_DISABLE_IE4_UTF8_FLAG    0x00010000
-+#define CERT_NAME_STR_ENABLE_PUNYCODE_FLAG 0x00200000
- 
- /* CryptFormatObject flags */
- #define CRYPT_FORMAT_STR_MULTI_LINE 0x0001
-@@ -4695,6 +4696,4 @@ HRESULT WINAPI FindCertsByIssuer(PCERT_CHAIN pCertChains, DWORD *pcbCertChains,
- }
- #endif
- 
--#include "wine/winheader_exit.h"
--
- #endif
-diff --git a/include/wintrust.h b/include/wintrust.h
-index 28df37c1626..eeb149822b4 100644
---- wine/include/wintrust.h
-+++ wine/include/wintrust.h
-@@ -19,8 +19,6 @@
- #ifndef __WINE_WINTRUST_H
- #define __WINE_WINTRUST_H
- 
--#include "wine/winheader_enter.h"
--
- #include <wincrypt.h>
- 
- 
-@@ -477,6 +475,8 @@ CRYPT_PROVIDER_SGNR * WINAPI WTHelperGetProvSignerFromChain(
- CRYPT_PROVIDER_DATA * WINAPI WTHelperProvDataFromStateData(HANDLE hStateData);
- CRYPT_PROVIDER_PRIVDATA * WINAPI WTHelperGetProvPrivateDataFromChain(CRYPT_PROVIDER_DATA *,GUID *);
- 
-+#define szOID_NESTED_SIGNATURE       "1.3.6.1.4.1.311.2.4.1"
-+
- #define SPC_INDIRECT_DATA_OBJID      "1.3.6.1.4.1.311.2.1.4"
- #define SPC_SP_AGENCY_INFO_OBJID     "1.3.6.1.4.1.311.2.1.10"
- #define SPC_STATEMENT_TYPE_OBJID     "1.3.6.1.4.1.311.2.1.11"
-@@ -664,6 +664,4 @@ typedef struct _WIN_TRUST_SUBJECT_FILE_AND_DISPLAY
- }
- #endif
- 
--#include "wine/winheader_exit.h"
--
- #endif
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/configure b/configure
-index 24f958073a0..cdf99fc287d 100755
---- wine/configure
-+++ wine/configure
-@@ -950,6 +950,7 @@ enable_amstream
- enable_apisetschema
- enable_apphelp
- enable_appwiz_cpl
-+enable_atiadlxx
- enable_api_ms_win_core_psm_appnotify_l1_1_0
- enable_api_ms_win_power_base_l1_1_0
- enable_atl
-@@ -21778,6 +21779,7 @@ wine_fn_config_makefile dlls/apisetschema enable_apisetschema
- wine_fn_config_makefile dlls/apphelp enable_apphelp
- wine_fn_config_makefile dlls/apphelp/tests enable_tests
- wine_fn_config_makefile dlls/appwiz.cpl enable_appwiz_cpl
-+wine_fn_config_makefile dlls/atiadlxx enable_atiadlxx
- wine_fn_config_makefile dlls/api-ms-win-core-psm-appnotify-l1-1-0 enable_api_ms_win_core_psm_appnotify_l1_1_0
- wine_fn_config_makefile dlls/api-ms-win-power-base-l1-1-0 enable_api_ms_win_power_base_l1_1_0
- wine_fn_config_makefile dlls/atl enable_atl
-diff --git a/configure.ac b/configure.ac
-index 58063421cce..c05d5b6f539 100644
---- wine/configure.ac
-+++ wine/configure.ac
-@@ -2424,6 +2424,7 @@ WINE_CONFIG_MAKEFILE(dlls/apisetschema)
- WINE_CONFIG_MAKEFILE(dlls/apphelp)
- WINE_CONFIG_MAKEFILE(dlls/apphelp/tests)
- WINE_CONFIG_MAKEFILE(dlls/appwiz.cpl)
-+WINE_CONFIG_MAKEFILE(dlls/atiadlxx)
- WINE_CONFIG_MAKEFILE(dlls/api-ms-win-power-base-l1-1-0)
- WINE_CONFIG_MAKEFILE(dlls/atl)
- WINE_CONFIG_MAKEFILE(dlls/atl/tests)
-diff --git a/dlls/atiadlxx/Makefile.in b/dlls/atiadlxx/Makefile.in
-new file mode 100644
-index 00000000000..fd9b8abf626
---- /dev/null
-+++ wine/dlls/atiadlxx/Makefile.in
-@@ -0,0 +1,8 @@
-+EXTRADEFS = -DWINE_NO_LONG_TYPES
-+MODULE = atiadlxx.dll
-+IMPORTS = dxgi
-+
-+EXTRADLLFLAGS = -mno-cygwin -Wb,--prefer-native
-+
-+C_SRCS = \
-+	atiadlxx_main.c
-diff --git a/dlls/atiadlxx/atiadlxx.spec b/dlls/atiadlxx/atiadlxx.spec
-new file mode 100644
-index 00000000000..1e447f38ded
---- /dev/null
-+++ wine/dlls/atiadlxx/atiadlxx.spec
-@@ -0,0 +1,1138 @@
-+@ stub ADL2_ADC_CurrentProfileFromDrv_Get
-+@ stub ADL2_ADC_Display_AdapterDeviceProfileEx_Get
-+@ stub ADL2_ADC_DrvDataToProfile_Copy
-+@ stub ADL2_ADC_FindClosestMode_Get
-+@ stub ADL2_ADC_IsDevModeEqual_Get
-+@ stub ADL2_ADC_Profile_Apply
-+@ stub ADL2_APO_AudioDelayAdjustmentInfo_Get
-+@ stub ADL2_APO_AudioDelay_Restore
-+@ stub ADL2_APO_AudioDelay_Set
-+@ stub ADL2_AdapterLimitation_Caps
-+@ stub ADL2_AdapterX2_Caps
-+@ stub ADL2_Adapter_AMDAndNonAMDDIsplayClone_Get
-+@ stub ADL2_Adapter_ASICFamilyType_Get
-+@ stub ADL2_Adapter_ASICInfo_Get
-+@ stub ADL2_Adapter_Accessibility_Get
-+@ stub ADL2_Adapter_AceDefaults_Restore
-+@ stub ADL2_Adapter_Active_Get
-+@ stub ADL2_Adapter_Active_Set
-+@ stub ADL2_Adapter_Active_SetPrefer
-+@ stub ADL2_Adapter_AdapterInfoX2_Get
-+@ stub ADL2_Adapter_AdapterInfoX3_Get
-+@ stub ADL2_Adapter_AdapterInfoX4_Get
-+@ stub ADL2_Adapter_AdapterInfo_Get
-+@ stub ADL2_Adapter_AdapterList_Disable
-+@ stub ADL2_Adapter_AdapterLocationPath_Get
-+@ stub ADL2_Adapter_Aspects_Get
-+@ stub ADL2_Adapter_AudioChannelSplitConfiguration_Get
-+@ stub ADL2_Adapter_AudioChannelSplit_Disable
-+@ stub ADL2_Adapter_AudioChannelSplit_Enable
-+@ stub ADL2_Adapter_BigSw_Info_Get
-+@ stub ADL2_Adapter_BlackAndWhiteLevelSupport_Get
-+@ stub ADL2_Adapter_BlackAndWhiteLevel_Get
-+@ stub ADL2_Adapter_BlackAndWhiteLevel_Set
-+@ stub ADL2_Adapter_BoardLayout_Get
-+@ stub ADL2_Adapter_Caps
-+@ stub ADL2_Adapter_ChipSetInfo_Get
-+@ stub ADL2_Adapter_CloneTypes_Get
-+@ stub ADL2_Adapter_ConfigMemory_Cap
-+@ stub ADL2_Adapter_ConfigMemory_Get
-+@ stub ADL2_Adapter_ConfigureState_Get
-+@ stub ADL2_Adapter_ConnectionData_Get
-+@ stub ADL2_Adapter_ConnectionData_Remove
-+@ stub ADL2_Adapter_ConnectionData_Set
-+@ stub ADL2_Adapter_ConnectionState_Get
-+@ stub ADL2_Adapter_CrossDisplayPlatformInfo_Get
-+@ stub ADL2_Adapter_CrossGPUClone_Disable
-+@ stub ADL2_Adapter_CrossdisplayAdapterRole_Caps
-+@ stub ADL2_Adapter_CrossdisplayInfoX2_Set
-+@ stub ADL2_Adapter_CrossdisplayInfo_Get
-+@ stub ADL2_Adapter_CrossdisplayInfo_Set
-+@ stub ADL2_Adapter_CrossfireX2_Get
-+@ stub ADL2_Adapter_Crossfire_Caps
-+@ stub ADL2_Adapter_Crossfire_Get
-+@ stub ADL2_Adapter_Crossfire_Set
-+@ stub ADL2_Adapter_DefaultAudioChannelTable_Load
-+@ stub ADL2_Adapter_Desktop_Caps
-+@ stub ADL2_Adapter_Desktop_SupportedSLSGridTypes_Get
-+@ stub ADL2_Adapter_DeviceID_Get
-+@ stub ADL2_Adapter_DisplayAudioEndpoint_Enable
-+@ stub ADL2_Adapter_DisplayAudioEndpoint_Mute
-+@ stub ADL2_Adapter_DisplayAudioInfo_Get
-+@ stub ADL2_Adapter_DisplayGTCCaps_Get
-+@ stub ADL2_Adapter_Display_Caps
-+@ stub ADL2_Adapter_DriverSettings_Get
-+@ stub ADL2_Adapter_DriverSettings_Set
-+@ stub ADL2_Adapter_ECC_ErrorInjection_Set
-+@ stub ADL2_Adapter_ECC_ErrorRecords_Get
-+@ stub ADL2_Adapter_EDC_ErrorInjection_Set
-+@ stub ADL2_Adapter_EDC_ErrorRecords_Get
-+@ stub ADL2_Adapter_EDIDManagement_Caps
-+@ stub ADL2_Adapter_EmulationMode_Set
-+@ stub ADL2_Adapter_ExtInfo_Get
-+@ stub ADL2_Adapter_Feature_Caps
-+@ stub ADL2_Adapter_FrameMetrics_Caps
-+@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Disable
-+@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Enable
-+@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Get
-+@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Start
-+@ stub ADL2_Adapter_FrameMetrics_FrameDuration_Stop
-+@ stub ADL2_Adapter_FrameMetrics_Get
-+@ stub ADL2_Adapter_FrameMetrics_Start
-+@ stub ADL2_Adapter_FrameMetrics_Stop
-+@ stub ADL2_Adapter_Gamma_Get
-+@ stub ADL2_Adapter_Gamma_Set
-+@ stub ADL2_Adapter_Graphic_Core_Info_Get
-+@ stub ADL2_Adapter_HBC_Caps
-+@ stub ADL2_Adapter_HBM_ECC_UC_Check
-+@ stub ADL2_Adapter_Headless_Get
-+@ stub ADL2_Adapter_ID_Get
-+@ stub ADL2_Adapter_IsGamingDriver_Info_Get
-+@ stub ADL2_Adapter_LocalDisplayConfig_Get
-+@ stub ADL2_Adapter_LocalDisplayConfig_Set
-+@ stub ADL2_Adapter_LocalDisplayState_Get
-+@ stub ADL2_Adapter_MVPU_Set
-+@ stub ADL2_Adapter_MaxCursorSize_Get
-+@ stub ADL2_Adapter_MemoryInfo2_Get
-+@ stub ADL2_Adapter_MemoryInfo_Get
-+@ stub ADL2_Adapter_MirabilisSupport_Get
-+@ stub ADL2_Adapter_ModeSwitch
-+@ stub ADL2_Adapter_ModeTimingOverride_Caps
-+@ stub ADL2_Adapter_Modes_ReEnumerate
-+@ stub ADL2_Adapter_NumberOfActivatableSources_Get
-+@ stdcall ADL2_Adapter_NumberOfAdapters_Get(ptr ptr)
-+@ stub ADL2_Adapter_ObservedClockInfo_Get
-+@ stub ADL2_Adapter_PMLog_Start
-+@ stub ADL2_Adapter_PMLog_Stop
-+@ stub ADL2_Adapter_PMLog_Support_Get
-+@ stub ADL2_Adapter_PreFlipPostProcessing_Disable
-+@ stub ADL2_Adapter_PreFlipPostProcessing_Enable
-+@ stub ADL2_Adapter_PreFlipPostProcessing_Get_Status
-+@ stub ADL2_Adapter_PreFlipPostProcessing_Select_LUT_Algorithm
-+@ stub ADL2_Adapter_PreFlipPostProcessing_Select_LUT_Buffer
-+@ stub ADL2_Adapter_PreFlipPostProcessing_Unselect_LUT_Buffer
-+@ stub ADL2_Adapter_Primary_Get
-+@ stub ADL2_Adapter_Primary_Set
-+@ stub ADL2_Adapter_RAS_ErrorInjection_Set
-+@ stub ADL2_Adapter_RegValueInt_Get
-+@ stub ADL2_Adapter_RegValueInt_Set
-+@ stub ADL2_Adapter_RegValueString_Get
-+@ stub ADL2_Adapter_RegValueString_Set
-+@ stub ADL2_Adapter_SWInfo_Get
-+@ stub ADL2_Adapter_Speed_Caps
-+@ stub ADL2_Adapter_Speed_Get
-+@ stub ADL2_Adapter_Speed_Set
-+@ stub ADL2_Adapter_SupportedConnections_Get
-+@ stub ADL2_Adapter_TRNG_Get
-+@ stub ADL2_Adapter_Tear_Free_Cap
-+@ stub ADL2_Adapter_VRAMUsage_Get
-+@ stub ADL2_Adapter_VariBrightEnable_Set
-+@ stub ADL2_Adapter_VariBrightLevel_Get
-+@ stub ADL2_Adapter_VariBrightLevel_Set
-+@ stub ADL2_Adapter_VariBright_Caps
-+@ stub ADL2_Adapter_VerndorID_Int_get
-+@ stub ADL2_Adapter_VideoBiosInfo_Get
-+@ stub ADL2_Adapter_VideoTheaterModeInfo_Get
-+@ stub ADL2_Adapter_VideoTheaterModeInfo_Set
-+@ stub ADL2_Adapter_XConnectSupport_Get
-+@ stub ADL2_ApplicationProfilesX2_AppInterceptionList_Set
-+@ stub ADL2_ApplicationProfilesX2_AppStartStopInfo_Get
-+@ stub ADL2_ApplicationProfiles_AppInterceptionList_Set
-+@ stub ADL2_ApplicationProfiles_AppInterception_Set
-+@ stub ADL2_ApplicationProfiles_AppStartStopInfo_Get
-+@ stub ADL2_ApplicationProfiles_AppStartStop_Resume
-+@ stub ADL2_ApplicationProfiles_Applications_Get
-+@ stub ADL2_ApplicationProfiles_ConvertToCompact
-+@ stub ADL2_ApplicationProfiles_DriverAreaPrivacy_Get
-+@ stub ADL2_ApplicationProfiles_GetCustomization
-+@ stub ADL2_ApplicationProfiles_HitListsX2_Get
-+@ stub ADL2_ApplicationProfiles_HitListsX3_Get
-+@ stub ADL2_ApplicationProfiles_HitLists_Get
-+@ stub ADL2_ApplicationProfiles_ProfileApplicationX2_Assign
-+@ stub ADL2_ApplicationProfiles_ProfileApplication_Assign
-+@ stub ADL2_ApplicationProfiles_ProfileOfAnApplicationX2_Search
-+@ stub ADL2_ApplicationProfiles_ProfileOfAnApplication_InMemorySearch
-+@ stub ADL2_ApplicationProfiles_ProfileOfAnApplication_Search
-+@ stub ADL2_ApplicationProfiles_Profile_Create
-+@ stub ADL2_ApplicationProfiles_Profile_Exist
-+@ stub ADL2_ApplicationProfiles_Profile_Remove
-+@ stub ADL2_ApplicationProfiles_PropertyType_Get
-+@ stub ADL2_ApplicationProfiles_Release_Get
-+@ stub ADL2_ApplicationProfiles_RemoveApplication
-+@ stub ADL2_ApplicationProfiles_StatusInfo_Get
-+@ stub ADL2_ApplicationProfiles_System_Reload
-+@ stub ADL2_ApplicationProfiles_User_Load
-+@ stub ADL2_ApplicationProfiles_User_Unload
-+@ stub ADL2_Audio_CurrentSampleRate_Get
-+@ stub ADL2_AutoTuningResult_Get
-+@ stub ADL2_BOOST_Settings_Get
-+@ stub ADL2_BOOST_Settings_Set
-+@ stub ADL2_Blockchain_BlockchainMode_Caps
-+@ stub ADL2_Blockchain_BlockchainMode_Get
-+@ stub ADL2_Blockchain_BlockchainMode_Set
-+@ stub ADL2_Blockchain_Hashrate_Set
-+@ stub ADL2_CDS_UnsafeMode_Set
-+@ stub ADL2_CHILL_SettingsX2_Get
-+@ stub ADL2_CHILL_SettingsX2_Set
-+@ stub ADL2_CV_DongleSettings_Get
-+@ stub ADL2_CV_DongleSettings_Reset
-+@ stub ADL2_CV_DongleSettings_Set
-+@ stub ADL2_Chill_Caps_Get
-+@ stub ADL2_Chill_Settings_Get
-+@ stub ADL2_Chill_Settings_Notify
-+@ stub ADL2_Chill_Settings_Set
-+@ stub ADL2_CustomFan_Caps
-+@ stub ADL2_CustomFan_Get
-+@ stub ADL2_CustomFan_Set
-+@ stub ADL2_DELAG_Settings_Get
-+@ stub ADL2_DELAG_Settings_Set
-+@ stub ADL2_DFP_AllowOnlyCETimings_Get
-+@ stub ADL2_DFP_AllowOnlyCETimings_Set
-+@ stub ADL2_DFP_BaseAudioSupport_Get
-+@ stub ADL2_DFP_GPUScalingEnable_Get
-+@ stub ADL2_DFP_GPUScalingEnable_Set
-+@ stub ADL2_DFP_HDMISupport_Get
-+@ stub ADL2_DFP_MVPUAnalogSupport_Get
-+@ stub ADL2_DFP_PixelFormat_Caps
-+@ stub ADL2_DFP_PixelFormat_Get
-+@ stub ADL2_DFP_PixelFormat_Set
-+@ stub ADL2_DVRSupport_Get
-+@ stub ADL2_Desktop_DOPP_Enable
-+@ stub ADL2_Desktop_DOPP_EnableX2
-+@ stub ADL2_Desktop_Detach
-+@ stub ADL2_Desktop_Device_Create
-+@ stub ADL2_Desktop_Device_Destroy
-+@ stub ADL2_Desktop_ExclusiveModeX2_Get
-+@ stub ADL2_Desktop_HardwareCursor_SetBitmap
-+@ stub ADL2_Desktop_HardwareCursor_SetPosition
-+@ stub ADL2_Desktop_HardwareCursor_Toggle
-+@ stub ADL2_Desktop_PFPAComplete_Set
-+@ stub ADL2_Desktop_PFPAState_Get
-+@ stub ADL2_Desktop_PrimaryInfo_Get
-+@ stub ADL2_Desktop_TextureState_Get
-+@ stub ADL2_Desktop_Texture_Enable
-+@ stub ADL2_Device_PMLog_Device_Create
-+@ stub ADL2_Device_PMLog_Device_Destroy
-+@ stub ADL2_DisplayScaling_Set
-+@ stub ADL2_Display_AdapterID_Get
-+@ stub ADL2_Display_AdjustCaps_Get
-+@ stub ADL2_Display_AdjustmentCoherent_Get
-+@ stub ADL2_Display_AdjustmentCoherent_Set
-+@ stub ADL2_Display_AudioMappingInfo_Get
-+@ stub ADL2_Display_AvivoColor_Get
-+@ stub ADL2_Display_AvivoCurrentColor_Set
-+@ stub ADL2_Display_AvivoDefaultColor_Set
-+@ stub ADL2_Display_BackLight_Get
-+@ stub ADL2_Display_BackLight_Set
-+@ stub ADL2_Display_BezelOffsetSteppingSize_Get
-+@ stub ADL2_Display_BezelOffset_Set
-+@ stub ADL2_Display_BezelSupported_Validate
-+@ stub ADL2_Display_Capabilities_Get
-+@ stub ADL2_Display_ColorCaps_Get
-+@ stub ADL2_Display_ColorDepth_Get
-+@ stub ADL2_Display_ColorDepth_Set
-+@ stub ADL2_Display_ColorTemperatureSourceDefault_Get
-+@ stub ADL2_Display_ColorTemperatureSource_Get
-+@ stub ADL2_Display_ColorTemperatureSource_Set
-+@ stub ADL2_Display_Color_Get
-+@ stub ADL2_Display_Color_Set
-+@ stub ADL2_Display_ConnectedDisplays_Get
-+@ stub ADL2_Display_ContainerID_Get
-+@ stub ADL2_Display_ControllerOverlayAdjustmentCaps_Get
-+@ stub ADL2_Display_ControllerOverlayAdjustmentData_Get
-+@ stub ADL2_Display_ControllerOverlayAdjustmentData_Set
-+@ stub ADL2_Display_CustomizedModeListNum_Get
-+@ stub ADL2_Display_CustomizedModeList_Get
-+@ stub ADL2_Display_CustomizedMode_Add
-+@ stub ADL2_Display_CustomizedMode_Delete
-+@ stub ADL2_Display_CustomizedMode_Validate
-+@ stub ADL2_Display_DCE_Get
-+@ stub ADL2_Display_DCE_Set
-+@ stub ADL2_Display_DDCBlockAccess_Get
-+@ stub ADL2_Display_DDCInfo2_Get
-+@ stub ADL2_Display_DDCInfo_Get
-+@ stub ADL2_Display_Deflicker_Get
-+@ stub ADL2_Display_Deflicker_Set
-+@ stub ADL2_Display_DeviceConfig_Get
-+@ stub ADL2_Display_DisplayContent_Cap
-+@ stub ADL2_Display_DisplayContent_Get
-+@ stub ADL2_Display_DisplayContent_Set
-+@ stub ADL2_Display_DisplayInfo_Get
-+@ stub ADL2_Display_DisplayMapConfigX2_Set
-+@ stub ADL2_Display_DisplayMapConfig_Get
-+@ stub ADL2_Display_DisplayMapConfig_PossibleAddAndRemove
-+@ stub ADL2_Display_DisplayMapConfig_Set
-+@ stub ADL2_Display_DisplayMapConfig_Validate
-+@ stub ADL2_Display_DitherState_Get
-+@ stub ADL2_Display_DitherState_Set
-+@ stub ADL2_Display_Downscaling_Caps
-+@ stub ADL2_Display_DpMstAuxMsg_Get
-+@ stub ADL2_Display_DpMstInfo_Get
-+@ stub ADL2_Display_DummyVirtual_Destroy
-+@ stub ADL2_Display_DummyVirtual_Get
-+@ stub ADL2_Display_EdidData_Get
-+@ stub ADL2_Display_EdidData_Set
-+@ stub ADL2_Display_EnumDisplays_Get
-+@ stub ADL2_Display_FilterSVideo_Get
-+@ stub ADL2_Display_FilterSVideo_Set
-+@ stub ADL2_Display_ForcibleDisplay_Get
-+@ stub ADL2_Display_ForcibleDisplay_Set
-+@ stub ADL2_Display_FormatsOverride_Get
-+@ stub ADL2_Display_FormatsOverride_Set
-+@ stub ADL2_Display_FreeSyncState_Get
-+@ stub ADL2_Display_FreeSyncState_Set
-+@ stub ADL2_Display_FreeSync_Cap
-+@ stub ADL2_Display_GamutMapping_Get
-+@ stub ADL2_Display_GamutMapping_Reset
-+@ stub ADL2_Display_GamutMapping_Set
-+@ stub ADL2_Display_Gamut_Caps
-+@ stub ADL2_Display_Gamut_Get
-+@ stub ADL2_Display_Gamut_Set
-+@ stub ADL2_Display_HDCP_Get
-+@ stub ADL2_Display_HDCP_Set
-+@ stub ADL2_Display_HDRState_Get
-+@ stub ADL2_Display_HDRState_Set
-+@ stub ADL2_Display_ImageExpansion_Get
-+@ stub ADL2_Display_ImageExpansion_Set
-+@ stub ADL2_Display_InfoPacket_Get
-+@ stub ADL2_Display_InfoPacket_Set
-+@ stub ADL2_Display_IsVirtual_Get
-+@ stub ADL2_Display_LCDRefreshRateCapability_Get
-+@ stub ADL2_Display_LCDRefreshRateOptions_Get
-+@ stub ADL2_Display_LCDRefreshRateOptions_Set
-+@ stub ADL2_Display_LCDRefreshRate_Get
-+@ stub ADL2_Display_LCDRefreshRate_Set
-+@ stub ADL2_Display_Limits_Get
-+@ stub ADL2_Display_MVPUCaps_Get
-+@ stub ADL2_Display_MVPUStatus_Get
-+@ stub ADL2_Display_ModeTimingOverrideInfo_Get
-+@ stub ADL2_Display_ModeTimingOverrideListX2_Get
-+@ stub ADL2_Display_ModeTimingOverrideListX3_Get
-+@ stub ADL2_Display_ModeTimingOverrideList_Get
-+@ stub ADL2_Display_ModeTimingOverrideX2_Get
-+@ stub ADL2_Display_ModeTimingOverrideX2_Set
-+@ stub ADL2_Display_ModeTimingOverrideX3_Get
-+@ stub ADL2_Display_ModeTimingOverride_Delete
-+@ stub ADL2_Display_ModeTimingOverride_Get
-+@ stub ADL2_Display_ModeTimingOverride_Set
-+@ stub ADL2_Display_Modes_Get
-+@ stub ADL2_Display_Modes_Set
-+@ stub ADL2_Display_Modes_X2_Get
-+@ stub ADL2_Display_MonitorPowerState_Set
-+@ stub ADL2_Display_NativeAUXChannel_Access
-+@ stub ADL2_Display_NeedWorkaroundFor5Clone_Get
-+@ stub ADL2_Display_NumberOfDisplays_Get
-+@ stub ADL2_Display_ODClockConfig_Set
-+@ stub ADL2_Display_ODClockInfo_Get
-+@ stub ADL2_Display_Overlap_NotifyAdjustment
-+@ stub ADL2_Display_Overlap_Set
-+@ stub ADL2_Display_Overscan_Get
-+@ stub ADL2_Display_Overscan_Set
-+@ stub ADL2_Display_PixelFormatDefault_Get
-+@ stub ADL2_Display_PixelFormat_Get
-+@ stub ADL2_Display_PixelFormat_Set
-+@ stub ADL2_Display_Position_Get
-+@ stub ADL2_Display_Position_Set
-+@ stub ADL2_Display_PossibleMapping_Get
-+@ stub ADL2_Display_PossibleMode_Get
-+@ stub ADL2_Display_PowerXpressActiveGPU_Get
-+@ stub ADL2_Display_PowerXpressActiveGPU_Set
-+@ stub ADL2_Display_PowerXpressActvieGPUR2_Get
-+@ stub ADL2_Display_PowerXpressVersion_Get
-+@ stub ADL2_Display_PowerXpress_AutoSwitchConfig_Get
-+@ stub ADL2_Display_PowerXpress_AutoSwitchConfig_Set
-+@ stub ADL2_Display_PreferredMode_Get
-+@ stub ADL2_Display_PreservedAspectRatio_Get
-+@ stub ADL2_Display_PreservedAspectRatio_Set
-+@ stub ADL2_Display_Property_Get
-+@ stub ADL2_Display_Property_Set
-+@ stub ADL2_Display_RcDisplayAdjustment
-+@ stub ADL2_Display_ReGammaCoefficients_Get
-+@ stub ADL2_Display_ReGammaCoefficients_Set
-+@ stub ADL2_Display_ReducedBlanking_Get
-+@ stub ADL2_Display_ReducedBlanking_Set
-+@ stub ADL2_Display_RegammaR1_Get
-+@ stub ADL2_Display_RegammaR1_Set
-+@ stub ADL2_Display_Regamma_Get
-+@ stub ADL2_Display_Regamma_Set
-+@ stub ADL2_Display_SLSBuilder_CommonMode_Get
-+@ stub ADL2_Display_SLSBuilder_Create
-+@ stub ADL2_Display_SLSBuilder_DisplaysCanBeNextCandidateInSLS_Get
-+@ stub ADL2_Display_SLSBuilder_DisplaysCanBeNextCandidateToEnabled_Get
-+@ stub ADL2_Display_SLSBuilder_Get
-+@ stub ADL2_Display_SLSBuilder_IsActive_Notify
-+@ stub ADL2_Display_SLSBuilder_MaxSLSLayoutSize_Get
-+@ stub ADL2_Display_SLSBuilder_TimeOut_Get
-+@ stub ADL2_Display_SLSBuilder_Update
-+@ stub ADL2_Display_SLSGrid_Caps
-+@ stub ADL2_Display_SLSMapConfigX2_Delete
-+@ stub ADL2_Display_SLSMapConfigX2_Get
-+@ stub ADL2_Display_SLSMapConfig_Create
-+@ stub ADL2_Display_SLSMapConfig_Delete
-+@ stub ADL2_Display_SLSMapConfig_Get
-+@ stub ADL2_Display_SLSMapConfig_ImageCropType_Set
-+@ stub ADL2_Display_SLSMapConfig_Rearrange
-+@ stub ADL2_Display_SLSMapConfig_SetState
-+@ stub ADL2_Display_SLSMapConfig_SupportedImageCropType_Get
-+@ stub ADL2_Display_SLSMapConfig_Valid
-+@ stub ADL2_Display_SLSMapIndexList_Get
-+@ stub ADL2_Display_SLSMapIndex_Get
-+@ stub ADL2_Display_SLSMiddleMode_Get
-+@ stub ADL2_Display_SLSMiddleMode_Set
-+@ stub ADL2_Display_SLSRecords_Get
-+@ stub ADL2_Display_Sharpness_Caps
-+@ stub ADL2_Display_Sharpness_Get
-+@ stub ADL2_Display_Sharpness_Info_Get
-+@ stub ADL2_Display_Sharpness_Set
-+@ stub ADL2_Display_Size_Get
-+@ stub ADL2_Display_Size_Set
-+@ stub ADL2_Display_SourceContentAttribute_Get
-+@ stub ADL2_Display_SourceContentAttribute_Set
-+@ stub ADL2_Display_SplitDisplay_Caps
-+@ stub ADL2_Display_SplitDisplay_Get
-+@ stub ADL2_Display_SplitDisplay_RestoreDesktopConfiguration
-+@ stub ADL2_Display_SplitDisplay_Set
-+@ stub ADL2_Display_SupportedColorDepth_Get
-+@ stub ADL2_Display_SupportedPixelFormat_Get
-+@ stub ADL2_Display_SwitchingCapability_Get
-+@ stub ADL2_Display_TVCaps_Get
-+@ stub ADL2_Display_TargetTimingX2_Get
-+@ stub ADL2_Display_TargetTiming_Get
-+@ stub ADL2_Display_UnderScan_Auto_Get
-+@ stub ADL2_Display_UnderScan_Auto_Set
-+@ stub ADL2_Display_UnderscanState_Get
-+@ stub ADL2_Display_UnderscanState_Set
-+@ stub ADL2_Display_UnderscanSupport_Get
-+@ stub ADL2_Display_Underscan_Get
-+@ stub ADL2_Display_Underscan_Set
-+@ stub ADL2_Display_Vector_Get
-+@ stub ADL2_Display_ViewPort_Cap
-+@ stub ADL2_Display_ViewPort_Get
-+@ stub ADL2_Display_ViewPort_Set
-+@ stub ADL2_Display_VirtualType_Get
-+@ stub ADL2_Display_WriteAndReadI2C
-+@ stub ADL2_Display_WriteAndReadI2CLargePayload
-+@ stub ADL2_Display_WriteAndReadI2CRev_Get
-+@ stub ADL2_ElmCompatibilityMode_Caps
-+@ stub ADL2_ElmCompatibilityMode_Status_Get
-+@ stub ADL2_ElmCompatibilityMode_Status_Set
-+@ stub ADL2_ExclusiveModeGet
-+@ stub ADL2_FPS_Caps
-+@ stub ADL2_FPS_Settings_Get
-+@ stub ADL2_FPS_Settings_Reset
-+@ stub ADL2_FPS_Settings_Set
-+@ stub ADL2_Feature_Settings_Get
-+@ stub ADL2_Feature_Settings_Set
-+@ stub ADL2_Flush_Driver_Data
-+@ stub ADL2_GPUVMPageSize_Info_Get
-+@ stub ADL2_GPUVMPageSize_Info_Set
-+@ stub ADL2_GPUVerInfo_Get
-+@ stub ADL2_GcnAsicInfo_Get
-+@ stub ADL2_Graphics_IsDetachableGraphicsPlatform_Get
-+@ stub ADL2_Graphics_IsGfx9AndAbove
-+@ stub ADL2_Graphics_MantleVersion_Get
-+@ stub ADL2_Graphics_Platform_Get
-+@ stdcall ADL2_Graphics_VersionsX2_Get(ptr ptr)
-+@ stub ADL2_Graphics_Versions_Get
-+@ stub ADL2_Graphics_VulkanVersion_Get
-+@ stub ADL2_HybridGraphicsGPU_Set
-+@ stub ADL2_MGPUSLS_Status_Set
-+@ stub ADL2_MMD_FeatureList_Get
-+@ stub ADL2_MMD_FeatureValuesX2_Get
-+@ stub ADL2_MMD_FeatureValuesX2_Set
-+@ stub ADL2_MMD_FeatureValues_Get
-+@ stub ADL2_MMD_FeatureValues_Set
-+@ stub ADL2_MMD_FeaturesX2_Caps
-+@ stub ADL2_MMD_Features_Caps
-+@ stub ADL2_MMD_VideoAdjustInfo_Get
-+@ stub ADL2_MMD_VideoAdjustInfo_Set
-+@ stub ADL2_MMD_VideoColor_Caps
-+@ stub ADL2_MMD_VideoColor_Get
-+@ stub ADL2_MMD_VideoColor_Set
-+@ stub ADL2_MMD_Video_Caps
-+@ stub ADL2_Main_ControlX2_Create
-+@ stdcall ADL2_Main_Control_Create(ptr long ptr)
-+@ stub ADL2_Main_Control_Destroy
-+@ stub ADL2_Main_Control_GetProcAddress
-+@ stub ADL2_Main_Control_IsFunctionValid
-+@ stub ADL2_Main_Control_Refresh
-+@ stub ADL2_Main_LogDebug_Set
-+@ stub ADL2_Main_LogError_Set
-+@ stub ADL2_New_QueryPMLogData_Get
-+@ stub ADL2_Overdrive5_CurrentActivity_Get
-+@ stub ADL2_Overdrive5_FanSpeedInfo_Get
-+@ stub ADL2_Overdrive5_FanSpeedToDefault_Set
-+@ stub ADL2_Overdrive5_FanSpeed_Get
-+@ stub ADL2_Overdrive5_FanSpeed_Set
-+@ stub ADL2_Overdrive5_ODParameters_Get
-+@ stub ADL2_Overdrive5_ODPerformanceLevels_Get
-+@ stub ADL2_Overdrive5_ODPerformanceLevels_Set
-+@ stub ADL2_Overdrive5_PowerControlAbsValue_Caps
-+@ stub ADL2_Overdrive5_PowerControlAbsValue_Get
-+@ stub ADL2_Overdrive5_PowerControlAbsValue_Set
-+@ stub ADL2_Overdrive5_PowerControlInfo_Get
-+@ stub ADL2_Overdrive5_PowerControl_Caps
-+@ stub ADL2_Overdrive5_PowerControl_Get
-+@ stub ADL2_Overdrive5_PowerControl_Set
-+@ stub ADL2_Overdrive5_Temperature_Get
-+@ stub ADL2_Overdrive5_ThermalDevices_Enum
-+@ stub ADL2_Overdrive6_AdvancedFan_Caps
-+@ stub ADL2_Overdrive6_CapabilitiesEx_Get
-+@ stub ADL2_Overdrive6_Capabilities_Get
-+@ stub ADL2_Overdrive6_ControlI2C
-+@ stub ADL2_Overdrive6_CurrentPower_Get
-+@ stub ADL2_Overdrive6_CurrentStatus_Get
-+@ stub ADL2_Overdrive6_FanPWMLimitData_Get
-+@ stub ADL2_Overdrive6_FanPWMLimitData_Set
-+@ stub ADL2_Overdrive6_FanPWMLimitRangeInfo_Get
-+@ stub ADL2_Overdrive6_FanSpeed_Get
-+@ stub ADL2_Overdrive6_FanSpeed_Reset
-+@ stub ADL2_Overdrive6_FanSpeed_Set
-+@ stub ADL2_Overdrive6_FuzzyController_Caps
-+@ stub ADL2_Overdrive6_MaxClockAdjust_Get
-+@ stub ADL2_Overdrive6_PowerControlInfo_Get
-+@ stub ADL2_Overdrive6_PowerControlInfo_Get_X2
-+@ stub ADL2_Overdrive6_PowerControl_Caps
-+@ stub ADL2_Overdrive6_PowerControl_Get
-+@ stub ADL2_Overdrive6_PowerControl_Set
-+@ stub ADL2_Overdrive6_StateEx_Get
-+@ stub ADL2_Overdrive6_StateEx_Set
-+@ stub ADL2_Overdrive6_StateInfo_Get
-+@ stub ADL2_Overdrive6_State_Reset
-+@ stub ADL2_Overdrive6_State_Set
-+@ stub ADL2_Overdrive6_TargetTemperatureData_Get
-+@ stub ADL2_Overdrive6_TargetTemperatureData_Set
-+@ stub ADL2_Overdrive6_TargetTemperatureRangeInfo_Get
-+@ stub ADL2_Overdrive6_TemperatureEx_Get
-+@ stub ADL2_Overdrive6_Temperature_Get
-+@ stub ADL2_Overdrive6_ThermalController_Caps
-+@ stub ADL2_Overdrive6_ThermalLimitUnlock_Get
-+@ stub ADL2_Overdrive6_ThermalLimitUnlock_Set
-+@ stub ADL2_Overdrive6_VoltageControlInfo_Get
-+@ stub ADL2_Overdrive6_VoltageControl_Get
-+@ stub ADL2_Overdrive6_VoltageControl_Set
-+@ stub ADL2_Overdrive8_Current_SettingX2_Get
-+@ stub ADL2_Overdrive8_Current_SettingX3_Get
-+@ stub ADL2_Overdrive8_Current_Setting_Get
-+@ stub ADL2_Overdrive8_Init_SettingX2_Get
-+@ stub ADL2_Overdrive8_Init_Setting_Get
-+@ stub ADL2_Overdrive8_PMLogSenorRange_Caps
-+@ stub ADL2_Overdrive8_PMLogSenorType_Support_Get
-+@ stub ADL2_Overdrive8_PMLog_ShareMemory_Read
-+@ stub ADL2_Overdrive8_PMLog_ShareMemory_Start
-+@ stub ADL2_Overdrive8_PMLog_ShareMemory_Stop
-+@ stub ADL2_Overdrive8_PMLog_ShareMemory_Support
-+@ stub ADL2_Overdrive8_Setting_Set
-+@ stub ADL2_OverdriveN_AutoWattman_Caps
-+@ stub ADL2_OverdriveN_AutoWattman_Get
-+@ stub ADL2_OverdriveN_AutoWattman_Set
-+@ stub ADL2_OverdriveN_CapabilitiesX2_Get
-+@ stub ADL2_OverdriveN_Capabilities_Get
-+@ stub ADL2_OverdriveN_CountOfEvents_Get
-+@ stub ADL2_OverdriveN_FanControl_Get
-+@ stub ADL2_OverdriveN_FanControl_Set
-+@ stub ADL2_OverdriveN_MemoryClocksX2_Get
-+@ stub ADL2_OverdriveN_MemoryClocksX2_Set
-+@ stub ADL2_OverdriveN_MemoryClocks_Get
-+@ stub ADL2_OverdriveN_MemoryClocks_Set
-+@ stub ADL2_OverdriveN_MemoryTimingLevel_Get
-+@ stub ADL2_OverdriveN_MemoryTimingLevel_Set
-+@ stub ADL2_OverdriveN_PerformanceStatus_Get
-+@ stub ADL2_OverdriveN_PowerLimit_Get
-+@ stub ADL2_OverdriveN_PowerLimit_Set
-+@ stub ADL2_OverdriveN_SCLKAutoOverClock_Get
-+@ stub ADL2_OverdriveN_SCLKAutoOverClock_Set
-+@ stub ADL2_OverdriveN_SettingsExt_Get
-+@ stub ADL2_OverdriveN_SettingsExt_Set
-+@ stub ADL2_OverdriveN_SystemClocksX2_Get
-+@ stub ADL2_OverdriveN_SystemClocksX2_Set
-+@ stub ADL2_OverdriveN_SystemClocks_Get
-+@ stub ADL2_OverdriveN_SystemClocks_Set
-+@ stub ADL2_OverdriveN_Temperature_Get
-+@ stub ADL2_OverdriveN_Test_Set
-+@ stub ADL2_OverdriveN_ThrottleNotification_Get
-+@ stub ADL2_OverdriveN_ZeroRPMFan_Get
-+@ stub ADL2_OverdriveN_ZeroRPMFan_Set
-+@ stub ADL2_Overdrive_Caps
-+@ stub ADL2_PPLogSettings_Get
-+@ stub ADL2_PPLogSettings_Set
-+@ stub ADL2_PPW_Caps
-+@ stub ADL2_PPW_Status_Get
-+@ stub ADL2_PPW_Status_Set
-+@ stub ADL2_PageMigration_Settings_Get
-+@ stub ADL2_PageMigration_Settings_Set
-+@ stub ADL2_PerGPU_GDEvent_Register
-+@ stub ADL2_PerGPU_GDEvent_UnRegister
-+@ stub ADL2_PerfTuning_Status_Get
-+@ stub ADL2_PerfTuning_Status_Set
-+@ stub ADL2_PerformanceTuning_Caps
-+@ stub ADL2_PowerStates_Get
-+@ stub ADL2_PowerXpress_AncillaryDevices_Get
-+@ stub ADL2_PowerXpress_Config_Caps
-+@ stub ADL2_PowerXpress_Configuration_Get
-+@ stub ADL2_PowerXpress_ExtendedBatteryMode_Caps
-+@ stub ADL2_PowerXpress_ExtendedBatteryMode_Get
-+@ stub ADL2_PowerXpress_ExtendedBatteryMode_Set
-+@ stub ADL2_PowerXpress_LongIdleDetect_Get
-+@ stub ADL2_PowerXpress_LongIdleDetect_Set
-+@ stub ADL2_PowerXpress_PowerControlMode_Get
-+@ stub ADL2_PowerXpress_PowerControlMode_Set
-+@ stub ADL2_PowerXpress_Scheme_Get
-+@ stub ADL2_PowerXpress_Scheme_Set
-+@ stub ADL2_RIS_Settings_Get
-+@ stub ADL2_RIS_Settings_Set
-+@ stub ADL2_RegisterEvent
-+@ stub ADL2_RegisterEventX2
-+@ stub ADL2_Remap
-+@ stub ADL2_RemoteDisplay_Destroy
-+@ stub ADL2_RemoteDisplay_Display_Acquire
-+@ stub ADL2_RemoteDisplay_Display_Release
-+@ stub ADL2_RemoteDisplay_Display_Release_All
-+@ stub ADL2_RemoteDisplay_Hdcp20_Create
-+@ stub ADL2_RemoteDisplay_Hdcp20_Destroy
-+@ stub ADL2_RemoteDisplay_Hdcp20_Notify
-+@ stub ADL2_RemoteDisplay_Hdcp20_Process
-+@ stub ADL2_RemoteDisplay_IEPort_Set
-+@ stub ADL2_RemoteDisplay_Initialize
-+@ stub ADL2_RemoteDisplay_Nofitiation_Register
-+@ stub ADL2_RemoteDisplay_Notification_UnRegister
-+@ stub ADL2_RemoteDisplay_Support_Caps
-+@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_InUse_Get
-+@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_Info_Get
-+@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_RadioState_Get
-+@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Change
-+@ stub ADL2_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Get
-+@ stub ADL2_RemoteDisplay_WFDDeviceInfo_Get
-+@ stub ADL2_RemoteDisplay_WFDDeviceName_Change
-+@ stub ADL2_RemoteDisplay_WFDDevice_StatusInfo_Get
-+@ stub ADL2_RemoteDisplay_WFDDiscover_Start
-+@ stub ADL2_RemoteDisplay_WFDDiscover_Stop
-+@ stub ADL2_RemoteDisplay_WFDLink_Connect
-+@ stub ADL2_RemoteDisplay_WFDLink_Creation_Accept
-+@ stub ADL2_RemoteDisplay_WFDLink_Disconnect
-+@ stub ADL2_RemoteDisplay_WFDLink_WPS_Process
-+@ stub ADL2_RemoteDisplay_WFDWDSPSettings_Set
-+@ stub ADL2_RemoteDisplay_WirelessDisplayEnableDisable_Commit
-+@ stub ADL2_RemotePlay_ControlFlags_Set
-+@ stub ADL2_ScreenPoint_AudioMappingInfo_Get
-+@ stub ADL2_Send
-+@ stub ADL2_SendX2
-+@ stub ADL2_Stereo3D_2DPackedFormat_Set
-+@ stub ADL2_Stereo3D_3DCursorOffset_Get
-+@ stub ADL2_Stereo3D_3DCursorOffset_Set
-+@ stub ADL2_Stereo3D_CurrentFormat_Get
-+@ stub ADL2_Stereo3D_Info_Get
-+@ stub ADL2_Stereo3D_Modes_Get
-+@ stub ADL2_SwitchableGraphics_Applications_Get
-+@ stub ADL2_TV_Standard_Get
-+@ stub ADL2_TV_Standard_Set
-+@ stub ADL2_TurboSyncSupport_Get
-+@ stub ADL2_UnRegisterEvent
-+@ stub ADL2_UnRegisterEventX2
-+@ stub ADL2_User_Settings_Notify
-+@ stub ADL2_WS_Overdrive_Caps
-+@ stub ADL2_Win_IsHybridAI
-+@ stub ADL2_Workstation_8BitGrayscale_Get
-+@ stub ADL2_Workstation_8BitGrayscale_Set
-+@ stub ADL2_Workstation_AdapterNumOfGLSyncConnectors_Get
-+@ stub ADL2_Workstation_Caps
-+@ stub ADL2_Workstation_DeepBitDepthX2_Get
-+@ stub ADL2_Workstation_DeepBitDepthX2_Set
-+@ stub ADL2_Workstation_DeepBitDepth_Get
-+@ stub ADL2_Workstation_DeepBitDepth_Set
-+@ stub ADL2_Workstation_DisplayGLSyncMode_Get
-+@ stub ADL2_Workstation_DisplayGLSyncMode_Set
-+@ stub ADL2_Workstation_DisplayGenlockCapable_Get
-+@ stub ADL2_Workstation_ECCData_Get
-+@ stub ADL2_Workstation_ECCX2_Get
-+@ stub ADL2_Workstation_ECC_Caps
-+@ stub ADL2_Workstation_ECC_Get
-+@ stub ADL2_Workstation_ECC_Set
-+@ stub ADL2_Workstation_GLSyncCounters_Get
-+@ stub ADL2_Workstation_GLSyncGenlockConfiguration_Get
-+@ stub ADL2_Workstation_GLSyncGenlockConfiguration_Set
-+@ stub ADL2_Workstation_GLSyncModuleDetect_Get
-+@ stub ADL2_Workstation_GLSyncModuleInfo_Get
-+@ stub ADL2_Workstation_GLSyncPortState_Get
-+@ stub ADL2_Workstation_GLSyncPortState_Set
-+@ stub ADL2_Workstation_GLSyncSupportedTopology_Get
-+@ stub ADL2_Workstation_GlobalEDIDPersistence_Get
-+@ stub ADL2_Workstation_GlobalEDIDPersistence_Set
-+@ stub ADL2_Workstation_LoadBalancing_Caps
-+@ stub ADL2_Workstation_LoadBalancing_Get
-+@ stub ADL2_Workstation_LoadBalancing_Set
-+@ stub ADL2_Workstation_RAS_ErrorCounts_Get
-+@ stub ADL2_Workstation_RAS_ErrorCounts_Reset
-+@ stub ADL2_Workstation_SDISegmentList_Get
-+@ stub ADL2_Workstation_SDI_Caps
-+@ stub ADL2_Workstation_SDI_Get
-+@ stub ADL2_Workstation_SDI_Set
-+@ stub ADL2_Workstation_Stereo_Get
-+@ stub ADL2_Workstation_Stereo_Set
-+@ stub ADL2_Workstation_UnsupportedDisplayModes_Enable
-+@ stub ADL_ADC_CurrentProfileFromDrv_Get
-+@ stub ADL_ADC_Display_AdapterDeviceProfileEx_Get
-+@ stub ADL_ADC_DrvDataToProfile_Copy
-+@ stub ADL_ADC_FindClosestMode_Get
-+@ stub ADL_ADC_IsDevModeEqual_Get
-+@ stub ADL_ADC_Profile_Apply
-+@ stub ADL_APO_AudioDelayAdjustmentInfo_Get
-+@ stub ADL_APO_AudioDelay_Restore
-+@ stub ADL_APO_AudioDelay_Set
-+@ stub ADL_AdapterLimitation_Caps
-+@ stub ADL_AdapterX2_Caps
-+@ stdcall ADL_Adapter_ASICFamilyType_Get(long ptr ptr)
-+@ stub ADL_Adapter_ASICInfo_Get
-+@ stub ADL_Adapter_Accessibility_Get
-+@ stub ADL_Adapter_Active_Get
-+@ stub ADL_Adapter_Active_Set
-+@ stub ADL_Adapter_Active_SetPrefer
-+@ stub ADL_Adapter_AdapterInfoX2_Get
-+@ stdcall ADL_Adapter_AdapterInfo_Get(ptr long)
-+@ stub ADL_Adapter_AdapterList_Disable
-+@ stub ADL_Adapter_Aspects_Get
-+@ stub ADL_Adapter_AudioChannelSplitConfiguration_Get
-+@ stub ADL_Adapter_AudioChannelSplit_Disable
-+@ stub ADL_Adapter_AudioChannelSplit_Enable
-+@ stub ADL_Adapter_BigSw_Info_Get
-+@ stub ADL_Adapter_BlackAndWhiteLevelSupport_Get
-+@ stub ADL_Adapter_BlackAndWhiteLevel_Get
-+@ stub ADL_Adapter_BlackAndWhiteLevel_Set
-+@ stub ADL_Adapter_BoardLayout_Get
-+@ stub ADL_Adapter_Caps
-+@ stub ADL_Adapter_ChipSetInfo_Get
-+@ stub ADL_Adapter_ConfigMemory_Cap
-+@ stub ADL_Adapter_ConfigMemory_Get
-+@ stub ADL_Adapter_ConfigureState_Get
-+@ stub ADL_Adapter_ConnectionData_Get
-+@ stub ADL_Adapter_ConnectionData_Remove
-+@ stub ADL_Adapter_ConnectionData_Set
-+@ stub ADL_Adapter_ConnectionState_Get
-+@ stub ADL_Adapter_CrossDisplayPlatformInfo_Get
-+@ stub ADL_Adapter_CrossdisplayAdapterRole_Caps
-+@ stub ADL_Adapter_CrossdisplayInfoX2_Set
-+@ stub ADL_Adapter_CrossdisplayInfo_Get
-+@ stub ADL_Adapter_CrossdisplayInfo_Set
-+@ stub ADL_Adapter_CrossfireX2_Get
-+@ stdcall ADL_Adapter_Crossfire_Caps(long ptr ptr ptr)
-+@ stdcall ADL_Adapter_Crossfire_Get(long ptr ptr)
-+@ stub ADL_Adapter_Crossfire_Set
-+@ stub ADL_Adapter_DefaultAudioChannelTable_Load
-+@ stub ADL_Adapter_DisplayAudioEndpoint_Enable
-+@ stub ADL_Adapter_DisplayAudioEndpoint_Mute
-+@ stub ADL_Adapter_DisplayAudioInfo_Get
-+@ stub ADL_Adapter_DisplayGTCCaps_Get
-+@ stub ADL_Adapter_Display_Caps
-+@ stub ADL_Adapter_DriverSettings_Get
-+@ stub ADL_Adapter_DriverSettings_Set
-+@ stub ADL_Adapter_EDIDManagement_Caps
-+@ stub ADL_Adapter_EmulationMode_Set
-+@ stub ADL_Adapter_ExtInfo_Get
-+@ stub ADL_Adapter_Gamma_Get
-+@ stub ADL_Adapter_Gamma_Set
-+@ stub ADL_Adapter_ID_Get
-+@ stub ADL_Adapter_LocalDisplayConfig_Get
-+@ stub ADL_Adapter_LocalDisplayConfig_Set
-+@ stub ADL_Adapter_LocalDisplayState_Get
-+@ stub ADL_Adapter_MaxCursorSize_Get
-+@ stub ADL_Adapter_MemoryInfo2_Get
-+@ stdcall ADL_Adapter_MemoryInfo_Get(long ptr)
-+@ stub ADL_Adapter_MirabilisSupport_Get
-+@ stub ADL_Adapter_ModeSwitch
-+@ stub ADL_Adapter_ModeTimingOverride_Caps
-+@ stub ADL_Adapter_Modes_ReEnumerate
-+@ stub ADL_Adapter_NumberOfActivatableSources_Get
-+@ stdcall ADL_Adapter_NumberOfAdapters_Get(ptr)
-+@ stdcall ADL_Adapter_ObservedClockInfo_Get(long ptr ptr)
-+@ stub ADL_Adapter_ObservedGameClockInfo_Get
-+@ stub ADL_Adapter_Primary_Get
-+@ stub ADL_Adapter_Primary_Set
-+@ stub ADL_Adapter_RegValueInt_Get
-+@ stub ADL_Adapter_RegValueInt_Set
-+@ stub ADL_Adapter_RegValueString_Get
-+@ stub ADL_Adapter_RegValueString_Set
-+@ stub ADL_Adapter_SWInfo_Get
-+@ stub ADL_Adapter_Speed_Caps
-+@ stub ADL_Adapter_Speed_Get
-+@ stub ADL_Adapter_Speed_Set
-+@ stub ADL_Adapter_SupportedConnections_Get
-+@ stub ADL_Adapter_Tear_Free_Cap
-+@ stub ADL_Adapter_VariBrightEnable_Set
-+@ stub ADL_Adapter_VariBrightLevel_Get
-+@ stub ADL_Adapter_VariBrightLevel_Set
-+@ stub ADL_Adapter_VariBright_Caps
-+@ stub ADL_Adapter_VideoBiosInfo_Get
-+@ stub ADL_Adapter_VideoTheaterModeInfo_Get
-+@ stub ADL_Adapter_VideoTheaterModeInfo_Set
-+@ stub ADL_ApplicationProfiles_Applications_Get
-+@ stub ADL_ApplicationProfiles_ConvertToCompact
-+@ stub ADL_ApplicationProfiles_DriverAreaPrivacy_Get
-+@ stub ADL_ApplicationProfiles_GetCustomization
-+@ stub ADL_ApplicationProfiles_HitListsX2_Get
-+@ stub ADL_ApplicationProfiles_HitLists_Get
-+@ stub ADL_ApplicationProfiles_ProfileApplicationX2_Assign
-+@ stub ADL_ApplicationProfiles_ProfileApplication_Assign
-+@ stub ADL_ApplicationProfiles_ProfileOfAnApplicationX2_Search
-+@ stub ADL_ApplicationProfiles_ProfileOfAnApplication_InMemorySearch
-+@ stub ADL_ApplicationProfiles_ProfileOfAnApplication_Search
-+@ stub ADL_ApplicationProfiles_Profile_Create
-+@ stub ADL_ApplicationProfiles_Profile_Exist
-+@ stub ADL_ApplicationProfiles_Profile_Remove
-+@ stub ADL_ApplicationProfiles_PropertyType_Get
-+@ stub ADL_ApplicationProfiles_Release_Get
-+@ stub ADL_ApplicationProfiles_RemoveApplication
-+@ stub ADL_ApplicationProfiles_StatusInfo_Get
-+@ stub ADL_ApplicationProfiles_System_Reload
-+@ stub ADL_ApplicationProfiles_User_Load
-+@ stub ADL_ApplicationProfiles_User_Unload
-+@ stub ADL_Audio_CurrentSampleRate_Get
-+@ stub ADL_CDS_UnsafeMode_Set
-+@ stub ADL_CV_DongleSettings_Get
-+@ stub ADL_CV_DongleSettings_Reset
-+@ stub ADL_CV_DongleSettings_Set
-+@ stub ADL_DFP_AllowOnlyCETimings_Get
-+@ stub ADL_DFP_AllowOnlyCETimings_Set
-+@ stub ADL_DFP_BaseAudioSupport_Get
-+@ stub ADL_DFP_GPUScalingEnable_Get
-+@ stub ADL_DFP_GPUScalingEnable_Set
-+@ stub ADL_DFP_HDMISupport_Get
-+@ stub ADL_DFP_MVPUAnalogSupport_Get
-+@ stub ADL_DFP_PixelFormat_Caps
-+@ stub ADL_DFP_PixelFormat_Get
-+@ stub ADL_DFP_PixelFormat_Set
-+@ stub ADL_DisplayScaling_Set
-+@ stub ADL_Display_AdapterID_Get
-+@ stub ADL_Display_AdjustCaps_Get
-+@ stub ADL_Display_AdjustmentCoherent_Get
-+@ stub ADL_Display_AdjustmentCoherent_Set
-+@ stub ADL_Display_AudioMappingInfo_Get
-+@ stub ADL_Display_AvivoColor_Get
-+@ stub ADL_Display_AvivoCurrentColor_Set
-+@ stub ADL_Display_AvivoDefaultColor_Set
-+@ stub ADL_Display_BackLight_Get
-+@ stub ADL_Display_BackLight_Set
-+@ stub ADL_Display_BezelOffsetSteppingSize_Get
-+@ stub ADL_Display_BezelOffset_Set
-+@ stub ADL_Display_BezelSupported_Validate
-+@ stub ADL_Display_Capabilities_Get
-+@ stub ADL_Display_ColorCaps_Get
-+@ stub ADL_Display_ColorDepth_Get
-+@ stub ADL_Display_ColorDepth_Set
-+@ stub ADL_Display_ColorTemperatureSource_Get
-+@ stub ADL_Display_ColorTemperatureSource_Set
-+@ stub ADL_Display_Color_Get
-+@ stub ADL_Display_Color_Set
-+@ stub ADL_Display_ConnectedDisplays_Get
-+@ stub ADL_Display_ContainerID_Get
-+@ stub ADL_Display_ControllerOverlayAdjustmentCaps_Get
-+@ stub ADL_Display_ControllerOverlayAdjustmentData_Get
-+@ stub ADL_Display_ControllerOverlayAdjustmentData_Set
-+@ stub ADL_Display_CurrentPixelClock_Get
-+@ stub ADL_Display_CustomizedModeListNum_Get
-+@ stub ADL_Display_CustomizedModeList_Get
-+@ stub ADL_Display_CustomizedMode_Add
-+@ stub ADL_Display_CustomizedMode_Delete
-+@ stub ADL_Display_CustomizedMode_Validate
-+@ stub ADL_Display_DCE_Get
-+@ stub ADL_Display_DCE_Set
-+@ stub ADL_Display_DDCBlockAccess_Get
-+@ stub ADL_Display_DDCInfo2_Get
-+@ stub ADL_Display_DDCInfo_Get
-+@ stub ADL_Display_Deflicker_Get
-+@ stub ADL_Display_Deflicker_Set
-+@ stub ADL_Display_DeviceConfig_Get
-+@ stub ADL_Display_DisplayContent_Cap
-+@ stub ADL_Display_DisplayContent_Get
-+@ stub ADL_Display_DisplayContent_Set
-+@ stdcall ADL_Display_DisplayInfo_Get(long long ptr long)
-+@ stdcall ADL_Display_DisplayMapConfig_Get(long ptr ptr ptr ptr long)
-+@ stub ADL_Display_DisplayMapConfig_PossibleAddAndRemove
-+@ stub ADL_Display_DisplayMapConfig_Set
-+@ stub ADL_Display_DisplayMapConfig_Validate
-+@ stub ADL_Display_DitherState_Get
-+@ stub ADL_Display_DitherState_Set
-+@ stub ADL_Display_Downscaling_Caps
-+@ stub ADL_Display_DpMstInfo_Get
-+@ stub ADL_Display_EdidData_Get
-+@ stub ADL_Display_EdidData_Set
-+@ stub ADL_Display_EnumDisplays_Get
-+@ stub ADL_Display_FilterSVideo_Get
-+@ stub ADL_Display_FilterSVideo_Set
-+@ stub ADL_Display_ForcibleDisplay_Get
-+@ stub ADL_Display_ForcibleDisplay_Set
-+@ stub ADL_Display_FormatsOverride_Get
-+@ stub ADL_Display_FormatsOverride_Set
-+@ stub ADL_Display_FreeSyncState_Get
-+@ stub ADL_Display_FreeSyncState_Set
-+@ stub ADL_Display_FreeSync_Cap
-+@ stub ADL_Display_GamutMapping_Get
-+@ stub ADL_Display_GamutMapping_Reset
-+@ stub ADL_Display_GamutMapping_Set
-+@ stub ADL_Display_Gamut_Caps
-+@ stub ADL_Display_Gamut_Get
-+@ stub ADL_Display_Gamut_Set
-+@ stub ADL_Display_ImageExpansion_Get
-+@ stub ADL_Display_ImageExpansion_Set
-+@ stub ADL_Display_InfoPacket_Get
-+@ stub ADL_Display_InfoPacket_Set
-+@ stub ADL_Display_LCDRefreshRateCapability_Get
-+@ stub ADL_Display_LCDRefreshRateOptions_Get
-+@ stub ADL_Display_LCDRefreshRateOptions_Set
-+@ stub ADL_Display_LCDRefreshRate_Get
-+@ stub ADL_Display_LCDRefreshRate_Set
-+@ stub ADL_Display_Limits_Get
-+@ stub ADL_Display_MVPUCaps_Get
-+@ stub ADL_Display_MVPUStatus_Get
-+@ stub ADL_Display_ModeTimingOverrideInfo_Get
-+@ stub ADL_Display_ModeTimingOverrideListX2_Get
-+@ stub ADL_Display_ModeTimingOverrideList_Get
-+@ stub ADL_Display_ModeTimingOverrideX2_Get
-+@ stub ADL_Display_ModeTimingOverride_Delete
-+@ stub ADL_Display_ModeTimingOverride_Get
-+@ stub ADL_Display_ModeTimingOverride_Set
-+@ stub ADL_Display_Modes_Get
-+@ stub ADL_Display_Modes_Set
-+@ stub ADL_Display_MonitorPowerState_Set
-+@ stub ADL_Display_NativeAUXChannel_Access
-+@ stub ADL_Display_NeedWorkaroundFor5Clone_Get
-+@ stub ADL_Display_NumberOfDisplays_Get
-+@ stub ADL_Display_ODClockConfig_Set
-+@ stub ADL_Display_ODClockInfo_Get
-+@ stub ADL_Display_Overlap_Set
-+@ stub ADL_Display_Overscan_Get
-+@ stub ADL_Display_Overscan_Set
-+@ stub ADL_Display_PixelClockAllowableRange_Set
-+@ stub ADL_Display_PixelClockCaps_Get
-+@ stub ADL_Display_PixelFormat_Get
-+@ stub ADL_Display_PixelFormat_Set
-+@ stub ADL_Display_Position_Get
-+@ stub ADL_Display_Position_Set
-+@ stub ADL_Display_PossibleMapping_Get
-+@ stub ADL_Display_PossibleMode_Get
-+@ stub ADL_Display_PowerXpressActiveGPU_Get
-+@ stub ADL_Display_PowerXpressActiveGPU_Set
-+@ stub ADL_Display_PowerXpressActvieGPUR2_Get
-+@ stub ADL_Display_PowerXpressVersion_Get
-+@ stub ADL_Display_PowerXpress_AutoSwitchConfig_Get
-+@ stub ADL_Display_PowerXpress_AutoSwitchConfig_Set
-+@ stub ADL_Display_PreservedAspectRatio_Get
-+@ stub ADL_Display_PreservedAspectRatio_Set
-+@ stub ADL_Display_Property_Get
-+@ stub ADL_Display_Property_Set
-+@ stub ADL_Display_RcDisplayAdjustment
-+@ stub ADL_Display_ReGammaCoefficients_Get
-+@ stub ADL_Display_ReGammaCoefficients_Set
-+@ stub ADL_Display_ReducedBlanking_Get
-+@ stub ADL_Display_ReducedBlanking_Set
-+@ stub ADL_Display_RegammaR1_Get
-+@ stub ADL_Display_RegammaR1_Set
-+@ stub ADL_Display_Regamma_Get
-+@ stub ADL_Display_Regamma_Set
-+@ stub ADL_Display_SLSGrid_Caps
-+@ stub ADL_Display_SLSMapConfigX2_Get
-+@ stub ADL_Display_SLSMapConfig_Create
-+@ stub ADL_Display_SLSMapConfig_Delete
-+@ stub ADL_Display_SLSMapConfig_Get
-+@ stub ADL_Display_SLSMapConfig_Rearrange
-+@ stub ADL_Display_SLSMapConfig_SetState
-+@ stub ADL_Display_SLSMapIndexList_Get
-+@ stub ADL_Display_SLSMapIndex_Get
-+@ stub ADL_Display_SLSMiddleMode_Get
-+@ stub ADL_Display_SLSMiddleMode_Set
-+@ stub ADL_Display_SLSRecords_Get
-+@ stub ADL_Display_Sharpness_Caps
-+@ stub ADL_Display_Sharpness_Get
-+@ stub ADL_Display_Sharpness_Info_Get
-+@ stub ADL_Display_Sharpness_Set
-+@ stub ADL_Display_Size_Get
-+@ stub ADL_Display_Size_Set
-+@ stub ADL_Display_SourceContentAttribute_Get
-+@ stub ADL_Display_SourceContentAttribute_Set
-+@ stub ADL_Display_SplitDisplay_Caps
-+@ stub ADL_Display_SplitDisplay_Get
-+@ stub ADL_Display_SplitDisplay_RestoreDesktopConfiguration
-+@ stub ADL_Display_SplitDisplay_Set
-+@ stub ADL_Display_SupportedColorDepth_Get
-+@ stub ADL_Display_SupportedPixelFormat_Get
-+@ stub ADL_Display_SwitchingCapability_Get
-+@ stub ADL_Display_TVCaps_Get
-+@ stub ADL_Display_TargetTiming_Get
-+@ stub ADL_Display_UnderScan_Auto_Get
-+@ stub ADL_Display_UnderScan_Auto_Set
-+@ stub ADL_Display_Underscan_Get
-+@ stub ADL_Display_Underscan_Set
-+@ stub ADL_Display_Vector_Get
-+@ stub ADL_Display_ViewPort_Cap
-+@ stub ADL_Display_ViewPort_Get
-+@ stub ADL_Display_ViewPort_Set
-+@ stub ADL_Display_WriteAndReadI2C
-+@ stub ADL_Display_WriteAndReadI2CLargePayload
-+@ stub ADL_Display_WriteAndReadI2CRev_Get
-+@ stub ADL_Flush_Driver_Data
-+@ stdcall ADL_Graphics_Platform_Get(ptr)
-+@ stdcall ADL_Graphics_Versions_Get(ptr)
-+@ stub ADL_MMD_FeatureList_Get
-+@ stub ADL_MMD_FeatureValuesX2_Get
-+@ stub ADL_MMD_FeatureValuesX2_Set
-+@ stub ADL_MMD_FeatureValues_Get
-+@ stub ADL_MMD_FeatureValues_Set
-+@ stub ADL_MMD_FeaturesX2_Caps
-+@ stub ADL_MMD_Features_Caps
-+@ stub ADL_MMD_VideoAdjustInfo_Get
-+@ stub ADL_MMD_VideoAdjustInfo_Set
-+@ stub ADL_MMD_VideoColor_Caps
-+@ stub ADL_MMD_VideoColor_Get
-+@ stub ADL_MMD_VideoColor_Set
-+@ stub ADL_MMD_Video_Caps
-+@ stub ADL_Main_ControlX2_Create
-+@ stdcall ADL_Main_Control_Create(ptr long)
-+@ stdcall ADL_Main_Control_Destroy()
-+@ stub ADL_Main_Control_GetProcAddress
-+@ stub ADL_Main_Control_IsFunctionValid
-+@ stub ADL_Main_Control_Refresh
-+@ stub ADL_Main_LogDebug_Set
-+@ stub ADL_Main_LogError_Set
-+@ stub ADL_Overdrive5_CurrentActivity_Get
-+@ stub ADL_Overdrive5_FanSpeedInfo_Get
-+@ stub ADL_Overdrive5_FanSpeedToDefault_Set
-+@ stub ADL_Overdrive5_FanSpeed_Get
-+@ stub ADL_Overdrive5_FanSpeed_Set
-+@ stub ADL_Overdrive5_ODParameters_Get
-+@ stub ADL_Overdrive5_ODPerformanceLevels_Get
-+@ stub ADL_Overdrive5_ODPerformanceLevels_Set
-+@ stub ADL_Overdrive5_PowerControlAbsValue_Caps
-+@ stub ADL_Overdrive5_PowerControlAbsValue_Get
-+@ stub ADL_Overdrive5_PowerControlAbsValue_Set
-+@ stub ADL_Overdrive5_PowerControlInfo_Get
-+@ stub ADL_Overdrive5_PowerControl_Caps
-+@ stub ADL_Overdrive5_PowerControl_Get
-+@ stub ADL_Overdrive5_PowerControl_Set
-+@ stub ADL_Overdrive5_Temperature_Get
-+@ stub ADL_Overdrive5_ThermalDevices_Enum
-+@ stub ADL_Overdrive6_AdvancedFan_Caps
-+@ stub ADL_Overdrive6_CapabilitiesEx_Get
-+@ stub ADL_Overdrive6_Capabilities_Get
-+@ stub ADL_Overdrive6_CurrentStatus_Get
-+@ stub ADL_Overdrive6_FanPWMLimitData_Get
-+@ stub ADL_Overdrive6_FanPWMLimitData_Set
-+@ stub ADL_Overdrive6_FanPWMLimitRangeInfo_Get
-+@ stub ADL_Overdrive6_FanSpeed_Get
-+@ stub ADL_Overdrive6_FanSpeed_Reset
-+@ stub ADL_Overdrive6_FanSpeed_Set
-+@ stub ADL_Overdrive6_FuzzyController_Caps
-+@ stub ADL_Overdrive6_MaxClockAdjust_Get
-+@ stub ADL_Overdrive6_PowerControlInfo_Get
-+@ stub ADL_Overdrive6_PowerControl_Caps
-+@ stub ADL_Overdrive6_PowerControl_Get
-+@ stub ADL_Overdrive6_PowerControl_Set
-+@ stub ADL_Overdrive6_StateEx_Get
-+@ stub ADL_Overdrive6_StateEx_Set
-+@ stub ADL_Overdrive6_StateInfo_Get
-+@ stub ADL_Overdrive6_State_Reset
-+@ stub ADL_Overdrive6_State_Set
-+@ stub ADL_Overdrive6_TargetTemperatureData_Get
-+@ stub ADL_Overdrive6_TargetTemperatureData_Set
-+@ stub ADL_Overdrive6_TargetTemperatureRangeInfo_Get
-+@ stub ADL_Overdrive6_Temperature_Get
-+@ stub ADL_Overdrive6_ThermalController_Caps
-+@ stub ADL_Overdrive6_ThermalLimitUnlock_Get
-+@ stub ADL_Overdrive6_ThermalLimitUnlock_Set
-+@ stub ADL_Overdrive6_VoltageControlInfo_Get
-+@ stub ADL_Overdrive6_VoltageControl_Get
-+@ stub ADL_Overdrive6_VoltageControl_Set
-+@ stub ADL_Overdrive_Caps
-+@ stub ADL_PowerXpress_AncillaryDevices_Get
-+@ stub ADL_PowerXpress_Config_Caps
-+@ stub ADL_PowerXpress_ExtendedBatteryMode_Caps
-+@ stub ADL_PowerXpress_ExtendedBatteryMode_Get
-+@ stub ADL_PowerXpress_ExtendedBatteryMode_Set
-+@ stub ADL_PowerXpress_LongIdleDetect_Get
-+@ stub ADL_PowerXpress_LongIdleDetect_Set
-+@ stub ADL_PowerXpress_PowerControlMode_Get
-+@ stub ADL_PowerXpress_PowerControlMode_Set
-+@ stub ADL_PowerXpress_Scheme_Get
-+@ stub ADL_PowerXpress_Scheme_Set
-+@ stub ADL_Remap
-+@ stub ADL_RemoteDisplay_Destroy
-+@ stub ADL_RemoteDisplay_Display_Acquire
-+@ stub ADL_RemoteDisplay_Display_Release
-+@ stub ADL_RemoteDisplay_Display_Release_All
-+@ stub ADL_RemoteDisplay_Hdcp20_Create
-+@ stub ADL_RemoteDisplay_Hdcp20_Destroy
-+@ stub ADL_RemoteDisplay_Hdcp20_Notify
-+@ stub ADL_RemoteDisplay_Hdcp20_Process
-+@ stub ADL_RemoteDisplay_IEPort_Set
-+@ stub ADL_RemoteDisplay_Initialize
-+@ stub ADL_RemoteDisplay_Nofitiation_Register
-+@ stub ADL_RemoteDisplay_Notification_UnRegister
-+@ stub ADL_RemoteDisplay_Support_Caps
-+@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_InUse_Get
-+@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_Info_Get
-+@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_RadioState_Get
-+@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Change
-+@ stub ADL_RemoteDisplay_VirtualWirelessAdapter_WPSSetting_Get
-+@ stub ADL_RemoteDisplay_WFDDeviceInfo_Get
-+@ stub ADL_RemoteDisplay_WFDDeviceName_Change
-+@ stub ADL_RemoteDisplay_WFDDevice_StatusInfo_Get
-+@ stub ADL_RemoteDisplay_WFDDiscover_Start
-+@ stub ADL_RemoteDisplay_WFDDiscover_Stop
-+@ stub ADL_RemoteDisplay_WFDLink_Connect
-+@ stub ADL_RemoteDisplay_WFDLink_Creation_Accept
-+@ stub ADL_RemoteDisplay_WFDLink_Disconnect
-+@ stub ADL_RemoteDisplay_WFDLink_WPS_Process
-+@ stub ADL_RemoteDisplay_WFDWDSPSettings_Set
-+@ stub ADL_RemoteDisplay_WirelessDisplayEnableDisable_Commit
-+@ stub ADL_ScreenPoint_AudioMappingInfo_Get
-+@ stub ADL_Stereo3D_2DPackedFormat_Set
-+@ stub ADL_Stereo3D_3DCursorOffset_Get
-+@ stub ADL_Stereo3D_3DCursorOffset_Set
-+@ stub ADL_Stereo3D_CurrentFormat_Get
-+@ stub ADL_Stereo3D_Info_Get
-+@ stub ADL_Stereo3D_Modes_Get
-+@ stub ADL_TV_Standard_Get
-+@ stub ADL_TV_Standard_Set
-+@ stub ADL_Win_IsHybridAI
-+@ stub ADL_Workstation_8BitGrayscale_Get
-+@ stub ADL_Workstation_8BitGrayscale_Set
-+@ stub ADL_Workstation_AdapterNumOfGLSyncConnectors_Get
-+@ stub ADL_Workstation_Caps
-+@ stub ADL_Workstation_DeepBitDepthX2_Get
-+@ stub ADL_Workstation_DeepBitDepthX2_Set
-+@ stub ADL_Workstation_DeepBitDepth_Get
-+@ stub ADL_Workstation_DeepBitDepth_Set
-+@ stub ADL_Workstation_DisplayGLSyncMode_Get
-+@ stub ADL_Workstation_DisplayGLSyncMode_Set
-+@ stub ADL_Workstation_DisplayGenlockCapable_Get
-+@ stub ADL_Workstation_ECCData_Get
-+@ stub ADL_Workstation_ECCX2_Get
-+@ stub ADL_Workstation_ECC_Caps
-+@ stub ADL_Workstation_ECC_Get
-+@ stub ADL_Workstation_ECC_Set
-+@ stub ADL_Workstation_GLSyncCounters_Get
-+@ stub ADL_Workstation_GLSyncGenlockConfiguration_Get
-+@ stub ADL_Workstation_GLSyncGenlockConfiguration_Set
-+@ stub ADL_Workstation_GLSyncModuleDetect_Get
-+@ stub ADL_Workstation_GLSyncModuleInfo_Get
-+@ stub ADL_Workstation_GLSyncPortState_Get
-+@ stub ADL_Workstation_GLSyncPortState_Set
-+@ stub ADL_Workstation_GLSyncSupportedTopology_Get
-+@ stub ADL_Workstation_GlobalEDIDPersistence_Get
-+@ stub ADL_Workstation_GlobalEDIDPersistence_Set
-+@ stub ADL_Workstation_LoadBalancing_Caps
-+@ stub ADL_Workstation_LoadBalancing_Get
-+@ stub ADL_Workstation_LoadBalancing_Set
-+@ stub ADL_Workstation_RAS_Get_Error_Counts
-+@ stub ADL_Workstation_RAS_Get_Features
-+@ stub ADL_Workstation_RAS_Reset_Error_Counts
-+@ stub ADL_Workstation_RAS_Set_Features
-+@ stub ADL_Workstation_SDISegmentList_Get
-+@ stub ADL_Workstation_SDI_Caps
-+@ stub ADL_Workstation_SDI_Get
-+@ stub ADL_Workstation_SDI_Set
-+@ stub ADL_Workstation_Stereo_Get
-+@ stub ADL_Workstation_Stereo_Set
-+@ stub ADL_Workstation_UnsupportedDisplayModes_Enable
-+@ stub AmdPowerXpressRequestHighPerformance
-+@ stub Desktop_Detach
-+@ stub Send
-+@ stub SendX2
-diff --git a/dlls/atiadlxx/atiadlxx_main.c b/dlls/atiadlxx/atiadlxx_main.c
-new file mode 100644
-index 00000000000..21dfbe71096
---- /dev/null
-+++ wine/dlls/atiadlxx/atiadlxx_main.c
-@@ -0,0 +1,493 @@
-+/* Headers: https://github.com/GPUOpen-LibrariesAndSDKs/display-library */
-+
-+#include <stdarg.h>
-+#include <stdio.h>
-+#include <stdlib.h>
-+
-+#define COBJMACROS
-+#include "windef.h"
-+#include "winbase.h"
-+#include "winuser.h"
-+#include "objbase.h"
-+#include "initguid.h"
-+#include "wine/debug.h"
-+
-+#include "dxgi.h"
-+
-+#define MAX_GPUS 64
-+#define VENDOR_AMD 0x1002
-+
-+#define ADL_OK                            0
-+#define ADL_ERR                          -1
-+#define ADL_ERR_INVALID_PARAM            -3
-+#define ADL_ERR_INVALID_ADL_IDX          -5
-+#define ADL_ERR_NOT_SUPPORTED            -8
-+#define ADL_ERR_NULL_POINTER             -9
-+
-+#define ADL_DISPLAY_DISPLAYINFO_DISPLAYCONNECTED            0x00000001
-+#define ADL_DISPLAY_DISPLAYINFO_DISPLAYMAPPED               0x00000002
-+#define ADL_DISPLAY_DISPLAYINFO_MASK 0x31fff
-+
-+#define ADL_ASIC_DISCRETE    (1 << 0)
-+#define ADL_ASIC_MASK        0xAF
-+
-+enum ADLPlatForm
-+{
-+    GRAPHICS_PLATFORM_DESKTOP  = 0,
-+    GRAPHICS_PLATFORM_MOBILE   = 1
-+};
-+#define GRAPHICS_PLATFORM_UNKNOWN -1
-+
-+
-+static IDXGIFactory *dxgi_factory;
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(atiadlxx);
-+
-+BOOL WINAPI DllMain(HINSTANCE instance, DWORD reason, void *reserved)
-+{
-+    TRACE("(%p, %u, %p)\n", instance, reason, reserved);
-+
-+    switch (reason)
-+    {
-+    case DLL_PROCESS_ATTACH:
-+        DisableThreadLibraryCalls(instance);
-+        break;
-+    }
-+
-+    return TRUE;
-+}
-+
-+typedef void *(CALLBACK *ADL_MAIN_MALLOC_CALLBACK)(int);
-+typedef void *ADL_CONTEXT_HANDLE;
-+
-+ADL_MAIN_MALLOC_CALLBACK adl_malloc;
-+#define ADL_MAX_PATH 256
-+
-+typedef struct ADLVersionsInfo
-+{
-+    char strDriverVer[ADL_MAX_PATH];
-+    char strCatalystVersion[ADL_MAX_PATH];
-+    char strCatalystWebLink[ADL_MAX_PATH];
-+} ADLVersionsInfo, *LPADLVersionsInfo;
-+
-+typedef struct ADLVersionsInfoX2
-+{
-+    char strDriverVer[ADL_MAX_PATH];
-+    char strCatalystVersion[ADL_MAX_PATH];
-+    char strCrimsonVersion[ADL_MAX_PATH];
-+    char strCatalystWebLink[ADL_MAX_PATH];
-+} ADLVersionsInfoX2, *LPADLVersionsInfoX2;
-+
-+typedef struct ADLAdapterInfo {
-+    int iSize;
-+    int iAdapterIndex;
-+    char strUDID[ADL_MAX_PATH];
-+    int iBusNumber;
-+    int iDeviceNumber;
-+    int iFunctionNumber;
-+    int iVendorID;
-+    char strAdapterName[ADL_MAX_PATH];
-+    char strDisplayName[ADL_MAX_PATH];
-+    int iPresent;
-+    int iExist;
-+    char strDriverPath[ADL_MAX_PATH];
-+    char strDriverPathExt[ADL_MAX_PATH];
-+    char strPNPString[ADL_MAX_PATH];
-+    int iOSDisplayIndex;
-+} ADLAdapterInfo, *LPADLAdapterInfo;
-+
-+typedef struct ADLDisplayID
-+{
-+    int iDisplayLogicalIndex;
-+    int iDisplayPhysicalIndex;
-+    int iDisplayLogicalAdapterIndex;
-+    int iDisplayPhysicalAdapterIndex;
-+} ADLDisplayID, *LPADLDisplayID;
-+
-+typedef struct ADLDisplayInfo
-+{
-+    ADLDisplayID displayID;
-+    int  iDisplayControllerIndex;
-+    char strDisplayName[ADL_MAX_PATH];
-+    char strDisplayManufacturerName[ADL_MAX_PATH];
-+    int  iDisplayType;
-+    int  iDisplayOutputType;
-+    int  iDisplayConnector;
-+    int  iDisplayInfoMask;
-+    int  iDisplayInfoValue;
-+} ADLDisplayInfo, *LPADLDisplayInfo;
-+
-+typedef struct ADLCrossfireComb
-+{
-+    int iNumLinkAdapter;
-+    int iAdaptLink[3];
-+} ADLCrossfireComb;
-+
-+typedef struct ADLCrossfireInfo
-+{
-+  int iErrorCode;
-+  int iState;
-+  int iSupported;
-+} ADLCrossfireInfo;
-+
-+typedef struct ADLMemoryInfo
-+{
-+    long long iMemorySize;
-+    char strMemoryType[ADL_MAX_PATH];
-+    long long iMemoryBandwidth;
-+} ADLMemoryInfo, *LPADLMemoryInfo;
-+
-+typedef struct ADLDisplayTarget
-+{
-+    ADLDisplayID displayID;
-+    int iDisplayMapIndex;
-+    int iDisplayTargetMask;
-+    int iDisplayTargetValue;
-+} ADLDisplayTarget, *LPADLDisplayTarget;
-+
-+typedef struct ADLMode
-+{
-+    int iAdapterIndex;
-+    ADLDisplayID displayID;
-+    int iXPos;
-+    int iYPos;
-+    int iXRes;
-+    int iYRes;
-+    int iColourDepth;
-+    float fRefreshRate;
-+    int iOrientation;
-+    int iModeFlag;
-+    int iModeMask;
-+    int iModeValue;
-+} ADLMode, *LPADLMode;
-+
-+typedef struct ADLDisplayMap
-+{
-+    int iDisplayMapIndex;
-+    ADLMode displayMode;
-+    int iNumDisplayTarget;
-+    int iFirstDisplayTargetArrayIndex;
-+    int iDisplayMapMask;
-+    int iDisplayMapValue;
-+} ADLDisplayMap, *LPADLDisplayMap;
-+
-+static const ADLVersionsInfo version = {
-+    "22.20.19.16-221003a-384125E-AMD-Software-Adrenalin-Edition",
-+    "",
-+    "http://support.amd.com/drivers/xml/driver_09_us.xml",
-+};
-+
-+static const ADLVersionsInfoX2 version2 = {
-+    "22.20.19.16-221003a-384125E-AMD-Software-Adrenalin-Edition",
-+    "",
-+    "22.10.1",
-+    "http://support.amd.com/drivers/xml/driver_09_us.xml",
-+};
-+
-+int WINAPI ADL2_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg, ADL_CONTEXT_HANDLE *ptr)
-+{
-+    FIXME("cb %p, arg %d, ptr %p stub!\n", cb, arg, ptr);
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg)
-+{
-+    FIXME("cb %p, arg %d stub!\n", cb, arg);
-+    adl_malloc = cb;
-+
-+
-+    if (SUCCEEDED(CreateDXGIFactory(&IID_IDXGIFactory, (void**) &dxgi_factory)))
-+        return ADL_OK;
-+    else
-+        return ADL_ERR;
-+}
-+
-+int WINAPI ADL_Main_Control_Destroy(void)
-+{
-+    FIXME("stub!\n");
-+
-+    if (dxgi_factory != NULL)
-+        IUnknown_Release(dxgi_factory);
-+
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL2_Adapter_NumberOfAdapters_Get(ADL_CONTEXT_HANDLE *ptr, int *count)
-+{
-+    FIXME("ptr %p, count %p stub!\n", ptr, count);
-+
-+    *count = 0;
-+
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL2_Graphics_VersionsX2_Get(ADL_CONTEXT_HANDLE *ptr, ADLVersionsInfoX2 *ver)
-+{
-+    FIXME("ptr %p, ver %p stub!\n", ptr, ver);
-+    memcpy(ver, &version2, sizeof(version2));
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL_Graphics_Versions_Get(ADLVersionsInfo *ver)
-+{
-+    FIXME("ver %p stub!\n", ver);
-+    memcpy(ver, &version, sizeof(version));
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL_Adapter_NumberOfAdapters_Get(int *count)
-+{
-+    IDXGIAdapter *adapter;
-+
-+    FIXME("count %p stub!\n", count);
-+
-+    *count = 0;
-+    while (SUCCEEDED(IDXGIFactory_EnumAdapters(dxgi_factory, *count, &adapter)))
-+    {
-+        (*count)++;
-+        IUnknown_Release(adapter);
-+    }
-+
-+    TRACE("*count = %d\n", *count);
-+    return ADL_OK;
-+}
-+
-+static int get_adapter_desc(int adapter_index, DXGI_ADAPTER_DESC *desc)
-+{
-+    IDXGIAdapter *adapter;
-+    HRESULT hr;
-+
-+    if (FAILED(IDXGIFactory_EnumAdapters(dxgi_factory, adapter_index, &adapter)))
-+        return ADL_ERR;
-+
-+    hr = IDXGIAdapter_GetDesc(adapter, desc);
-+
-+    IUnknown_Release(adapter);
-+
-+    return SUCCEEDED(hr) ? ADL_OK : ADL_ERR;
-+}
-+
-+/* yep, seriously */
-+static int convert_vendor_id(int id)
-+{
-+    char str[16];
-+    snprintf(str, ARRAY_SIZE(str), "%x", id);
-+    return atoi(str);
-+}
-+
-+int WINAPI ADL_Adapter_AdapterInfo_Get(ADLAdapterInfo *adapters, int input_size)
-+{
-+    int count, i;
-+    DXGI_ADAPTER_DESC adapter_desc;
-+
-+    FIXME("adapters %p, input_size %d, stub!\n", adapters, input_size);
-+
-+    ADL_Adapter_NumberOfAdapters_Get(&count);
-+
-+    if (!adapters) return ADL_ERR_INVALID_PARAM;
-+    if (input_size != count * sizeof(ADLAdapterInfo)) return ADL_ERR_INVALID_PARAM;
-+
-+    memset(adapters, 0, input_size);
-+
-+    for (i = 0; i < count; i++)
-+    {
-+        adapters[i].iSize = sizeof(ADLAdapterInfo);
-+        adapters[i].iAdapterIndex = i;
-+
-+        if (get_adapter_desc(i, &adapter_desc) != ADL_OK)
-+            return ADL_ERR;
-+
-+        adapters[i].iVendorID = convert_vendor_id(adapter_desc.VendorId);
-+    }
-+
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL_Display_DisplayInfo_Get(int adapter_index, int *num_displays, ADLDisplayInfo **info, int force_detect)
-+{
-+    IDXGIAdapter *adapter;
-+    IDXGIOutput *output;
-+    int i;
-+
-+    FIXME("adapter %d, num_displays %p, info %p stub!\n", adapter_index, num_displays, info);
-+
-+    if (info == NULL || num_displays == NULL) return ADL_ERR_NULL_POINTER;
-+
-+    if (FAILED(IDXGIFactory_EnumAdapters(dxgi_factory, adapter_index, &adapter)))
-+        return ADL_ERR_INVALID_PARAM;
-+
-+    *num_displays = 0;
-+
-+    while (SUCCEEDED(IDXGIAdapter_EnumOutputs(adapter, *num_displays, &output)))
-+    {
-+        (*num_displays)++;
-+        IUnknown_Release(output);
-+    }
-+
-+    IUnknown_Release(adapter);
-+
-+    if (*num_displays == 0)
-+        return ADL_OK;
-+
-+    *info = adl_malloc(*num_displays * sizeof(**info));
-+    memset(*info, 0, *num_displays * sizeof(**info));
-+
-+    for (i = 0; i < *num_displays; i++)
-+    {
-+        (*info)[i].displayID.iDisplayLogicalIndex = i;
-+        (*info)[i].iDisplayInfoValue = ADL_DISPLAY_DISPLAYINFO_DISPLAYCONNECTED | ADL_DISPLAY_DISPLAYINFO_DISPLAYMAPPED;
-+        (*info)[i].iDisplayInfoMask = (*info)[i].iDisplayInfoValue;
-+    }
-+
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL_Adapter_Crossfire_Caps(int adapter_index, int *preffered, int *num_comb, ADLCrossfireComb** comb)
-+{
-+    FIXME("adapter %d, preffered %p, num_comb %p, comb %p stub!\n", adapter_index, preffered, num_comb, comb);
-+    return ADL_ERR;
-+}
-+
-+int WINAPI ADL_Adapter_Crossfire_Get(int adapter_index, ADLCrossfireComb *comb, ADLCrossfireInfo *info)
-+{
-+    FIXME("adapter %d, comb %p, info %p, stub!\n", adapter_index, comb, info);
-+    return ADL_ERR;
-+}
-+
-+int WINAPI ADL_Adapter_ASICFamilyType_Get(int adapter_index, int *asic_type, int *valids)
-+{
-+    DXGI_ADAPTER_DESC adapter_desc;
-+
-+    FIXME("adapter %d, asic_type %p, valids %p, stub!\n", adapter_index, asic_type, valids);
-+
-+    if (asic_type == NULL || valids == NULL)
-+        return  ADL_ERR_NULL_POINTER;
-+
-+    if (get_adapter_desc(adapter_index, &adapter_desc) != ADL_OK)
-+        return ADL_ERR_INVALID_ADL_IDX;
-+
-+    if (adapter_desc.VendorId != VENDOR_AMD)
-+        return ADL_ERR_NOT_SUPPORTED;
-+
-+    *asic_type = ADL_ASIC_DISCRETE;
-+    *valids = ADL_ASIC_MASK;
-+
-+    return ADL_OK;
-+}
-+
-+static int get_max_clock(const char *clock, int default_value)
-+{
-+    char path[MAX_PATH], line[256];
-+    FILE *file;
-+    int drm_card, value = 0;
-+
-+    for (drm_card = 0; drm_card < MAX_GPUS; drm_card++)
-+    {
-+        sprintf(path, "/sys/class/drm/card%d/device/pp_dpm_%s", drm_card, clock);
-+        file = fopen(path, "r");
-+
-+        if (file == NULL)
-+            continue;
-+
-+        while (fgets(line, sizeof(line), file) != NULL)
-+        {
-+            char *number;
-+
-+            number = strchr(line, ' ');
-+            if (number == NULL)
-+            {
-+                WARN("pp_dpm_%s file has unexpected format\n", clock);
-+                break;
-+            }
-+
-+            number++;
-+            value = max(strtol(number, NULL, 0), value);
-+        }
-+    }
-+
-+    if (value != 0)
-+        return value;
-+
-+    return default_value;
-+}
-+
-+/* documented in the "Linux Specific APIs" section, present and used on Windows */
-+/* the name and documentation suggests that this returns current freqs, but it's actually max */
-+int WINAPI ADL_Adapter_ObservedClockInfo_Get(int adapter_index, int *core_clock, int *memory_clock)
-+{
-+    DXGI_ADAPTER_DESC adapter_desc;
-+
-+    FIXME("adapter %d, core_clock %p, memory_clock %p, stub!\n", adapter_index, core_clock, memory_clock);
-+
-+    if (core_clock == NULL || memory_clock == NULL) return ADL_ERR;
-+    if (get_adapter_desc(adapter_index, &adapter_desc) != ADL_OK) return ADL_ERR;
-+    if (adapter_desc.VendorId != VENDOR_AMD) return ADL_ERR_INVALID_ADL_IDX;
-+
-+    /* default values based on RX580 */
-+    *core_clock = get_max_clock("sclk", 1350);
-+    *memory_clock = get_max_clock("mclk", 2000);
-+
-+    TRACE("*core_clock: %i, *memory_clock %i\n", *core_clock, *memory_clock);
-+
-+    return ADL_OK;
-+}
-+
-+/* documented in the "Linux Specific APIs" section, present and used on Windows */
-+int WINAPI ADL_Adapter_MemoryInfo_Get(int adapter_index, ADLMemoryInfo *mem_info)
-+{
-+    DXGI_ADAPTER_DESC adapter_desc;
-+
-+    FIXME("adapter %d, mem_info %p stub!\n", adapter_index, mem_info);
-+
-+    if (mem_info == NULL) return ADL_ERR_NULL_POINTER;
-+    if (get_adapter_desc(adapter_index, &adapter_desc) != ADL_OK) return ADL_ERR_INVALID_ADL_IDX;
-+    if (adapter_desc.VendorId != VENDOR_AMD) return ADL_ERR;
-+
-+    mem_info->iMemorySize = adapter_desc.DedicatedVideoMemory;
-+    mem_info->iMemoryBandwidth = 256000; /* not exposed on Linux, probably needs a lookup table */
-+
-+    TRACE("iMemoryBandwidth %s, iMemorySize %s\n",
-+            wine_dbgstr_longlong(mem_info->iMemoryBandwidth),
-+            wine_dbgstr_longlong(mem_info->iMemorySize));
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL_Graphics_Platform_Get(int *platform)
-+{
-+    DXGI_ADAPTER_DESC adapter_desc;
-+    int count, i;
-+
-+    FIXME("platform %p, stub!\n", platform);
-+
-+    *platform = GRAPHICS_PLATFORM_UNKNOWN;
-+
-+    ADL_Adapter_NumberOfAdapters_Get(&count);
-+
-+    for (i = 0; i < count; i ++)
-+    {
-+        if (get_adapter_desc(i, &adapter_desc) != ADL_OK)
-+            continue;
-+
-+        if (adapter_desc.VendorId == VENDOR_AMD)
-+            *platform = GRAPHICS_PLATFORM_DESKTOP;
-+    }
-+
-+    /* NOTE: The real value can be obtained by doing:
-+     * 1. ioctl(DRM_AMDGPU_INFO) with AMDGPU_INFO_DEV_INFO - dev_info.ids_flags & AMDGPU_IDS_FLAGS_FUSION
-+     * 2. VkPhysicalDeviceType() if we ever want to use Vulkan directly
-+     */
-+
-+    return ADL_OK;
-+}
-+
-+
-+int WINAPI ADL_Display_DisplayMapConfig_Get(int adapter_index, int *display_map_count, ADLDisplayMap **display_maps,
-+        int *display_target_count, ADLDisplayTarget **display_targets, int options)
-+{
-+    FIXME("adapter_index %d, display_map_count %p, display_maps %p, "
-+            "display_target_count %p, display_targets %p, options %d stub.\n",
-+            adapter_index, display_map_count, display_maps, display_target_count,
-+            display_targets, options);
-+
-+    return ADL_ERR;
-+}
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/windows.gaming.input/Makefile.in b/dlls/windows.gaming.input/Makefile.in
-index 1e0ce5c360c..3ec3dd0d864 100644
---- wine/dlls/windows.gaming.input/Makefile.in
-+++ wine/dlls/windows.gaming.input/Makefile.in
-@@ -2,13 +2,19 @@ MODULE = windows.gaming.input.dll
- IMPORTS = combase uuid user32 dinput8 setupapi hid
- 
- C_SRCS = \
-+	async.c \
-+	condition_effect.c \
-+	constant_effect.c \
- 	controller.c \
- 	event_handlers.c \
-+	force_feedback.c \
- 	gamepad.c \
- 	main.c \
- 	manager.c \
-+	periodic_effect.c \
- 	provider.c \
- 	racing_wheel.c \
-+	ramp_effect.c \
- 	vector.c
- 
- IDL_SRCS = \
-diff --git a/dlls/windows.gaming.input/async.c b/dlls/windows.gaming.input/async.c
-new file mode 100644
-index 00000000000..862886195ba
---- /dev/null
-+++ wine/dlls/windows.gaming.input/async.c
-@@ -0,0 +1,647 @@
-+/* WinRT Windows.Gaming.Input implementation
-+ *
-+ * Copyright 2022 Bernhard Kölbl for CodeWeavers
-+ * Copyright 2022 Rémi Bernon for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#include "private.h"
-+#include "provider.h"
-+
-+#include "wine/debug.h"
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(input);
-+
-+#define Closed 4
-+#define HANDLER_NOT_SET ((void *)~(ULONG_PTR)0)
-+
-+struct async_info
-+{
-+    IWineAsyncInfoImpl IWineAsyncInfoImpl_iface;
-+    IAsyncInfo IAsyncInfo_iface;
-+    IInspectable *IInspectable_outer;
-+    LONG ref;
-+
-+    async_operation_callback callback;
-+    TP_WORK *async_run_work;
-+    IUnknown *invoker;
-+    IUnknown *param;
-+
-+    CRITICAL_SECTION cs;
-+    IWineAsyncOperationCompletedHandler *handler;
-+    PROPVARIANT result;
-+    AsyncStatus status;
-+    HRESULT hr;
-+};
-+
-+static inline struct async_info *impl_from_IWineAsyncInfoImpl( IWineAsyncInfoImpl *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct async_info, IWineAsyncInfoImpl_iface );
-+}
-+
-+static HRESULT WINAPI async_impl_QueryInterface( IWineAsyncInfoImpl *iface, REFIID iid, void **out )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IWineAsyncInfoImpl ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IWineAsyncInfoImpl_iface) );
-+        return S_OK;
-+    }
-+
-+    if (IsEqualGUID( iid, &IID_IAsyncInfo ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IAsyncInfo_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI async_impl_AddRef( IWineAsyncInfoImpl *iface )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p, ref %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI async_impl_Release( IWineAsyncInfoImpl *iface )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p, ref %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        if (impl->handler && impl->handler != HANDLER_NOT_SET) IWineAsyncOperationCompletedHandler_Release( impl->handler );
-+        IAsyncInfo_Close( &impl->IAsyncInfo_iface );
-+        if (impl->param) IUnknown_Release( impl->param );
-+        if (impl->invoker) IUnknown_Release( impl->invoker );
-+        impl->cs.DebugInfo->Spare[0] = 0;
-+        DeleteCriticalSection( &impl->cs );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI async_impl_put_Completed( IWineAsyncInfoImpl *iface, IWineAsyncOperationCompletedHandler *handler )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p, handler %p.\n", iface, handler );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
-+    else if (impl->handler != HANDLER_NOT_SET) hr = E_ILLEGAL_DELEGATE_ASSIGNMENT;
-+    else if ((impl->handler = handler))
-+    {
-+        IWineAsyncOperationCompletedHandler_AddRef( impl->handler );
-+
-+        if (impl->status > Started)
-+        {
-+            IInspectable *operation = impl->IInspectable_outer;
-+            AsyncStatus status = impl->status;
-+            impl->handler = NULL; /* Prevent concurrent invoke. */
-+            LeaveCriticalSection( &impl->cs );
-+
-+            IWineAsyncOperationCompletedHandler_Invoke( handler, operation, status );
-+            IWineAsyncOperationCompletedHandler_Release( handler );
-+
-+            return S_OK;
-+        }
-+    }
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI async_impl_get_Completed( IWineAsyncInfoImpl *iface, IWineAsyncOperationCompletedHandler **handler )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p, handler %p.\n", iface, handler );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
-+    if (impl->handler == NULL || impl->handler == HANDLER_NOT_SET) *handler = NULL;
-+    else IWineAsyncOperationCompletedHandler_AddRef( (*handler = impl->handler) );
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI async_impl_get_Result( IWineAsyncInfoImpl *iface, PROPVARIANT *result )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+    HRESULT hr = E_ILLEGAL_METHOD_CALL;
-+
-+    TRACE( "iface %p, result %p.\n", iface, result );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Completed || impl->status == Error)
-+    {
-+        PropVariantCopy( result, &impl->result );
-+        hr = impl->hr;
-+    }
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI async_impl_Start( IWineAsyncInfoImpl *iface )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    /* keep the async alive in the callback */
-+    IInspectable_AddRef( impl->IInspectable_outer );
-+    SubmitThreadpoolWork( impl->async_run_work );
-+
-+    return S_OK;
-+}
-+
-+static const struct IWineAsyncInfoImplVtbl async_impl_vtbl =
-+{
-+    /* IUnknown methods */
-+    async_impl_QueryInterface,
-+    async_impl_AddRef,
-+    async_impl_Release,
-+    /* IWineAsyncInfoImpl */
-+    async_impl_put_Completed,
-+    async_impl_get_Completed,
-+    async_impl_get_Result,
-+    async_impl_Start,
-+};
-+
-+DEFINE_IINSPECTABLE_OUTER( async_info, IAsyncInfo, struct async_info, IInspectable_outer )
-+
-+static HRESULT WINAPI async_info_get_Id( IAsyncInfo *iface, UINT32 *id )
-+{
-+    struct async_info *impl = impl_from_IAsyncInfo( iface );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p, id %p.\n", iface, id );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
-+    *id = 1;
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI async_info_get_Status( IAsyncInfo *iface, AsyncStatus *status )
-+{
-+    struct async_info *impl = impl_from_IAsyncInfo( iface );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p, status %p.\n", iface, status );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
-+    *status = impl->status;
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI async_info_get_ErrorCode( IAsyncInfo *iface, HRESULT *error_code )
-+{
-+    struct async_info *impl = impl_from_IAsyncInfo( iface );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p, error_code %p.\n", iface, error_code );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Closed) *error_code = hr = E_ILLEGAL_METHOD_CALL;
-+    else *error_code = impl->hr;
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI async_info_Cancel( IAsyncInfo *iface )
-+{
-+    struct async_info *impl = impl_from_IAsyncInfo( iface );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
-+    else if (impl->status == Started) impl->status = Canceled;
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI async_info_Close( IAsyncInfo *iface )
-+{
-+    struct async_info *impl = impl_from_IAsyncInfo( iface );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status == Started)
-+        hr = E_ILLEGAL_STATE_CHANGE;
-+    else if (impl->status != Closed)
-+    {
-+        CloseThreadpoolWork( impl->async_run_work );
-+        impl->async_run_work = NULL;
-+        impl->status = Closed;
-+    }
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static const struct IAsyncInfoVtbl async_info_vtbl =
-+{
-+    /* IUnknown methods */
-+    async_info_QueryInterface,
-+    async_info_AddRef,
-+    async_info_Release,
-+    /* IInspectable methods */
-+    async_info_GetIids,
-+    async_info_GetRuntimeClassName,
-+    async_info_GetTrustLevel,
-+    /* IAsyncInfo */
-+    async_info_get_Id,
-+    async_info_get_Status,
-+    async_info_get_ErrorCode,
-+    async_info_Cancel,
-+    async_info_Close,
-+};
-+
-+static void CALLBACK async_info_callback( TP_CALLBACK_INSTANCE *instance, void *iface, TP_WORK *work )
-+{
-+    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
-+    IInspectable *operation = impl->IInspectable_outer;
-+    PROPVARIANT result;
-+    HRESULT hr;
-+
-+    hr = impl->callback( impl->invoker, impl->param, &result );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->status != Closed) impl->status = FAILED(hr) ? Error : Completed;
-+    PropVariantCopy( &impl->result, &result );
-+    impl->hr = hr;
-+
-+    if (impl->handler != NULL && impl->handler != HANDLER_NOT_SET)
-+    {
-+        IWineAsyncOperationCompletedHandler *handler = impl->handler;
-+        AsyncStatus status = impl->status;
-+        impl->handler = NULL; /* Prevent concurrent invoke. */
-+        LeaveCriticalSection( &impl->cs );
-+
-+        IWineAsyncOperationCompletedHandler_Invoke( handler, operation, status );
-+        IWineAsyncOperationCompletedHandler_Release( handler );
-+    }
-+    else LeaveCriticalSection( &impl->cs );
-+
-+    /* release refcount acquired in Start */
-+    IInspectable_Release( operation );
-+
-+    PropVariantClear( &result );
-+}
-+
-+static HRESULT async_info_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
-+                                  IInspectable *outer, IWineAsyncInfoImpl **out )
-+{
-+    struct async_info *impl;
-+
-+    if (!(impl = calloc( 1, sizeof(struct async_info) ))) return E_OUTOFMEMORY;
-+    impl->IWineAsyncInfoImpl_iface.lpVtbl = &async_impl_vtbl;
-+    impl->IAsyncInfo_iface.lpVtbl = &async_info_vtbl;
-+    impl->IInspectable_outer = outer;
-+    impl->ref = 1;
-+
-+    impl->callback = callback;
-+    impl->handler = HANDLER_NOT_SET;
-+    impl->status = Started;
-+    if (!(impl->async_run_work = CreateThreadpoolWork( async_info_callback, &impl->IWineAsyncInfoImpl_iface, NULL )))
-+        return HRESULT_FROM_WIN32( GetLastError() );
-+
-+    if ((impl->invoker = invoker)) IUnknown_AddRef( impl->invoker );
-+    if ((impl->param = param)) IUnknown_AddRef( impl->param );
-+
-+    InitializeCriticalSection( &impl->cs );
-+    impl->cs.DebugInfo->Spare[0] = (DWORD_PTR)( __FILE__ ": async_info.cs" );
-+
-+    *out = &impl->IWineAsyncInfoImpl_iface;
-+    return S_OK;
-+}
-+
-+struct async_bool
-+{
-+    IAsyncOperation_boolean IAsyncOperation_boolean_iface;
-+    IWineAsyncInfoImpl *IWineAsyncInfoImpl_inner;
-+    LONG ref;
-+};
-+
-+static inline struct async_bool *impl_from_IAsyncOperation_boolean( IAsyncOperation_boolean *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct async_bool, IAsyncOperation_boolean_iface );
-+}
-+
-+static HRESULT WINAPI async_bool_QueryInterface( IAsyncOperation_boolean *iface, REFIID iid, void **out )
-+{
-+    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IAsyncOperation_boolean ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IAsyncOperation_boolean_iface) );
-+        return S_OK;
-+    }
-+
-+    return IWineAsyncInfoImpl_QueryInterface( impl->IWineAsyncInfoImpl_inner, iid, out );
-+}
-+
-+static ULONG WINAPI async_bool_AddRef( IAsyncOperation_boolean *iface )
-+{
-+    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p, ref %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI async_bool_Release( IAsyncOperation_boolean *iface )
-+{
-+    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p, ref %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        /* guard against re-entry if inner releases an outer iface */
-+        InterlockedIncrement( &impl->ref );
-+        IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI async_bool_GetIids( IAsyncOperation_boolean *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI async_bool_GetRuntimeClassName( IAsyncOperation_boolean *iface, HSTRING *class_name )
-+{
-+    return WindowsCreateString( L"Windows.Foundation.IAsyncOperation`1<Boolean>",
-+                                ARRAY_SIZE(L"Windows.Foundation.IAsyncOperation`1<Boolean>"),
-+                                class_name );
-+}
-+
-+static HRESULT WINAPI async_bool_GetTrustLevel( IAsyncOperation_boolean *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI async_bool_put_Completed( IAsyncOperation_boolean *iface, IAsyncOperationCompletedHandler_boolean *bool_handler )
-+{
-+    IWineAsyncOperationCompletedHandler *handler = (IWineAsyncOperationCompletedHandler *)bool_handler;
-+    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
-+    TRACE( "iface %p, handler %p.\n", iface, handler );
-+    return IWineAsyncInfoImpl_put_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler *)handler );
-+}
-+
-+static HRESULT WINAPI async_bool_get_Completed( IAsyncOperation_boolean *iface, IAsyncOperationCompletedHandler_boolean **bool_handler )
-+{
-+    IWineAsyncOperationCompletedHandler **handler = (IWineAsyncOperationCompletedHandler **)bool_handler;
-+    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
-+    TRACE( "iface %p, handler %p.\n", iface, handler );
-+    return IWineAsyncInfoImpl_get_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler **)handler );
-+}
-+
-+static HRESULT WINAPI async_bool_GetResults( IAsyncOperation_boolean *iface, BOOLEAN *results )
-+{
-+    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
-+    PROPVARIANT result = {.vt = VT_BOOL};
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, results %p.\n", iface, results );
-+
-+    hr = IWineAsyncInfoImpl_get_Result( impl->IWineAsyncInfoImpl_inner, &result );
-+
-+    *results = result.boolVal;
-+    PropVariantClear( &result );
-+    return hr;
-+}
-+
-+static const struct IAsyncOperation_booleanVtbl async_bool_vtbl =
-+{
-+    /* IUnknown methods */
-+    async_bool_QueryInterface,
-+    async_bool_AddRef,
-+    async_bool_Release,
-+    /* IInspectable methods */
-+    async_bool_GetIids,
-+    async_bool_GetRuntimeClassName,
-+    async_bool_GetTrustLevel,
-+    /* IAsyncOperation<boolean> */
-+    async_bool_put_Completed,
-+    async_bool_get_Completed,
-+    async_bool_GetResults,
-+};
-+
-+HRESULT async_operation_boolean_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
-+                                        IAsyncOperation_boolean **out )
-+{
-+    struct async_bool *impl;
-+    HRESULT hr;
-+
-+    *out = NULL;
-+    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
-+    impl->IAsyncOperation_boolean_iface.lpVtbl = &async_bool_vtbl;
-+    impl->ref = 1;
-+
-+    if (FAILED(hr = async_info_create( invoker, param, callback, (IInspectable *)&impl->IAsyncOperation_boolean_iface, &impl->IWineAsyncInfoImpl_inner )) ||
-+        FAILED(hr = IWineAsyncInfoImpl_Start( impl->IWineAsyncInfoImpl_inner )))
-+    {
-+        if (impl->IWineAsyncInfoImpl_inner) IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
-+        free( impl );
-+        return hr;
-+    }
-+
-+    *out = &impl->IAsyncOperation_boolean_iface;
-+    TRACE( "created IAsyncOperation_boolean %p\n", *out );
-+    return S_OK;
-+}
-+
-+struct async_result
-+{
-+    IAsyncOperation_ForceFeedbackLoadEffectResult IAsyncOperation_ForceFeedbackLoadEffectResult_iface;
-+    IWineAsyncInfoImpl *IWineAsyncInfoImpl_inner;
-+    LONG ref;
-+};
-+
-+static inline struct async_result *impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( IAsyncOperation_ForceFeedbackLoadEffectResult *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct async_result, IAsyncOperation_ForceFeedbackLoadEffectResult_iface );
-+}
-+
-+static HRESULT WINAPI async_result_QueryInterface( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, REFIID iid, void **out )
-+{
-+    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IAsyncOperation_ForceFeedbackLoadEffectResult ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface) );
-+        return S_OK;
-+    }
-+
-+    return IWineAsyncInfoImpl_QueryInterface( impl->IWineAsyncInfoImpl_inner, iid, out );
-+}
-+
-+static ULONG WINAPI async_result_AddRef( IAsyncOperation_ForceFeedbackLoadEffectResult *iface )
-+{
-+    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p, ref %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI async_result_Release( IAsyncOperation_ForceFeedbackLoadEffectResult *iface )
-+{
-+    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p, ref %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        /* guard against re-entry if inner releases an outer iface */
-+        InterlockedIncrement( &impl->ref );
-+        IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI async_result_GetIids( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI async_result_GetRuntimeClassName( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, HSTRING *class_name )
-+{
-+    return WindowsCreateString( L"Windows.Foundation.IAsyncOperation`1<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>",
-+                                ARRAY_SIZE(L"Windows.Foundation.IAsyncOperation`1<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>"),
-+                                class_name );
-+}
-+
-+static HRESULT WINAPI async_result_GetTrustLevel( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI async_result_put_Completed( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, IAsyncOperationCompletedHandler_ForceFeedbackLoadEffectResult *handler )
-+{
-+    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
-+    TRACE( "iface %p, handler %p.\n", iface, handler );
-+    return IWineAsyncInfoImpl_put_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler *)handler );
-+}
-+
-+static HRESULT WINAPI async_result_get_Completed( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, IAsyncOperationCompletedHandler_ForceFeedbackLoadEffectResult **handler )
-+{
-+    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
-+    TRACE( "iface %p, handler %p.\n", iface, handler );
-+    return IWineAsyncInfoImpl_get_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler **)handler );
-+}
-+
-+static HRESULT WINAPI async_result_GetResults( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, ForceFeedbackLoadEffectResult *results )
-+{
-+    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
-+    PROPVARIANT result = {.vt = VT_UI4};
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, results %p.\n", iface, results );
-+
-+    hr = IWineAsyncInfoImpl_get_Result( impl->IWineAsyncInfoImpl_inner, &result );
-+
-+    *results = result.ulVal;
-+    PropVariantClear( &result );
-+    return hr;
-+}
-+
-+static const struct IAsyncOperation_ForceFeedbackLoadEffectResultVtbl async_result_vtbl =
-+{
-+    /* IUnknown methods */
-+    async_result_QueryInterface,
-+    async_result_AddRef,
-+    async_result_Release,
-+    /* IInspectable methods */
-+    async_result_GetIids,
-+    async_result_GetRuntimeClassName,
-+    async_result_GetTrustLevel,
-+    /* IAsyncOperation<ForceFeedbackLoadEffectResult> */
-+    async_result_put_Completed,
-+    async_result_get_Completed,
-+    async_result_GetResults,
-+};
-+
-+HRESULT async_operation_effect_result_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
-+                                              IAsyncOperation_ForceFeedbackLoadEffectResult **out )
-+{
-+    struct async_result *impl;
-+    HRESULT hr;
-+
-+    *out = NULL;
-+    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
-+    impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface.lpVtbl = &async_result_vtbl;
-+    impl->ref = 1;
-+
-+    if (FAILED(hr = async_info_create( invoker, param, callback, (IInspectable *)&impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface, &impl->IWineAsyncInfoImpl_inner )) ||
-+        FAILED(hr = IWineAsyncInfoImpl_Start( impl->IWineAsyncInfoImpl_inner )))
-+    {
-+        if (impl->IWineAsyncInfoImpl_inner) IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
-+        free( impl );
-+        return hr;
-+    }
-+
-+    *out = &impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface;
-+    TRACE( "created IAsyncOperation_ForceFeedbackLoadEffectResult %p\n", *out );
-+    return S_OK;
-+}
-diff --git a/dlls/windows.gaming.input/classes.idl b/dlls/windows.gaming.input/classes.idl
-index ca3bd5d8dd7..3172def88f5 100644
---- wine/dlls/windows.gaming.input/classes.idl
-+++ wine/dlls/windows.gaming.input/classes.idl
-@@ -29,6 +29,7 @@ import "asyncinfo.idl";
- import "eventtoken.idl";
- import "windowscontracts.idl";
- import "windows.foundation.idl";
-+import "windows.foundation.numerics.idl";
- import "windows.devices.haptics.idl";
- import "windows.gaming.input.forcefeedback.idl";
- import "windows.system.idl";
-@@ -36,4 +37,5 @@ import "windows.devices.power.idl";
- 
- #define DO_NO_IMPORTS
- #include "windows.gaming.input.idl"
-+#include "windows.gaming.ui.idl"
- #include "windows.gaming.input.custom.idl"
-diff --git a/dlls/windows.gaming.input/condition_effect.c b/dlls/windows.gaming.input/condition_effect.c
-new file mode 100644
-index 00000000000..c3a5a1fcd8b
---- /dev/null
-+++ wine/dlls/windows.gaming.input/condition_effect.c
-@@ -0,0 +1,288 @@
-+/* WinRT Windows.Gaming.Input implementation
-+ *
-+ * Copyright 2022 Rémi Bernon for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#include "private.h"
-+#include "provider.h"
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(input);
-+
-+struct condition_effect
-+{
-+    IConditionForceEffect IConditionForceEffect_iface;
-+    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
-+    LONG ref;
-+
-+    ConditionForceEffectKind kind;
-+};
-+
-+static inline struct condition_effect *impl_from_IConditionForceEffect( IConditionForceEffect *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct condition_effect, IConditionForceEffect_iface );
-+}
-+
-+static HRESULT WINAPI effect_QueryInterface( IConditionForceEffect *iface, REFIID iid, void **out )
-+{
-+    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IConditionForceEffect ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IConditionForceEffect_iface) );
-+        return S_OK;
-+    }
-+
-+    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
-+}
-+
-+static ULONG WINAPI effect_AddRef( IConditionForceEffect *iface )
-+{
-+    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI effect_Release( IConditionForceEffect *iface )
-+{
-+    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        /* guard against re-entry if inner releases an outer iface */
-+        InterlockedIncrement( &impl->ref );
-+        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI effect_GetIids( IConditionForceEffect *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_GetRuntimeClassName( IConditionForceEffect *iface, HSTRING *class_name )
-+{
-+    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConditionForceEffect,
-+                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConditionForceEffect),
-+                                class_name );
-+}
-+
-+static HRESULT WINAPI effect_GetTrustLevel( IConditionForceEffect *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_get_Kind( IConditionForceEffect *iface, ConditionForceEffectKind *kind )
-+{
-+    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
-+    TRACE( "iface %p, kind %p.\n", iface, kind );
-+    *kind = impl->kind;
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI effect_SetParameters( IConditionForceEffect *iface, Vector3 direction, FLOAT positive_coeff, FLOAT negative_coeff,
-+                                            FLOAT max_positive_magnitude, FLOAT max_negative_magnitude, FLOAT deadzone, FLOAT bias )
-+{
-+    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
-+    WineForceFeedbackEffectParameters params =
-+    {
-+        .condition =
-+        {
-+            .type = WineForceFeedbackEffectType_Condition + impl->kind,
-+            .direction = direction,
-+            .positive_coeff = positive_coeff,
-+            .negative_coeff = negative_coeff,
-+            .max_positive_magnitude = max_positive_magnitude,
-+            .max_negative_magnitude = max_negative_magnitude,
-+            .deadzone = deadzone,
-+            .bias = bias,
-+        },
-+    };
-+
-+    TRACE( "iface %p, direction %s, positive_coeff %f, negative_coeff %f, max_positive_magnitude %f, max_negative_magnitude %f, deadzone %f, bias %f.\n",
-+           iface, debugstr_vector3( &direction ), positive_coeff, negative_coeff, max_positive_magnitude, max_negative_magnitude, deadzone, bias );
-+
-+    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
-+}
-+
-+static const struct IConditionForceEffectVtbl effect_vtbl =
-+{
-+    effect_QueryInterface,
-+    effect_AddRef,
-+    effect_Release,
-+    /* IInspectable methods */
-+    effect_GetIids,
-+    effect_GetRuntimeClassName,
-+    effect_GetTrustLevel,
-+    /* IConditionForceEffect methods */
-+    effect_get_Kind,
-+    effect_SetParameters,
-+};
-+
-+struct condition_factory
-+{
-+    IActivationFactory IActivationFactory_iface;
-+    IConditionForceEffectFactory IConditionForceEffectFactory_iface;
-+    LONG ref;
-+};
-+
-+static inline struct condition_factory *impl_from_IActivationFactory( IActivationFactory *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct condition_factory, IActivationFactory_iface );
-+}
-+
-+static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
-+{
-+    struct condition_factory *impl = impl_from_IActivationFactory( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IActivationFactory ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
-+        return S_OK;
-+    }
-+
-+    if (IsEqualGUID( iid, &IID_IConditionForceEffectFactory ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IConditionForceEffectFactory_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
-+{
-+    struct condition_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI activation_Release( IActivationFactory *iface )
-+{
-+    struct condition_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
-+{
-+    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
-+{
-+    FIXME( "iface %p, instance %p stub!\n", iface, instance );
-+    return E_NOTIMPL;
-+}
-+
-+static const struct IActivationFactoryVtbl activation_vtbl =
-+{
-+    activation_QueryInterface,
-+    activation_AddRef,
-+    activation_Release,
-+    /* IInspectable methods */
-+    activation_GetIids,
-+    activation_GetRuntimeClassName,
-+    activation_GetTrustLevel,
-+    /* IActivationFactory methods */
-+    activation_ActivateInstance,
-+};
-+
-+DEFINE_IINSPECTABLE( factory, IConditionForceEffectFactory, struct condition_factory, IActivationFactory_iface )
-+
-+static HRESULT WINAPI factory_CreateInstance( IConditionForceEffectFactory *iface, enum ConditionForceEffectKind kind, IForceFeedbackEffect **out )
-+{
-+    enum WineForceFeedbackEffectType type = WineForceFeedbackEffectType_Condition + kind;
-+    struct condition_effect *impl;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, kind %u, out %p.\n", iface, kind, out );
-+
-+    if (!(impl = calloc( 1, sizeof(struct condition_effect) ))) return E_OUTOFMEMORY;
-+    impl->IConditionForceEffect_iface.lpVtbl = &effect_vtbl;
-+    impl->ref = 1;
-+    impl->kind = kind;
-+
-+    if (FAILED(hr = force_feedback_effect_create( type, (IInspectable *)&impl->IConditionForceEffect_iface, &impl->IWineForceFeedbackEffectImpl_inner )) ||
-+        FAILED(hr = IConditionForceEffect_QueryInterface( &impl->IConditionForceEffect_iface, &IID_IForceFeedbackEffect, (void **)out )))
-+    {
-+        if (impl->IWineForceFeedbackEffectImpl_inner) IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
-+        free( impl );
-+        return hr;
-+    }
-+
-+    IConditionForceEffect_Release( &impl->IConditionForceEffect_iface );
-+    TRACE( "created ConditionForceEffect %p\n", *out );
-+    return S_OK;
-+}
-+
-+static const struct IConditionForceEffectFactoryVtbl factory_vtbl =
-+{
-+    factory_QueryInterface,
-+    factory_AddRef,
-+    factory_Release,
-+    /* IInspectable methods */
-+    factory_GetIids,
-+    factory_GetRuntimeClassName,
-+    factory_GetTrustLevel,
-+    /* IConditionForceEffectFactory methods */
-+    factory_CreateInstance,
-+};
-+
-+static struct condition_factory condition_statics =
-+{
-+    {&activation_vtbl},
-+    {&factory_vtbl},
-+    1,
-+};
-+
-+IInspectable *condition_effect_factory = (IInspectable *)&condition_statics.IActivationFactory_iface;
-diff --git a/dlls/windows.gaming.input/constant_effect.c b/dlls/windows.gaming.input/constant_effect.c
-new file mode 100644
-index 00000000000..15763b30d67
---- /dev/null
-+++ wine/dlls/windows.gaming.input/constant_effect.c
-@@ -0,0 +1,275 @@
-+/* WinRT Windows.Gaming.Input implementation
-+ *
-+ * Copyright 2022 Rémi Bernon for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#include "private.h"
-+#include "provider.h"
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(input);
-+
-+struct constant_effect
-+{
-+    IConstantForceEffect IConstantForceEffect_iface;
-+    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
-+    LONG ref;
-+};
-+
-+static inline struct constant_effect *impl_from_IConstantForceEffect( IConstantForceEffect *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct constant_effect, IConstantForceEffect_iface );
-+}
-+
-+static HRESULT WINAPI effect_QueryInterface( IConstantForceEffect *iface, REFIID iid, void **out )
-+{
-+    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IConstantForceEffect ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IConstantForceEffect_iface) );
-+        return S_OK;
-+    }
-+
-+    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
-+}
-+
-+static ULONG WINAPI effect_AddRef( IConstantForceEffect *iface )
-+{
-+    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI effect_Release( IConstantForceEffect *iface )
-+{
-+    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        /* guard against re-entry if inner releases an outer iface */
-+        InterlockedIncrement( &impl->ref );
-+        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI effect_GetIids( IConstantForceEffect *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_GetRuntimeClassName( IConstantForceEffect *iface, HSTRING *class_name )
-+{
-+    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConstantForceEffect,
-+                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConstantForceEffect),
-+                                class_name );
-+}
-+
-+static HRESULT WINAPI effect_GetTrustLevel( IConstantForceEffect *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_SetParameters( IConstantForceEffect *iface, Vector3 direction, TimeSpan duration )
-+{
-+    WineForceFeedbackEffectParameters params =
-+    {
-+        .constant =
-+        {
-+            .type = WineForceFeedbackEffectType_Constant,
-+            .direction = direction,
-+            .duration = duration,
-+            .repeat_count = 1,
-+            .gain = 1.,
-+        },
-+    };
-+    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
-+
-+    TRACE( "iface %p, direction %s, duration %I64u.\n", iface, debugstr_vector3( &direction ), duration.Duration );
-+
-+    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
-+}
-+
-+static HRESULT WINAPI effect_SetParametersWithEnvelope( IConstantForceEffect *iface, Vector3 direction, FLOAT attack_gain,
-+                                                        FLOAT sustain_gain, FLOAT release_gain, TimeSpan start_delay,
-+                                                        TimeSpan attack_duration, TimeSpan sustain_duration,
-+                                                        TimeSpan release_duration, UINT32 repeat_count )
-+{
-+    WineForceFeedbackEffectParameters params =
-+    {
-+        .constant =
-+        {
-+            .type = WineForceFeedbackEffectType_Constant,
-+            .direction = direction,
-+            .duration = {attack_duration.Duration + sustain_duration.Duration + release_duration.Duration},
-+            .start_delay = start_delay,
-+            .repeat_count = repeat_count,
-+            .gain = sustain_gain,
-+        },
-+    };
-+    WineForceFeedbackEffectEnvelope envelope =
-+    {
-+        .attack_gain = attack_gain,
-+        .release_gain = release_gain,
-+        .attack_duration = attack_duration,
-+        .release_duration = release_duration,
-+    };
-+    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
-+
-+    TRACE( "iface %p, direction %s, attack_gain %f, sustain_gain %f, release_gain %f, start_delay %I64u, attack_duration %I64u, "
-+           "sustain_duration %I64u, release_duration %I64u, repeat_count %u.\n", iface, debugstr_vector3( &direction ),
-+           attack_gain, sustain_gain, release_gain, start_delay.Duration, attack_duration.Duration, sustain_duration.Duration,
-+           release_duration.Duration, repeat_count );
-+
-+    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, &envelope );
-+}
-+
-+static const struct IConstantForceEffectVtbl effect_vtbl =
-+{
-+    effect_QueryInterface,
-+    effect_AddRef,
-+    effect_Release,
-+    /* IInspectable methods */
-+    effect_GetIids,
-+    effect_GetRuntimeClassName,
-+    effect_GetTrustLevel,
-+    /* IConstantForceEffect methods */
-+    effect_SetParameters,
-+    effect_SetParametersWithEnvelope,
-+};
-+
-+struct constant_factory
-+{
-+    IActivationFactory IActivationFactory_iface;
-+    LONG ref;
-+};
-+
-+static inline struct constant_factory *impl_from_IActivationFactory( IActivationFactory *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct constant_factory, IActivationFactory_iface );
-+}
-+
-+static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
-+{
-+    struct constant_factory *impl = impl_from_IActivationFactory( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IActivationFactory ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
-+{
-+    struct constant_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI activation_Release( IActivationFactory *iface )
-+{
-+    struct constant_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
-+{
-+    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
-+{
-+    struct constant_effect *impl;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, instance %p.\n", iface, instance );
-+
-+    if (!(impl = calloc( 1, sizeof(struct constant_effect) ))) return E_OUTOFMEMORY;
-+    impl->IConstantForceEffect_iface.lpVtbl = &effect_vtbl;
-+    impl->ref = 1;
-+
-+    if (FAILED(hr = force_feedback_effect_create( WineForceFeedbackEffectType_Constant, (IInspectable *)&impl->IConstantForceEffect_iface,
-+                                                  &impl->IWineForceFeedbackEffectImpl_inner )))
-+    {
-+        free( impl );
-+        return hr;
-+    }
-+
-+    *instance = (IInspectable *)&impl->IConstantForceEffect_iface;
-+    TRACE( "created ConstantForceEffect %p\n", *instance );
-+    return S_OK;
-+}
-+
-+static const struct IActivationFactoryVtbl activation_vtbl =
-+{
-+    activation_QueryInterface,
-+    activation_AddRef,
-+    activation_Release,
-+    /* IInspectable methods */
-+    activation_GetIids,
-+    activation_GetRuntimeClassName,
-+    activation_GetTrustLevel,
-+    /* IActivationFactory methods */
-+    activation_ActivateInstance,
-+};
-+
-+static struct constant_factory constant_statics =
-+{
-+    {&activation_vtbl},
-+    1,
-+};
-+
-+IInspectable *constant_effect_factory = (IInspectable *)&constant_statics.IActivationFactory_iface;
-diff --git a/dlls/windows.gaming.input/controller.c b/dlls/windows.gaming.input/controller.c
-index 03a3ae398cf..bd3d441c445 100644
---- wine/dlls/windows.gaming.input/controller.c
-+++ wine/dlls/windows.gaming.input/controller.c
-@@ -99,7 +99,7 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
-         return S_OK;
-     }
- 
--    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-     *out = NULL;
-     return E_NOINTERFACE;
- }
-@@ -229,8 +229,32 @@ static HRESULT WINAPI raw_controller_get_ButtonCount( IRawGameController *iface,
- 
- static HRESULT WINAPI raw_controller_get_ForceFeedbackMotors( IRawGameController *iface, IVectorView_ForceFeedbackMotor **value )
- {
--    FIXME( "iface %p, value %p stub!\n", iface, value );
--    return E_NOTIMPL;
-+    static const struct vector_iids iids =
-+    {
-+        .vector = &IID_IVector_ForceFeedbackMotor,
-+        .view = &IID_IVectorView_ForceFeedbackMotor,
-+        .iterable = &IID_IIterable_ForceFeedbackMotor,
-+        .iterator = &IID_IIterator_ForceFeedbackMotor,
-+    };
-+    struct controller *impl = impl_from_IRawGameController( iface );
-+    IVector_ForceFeedbackMotor *vector;
-+    IForceFeedbackMotor *motor;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %p\n", iface, value );
-+
-+    if (FAILED(hr = vector_create( &iids, (void **)&vector ))) return hr;
-+
-+    if (SUCCEEDED(IWineGameControllerProvider_get_ForceFeedbackMotor( impl->wine_provider, &motor )) && motor)
-+    {
-+        hr = IVector_ForceFeedbackMotor_Append( vector, motor );
-+        IForceFeedbackMotor_Release( motor );
-+    }
-+
-+    if (SUCCEEDED(hr)) hr = IVector_ForceFeedbackMotor_GetView( vector, value );
-+    IVector_ForceFeedbackMotor_Release( vector );
-+
-+    return hr;
- }
- 
- static HRESULT WINAPI raw_controller_get_HardwareProductId( IRawGameController *iface, UINT16 *value )
-diff --git a/dlls/windows.gaming.input/force_feedback.c b/dlls/windows.gaming.input/force_feedback.c
-new file mode 100644
-index 00000000000..f7a233b46d4
---- /dev/null
-+++ wine/dlls/windows.gaming.input/force_feedback.c
-@@ -0,0 +1,801 @@
-+/* WinRT Windows.Gaming.Input implementation
-+ *
-+ * Copyright 2022 Rémi Bernon for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#include "private.h"
-+
-+#include "math.h"
-+
-+#include "ddk/hidsdi.h"
-+#include "dinput.h"
-+#include "hidusage.h"
-+#include "provider.h"
-+
-+#include "wine/debug.h"
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(input);
-+
-+struct effect
-+{
-+    IWineForceFeedbackEffectImpl IWineForceFeedbackEffectImpl_iface;
-+    IForceFeedbackEffect IForceFeedbackEffect_iface;
-+    IInspectable *IInspectable_outer;
-+    LONG ref;
-+
-+    CRITICAL_SECTION cs;
-+    IDirectInputEffect *effect;
-+
-+    GUID type;
-+    DWORD axes[3];
-+    LONG directions[3];
-+    ULONG repeat_count;
-+    DICONSTANTFORCE constant_force;
-+    DIRAMPFORCE ramp_force;
-+    DICONDITION condition;
-+    DIPERIODIC periodic;
-+    DIENVELOPE envelope;
-+    DIEFFECT params;
-+};
-+
-+static inline struct effect *impl_from_IWineForceFeedbackEffectImpl( IWineForceFeedbackEffectImpl *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct effect, IWineForceFeedbackEffectImpl_iface );
-+}
-+
-+static HRESULT WINAPI effect_impl_QueryInterface( IWineForceFeedbackEffectImpl *iface, REFIID iid, void **out )
-+{
-+    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IWineForceFeedbackEffectImpl ))
-+    {
-+        IWineForceFeedbackEffectImpl_AddRef( (*out = &impl->IWineForceFeedbackEffectImpl_iface) );
-+        return S_OK;
-+    }
-+
-+    if (IsEqualGUID( iid, &IID_IForceFeedbackEffect ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IForceFeedbackEffect_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI effect_impl_AddRef( IWineForceFeedbackEffectImpl *iface )
-+{
-+    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI effect_impl_Release( IWineForceFeedbackEffectImpl *iface )
-+{
-+    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        if (impl->effect) IDirectInputEffect_Release( impl->effect );
-+        impl->cs.DebugInfo->Spare[0] = 0;
-+        DeleteCriticalSection( &impl->cs );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI effect_impl_put_Parameters( IWineForceFeedbackEffectImpl *iface, WineForceFeedbackEffectParameters params,
-+                                                  WineForceFeedbackEffectEnvelope *envelope )
-+{
-+    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
-+    DWORD count = 0;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, params %p, envelope %p.\n", iface, &params, envelope );
-+
-+    EnterCriticalSection( &impl->cs );
-+    switch (params.type)
-+    {
-+    case WineForceFeedbackEffectType_Constant:
-+        impl->repeat_count = params.constant.repeat_count;
-+        impl->constant_force.lMagnitude = round( params.constant.gain * params.constant.direction.X * 10000 );
-+        impl->params.dwDuration = params.constant.duration.Duration / 10;
-+        impl->params.dwStartDelay = params.constant.start_delay.Duration / 10;
-+        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( -params.constant.direction.X * 10000 );
-+        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( -params.constant.direction.Y * 10000 );
-+        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( -params.constant.direction.Z * 10000 );
-+        break;
-+
-+    case WineForceFeedbackEffectType_Ramp:
-+        impl->repeat_count = params.ramp.repeat_count;
-+        impl->ramp_force.lStart = round( params.ramp.gain * params.ramp.start_vector.X * 10000 );
-+        impl->ramp_force.lEnd = round( params.ramp.gain * params.ramp.end_vector.X * 10000 );
-+        impl->params.dwDuration = params.ramp.duration.Duration / 10;
-+        impl->params.dwStartDelay = params.ramp.start_delay.Duration / 10;
-+        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( -params.ramp.start_vector.X * 10000 );
-+        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( -params.ramp.start_vector.Y * 10000 );
-+        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( -params.ramp.start_vector.Z * 10000 );
-+        break;
-+
-+    case WineForceFeedbackEffectType_Periodic_SineWave:
-+    case WineForceFeedbackEffectType_Periodic_TriangleWave:
-+    case WineForceFeedbackEffectType_Periodic_SquareWave:
-+    case WineForceFeedbackEffectType_Periodic_SawtoothWaveDown:
-+    case WineForceFeedbackEffectType_Periodic_SawtoothWaveUp:
-+        impl->repeat_count = params.periodic.repeat_count;
-+        impl->periodic.dwMagnitude = round( params.periodic.gain * 10000 );
-+        impl->periodic.dwPeriod = 1000000 / params.periodic.frequency;
-+        impl->periodic.dwPhase = round( params.periodic.phase * 36000 );
-+        impl->periodic.lOffset = round( params.periodic.bias * 10000 );
-+        impl->params.dwDuration = params.periodic.duration.Duration / 10;
-+        impl->params.dwStartDelay = params.periodic.start_delay.Duration / 10;
-+        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( -params.periodic.direction.X * 10000 );
-+        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( -params.periodic.direction.Y * 10000 );
-+        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( -params.periodic.direction.Z * 10000 );
-+        break;
-+
-+    case WineForceFeedbackEffectType_Condition_Spring:
-+    case WineForceFeedbackEffectType_Condition_Damper:
-+    case WineForceFeedbackEffectType_Condition_Inertia:
-+    case WineForceFeedbackEffectType_Condition_Friction:
-+        impl->repeat_count = 1;
-+        impl->condition.lPositiveCoefficient = round( atan( params.condition.positive_coeff ) / M_PI_2 * 10000 );
-+        impl->condition.lNegativeCoefficient = round( atan( params.condition.negative_coeff ) / M_PI_2 * 10000 );
-+        impl->condition.dwPositiveSaturation = round( params.condition.max_positive_magnitude * 10000 );
-+        impl->condition.dwNegativeSaturation = round( params.condition.max_negative_magnitude * 10000 );
-+        impl->condition.lDeadBand = round( params.condition.deadzone * 10000 );
-+        impl->condition.lOffset = round( params.condition.bias * 10000 );
-+        impl->params.dwDuration = -1;
-+        impl->params.dwStartDelay = 0;
-+        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( params.condition.direction.X * 10000 );
-+        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( params.condition.direction.Y * 10000 );
-+        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( params.condition.direction.Z * 10000 );
-+        break;
-+    }
-+
-+    if (!envelope) impl->params.lpEnvelope = NULL;
-+    else
-+    {
-+        impl->envelope.dwAttackTime = envelope->attack_duration.Duration / 10;
-+        impl->envelope.dwAttackLevel = round( envelope->attack_gain * 10000 );
-+        impl->envelope.dwFadeTime = impl->params.dwDuration - envelope->release_duration.Duration / 10;
-+        impl->envelope.dwFadeLevel = round( envelope->release_gain * 10000 );
-+        impl->params.lpEnvelope = &impl->envelope;
-+    }
-+
-+    if (!impl->effect) hr = S_OK;
-+    else hr = IDirectInputEffect_SetParameters( impl->effect, &impl->params, DIEP_ALLPARAMS & ~DIEP_AXES );
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static const struct IWineForceFeedbackEffectImplVtbl effect_impl_vtbl =
-+{
-+    effect_impl_QueryInterface,
-+    effect_impl_AddRef,
-+    effect_impl_Release,
-+    /* IWineForceFeedbackEffectImpl methods */
-+    effect_impl_put_Parameters,
-+};
-+
-+DEFINE_IINSPECTABLE_OUTER( effect, IForceFeedbackEffect, struct effect, IInspectable_outer )
-+
-+static HRESULT WINAPI effect_get_Gain( IForceFeedbackEffect *iface, DOUBLE *value )
-+{
-+    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
-+
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    EnterCriticalSection( &impl->cs );
-+    *value = impl->params.dwGain / 10000.;
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI effect_put_Gain( IForceFeedbackEffect *iface, DOUBLE value )
-+{
-+    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %f.\n", iface, value );
-+
-+    EnterCriticalSection( &impl->cs );
-+    impl->params.dwGain = round( value * 10000 );
-+    if (!impl->effect) hr = S_FALSE;
-+    else hr = IDirectInputEffect_SetParameters( impl->effect, &impl->params, DIEP_GAIN );
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI effect_get_State( IForceFeedbackEffect *iface, ForceFeedbackEffectState *value )
-+{
-+    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
-+    DWORD status;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (!impl->effect)
-+        *value = ForceFeedbackEffectState_Stopped;
-+    else if (FAILED(hr = IDirectInputEffect_GetEffectStatus( impl->effect, &status )))
-+        *value = ForceFeedbackEffectState_Faulted;
-+    else
-+    {
-+        if (status == DIEGES_PLAYING) *value = ForceFeedbackEffectState_Running;
-+        else *value = ForceFeedbackEffectState_Stopped;
-+    }
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI effect_Start( IForceFeedbackEffect *iface )
-+{
-+    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
-+    HRESULT hr = E_UNEXPECTED;
-+    DWORD flags = 0;
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->effect) hr = IDirectInputEffect_Start( impl->effect, impl->repeat_count, flags );
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI effect_Stop( IForceFeedbackEffect *iface )
-+{
-+    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
-+    HRESULT hr = E_UNEXPECTED;
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (impl->effect) hr = IDirectInputEffect_Stop( impl->effect );
-+    LeaveCriticalSection( &impl->cs );
-+
-+    return hr;
-+}
-+
-+static const struct IForceFeedbackEffectVtbl effect_vtbl =
-+{
-+    effect_QueryInterface,
-+    effect_AddRef,
-+    effect_Release,
-+    /* IInspectable methods */
-+    effect_GetIids,
-+    effect_GetRuntimeClassName,
-+    effect_GetTrustLevel,
-+    /* IForceFeedbackEffect methods */
-+    effect_get_Gain,
-+    effect_put_Gain,
-+    effect_get_State,
-+    effect_Start,
-+    effect_Stop,
-+};
-+
-+HRESULT force_feedback_effect_create( enum WineForceFeedbackEffectType type, IInspectable *outer, IWineForceFeedbackEffectImpl **out )
-+{
-+    struct effect *impl;
-+
-+    TRACE( "outer %p, out %p\n", outer, out );
-+
-+    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
-+    impl->IWineForceFeedbackEffectImpl_iface.lpVtbl = &effect_impl_vtbl;
-+    impl->IForceFeedbackEffect_iface.lpVtbl = &effect_vtbl;
-+    impl->IInspectable_outer = outer;
-+    impl->ref = 1;
-+
-+    switch (type)
-+    {
-+    case WineForceFeedbackEffectType_Constant:
-+        impl->type = GUID_ConstantForce;
-+        impl->params.lpvTypeSpecificParams = &impl->constant_force;
-+        impl->params.cbTypeSpecificParams = sizeof(impl->constant_force);
-+        break;
-+
-+    case WineForceFeedbackEffectType_Ramp:
-+        impl->type = GUID_RampForce;
-+        impl->params.lpvTypeSpecificParams = &impl->ramp_force;
-+        impl->params.cbTypeSpecificParams = sizeof(impl->ramp_force);
-+        break;
-+
-+    case WineForceFeedbackEffectType_Periodic_SineWave:
-+        impl->type = GUID_Sine;
-+        goto WineForceFeedbackEffectType_Periodic;
-+    case WineForceFeedbackEffectType_Periodic_TriangleWave:
-+        impl->type = GUID_Triangle;
-+        goto WineForceFeedbackEffectType_Periodic;
-+    case WineForceFeedbackEffectType_Periodic_SquareWave:
-+        impl->type = GUID_Square;
-+        goto WineForceFeedbackEffectType_Periodic;
-+    case WineForceFeedbackEffectType_Periodic_SawtoothWaveDown:
-+        impl->type = GUID_SawtoothDown;
-+        goto WineForceFeedbackEffectType_Periodic;
-+    case WineForceFeedbackEffectType_Periodic_SawtoothWaveUp:
-+        impl->type = GUID_SawtoothUp;
-+        goto WineForceFeedbackEffectType_Periodic;
-+    WineForceFeedbackEffectType_Periodic:
-+        impl->params.lpvTypeSpecificParams = &impl->periodic;
-+        impl->params.cbTypeSpecificParams = sizeof(impl->periodic);
-+        break;
-+
-+    case WineForceFeedbackEffectType_Condition_Spring:
-+        impl->type = GUID_Spring;
-+        goto WineForceFeedbackEffectType_Condition;
-+    case WineForceFeedbackEffectType_Condition_Damper:
-+        impl->type = GUID_Damper;
-+        goto WineForceFeedbackEffectType_Condition;
-+    case WineForceFeedbackEffectType_Condition_Inertia:
-+        impl->type = GUID_Inertia;
-+        goto WineForceFeedbackEffectType_Condition;
-+    case WineForceFeedbackEffectType_Condition_Friction:
-+        impl->type = GUID_Friction;
-+        goto WineForceFeedbackEffectType_Condition;
-+    WineForceFeedbackEffectType_Condition:
-+        impl->params.lpvTypeSpecificParams = &impl->condition;
-+        impl->params.cbTypeSpecificParams = sizeof(impl->condition);
-+        break;
-+    }
-+
-+    impl->envelope.dwSize = sizeof(DIENVELOPE);
-+    impl->params.dwSize = sizeof(DIEFFECT);
-+    impl->params.rgdwAxes = impl->axes;
-+    impl->params.rglDirection = impl->directions;
-+    impl->params.dwTriggerButton = -1;
-+    impl->params.dwGain = 10000;
-+    impl->params.dwFlags = DIEFF_CARTESIAN|DIEFF_OBJECTOFFSETS;
-+    impl->params.cAxes = -1;
-+    impl->axes[0] = DIJOFS_X;
-+    impl->axes[1] = DIJOFS_Y;
-+    impl->axes[2] = DIJOFS_Z;
-+
-+    InitializeCriticalSection( &impl->cs );
-+    impl->cs.DebugInfo->Spare[0] = (DWORD_PTR)( __FILE__ ": effect.cs" );
-+
-+    *out = &impl->IWineForceFeedbackEffectImpl_iface;
-+    TRACE( "created ForceFeedbackEffect %p\n", *out );
-+    return S_OK;
-+}
-+
-+struct motor
-+{
-+    IForceFeedbackMotor IForceFeedbackMotor_iface;
-+    LONG ref;
-+
-+    IDirectInputDevice8W *device;
-+};
-+
-+static inline struct motor *impl_from_IForceFeedbackMotor( IForceFeedbackMotor *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct motor, IForceFeedbackMotor_iface );
-+}
-+
-+static HRESULT WINAPI motor_QueryInterface( IForceFeedbackMotor *iface, REFIID iid, void **out )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IForceFeedbackMotor ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IForceFeedbackMotor_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI motor_AddRef( IForceFeedbackMotor *iface )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI motor_Release( IForceFeedbackMotor *iface )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        IDirectInputDevice8_Release( impl->device );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI motor_GetIids( IForceFeedbackMotor *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI motor_GetRuntimeClassName( IForceFeedbackMotor *iface, HSTRING *class_name )
-+{
-+    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_ForceFeedbackMotor,
-+                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_ForceFeedbackMotor),
-+                                class_name );
-+}
-+
-+static HRESULT WINAPI motor_GetTrustLevel( IForceFeedbackMotor *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI motor_get_AreEffectsPaused( IForceFeedbackMotor *iface, BOOLEAN *value )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+    DWORD state;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    if (FAILED(hr = IDirectInputDevice8_GetForceFeedbackState( impl->device, &state ))) *value = FALSE;
-+    else *value = (state & DIGFFS_PAUSED);
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_get_MasterGain( IForceFeedbackMotor *iface, double *value )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+    DIPROPDWORD gain =
-+    {
-+        .diph =
-+        {
-+            .dwSize = sizeof(DIPROPDWORD),
-+            .dwHeaderSize = sizeof(DIPROPHEADER),
-+            .dwHow = DIPH_DEVICE,
-+        },
-+    };
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    if (FAILED(hr = IDirectInputDevice8_GetProperty( impl->device, DIPROP_FFGAIN, &gain.diph ))) *value = 1.;
-+    else *value = gain.dwData / 10000.;
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_put_MasterGain( IForceFeedbackMotor *iface, double value )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+    DIPROPDWORD gain =
-+    {
-+        .diph =
-+        {
-+            .dwSize = sizeof(DIPROPDWORD),
-+            .dwHeaderSize = sizeof(DIPROPHEADER),
-+            .dwHow = DIPH_DEVICE,
-+        },
-+    };
-+
-+    TRACE( "iface %p, value %f.\n", iface, value );
-+
-+    gain.dwData = 10000 * value;
-+    return IDirectInputDevice8_SetProperty( impl->device, DIPROP_FFGAIN, &gain.diph );
-+}
-+
-+static HRESULT WINAPI motor_get_IsEnabled( IForceFeedbackMotor *iface, BOOLEAN *value )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+    DWORD state;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    if (FAILED(hr = IDirectInputDevice8_GetForceFeedbackState( impl->device, &state ))) *value = FALSE;
-+    else *value = !(state & DIGFFS_ACTUATORSOFF);
-+
-+    return hr;
-+}
-+
-+static BOOL CALLBACK check_ffb_axes( const DIDEVICEOBJECTINSTANCEW *obj, void *args )
-+{
-+    ForceFeedbackEffectAxes *value = args;
-+
-+    if (obj->dwType & DIDFT_FFACTUATOR)
-+    {
-+        if (IsEqualIID( &obj->guidType, &GUID_XAxis )) *value |= ForceFeedbackEffectAxes_X;
-+        else if (IsEqualIID( &obj->guidType, &GUID_YAxis )) *value |= ForceFeedbackEffectAxes_Y;
-+        else if (IsEqualIID( &obj->guidType, &GUID_ZAxis )) *value |= ForceFeedbackEffectAxes_Z;
-+    }
-+
-+    return DIENUM_CONTINUE;
-+}
-+
-+static HRESULT WINAPI motor_get_SupportedAxes( IForceFeedbackMotor *iface, enum ForceFeedbackEffectAxes *value )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    *value = ForceFeedbackEffectAxes_None;
-+    if (FAILED(hr = IDirectInputDevice8_EnumObjects( impl->device, check_ffb_axes, value, DIDFT_AXIS )))
-+        *value = ForceFeedbackEffectAxes_None;
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_load_effect_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
-+{
-+    struct effect *effect = impl_from_IForceFeedbackEffect( (IForceFeedbackEffect *)param );
-+    IForceFeedbackMotor *motor = (IForceFeedbackMotor *)invoker;
-+    struct motor *impl = impl_from_IForceFeedbackMotor( motor );
-+    ForceFeedbackEffectAxes supported_axes = 0;
-+    IDirectInputEffect *dinput_effect;
-+    HRESULT hr;
-+
-+    EnterCriticalSection( &effect->cs );
-+
-+    if (FAILED(hr = IForceFeedbackMotor_get_SupportedAxes( motor, &supported_axes )))
-+    {
-+        WARN( "get_SupportedAxes for motor %p returned %#lx\n", motor, hr );
-+        effect->params.cAxes = 0;
-+    }
-+    else if (effect->params.cAxes == -1)
-+    {
-+        DWORD count = 0;
-+
-+        /* initialize axis mapping and re-map directions that were set with the initial mapping */
-+        if (supported_axes & ForceFeedbackEffectAxes_X)
-+        {
-+            effect->directions[count] = effect->directions[0];
-+            effect->axes[count++] = DIJOFS_X;
-+        }
-+        if (supported_axes & ForceFeedbackEffectAxes_Y)
-+        {
-+            effect->directions[count] = effect->directions[1];
-+            effect->axes[count++] = DIJOFS_Y;
-+        }
-+        if (supported_axes & ForceFeedbackEffectAxes_Z)
-+        {
-+            effect->directions[count] = effect->directions[2];
-+            effect->axes[count++] = DIJOFS_Z;
-+        }
-+
-+        effect->params.cAxes = count;
-+    }
-+
-+    if (SUCCEEDED(hr = IDirectInputDevice8_CreateEffect( impl->device, &effect->type, &effect->params,
-+                                                         &dinput_effect, NULL )))
-+    {
-+        if (effect->effect) IDirectInputEffect_Release( effect->effect );
-+        effect->effect = dinput_effect;
-+        IDirectInputEffect_AddRef( effect->effect );
-+    }
-+
-+    LeaveCriticalSection( &effect->cs );
-+
-+    result->vt = VT_UI4;
-+    if (SUCCEEDED(hr)) result->ulVal = ForceFeedbackLoadEffectResult_Succeeded;
-+    else if (hr == DIERR_DEVICEFULL) result->ulVal = ForceFeedbackLoadEffectResult_EffectStorageFull;
-+    else result->ulVal = ForceFeedbackLoadEffectResult_EffectNotSupported;
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_LoadEffectAsync( IForceFeedbackMotor *iface, IForceFeedbackEffect *effect,
-+                                             IAsyncOperation_ForceFeedbackLoadEffectResult **async_op )
-+{
-+    TRACE( "iface %p, effect %p, async_op %p.\n", iface, effect, async_op );
-+    return async_operation_effect_result_create( (IUnknown *)iface, (IUnknown *)effect, motor_load_effect_async, async_op );
-+}
-+
-+static HRESULT WINAPI motor_PauseAllEffects( IForceFeedbackMotor *iface )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    return IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_PAUSE );
-+}
-+
-+static HRESULT WINAPI motor_ResumeAllEffects( IForceFeedbackMotor *iface )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    return IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_CONTINUE );
-+}
-+
-+static HRESULT WINAPI motor_StopAllEffects( IForceFeedbackMotor *iface )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
-+
-+    TRACE( "iface %p.\n", iface );
-+
-+    return IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_STOPALL );
-+}
-+
-+static HRESULT WINAPI motor_try_disable_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( (IForceFeedbackMotor *)invoker );
-+    HRESULT hr;
-+
-+    hr = IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_SETACTUATORSOFF );
-+    result->vt = VT_BOOL;
-+    result->boolVal = SUCCEEDED(hr);
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_TryDisableAsync( IForceFeedbackMotor *iface, IAsyncOperation_boolean **async_op )
-+{
-+    TRACE( "iface %p, async_op %p.\n", iface, async_op );
-+    return async_operation_boolean_create( (IUnknown *)iface, NULL, motor_try_disable_async, async_op );
-+}
-+
-+static HRESULT WINAPI motor_try_enable_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( (IForceFeedbackMotor *)invoker );
-+    HRESULT hr;
-+
-+    hr = IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_SETACTUATORSON );
-+    result->vt = VT_BOOL;
-+    result->boolVal = SUCCEEDED(hr);
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_TryEnableAsync( IForceFeedbackMotor *iface, IAsyncOperation_boolean **async_op )
-+{
-+    TRACE( "iface %p, async_op %p.\n", iface, async_op );
-+    return async_operation_boolean_create( (IUnknown *)iface, NULL, motor_try_enable_async, async_op );
-+}
-+
-+static HRESULT WINAPI motor_try_reset_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
-+{
-+    struct motor *impl = impl_from_IForceFeedbackMotor( (IForceFeedbackMotor *)invoker );
-+    HRESULT hr;
-+
-+    hr = IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_RESET );
-+    result->vt = VT_BOOL;
-+    result->boolVal = SUCCEEDED(hr);
-+
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_TryResetAsync( IForceFeedbackMotor *iface, IAsyncOperation_boolean **async_op )
-+{
-+    TRACE( "iface %p, async_op %p.\n", iface, async_op );
-+    return async_operation_boolean_create( (IUnknown *)iface, NULL, motor_try_reset_async, async_op );
-+}
-+
-+static HRESULT WINAPI motor_unload_effect_async( IUnknown *iface, IUnknown *param, PROPVARIANT *result )
-+{
-+    struct effect *effect = impl_from_IForceFeedbackEffect( (IForceFeedbackEffect *)param );
-+    IDirectInputEffect *dinput_effect;
-+    HRESULT hr;
-+
-+    EnterCriticalSection( &effect->cs );
-+    dinput_effect = effect->effect;
-+    effect->effect = NULL;
-+    LeaveCriticalSection( &effect->cs );
-+
-+    if (!dinput_effect) hr = S_OK;
-+    else
-+    {
-+        hr = IDirectInputEffect_Unload( dinput_effect );
-+        IDirectInputEffect_Release( dinput_effect );
-+    }
-+
-+    result->vt = VT_BOOL;
-+    result->boolVal = SUCCEEDED(hr);
-+    return hr;
-+}
-+
-+static HRESULT WINAPI motor_TryUnloadEffectAsync( IForceFeedbackMotor *iface, IForceFeedbackEffect *effect,
-+                                                  IAsyncOperation_boolean **async_op )
-+{
-+    struct effect *impl = impl_from_IForceFeedbackEffect( (IForceFeedbackEffect *)effect );
-+    HRESULT hr = S_OK;
-+
-+    TRACE( "iface %p, effect %p, async_op %p.\n", iface, effect, async_op );
-+
-+    EnterCriticalSection( &impl->cs );
-+    if (!impl->effect) hr = E_FAIL;
-+    LeaveCriticalSection( &impl->cs );
-+    if (FAILED(hr)) return hr;
-+
-+    return async_operation_boolean_create( (IUnknown *)iface, (IUnknown *)effect, motor_unload_effect_async, async_op );
-+}
-+
-+static const struct IForceFeedbackMotorVtbl motor_vtbl =
-+{
-+    motor_QueryInterface,
-+    motor_AddRef,
-+    motor_Release,
-+    /* IInspectable methods */
-+    motor_GetIids,
-+    motor_GetRuntimeClassName,
-+    motor_GetTrustLevel,
-+    /* IForceFeedbackMotor methods */
-+    motor_get_AreEffectsPaused,
-+    motor_get_MasterGain,
-+    motor_put_MasterGain,
-+    motor_get_IsEnabled,
-+    motor_get_SupportedAxes,
-+    motor_LoadEffectAsync,
-+    motor_PauseAllEffects,
-+    motor_ResumeAllEffects,
-+    motor_StopAllEffects,
-+    motor_TryDisableAsync,
-+    motor_TryEnableAsync,
-+    motor_TryResetAsync,
-+    motor_TryUnloadEffectAsync,
-+};
-+
-+HRESULT force_feedback_motor_create( IDirectInputDevice8W *device, IForceFeedbackMotor **out )
-+{
-+    struct motor *impl;
-+    HRESULT hr;
-+
-+    TRACE( "device %p, out %p\n", device, out );
-+
-+    if (FAILED(hr = IDirectInputDevice8_Unacquire( device ))) goto failed;
-+    if (FAILED(hr = IDirectInputDevice8_SetCooperativeLevel( device, GetDesktopWindow(), DISCL_BACKGROUND | DISCL_EXCLUSIVE ))) goto failed;
-+    if (FAILED(hr = IDirectInputDevice8_Acquire( device ))) goto failed;
-+
-+    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
-+    impl->IForceFeedbackMotor_iface.lpVtbl = &motor_vtbl;
-+    impl->ref = 1;
-+
-+    IDirectInputDevice_AddRef( device );
-+    impl->device = device;
-+
-+    *out = &impl->IForceFeedbackMotor_iface;
-+    TRACE( "created ForceFeedbackMotor %p\n", *out );
-+    return S_OK;
-+
-+failed:
-+    IDirectInputDevice8_SetCooperativeLevel( device, 0, DISCL_BACKGROUND | DISCL_NONEXCLUSIVE );
-+    IDirectInputDevice8_Acquire( device );
-+    WARN( "Failed to acquire device exclusively, hr %#lx\n", hr );
-+    return hr;
-+}
-diff --git a/dlls/windows.gaming.input/gamepad.c b/dlls/windows.gaming.input/gamepad.c
-index 0c38fb5cd1a..8dab9a62d09 100644
---- wine/dlls/windows.gaming.input/gamepad.c
-+++ wine/dlls/windows.gaming.input/gamepad.c
-@@ -61,6 +61,7 @@ struct gamepad
-     IGameControllerImpl IGameControllerImpl_iface;
-     IGameControllerInputSink IGameControllerInputSink_iface;
-     IGamepad IGamepad_iface;
-+    IGamepad2 IGamepad2_iface;
-     IGameController *IGameController_outer;
-     LONG ref;
- 
-@@ -99,7 +100,13 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
-         return S_OK;
-     }
- 
--    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    if (IsEqualGUID( iid, &IID_IGamepad2 ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IGamepad2_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-     *out = NULL;
-     return E_NOINTERFACE;
- }
-@@ -330,6 +337,28 @@ static const struct IGamepadVtbl gamepad_vtbl =
-     gamepad_GetCurrentReading,
- };
- 
-+DEFINE_IINSPECTABLE_OUTER( gamepad2, IGamepad2, struct gamepad, IGameController_outer )
-+
-+static HRESULT WINAPI gamepad2_GetButtonLabel(IGamepad2 *iface, GamepadButtons button, GameControllerButtonLabel *value)
-+{
-+    FIXME( "iface %p, button %#x, value %p stub!\n", iface, button, value );
-+    *value = GameControllerButtonLabel_None;
-+    return S_OK;
-+}
-+
-+static const struct IGamepad2Vtbl gamepad2_vtbl =
-+{
-+    gamepad2_QueryInterface,
-+    gamepad2_AddRef,
-+    gamepad2_Release,
-+    /* IInspectable methods */
-+    gamepad2_GetIids,
-+    gamepad2_GetRuntimeClassName,
-+    gamepad2_GetTrustLevel,
-+    /* IGamepad2 methods */
-+    gamepad2_GetButtonLabel,
-+};
-+
- struct gamepad_statics
- {
-     IActivationFactory IActivationFactory_iface;
-@@ -542,6 +571,7 @@ static HRESULT WINAPI controller_factory_CreateGameController( ICustomGameContro
-     impl->IGameControllerImpl_iface.lpVtbl = &controller_vtbl;
-     impl->IGameControllerInputSink_iface.lpVtbl = &input_sink_vtbl;
-     impl->IGamepad_iface.lpVtbl = &gamepad_vtbl;
-+    impl->IGamepad2_iface.lpVtbl = &gamepad2_vtbl;
-     impl->ref = 1;
- 
-     TRACE( "created Gamepad %p\n", impl );
-diff --git a/dlls/windows.gaming.input/main.c b/dlls/windows.gaming.input/main.c
-index 21808d9c2ad..a20630cd20b 100644
---- wine/dlls/windows.gaming.input/main.c
-+++ wine/dlls/windows.gaming.input/main.c
-@@ -185,6 +185,15 @@ HRESULT WINAPI DllGetActivationFactory( HSTRING class_str, IActivationFactory **
-     if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_Custom_GameControllerFactoryManager ))
-         IGameControllerFactoryManagerStatics2_QueryInterface( manager_factory, &IID_IActivationFactory, (void **)factory );
- 
-+    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConstantForceEffect ))
-+        IInspectable_QueryInterface( constant_effect_factory, &IID_IActivationFactory, (void **)factory );
-+    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_RampForceEffect ))
-+        IInspectable_QueryInterface( ramp_effect_factory, &IID_IActivationFactory, (void **)factory );
-+    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_PeriodicForceEffect ))
-+        IInspectable_QueryInterface( periodic_effect_factory, &IID_IActivationFactory, (void **)factory );
-+    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConditionForceEffect ))
-+        IInspectable_QueryInterface( condition_effect_factory, &IID_IActivationFactory, (void **)factory );
-+
-     if (*factory) return S_OK;
-     return CLASS_E_CLASSNOTAVAILABLE;
- }
-diff --git a/dlls/windows.gaming.input/periodic_effect.c b/dlls/windows.gaming.input/periodic_effect.c
-new file mode 100644
-index 00000000000..8633a8fb9b9
---- /dev/null
-+++ wine/dlls/windows.gaming.input/periodic_effect.c
-@@ -0,0 +1,326 @@
-+/* WinRT Windows.Gaming.Input implementation
-+ *
-+ * Copyright 2022 Rémi Bernon for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#include "private.h"
-+#include "provider.h"
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(input);
-+
-+struct periodic_effect
-+{
-+    IPeriodicForceEffect IPeriodicForceEffect_iface;
-+    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
-+    LONG ref;
-+
-+    PeriodicForceEffectKind kind;
-+};
-+
-+static inline struct periodic_effect *impl_from_IPeriodicForceEffect( IPeriodicForceEffect *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct periodic_effect, IPeriodicForceEffect_iface );
-+}
-+
-+static HRESULT WINAPI effect_QueryInterface( IPeriodicForceEffect *iface, REFIID iid, void **out )
-+{
-+    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IPeriodicForceEffect ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IPeriodicForceEffect_iface) );
-+        return S_OK;
-+    }
-+
-+    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
-+}
-+
-+static ULONG WINAPI effect_AddRef( IPeriodicForceEffect *iface )
-+{
-+    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI effect_Release( IPeriodicForceEffect *iface )
-+{
-+    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        /* guard against re-entry if inner releases an outer iface */
-+        InterlockedIncrement( &impl->ref );
-+        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI effect_GetIids( IPeriodicForceEffect *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_GetRuntimeClassName( IPeriodicForceEffect *iface, HSTRING *class_name )
-+{
-+    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_PeriodicForceEffect,
-+                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_PeriodicForceEffect),
-+                                class_name );
-+}
-+
-+static HRESULT WINAPI effect_GetTrustLevel( IPeriodicForceEffect *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_get_Kind( IPeriodicForceEffect *iface, PeriodicForceEffectKind *kind )
-+{
-+    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
-+    TRACE( "iface %p, kind %p.\n", iface, kind );
-+    *kind = impl->kind;
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI effect_SetParameters( IPeriodicForceEffect *iface, Vector3 direction, FLOAT frequency, FLOAT phase,
-+                                            FLOAT bias, TimeSpan duration )
-+{
-+    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
-+    WineForceFeedbackEffectParameters params =
-+    {
-+        .periodic =
-+        {
-+            .type = WineForceFeedbackEffectType_Periodic_SquareWave + impl->kind,
-+            .direction = direction,
-+            .frequency = frequency,
-+            .phase = phase,
-+            .bias = bias,
-+            .duration = duration,
-+            .repeat_count = 1,
-+            .gain = 1.,
-+        },
-+    };
-+
-+    TRACE( "iface %p, direction %s, frequency %f, phase %f, bias %f, duration %I64u.\n", iface,
-+           debugstr_vector3( &direction ), frequency, phase, bias, duration.Duration );
-+
-+    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
-+}
-+
-+static HRESULT WINAPI effect_SetParametersWithEnvelope( IPeriodicForceEffect *iface, Vector3 direction, FLOAT frequency, FLOAT phase, FLOAT bias,
-+                                                        FLOAT attack_gain, FLOAT sustain_gain, FLOAT release_gain, TimeSpan start_delay,
-+                                                        TimeSpan attack_duration, TimeSpan sustain_duration,
-+                                                        TimeSpan release_duration, UINT32 repeat_count )
-+{
-+    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
-+    WineForceFeedbackEffectParameters params =
-+    {
-+        .periodic =
-+        {
-+            .type = WineForceFeedbackEffectType_Periodic_SquareWave + impl->kind,
-+            .direction = direction,
-+            .frequency = frequency,
-+            .phase = phase,
-+            .bias = bias,
-+            .duration = {attack_duration.Duration + sustain_duration.Duration + release_duration.Duration},
-+            .start_delay = start_delay,
-+            .repeat_count = repeat_count,
-+            .gain = sustain_gain,
-+        },
-+    };
-+    WineForceFeedbackEffectEnvelope envelope =
-+    {
-+        .attack_gain = attack_gain,
-+        .release_gain = release_gain,
-+        .attack_duration = attack_duration,
-+        .release_duration = release_duration,
-+    };
-+
-+    TRACE( "iface %p, direction %s, frequency %f, phase %f, bias %f, attack_gain %f, sustain_gain %f, release_gain %f, start_delay %I64u, "
-+           "attack_duration %I64u, sustain_duration %I64u, release_duration %I64u, repeat_count %u.\n", iface, debugstr_vector3( &direction ),
-+           frequency, phase, bias, attack_gain, sustain_gain, release_gain, start_delay.Duration, attack_duration.Duration, sustain_duration.Duration,
-+           release_duration.Duration, repeat_count );
-+
-+    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, &envelope );
-+}
-+
-+static const struct IPeriodicForceEffectVtbl effect_vtbl =
-+{
-+    effect_QueryInterface,
-+    effect_AddRef,
-+    effect_Release,
-+    /* IInspectable methods */
-+    effect_GetIids,
-+    effect_GetRuntimeClassName,
-+    effect_GetTrustLevel,
-+    /* IPeriodicForceEffect methods */
-+    effect_get_Kind,
-+    effect_SetParameters,
-+    effect_SetParametersWithEnvelope,
-+};
-+
-+struct periodic_factory
-+{
-+    IActivationFactory IActivationFactory_iface;
-+    IPeriodicForceEffectFactory IPeriodicForceEffectFactory_iface;
-+    LONG ref;
-+};
-+
-+static inline struct periodic_factory *impl_from_IActivationFactory( IActivationFactory *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct periodic_factory, IActivationFactory_iface );
-+}
-+
-+static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
-+{
-+    struct periodic_factory *impl = impl_from_IActivationFactory( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IActivationFactory ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
-+        return S_OK;
-+    }
-+
-+    if (IsEqualGUID( iid, &IID_IPeriodicForceEffectFactory ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IPeriodicForceEffectFactory_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
-+{
-+    struct periodic_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI activation_Release( IActivationFactory *iface )
-+{
-+    struct periodic_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
-+{
-+    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
-+{
-+    FIXME( "iface %p, instance %p stub!\n", iface, instance );
-+    return E_NOTIMPL;
-+}
-+
-+static const struct IActivationFactoryVtbl activation_vtbl =
-+{
-+    activation_QueryInterface,
-+    activation_AddRef,
-+    activation_Release,
-+    /* IInspectable methods */
-+    activation_GetIids,
-+    activation_GetRuntimeClassName,
-+    activation_GetTrustLevel,
-+    /* IActivationFactory methods */
-+    activation_ActivateInstance,
-+};
-+
-+DEFINE_IINSPECTABLE( factory, IPeriodicForceEffectFactory, struct periodic_factory, IActivationFactory_iface )
-+
-+static HRESULT WINAPI factory_CreateInstance( IPeriodicForceEffectFactory *iface, enum PeriodicForceEffectKind kind, IForceFeedbackEffect **out )
-+{
-+    enum WineForceFeedbackEffectType type = WineForceFeedbackEffectType_Periodic + kind;
-+    struct periodic_effect *impl;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, kind %u, out %p.\n", iface, kind, out );
-+
-+    if (!(impl = calloc( 1, sizeof(struct periodic_effect) ))) return E_OUTOFMEMORY;
-+    impl->IPeriodicForceEffect_iface.lpVtbl = &effect_vtbl;
-+    impl->ref = 1;
-+    impl->kind = kind;
-+
-+    if (FAILED(hr = force_feedback_effect_create( type, (IInspectable *)&impl->IPeriodicForceEffect_iface, &impl->IWineForceFeedbackEffectImpl_inner )) ||
-+        FAILED(hr = IPeriodicForceEffect_QueryInterface( &impl->IPeriodicForceEffect_iface, &IID_IForceFeedbackEffect, (void **)out )))
-+    {
-+        if (impl->IWineForceFeedbackEffectImpl_inner) IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
-+        free( impl );
-+        return hr;
-+    }
-+
-+    IPeriodicForceEffect_Release( &impl->IPeriodicForceEffect_iface );
-+    TRACE( "created PeriodicForceEffect %p\n", *out );
-+    return S_OK;
-+}
-+
-+static const struct IPeriodicForceEffectFactoryVtbl factory_vtbl =
-+{
-+    factory_QueryInterface,
-+    factory_AddRef,
-+    factory_Release,
-+    /* IInspectable methods */
-+    factory_GetIids,
-+    factory_GetRuntimeClassName,
-+    factory_GetTrustLevel,
-+    /* IPeriodicForceEffectFactory methods */
-+    factory_CreateInstance,
-+};
-+
-+static struct periodic_factory periodic_statics =
-+{
-+    {&activation_vtbl},
-+    {&factory_vtbl},
-+    1,
-+};
-+
-+IInspectable *periodic_effect_factory = (IInspectable *)&periodic_statics.IActivationFactory_iface;
-diff --git a/dlls/windows.gaming.input/private.h b/dlls/windows.gaming.input/private.h
-index 58b2040d3de..f53d5b5bc37 100644
---- wine/dlls/windows.gaming.input/private.h
-+++ wine/dlls/windows.gaming.input/private.h
-@@ -25,11 +25,13 @@
- #include "winbase.h"
- #include "winstring.h"
- #include "objbase.h"
-+#include "dinput.h"
- 
- #include "activation.h"
- 
- #define WIDL_using_Windows_Foundation
- #define WIDL_using_Windows_Foundation_Collections
-+#define WIDL_using_Windows_Foundation_Numerics
- #include "windows.foundation.h"
- #define WIDL_using_Windows_Devices_Power
- #define WIDL_using_Windows_Gaming_Input
-@@ -37,13 +39,20 @@
- #define WIDL_using_Windows_Gaming_Input_ForceFeedback
- #include "windows.gaming.input.custom.h"
- 
-+#include "wine/debug.h"
- #include "wine/list.h"
- 
-+#include "provider.h"
-+
- extern HINSTANCE windows_gaming_input;
- extern ICustomGameControllerFactory *controller_factory;
- extern ICustomGameControllerFactory *gamepad_factory;
- extern ICustomGameControllerFactory *racing_wheel_factory;
- extern IGameControllerFactoryManagerStatics2 *manager_factory;
-+extern IInspectable *constant_effect_factory;
-+extern IInspectable *ramp_effect_factory;
-+extern IInspectable *periodic_effect_factory;
-+extern IInspectable *condition_effect_factory;
- 
- struct vector_iids
- {
-@@ -64,6 +73,15 @@ extern HRESULT event_handlers_append( struct list *list, IEventHandler_IInspecta
- extern HRESULT event_handlers_remove( struct list *list, EventRegistrationToken *token );
- extern void event_handlers_notify( struct list *list, IInspectable *element );
- 
-+extern HRESULT force_feedback_motor_create( IDirectInputDevice8W *device, IForceFeedbackMotor **out );
-+extern HRESULT force_feedback_effect_create( enum WineForceFeedbackEffectType type, IInspectable *outer, IWineForceFeedbackEffectImpl **out );
-+
-+typedef HRESULT (WINAPI *async_operation_callback)( IUnknown *invoker, IUnknown *param, PROPVARIANT *result );
-+extern HRESULT async_operation_boolean_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
-+                                               IAsyncOperation_boolean **out );
-+extern HRESULT async_operation_effect_result_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
-+                                                     IAsyncOperation_ForceFeedbackLoadEffectResult **out );
-+
- #define DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from, iface_mem, expr )             \
-     static inline impl_type *impl_from( iface_type *iface )                                        \
-     {                                                                                              \
-@@ -103,3 +121,9 @@ extern void event_handlers_notify( struct list *list, IInspectable *element );
-     DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from_##iface_type, iface_type##_iface, &impl->base_iface )
- #define DEFINE_IINSPECTABLE_OUTER( pfx, iface_type, impl_type, outer_iface )                       \
-     DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from_##iface_type, iface_type##_iface, impl->outer_iface )
-+
-+static inline const char *debugstr_vector3( const Vector3 *vector )
-+{
-+    if (!vector) return "(null)";
-+    return wine_dbg_sprintf( "[%f, %f, %f]", vector->X, vector->Y, vector->Z );
-+}
-diff --git a/dlls/windows.gaming.input/provider.c b/dlls/windows.gaming.input/provider.c
-index 69098e8abb6..d0472727224 100644
---- wine/dlls/windows.gaming.input/provider.c
-+++ wine/dlls/windows.gaming.input/provider.c
-@@ -141,21 +141,37 @@ static HRESULT WINAPI wine_provider_GetTrustLevel( IWineGameControllerProvider *
-     return E_NOTIMPL;
- }
- 
-+static BOOL CALLBACK count_ffb_axes( const DIDEVICEOBJECTINSTANCEW *obj, void *args )
-+{
-+    DWORD *count = args;
-+    if (obj->dwType & DIDFT_FFACTUATOR) (*count)++;
-+    return DIENUM_CONTINUE;
-+}
-+
- static HRESULT WINAPI wine_provider_get_Type( IWineGameControllerProvider *iface, WineGameControllerType *value )
- {
-     struct provider *impl = impl_from_IWineGameControllerProvider( iface );
-     DIDEVICEINSTANCEW instance = {.dwSize = sizeof(DIDEVICEINSTANCEW)};
-+    const WCHAR *tmp;
-     HRESULT hr;
- 
-     TRACE( "iface %p, value %p.\n", iface, value );
- 
-     if (FAILED(hr = IDirectInputDevice8_GetDeviceInfo( impl->dinput_device, &instance ))) return hr;
- 
--    switch (GET_DIDEVICE_TYPE( instance.dwDevType ))
-+    if ((tmp = wcschr( impl->device_path + 8, '#' )) && !wcsnicmp( tmp - 6, L"&XI_", 4 ))
-+        *value = WineGameControllerType_Gamepad;
-+    else switch (GET_DIDEVICE_TYPE( instance.dwDevType ))
-     {
-     case DI8DEVTYPE_DRIVING: *value = WineGameControllerType_RacingWheel; break;
--    case DI8DEVTYPE_GAMEPAD: *value = WineGameControllerType_Gamepad; break;
--    default: *value = WineGameControllerType_Joystick; break;
-+    default:
-+    {
-+        DWORD count = 0;
-+        hr = IDirectInputDevice8_EnumObjects( impl->dinput_device, count_ffb_axes, &count, DIDFT_AXIS );
-+        if (SUCCEEDED(hr) && count == 1) *value = WineGameControllerType_RacingWheel;
-+        else *value = WineGameControllerType_Joystick;
-+        break;
-+    }
-     }
- 
-     return S_OK;
-@@ -212,7 +228,7 @@ static HRESULT WINAPI wine_provider_get_State( IWineGameControllerProvider *ifac
-     if (FAILED(hr = IDirectInputDevice8_GetDeviceState( impl->dinput_device, sizeof(state), &state )))
-     {
-         WARN( "Failed to read device state, hr %#lx\n", hr );
--        return hr;
-+        return S_OK;
-     }
- 
-     i = ARRAY_SIZE(state.rgbButtons);
-@@ -315,6 +331,21 @@ static HRESULT WINAPI wine_provider_put_Vibration( IWineGameControllerProvider *
-     return S_OK;
- }
- 
-+static HRESULT WINAPI wine_provider_get_ForceFeedbackMotor( IWineGameControllerProvider *iface, IForceFeedbackMotor **value )
-+{
-+    struct provider *impl = impl_from_IWineGameControllerProvider( iface );
-+    DIDEVCAPS caps = {.dwSize = sizeof(DIDEVCAPS)};
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    if (SUCCEEDED(hr = IDirectInputDevice8_GetCapabilities( impl->dinput_device, &caps )) && (caps.dwFlags & DIDC_FORCEFEEDBACK))
-+        return force_feedback_motor_create( impl->dinput_device, value );
-+
-+    *value = NULL;
-+    return S_OK;
-+}
-+
- static const struct IWineGameControllerProviderVtbl wine_provider_vtbl =
- {
-     wine_provider_QueryInterface,
-@@ -332,6 +363,7 @@ static const struct IWineGameControllerProviderVtbl wine_provider_vtbl =
-     wine_provider_get_State,
-     wine_provider_get_Vibration,
-     wine_provider_put_Vibration,
-+    wine_provider_get_ForceFeedbackMotor,
- };
- 
- DEFINE_IINSPECTABLE( game_provider, IGameControllerProvider, struct provider, IWineGameControllerProvider_iface )
-@@ -556,7 +588,7 @@ void provider_create( const WCHAR *device_path )
- 
-     EnterCriticalSection( &provider_cs );
-     LIST_FOR_EACH_ENTRY( entry, &provider_list, struct provider, entry )
--        if ((found = !wcscmp( entry->device_path, device_path ))) break;
-+        if ((found = !wcsicmp( entry->device_path, device_path ))) break;
-     if (!found) list_add_tail( &provider_list, &impl->entry );
-     LeaveCriticalSection( &provider_cs );
- 
-@@ -576,11 +608,12 @@ void provider_remove( const WCHAR *device_path )
- 
-     EnterCriticalSection( &provider_cs );
-     LIST_FOR_EACH_ENTRY( entry, &provider_list, struct provider, entry )
--        if ((found = !wcscmp( entry->device_path, device_path ))) break;
-+        if ((found = !wcsicmp( entry->device_path, device_path ))) break;
-     if (found) list_remove( &entry->entry );
-     LeaveCriticalSection( &provider_cs );
- 
--    if (found)
-+    if (!found) WARN( "provider not found for device %s\n", debugstr_w( device_path ) );
-+    else
-     {
-         provider = &entry->IGameControllerProvider_iface;
-         manager_on_provider_removed( provider );
-diff --git a/dlls/windows.gaming.input/provider.idl b/dlls/windows.gaming.input/provider.idl
-index 865a149eaa5..e7b6e96b8aa 100644
---- wine/dlls/windows.gaming.input/provider.idl
-+++ wine/dlls/windows.gaming.input/provider.idl
-@@ -22,6 +22,7 @@
- #pragma winrt ns_prefix
- #endif
- 
-+import "propidl.idl";
- import "inspectable.idl";
- import "asyncinfo.idl";
- import "eventtoken.idl";
-@@ -29,14 +30,25 @@ import "windowscontracts.idl";
- import "windows.foundation.idl";
- import "windows.gaming.input.idl";
- import "windows.gaming.input.custom.idl";
-+import "windows.gaming.input.forcefeedback.idl";
- 
- namespace Windows.Gaming.Input.Custom {
-     typedef enum WineGameControllerType WineGameControllerType;
-+    typedef enum WineForceFeedbackEffectType WineForceFeedbackEffectType;
-     typedef struct WineGameControllerState WineGameControllerState;
-     typedef struct WineGameControllerVibration WineGameControllerVibration;
-+    typedef struct WineConditionEffectParameters WineConditionEffectParameters;
-+    typedef struct WineConstantEffectParameters WineConstantEffectParameters;
-+    typedef struct WineRampEffectParameters WineRampEffectParameters;
-+    typedef struct WinePeriodicEffectParameters WinePeriodicEffectParameters;
-+    typedef struct WineForceFeedbackEffectEnvelope WineForceFeedbackEffectEnvelope;
-+    typedef union WineForceFeedbackEffectParameters WineForceFeedbackEffectParameters;
-     interface IWineGameControllerProvider;
-     runtimeclass WineGameControllerProvider;
- 
-+    /* type-pruning version of AsyncOperationCompletedHandler<T> */
-+    delegate HRESULT WineAsyncOperationCompletedHandler([in] IInspectable *async, [in] AsyncStatus status);
-+
-     enum WineGameControllerType
-     {
-         Joystick = 0,
-@@ -44,6 +56,27 @@ namespace Windows.Gaming.Input.Custom {
-         RacingWheel = 2,
-     };
- 
-+    enum WineForceFeedbackEffectType
-+    {
-+        Constant = 1,
-+        Ramp = 2,
-+
-+        Periodic = 10,
-+        /* same order as PeriodicForceEffectKind */
-+        Periodic_SquareWave = 10,
-+        Periodic_SineWave = 11,
-+        Periodic_TriangleWave = 12,
-+        Periodic_SawtoothWaveUp = 13,
-+        Periodic_SawtoothWaveDown = 14,
-+
-+        Condition = 20,
-+        /* same order as ConditionForceEffectKind */
-+        Condition_Spring = 20,
-+        Condition_Damper = 21,
-+        Condition_Inertia = 22,
-+        Condition_Friction = 23,
-+    };
-+
-     struct WineGameControllerState
-     {
-         UINT64 timestamp;
-@@ -60,6 +93,69 @@ namespace Windows.Gaming.Input.Custom {
-         UINT16 right;
-     };
- 
-+    struct WineConditionEffectParameters
-+    {
-+        WineForceFeedbackEffectType type;
-+        Windows.Foundation.Numerics.Vector3 direction;
-+        FLOAT positive_coeff;
-+        FLOAT negative_coeff;
-+        FLOAT max_positive_magnitude;
-+        FLOAT max_negative_magnitude;
-+        FLOAT deadzone;
-+        FLOAT bias;
-+    };
-+
-+    struct WineConstantEffectParameters
-+    {
-+        WineForceFeedbackEffectType type;
-+        Windows.Foundation.Numerics.Vector3 direction;
-+        Windows.Foundation.TimeSpan duration;
-+        Windows.Foundation.TimeSpan start_delay;
-+        UINT32 repeat_count;
-+        FLOAT gain;
-+    };
-+
-+    struct WineRampEffectParameters
-+    {
-+        WineForceFeedbackEffectType type;
-+        Windows.Foundation.Numerics.Vector3 start_vector;
-+        Windows.Foundation.Numerics.Vector3 end_vector;
-+        Windows.Foundation.TimeSpan duration;
-+        Windows.Foundation.TimeSpan start_delay;
-+        UINT32 repeat_count;
-+        FLOAT gain;
-+    };
-+
-+    struct WinePeriodicEffectParameters
-+    {
-+        WineForceFeedbackEffectType type;
-+        Windows.Foundation.Numerics.Vector3 direction;
-+        Windows.Foundation.TimeSpan duration;
-+        Windows.Foundation.TimeSpan start_delay;
-+        UINT32 repeat_count;
-+        FLOAT frequency;
-+        FLOAT phase;
-+        FLOAT bias;
-+        FLOAT gain;
-+    };
-+
-+    struct WineForceFeedbackEffectEnvelope
-+    {
-+        FLOAT attack_gain;
-+        FLOAT release_gain;
-+        Windows.Foundation.TimeSpan attack_duration;
-+        Windows.Foundation.TimeSpan release_duration;
-+    };
-+
-+    union WineForceFeedbackEffectParameters
-+    {
-+        WineForceFeedbackEffectType type;
-+        WineConditionEffectParameters condition;
-+        WineConstantEffectParameters constant;
-+        WineRampEffectParameters ramp;
-+        WinePeriodicEffectParameters periodic;
-+    };
-+
-     [
-         uuid(06e58977-7684-4dc5-bad1-cda52a4aa06d)
-     ]
-@@ -85,6 +181,29 @@ namespace Windows.Gaming.Input.Custom {
-         [propget] HRESULT State([out, retval] WineGameControllerState *state);
-         [propget] HRESULT Vibration([out, retval] WineGameControllerVibration *vibration);
-         [propput] HRESULT Vibration([in] WineGameControllerVibration vibration);
-+
-+        [propget] HRESULT ForceFeedbackMotor([out, retval] Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor **motor);
-+    }
-+
-+    [
-+        uuid(27833469-7760-417e-adbe-e011a66e16ee)
-+    ]
-+    interface IWineForceFeedbackEffectImpl : IUnknown
-+        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
-+    {
-+        [propput] HRESULT Parameters([in] WineForceFeedbackEffectParameters parameters,
-+                                     [in, optional] WineForceFeedbackEffectEnvelope *envelope);
-+    }
-+
-+    [
-+        uuid(83f377ee-c799-11ec-9d64-0242ac120002)
-+    ]
-+    interface IWineAsyncInfoImpl : IUnknown
-+    {
-+        [propput] HRESULT Completed([in] WineAsyncOperationCompletedHandler *handler);
-+        [propget] HRESULT Completed([out, retval] WineAsyncOperationCompletedHandler **handler);
-+        [propget] HRESULT Result([out, retval] PROPVARIANT *result);
-+        HRESULT Start();
-     }
- 
-     [
-diff --git a/dlls/windows.gaming.input/racing_wheel.c b/dlls/windows.gaming.input/racing_wheel.c
-index b4635d03153..d646ca26c03 100644
---- wine/dlls/windows.gaming.input/racing_wheel.c
-+++ wine/dlls/windows.gaming.input/racing_wheel.c
-@@ -99,7 +99,7 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
-         return S_OK;
-     }
- 
--    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-     *out = NULL;
-     return E_NOINTERFACE;
- }
-@@ -245,8 +245,11 @@ static HRESULT WINAPI racing_wheel_get_MaxWheelAngle( IRacingWheel *iface, DOUBL
- 
- static HRESULT WINAPI racing_wheel_get_WheelMotor( IRacingWheel *iface, IForceFeedbackMotor **value )
- {
--    FIXME( "iface %p, value %p stub!\n", iface, value );
--    return E_NOTIMPL;
-+    struct racing_wheel *impl = impl_from_IRacingWheel( iface );
-+
-+    TRACE( "iface %p, value %p\n", iface, value );
-+
-+    return IWineGameControllerProvider_get_ForceFeedbackMotor( impl->wine_provider, value );
- }
- 
- static HRESULT WINAPI racing_wheel_GetButtonLabel( IRacingWheel *iface, enum RacingWheelButtons button,
-diff --git a/dlls/windows.gaming.input/ramp_effect.c b/dlls/windows.gaming.input/ramp_effect.c
-new file mode 100644
-index 00000000000..fadcf151c04
---- /dev/null
-+++ wine/dlls/windows.gaming.input/ramp_effect.c
-@@ -0,0 +1,278 @@
-+/* WinRT Windows.Gaming.Input implementation
-+ *
-+ * Copyright 2022 Rémi Bernon for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#include "private.h"
-+#include "provider.h"
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(input);
-+
-+struct ramp_effect
-+{
-+    IRampForceEffect IRampForceEffect_iface;
-+    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
-+    LONG ref;
-+};
-+
-+static inline struct ramp_effect *impl_from_IRampForceEffect( IRampForceEffect *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct ramp_effect, IRampForceEffect_iface );
-+}
-+
-+static HRESULT WINAPI effect_QueryInterface( IRampForceEffect *iface, REFIID iid, void **out )
-+{
-+    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IRampForceEffect ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IRampForceEffect_iface) );
-+        return S_OK;
-+    }
-+
-+    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
-+}
-+
-+static ULONG WINAPI effect_AddRef( IRampForceEffect *iface )
-+{
-+    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI effect_Release( IRampForceEffect *iface )
-+{
-+    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+
-+    if (!ref)
-+    {
-+        /* guard against re-entry if inner releases an outer iface */
-+        InterlockedIncrement( &impl->ref );
-+        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
-+        free( impl );
-+    }
-+
-+    return ref;
-+}
-+
-+static HRESULT WINAPI effect_GetIids( IRampForceEffect *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_GetRuntimeClassName( IRampForceEffect *iface, HSTRING *class_name )
-+{
-+    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_RampForceEffect,
-+                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_RampForceEffect),
-+                                class_name );
-+}
-+
-+static HRESULT WINAPI effect_GetTrustLevel( IRampForceEffect *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI effect_SetParameters( IRampForceEffect *iface, Vector3 start_vector, Vector3 end_vector, TimeSpan duration )
-+{
-+    WineForceFeedbackEffectParameters params =
-+    {
-+        .ramp =
-+        {
-+            .type = WineForceFeedbackEffectType_Ramp,
-+            .start_vector = start_vector,
-+            .end_vector = end_vector,
-+            .duration = duration,
-+            .repeat_count = 1,
-+            .gain = 1.,
-+        },
-+    };
-+    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
-+
-+    TRACE( "iface %p, start_vector %s, end_vector %s, duration %I64u.\n", iface,
-+           debugstr_vector3( &start_vector ), debugstr_vector3( &end_vector ), duration.Duration );
-+
-+    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
-+}
-+
-+static HRESULT WINAPI effect_SetParametersWithEnvelope( IRampForceEffect *iface, Vector3 start_vector, Vector3 end_vector, FLOAT attack_gain,
-+                                                        FLOAT sustain_gain, FLOAT release_gain, TimeSpan start_delay,
-+                                                        TimeSpan attack_duration, TimeSpan sustain_duration,
-+                                                        TimeSpan release_duration, UINT32 repeat_count )
-+{
-+    WineForceFeedbackEffectParameters params =
-+    {
-+        .ramp =
-+        {
-+            .type = WineForceFeedbackEffectType_Ramp,
-+            .start_vector = start_vector,
-+            .end_vector = end_vector,
-+            .duration = {attack_duration.Duration + sustain_duration.Duration + release_duration.Duration},
-+            .start_delay = start_delay,
-+            .repeat_count = repeat_count,
-+            .gain = sustain_gain,
-+        },
-+    };
-+    WineForceFeedbackEffectEnvelope envelope =
-+    {
-+        .attack_gain = attack_gain,
-+        .release_gain = release_gain,
-+        .attack_duration = attack_duration,
-+        .release_duration = release_duration,
-+    };
-+    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
-+
-+    TRACE( "iface %p, start_vector %s, end_vector %s, attack_gain %f, sustain_gain %f, release_gain %f, start_delay %I64u, attack_duration %I64u, "
-+           "sustain_duration %I64u, release_duration %I64u, repeat_count %u.\n", iface, debugstr_vector3( &start_vector ), debugstr_vector3( &end_vector ),
-+           attack_gain, sustain_gain, release_gain, start_delay.Duration, attack_duration.Duration, sustain_duration.Duration,
-+           release_duration.Duration, repeat_count );
-+
-+    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, &envelope );
-+}
-+
-+static const struct IRampForceEffectVtbl effect_vtbl =
-+{
-+    effect_QueryInterface,
-+    effect_AddRef,
-+    effect_Release,
-+    /* IInspectable methods */
-+    effect_GetIids,
-+    effect_GetRuntimeClassName,
-+    effect_GetTrustLevel,
-+    /* IRampForceEffect methods */
-+    effect_SetParameters,
-+    effect_SetParametersWithEnvelope,
-+};
-+
-+struct ramp_factory
-+{
-+    IActivationFactory IActivationFactory_iface;
-+    LONG ref;
-+};
-+
-+static inline struct ramp_factory *impl_from_IActivationFactory( IActivationFactory *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct ramp_factory, IActivationFactory_iface );
-+}
-+
-+static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
-+{
-+    struct ramp_factory *impl = impl_from_IActivationFactory( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IActivationFactory ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
-+{
-+    struct ramp_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI activation_Release( IActivationFactory *iface )
-+{
-+    struct ramp_factory *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
-+{
-+    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
-+{
-+    struct ramp_effect *impl;
-+    HRESULT hr;
-+
-+    TRACE( "iface %p, instance %p.\n", iface, instance );
-+
-+    if (!(impl = calloc( 1, sizeof(struct ramp_effect) ))) return E_OUTOFMEMORY;
-+    impl->IRampForceEffect_iface.lpVtbl = &effect_vtbl;
-+    impl->ref = 1;
-+
-+    if (FAILED(hr = force_feedback_effect_create( WineForceFeedbackEffectType_Ramp, (IInspectable *)&impl->IRampForceEffect_iface,
-+                                                  &impl->IWineForceFeedbackEffectImpl_inner )))
-+    {
-+        free( impl );
-+        return hr;
-+    }
-+
-+    *instance = (IInspectable *)&impl->IRampForceEffect_iface;
-+    TRACE( "created RampForceEffect %p\n", *instance );
-+    return S_OK;
-+}
-+
-+static const struct IActivationFactoryVtbl activation_vtbl =
-+{
-+    activation_QueryInterface,
-+    activation_AddRef,
-+    activation_Release,
-+    /* IInspectable methods */
-+    activation_GetIids,
-+    activation_GetRuntimeClassName,
-+    activation_GetTrustLevel,
-+    /* IActivationFactory methods */
-+    activation_ActivateInstance,
-+};
-+
-+static struct ramp_factory ramp_statics =
-+{
-+    {&activation_vtbl},
-+    1,
-+};
-+
-+IInspectable *ramp_effect_factory = (IInspectable *)&ramp_statics.IActivationFactory_iface;
-diff --git a/dlls/windows.gaming.input/vector.c b/dlls/windows.gaming.input/vector.c
-index db1a9057682..8958b07c0f2 100644
---- wine/dlls/windows.gaming.input/vector.c
-+++ wine/dlls/windows.gaming.input/vector.c
-@@ -54,7 +54,7 @@ static HRESULT WINAPI iterator_QueryInterface( IIterator_IInspectable *iface, RE
-         return S_OK;
-     }
- 
--    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-     *out = NULL;
-     return E_NOINTERFACE;
- }
-@@ -189,7 +189,7 @@ static HRESULT WINAPI vector_view_QueryInterface( IVectorView_IInspectable *ifac
-         return S_OK;
-     }
- 
--    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-     *out = NULL;
-     return E_NOINTERFACE;
- }
-@@ -384,7 +384,7 @@ static HRESULT WINAPI vector_QueryInterface( IVector_IInspectable *iface, REFIID
-         return S_OK;
-     }
- 
--    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-     *out = NULL;
-     return E_NOINTERFACE;
- }
-diff --git a/include/Makefile.in b/include/Makefile.in
-index 19d0088e431..cade5bb49dd 100644
---- wine/include/Makefile.in
-+++ wine/include/Makefile.in
-@@ -788,8 +788,10 @@ SOURCES = \
- 	windows.foundation.collections.idl \
- 	windows.foundation.idl \
- 	windows.foundation.metadata.idl \
-+	windows.foundation.numerics.idl \
- 	windows.gaming.input.custom.idl \
- 	windows.gaming.input.forcefeedback.idl \
-+	windows.gaming.ui.idl \
- 	windows.gaming.input.idl \
- 	windows.globalization.idl \
- 	windows.h \
-diff --git a/include/windows.foundation.numerics.idl b/include/windows.foundation.numerics.idl
-new file mode 100644
-index 00000000000..eca99ca29bc
---- /dev/null
-+++ wine/include/windows.foundation.numerics.idl
-@@ -0,0 +1,39 @@
-+/*
-+ * Copyright 2022 Rémi Bernon for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#ifdef __WIDL__
-+#pragma winrt ns_prefix
-+#endif
-+
-+import "inspectable.idl";
-+import "asyncinfo.idl";
-+import "eventtoken.idl";
-+import "windowscontracts.idl";
-+import "windows.foundation.idl";
-+
-+namespace Windows.Foundation.Numerics {
-+    typedef struct Vector3 Vector3;
-+
-+    [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-+    struct Vector3
-+    {
-+        FLOAT X;
-+        FLOAT Y;
-+        FLOAT Z;
-+    };
-+}
-diff --git a/include/windows.gaming.input.forcefeedback.idl b/include/windows.gaming.input.forcefeedback.idl
-index 432b60a5592..82fb083b34b 100644
---- wine/include/windows.gaming.input.forcefeedback.idl
-+++ wine/include/windows.gaming.input.forcefeedback.idl
-@@ -20,23 +20,41 @@
- #pragma winrt ns_prefix
- #endif
- 
-+#ifndef DO_NO_IMPORTS
- import "inspectable.idl";
- import "asyncinfo.idl";
- import "eventtoken.idl";
- import "windowscontracts.idl";
- import "windows.foundation.idl";
-+import "windows.foundation.numerics.idl";
-+#endif
- 
- namespace Windows.Gaming.Input.ForceFeedback {
-     typedef enum ForceFeedbackEffectAxes ForceFeedbackEffectAxes;
-     typedef enum ForceFeedbackEffectState ForceFeedbackEffectState;
-     typedef enum ForceFeedbackLoadEffectResult ForceFeedbackLoadEffectResult;
-+    typedef enum PeriodicForceEffectKind PeriodicForceEffectKind;
-+    typedef enum ConditionForceEffectKind ConditionForceEffectKind;
-     interface IForceFeedbackEffect;
-+    interface IPeriodicForceEffect;
-+    interface IPeriodicForceEffectFactory;
-+    interface IConditionForceEffect;
-+    interface IConditionForceEffectFactory;
-+    interface IConstantForceEffect;
-+    interface IRampForceEffect;
-     runtimeclass ForceFeedbackMotor;
-+    runtimeclass PeriodicForceEffect;
-+    runtimeclass ConditionForceEffect;
-+    runtimeclass ConstantForceEffect;
-+    runtimeclass RampForceEffect;
- 
-     declare {
-         interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>;
-         interface Windows.Foundation.IAsyncOperation<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>;
-+        interface Windows.Foundation.Collections.IIterator<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
-+        interface Windows.Foundation.Collections.IIterable<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
-         interface Windows.Foundation.Collections.IVectorView<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
-+        interface Windows.Foundation.Collections.IVector<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
-     }
- 
-     [
-@@ -68,6 +86,25 @@ namespace Windows.Gaming.Input.ForceFeedback {
-         EffectNotSupported = 2
-     };
- 
-+    [contract(Windows.Foundation.UniversalApiContract, 3.0)]
-+    enum PeriodicForceEffectKind
-+    {
-+        SquareWave       = 0,
-+        SineWave         = 1,
-+        TriangleWave     = 2,
-+        SawtoothWaveUp   = 3,
-+        SawtoothWaveDown = 4,
-+    };
-+
-+    [contract(Windows.Foundation.UniversalApiContract, 3.0)]
-+    enum ConditionForceEffectKind
-+    {
-+        Spring   = 0,
-+        Damper   = 1,
-+        Inertia  = 2,
-+        Friction = 3,
-+    };
-+
-     [
-         contract(Windows.Foundation.UniversalApiContract, 3.0),
-         uuid(a17fba0c-2ae4-48c2-8063-eabd0777cb89)
-@@ -105,6 +142,91 @@ namespace Windows.Gaming.Input.ForceFeedback {
-                                      [out, retval] Windows.Foundation.IAsyncOperation<boolean> **async_op);
-     }
- 
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        exclusiveto(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect),
-+        uuid(5c5138d7-fc75-4d52-9a0a-efe4cab5fe64)
-+    ]
-+    interface IPeriodicForceEffect : IInspectable
-+        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
-+    {
-+        [propget] HRESULT Kind([out, retval] Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind *value);
-+        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 vector, [in] FLOAT frequency, [in] FLOAT phase,
-+                              [in] FLOAT bias, [in] Windows.Foundation.TimeSpan duration);
-+        HRESULT SetParametersWithEnvelope([in] Windows.Foundation.Numerics.Vector3 vector, [in] FLOAT frequency, [in] FLOAT phase,
-+                                          [in] FLOAT bias, [in] FLOAT attack_gain, [in] FLOAT sustain_gain, [in] FLOAT release_gain,
-+                                          [in] Windows.Foundation.TimeSpan start_delay, [in] Windows.Foundation.TimeSpan attack_duration,
-+                                          [in] Windows.Foundation.TimeSpan sustain_duration, [in] Windows.Foundation.TimeSpan release_duration,
-+                                          [in] UINT32 repeat_count);
-+    }
-+
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        exclusiveto(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect),
-+        uuid(6f62eb1a-9851-477b-b318-35ecaa15070f)
-+    ]
-+    interface IPeriodicForceEffectFactory : IInspectable
-+    {
-+        HRESULT CreateInstance([in] Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind kind,
-+                               [out, retval] Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect **value);
-+    }
-+
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        exclusiveto(Windows.Gaming.Input.ForceFeedback.ConditionForceEffect),
-+        uuid(32d1ea68-3695-4e69-85c0-cd1944189140)
-+    ]
-+    interface IConditionForceEffect : IInspectable
-+        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
-+    {
-+        [propget] HRESULT Kind([out, retval] Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind *value);
-+        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 direction, [in] FLOAT positive_coeff,
-+                              [in] FLOAT negative_coeff, [in] FLOAT max_positive_magnitude, [in] FLOAT max_negative_magnitude,
-+                              [in] FLOAT deadzone, [in] FLOAT bias);
-+    }
-+
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        exclusiveto(Windows.Gaming.Input.ForceFeedback.ConditionForceEffect),
-+        uuid(91a99264-1810-4eb6-a773-bfd3b8cddbab)
-+    ]
-+    interface IConditionForceEffectFactory : IInspectable
-+    {
-+        HRESULT CreateInstance([in] Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind kind,
-+                               [out, retval] Windows.Gaming.Input.ForceFeedback.ConditionForceEffect **value);
-+    }
-+
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        exclusiveto(Windows.Gaming.Input.ForceFeedback.ConstantForceEffect),
-+        uuid(9bfa0140-f3c7-415c-b068-0f068734bce0)
-+    ]
-+    interface IConstantForceEffect : IInspectable
-+        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
-+    {
-+        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 vector, [in] Windows.Foundation.TimeSpan duration);
-+        HRESULT SetParametersWithEnvelope([in] Windows.Foundation.Numerics.Vector3 vector, [in] FLOAT attack_gain,
-+                                          [in] FLOAT sustain_gain, [in] FLOAT release_gain, [in] Windows.Foundation.TimeSpan start_delay,
-+                                          [in] Windows.Foundation.TimeSpan attack_duration, [in] Windows.Foundation.TimeSpan sustain_duration,
-+                                          [in] Windows.Foundation.TimeSpan release_duration, [in] UINT32 repeat_count);
-+    }
-+
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        exclusiveto(Windows.Gaming.Input.ForceFeedback.RampForceEffect),
-+        uuid(f1f81259-1ca6-4080-b56d-b43f3354d052)
-+    ]
-+    interface IRampForceEffect : IInspectable
-+        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
-+    {
-+        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 start_vector, [in] Windows.Foundation.Numerics.Vector3 end_vector,
-+                              [in] Windows.Foundation.TimeSpan duration);
-+        HRESULT SetParametersWithEnvelope([in] Windows.Foundation.Numerics.Vector3 start_vector, [in] Windows.Foundation.Numerics.Vector3 end_vector,
-+                                          [in] FLOAT attack_gain, [in] FLOAT sustain_gain, [in] FLOAT release_gain, [in] Windows.Foundation.TimeSpan start_delay,
-+                                          [in] Windows.Foundation.TimeSpan attack_duration, [in] Windows.Foundation.TimeSpan sustain_duration,
-+                                          [in] Windows.Foundation.TimeSpan release_duration, [in] UINT32 repeat_count);
-+    }
-+
-     [
-         contract(Windows.Foundation.UniversalApiContract, 3.0),
-         marshaling_behavior(agile),
-@@ -114,4 +236,52 @@ namespace Windows.Gaming.Input.ForceFeedback {
-     {
-         [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackMotor;
-     }
-+
-+    [
-+        activatable(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffectFactory, Windows.Foundation.UniversalApiContract, 3.0),
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        marshaling_behavior(agile),
-+        threading(both)
-+    ]
-+    runtimeclass PeriodicForceEffect
-+    {
-+        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
-+        interface Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffect;
-+    }
-+
-+    [
-+        activatable(Windows.Gaming.Input.ForceFeedback.IConditionForceEffectFactory, Windows.Foundation.UniversalApiContract, 3.0),
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        marshaling_behavior(agile),
-+        threading(both)
-+    ]
-+    runtimeclass ConditionForceEffect
-+    {
-+        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
-+        interface Windows.Gaming.Input.ForceFeedback.IConditionForceEffect;
-+    }
-+
-+    [
-+        activatable(Windows.Foundation.UniversalApiContract, 3.0),
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        marshaling_behavior(agile),
-+        threading(both)
-+    ]
-+    runtimeclass ConstantForceEffect
-+    {
-+        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
-+        interface Windows.Gaming.Input.ForceFeedback.IConstantForceEffect;
-+    }
-+
-+    [
-+        activatable(Windows.Foundation.UniversalApiContract, 3.0),
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        marshaling_behavior(agile),
-+        threading(both)
-+    ]
-+    runtimeclass RampForceEffect
-+    {
-+        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
-+        interface Windows.Gaming.Input.ForceFeedback.IRampForceEffect;
-+    }
- }
-diff --git a/include/windows.gaming.input.idl b/include/windows.gaming.input.idl
-index fdae3aa70b1..5fc5265247d 100644
---- wine/include/windows.gaming.input.idl
-+++ wine/include/windows.gaming.input.idl
-@@ -446,6 +446,19 @@ namespace Windows.Gaming.Input {
-         HRESULT GetCurrentReading([out, retval] Windows.Gaming.Input.GamepadReading *value);
-     }
- 
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 3.0),
-+        exclusiveto(Windows.Gaming.Input.Gamepad),
-+        uuid(3c1689bd-5915-4245-b0c0-c89fae0308ff)
-+    ]
-+    interface IGamepad2 : IInspectable
-+        requires Windows.Gaming.Input.IGamepad,
-+                 Windows.Gaming.Input.IGameController
-+    {
-+        HRESULT GetButtonLabel([in] Windows.Gaming.Input.GamepadButtons button,
-+                               [out, retval] Windows.Gaming.Input.GameControllerButtonLabel *value);
-+    }
-+
-     [
-         contract(Windows.Foundation.UniversalApiContract, 3.0),
-         exclusiveto(Windows.Gaming.Input.RacingWheel),
-diff --git a/include/windows.gaming.ui.idl b/include/windows.gaming.ui.idl
-new file mode 100644
-index 00000000000..730f5dd90f7
---- /dev/null
-+++ wine/include/windows.gaming.ui.idl
-@@ -0,0 +1,61 @@
-+/*
-+ * Copyright 2022 Paul Gofman for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#ifdef __WIDL__
-+#pragma winrt ns_prefix
-+#endif
-+
-+#ifndef DO_NO_IMPORTS
-+import "inspectable.idl";
-+import "eventtoken.idl";
-+import "windowscontracts.idl";
-+import "windows.foundation.idl";
-+#endif
-+
-+namespace Windows.Gaming.UI {
-+    runtimeclass GameBar;
-+
-+    declare {
-+        interface Windows.Foundation.EventHandler<IInspectable *>;
-+    }
-+
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 2.0),
-+        exclusiveto(Windows.Gaming.UI.GameBar),
-+        uuid(1db9a292-cc78-4173-be45-b61e67283ea7)
-+    ]
-+    interface IGameBarStatics : IInspectable
-+    {
-+        [eventadd] HRESULT VisibilityChanged([in] Windows.Foundation.EventHandler<IInspectable *> *handler, [out, retval] EventRegistrationToken *token);
-+        [eventremove] HRESULT VisibilityChanged([in] EventRegistrationToken token);
-+        [eventadd] HRESULT IsInputRedirectedChanged([in] Windows.Foundation.EventHandler<IInspectable *> *handler, [out, retval] EventRegistrationToken *token);
-+        [eventremove] HRESULT IsInputRedirectedChanged([in] EventRegistrationToken token);
-+        [propget] HRESULT Visible([out] [retval] boolean* value);
-+        [propget] HRESULT IsInputRedirected([out] [retval] boolean* value);
-+    }
-+
-+    [
-+        contract(Windows.Foundation.UniversalApiContract, 2.0),
-+        marshaling_behavior(agile),
-+        static(Windows.Gaming.UI.IGameBarStatics, Windows.Foundation.UniversalApiContract, 2.0),
-+        threading(both)
-+    ]
-+    runtimeclass GameBar
-+    {
-+    }
-+}
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/advapi32/advapi.c b/dlls/advapi32/advapi.c
-index 6497ea22f4e..f7d6e973252 100644
---- wine/dlls/advapi32/advapi.c
-+++ wine/dlls/advapi32/advapi.c
-@@ -32,6 +32,7 @@
- #include "winerror.h"
- #include "wincred.h"
- #include "wct.h"
-+#include "perflib.h"
- 
- #include "wine/debug.h"
- 
-@@ -334,3 +335,50 @@ BOOL WINAPI GetThreadWaitChain(HWCT handle, DWORD_PTR ctx, DWORD flags, DWORD th
-     SetLastError(ERROR_NOT_SUPPORTED);
-     return FALSE;
- }
-+
-+ULONG WINAPI PerfCloseQueryHandle( HANDLE query )
-+{
-+    FIXME( "query %p stub.\n", query );
-+
-+    return ERROR_SUCCESS;
-+}
-+
-+ULONG WINAPI PerfOpenQueryHandle( const WCHAR *machine, HANDLE *query )
-+{
-+    FIXME( "machine %s, query %p.\n", debugstr_w(machine), query );
-+
-+    if (!query) return ERROR_INVALID_PARAMETER;
-+    *query = (HANDLE)0xdeadbeef;
-+
-+    return ERROR_SUCCESS;
-+}
-+
-+ULONG WINAPI PerfAddCounters( HANDLE query, PERF_COUNTER_IDENTIFIER *id, DWORD size )
-+{
-+    FIXME( "query %p, id %p, size %lu stub.\n", query, id, size );
-+
-+    if (!id || size < sizeof(*id) || id->Size < sizeof(*id)) return ERROR_INVALID_PARAMETER;
-+
-+    id->Status = ERROR_WMI_GUID_NOT_FOUND;
-+    return ERROR_SUCCESS;
-+}
-+
-+ULONG WINAPI PerfQueryCounterData( HANDLE query, PERF_DATA_HEADER *data, DWORD data_size, DWORD *size_needed )
-+{
-+    FIXME( "query %p, data %p, data_size %lu, size_needed %p stub.\n", query, data, data_size, size_needed );
-+
-+    if (!size_needed) return ERROR_INVALID_PARAMETER;
-+
-+    *size_needed = sizeof(PERF_DATA_HEADER);
-+
-+    if (!data || data_size < sizeof(PERF_DATA_HEADER)) return ERROR_NOT_ENOUGH_MEMORY;
-+
-+    data->dwTotalSize = sizeof(PERF_DATA_HEADER);
-+    data->dwNumCounters = 0;
-+    QueryPerformanceCounter( (LARGE_INTEGER *)&data->PerfTimeStamp );
-+    QueryPerformanceFrequency( (LARGE_INTEGER *)&data->PerfFreq );
-+    GetSystemTimeAsFileTime( (FILETIME *)&data->PerfTime100NSec );
-+    FileTimeToSystemTime( (FILETIME *)&data->PerfTime100NSec, &data->SystemTime );
-+
-+    return ERROR_SUCCESS;
-+}
-diff --git a/dlls/advapi32/advapi32.spec b/dlls/advapi32/advapi32.spec
-index 3b5f587d40e..1c3f59bb7ee 100644
---- wine/dlls/advapi32/advapi32.spec
-+++ wine/dlls/advapi32/advapi32.spec
-@@ -553,8 +553,8 @@
- @ stdcall -ret64 -import OpenTraceW(ptr)
- # @ stub OperationEnd
- # @ stub OperationStart
--# @ stub PerfAddCounters
--# @ stub PerfCloseQueryHandle
-+@ stdcall PerfAddCounters(long ptr long)
-+@ stdcall PerfCloseQueryHandle(long)
- @ stdcall -import PerfCreateInstance(long ptr wstr long)
- # @ stub PerfDecrementULongCounterValue
- # @ stub PerfDecrementULongLongCounterValue
-@@ -564,8 +564,8 @@
- # @ stub PerfEnumerateCounterSetInstances
- # @ stub PerfIncrementULongCounterValue
- # @ stub PerfIncrementULongLongCounterValue
--# @ stub PerfOpenQueryHandle
--# @ stub PerfQueryCounterData
-+@ stdcall PerfOpenQueryHandle(wstr ptr)
-+@ stdcall PerfQueryCounterData(long ptr long ptr)
- # @ stub PerfQueryCounterInfo
- # @ stub PerfQueryCounterSetRegistrationInfo
- # @ stub PerfQueryInstance
-diff --git a/dlls/advapi32/tests/perf.c b/dlls/advapi32/tests/perf.c
-index fc07a09d327..34b6e952842 100644
---- wine/dlls/advapi32/tests/perf.c
-+++ wine/dlls/advapi32/tests/perf.c
-@@ -25,9 +25,31 @@
- #include "winerror.h"
- #include "perflib.h"
- #include "winperf.h"
-+#include "winternl.h"
- 
- #include "wine/test.h"
- 
-+#include "initguid.h"
-+
-+#define DEFINE_FUNCTION(name) static typeof(name) *p##name;
-+DEFINE_FUNCTION(PerfCloseQueryHandle);
-+DEFINE_FUNCTION(PerfOpenQueryHandle);
-+DEFINE_FUNCTION(PerfAddCounters);
-+DEFINE_FUNCTION(PerfQueryCounterData);
-+#undef DEFINE_FUNCTION
-+
-+static void init_functions(void)
-+{
-+    HANDLE hadvapi = GetModuleHandleA("advapi32.dll");
-+
-+#define GET_FUNCTION(name) p##name = (void *)GetProcAddress(hadvapi, #name)
-+    GET_FUNCTION(PerfCloseQueryHandle);
-+    GET_FUNCTION(PerfOpenQueryHandle);
-+    GET_FUNCTION(PerfAddCounters);
-+    GET_FUNCTION(PerfQueryCounterData);
-+#undef GET_FUNCTION
-+}
-+
- static ULONG WINAPI test_provider_callback(ULONG code, void *buffer, ULONG size)
- {
-     ok(0, "Provider callback called.\n");
-@@ -188,7 +210,94 @@ void test_provider_init(void)
-     ok(!ret, "Got unexpected ret %lu.\n", ret);
- }
- 
-+DEFINE_GUID(TestCounterGUID, 0x12345678, 0x1234, 0x5678, 0x12, 0x34, 0x11, 0x11, 0x22, 0x22, 0x33, 0x33);
-+
-+static ULONG64 trunc_nttime_ms(ULONG64 t)
-+{
-+    return (t / 10000) * 10000;
-+}
-+
-+static void test_perf_counters(void)
-+{
-+    LARGE_INTEGER freq, qpc1, qpc2, nttime1, nttime2, systime;
-+    char buffer[sizeof(PERF_COUNTER_IDENTIFIER) + 8];
-+    PERF_COUNTER_IDENTIFIER *counter_id;
-+    PERF_DATA_HEADER dh;
-+    HANDLE query;
-+    DWORD size;
-+    ULONG ret;
-+
-+    if (!pPerfOpenQueryHandle)
-+    {
-+        win_skip("PerfOpenQueryHandle not found.\n");
-+        return;
-+    }
-+
-+    ret = pPerfOpenQueryHandle(NULL, NULL);
-+    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
-+    ret = pPerfOpenQueryHandle(NULL, &query);
-+    ok(!ret, "got ret %lu.\n", ret);
-+
-+    counter_id = (PERF_COUNTER_IDENTIFIER *)buffer;
-+    memset(buffer, 0, sizeof(buffer));
-+
-+    counter_id->CounterSetGuid = TestCounterGUID;
-+    counter_id->CounterId = PERF_WILDCARD_COUNTER;
-+    counter_id->InstanceId = PERF_WILDCARD_COUNTER;
-+
-+    ret = pPerfAddCounters(query, counter_id, sizeof(*counter_id));
-+    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
-+
-+    counter_id->Size = sizeof(*counter_id);
-+    ret = pPerfAddCounters(query, counter_id, 8);
-+    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
-+    ret = pPerfAddCounters(query, counter_id, sizeof(*counter_id));
-+    ok(!ret, "got ret %lu.\n", ret);
-+    ok(counter_id->Status == ERROR_WMI_GUID_NOT_FOUND, "got Status %#lx.\n", counter_id->Status);
-+
-+    ret = pPerfQueryCounterData(query, NULL, 0, NULL);
-+    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
-+
-+    size = 0xdeadbeef;
-+    ret = pPerfQueryCounterData(query, NULL, 0, &size);
-+    ok(ret == ERROR_NOT_ENOUGH_MEMORY, "got ret %lu.\n", ret);
-+    ok(size == sizeof(dh), "got size %lu.\n", size);
-+
-+    ret = pPerfQueryCounterData(query, &dh, sizeof(dh), NULL);
-+    ok(ret == ERROR_INVALID_PARAMETER, "got ret %lu.\n", ret);
-+
-+    QueryPerformanceFrequency(&freq);
-+    QueryPerformanceCounter(&qpc1);
-+    NtQuerySystemTime(&nttime1);
-+
-+    size = 0xdeadbeef;
-+    ret = pPerfQueryCounterData(query, &dh, sizeof(dh), &size);
-+    QueryPerformanceCounter(&qpc2);
-+    NtQuerySystemTime(&nttime2);
-+    SystemTimeToFileTime(&dh.SystemTime, (FILETIME *)&systime);
-+    ok(!ret, "got ret %lu.\n", ret);
-+    ok(size == sizeof(dh), "got size %lu.\n", size);
-+    ok(dh.dwTotalSize == sizeof(dh), "got dwTotalSize %lu.\n", dh.dwTotalSize);
-+    ok(!dh.dwNumCounters, "got dwNumCounters %lu.\n", dh.dwNumCounters);
-+    ok(dh.PerfFreq == freq.QuadPart, "got PerfFreq %I64u.\n", dh.PerfFreq);
-+    ok(dh.PerfTimeStamp >= qpc1.QuadPart && dh.PerfTimeStamp <= qpc2.QuadPart,
-+            "got PerfTimeStamp %I64u, qpc1 %I64u, qpc2 %I64u.\n",
-+            dh.PerfTimeStamp, qpc1.QuadPart, qpc2.QuadPart);
-+    ok(dh.PerfTime100NSec >= nttime1.QuadPart && dh.PerfTime100NSec <= nttime2.QuadPart,
-+            "got PerfTime100NSec %I64u, nttime1 %I64u, nttime2 %I64u.\n",
-+            dh.PerfTime100NSec, nttime1.QuadPart, nttime2.QuadPart);
-+    ok(systime.QuadPart >= trunc_nttime_ms(nttime1.QuadPart) && systime.QuadPart <= trunc_nttime_ms(nttime2.QuadPart),
-+            "got systime %I64u, nttime1 %I64u, nttime2 %I64u, %d.\n",
-+            systime.QuadPart, nttime1.QuadPart, nttime2.QuadPart, dh.SystemTime.wMilliseconds);
-+
-+    ret = pPerfCloseQueryHandle(query);
-+    ok(!ret, "got ret %lu.\n", ret);
-+}
-+
- START_TEST(perf)
- {
-+    init_functions();
-+
-     test_provider_init();
-+    test_perf_counters();
- }
-diff --git a/include/perflib.h b/include/perflib.h
-index eb65f0802a4..40704aeb6f7 100644
---- wine/include/perflib.h
-+++ wine/include/perflib.h
-@@ -83,6 +83,28 @@ typedef struct _PROVIDER_CONTEXT {
-     LPVOID pMemContext;
- } PERF_PROVIDER_CONTEXT, * PPERF_PROVIDER_CONTEXT;
- 
-+typedef struct _PERF_COUNTER_IDENTIFIER {
-+    GUID CounterSetGuid;
-+    ULONG Status;
-+    ULONG Size;
-+    ULONG CounterId;
-+    ULONG InstanceId;
-+    ULONG Index;
-+    ULONG Reserved;
-+} PERF_COUNTER_IDENTIFIER, *PPERF_COUNTER_IDENTIFIER;
-+
-+#define PERF_WILDCARD_COUNTER  0xFFFFFFFF
-+#define PERF_WILDCARD_INSTANCE L"*"
-+
-+typedef struct _PERF_DATA_HEADER {
-+    ULONG dwTotalSize;
-+    ULONG dwNumCounters;
-+    LONGLONG PerfTimeStamp;
-+    LONGLONG PerfTime100NSec;
-+    LONGLONG PerfFreq;
-+    SYSTEMTIME SystemTime;
-+} PERF_DATA_HEADER, *PPERF_DATA_HEADER;
-+
- PERF_COUNTERSET_INSTANCE WINAPI *PerfCreateInstance(HANDLE, const GUID *, const WCHAR *, ULONG);
- ULONG WINAPI PerfDeleteInstance(HANDLE, PERF_COUNTERSET_INSTANCE *);
- ULONG WINAPI PerfSetCounterRefValue(HANDLE, PERF_COUNTERSET_INSTANCE *, ULONG, void *);
-@@ -91,6 +113,11 @@ ULONG WINAPI PerfStartProvider(GUID *, PERFLIBREQUEST, HANDLE *);
- ULONG WINAPI PerfStartProviderEx(GUID *, PERF_PROVIDER_CONTEXT *, HANDLE *);
- ULONG WINAPI PerfStopProvider(HANDLE);
- 
-+ULONG WINAPI PerfAddCounters(HANDLE, PERF_COUNTER_IDENTIFIER *, DWORD);
-+ULONG WINAPI PerfCloseQueryHandle(HANDLE);
-+ULONG WINAPI PerfOpenQueryHandle(const WCHAR *, HANDLE *);
-+ULONG WINAPI PerfQueryCounterData(HANDLE, PERF_DATA_HEADER *, DWORD, DWORD *);
-+
- #ifdef __cplusplus
- }       /* extern "C" */
- #endif
--- 
-2.39.2 (Apple Git-144)
-
 diff --git a/dlls/kernel32/kernel32.spec b/dlls/kernel32/kernel32.spec
-index 2ae9ccdc93f..51a14338d93 100644
---- wine/dlls/kernel32/kernel32.spec
-+++ wine/dlls/kernel32/kernel32.spec
-@@ -1470,6 +1470,7 @@
+index 2ae9ccdc93f..3626c74099e 100644
+--- a/dlls/kernel32/kernel32.spec
++++ b/dlls/kernel32/kernel32.spec
+@@ -370,6 +370,7 @@
+ @ stdcall -import DeleteProcThreadAttributeList(ptr)
+ # @ stub DisableThreadProfiling
+ @ stdcall DisassociateCurrentThreadFromCallback(ptr) NTDLL.TpDisassociateCallback
++@ stdcall DiscardVirtualMemory(ptr long) kernelbase.DiscardVirtualMemory
+ @ stdcall DeleteTimerQueue(long)
+ @ stdcall -import DeleteTimerQueueEx(long long)
+ @ stdcall -import DeleteTimerQueueTimer(long long long)
+@@ -1470,6 +1471,7 @@
  @ stdcall -import SetThreadGroupAffinity(long ptr ptr)
  @ stdcall -import SetThreadIdealProcessor(long long)
  @ stdcall -import SetThreadIdealProcessorEx(long ptr ptr)
@@ -12108,9 +8066,27 @@ index 2ae9ccdc93f..51a14338d93 100644
  @ stdcall -import SetThreadPreferredUILanguages(long ptr ptr)
  @ stdcall -import SetThreadPriority(long long)
 diff --git a/dlls/kernelbase/kernelbase.spec b/dlls/kernelbase/kernelbase.spec
-index 00012198eb6..3fb2192b1ff 100644
---- wine/dlls/kernelbase/kernelbase.spec
-+++ wine/dlls/kernelbase/kernelbase.spec
+index 00012198eb6..ae6bc842f7b 100644
+--- a/dlls/kernelbase/kernelbase.spec
++++ b/dlls/kernelbase/kernelbase.spec
+@@ -269,7 +269,7 @@
+ @ stdcall DisablePredefinedHandleTableInternal(long)
+ @ stdcall DisableThreadLibraryCalls(long)
+ @ stdcall DisassociateCurrentThreadFromCallback(ptr) ntdll.TpDisassociateCallback
+-# @ stub DiscardVirtualMemory
++@ stdcall DiscardVirtualMemory(ptr long)
+ @ stdcall DisconnectNamedPipe(long)
+ @ stdcall DnsHostnameToComputerNameExW(wstr ptr ptr)
+ # @ stub DsBindWithSpnExW
+@@ -1247,7 +1247,7 @@
+ @ stdcall QueryThreadpoolStackInformation(ptr ptr)
+ @ stdcall QueryUnbiasedInterruptTime(ptr) ntdll.RtlQueryUnbiasedInterruptTime
+ # @ stub QueryUnbiasedInterruptTimePrecise
+-# @ stub QueryVirtualMemoryInformation
++@ stdcall QueryVirtualMemoryInformation(long ptr long ptr long ptr)
+ @ stdcall QueryWorkingSet(long ptr long)
+ @ stdcall QueryWorkingSetEx(long ptr long)
+ @ stdcall QueueUserAPC(ptr long long)
 @@ -1519,7 +1519,7 @@
  @ stdcall SetThreadGroupAffinity(long ptr ptr)
  @ stdcall SetThreadIdealProcessor(long long)
@@ -12120,10 +8096,58 @@ index 00012198eb6..3fb2192b1ff 100644
  @ stdcall SetThreadLocale(long)
  @ stdcall SetThreadPreferredUILanguages(long ptr ptr)
  @ stdcall SetThreadPriority(long long)
+diff --git a/dlls/kernelbase/memory.c b/dlls/kernelbase/memory.c
+index e5ad1e5ad64..83a40a7cd5a 100644
+--- a/dlls/kernelbase/memory.c
++++ b/dlls/kernelbase/memory.c
+@@ -49,6 +49,19 @@ WINE_DECLARE_DEBUG_CHANNEL(globalmem);
+  ***********************************************************************/
+ 
+ 
++/***********************************************************************
++ *             DiscardVirtualMemory   (kernelbase.@)
++ */
++DWORD WINAPI DECLSPEC_HOTPATCH DiscardVirtualMemory( void *addr, SIZE_T size )
++{
++    NTSTATUS status;
++    LPVOID ret = addr;
++
++    status = NtAllocateVirtualMemory( GetCurrentProcess(), &ret, 0, &size, MEM_RESET, PAGE_NOACCESS );
++    return RtlNtStatusToDosError( status );
++}
++
++
+ /***********************************************************************
+  *             FlushViewOfFile   (kernelbase.@)
+  */
+@@ -1286,6 +1299,23 @@ LPVOID WINAPI DECLSPEC_HOTPATCH VirtualAllocExNuma( HANDLE process, void *addr,
+ }
+ 
+ 
++/***********************************************************************
++ *             QueryVirtualMemoryInformation   (kernelbase.@)
++ */
++BOOL WINAPI DECLSPEC_HOTPATCH QueryVirtualMemoryInformation( HANDLE process, const void *addr,
++        WIN32_MEMORY_INFORMATION_CLASS info_class, void *info, SIZE_T size, SIZE_T *ret_size)
++{
++    switch (info_class)
++    {
++        case MemoryRegionInfo:
++            return set_ntstatus( NtQueryVirtualMemory( process, addr, MemoryRegionInformation, info, size, ret_size ));
++        default:
++            FIXME("Unsupported info class %u.\n", info_class);
++            return FALSE;
++    }
++}
++
++
+ /***********************************************************************
+  * CPU functions
+  ***********************************************************************/
 diff --git a/dlls/kernelbase/thread.c b/dlls/kernelbase/thread.c
 index 1c878474acb..3f61ae46776 100644
---- wine/dlls/kernelbase/thread.c
-+++ wine/dlls/kernelbase/thread.c
+--- a/dlls/kernelbase/thread.c
++++ b/dlls/kernelbase/thread.c
 @@ -606,6 +606,25 @@ LANGID WINAPI DECLSPEC_HOTPATCH SetThreadUILanguage( LANGID langid )
  }
  
@@ -12150,536 +8174,10 @@ index 1c878474acb..3f61ae46776 100644
  /**********************************************************************
   *           SuspendThread   (kernelbase.@)
   */
-diff --git a/include/processthreadsapi.h b/include/processthreadsapi.h
-index 8cdaff4796a..d266b7a727b 100644
---- wine/include/processthreadsapi.h
-+++ wine/include/processthreadsapi.h
-@@ -23,8 +23,23 @@
- extern "C" {
- #endif
- 
-+typedef enum _THREAD_INFORMATION_CLASS
-+{
-+    ThreadMemoryPriority,
-+    ThreadAbsoluteCpuPriority,
-+    ThreadDynamicCodePolicy,
-+    ThreadPowerThrottling,
-+    ThreadInformationClassMax
-+} THREAD_INFORMATION_CLASS;
-+
-+typedef struct _MEMORY_PRIORITY_INFORMATION
-+{
-+    ULONG MemoryPriority;
-+} MEMORY_PRIORITY_INFORMATION, *PMEMORY_PRIORITY_INFORMATION;
-+
- WINBASEAPI HRESULT WINAPI GetThreadDescription(HANDLE,PWSTR *);
- WINBASEAPI HRESULT WINAPI SetThreadDescription(HANDLE,PCWSTR);
-+WINBASEAPI BOOL WINAPI SetThreadInformation(HANDLE,THREAD_INFORMATION_CLASS,LPVOID,DWORD);
- 
- #ifdef __cplusplus
- }
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/configure b/configure
-index cdf99fc287d..bfa6e1885a1 100755
---- wine/configure
-+++ wine/configure
-@@ -1424,6 +1424,7 @@ enable_wimgapi
- enable_win32u
- enable_windows_devices_enumeration
- enable_windows_gaming_input
-+enable_windows_gaming_ui_gamebar
- enable_windows_globalization
- enable_windows_media_devices
- enable_windows_media_speech
-@@ -22531,6 +22532,8 @@ wine_fn_config_makefile dlls/windebug.dll16 enable_win16
- wine_fn_config_makefile dlls/windows.devices.enumeration enable_windows_devices_enumeration
- wine_fn_config_makefile dlls/windows.gaming.input enable_windows_gaming_input
- wine_fn_config_makefile dlls/windows.gaming.input/tests enable_tests
-+wine_fn_config_makefile dlls/windows.gaming.ui.gamebar enable_windows_gaming_ui_gamebar 
-+wine_fn_config_makefile dlls/windows.gaming.ui.gamebar/tests enable_tests
- wine_fn_config_makefile dlls/windows.globalization enable_windows_globalization
- wine_fn_config_makefile dlls/windows.globalization/tests enable_tests
- wine_fn_config_makefile dlls/windows.media.devices enable_windows_media_devices
-diff --git a/configure.ac b/configure.ac
-index c05d5b6f539..8fad7462dd9 100644
---- wine/configure.ac
-+++ wine/configure.ac
-@@ -3175,6 +3175,8 @@ WINE_CONFIG_MAKEFILE(dlls/windebug.dll16,enable_win16)
- WINE_CONFIG_MAKEFILE(dlls/windows.devices.enumeration)
- WINE_CONFIG_MAKEFILE(dlls/windows.gaming.input)
- WINE_CONFIG_MAKEFILE(dlls/windows.gaming.input/tests)
-+WINE_CONFIG_MAKEFILE(dlls/windows.gaming.ui.gamebar)
-+WINE_CONFIG_MAKEFILE(dlls/windows.gaming.ui.gamebar/tests)
- WINE_CONFIG_MAKEFILE(dlls/windows.globalization)
- WINE_CONFIG_MAKEFILE(dlls/windows.globalization/tests)
- WINE_CONFIG_MAKEFILE(dlls/windows.media.devices)
-diff --git a/dlls/windows.gaming.ui.gamebar/Makefile.in b/dlls/windows.gaming.ui.gamebar/Makefile.in
-new file mode 100644
-index 00000000000..a0eefc4b951
---- /dev/null
-+++ wine/dlls/windows.gaming.ui.gamebar/Makefile.in
-@@ -0,0 +1,8 @@
-+MODULE = windows.gaming.ui.gamebar.dll
-+IMPORTS = combase uuid
-+
-+C_SRCS = \
-+	main.c
-+
-+IDL_SRCS = \
-+	classes.idl
-diff --git a/dlls/windows.gaming.ui.gamebar/classes.idl b/dlls/windows.gaming.ui.gamebar/classes.idl
-new file mode 100644
-index 00000000000..ef10fcb6283
---- /dev/null
-+++ wine/dlls/windows.gaming.ui.gamebar/classes.idl
-@@ -0,0 +1,33 @@
-+/*
-+ * Runtime Classes for windows.gaming.ui.gamebar.dll
-+ *
-+ * Copyright 2022 Paul Gofman for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#pragma makedep register
-+
-+#ifdef __WIDL__
-+#pragma winrt ns_prefix
-+#endif
-+
-+import "inspectable.idl";
-+import "eventtoken.idl";
-+import "windowscontracts.idl";
-+import "windows.foundation.idl";
-+
-+#define DO_NO_IMPORTS
-+#include "windows.gaming.ui.idl"
-diff --git a/dlls/windows.gaming.ui.gamebar/main.c b/dlls/windows.gaming.ui.gamebar/main.c
-new file mode 100644
-index 00000000000..ec6b442cfc0
---- /dev/null
-+++ wine/dlls/windows.gaming.ui.gamebar/main.c
-@@ -0,0 +1,282 @@
-+/* WinRT Windows.Gaming.UI.GameBar implementation
-+ *
-+ * Copyright 2022 Paul Gofman for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+#include <stdarg.h>
-+#include <stddef.h>
-+
-+#define COBJMACROS
-+#include "windef.h"
-+#include "winbase.h"
-+#include "winreg.h"
-+#include "winuser.h"
-+#include "winstring.h"
-+
-+#include "initguid.h"
-+
-+#define WIDL_using_Windows_Foundation
-+#define WIDL_using_Windows_Gaming_UI
-+#include "activation.h"
-+#include "windows.gaming.ui.h"
-+
-+#include "wine/debug.h"
-+
-+WINE_DEFAULT_DEBUG_CHANNEL(gamebar);
-+
-+static EventRegistrationToken dummy_token = {.value = 0xdeadbeef};
-+
-+struct gamebar_statics
-+{
-+    IActivationFactory IActivationFactory_iface;
-+    IGameBarStatics IGameBarStatics_iface;
-+    LONG ref;
-+};
-+
-+static inline struct gamebar_statics *impl_from_IActivationFactory( IActivationFactory *iface )
-+{
-+    return CONTAINING_RECORD( iface, struct gamebar_statics, IActivationFactory_iface );
-+}
-+
-+static HRESULT WINAPI factory_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
-+{
-+    struct gamebar_statics *impl = impl_from_IActivationFactory( iface );
-+
-+    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
-+
-+    if (IsEqualGUID( iid, &IID_IUnknown ) ||
-+        IsEqualGUID( iid, &IID_IInspectable ) ||
-+        IsEqualGUID( iid, &IID_IAgileObject ) ||
-+        IsEqualGUID( iid, &IID_IActivationFactory ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
-+        return S_OK;
-+    }
-+
-+    if (IsEqualGUID( iid, &IID_IGameBarStatics ))
-+    {
-+        IInspectable_AddRef( (*out = &impl->IGameBarStatics_iface) );
-+        return S_OK;
-+    }
-+
-+    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
-+    *out = NULL;
-+    return E_NOINTERFACE;
-+}
-+
-+static ULONG WINAPI factory_AddRef( IActivationFactory *iface )
-+{
-+    struct gamebar_statics *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedIncrement( &impl->ref );
-+    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static ULONG WINAPI factory_Release( IActivationFactory *iface )
-+{
-+    struct gamebar_statics *impl = impl_from_IActivationFactory( iface );
-+    ULONG ref = InterlockedDecrement( &impl->ref );
-+    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
-+    return ref;
-+}
-+
-+static HRESULT WINAPI factory_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
-+{
-+    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI factory_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
-+{
-+    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI factory_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
-+{
-+    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
-+    return E_NOTIMPL;
-+}
-+
-+static HRESULT WINAPI factory_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
-+{
-+    FIXME( "iface %p, instance %p stub!\n", iface, instance );
-+    return E_NOTIMPL;
-+}
-+
-+static const struct IActivationFactoryVtbl factory_vtbl =
-+{
-+    factory_QueryInterface,
-+    factory_AddRef,
-+    factory_Release,
-+    /* IInspectable methods */
-+    factory_GetIids,
-+    factory_GetRuntimeClassName,
-+    factory_GetTrustLevel,
-+    /* IActivationFactory methods */
-+    factory_ActivateInstance,
-+};
-+
-+#define DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from, iface_mem, expr )             \
-+    static inline impl_type *impl_from( iface_type *iface )                                        \
-+    {                                                                                              \
-+        return CONTAINING_RECORD( iface, impl_type, iface_mem );                                   \
-+    }                                                                                              \
-+    static HRESULT WINAPI pfx##_QueryInterface( iface_type *iface, REFIID iid, void **out )        \
-+    {                                                                                              \
-+        impl_type *impl = impl_from( iface );                                                      \
-+        return IInspectable_QueryInterface( (IInspectable *)(expr), iid, out );                    \
-+    }                                                                                              \
-+    static ULONG WINAPI pfx##_AddRef( iface_type *iface )                                          \
-+    {                                                                                              \
-+        impl_type *impl = impl_from( iface );                                                      \
-+        return IInspectable_AddRef( (IInspectable *)(expr) );                                      \
-+    }                                                                                              \
-+    static ULONG WINAPI pfx##_Release( iface_type *iface )                                         \
-+    {                                                                                              \
-+        impl_type *impl = impl_from( iface );                                                      \
-+        return IInspectable_Release( (IInspectable *)(expr) );                                     \
-+    }                                                                                              \
-+    static HRESULT WINAPI pfx##_GetIids( iface_type *iface, ULONG *iid_count, IID **iids )         \
-+    {                                                                                              \
-+        impl_type *impl = impl_from( iface );                                                      \
-+        return IInspectable_GetIids( (IInspectable *)(expr), iid_count, iids );                    \
-+    }                                                                                              \
-+    static HRESULT WINAPI pfx##_GetRuntimeClassName( iface_type *iface, HSTRING *class_name )      \
-+    {                                                                                              \
-+        impl_type *impl = impl_from( iface );                                                      \
-+        return IInspectable_GetRuntimeClassName( (IInspectable *)(expr), class_name );             \
-+    }                                                                                              \
-+    static HRESULT WINAPI pfx##_GetTrustLevel( iface_type *iface, TrustLevel *trust_level )        \
-+    {                                                                                              \
-+        impl_type *impl = impl_from( iface );                                                      \
-+        return IInspectable_GetTrustLevel( (IInspectable *)(expr), trust_level );                  \
-+    }
-+#define DEFINE_IINSPECTABLE( pfx, iface_type, impl_type, base_iface )                              \
-+    DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from_##iface_type, iface_type##_iface, &impl->base_iface )
-+
-+DEFINE_IINSPECTABLE( statics, IGameBarStatics, struct gamebar_statics, IActivationFactory_iface )
-+
-+static HRESULT WINAPI statics_add_VisibilityChanged( IGameBarStatics *iface,
-+                                                          IEventHandler_IInspectable *handler,
-+                                                          EventRegistrationToken *token )
-+{
-+    FIXME( "iface %p, handler %p, token %p stub.\n", iface, handler, token );
-+    *token = dummy_token;
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI statics_remove_VisibilityChanged( IGameBarStatics *iface, EventRegistrationToken token )
-+{
-+    FIXME( "iface %p, token %#I64x stub.\n", iface, token.value );
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI statics_add_IsInputRedirectedChanged( IGameBarStatics *iface,
-+                                                          IEventHandler_IInspectable *handler,
-+                                                          EventRegistrationToken *token )
-+{
-+    FIXME( "iface %p, handler %p, token %p stub.\n", iface, handler, token );
-+    *token = dummy_token;
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI statics_remove_IsInputRedirectedChanged( IGameBarStatics *iface, EventRegistrationToken token )
-+{
-+    FIXME( "iface %p, token %#I64x stub.\n", iface, token.value );
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI statics_get_Visible( IGameBarStatics *iface, BOOLEAN *value)
-+{
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    if (!value) return E_INVALIDARG;
-+    *value = FALSE;
-+    return S_OK;
-+}
-+
-+static HRESULT WINAPI statics_get_IsInputRedirected( IGameBarStatics *iface, BOOLEAN *value)
-+{
-+    TRACE( "iface %p, value %p.\n", iface, value );
-+
-+    if (!value) return E_INVALIDARG;
-+    *value = FALSE;
-+    return S_OK;
-+}
-+
-+static const struct IGameBarStaticsVtbl statics_vtbl =
-+{
-+    statics_QueryInterface,
-+    statics_AddRef,
-+    statics_Release,
-+    /* IInspectable methods */
-+    statics_GetIids,
-+    statics_GetRuntimeClassName,
-+    statics_GetTrustLevel,
-+    /* IGameBarStatics methods */
-+    statics_add_VisibilityChanged,
-+    statics_remove_VisibilityChanged,
-+    statics_add_IsInputRedirectedChanged,
-+    statics_remove_IsInputRedirectedChanged,
-+    statics_get_Visible,
-+    statics_get_IsInputRedirected,
-+};
-+
-+static struct gamebar_statics gamebar_statics =
-+{
-+    {&factory_vtbl},
-+    {&statics_vtbl},
-+    1,
-+};
-+
-+static IActivationFactory *gamebar_factory = &gamebar_statics.IActivationFactory_iface;
-+
-+HRESULT WINAPI DllGetClassObject(REFCLSID clsid, REFIID riid, void **out)
-+{
-+    FIXME("clsid %s, riid %s, out %p stub!\n", debugstr_guid(clsid), debugstr_guid(riid), out);
-+
-+    return CLASS_E_CLASSNOTAVAILABLE;
-+}
-+
-+HRESULT WINAPI DllGetActivationFactory( HSTRING class_str, IActivationFactory **factory )
-+{
-+    const WCHAR *buffer = WindowsGetStringRawBuffer( class_str, NULL );
-+
-+    TRACE( "class %s, factory %p.\n", debugstr_w(buffer), factory );
-+
-+    *factory = NULL;
-+
-+    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_UI_GameBar ))
-+        IActivationFactory_QueryInterface( gamebar_factory, &IID_IActivationFactory, (void **)factory );
-+
-+    if (*factory) return S_OK;
-+    return CLASS_E_CLASSNOTAVAILABLE;
-+}
-+
-+BOOL WINAPI DllMain( HINSTANCE instance, DWORD reason, void *reserved )
-+{
-+    TRACE( "instance %p, reason %lu, reserved %p.\n", instance, reason, reserved );
-+
-+    switch (reason)
-+    {
-+    case DLL_PROCESS_ATTACH:
-+        DisableThreadLibraryCalls( instance );
-+        break;
-+    }
-+    return TRUE;
-+}
-diff --git a/dlls/windows.gaming.ui.gamebar/tests/Makefile.in b/dlls/windows.gaming.ui.gamebar/tests/Makefile.in
-new file mode 100644
-index 00000000000..67d70eee241
---- /dev/null
-+++ wine/dlls/windows.gaming.ui.gamebar/tests/Makefile.in
-@@ -0,0 +1,5 @@
-+TESTDLL = windows.gaming.ui.gamebar.dll
-+IMPORTS = combase
-+
-+C_SRCS = \
-+	gamebar.c
-diff --git a/dlls/windows.gaming.ui.gamebar/tests/gamebar.c b/dlls/windows.gaming.ui.gamebar/tests/gamebar.c
-new file mode 100644
-index 00000000000..14fcb05284f
---- /dev/null
-+++ wine/dlls/windows.gaming.ui.gamebar/tests/gamebar.c
-@@ -0,0 +1,91 @@
-+/*
-+ * Copyright 2022 Paul Gofman for CodeWeavers
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+#define COBJMACROS
-+#include "initguid.h"
-+#include <stdarg.h>
-+
-+#include "windef.h"
-+#include "winbase.h"
-+#include "winerror.h"
-+#include "winstring.h"
-+
-+#include "roapi.h"
-+
-+#define WIDL_using_Windows_Foundation
-+#define WIDL_using_Windows_Gaming_UI
-+#include "windows.foundation.h"
-+#include "windows.gaming.ui.h"
-+
-+#include "wine/test.h"
-+
-+static void test_GameBarStatics(void)
-+{
-+    static const WCHAR *gamebar_statics_name = L"Windows.Gaming.UI.GameBar";
-+
-+    IActivationFactory *factory = NULL;
-+    IInspectable *inspectable = NULL, *tmp_inspectable = NULL;
-+    IAgileObject *agile_object = NULL, *tmp_agile_object = NULL;
-+    IGameBarStatics *gamebar_statics = NULL;
-+    HSTRING str;
-+    HRESULT hr;
-+
-+    hr = WindowsCreateString(gamebar_statics_name, wcslen(gamebar_statics_name), &str);
-+    ok(hr == S_OK, "WindowsCreateString failed, hr %#lx\n", hr);
-+
-+    hr = RoGetActivationFactory(str, &IID_IActivationFactory, (void **)&factory);
-+    ok(hr == S_OK, "RoGetActivationFactory failed, hr %#lx\n", hr);
-+    WindowsDeleteString(str);
-+
-+    /* interface tests */
-+    hr = IActivationFactory_QueryInterface(factory, &IID_IInspectable, (void **)&inspectable);
-+    ok(hr == S_OK, "IActivationFactory_QueryInterface IID_IInspectable failed, hr %#lx\n", hr);
-+
-+    hr = IActivationFactory_QueryInterface(factory, &IID_IAgileObject, (void **)&agile_object);
-+    ok(hr == S_OK, "IActivationFactory_QueryInterface IID_IAgileObject failed, hr %#lx\n", hr);
-+
-+    hr = IActivationFactory_QueryInterface(factory, &IID_IGameBarStatics, (void **)&gamebar_statics);
-+    ok(hr == S_OK, "IActivationFactory_QueryInterface IID_IMediaDeviceStatics failed, hr %#lx\n", hr);
-+
-+    hr = IGameBarStatics_QueryInterface(gamebar_statics, &IID_IInspectable, (void **)&tmp_inspectable);
-+    ok(hr == S_OK, "IMediaDeviceStatics_QueryInterface IID_IInspectable failed, hr %#lx\n", hr);
-+    ok(tmp_inspectable == inspectable, "IMediaDeviceStatics_QueryInterface IID_IInspectable returned %p, expected %p\n", tmp_inspectable, inspectable);
-+    IInspectable_Release(tmp_inspectable);
-+
-+    hr = IGameBarStatics_QueryInterface(gamebar_statics, &IID_IAgileObject, (void **)&tmp_agile_object);
-+    ok(hr == S_OK, "IMediaDeviceStatics_QueryInterface IID_IAgileObject failed, hr %#lx\n", hr);
-+    ok(tmp_agile_object == agile_object, "IMediaDeviceStatics_QueryInterface IID_IAgileObject returned %p, expected %p\n", tmp_agile_object, agile_object);
-+    IAgileObject_Release(tmp_agile_object);
-+
-+
-+    IAgileObject_Release(agile_object);
-+    IInspectable_Release(inspectable);
-+    IActivationFactory_Release(factory);
-+    IGameBarStatics_Release(gamebar_statics);
-+}
-+
-+START_TEST(gamebar)
-+{
-+    HRESULT hr;
-+
-+    hr = RoInitialize(RO_INIT_MULTITHREADED);
-+    ok(hr == S_OK, "RoInitialize failed, hr %#lx\n", hr);
-+
-+    test_GameBarStatics();
-+
-+    RoUninitialize();
-+}
-diff --git a/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec b/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec
-new file mode 100644
-index 00000000000..20a8bfa98ea
---- /dev/null
-+++ wine/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec
-@@ -0,0 +1,3 @@
-+@ stdcall -private DllCanUnloadNow()
-+@ stdcall -private DllGetActivationFactory(ptr ptr)
-+@ stdcall -private DllGetClassObject(ptr ptr ptr)
--- 
-2.39.2 (Apple Git-144)
-
 diff --git a/dlls/mfmediaengine/Makefile.in b/dlls/mfmediaengine/Makefile.in
 index a0e944c0633..bd273aafdab 100644
---- wine/dlls/mfmediaengine/Makefile.in
-+++ wine/dlls/mfmediaengine/Makefile.in
+--- a/dlls/mfmediaengine/Makefile.in
++++ b/dlls/mfmediaengine/Makefile.in
 @@ -1,4 +1,6 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  MODULE    = mfmediaengine.dll
@@ -12689,8 +8187,8 @@ index a0e944c0633..bd273aafdab 100644
  EXTRADLLFLAGS = -Wb,--prefer-native
 diff --git a/dlls/mfmediaengine/main.c b/dlls/mfmediaengine/main.c
 index a191448b69f..98504c5e269 100644
---- wine/dlls/mfmediaengine/main.c
-+++ wine/dlls/mfmediaengine/main.c
+--- a/dlls/mfmediaengine/main.c
++++ b/dlls/mfmediaengine/main.c
 @@ -29,8 +29,6 @@
  #include "mferror.h"
  #include "dxgi.h"
@@ -14443,8 +9941,8 @@ index a191448b69f..98504c5e269 100644
  }
 diff --git a/dlls/mfmediaengine/tests/Makefile.in b/dlls/mfmediaengine/tests/Makefile.in
 index 421b75587a0..13bbef64df2 100644
---- wine/dlls/mfmediaengine/tests/Makefile.in
-+++ wine/dlls/mfmediaengine/tests/Makefile.in
+--- a/dlls/mfmediaengine/tests/Makefile.in
++++ b/dlls/mfmediaengine/tests/Makefile.in
 @@ -1,5 +1,6 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  TESTDLL   = mfmediaengine.dll
@@ -14455,8 +9953,8 @@ index 421b75587a0..13bbef64df2 100644
  	mfmediaengine.c
 diff --git a/dlls/mfmediaengine/tests/mfmediaengine.c b/dlls/mfmediaengine/tests/mfmediaengine.c
 index 008ee58849c..096f6e3f2a5 100644
---- wine/dlls/mfmediaengine/tests/mfmediaengine.c
-+++ wine/dlls/mfmediaengine/tests/mfmediaengine.c
+--- a/dlls/mfmediaengine/tests/mfmediaengine.c
++++ b/dlls/mfmediaengine/tests/mfmediaengine.c
 @@ -29,9 +29,8 @@
  #include "mferror.h"
  #include "dxgi.h"
@@ -15495,8 +10993,8 @@ index 008ee58849c..096f6e3f2a5 100644
  
 diff --git a/dlls/mfplat/Makefile.in b/dlls/mfplat/Makefile.in
 index 4515d652c58..79af7650de6 100644
---- wine/dlls/mfplat/Makefile.in
-+++ wine/dlls/mfplat/Makefile.in
+--- a/dlls/mfplat/Makefile.in
++++ b/dlls/mfplat/Makefile.in
 @@ -1,7 +1,7 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  MODULE    = mfplat.dll
@@ -15511,7 +11009,7 @@ diff --git a/dlls/mfplat/aac_decoder.c b/dlls/mfplat/aac_decoder.c
 new file mode 100644
 index 00000000000..97f2824039d
 --- /dev/null
-+++ wine/dlls/mfplat/aac_decoder.c
++++ b/dlls/mfplat/aac_decoder.c
 @@ -0,0 +1,620 @@
 +/* AAC Decoder Transform
 + *
@@ -16137,7 +11635,7 @@ diff --git a/dlls/mfplat/audioconvert.c b/dlls/mfplat/audioconvert.c
 new file mode 100644
 index 00000000000..2e16c9c78f5
 --- /dev/null
-+++ wine/dlls/mfplat/audioconvert.c
++++ b/dlls/mfplat/audioconvert.c
 @@ -0,0 +1,910 @@
 +/* GStreamer Audio Converter
 + *
@@ -17051,8 +12549,8 @@ index 00000000000..2e16c9c78f5
 +}
 diff --git a/dlls/mfplat/buffer.c b/dlls/mfplat/buffer.c
 index eada3df18ad..9081dc39eab 100644
---- wine/dlls/mfplat/buffer.c
-+++ wine/dlls/mfplat/buffer.c
+--- a/dlls/mfplat/buffer.c
++++ b/dlls/mfplat/buffer.c
 @@ -18,8 +18,6 @@
  
  #define COBJMACROS
@@ -17357,7 +12855,7 @@ diff --git a/dlls/mfplat/colorconvert.c b/dlls/mfplat/colorconvert.c
 new file mode 100644
 index 00000000000..92322e877ec
 --- /dev/null
-+++ wine/dlls/mfplat/colorconvert.c
++++ b/dlls/mfplat/colorconvert.c
 @@ -0,0 +1,901 @@
 +/* GStreamer Color Converter
 + *
@@ -18264,7 +13762,7 @@ diff --git a/dlls/mfplat/decode_transform.c b/dlls/mfplat/decode_transform.c
 new file mode 100644
 index 00000000000..fb7f432923f
 --- /dev/null
-+++ wine/dlls/mfplat/decode_transform.c
++++ b/dlls/mfplat/decode_transform.c
 @@ -0,0 +1,1218 @@
 +/* GStreamer Decoder Transform
 + *
@@ -19488,7 +14986,7 @@ diff --git a/dlls/mfplat/gst_guids.h b/dlls/mfplat/gst_guids.h
 new file mode 100644
 index 00000000000..ea859586d7f
 --- /dev/null
-+++ wine/dlls/mfplat/gst_guids.h
++++ b/dlls/mfplat/gst_guids.h
 @@ -0,0 +1,23 @@
 +/*
 + * GStreamer Guids
@@ -19517,7 +15015,7 @@ diff --git a/dlls/mfplat/gst_private.h b/dlls/mfplat/gst_private.h
 new file mode 100644
 index 00000000000..c6b256b4fdd
 --- /dev/null
-+++ wine/dlls/mfplat/gst_private.h
++++ b/dlls/mfplat/gst_private.h
 @@ -0,0 +1,217 @@
 +/*
 + * GStreamer splitter + decoder, adapted from parser.c
@@ -19740,7 +15238,7 @@ diff --git a/dlls/mfplat/h264_decoder.c b/dlls/mfplat/h264_decoder.c
 new file mode 100644
 index 00000000000..f6a4d47188f
 --- /dev/null
-+++ wine/dlls/mfplat/h264_decoder.c
++++ b/dlls/mfplat/h264_decoder.c
 @@ -0,0 +1,727 @@
 +/* H264 Decoder Transform
 + *
@@ -20471,8 +15969,8 @@ index 00000000000..f6a4d47188f
 +}
 diff --git a/dlls/mfplat/main.c b/dlls/mfplat/main.c
 index cee052defeb..83fc8549e24 100644
---- wine/dlls/mfplat/main.c
-+++ wine/dlls/mfplat/main.c
+--- a/dlls/mfplat/main.c
++++ b/dlls/mfplat/main.c
 @@ -36,6 +36,7 @@
  #include "d3d11.h"
  #include "uuids.h"
@@ -21985,7 +17483,7 @@ diff --git a/dlls/mfplat/media_source.c b/dlls/mfplat/media_source.c
 new file mode 100644
 index 00000000000..82a6da1bcbf
 --- /dev/null
-+++ wine/dlls/mfplat/media_source.c
++++ b/dlls/mfplat/media_source.c
 @@ -0,0 +1,2006 @@
 +/* GStreamer Media Source
 + *
@@ -23995,8 +19493,8 @@ index 00000000000..82a6da1bcbf
 +}
 diff --git a/dlls/mfplat/mediatype.c b/dlls/mfplat/mediatype.c
 index b36a44d1e1c..4f24ccbd237 100644
---- wine/dlls/mfplat/mediatype.c
-+++ wine/dlls/mfplat/mediatype.c
+--- a/dlls/mfplat/mediatype.c
++++ b/dlls/mfplat/mediatype.c
 @@ -25,6 +25,8 @@
  #include "ks.h"
  #include "ksmedia.h"
@@ -24345,7 +19843,7 @@ diff --git a/dlls/mfplat/mfplat.c b/dlls/mfplat/mfplat.c
 new file mode 100644
 index 00000000000..3ec45d7de4e
 --- /dev/null
-+++ wine/dlls/mfplat/mfplat.c
++++ b/dlls/mfplat/mfplat.c
 @@ -0,0 +1,1036 @@
 +/*
 + * Copyright 2019 Nikolay Sivov for CodeWeavers
@@ -25385,8 +20883,8 @@ index 00000000000..3ec45d7de4e
 +}
 diff --git a/dlls/mfplat/mfplat.spec b/dlls/mfplat/mfplat.spec
 index 31c80f596c2..44d98a957e2 100644
---- wine/dlls/mfplat/mfplat.spec
-+++ wine/dlls/mfplat/mfplat.spec
+--- a/dlls/mfplat/mfplat.spec
++++ b/dlls/mfplat/mfplat.spec
 @@ -20,7 +20,7 @@
  @ stdcall MFAllocateWorkQueue(ptr)
  @ stdcall MFAllocateWorkQueueEx(long ptr) rtworkq.RtwqAllocateWorkQueue
@@ -25416,8 +20914,8 @@ index 31c80f596c2..44d98a957e2 100644
  @ stdcall MFTUnregisterLocal(ptr)
 diff --git a/dlls/mfplat/mfplat_private.h b/dlls/mfplat/mfplat_private.h
 index 8418c8eb2ef..b646d9e7cbb 100644
---- wine/dlls/mfplat/mfplat_private.h
-+++ wine/dlls/mfplat/mfplat_private.h
+--- a/dlls/mfplat/mfplat_private.h
++++ b/dlls/mfplat/mfplat_private.h
 @@ -128,13 +128,11 @@ static inline const char *debugstr_propvar(const PROPVARIANT *v)
          case VT_NULL:
              return wine_dbg_sprintf("%p {VT_NULL}", v);
@@ -25446,7 +20944,7 @@ diff --git a/dlls/mfplat/quartz_parser.c b/dlls/mfplat/quartz_parser.c
 new file mode 100644
 index 00000000000..e9a3b00016d
 --- /dev/null
-+++ wine/dlls/mfplat/quartz_parser.c
++++ b/dlls/mfplat/quartz_parser.c
 @@ -0,0 +1,1945 @@
 +/*
 + * DirectShow parser filters
@@ -27395,8 +22893,8 @@ index 00000000000..e9a3b00016d
 +}
 diff --git a/dlls/mfplat/queue.c b/dlls/mfplat/queue.c
 index 6ee0df37dce..8279929b46e 100644
---- wine/dlls/mfplat/queue.c
-+++ wine/dlls/mfplat/queue.c
+--- a/dlls/mfplat/queue.c
++++ b/dlls/mfplat/queue.c
 @@ -16,7 +16,13 @@
   * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
   */
@@ -27451,7 +22949,7 @@ diff --git a/dlls/mfplat/rsrc.rc b/dlls/mfplat/rsrc.rc
 new file mode 100644
 index 00000000000..592bcb01138
 --- /dev/null
-+++ wine/dlls/mfplat/rsrc.rc
++++ b/dlls/mfplat/rsrc.rc
 @@ -0,0 +1,28 @@
 +/*
 + * This library is free software; you can redistribute it and/or
@@ -27483,8 +22981,8 @@ index 00000000000..592bcb01138
 +1 WINE_REGISTRY winegstreamer.rgs
 diff --git a/dlls/mfplat/sample.c b/dlls/mfplat/sample.c
 index 8ef80eb5f24..04c68c87199 100644
---- wine/dlls/mfplat/sample.c
-+++ wine/dlls/mfplat/sample.c
+--- a/dlls/mfplat/sample.c
++++ b/dlls/mfplat/sample.c
 @@ -25,6 +25,7 @@
  #include "initguid.h"
  #include "dxva2api.h"
@@ -27611,8 +23109,8 @@ index 8ef80eb5f24..04c68c87199 100644
  
 diff --git a/dlls/mfplat/tests/Makefile.in b/dlls/mfplat/tests/Makefile.in
 index ae9cc378933..d5ef14e88f0 100644
---- wine/dlls/mfplat/tests/Makefile.in
-+++ wine/dlls/mfplat/tests/Makefile.in
+--- a/dlls/mfplat/tests/Makefile.in
++++ b/dlls/mfplat/tests/Makefile.in
 @@ -1,3 +1,4 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  TESTDLL   = mfplat.dll
@@ -27620,8 +23118,8 @@ index ae9cc378933..d5ef14e88f0 100644
  
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
 index 8d21f2ed60e..20577453fe3 100644
---- wine/dlls/mfplat/tests/mfplat.c
-+++ wine/dlls/mfplat/tests/mfplat.c
+--- a/dlls/mfplat/tests/mfplat.c
++++ b/dlls/mfplat/tests/mfplat.c
 @@ -72,7 +72,7 @@ static void _expect_ref(IUnknown *obj, ULONG ref, int line)
      ULONG rc;
      IUnknown_AddRef(obj);
@@ -34732,7 +30230,7 @@ diff --git a/dlls/mfplat/unix_private.h b/dlls/mfplat/unix_private.h
 new file mode 100644
 index 00000000000..88566ab1db5
 --- /dev/null
-+++ wine/dlls/mfplat/unix_private.h
++++ b/dlls/mfplat/unix_private.h
 @@ -0,0 +1,37 @@
 +/*
 + * winegstreamer Unix library interface
@@ -34775,7 +30273,7 @@ diff --git a/dlls/mfplat/unixlib.h b/dlls/mfplat/unixlib.h
 new file mode 100644
 index 00000000000..e39cf54fd08
 --- /dev/null
-+++ wine/dlls/mfplat/unixlib.h
++++ b/dlls/mfplat/unixlib.h
 @@ -0,0 +1,354 @@
 +/*
 + * winegstreamer Unix library interface
@@ -35135,7 +30633,7 @@ diff --git a/dlls/mfplat/wg_parser.c b/dlls/mfplat/wg_parser.c
 new file mode 100644
 index 00000000000..cbd037e42c8
 --- /dev/null
-+++ wine/dlls/mfplat/wg_parser.c
++++ b/dlls/mfplat/wg_parser.c
 @@ -0,0 +1,2584 @@
 +/*
 + * GStreamer parser backend
@@ -37725,7 +33223,7 @@ diff --git a/dlls/mfplat/wg_transform.c b/dlls/mfplat/wg_transform.c
 new file mode 100644
 index 00000000000..b080894dbe4
 --- /dev/null
-+++ wine/dlls/mfplat/wg_transform.c
++++ b/dlls/mfplat/wg_transform.c
 @@ -0,0 +1,630 @@
 +/*
 + * GStreamer transform backend
@@ -38361,7 +33859,7 @@ diff --git a/dlls/mfplat/winegstreamer.rgs b/dlls/mfplat/winegstreamer.rgs
 new file mode 100644
 index 00000000000..923ba673f8c
 --- /dev/null
-+++ wine/dlls/mfplat/winegstreamer.rgs
++++ b/dlls/mfplat/winegstreamer.rgs
 @@ -0,0 +1,14 @@
 +HKCR
 +{
@@ -38381,7 +33879,7 @@ diff --git a/dlls/mfplat/winegstreamer.spec b/dlls/mfplat/winegstreamer.spec
 new file mode 100644
 index 00000000000..bc6a390f8b1
 --- /dev/null
-+++ wine/dlls/mfplat/winegstreamer.spec
++++ b/dlls/mfplat/winegstreamer.spec
 @@ -0,0 +1,6 @@
 +@ stdcall -private DllCanUnloadNow()
 +@ stdcall -private DllGetClassObject(ptr ptr ptr)
@@ -38393,7 +33891,7 @@ diff --git a/dlls/mfplat/winegstreamer_classes.idl b/dlls/mfplat/winegstreamer_c
 new file mode 100644
 index 00000000000..5762430a5cd
 --- /dev/null
-+++ wine/dlls/mfplat/winegstreamer_classes.idl
++++ b/dlls/mfplat/winegstreamer_classes.idl
 @@ -0,0 +1,93 @@
 +/*
 + * COM classes for winegstreamer
@@ -38492,7 +33990,7 @@ diff --git a/dlls/mfplat/wm_asyncreader.c b/dlls/mfplat/wm_asyncreader.c
 new file mode 100644
 index 00000000000..a7ad6a6c45c
 --- /dev/null
-+++ wine/dlls/mfplat/wm_asyncreader.c
++++ b/dlls/mfplat/wm_asyncreader.c
 @@ -0,0 +1,1590 @@
 +/*
 + * Copyright 2012 Austin English
@@ -40088,7 +35586,7 @@ diff --git a/dlls/mfplat/wm_reader.c b/dlls/mfplat/wm_reader.c
 new file mode 100644
 index 00000000000..cb667c957b4
 --- /dev/null
-+++ wine/dlls/mfplat/wm_reader.c
++++ b/dlls/mfplat/wm_reader.c
 @@ -0,0 +1,2170 @@
 +/*
 + * Copyright 2012 Austin English
@@ -42264,7 +37762,7 @@ diff --git a/dlls/mfplat/wm_syncreader.c b/dlls/mfplat/wm_syncreader.c
 new file mode 100644
 index 00000000000..b03aa69d030
 --- /dev/null
-+++ wine/dlls/mfplat/wm_syncreader.c
++++ b/dlls/mfplat/wm_syncreader.c
 @@ -0,0 +1,407 @@
 +/*
 + * Copyright 2012 Austin English
@@ -42677,7 +38175,7 @@ diff --git a/dlls/mfplat/wma_decoder.c b/dlls/mfplat/wma_decoder.c
 new file mode 100644
 index 00000000000..021d0beb935
 --- /dev/null
-+++ wine/dlls/mfplat/wma_decoder.c
++++ b/dlls/mfplat/wma_decoder.c
 @@ -0,0 +1,861 @@
 +/* WMA Decoder Transform
 + *
@@ -43540,10 +39038,335 @@ index 00000000000..021d0beb935
 +    TRACE("Created decoder %p\n", *out);
 +    return S_OK;
 +}
+diff --git a/dlls/mfreadwrite/reader.c b/dlls/mfreadwrite/reader.c
+index e7b7b555e68..ea0058bd175 100644
+--- a/dlls/mfreadwrite/reader.c
++++ b/dlls/mfreadwrite/reader.c
+@@ -2472,6 +2472,92 @@ failed:
+     return hr;
+ }
+ 
++static HRESULT bytestream_get_url_hint(IMFByteStream *stream, WCHAR const **url)
++{
++    static const unsigned char asfmagic[]  = {0x30,0x26,0xb2,0x75,0x8e,0x66,0xcf,0x11,0xa6,0xd9,0x00,0xaa,0x00,0x62,0xce,0x6c};
++    static const unsigned char wavmagic[]  = { 'R', 'I', 'F', 'F',0x00,0x00,0x00,0x00, 'W', 'A', 'V', 'E', 'f', 'm', 't', ' '};
++    static const unsigned char wavmask[]   = {0xff,0xff,0xff,0xff,0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff};
++    static const unsigned char isommagic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'i', 's', 'o', 'm',0x00,0x00,0x00,0x00};
++    static const unsigned char mp4_magic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'M', 'S', 'N', 'V',0x00,0x00,0x00,0x00};
++    static const unsigned char mp42magic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'm', 'p', '4', '2',0x00,0x00,0x00,0x00};
++    static const unsigned char mp4vmagic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'M', '4', 'V', ' ',0x00,0x00,0x00,0x00};
++    static const unsigned char mp4mask[]   = {0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x00,0x00,0x00,0x00};
++    static const struct stream_content_url_hint
++    {
++        const unsigned char *magic;
++        const WCHAR *url;
++        const unsigned char *mask;
++    }
++    url_hints[] =
++    {
++        { asfmagic,  L".asf" },
++        { wavmagic,  L".wav", wavmask },
++        { isommagic, L".mp4", mp4mask },
++        { mp42magic, L".mp4", mp4mask },
++        { mp4_magic, L".mp4", mp4mask },
++        { mp4vmagic, L".m4v", mp4mask },
++    };
++    unsigned char buffer[4 * sizeof(unsigned int)], pattern[4 * sizeof(unsigned int)];
++    unsigned int i, j, length = 0, caps = 0;
++    IMFAttributes *attributes;
++    QWORD position;
++    HRESULT hr;
++
++    *url = NULL;
++
++    if (SUCCEEDED(IMFByteStream_QueryInterface(stream, &IID_IMFAttributes, (void **)&attributes)))
++    {
++        IMFAttributes_GetStringLength(attributes, &MF_BYTESTREAM_CONTENT_TYPE, &length);
++        IMFAttributes_Release(attributes);
++    }
++
++    if (length)
++        return S_OK;
++
++    if (FAILED(hr = IMFByteStream_GetCapabilities(stream, &caps)))
++        return hr;
++
++    if (!(caps & MFBYTESTREAM_IS_SEEKABLE))
++        return S_OK;
++
++    if (FAILED(hr = IMFByteStream_GetCurrentPosition(stream, &position)))
++        return hr;
++
++    hr = IMFByteStream_Read(stream, buffer, sizeof(buffer), &length);
++    IMFByteStream_SetCurrentPosition(stream, position);
++    if (FAILED(hr))
++        return hr;
++
++    if (length < sizeof(buffer))
++        return S_OK;
++
++    for (i = 0; i < ARRAY_SIZE(url_hints); ++i)
++    {
++        memcpy(pattern, buffer, sizeof(buffer));
++        if (url_hints[i].mask)
++        {
++            unsigned int *mask = (unsigned int *)url_hints[i].mask;
++            unsigned int *data = (unsigned int *)pattern;
++
++            for (j = 0; j < sizeof(buffer) / sizeof(unsigned int); ++j)
++                data[j] &= mask[j];
++
++        }
++        if (!memcmp(pattern, url_hints[i].magic, sizeof(pattern)))
++        {
++            *url = url_hints[i].url;
++            break;
++        }
++    }
++
++    if (*url)
++        TRACE("Stream type guessed as %s from %s.\n", debugstr_w(*url), debugstr_an((char *)buffer, length));
++    else
++        WARN("Unrecognized content type %s.\n", debugstr_an((char *)buffer, length));
++
++    return S_OK;
++}
++
+ static HRESULT create_source_reader_from_stream(IMFByteStream *stream, IMFAttributes *attributes,
+         REFIID riid, void **out)
+ {
+@@ -2479,8 +2565,13 @@ static HRESULT create_source_reader_from_stream(IMFByteStream *stream, IMFAttrib
+     IMFSourceResolver *resolver;
+     MF_OBJECT_TYPE obj_type;
+     IMFMediaSource *source;
++    const WCHAR *url;
+     HRESULT hr;
+ 
++    /* If stream does not have content type set, try to guess from starting byte sequence. */
++    if (FAILED(hr = bytestream_get_url_hint(stream, &url)))
++        return hr;
++
+     if (FAILED(hr = MFCreateSourceResolver(&resolver)))
+         return hr;
+ 
+@@ -2488,7 +2579,7 @@ static HRESULT create_source_reader_from_stream(IMFByteStream *stream, IMFAttrib
+         IMFAttributes_GetUnknown(attributes, &MF_SOURCE_READER_MEDIASOURCE_CONFIG, &IID_IPropertyStore,
+                 (void **)&props);
+ 
+-    hr = IMFSourceResolver_CreateObjectFromByteStream(resolver, stream, NULL, MF_RESOLUTION_MEDIASOURCE
++    hr = IMFSourceResolver_CreateObjectFromByteStream(resolver, stream, url, MF_RESOLUTION_MEDIASOURCE
+             | MF_RESOLUTION_CONTENT_DOES_NOT_HAVE_TO_MATCH_EXTENSION_OR_MIME_TYPE, props, &obj_type, (IUnknown **)&source);
+     IMFSourceResolver_Release(resolver);
+     if (props)
+diff --git a/dlls/ntdll/loader.c b/dlls/ntdll/loader.c
+index fd0af32ec82..51c619b7f8c 100644
+--- a/dlls/ntdll/loader.c
++++ b/dlls/ntdll/loader.c
+@@ -2294,6 +2294,12 @@ static NTSTATUS build_module( LPCWSTR load_path, const UNICODE_STRING *nt_name,
+     TRACE_(loaddll)( "Loaded %s at %p: %s\n", debugstr_w(wm->ldr.FullDllName.Buffer), *module,
+                      is_builtin ? "builtin" : "native" );
+ 
++#if defined(__x86_64__)
++    if (is_builtin == FALSE)
++    {
++        unix_funcs->pe_module_loaded(*module, (void*)((BYTE*)*module + map_size));
++    }
++#endif
+     wm->ldr.LoadCount = 1;
+     *pwm = wm;
+     *module = NULL;
+@@ -3477,8 +3483,8 @@ static NTSTATUS load_dll( const WCHAR *load_path, const WCHAR *libname, DWORD fl
+ 
+     case STATUS_SUCCESS:  /* valid PE file */
+         nts = load_native_dll( load_path, &nt_name, mapping, &image_info, &id, flags, system, pwm );
+-#ifdef __x86_64__
+-        if (nts == STATUS_SUCCESS && !wcscmp( libname, L"libcef.dll" ))
++#if defined(__APPLE__) && defined(__x86_64__)
++        if (nts == STATUS_SUCCESS && !wcscmp( libname, L"libcef.dll" ) && unix_funcs->gs_patching_needed())
+             patch_libcef( pwm );
+ #endif
+         break;
+diff --git a/dlls/ntdll/unix/loader.c b/dlls/ntdll/unix/loader.c
+index e086c88e993..d5901d862a9 100644
+--- a/dlls/ntdll/unix/loader.c
++++ b/dlls/ntdll/unix/loader.c
+@@ -1544,6 +1544,44 @@ NTSTATUS WINAPI __wine_unix_call( unixlib_handle_t handle, unsigned int code, vo
+     return ((unixlib_entry_t*)(UINT_PTR)handle)[code]( args );
+ }
+ 
++#if defined(__APPLE__) && defined(__x86_64__)
++static void* non_native_support_lib;
++static void (*register_non_native_code_region) (void*, void*);
++static bool (*supports_non_native_code_regions) (void);
++static void init_non_native_support(void)
++{
++    register_non_native_code_region = NULL;
++    register_non_native_code_region = NULL;
++    non_native_support_lib = dlopen("@rpath/libd3dshared.dylib", RTLD_LOCAL);
++    if (non_native_support_lib)
++    {
++        register_non_native_code_region = dlsym(non_native_support_lib, "register_non_native_code_region");
++        supports_non_native_code_regions = dlsym(non_native_support_lib, "supports_non_native_code_regions");
++    }
++}
++
++static void CDECL pe_module_loaded(void* start, void* end)
++{
++    if ((supports_non_native_code_regions && supports_non_native_code_regions()))
++    {
++        TRACE("Marking non_native_code_region: %p, %p", start, end);
++        register_non_native_code_region(start, end);
++    }
++}
++static BOOL CDECL gs_patching_needed(void)
++{
++    return (supports_non_native_code_regions && supports_non_native_code_regions() == false);
++}
++#elif defined(__x86_64__)
++static void CDECL pe_module_loaded(void* start, void* end)
++{
++
++}
++static BOOL CDECL gs_patching_needed(void)
++{
++    return false;
++}
++#endif
+ 
+ /***********************************************************************
+  *           load_so_dll
+@@ -2345,6 +2383,10 @@ static struct unix_funcs unix_funcs =
+ #ifdef __aarch64__
+     NtCurrentTeb,
+ #endif
++#if defined(__x86_64__)
++    pe_module_loaded,
++    gs_patching_needed,
++#endif
+ };
+ 
+ 
+@@ -2460,6 +2502,10 @@ static void start_main_thread(void)
+             dlopen_32on64_opengl32();
+ #endif
+     }
++    else
++    {
++        init_non_native_support();
++    }
+     load_apiset_dll();
+     ntdll_init_syscalls( 0, &syscall_table, p__wine_syscall_dispatcher );
+     status = p__wine_set_unix_funcs( NTDLL_UNIXLIB_VERSION, &unix_funcs );
+diff --git a/dlls/ntdll/unix/security.c b/dlls/ntdll/unix/security.c
+index 2955355353e..02f8c24269d 100644
+--- a/dlls/ntdll/unix/security.c
++++ b/dlls/ntdll/unix/security.c
+@@ -230,6 +230,7 @@ NTSTATUS WINAPI NtQueryInformationToken( HANDLE token, TOKEN_INFORMATION_CLASS c
+         break;
+ 
+     case TokenGroups:
++    case TokenLogonSid:
+     {
+         /* reply buffer is always shorter than output one */
+         void *buffer = malloc( length );
+@@ -239,6 +240,7 @@ NTSTATUS WINAPI NtQueryInformationToken( HANDLE token, TOKEN_INFORMATION_CLASS c
+         SERVER_START_REQ( get_token_groups )
+         {
+             req->handle = wine_server_obj_handle( token );
++            req->attr_mask = (class == TokenLogonSid) ? SE_GROUP_LOGON_ID : 0;
+             wine_server_set_reply( req, buffer, length );
+             status = wine_server_call( req );
+ 
+@@ -464,27 +466,6 @@ NTSTATUS WINAPI NtQueryInformationToken( HANDLE token, TOKEN_INFORMATION_CLASS c
+             break;
+         }
+ 
+-    case TokenLogonSid:
+-        SERVER_START_REQ( get_token_sid )
+-        {
+-            TOKEN_GROUPS * groups = info;
+-            PSID sid = groups + 1;
+-            DWORD sid_len = length < sizeof(TOKEN_GROUPS) ? 0 : length - sizeof(TOKEN_GROUPS);
+-
+-            req->handle = wine_server_obj_handle( token );
+-            req->which_sid = class;
+-            wine_server_set_reply( req, sid, sid_len );
+-            status = wine_server_call( req );
+-            if (retlen) *retlen = reply->sid_len + sizeof(TOKEN_GROUPS);
+-            if (status == STATUS_SUCCESS)
+-            {
+-                groups->GroupCount = 1;
+-                groups->Groups[0].Sid = sid;
+-                groups->Groups[0].Attributes = 0;
+-            }
+-        }
+-        SERVER_END_REQ;
+-        break;
+ 
+     case TokenLinkedToken:
+         SERVER_START_REQ( create_linked_token )
+diff --git a/dlls/ntdll/unix/signal_x86_64.c b/dlls/ntdll/unix/signal_x86_64.c
+index 3d85d46abfc..b434950ed50 100644
+--- a/dlls/ntdll/unix/signal_x86_64.c
++++ b/dlls/ntdll/unix/signal_x86_64.c
+@@ -2949,6 +2949,20 @@ static void usr1_handler( int signal, siginfo_t *siginfo, void *ucontext )
+     }
+ }
+ 
++static void sigsys_handler( int signal, siginfo_t *siginfo, void *sigcontext )
++{
++    ucontext_t *ctx = sigcontext;
++    void ***rsp;
++
++    TRACE("SIGSYS, rax %#llx, rip %#llx.\n", RAX_sig(ctx), RIP_sig(ctx));
++    
++    rsp = (void ***)&RSP_sig(ctx);
++    *rsp -= 1;
++    **rsp = (void *)(RIP_sig(ctx) + 0xb);
++
++    RIP_sig(ctx) = ((ULONG64)__wine_syscall_dispatcher);
++}
++
+ 
+ /***********************************************************************
+  *           LDT support
+@@ -3292,6 +3306,8 @@ void signal_init_process(void)
+     if (sigaction( SIGSEGV, &sig_act, NULL ) == -1) goto error;
+     if (sigaction( SIGILL, &sig_act, NULL ) == -1) goto error;
+     if (sigaction( SIGBUS, &sig_act, NULL ) == -1) goto error;
++    sig_act.sa_sigaction = sigsys_handler;
++    if (sigaction( SIGSYS, &sig_act, NULL ) == -1) goto error;
+     return;
+ 
+  error:
+diff --git a/dlls/ntdll/unixlib.h b/dlls/ntdll/unixlib.h
+index cb184431f82..1ea1a3b4d18 100644
+--- a/dlls/ntdll/unixlib.h
++++ b/dlls/ntdll/unixlib.h
+@@ -26,7 +26,7 @@
+ struct _DISPATCHER_CONTEXT;
+ 
+ /* increment this when you change the function table */
+-#define NTDLL_UNIXLIB_VERSION 134
++#define NTDLL_UNIXLIB_VERSION 135
+ 
+ struct unix_funcs
+ {
+@@ -40,6 +40,10 @@ struct unix_funcs
+ #ifdef __aarch64__
+     TEB *         (WINAPI *NtCurrentTeb)(void);
+ #endif
++#if defined(__x86_64__)
++    void          (CDECL *pe_module_loaded)(void* start, void* end);
++    BOOL          (CDECL *gs_patching_needed)(void);
++#endif
+ };
+ 
+ #endif /* __NTDLL_UNIXLIB_H */
 diff --git a/dlls/qcap/Makefile.in b/dlls/qcap/Makefile.in
 index b61a4a05ab2..634bcca2ff4 100644
---- wine/dlls/qcap/Makefile.in
-+++ wine/dlls/qcap/Makefile.in
+--- a/dlls/qcap/Makefile.in
++++ b/dlls/qcap/Makefile.in
 @@ -1,3 +1,4 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  MODULE    = qcap.dll
@@ -43551,8 +39374,8 @@ index b61a4a05ab2..634bcca2ff4 100644
  IMPORTS   = strmbase strmiids uuid ole32 oleaut32
 diff --git a/dlls/qcap/audiorecord.c b/dlls/qcap/audiorecord.c
 index a6f27cf4f26..c77a214b06b 100644
---- wine/dlls/qcap/audiorecord.c
-+++ wine/dlls/qcap/audiorecord.c
+--- a/dlls/qcap/audiorecord.c
++++ b/dlls/qcap/audiorecord.c
 @@ -115,7 +115,13 @@ static HRESULT WINAPI PPB_Load(IPersistPropertyBag *iface, IPropertyBag *pPropBa
      hr = IPropertyBag_Read(pPropBag, L"WaveInID", &var, pErrorLog);
      if (SUCCEEDED(hr))
@@ -43570,8 +39393,8 @@ index a6f27cf4f26..c77a214b06b 100644
      return hr;
 diff --git a/dlls/qcap/avico.c b/dlls/qcap/avico.c
 index 2a347bd2027..e8a452fc7f5 100644
---- wine/dlls/qcap/avico.c
-+++ wine/dlls/qcap/avico.c
+--- a/dlls/qcap/avico.c
++++ b/dlls/qcap/avico.c
 @@ -142,7 +142,7 @@ static HRESULT avi_compressor_init_stream(struct strmbase_filter *iface)
  
      if (filter->source.pAllocator && FAILED(hr = IMemAllocator_Commit(filter->source.pAllocator)))
@@ -43661,8 +39484,8 @@ index 2a347bd2027..e8a452fc7f5 100644
      *out = &object->filter.IUnknown_inner;
 diff --git a/dlls/qcap/avimux.c b/dlls/qcap/avimux.c
 index 2e8c2a96681..fe4add83b7c 100644
---- wine/dlls/qcap/avimux.c
-+++ wine/dlls/qcap/avimux.c
+--- a/dlls/qcap/avimux.c
++++ b/dlls/qcap/avimux.c
 @@ -684,7 +684,7 @@ static ULONG WINAPI ConfigAviMux_Release(IConfigAviMux *iface)
  static HRESULT WINAPI ConfigAviMux_SetMasterStream(IConfigAviMux *iface, LONG iStream)
  {
@@ -43754,8 +39577,8 @@ index 2e8c2a96681..fe4add83b7c 100644
      return E_NOTIMPL;
 diff --git a/dlls/qcap/capturegraph.c b/dlls/qcap/capturegraph.c
 index 45cef802ba2..157cfc6178d 100644
---- wine/dlls/qcap/capturegraph.c
-+++ wine/dlls/qcap/capturegraph.c
+--- a/dlls/qcap/capturegraph.c
++++ b/dlls/qcap/capturegraph.c
 @@ -104,17 +104,16 @@ fnCaptureGraphBuilder2_AddRef(ICaptureGraphBuilder2 * iface)
      CaptureGraphImpl *This = impl_from_ICaptureGraphBuilder2(iface);
      DWORD ref = InterlockedIncrement(&This->ref);
@@ -43815,8 +39638,8 @@ index 45cef802ba2..157cfc6178d 100644
  
 diff --git a/dlls/qcap/filewriter.c b/dlls/qcap/filewriter.c
 index bc63abcb8cb..e49e6039604 100644
---- wine/dlls/qcap/filewriter.c
-+++ wine/dlls/qcap/filewriter.c
+--- a/dlls/qcap/filewriter.c
++++ b/dlls/qcap/filewriter.c
 @@ -68,27 +68,26 @@ static HRESULT WINAPI file_writer_sink_receive(struct strmbase_sink *iface, IMed
      struct file_writer *filter = impl_from_strmbase_pin(&iface->pin);
      REFERENCE_TIME start, stop;
@@ -43863,8 +39686,8 @@ index bc63abcb8cb..e49e6039604 100644
      filter->file = file;
 diff --git a/dlls/qcap/tests/Makefile.in b/dlls/qcap/tests/Makefile.in
 index 6e2fb2d4d2a..3fc00bf05ff 100644
---- wine/dlls/qcap/tests/Makefile.in
-+++ wine/dlls/qcap/tests/Makefile.in
+--- a/dlls/qcap/tests/Makefile.in
++++ b/dlls/qcap/tests/Makefile.in
 @@ -1,3 +1,4 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  TESTDLL   = qcap.dll
@@ -43872,8 +39695,8 @@ index 6e2fb2d4d2a..3fc00bf05ff 100644
  
 diff --git a/dlls/qcap/tests/audiorecord.c b/dlls/qcap/tests/audiorecord.c
 index 5705925a50d..350ae986b44 100644
---- wine/dlls/qcap/tests/audiorecord.c
-+++ wine/dlls/qcap/tests/audiorecord.c
+--- a/dlls/qcap/tests/audiorecord.c
++++ b/dlls/qcap/tests/audiorecord.c
 @@ -39,7 +39,7 @@ static void check_interface_(unsigned int line, void *iface_ptr, REFIID iid, BOO
      expected_hr = supported ? S_OK : E_NOINTERFACE;
  
@@ -44093,8 +39916,8 @@ index 5705925a50d..350ae986b44 100644
  
 diff --git a/dlls/qcap/tests/avico.c b/dlls/qcap/tests/avico.c
 index abd4fa8e5e7..332ca5a8e7d 100644
---- wine/dlls/qcap/tests/avico.c
-+++ wine/dlls/qcap/tests/avico.c
+--- a/dlls/qcap/tests/avico.c
++++ b/dlls/qcap/tests/avico.c
 @@ -35,7 +35,7 @@ static void check_interface_(unsigned int line, void *iface_ptr, REFIID iid, BOO
      expected_hr = supported ? S_OK : E_NOINTERFACE;
  
@@ -44700,8 +40523,8 @@ index abd4fa8e5e7..332ca5a8e7d 100644
          if (!memcmp(name, test_display_name, 11 * sizeof(WCHAR)))
 diff --git a/dlls/qcap/tests/avimux.c b/dlls/qcap/tests/avimux.c
 index 8d11c5cbf04..70575281cee 100644
---- wine/dlls/qcap/tests/avimux.c
-+++ wine/dlls/qcap/tests/avimux.c
+--- a/dlls/qcap/tests/avimux.c
++++ b/dlls/qcap/tests/avimux.c
 @@ -30,7 +30,7 @@ static IBaseFilter *create_avi_mux(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_AviDest, NULL, CLSCTX_INPROC_SERVER,
@@ -45540,8 +41363,8 @@ index 8d11c5cbf04..70575281cee 100644
  START_TEST(avimux)
 diff --git a/dlls/qcap/tests/capturegraph.c b/dlls/qcap/tests/capturegraph.c
 index 1fade929331..cdd9a27828a 100644
---- wine/dlls/qcap/tests/capturegraph.c
-+++ wine/dlls/qcap/tests/capturegraph.c
+--- a/dlls/qcap/tests/capturegraph.c
++++ b/dlls/qcap/tests/capturegraph.c
 @@ -29,7 +29,7 @@ static ICaptureGraphBuilder2 *create_capture_graph(void)
      ICaptureGraphBuilder2 *ret;
      HRESULT hr = CoCreateInstance(&CLSID_CaptureGraphBuilder2, NULL,
@@ -46241,8 +42064,8 @@ index 1fade929331..cdd9a27828a 100644
  START_TEST(capturegraph)
 diff --git a/dlls/qcap/tests/filewriter.c b/dlls/qcap/tests/filewriter.c
 index 3713af1a43a..d6dbc3faded 100644
---- wine/dlls/qcap/tests/filewriter.c
-+++ wine/dlls/qcap/tests/filewriter.c
+--- a/dlls/qcap/tests/filewriter.c
++++ b/dlls/qcap/tests/filewriter.c
 @@ -28,7 +28,7 @@ static IBaseFilter *create_file_writer(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_FileWriter, NULL,
@@ -46997,8 +42820,8 @@ index 3713af1a43a..d6dbc3faded 100644
  START_TEST(filewriter)
 diff --git a/dlls/qcap/tests/qcap.c b/dlls/qcap/tests/qcap.c
 index a1e3e31bfff..d1b2cb810f4 100644
---- wine/dlls/qcap/tests/qcap.c
-+++ wine/dlls/qcap/tests/qcap.c
+--- a/dlls/qcap/tests/qcap.c
++++ b/dlls/qcap/tests/qcap.c
 @@ -499,7 +499,7 @@ static HRESULT WINAPI EnumPins_Next(IEnumPins *iface,
      test_filter *This = impl_from_IEnumPins(iface);
      check_calls_list("EnumPins_Next", ENUMPINS_NEXT, This->filter_type);
@@ -47317,8 +43140,8 @@ index a1e3e31bfff..d1b2cb810f4 100644
  START_TEST(qcap)
 diff --git a/dlls/qcap/tests/smartteefilter.c b/dlls/qcap/tests/smartteefilter.c
 index a25889d2a4d..b6ba3ca75c9 100644
---- wine/dlls/qcap/tests/smartteefilter.c
-+++ wine/dlls/qcap/tests/smartteefilter.c
+--- a/dlls/qcap/tests/smartteefilter.c
++++ b/dlls/qcap/tests/smartteefilter.c
 @@ -30,7 +30,7 @@ static IBaseFilter *create_smart_tee(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_SmartTee, NULL, CLSCTX_INPROC_SERVER,
@@ -48500,8 +44323,8 @@ index a25889d2a4d..b6ba3ca75c9 100644
  START_TEST(smartteefilter)
 diff --git a/dlls/qcap/tests/videocapture.c b/dlls/qcap/tests/videocapture.c
 index 41b2cbc6a3f..c44070b0bd5 100644
---- wine/dlls/qcap/tests/videocapture.c
-+++ wine/dlls/qcap/tests/videocapture.c
+--- a/dlls/qcap/tests/videocapture.c
++++ b/dlls/qcap/tests/videocapture.c
 @@ -39,7 +39,7 @@ static void check_interface_(unsigned int line, void *iface_ptr, REFIID iid, BOO
      expected_hr = supported ? S_OK : E_NOINTERFACE;
  
@@ -49053,8 +44876,8 @@ index 41b2cbc6a3f..c44070b0bd5 100644
  
 diff --git a/dlls/qcap/v4l.c b/dlls/qcap/v4l.c
 index 577cc829329..ae663389d14 100644
---- wine/dlls/qcap/v4l.c
-+++ wine/dlls/qcap/v4l.c
+--- a/dlls/qcap/v4l.c
++++ b/dlls/qcap/v4l.c
 @@ -558,8 +558,8 @@ static NTSTATUS v4l_device_create( void *args )
      }
  
@@ -49068,8 +44891,8 @@ index 577cc829329..ae663389d14 100644
      return S_OK;
 diff --git a/dlls/qcap/vfwcapture.c b/dlls/qcap/vfwcapture.c
 index d842117e9a5..6b82af9d155 100644
---- wine/dlls/qcap/vfwcapture.c
-+++ wine/dlls/qcap/vfwcapture.c
+--- a/dlls/qcap/vfwcapture.c
++++ b/dlls/qcap/vfwcapture.c
 @@ -165,9 +165,9 @@ static DWORD WINAPI stream_thread(void *arg)
  
          LeaveCriticalSection(&filter->state_cs);
@@ -49229,8 +45052,8 @@ index d842117e9a5..6b82af9d155 100644
      return E_NOTIMPL;
 diff --git a/dlls/quartz/Makefile.in b/dlls/quartz/Makefile.in
 index e7e1b43da79..81db98e639d 100644
---- wine/dlls/quartz/Makefile.in
-+++ wine/dlls/quartz/Makefile.in
+--- a/dlls/quartz/Makefile.in
++++ b/dlls/quartz/Makefile.in
 @@ -1,3 +1,4 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  MODULE    = quartz.dll
@@ -49238,8 +45061,8 @@ index e7e1b43da79..81db98e639d 100644
  IMPORTS   = strmiids dxguid strmbase uuid dsound msacm32 msvfw32 ole32 oleaut32 rpcrt4 user32 gdi32 advapi32
 diff --git a/dlls/quartz/acmwrapper.c b/dlls/quartz/acmwrapper.c
 index 8e1b5e6b773..a07bdfef0ca 100644
---- wine/dlls/quartz/acmwrapper.c
-+++ wine/dlls/quartz/acmwrapper.c
+--- a/dlls/quartz/acmwrapper.c
++++ b/dlls/quartz/acmwrapper.c
 @@ -110,7 +110,7 @@ static HRESULT WINAPI acm_wrapper_sink_Receive(struct strmbase_sink *iface, IMed
      hr = IMediaSample_GetPointer(pSample, &pbSrcStream);
      if (FAILED(hr))
@@ -49337,8 +45160,8 @@ index 8e1b5e6b773..a07bdfef0ca 100644
      ISeekingPassThru_Init(&object->passthrough.ISeekingPassThru_iface, FALSE,
 diff --git a/dlls/quartz/avidec.c b/dlls/quartz/avidec.c
 index 8cc729748c1..3d947e1b1bf 100644
---- wine/dlls/quartz/avidec.c
-+++ wine/dlls/quartz/avidec.c
+--- a/dlls/quartz/avidec.c
++++ b/dlls/quartz/avidec.c
 @@ -101,13 +101,14 @@ static HRESULT WINAPI avi_decompressor_sink_Receive(struct strmbase_sink *iface,
      struct avi_decompressor *This = impl_from_strmbase_filter(iface->pin.filter);
      VIDEOINFOHEADER *source_format;
@@ -49496,8 +45319,8 @@ index 8cc729748c1..3d947e1b1bf 100644
      ISeekingPassThru_Init(&object->passthrough.ISeekingPassThru_iface, FALSE,
 diff --git a/dlls/quartz/dsoundrender.c b/dlls/quartz/dsoundrender.c
 index 1abd4bdbcec..df40d1254ee 100644
---- wine/dlls/quartz/dsoundrender.c
-+++ wine/dlls/quartz/dsoundrender.c
+--- a/dlls/quartz/dsoundrender.c
++++ b/dlls/quartz/dsoundrender.c
 @@ -126,7 +126,7 @@ static void DSoundRender_UpdatePositions(struct dsound_render *This, DWORD *seqw
          adv = playpos - old_playpos;
      This->last_playpos = playpos;
@@ -49666,8 +45489,8 @@ index 1abd4bdbcec..df40d1254ee 100644
      return E_NOTIMPL;
 diff --git a/dlls/quartz/filesource.c b/dlls/quartz/filesource.c
 index 6ffae606df4..e5e7b482984 100644
---- wine/dlls/quartz/filesource.c
-+++ wine/dlls/quartz/filesource.c
+--- a/dlls/quartz/filesource.c
++++ b/dlls/quartz/filesource.c
 @@ -217,7 +217,7 @@ BOOL get_media_type(const WCHAR *filename, GUID *majortype, GUID *subtype, GUID
      if ((file = CreateFileW(filename, GENERIC_READ, FILE_SHARE_READ, NULL,
              OPEN_EXISTING, 0, NULL)) == INVALID_HANDLE_VALUE)
@@ -49740,8 +45563,8 @@ index 6ffae606df4..e5e7b482984 100644
      ret = sync_read(filter->file, offset, length, buffer, &read_len);
 diff --git a/dlls/quartz/filtergraph.c b/dlls/quartz/filtergraph.c
 index a99fdc80ba6..5f1b80d12cf 100644
---- wine/dlls/quartz/filtergraph.c
-+++ wine/dlls/quartz/filtergraph.c
+--- a/dlls/quartz/filtergraph.c
++++ b/dlls/quartz/filtergraph.c
 @@ -61,6 +61,7 @@ struct filter
      struct list entry;
      IBaseFilter *filter;
@@ -51291,8 +47114,8 @@ index a99fdc80ba6..5f1b80d12cf 100644
      }
 diff --git a/dlls/quartz/filtermapper.c b/dlls/quartz/filtermapper.c
 index 149bc8d1716..a95f0ca7832 100644
---- wine/dlls/quartz/filtermapper.c
-+++ wine/dlls/quartz/filtermapper.c
+--- a/dlls/quartz/filtermapper.c
++++ b/dlls/quartz/filtermapper.c
 @@ -76,7 +76,7 @@ static ULONG WINAPI enum_reg_filters_AddRef(IEnumRegFilters *iface)
  {
      struct enum_reg_filters *enumerator = impl_from_IEnumRegFilters(iface);
@@ -51630,8 +47453,8 @@ index 149bc8d1716..a95f0ca7832 100644
      if (!prf2)
 diff --git a/dlls/quartz/main.c b/dlls/quartz/main.c
 index c5302db6ced..ed7080b76b9 100644
---- wine/dlls/quartz/main.c
-+++ wine/dlls/quartz/main.c
+--- a/dlls/quartz/main.c
++++ b/dlls/quartz/main.c
 @@ -260,13 +260,13 @@ const char * qzdebugstr_guid( const GUID * id )
      return debugstr_guid(id);
  }
@@ -51669,8 +47492,8 @@ index c5302db6ced..ed7080b76b9 100644
      swprintf(error, ARRAY_SIZE(error), L"Error: 0x%lx", hr);
 diff --git a/dlls/quartz/memallocator.c b/dlls/quartz/memallocator.c
 index 87869b4d6b2..531fbe874cf 100644
---- wine/dlls/quartz/memallocator.c
-+++ wine/dlls/quartz/memallocator.c
+--- a/dlls/quartz/memallocator.c
++++ b/dlls/quartz/memallocator.c
 @@ -135,7 +135,7 @@ static ULONG WINAPI BaseMemAllocator_AddRef(IMemAllocator * iface)
      BaseMemAllocator *This = impl_from_IMemAllocator(iface);
      ULONG ref = InterlockedIncrement(&This->ref);
@@ -51846,8 +47669,8 @@ index 87869b4d6b2..531fbe874cf 100644
  
 diff --git a/dlls/quartz/passthrough.c b/dlls/quartz/passthrough.c
 index 4627b2d26f8..2f8fe9dc370 100644
---- wine/dlls/quartz/passthrough.c
-+++ wine/dlls/quartz/passthrough.c
+--- a/dlls/quartz/passthrough.c
++++ b/dlls/quartz/passthrough.c
 @@ -66,7 +66,7 @@ static ULONG WINAPI seeking_passthrough_AddRef(IUnknown *iface)
      struct seeking_passthrough *passthrough = impl_from_IUnknown(iface);
      ULONG refcount = InterlockedIncrement(&passthrough->refcount);
@@ -51868,8 +47691,8 @@ index 4627b2d26f8..2f8fe9dc370 100644
          strmbase_passthrough_cleanup(&passthrough->passthrough);
 diff --git a/dlls/quartz/regsvr.c b/dlls/quartz/regsvr.c
 index d035f8673fb..649e25e7327 100644
---- wine/dlls/quartz/regsvr.c
-+++ wine/dlls/quartz/regsvr.c
+--- a/dlls/quartz/regsvr.c
++++ b/dlls/quartz/regsvr.c
 @@ -127,7 +127,7 @@ static HRESULT register_filters(struct regsvr_filter const *list)
  	    }
  
@@ -51881,8 +47704,8 @@ index d035f8673fb..649e25e7327 100644
  	    }
 diff --git a/dlls/quartz/systemclock.c b/dlls/quartz/systemclock.c
 index 729122fec46..f579ae754ea 100644
---- wine/dlls/quartz/systemclock.c
-+++ wine/dlls/quartz/systemclock.c
+--- a/dlls/quartz/systemclock.c
++++ b/dlls/quartz/systemclock.c
 @@ -25,7 +25,7 @@
  
  WINE_DEFAULT_DEBUG_CHANNEL(quartz);
@@ -51949,8 +47772,8 @@ index 729122fec46..f579ae754ea 100644
  
 diff --git a/dlls/quartz/tests/Makefile.in b/dlls/quartz/tests/Makefile.in
 index 423abc78ef6..a47eec8bfd2 100644
---- wine/dlls/quartz/tests/Makefile.in
-+++ wine/dlls/quartz/tests/Makefile.in
+--- a/dlls/quartz/tests/Makefile.in
++++ b/dlls/quartz/tests/Makefile.in
 @@ -1,3 +1,4 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  TESTDLL   = quartz.dll
@@ -51958,8 +47781,8 @@ index 423abc78ef6..a47eec8bfd2 100644
  
 diff --git a/dlls/quartz/tests/acmwrapper.c b/dlls/quartz/tests/acmwrapper.c
 index caeca61ae50..31b32b53ac9 100644
---- wine/dlls/quartz/tests/acmwrapper.c
-+++ wine/dlls/quartz/tests/acmwrapper.c
+--- a/dlls/quartz/tests/acmwrapper.c
++++ b/dlls/quartz/tests/acmwrapper.c
 @@ -27,7 +27,7 @@ static IBaseFilter *create_acm_wrapper(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_ACMWrapper, NULL, CLSCTX_INPROC_SERVER,
@@ -52409,8 +48232,8 @@ index caeca61ae50..31b32b53ac9 100644
  START_TEST(acmwrapper)
 diff --git a/dlls/quartz/tests/avidec.c b/dlls/quartz/tests/avidec.c
 index 46ce5d9eeda..ac1078bf59b 100644
---- wine/dlls/quartz/tests/avidec.c
-+++ wine/dlls/quartz/tests/avidec.c
+--- a/dlls/quartz/tests/avidec.c
++++ b/dlls/quartz/tests/avidec.c
 @@ -35,7 +35,7 @@ static IBaseFilter *create_avi_dec(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_AVIDec, NULL, CLSCTX_INPROC_SERVER,
@@ -53675,8 +49498,8 @@ index 46ce5d9eeda..ac1078bf59b 100644
  START_TEST(avidec)
 diff --git a/dlls/quartz/tests/avisplit.c b/dlls/quartz/tests/avisplit.c
 index 8b7e8a222b0..06c2f5fed3c 100644
---- wine/dlls/quartz/tests/avisplit.c
-+++ wine/dlls/quartz/tests/avisplit.c
+--- a/dlls/quartz/tests/avisplit.c
++++ b/dlls/quartz/tests/avisplit.c
 @@ -32,7 +32,7 @@ static IBaseFilter *create_avi_splitter(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_AviSplitter, NULL, CLSCTX_INPROC_SERVER,
@@ -55199,8 +51022,8 @@ index 8b7e8a222b0..06c2f5fed3c 100644
  START_TEST(avisplit)
 diff --git a/dlls/quartz/tests/dsoundrender.c b/dlls/quartz/tests/dsoundrender.c
 index 269c590f8ee..03e6b8413d5 100644
---- wine/dlls/quartz/tests/dsoundrender.c
-+++ wine/dlls/quartz/tests/dsoundrender.c
+--- a/dlls/quartz/tests/dsoundrender.c
++++ b/dlls/quartz/tests/dsoundrender.c
 @@ -36,7 +36,7 @@ static IBaseFilter *create_dsound_render(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_DSoundRender, NULL, CLSCTX_INPROC_SERVER,
@@ -56425,8 +52248,8 @@ index 269c590f8ee..03e6b8413d5 100644
      test_property_bag();
 diff --git a/dlls/quartz/tests/filesource.c b/dlls/quartz/tests/filesource.c
 index c383d9f6579..4162e248937 100644
---- wine/dlls/quartz/tests/filesource.c
-+++ wine/dlls/quartz/tests/filesource.c
+--- a/dlls/quartz/tests/filesource.c
++++ b/dlls/quartz/tests/filesource.c
 @@ -29,7 +29,7 @@ static IBaseFilter *create_file_source(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_AsyncReader, NULL, CLSCTX_INPROC_SERVER,
@@ -57702,8 +53525,8 @@ index c383d9f6579..4162e248937 100644
  START_TEST(filesource)
 diff --git a/dlls/quartz/tests/filtergraph.c b/dlls/quartz/tests/filtergraph.c
 index 0e9a398ad2c..a83bfde0806 100644
---- wine/dlls/quartz/tests/filtergraph.c
-+++ wine/dlls/quartz/tests/filtergraph.c
+--- a/dlls/quartz/tests/filtergraph.c
++++ b/dlls/quartz/tests/filtergraph.c
 @@ -42,10 +42,10 @@ static WCHAR *create_file(const WCHAR *name, const char *data, DWORD size)
      GetTempPathW(ARRAY_SIZE(pathW), pathW);
      wcscat(pathW, name);
@@ -62070,8 +57893,8 @@ index 0e9a398ad2c..a83bfde0806 100644
      test_render_with_multithread();
 diff --git a/dlls/quartz/tests/filtermapper.c b/dlls/quartz/tests/filtermapper.c
 index 3c492845389..f1a942b1d25 100644
---- wine/dlls/quartz/tests/filtermapper.c
-+++ wine/dlls/quartz/tests/filtermapper.c
+--- a/dlls/quartz/tests/filtermapper.c
++++ b/dlls/quartz/tests/filtermapper.c
 @@ -35,7 +35,7 @@ static IFilterMapper3 *create_mapper(void)
      IFilterMapper3 *ret;
      HRESULT hr;
@@ -62448,8 +58271,8 @@ index 3c492845389..f1a942b1d25 100644
  START_TEST(filtermapper)
 diff --git a/dlls/quartz/tests/memallocator.c b/dlls/quartz/tests/memallocator.c
 index 37df9a24bd2..164f3af47f4 100644
---- wine/dlls/quartz/tests/memallocator.c
-+++ wine/dlls/quartz/tests/memallocator.c
+--- a/dlls/quartz/tests/memallocator.c
++++ b/dlls/quartz/tests/memallocator.c
 @@ -27,7 +27,7 @@ static IMemAllocator *create_allocator(void)
      IMemAllocator *allocator = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_MemoryAllocator, NULL, CLSCTX_INPROC_SERVER,
@@ -63183,8 +59006,8 @@ index 37df9a24bd2..164f3af47f4 100644
      IMediaSample_Release(sample);
 diff --git a/dlls/quartz/tests/mpegsplit.c b/dlls/quartz/tests/mpegsplit.c
 index b2cced84c68..0809c5f861f 100644
---- wine/dlls/quartz/tests/mpegsplit.c
-+++ wine/dlls/quartz/tests/mpegsplit.c
+--- a/dlls/quartz/tests/mpegsplit.c
++++ b/dlls/quartz/tests/mpegsplit.c
 @@ -32,7 +32,7 @@ static IBaseFilter *create_mpeg_splitter(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_MPEG1Splitter, NULL, CLSCTX_INPROC_SERVER,
@@ -64891,8 +60714,8 @@ index b2cced84c68..0809c5f861f 100644
  START_TEST(mpegsplit)
 diff --git a/dlls/quartz/tests/passthrough.c b/dlls/quartz/tests/passthrough.c
 index 0e542d1733a..ce7365928e5 100644
---- wine/dlls/quartz/tests/passthrough.c
-+++ wine/dlls/quartz/tests/passthrough.c
+--- a/dlls/quartz/tests/passthrough.c
++++ b/dlls/quartz/tests/passthrough.c
 @@ -74,53 +74,53 @@ static void test_aggregation(void)
      passthrough = (ISeekingPassThru *)0xdeadbeef;
      hr = CoCreateInstance(&CLSID_SeekingPassThru, &test_outer, CLSCTX_INPROC_SERVER,
@@ -64965,8 +60788,8 @@ index 0e542d1733a..ce7365928e5 100644
  START_TEST(passthrough)
 diff --git a/dlls/quartz/tests/systemclock.c b/dlls/quartz/tests/systemclock.c
 index 65bc406f35f..3b39d2aadb4 100644
---- wine/dlls/quartz/tests/systemclock.c
-+++ wine/dlls/quartz/tests/systemclock.c
+--- a/dlls/quartz/tests/systemclock.c
++++ b/dlls/quartz/tests/systemclock.c
 @@ -27,7 +27,7 @@ static IReferenceClock *create_system_clock(void)
      IReferenceClock *clock = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_SystemClock, NULL, CLSCTX_INPROC_SERVER,
@@ -65195,8 +61018,8 @@ index 65bc406f35f..3b39d2aadb4 100644
  
 diff --git a/dlls/quartz/tests/videorenderer.c b/dlls/quartz/tests/videorenderer.c
 index c76dae15e91..5625971426b 100644
---- wine/dlls/quartz/tests/videorenderer.c
-+++ wine/dlls/quartz/tests/videorenderer.c
+--- a/dlls/quartz/tests/videorenderer.c
++++ b/dlls/quartz/tests/videorenderer.c
 @@ -20,7 +20,6 @@
  
  #define COBJMACROS
@@ -67911,8 +63734,8 @@ index c76dae15e91..5625971426b 100644
  START_TEST(videorenderer)
 diff --git a/dlls/quartz/tests/vmr7.c b/dlls/quartz/tests/vmr7.c
 index 88c82bec0d3..efc876a845c 100644
---- wine/dlls/quartz/tests/vmr7.c
-+++ wine/dlls/quartz/tests/vmr7.c
+--- a/dlls/quartz/tests/vmr7.c
++++ b/dlls/quartz/tests/vmr7.c
 @@ -23,7 +23,6 @@
  #include "dshow.h"
  #include "d3d9.h"
@@ -70995,8 +66818,8 @@ index 88c82bec0d3..efc876a845c 100644
  START_TEST(vmr7)
 diff --git a/dlls/quartz/tests/vmr9.c b/dlls/quartz/tests/vmr9.c
 index 405f7ee89ba..a0ccb4898a9 100644
---- wine/dlls/quartz/tests/vmr9.c
-+++ wine/dlls/quartz/tests/vmr9.c
+--- a/dlls/quartz/tests/vmr9.c
++++ b/dlls/quartz/tests/vmr9.c
 @@ -27,7 +27,6 @@
  #include "qedit.h"
  #include "d3d9.h"
@@ -74898,8 +70721,8 @@ index 405f7ee89ba..a0ccb4898a9 100644
      IBaseFilter_Release(filter);
 diff --git a/dlls/quartz/tests/waveparser.c b/dlls/quartz/tests/waveparser.c
 index 1c86a39c730..fee93b33f5f 100644
---- wine/dlls/quartz/tests/waveparser.c
-+++ wine/dlls/quartz/tests/waveparser.c
+--- a/dlls/quartz/tests/waveparser.c
++++ b/dlls/quartz/tests/waveparser.c
 @@ -30,7 +30,7 @@ static IBaseFilter *create_wave_parser(void)
      IBaseFilter *filter = NULL;
      HRESULT hr = CoCreateInstance(&CLSID_WAVEParser, NULL, CLSCTX_INPROC_SERVER,
@@ -75873,8 +71696,8 @@ index 1c86a39c730..fee93b33f5f 100644
  START_TEST(waveparser)
 diff --git a/dlls/quartz/videorenderer.c b/dlls/quartz/videorenderer.c
 index f725a9998ce..1dbb8a02181 100644
---- wine/dlls/quartz/videorenderer.c
-+++ wine/dlls/quartz/videorenderer.c
+--- a/dlls/quartz/videorenderer.c
++++ b/dlls/quartz/videorenderer.c
 @@ -92,7 +92,7 @@ static HRESULT video_renderer_render(struct strmbase_renderer *iface, IMediaSamp
      hr = IMediaSample_GetPointer(pSample, &pbSrcStream);
      if (FAILED(hr))
@@ -75931,8 +71754,8 @@ index f725a9998ce..1dbb8a02181 100644
      video_window_init(&object->window, &IVideoWindow_VTable,
 diff --git a/dlls/quartz/vmr9.c b/dlls/quartz/vmr9.c
 index 2330f8fc0c9..4bde811c6d7 100644
---- wine/dlls/quartz/vmr9.c
-+++ wine/dlls/quartz/vmr9.c
+--- a/dlls/quartz/vmr9.c
++++ b/dlls/quartz/vmr9.c
 @@ -33,7 +33,6 @@
  #include "ddraw.h"
  #include "dvdmedia.h"
@@ -76642,8 +72465,8 @@ index 2330f8fc0c9..4bde811c6d7 100644
  
 diff --git a/dlls/quartz/window.c b/dlls/quartz/window.c
 index 3e19d9b582e..5b172d5f108 100644
---- wine/dlls/quartz/window.c
-+++ wine/dlls/quartz/window.c
+--- a/dlls/quartz/window.c
++++ b/dlls/quartz/window.c
 @@ -105,7 +105,7 @@ HRESULT video_window_create_window(struct video_window *window)
      winclass.lpszClassName = class_name;
      if (!RegisterClassW(&winclass) && GetLastError() != ERROR_CLASS_ALREADY_EXISTS)
@@ -76989,10 +72812,3690 @@ index 3e19d9b582e..5b172d5f108 100644
  }
  
  void video_window_init(struct video_window *window, const IVideoWindowVtbl *vtbl,
+diff --git a/dlls/windows.gaming.input/Makefile.in b/dlls/windows.gaming.input/Makefile.in
+index 1e0ce5c360c..3ec3dd0d864 100644
+--- a/dlls/windows.gaming.input/Makefile.in
++++ b/dlls/windows.gaming.input/Makefile.in
+@@ -2,13 +2,19 @@ MODULE = windows.gaming.input.dll
+ IMPORTS = combase uuid user32 dinput8 setupapi hid
+ 
+ C_SRCS = \
++	async.c \
++	condition_effect.c \
++	constant_effect.c \
+ 	controller.c \
+ 	event_handlers.c \
++	force_feedback.c \
+ 	gamepad.c \
+ 	main.c \
+ 	manager.c \
++	periodic_effect.c \
+ 	provider.c \
+ 	racing_wheel.c \
++	ramp_effect.c \
+ 	vector.c
+ 
+ IDL_SRCS = \
+diff --git a/dlls/windows.gaming.input/async.c b/dlls/windows.gaming.input/async.c
+new file mode 100644
+index 00000000000..862886195ba
+--- /dev/null
++++ b/dlls/windows.gaming.input/async.c
+@@ -0,0 +1,647 @@
++/* WinRT Windows.Gaming.Input implementation
++ *
++ * Copyright 2022 Bernhard Kölbl for CodeWeavers
++ * Copyright 2022 Rémi Bernon for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include "private.h"
++#include "provider.h"
++
++#include "wine/debug.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(input);
++
++#define Closed 4
++#define HANDLER_NOT_SET ((void *)~(ULONG_PTR)0)
++
++struct async_info
++{
++    IWineAsyncInfoImpl IWineAsyncInfoImpl_iface;
++    IAsyncInfo IAsyncInfo_iface;
++    IInspectable *IInspectable_outer;
++    LONG ref;
++
++    async_operation_callback callback;
++    TP_WORK *async_run_work;
++    IUnknown *invoker;
++    IUnknown *param;
++
++    CRITICAL_SECTION cs;
++    IWineAsyncOperationCompletedHandler *handler;
++    PROPVARIANT result;
++    AsyncStatus status;
++    HRESULT hr;
++};
++
++static inline struct async_info *impl_from_IWineAsyncInfoImpl( IWineAsyncInfoImpl *iface )
++{
++    return CONTAINING_RECORD( iface, struct async_info, IWineAsyncInfoImpl_iface );
++}
++
++static HRESULT WINAPI async_impl_QueryInterface( IWineAsyncInfoImpl *iface, REFIID iid, void **out )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IWineAsyncInfoImpl ))
++    {
++        IInspectable_AddRef( (*out = &impl->IWineAsyncInfoImpl_iface) );
++        return S_OK;
++    }
++
++    if (IsEqualGUID( iid, &IID_IAsyncInfo ))
++    {
++        IInspectable_AddRef( (*out = &impl->IAsyncInfo_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI async_impl_AddRef( IWineAsyncInfoImpl *iface )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p, ref %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI async_impl_Release( IWineAsyncInfoImpl *iface )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p, ref %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        if (impl->handler && impl->handler != HANDLER_NOT_SET) IWineAsyncOperationCompletedHandler_Release( impl->handler );
++        IAsyncInfo_Close( &impl->IAsyncInfo_iface );
++        if (impl->param) IUnknown_Release( impl->param );
++        if (impl->invoker) IUnknown_Release( impl->invoker );
++        impl->cs.DebugInfo->Spare[0] = 0;
++        DeleteCriticalSection( &impl->cs );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI async_impl_put_Completed( IWineAsyncInfoImpl *iface, IWineAsyncOperationCompletedHandler *handler )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p, handler %p.\n", iface, handler );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
++    else if (impl->handler != HANDLER_NOT_SET) hr = E_ILLEGAL_DELEGATE_ASSIGNMENT;
++    else if ((impl->handler = handler))
++    {
++        IWineAsyncOperationCompletedHandler_AddRef( impl->handler );
++
++        if (impl->status > Started)
++        {
++            IInspectable *operation = impl->IInspectable_outer;
++            AsyncStatus status = impl->status;
++            impl->handler = NULL; /* Prevent concurrent invoke. */
++            LeaveCriticalSection( &impl->cs );
++
++            IWineAsyncOperationCompletedHandler_Invoke( handler, operation, status );
++            IWineAsyncOperationCompletedHandler_Release( handler );
++
++            return S_OK;
++        }
++    }
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI async_impl_get_Completed( IWineAsyncInfoImpl *iface, IWineAsyncOperationCompletedHandler **handler )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p, handler %p.\n", iface, handler );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
++    if (impl->handler == NULL || impl->handler == HANDLER_NOT_SET) *handler = NULL;
++    else IWineAsyncOperationCompletedHandler_AddRef( (*handler = impl->handler) );
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI async_impl_get_Result( IWineAsyncInfoImpl *iface, PROPVARIANT *result )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++    HRESULT hr = E_ILLEGAL_METHOD_CALL;
++
++    TRACE( "iface %p, result %p.\n", iface, result );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Completed || impl->status == Error)
++    {
++        PropVariantCopy( result, &impl->result );
++        hr = impl->hr;
++    }
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI async_impl_Start( IWineAsyncInfoImpl *iface )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++
++    TRACE( "iface %p.\n", iface );
++
++    /* keep the async alive in the callback */
++    IInspectable_AddRef( impl->IInspectable_outer );
++    SubmitThreadpoolWork( impl->async_run_work );
++
++    return S_OK;
++}
++
++static const struct IWineAsyncInfoImplVtbl async_impl_vtbl =
++{
++    /* IUnknown methods */
++    async_impl_QueryInterface,
++    async_impl_AddRef,
++    async_impl_Release,
++    /* IWineAsyncInfoImpl */
++    async_impl_put_Completed,
++    async_impl_get_Completed,
++    async_impl_get_Result,
++    async_impl_Start,
++};
++
++DEFINE_IINSPECTABLE_OUTER( async_info, IAsyncInfo, struct async_info, IInspectable_outer )
++
++static HRESULT WINAPI async_info_get_Id( IAsyncInfo *iface, UINT32 *id )
++{
++    struct async_info *impl = impl_from_IAsyncInfo( iface );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p, id %p.\n", iface, id );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
++    *id = 1;
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI async_info_get_Status( IAsyncInfo *iface, AsyncStatus *status )
++{
++    struct async_info *impl = impl_from_IAsyncInfo( iface );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p, status %p.\n", iface, status );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
++    *status = impl->status;
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI async_info_get_ErrorCode( IAsyncInfo *iface, HRESULT *error_code )
++{
++    struct async_info *impl = impl_from_IAsyncInfo( iface );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p, error_code %p.\n", iface, error_code );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Closed) *error_code = hr = E_ILLEGAL_METHOD_CALL;
++    else *error_code = impl->hr;
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI async_info_Cancel( IAsyncInfo *iface )
++{
++    struct async_info *impl = impl_from_IAsyncInfo( iface );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p.\n", iface );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Closed) hr = E_ILLEGAL_METHOD_CALL;
++    else if (impl->status == Started) impl->status = Canceled;
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI async_info_Close( IAsyncInfo *iface )
++{
++    struct async_info *impl = impl_from_IAsyncInfo( iface );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p.\n", iface );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status == Started)
++        hr = E_ILLEGAL_STATE_CHANGE;
++    else if (impl->status != Closed)
++    {
++        CloseThreadpoolWork( impl->async_run_work );
++        impl->async_run_work = NULL;
++        impl->status = Closed;
++    }
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static const struct IAsyncInfoVtbl async_info_vtbl =
++{
++    /* IUnknown methods */
++    async_info_QueryInterface,
++    async_info_AddRef,
++    async_info_Release,
++    /* IInspectable methods */
++    async_info_GetIids,
++    async_info_GetRuntimeClassName,
++    async_info_GetTrustLevel,
++    /* IAsyncInfo */
++    async_info_get_Id,
++    async_info_get_Status,
++    async_info_get_ErrorCode,
++    async_info_Cancel,
++    async_info_Close,
++};
++
++static void CALLBACK async_info_callback( TP_CALLBACK_INSTANCE *instance, void *iface, TP_WORK *work )
++{
++    struct async_info *impl = impl_from_IWineAsyncInfoImpl( iface );
++    IInspectable *operation = impl->IInspectable_outer;
++    PROPVARIANT result;
++    HRESULT hr;
++
++    hr = impl->callback( impl->invoker, impl->param, &result );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->status != Closed) impl->status = FAILED(hr) ? Error : Completed;
++    PropVariantCopy( &impl->result, &result );
++    impl->hr = hr;
++
++    if (impl->handler != NULL && impl->handler != HANDLER_NOT_SET)
++    {
++        IWineAsyncOperationCompletedHandler *handler = impl->handler;
++        AsyncStatus status = impl->status;
++        impl->handler = NULL; /* Prevent concurrent invoke. */
++        LeaveCriticalSection( &impl->cs );
++
++        IWineAsyncOperationCompletedHandler_Invoke( handler, operation, status );
++        IWineAsyncOperationCompletedHandler_Release( handler );
++    }
++    else LeaveCriticalSection( &impl->cs );
++
++    /* release refcount acquired in Start */
++    IInspectable_Release( operation );
++
++    PropVariantClear( &result );
++}
++
++static HRESULT async_info_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
++                                  IInspectable *outer, IWineAsyncInfoImpl **out )
++{
++    struct async_info *impl;
++
++    if (!(impl = calloc( 1, sizeof(struct async_info) ))) return E_OUTOFMEMORY;
++    impl->IWineAsyncInfoImpl_iface.lpVtbl = &async_impl_vtbl;
++    impl->IAsyncInfo_iface.lpVtbl = &async_info_vtbl;
++    impl->IInspectable_outer = outer;
++    impl->ref = 1;
++
++    impl->callback = callback;
++    impl->handler = HANDLER_NOT_SET;
++    impl->status = Started;
++    if (!(impl->async_run_work = CreateThreadpoolWork( async_info_callback, &impl->IWineAsyncInfoImpl_iface, NULL )))
++        return HRESULT_FROM_WIN32( GetLastError() );
++
++    if ((impl->invoker = invoker)) IUnknown_AddRef( impl->invoker );
++    if ((impl->param = param)) IUnknown_AddRef( impl->param );
++
++    InitializeCriticalSection( &impl->cs );
++    impl->cs.DebugInfo->Spare[0] = (DWORD_PTR)( __FILE__ ": async_info.cs" );
++
++    *out = &impl->IWineAsyncInfoImpl_iface;
++    return S_OK;
++}
++
++struct async_bool
++{
++    IAsyncOperation_boolean IAsyncOperation_boolean_iface;
++    IWineAsyncInfoImpl *IWineAsyncInfoImpl_inner;
++    LONG ref;
++};
++
++static inline struct async_bool *impl_from_IAsyncOperation_boolean( IAsyncOperation_boolean *iface )
++{
++    return CONTAINING_RECORD( iface, struct async_bool, IAsyncOperation_boolean_iface );
++}
++
++static HRESULT WINAPI async_bool_QueryInterface( IAsyncOperation_boolean *iface, REFIID iid, void **out )
++{
++    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IAsyncOperation_boolean ))
++    {
++        IInspectable_AddRef( (*out = &impl->IAsyncOperation_boolean_iface) );
++        return S_OK;
++    }
++
++    return IWineAsyncInfoImpl_QueryInterface( impl->IWineAsyncInfoImpl_inner, iid, out );
++}
++
++static ULONG WINAPI async_bool_AddRef( IAsyncOperation_boolean *iface )
++{
++    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p, ref %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI async_bool_Release( IAsyncOperation_boolean *iface )
++{
++    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p, ref %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        /* guard against re-entry if inner releases an outer iface */
++        InterlockedIncrement( &impl->ref );
++        IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI async_bool_GetIids( IAsyncOperation_boolean *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI async_bool_GetRuntimeClassName( IAsyncOperation_boolean *iface, HSTRING *class_name )
++{
++    return WindowsCreateString( L"Windows.Foundation.IAsyncOperation`1<Boolean>",
++                                ARRAY_SIZE(L"Windows.Foundation.IAsyncOperation`1<Boolean>"),
++                                class_name );
++}
++
++static HRESULT WINAPI async_bool_GetTrustLevel( IAsyncOperation_boolean *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI async_bool_put_Completed( IAsyncOperation_boolean *iface, IAsyncOperationCompletedHandler_boolean *bool_handler )
++{
++    IWineAsyncOperationCompletedHandler *handler = (IWineAsyncOperationCompletedHandler *)bool_handler;
++    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
++    TRACE( "iface %p, handler %p.\n", iface, handler );
++    return IWineAsyncInfoImpl_put_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler *)handler );
++}
++
++static HRESULT WINAPI async_bool_get_Completed( IAsyncOperation_boolean *iface, IAsyncOperationCompletedHandler_boolean **bool_handler )
++{
++    IWineAsyncOperationCompletedHandler **handler = (IWineAsyncOperationCompletedHandler **)bool_handler;
++    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
++    TRACE( "iface %p, handler %p.\n", iface, handler );
++    return IWineAsyncInfoImpl_get_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler **)handler );
++}
++
++static HRESULT WINAPI async_bool_GetResults( IAsyncOperation_boolean *iface, BOOLEAN *results )
++{
++    struct async_bool *impl = impl_from_IAsyncOperation_boolean( iface );
++    PROPVARIANT result = {.vt = VT_BOOL};
++    HRESULT hr;
++
++    TRACE( "iface %p, results %p.\n", iface, results );
++
++    hr = IWineAsyncInfoImpl_get_Result( impl->IWineAsyncInfoImpl_inner, &result );
++
++    *results = result.boolVal;
++    PropVariantClear( &result );
++    return hr;
++}
++
++static const struct IAsyncOperation_booleanVtbl async_bool_vtbl =
++{
++    /* IUnknown methods */
++    async_bool_QueryInterface,
++    async_bool_AddRef,
++    async_bool_Release,
++    /* IInspectable methods */
++    async_bool_GetIids,
++    async_bool_GetRuntimeClassName,
++    async_bool_GetTrustLevel,
++    /* IAsyncOperation<boolean> */
++    async_bool_put_Completed,
++    async_bool_get_Completed,
++    async_bool_GetResults,
++};
++
++HRESULT async_operation_boolean_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
++                                        IAsyncOperation_boolean **out )
++{
++    struct async_bool *impl;
++    HRESULT hr;
++
++    *out = NULL;
++    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
++    impl->IAsyncOperation_boolean_iface.lpVtbl = &async_bool_vtbl;
++    impl->ref = 1;
++
++    if (FAILED(hr = async_info_create( invoker, param, callback, (IInspectable *)&impl->IAsyncOperation_boolean_iface, &impl->IWineAsyncInfoImpl_inner )) ||
++        FAILED(hr = IWineAsyncInfoImpl_Start( impl->IWineAsyncInfoImpl_inner )))
++    {
++        if (impl->IWineAsyncInfoImpl_inner) IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
++        free( impl );
++        return hr;
++    }
++
++    *out = &impl->IAsyncOperation_boolean_iface;
++    TRACE( "created IAsyncOperation_boolean %p\n", *out );
++    return S_OK;
++}
++
++struct async_result
++{
++    IAsyncOperation_ForceFeedbackLoadEffectResult IAsyncOperation_ForceFeedbackLoadEffectResult_iface;
++    IWineAsyncInfoImpl *IWineAsyncInfoImpl_inner;
++    LONG ref;
++};
++
++static inline struct async_result *impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( IAsyncOperation_ForceFeedbackLoadEffectResult *iface )
++{
++    return CONTAINING_RECORD( iface, struct async_result, IAsyncOperation_ForceFeedbackLoadEffectResult_iface );
++}
++
++static HRESULT WINAPI async_result_QueryInterface( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, REFIID iid, void **out )
++{
++    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IAsyncOperation_ForceFeedbackLoadEffectResult ))
++    {
++        IInspectable_AddRef( (*out = &impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface) );
++        return S_OK;
++    }
++
++    return IWineAsyncInfoImpl_QueryInterface( impl->IWineAsyncInfoImpl_inner, iid, out );
++}
++
++static ULONG WINAPI async_result_AddRef( IAsyncOperation_ForceFeedbackLoadEffectResult *iface )
++{
++    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p, ref %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI async_result_Release( IAsyncOperation_ForceFeedbackLoadEffectResult *iface )
++{
++    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p, ref %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        /* guard against re-entry if inner releases an outer iface */
++        InterlockedIncrement( &impl->ref );
++        IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI async_result_GetIids( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI async_result_GetRuntimeClassName( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, HSTRING *class_name )
++{
++    return WindowsCreateString( L"Windows.Foundation.IAsyncOperation`1<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>",
++                                ARRAY_SIZE(L"Windows.Foundation.IAsyncOperation`1<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>"),
++                                class_name );
++}
++
++static HRESULT WINAPI async_result_GetTrustLevel( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI async_result_put_Completed( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, IAsyncOperationCompletedHandler_ForceFeedbackLoadEffectResult *handler )
++{
++    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
++    TRACE( "iface %p, handler %p.\n", iface, handler );
++    return IWineAsyncInfoImpl_put_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler *)handler );
++}
++
++static HRESULT WINAPI async_result_get_Completed( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, IAsyncOperationCompletedHandler_ForceFeedbackLoadEffectResult **handler )
++{
++    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
++    TRACE( "iface %p, handler %p.\n", iface, handler );
++    return IWineAsyncInfoImpl_get_Completed( impl->IWineAsyncInfoImpl_inner, (IWineAsyncOperationCompletedHandler **)handler );
++}
++
++static HRESULT WINAPI async_result_GetResults( IAsyncOperation_ForceFeedbackLoadEffectResult *iface, ForceFeedbackLoadEffectResult *results )
++{
++    struct async_result *impl = impl_from_IAsyncOperation_ForceFeedbackLoadEffectResult( iface );
++    PROPVARIANT result = {.vt = VT_UI4};
++    HRESULT hr;
++
++    TRACE( "iface %p, results %p.\n", iface, results );
++
++    hr = IWineAsyncInfoImpl_get_Result( impl->IWineAsyncInfoImpl_inner, &result );
++
++    *results = result.ulVal;
++    PropVariantClear( &result );
++    return hr;
++}
++
++static const struct IAsyncOperation_ForceFeedbackLoadEffectResultVtbl async_result_vtbl =
++{
++    /* IUnknown methods */
++    async_result_QueryInterface,
++    async_result_AddRef,
++    async_result_Release,
++    /* IInspectable methods */
++    async_result_GetIids,
++    async_result_GetRuntimeClassName,
++    async_result_GetTrustLevel,
++    /* IAsyncOperation<ForceFeedbackLoadEffectResult> */
++    async_result_put_Completed,
++    async_result_get_Completed,
++    async_result_GetResults,
++};
++
++HRESULT async_operation_effect_result_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
++                                              IAsyncOperation_ForceFeedbackLoadEffectResult **out )
++{
++    struct async_result *impl;
++    HRESULT hr;
++
++    *out = NULL;
++    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
++    impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface.lpVtbl = &async_result_vtbl;
++    impl->ref = 1;
++
++    if (FAILED(hr = async_info_create( invoker, param, callback, (IInspectable *)&impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface, &impl->IWineAsyncInfoImpl_inner )) ||
++        FAILED(hr = IWineAsyncInfoImpl_Start( impl->IWineAsyncInfoImpl_inner )))
++    {
++        if (impl->IWineAsyncInfoImpl_inner) IWineAsyncInfoImpl_Release( impl->IWineAsyncInfoImpl_inner );
++        free( impl );
++        return hr;
++    }
++
++    *out = &impl->IAsyncOperation_ForceFeedbackLoadEffectResult_iface;
++    TRACE( "created IAsyncOperation_ForceFeedbackLoadEffectResult %p\n", *out );
++    return S_OK;
++}
+diff --git a/dlls/windows.gaming.input/classes.idl b/dlls/windows.gaming.input/classes.idl
+index ca3bd5d8dd7..3172def88f5 100644
+--- a/dlls/windows.gaming.input/classes.idl
++++ b/dlls/windows.gaming.input/classes.idl
+@@ -29,6 +29,7 @@ import "asyncinfo.idl";
+ import "eventtoken.idl";
+ import "windowscontracts.idl";
+ import "windows.foundation.idl";
++import "windows.foundation.numerics.idl";
+ import "windows.devices.haptics.idl";
+ import "windows.gaming.input.forcefeedback.idl";
+ import "windows.system.idl";
+@@ -36,4 +37,5 @@ import "windows.devices.power.idl";
+ 
+ #define DO_NO_IMPORTS
+ #include "windows.gaming.input.idl"
++#include "windows.gaming.ui.idl"
+ #include "windows.gaming.input.custom.idl"
+diff --git a/dlls/windows.gaming.input/condition_effect.c b/dlls/windows.gaming.input/condition_effect.c
+new file mode 100644
+index 00000000000..c3a5a1fcd8b
+--- /dev/null
++++ b/dlls/windows.gaming.input/condition_effect.c
+@@ -0,0 +1,288 @@
++/* WinRT Windows.Gaming.Input implementation
++ *
++ * Copyright 2022 Rémi Bernon for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include "private.h"
++#include "provider.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(input);
++
++struct condition_effect
++{
++    IConditionForceEffect IConditionForceEffect_iface;
++    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
++    LONG ref;
++
++    ConditionForceEffectKind kind;
++};
++
++static inline struct condition_effect *impl_from_IConditionForceEffect( IConditionForceEffect *iface )
++{
++    return CONTAINING_RECORD( iface, struct condition_effect, IConditionForceEffect_iface );
++}
++
++static HRESULT WINAPI effect_QueryInterface( IConditionForceEffect *iface, REFIID iid, void **out )
++{
++    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IConditionForceEffect ))
++    {
++        IInspectable_AddRef( (*out = &impl->IConditionForceEffect_iface) );
++        return S_OK;
++    }
++
++    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
++}
++
++static ULONG WINAPI effect_AddRef( IConditionForceEffect *iface )
++{
++    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI effect_Release( IConditionForceEffect *iface )
++{
++    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        /* guard against re-entry if inner releases an outer iface */
++        InterlockedIncrement( &impl->ref );
++        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI effect_GetIids( IConditionForceEffect *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_GetRuntimeClassName( IConditionForceEffect *iface, HSTRING *class_name )
++{
++    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConditionForceEffect,
++                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConditionForceEffect),
++                                class_name );
++}
++
++static HRESULT WINAPI effect_GetTrustLevel( IConditionForceEffect *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_get_Kind( IConditionForceEffect *iface, ConditionForceEffectKind *kind )
++{
++    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
++    TRACE( "iface %p, kind %p.\n", iface, kind );
++    *kind = impl->kind;
++    return S_OK;
++}
++
++static HRESULT WINAPI effect_SetParameters( IConditionForceEffect *iface, Vector3 direction, FLOAT positive_coeff, FLOAT negative_coeff,
++                                            FLOAT max_positive_magnitude, FLOAT max_negative_magnitude, FLOAT deadzone, FLOAT bias )
++{
++    struct condition_effect *impl = impl_from_IConditionForceEffect( iface );
++    WineForceFeedbackEffectParameters params =
++    {
++        .condition =
++        {
++            .type = WineForceFeedbackEffectType_Condition + impl->kind,
++            .direction = direction,
++            .positive_coeff = positive_coeff,
++            .negative_coeff = negative_coeff,
++            .max_positive_magnitude = max_positive_magnitude,
++            .max_negative_magnitude = max_negative_magnitude,
++            .deadzone = deadzone,
++            .bias = bias,
++        },
++    };
++
++    TRACE( "iface %p, direction %s, positive_coeff %f, negative_coeff %f, max_positive_magnitude %f, max_negative_magnitude %f, deadzone %f, bias %f.\n",
++           iface, debugstr_vector3( &direction ), positive_coeff, negative_coeff, max_positive_magnitude, max_negative_magnitude, deadzone, bias );
++
++    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
++}
++
++static const struct IConditionForceEffectVtbl effect_vtbl =
++{
++    effect_QueryInterface,
++    effect_AddRef,
++    effect_Release,
++    /* IInspectable methods */
++    effect_GetIids,
++    effect_GetRuntimeClassName,
++    effect_GetTrustLevel,
++    /* IConditionForceEffect methods */
++    effect_get_Kind,
++    effect_SetParameters,
++};
++
++struct condition_factory
++{
++    IActivationFactory IActivationFactory_iface;
++    IConditionForceEffectFactory IConditionForceEffectFactory_iface;
++    LONG ref;
++};
++
++static inline struct condition_factory *impl_from_IActivationFactory( IActivationFactory *iface )
++{
++    return CONTAINING_RECORD( iface, struct condition_factory, IActivationFactory_iface );
++}
++
++static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
++{
++    struct condition_factory *impl = impl_from_IActivationFactory( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IActivationFactory ))
++    {
++        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
++        return S_OK;
++    }
++
++    if (IsEqualGUID( iid, &IID_IConditionForceEffectFactory ))
++    {
++        IInspectable_AddRef( (*out = &impl->IConditionForceEffectFactory_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
++{
++    struct condition_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI activation_Release( IActivationFactory *iface )
++{
++    struct condition_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
++{
++    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
++{
++    FIXME( "iface %p, instance %p stub!\n", iface, instance );
++    return E_NOTIMPL;
++}
++
++static const struct IActivationFactoryVtbl activation_vtbl =
++{
++    activation_QueryInterface,
++    activation_AddRef,
++    activation_Release,
++    /* IInspectable methods */
++    activation_GetIids,
++    activation_GetRuntimeClassName,
++    activation_GetTrustLevel,
++    /* IActivationFactory methods */
++    activation_ActivateInstance,
++};
++
++DEFINE_IINSPECTABLE( factory, IConditionForceEffectFactory, struct condition_factory, IActivationFactory_iface )
++
++static HRESULT WINAPI factory_CreateInstance( IConditionForceEffectFactory *iface, enum ConditionForceEffectKind kind, IForceFeedbackEffect **out )
++{
++    enum WineForceFeedbackEffectType type = WineForceFeedbackEffectType_Condition + kind;
++    struct condition_effect *impl;
++    HRESULT hr;
++
++    TRACE( "iface %p, kind %u, out %p.\n", iface, kind, out );
++
++    if (!(impl = calloc( 1, sizeof(struct condition_effect) ))) return E_OUTOFMEMORY;
++    impl->IConditionForceEffect_iface.lpVtbl = &effect_vtbl;
++    impl->ref = 1;
++    impl->kind = kind;
++
++    if (FAILED(hr = force_feedback_effect_create( type, (IInspectable *)&impl->IConditionForceEffect_iface, &impl->IWineForceFeedbackEffectImpl_inner )) ||
++        FAILED(hr = IConditionForceEffect_QueryInterface( &impl->IConditionForceEffect_iface, &IID_IForceFeedbackEffect, (void **)out )))
++    {
++        if (impl->IWineForceFeedbackEffectImpl_inner) IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
++        free( impl );
++        return hr;
++    }
++
++    IConditionForceEffect_Release( &impl->IConditionForceEffect_iface );
++    TRACE( "created ConditionForceEffect %p\n", *out );
++    return S_OK;
++}
++
++static const struct IConditionForceEffectFactoryVtbl factory_vtbl =
++{
++    factory_QueryInterface,
++    factory_AddRef,
++    factory_Release,
++    /* IInspectable methods */
++    factory_GetIids,
++    factory_GetRuntimeClassName,
++    factory_GetTrustLevel,
++    /* IConditionForceEffectFactory methods */
++    factory_CreateInstance,
++};
++
++static struct condition_factory condition_statics =
++{
++    {&activation_vtbl},
++    {&factory_vtbl},
++    1,
++};
++
++IInspectable *condition_effect_factory = (IInspectable *)&condition_statics.IActivationFactory_iface;
+diff --git a/dlls/windows.gaming.input/constant_effect.c b/dlls/windows.gaming.input/constant_effect.c
+new file mode 100644
+index 00000000000..15763b30d67
+--- /dev/null
++++ b/dlls/windows.gaming.input/constant_effect.c
+@@ -0,0 +1,275 @@
++/* WinRT Windows.Gaming.Input implementation
++ *
++ * Copyright 2022 Rémi Bernon for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include "private.h"
++#include "provider.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(input);
++
++struct constant_effect
++{
++    IConstantForceEffect IConstantForceEffect_iface;
++    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
++    LONG ref;
++};
++
++static inline struct constant_effect *impl_from_IConstantForceEffect( IConstantForceEffect *iface )
++{
++    return CONTAINING_RECORD( iface, struct constant_effect, IConstantForceEffect_iface );
++}
++
++static HRESULT WINAPI effect_QueryInterface( IConstantForceEffect *iface, REFIID iid, void **out )
++{
++    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IConstantForceEffect ))
++    {
++        IInspectable_AddRef( (*out = &impl->IConstantForceEffect_iface) );
++        return S_OK;
++    }
++
++    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
++}
++
++static ULONG WINAPI effect_AddRef( IConstantForceEffect *iface )
++{
++    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI effect_Release( IConstantForceEffect *iface )
++{
++    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        /* guard against re-entry if inner releases an outer iface */
++        InterlockedIncrement( &impl->ref );
++        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI effect_GetIids( IConstantForceEffect *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_GetRuntimeClassName( IConstantForceEffect *iface, HSTRING *class_name )
++{
++    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConstantForceEffect,
++                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConstantForceEffect),
++                                class_name );
++}
++
++static HRESULT WINAPI effect_GetTrustLevel( IConstantForceEffect *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_SetParameters( IConstantForceEffect *iface, Vector3 direction, TimeSpan duration )
++{
++    WineForceFeedbackEffectParameters params =
++    {
++        .constant =
++        {
++            .type = WineForceFeedbackEffectType_Constant,
++            .direction = direction,
++            .duration = duration,
++            .repeat_count = 1,
++            .gain = 1.,
++        },
++    };
++    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
++
++    TRACE( "iface %p, direction %s, duration %I64u.\n", iface, debugstr_vector3( &direction ), duration.Duration );
++
++    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
++}
++
++static HRESULT WINAPI effect_SetParametersWithEnvelope( IConstantForceEffect *iface, Vector3 direction, FLOAT attack_gain,
++                                                        FLOAT sustain_gain, FLOAT release_gain, TimeSpan start_delay,
++                                                        TimeSpan attack_duration, TimeSpan sustain_duration,
++                                                        TimeSpan release_duration, UINT32 repeat_count )
++{
++    WineForceFeedbackEffectParameters params =
++    {
++        .constant =
++        {
++            .type = WineForceFeedbackEffectType_Constant,
++            .direction = direction,
++            .duration = {attack_duration.Duration + sustain_duration.Duration + release_duration.Duration},
++            .start_delay = start_delay,
++            .repeat_count = repeat_count,
++            .gain = sustain_gain,
++        },
++    };
++    WineForceFeedbackEffectEnvelope envelope =
++    {
++        .attack_gain = attack_gain,
++        .release_gain = release_gain,
++        .attack_duration = attack_duration,
++        .release_duration = release_duration,
++    };
++    struct constant_effect *impl = impl_from_IConstantForceEffect( iface );
++
++    TRACE( "iface %p, direction %s, attack_gain %f, sustain_gain %f, release_gain %f, start_delay %I64u, attack_duration %I64u, "
++           "sustain_duration %I64u, release_duration %I64u, repeat_count %u.\n", iface, debugstr_vector3( &direction ),
++           attack_gain, sustain_gain, release_gain, start_delay.Duration, attack_duration.Duration, sustain_duration.Duration,
++           release_duration.Duration, repeat_count );
++
++    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, &envelope );
++}
++
++static const struct IConstantForceEffectVtbl effect_vtbl =
++{
++    effect_QueryInterface,
++    effect_AddRef,
++    effect_Release,
++    /* IInspectable methods */
++    effect_GetIids,
++    effect_GetRuntimeClassName,
++    effect_GetTrustLevel,
++    /* IConstantForceEffect methods */
++    effect_SetParameters,
++    effect_SetParametersWithEnvelope,
++};
++
++struct constant_factory
++{
++    IActivationFactory IActivationFactory_iface;
++    LONG ref;
++};
++
++static inline struct constant_factory *impl_from_IActivationFactory( IActivationFactory *iface )
++{
++    return CONTAINING_RECORD( iface, struct constant_factory, IActivationFactory_iface );
++}
++
++static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
++{
++    struct constant_factory *impl = impl_from_IActivationFactory( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IActivationFactory ))
++    {
++        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
++{
++    struct constant_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI activation_Release( IActivationFactory *iface )
++{
++    struct constant_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
++{
++    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
++{
++    struct constant_effect *impl;
++    HRESULT hr;
++
++    TRACE( "iface %p, instance %p.\n", iface, instance );
++
++    if (!(impl = calloc( 1, sizeof(struct constant_effect) ))) return E_OUTOFMEMORY;
++    impl->IConstantForceEffect_iface.lpVtbl = &effect_vtbl;
++    impl->ref = 1;
++
++    if (FAILED(hr = force_feedback_effect_create( WineForceFeedbackEffectType_Constant, (IInspectable *)&impl->IConstantForceEffect_iface,
++                                                  &impl->IWineForceFeedbackEffectImpl_inner )))
++    {
++        free( impl );
++        return hr;
++    }
++
++    *instance = (IInspectable *)&impl->IConstantForceEffect_iface;
++    TRACE( "created ConstantForceEffect %p\n", *instance );
++    return S_OK;
++}
++
++static const struct IActivationFactoryVtbl activation_vtbl =
++{
++    activation_QueryInterface,
++    activation_AddRef,
++    activation_Release,
++    /* IInspectable methods */
++    activation_GetIids,
++    activation_GetRuntimeClassName,
++    activation_GetTrustLevel,
++    /* IActivationFactory methods */
++    activation_ActivateInstance,
++};
++
++static struct constant_factory constant_statics =
++{
++    {&activation_vtbl},
++    1,
++};
++
++IInspectable *constant_effect_factory = (IInspectable *)&constant_statics.IActivationFactory_iface;
+diff --git a/dlls/windows.gaming.input/controller.c b/dlls/windows.gaming.input/controller.c
+index 03a3ae398cf..bd3d441c445 100644
+--- a/dlls/windows.gaming.input/controller.c
++++ b/dlls/windows.gaming.input/controller.c
+@@ -99,7 +99,7 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
+         return S_OK;
+     }
+ 
+-    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
+     *out = NULL;
+     return E_NOINTERFACE;
+ }
+@@ -229,8 +229,32 @@ static HRESULT WINAPI raw_controller_get_ButtonCount( IRawGameController *iface,
+ 
+ static HRESULT WINAPI raw_controller_get_ForceFeedbackMotors( IRawGameController *iface, IVectorView_ForceFeedbackMotor **value )
+ {
+-    FIXME( "iface %p, value %p stub!\n", iface, value );
+-    return E_NOTIMPL;
++    static const struct vector_iids iids =
++    {
++        .vector = &IID_IVector_ForceFeedbackMotor,
++        .view = &IID_IVectorView_ForceFeedbackMotor,
++        .iterable = &IID_IIterable_ForceFeedbackMotor,
++        .iterator = &IID_IIterator_ForceFeedbackMotor,
++    };
++    struct controller *impl = impl_from_IRawGameController( iface );
++    IVector_ForceFeedbackMotor *vector;
++    IForceFeedbackMotor *motor;
++    HRESULT hr;
++
++    TRACE( "iface %p, value %p\n", iface, value );
++
++    if (FAILED(hr = vector_create( &iids, (void **)&vector ))) return hr;
++
++    if (SUCCEEDED(IWineGameControllerProvider_get_ForceFeedbackMotor( impl->wine_provider, &motor )) && motor)
++    {
++        hr = IVector_ForceFeedbackMotor_Append( vector, motor );
++        IForceFeedbackMotor_Release( motor );
++    }
++
++    if (SUCCEEDED(hr)) hr = IVector_ForceFeedbackMotor_GetView( vector, value );
++    IVector_ForceFeedbackMotor_Release( vector );
++
++    return hr;
+ }
+ 
+ static HRESULT WINAPI raw_controller_get_HardwareProductId( IRawGameController *iface, UINT16 *value )
+diff --git a/dlls/windows.gaming.input/force_feedback.c b/dlls/windows.gaming.input/force_feedback.c
+new file mode 100644
+index 00000000000..f7a233b46d4
+--- /dev/null
++++ b/dlls/windows.gaming.input/force_feedback.c
+@@ -0,0 +1,801 @@
++/* WinRT Windows.Gaming.Input implementation
++ *
++ * Copyright 2022 Rémi Bernon for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include "private.h"
++
++#include "math.h"
++
++#include "ddk/hidsdi.h"
++#include "dinput.h"
++#include "hidusage.h"
++#include "provider.h"
++
++#include "wine/debug.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(input);
++
++struct effect
++{
++    IWineForceFeedbackEffectImpl IWineForceFeedbackEffectImpl_iface;
++    IForceFeedbackEffect IForceFeedbackEffect_iface;
++    IInspectable *IInspectable_outer;
++    LONG ref;
++
++    CRITICAL_SECTION cs;
++    IDirectInputEffect *effect;
++
++    GUID type;
++    DWORD axes[3];
++    LONG directions[3];
++    ULONG repeat_count;
++    DICONSTANTFORCE constant_force;
++    DIRAMPFORCE ramp_force;
++    DICONDITION condition;
++    DIPERIODIC periodic;
++    DIENVELOPE envelope;
++    DIEFFECT params;
++};
++
++static inline struct effect *impl_from_IWineForceFeedbackEffectImpl( IWineForceFeedbackEffectImpl *iface )
++{
++    return CONTAINING_RECORD( iface, struct effect, IWineForceFeedbackEffectImpl_iface );
++}
++
++static HRESULT WINAPI effect_impl_QueryInterface( IWineForceFeedbackEffectImpl *iface, REFIID iid, void **out )
++{
++    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IWineForceFeedbackEffectImpl ))
++    {
++        IWineForceFeedbackEffectImpl_AddRef( (*out = &impl->IWineForceFeedbackEffectImpl_iface) );
++        return S_OK;
++    }
++
++    if (IsEqualGUID( iid, &IID_IForceFeedbackEffect ))
++    {
++        IInspectable_AddRef( (*out = &impl->IForceFeedbackEffect_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI effect_impl_AddRef( IWineForceFeedbackEffectImpl *iface )
++{
++    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI effect_impl_Release( IWineForceFeedbackEffectImpl *iface )
++{
++    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        if (impl->effect) IDirectInputEffect_Release( impl->effect );
++        impl->cs.DebugInfo->Spare[0] = 0;
++        DeleteCriticalSection( &impl->cs );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI effect_impl_put_Parameters( IWineForceFeedbackEffectImpl *iface, WineForceFeedbackEffectParameters params,
++                                                  WineForceFeedbackEffectEnvelope *envelope )
++{
++    struct effect *impl = impl_from_IWineForceFeedbackEffectImpl( iface );
++    DWORD count = 0;
++    HRESULT hr;
++
++    TRACE( "iface %p, params %p, envelope %p.\n", iface, &params, envelope );
++
++    EnterCriticalSection( &impl->cs );
++    switch (params.type)
++    {
++    case WineForceFeedbackEffectType_Constant:
++        impl->repeat_count = params.constant.repeat_count;
++        impl->constant_force.lMagnitude = round( params.constant.gain * params.constant.direction.X * 10000 );
++        impl->params.dwDuration = params.constant.duration.Duration / 10;
++        impl->params.dwStartDelay = params.constant.start_delay.Duration / 10;
++        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( -params.constant.direction.X * 10000 );
++        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( -params.constant.direction.Y * 10000 );
++        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( -params.constant.direction.Z * 10000 );
++        break;
++
++    case WineForceFeedbackEffectType_Ramp:
++        impl->repeat_count = params.ramp.repeat_count;
++        impl->ramp_force.lStart = round( params.ramp.gain * params.ramp.start_vector.X * 10000 );
++        impl->ramp_force.lEnd = round( params.ramp.gain * params.ramp.end_vector.X * 10000 );
++        impl->params.dwDuration = params.ramp.duration.Duration / 10;
++        impl->params.dwStartDelay = params.ramp.start_delay.Duration / 10;
++        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( -params.ramp.start_vector.X * 10000 );
++        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( -params.ramp.start_vector.Y * 10000 );
++        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( -params.ramp.start_vector.Z * 10000 );
++        break;
++
++    case WineForceFeedbackEffectType_Periodic_SineWave:
++    case WineForceFeedbackEffectType_Periodic_TriangleWave:
++    case WineForceFeedbackEffectType_Periodic_SquareWave:
++    case WineForceFeedbackEffectType_Periodic_SawtoothWaveDown:
++    case WineForceFeedbackEffectType_Periodic_SawtoothWaveUp:
++        impl->repeat_count = params.periodic.repeat_count;
++        impl->periodic.dwMagnitude = round( params.periodic.gain * 10000 );
++        impl->periodic.dwPeriod = 1000000 / params.periodic.frequency;
++        impl->periodic.dwPhase = round( params.periodic.phase * 36000 );
++        impl->periodic.lOffset = round( params.periodic.bias * 10000 );
++        impl->params.dwDuration = params.periodic.duration.Duration / 10;
++        impl->params.dwStartDelay = params.periodic.start_delay.Duration / 10;
++        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( -params.periodic.direction.X * 10000 );
++        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( -params.periodic.direction.Y * 10000 );
++        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( -params.periodic.direction.Z * 10000 );
++        break;
++
++    case WineForceFeedbackEffectType_Condition_Spring:
++    case WineForceFeedbackEffectType_Condition_Damper:
++    case WineForceFeedbackEffectType_Condition_Inertia:
++    case WineForceFeedbackEffectType_Condition_Friction:
++        impl->repeat_count = 1;
++        impl->condition.lPositiveCoefficient = round( atan( params.condition.positive_coeff ) / M_PI_2 * 10000 );
++        impl->condition.lNegativeCoefficient = round( atan( params.condition.negative_coeff ) / M_PI_2 * 10000 );
++        impl->condition.dwPositiveSaturation = round( params.condition.max_positive_magnitude * 10000 );
++        impl->condition.dwNegativeSaturation = round( params.condition.max_negative_magnitude * 10000 );
++        impl->condition.lDeadBand = round( params.condition.deadzone * 10000 );
++        impl->condition.lOffset = round( params.condition.bias * 10000 );
++        impl->params.dwDuration = -1;
++        impl->params.dwStartDelay = 0;
++        if (impl->axes[count] == DIJOFS_X) impl->directions[count++] = round( params.condition.direction.X * 10000 );
++        if (impl->axes[count] == DIJOFS_Y) impl->directions[count++] = round( params.condition.direction.Y * 10000 );
++        if (impl->axes[count] == DIJOFS_Z) impl->directions[count++] = round( params.condition.direction.Z * 10000 );
++        break;
++    }
++
++    if (!envelope) impl->params.lpEnvelope = NULL;
++    else
++    {
++        impl->envelope.dwAttackTime = envelope->attack_duration.Duration / 10;
++        impl->envelope.dwAttackLevel = round( envelope->attack_gain * 10000 );
++        impl->envelope.dwFadeTime = impl->params.dwDuration - envelope->release_duration.Duration / 10;
++        impl->envelope.dwFadeLevel = round( envelope->release_gain * 10000 );
++        impl->params.lpEnvelope = &impl->envelope;
++    }
++
++    if (!impl->effect) hr = S_OK;
++    else hr = IDirectInputEffect_SetParameters( impl->effect, &impl->params, DIEP_ALLPARAMS & ~DIEP_AXES );
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static const struct IWineForceFeedbackEffectImplVtbl effect_impl_vtbl =
++{
++    effect_impl_QueryInterface,
++    effect_impl_AddRef,
++    effect_impl_Release,
++    /* IWineForceFeedbackEffectImpl methods */
++    effect_impl_put_Parameters,
++};
++
++DEFINE_IINSPECTABLE_OUTER( effect, IForceFeedbackEffect, struct effect, IInspectable_outer )
++
++static HRESULT WINAPI effect_get_Gain( IForceFeedbackEffect *iface, DOUBLE *value )
++{
++    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
++
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    EnterCriticalSection( &impl->cs );
++    *value = impl->params.dwGain / 10000.;
++    LeaveCriticalSection( &impl->cs );
++
++    return S_OK;
++}
++
++static HRESULT WINAPI effect_put_Gain( IForceFeedbackEffect *iface, DOUBLE value )
++{
++    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
++    HRESULT hr;
++
++    TRACE( "iface %p, value %f.\n", iface, value );
++
++    EnterCriticalSection( &impl->cs );
++    impl->params.dwGain = round( value * 10000 );
++    if (!impl->effect) hr = S_FALSE;
++    else hr = IDirectInputEffect_SetParameters( impl->effect, &impl->params, DIEP_GAIN );
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI effect_get_State( IForceFeedbackEffect *iface, ForceFeedbackEffectState *value )
++{
++    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
++    DWORD status;
++    HRESULT hr;
++
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    EnterCriticalSection( &impl->cs );
++    if (!impl->effect)
++        *value = ForceFeedbackEffectState_Stopped;
++    else if (FAILED(hr = IDirectInputEffect_GetEffectStatus( impl->effect, &status )))
++        *value = ForceFeedbackEffectState_Faulted;
++    else
++    {
++        if (status == DIEGES_PLAYING) *value = ForceFeedbackEffectState_Running;
++        else *value = ForceFeedbackEffectState_Stopped;
++    }
++    LeaveCriticalSection( &impl->cs );
++
++    return S_OK;
++}
++
++static HRESULT WINAPI effect_Start( IForceFeedbackEffect *iface )
++{
++    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
++    HRESULT hr = E_UNEXPECTED;
++    DWORD flags = 0;
++
++    TRACE( "iface %p.\n", iface );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->effect) hr = IDirectInputEffect_Start( impl->effect, impl->repeat_count, flags );
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static HRESULT WINAPI effect_Stop( IForceFeedbackEffect *iface )
++{
++    struct effect *impl = impl_from_IForceFeedbackEffect( iface );
++    HRESULT hr = E_UNEXPECTED;
++
++    TRACE( "iface %p.\n", iface );
++
++    EnterCriticalSection( &impl->cs );
++    if (impl->effect) hr = IDirectInputEffect_Stop( impl->effect );
++    LeaveCriticalSection( &impl->cs );
++
++    return hr;
++}
++
++static const struct IForceFeedbackEffectVtbl effect_vtbl =
++{
++    effect_QueryInterface,
++    effect_AddRef,
++    effect_Release,
++    /* IInspectable methods */
++    effect_GetIids,
++    effect_GetRuntimeClassName,
++    effect_GetTrustLevel,
++    /* IForceFeedbackEffect methods */
++    effect_get_Gain,
++    effect_put_Gain,
++    effect_get_State,
++    effect_Start,
++    effect_Stop,
++};
++
++HRESULT force_feedback_effect_create( enum WineForceFeedbackEffectType type, IInspectable *outer, IWineForceFeedbackEffectImpl **out )
++{
++    struct effect *impl;
++
++    TRACE( "outer %p, out %p\n", outer, out );
++
++    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
++    impl->IWineForceFeedbackEffectImpl_iface.lpVtbl = &effect_impl_vtbl;
++    impl->IForceFeedbackEffect_iface.lpVtbl = &effect_vtbl;
++    impl->IInspectable_outer = outer;
++    impl->ref = 1;
++
++    switch (type)
++    {
++    case WineForceFeedbackEffectType_Constant:
++        impl->type = GUID_ConstantForce;
++        impl->params.lpvTypeSpecificParams = &impl->constant_force;
++        impl->params.cbTypeSpecificParams = sizeof(impl->constant_force);
++        break;
++
++    case WineForceFeedbackEffectType_Ramp:
++        impl->type = GUID_RampForce;
++        impl->params.lpvTypeSpecificParams = &impl->ramp_force;
++        impl->params.cbTypeSpecificParams = sizeof(impl->ramp_force);
++        break;
++
++    case WineForceFeedbackEffectType_Periodic_SineWave:
++        impl->type = GUID_Sine;
++        goto WineForceFeedbackEffectType_Periodic;
++    case WineForceFeedbackEffectType_Periodic_TriangleWave:
++        impl->type = GUID_Triangle;
++        goto WineForceFeedbackEffectType_Periodic;
++    case WineForceFeedbackEffectType_Periodic_SquareWave:
++        impl->type = GUID_Square;
++        goto WineForceFeedbackEffectType_Periodic;
++    case WineForceFeedbackEffectType_Periodic_SawtoothWaveDown:
++        impl->type = GUID_SawtoothDown;
++        goto WineForceFeedbackEffectType_Periodic;
++    case WineForceFeedbackEffectType_Periodic_SawtoothWaveUp:
++        impl->type = GUID_SawtoothUp;
++        goto WineForceFeedbackEffectType_Periodic;
++    WineForceFeedbackEffectType_Periodic:
++        impl->params.lpvTypeSpecificParams = &impl->periodic;
++        impl->params.cbTypeSpecificParams = sizeof(impl->periodic);
++        break;
++
++    case WineForceFeedbackEffectType_Condition_Spring:
++        impl->type = GUID_Spring;
++        goto WineForceFeedbackEffectType_Condition;
++    case WineForceFeedbackEffectType_Condition_Damper:
++        impl->type = GUID_Damper;
++        goto WineForceFeedbackEffectType_Condition;
++    case WineForceFeedbackEffectType_Condition_Inertia:
++        impl->type = GUID_Inertia;
++        goto WineForceFeedbackEffectType_Condition;
++    case WineForceFeedbackEffectType_Condition_Friction:
++        impl->type = GUID_Friction;
++        goto WineForceFeedbackEffectType_Condition;
++    WineForceFeedbackEffectType_Condition:
++        impl->params.lpvTypeSpecificParams = &impl->condition;
++        impl->params.cbTypeSpecificParams = sizeof(impl->condition);
++        break;
++    }
++
++    impl->envelope.dwSize = sizeof(DIENVELOPE);
++    impl->params.dwSize = sizeof(DIEFFECT);
++    impl->params.rgdwAxes = impl->axes;
++    impl->params.rglDirection = impl->directions;
++    impl->params.dwTriggerButton = -1;
++    impl->params.dwGain = 10000;
++    impl->params.dwFlags = DIEFF_CARTESIAN|DIEFF_OBJECTOFFSETS;
++    impl->params.cAxes = -1;
++    impl->axes[0] = DIJOFS_X;
++    impl->axes[1] = DIJOFS_Y;
++    impl->axes[2] = DIJOFS_Z;
++
++    InitializeCriticalSection( &impl->cs );
++    impl->cs.DebugInfo->Spare[0] = (DWORD_PTR)( __FILE__ ": effect.cs" );
++
++    *out = &impl->IWineForceFeedbackEffectImpl_iface;
++    TRACE( "created ForceFeedbackEffect %p\n", *out );
++    return S_OK;
++}
++
++struct motor
++{
++    IForceFeedbackMotor IForceFeedbackMotor_iface;
++    LONG ref;
++
++    IDirectInputDevice8W *device;
++};
++
++static inline struct motor *impl_from_IForceFeedbackMotor( IForceFeedbackMotor *iface )
++{
++    return CONTAINING_RECORD( iface, struct motor, IForceFeedbackMotor_iface );
++}
++
++static HRESULT WINAPI motor_QueryInterface( IForceFeedbackMotor *iface, REFIID iid, void **out )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IForceFeedbackMotor ))
++    {
++        IInspectable_AddRef( (*out = &impl->IForceFeedbackMotor_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI motor_AddRef( IForceFeedbackMotor *iface )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI motor_Release( IForceFeedbackMotor *iface )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        IDirectInputDevice8_Release( impl->device );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI motor_GetIids( IForceFeedbackMotor *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI motor_GetRuntimeClassName( IForceFeedbackMotor *iface, HSTRING *class_name )
++{
++    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_ForceFeedbackMotor,
++                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_ForceFeedbackMotor),
++                                class_name );
++}
++
++static HRESULT WINAPI motor_GetTrustLevel( IForceFeedbackMotor *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI motor_get_AreEffectsPaused( IForceFeedbackMotor *iface, BOOLEAN *value )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++    DWORD state;
++    HRESULT hr;
++
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    if (FAILED(hr = IDirectInputDevice8_GetForceFeedbackState( impl->device, &state ))) *value = FALSE;
++    else *value = (state & DIGFFS_PAUSED);
++
++    return hr;
++}
++
++static HRESULT WINAPI motor_get_MasterGain( IForceFeedbackMotor *iface, double *value )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++    DIPROPDWORD gain =
++    {
++        .diph =
++        {
++            .dwSize = sizeof(DIPROPDWORD),
++            .dwHeaderSize = sizeof(DIPROPHEADER),
++            .dwHow = DIPH_DEVICE,
++        },
++    };
++    HRESULT hr;
++
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    if (FAILED(hr = IDirectInputDevice8_GetProperty( impl->device, DIPROP_FFGAIN, &gain.diph ))) *value = 1.;
++    else *value = gain.dwData / 10000.;
++
++    return hr;
++}
++
++static HRESULT WINAPI motor_put_MasterGain( IForceFeedbackMotor *iface, double value )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++    DIPROPDWORD gain =
++    {
++        .diph =
++        {
++            .dwSize = sizeof(DIPROPDWORD),
++            .dwHeaderSize = sizeof(DIPROPHEADER),
++            .dwHow = DIPH_DEVICE,
++        },
++    };
++
++    TRACE( "iface %p, value %f.\n", iface, value );
++
++    gain.dwData = 10000 * value;
++    return IDirectInputDevice8_SetProperty( impl->device, DIPROP_FFGAIN, &gain.diph );
++}
++
++static HRESULT WINAPI motor_get_IsEnabled( IForceFeedbackMotor *iface, BOOLEAN *value )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++    DWORD state;
++    HRESULT hr;
++
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    if (FAILED(hr = IDirectInputDevice8_GetForceFeedbackState( impl->device, &state ))) *value = FALSE;
++    else *value = !(state & DIGFFS_ACTUATORSOFF);
++
++    return hr;
++}
++
++static BOOL CALLBACK check_ffb_axes( const DIDEVICEOBJECTINSTANCEW *obj, void *args )
++{
++    ForceFeedbackEffectAxes *value = args;
++
++    if (obj->dwType & DIDFT_FFACTUATOR)
++    {
++        if (IsEqualIID( &obj->guidType, &GUID_XAxis )) *value |= ForceFeedbackEffectAxes_X;
++        else if (IsEqualIID( &obj->guidType, &GUID_YAxis )) *value |= ForceFeedbackEffectAxes_Y;
++        else if (IsEqualIID( &obj->guidType, &GUID_ZAxis )) *value |= ForceFeedbackEffectAxes_Z;
++    }
++
++    return DIENUM_CONTINUE;
++}
++
++static HRESULT WINAPI motor_get_SupportedAxes( IForceFeedbackMotor *iface, enum ForceFeedbackEffectAxes *value )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++    HRESULT hr;
++
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    *value = ForceFeedbackEffectAxes_None;
++    if (FAILED(hr = IDirectInputDevice8_EnumObjects( impl->device, check_ffb_axes, value, DIDFT_AXIS )))
++        *value = ForceFeedbackEffectAxes_None;
++
++    return hr;
++}
++
++static HRESULT WINAPI motor_load_effect_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
++{
++    struct effect *effect = impl_from_IForceFeedbackEffect( (IForceFeedbackEffect *)param );
++    IForceFeedbackMotor *motor = (IForceFeedbackMotor *)invoker;
++    struct motor *impl = impl_from_IForceFeedbackMotor( motor );
++    ForceFeedbackEffectAxes supported_axes = 0;
++    IDirectInputEffect *dinput_effect;
++    HRESULT hr;
++
++    EnterCriticalSection( &effect->cs );
++
++    if (FAILED(hr = IForceFeedbackMotor_get_SupportedAxes( motor, &supported_axes )))
++    {
++        WARN( "get_SupportedAxes for motor %p returned %#lx\n", motor, hr );
++        effect->params.cAxes = 0;
++    }
++    else if (effect->params.cAxes == -1)
++    {
++        DWORD count = 0;
++
++        /* initialize axis mapping and re-map directions that were set with the initial mapping */
++        if (supported_axes & ForceFeedbackEffectAxes_X)
++        {
++            effect->directions[count] = effect->directions[0];
++            effect->axes[count++] = DIJOFS_X;
++        }
++        if (supported_axes & ForceFeedbackEffectAxes_Y)
++        {
++            effect->directions[count] = effect->directions[1];
++            effect->axes[count++] = DIJOFS_Y;
++        }
++        if (supported_axes & ForceFeedbackEffectAxes_Z)
++        {
++            effect->directions[count] = effect->directions[2];
++            effect->axes[count++] = DIJOFS_Z;
++        }
++
++        effect->params.cAxes = count;
++    }
++
++    if (SUCCEEDED(hr = IDirectInputDevice8_CreateEffect( impl->device, &effect->type, &effect->params,
++                                                         &dinput_effect, NULL )))
++    {
++        if (effect->effect) IDirectInputEffect_Release( effect->effect );
++        effect->effect = dinput_effect;
++        IDirectInputEffect_AddRef( effect->effect );
++    }
++
++    LeaveCriticalSection( &effect->cs );
++
++    result->vt = VT_UI4;
++    if (SUCCEEDED(hr)) result->ulVal = ForceFeedbackLoadEffectResult_Succeeded;
++    else if (hr == DIERR_DEVICEFULL) result->ulVal = ForceFeedbackLoadEffectResult_EffectStorageFull;
++    else result->ulVal = ForceFeedbackLoadEffectResult_EffectNotSupported;
++
++    return hr;
++}
++
++static HRESULT WINAPI motor_LoadEffectAsync( IForceFeedbackMotor *iface, IForceFeedbackEffect *effect,
++                                             IAsyncOperation_ForceFeedbackLoadEffectResult **async_op )
++{
++    TRACE( "iface %p, effect %p, async_op %p.\n", iface, effect, async_op );
++    return async_operation_effect_result_create( (IUnknown *)iface, (IUnknown *)effect, motor_load_effect_async, async_op );
++}
++
++static HRESULT WINAPI motor_PauseAllEffects( IForceFeedbackMotor *iface )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++
++    TRACE( "iface %p.\n", iface );
++
++    return IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_PAUSE );
++}
++
++static HRESULT WINAPI motor_ResumeAllEffects( IForceFeedbackMotor *iface )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++
++    TRACE( "iface %p.\n", iface );
++
++    return IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_CONTINUE );
++}
++
++static HRESULT WINAPI motor_StopAllEffects( IForceFeedbackMotor *iface )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( iface );
++
++    TRACE( "iface %p.\n", iface );
++
++    return IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_STOPALL );
++}
++
++static HRESULT WINAPI motor_try_disable_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( (IForceFeedbackMotor *)invoker );
++    HRESULT hr;
++
++    hr = IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_SETACTUATORSOFF );
++    result->vt = VT_BOOL;
++    result->boolVal = SUCCEEDED(hr);
++
++    return hr;
++}
++
++static HRESULT WINAPI motor_TryDisableAsync( IForceFeedbackMotor *iface, IAsyncOperation_boolean **async_op )
++{
++    TRACE( "iface %p, async_op %p.\n", iface, async_op );
++    return async_operation_boolean_create( (IUnknown *)iface, NULL, motor_try_disable_async, async_op );
++}
++
++static HRESULT WINAPI motor_try_enable_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( (IForceFeedbackMotor *)invoker );
++    HRESULT hr;
++
++    hr = IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_SETACTUATORSON );
++    result->vt = VT_BOOL;
++    result->boolVal = SUCCEEDED(hr);
++
++    return hr;
++}
++
++static HRESULT WINAPI motor_TryEnableAsync( IForceFeedbackMotor *iface, IAsyncOperation_boolean **async_op )
++{
++    TRACE( "iface %p, async_op %p.\n", iface, async_op );
++    return async_operation_boolean_create( (IUnknown *)iface, NULL, motor_try_enable_async, async_op );
++}
++
++static HRESULT WINAPI motor_try_reset_async( IUnknown *invoker, IUnknown *param, PROPVARIANT *result )
++{
++    struct motor *impl = impl_from_IForceFeedbackMotor( (IForceFeedbackMotor *)invoker );
++    HRESULT hr;
++
++    hr = IDirectInputDevice8_SendForceFeedbackCommand( impl->device, DISFFC_RESET );
++    result->vt = VT_BOOL;
++    result->boolVal = SUCCEEDED(hr);
++
++    return hr;
++}
++
++static HRESULT WINAPI motor_TryResetAsync( IForceFeedbackMotor *iface, IAsyncOperation_boolean **async_op )
++{
++    TRACE( "iface %p, async_op %p.\n", iface, async_op );
++    return async_operation_boolean_create( (IUnknown *)iface, NULL, motor_try_reset_async, async_op );
++}
++
++static HRESULT WINAPI motor_unload_effect_async( IUnknown *iface, IUnknown *param, PROPVARIANT *result )
++{
++    struct effect *effect = impl_from_IForceFeedbackEffect( (IForceFeedbackEffect *)param );
++    IDirectInputEffect *dinput_effect;
++    HRESULT hr;
++
++    EnterCriticalSection( &effect->cs );
++    dinput_effect = effect->effect;
++    effect->effect = NULL;
++    LeaveCriticalSection( &effect->cs );
++
++    if (!dinput_effect) hr = S_OK;
++    else
++    {
++        hr = IDirectInputEffect_Unload( dinput_effect );
++        IDirectInputEffect_Release( dinput_effect );
++    }
++
++    result->vt = VT_BOOL;
++    result->boolVal = SUCCEEDED(hr);
++    return hr;
++}
++
++static HRESULT WINAPI motor_TryUnloadEffectAsync( IForceFeedbackMotor *iface, IForceFeedbackEffect *effect,
++                                                  IAsyncOperation_boolean **async_op )
++{
++    struct effect *impl = impl_from_IForceFeedbackEffect( (IForceFeedbackEffect *)effect );
++    HRESULT hr = S_OK;
++
++    TRACE( "iface %p, effect %p, async_op %p.\n", iface, effect, async_op );
++
++    EnterCriticalSection( &impl->cs );
++    if (!impl->effect) hr = E_FAIL;
++    LeaveCriticalSection( &impl->cs );
++    if (FAILED(hr)) return hr;
++
++    return async_operation_boolean_create( (IUnknown *)iface, (IUnknown *)effect, motor_unload_effect_async, async_op );
++}
++
++static const struct IForceFeedbackMotorVtbl motor_vtbl =
++{
++    motor_QueryInterface,
++    motor_AddRef,
++    motor_Release,
++    /* IInspectable methods */
++    motor_GetIids,
++    motor_GetRuntimeClassName,
++    motor_GetTrustLevel,
++    /* IForceFeedbackMotor methods */
++    motor_get_AreEffectsPaused,
++    motor_get_MasterGain,
++    motor_put_MasterGain,
++    motor_get_IsEnabled,
++    motor_get_SupportedAxes,
++    motor_LoadEffectAsync,
++    motor_PauseAllEffects,
++    motor_ResumeAllEffects,
++    motor_StopAllEffects,
++    motor_TryDisableAsync,
++    motor_TryEnableAsync,
++    motor_TryResetAsync,
++    motor_TryUnloadEffectAsync,
++};
++
++HRESULT force_feedback_motor_create( IDirectInputDevice8W *device, IForceFeedbackMotor **out )
++{
++    struct motor *impl;
++    HRESULT hr;
++
++    TRACE( "device %p, out %p\n", device, out );
++
++    if (FAILED(hr = IDirectInputDevice8_Unacquire( device ))) goto failed;
++    if (FAILED(hr = IDirectInputDevice8_SetCooperativeLevel( device, GetDesktopWindow(), DISCL_BACKGROUND | DISCL_EXCLUSIVE ))) goto failed;
++    if (FAILED(hr = IDirectInputDevice8_Acquire( device ))) goto failed;
++
++    if (!(impl = calloc( 1, sizeof(*impl) ))) return E_OUTOFMEMORY;
++    impl->IForceFeedbackMotor_iface.lpVtbl = &motor_vtbl;
++    impl->ref = 1;
++
++    IDirectInputDevice_AddRef( device );
++    impl->device = device;
++
++    *out = &impl->IForceFeedbackMotor_iface;
++    TRACE( "created ForceFeedbackMotor %p\n", *out );
++    return S_OK;
++
++failed:
++    IDirectInputDevice8_SetCooperativeLevel( device, 0, DISCL_BACKGROUND | DISCL_NONEXCLUSIVE );
++    IDirectInputDevice8_Acquire( device );
++    WARN( "Failed to acquire device exclusively, hr %#lx\n", hr );
++    return hr;
++}
+diff --git a/dlls/windows.gaming.input/gamepad.c b/dlls/windows.gaming.input/gamepad.c
+index 0c38fb5cd1a..8dab9a62d09 100644
+--- a/dlls/windows.gaming.input/gamepad.c
++++ b/dlls/windows.gaming.input/gamepad.c
+@@ -61,6 +61,7 @@ struct gamepad
+     IGameControllerImpl IGameControllerImpl_iface;
+     IGameControllerInputSink IGameControllerInputSink_iface;
+     IGamepad IGamepad_iface;
++    IGamepad2 IGamepad2_iface;
+     IGameController *IGameController_outer;
+     LONG ref;
+ 
+@@ -99,7 +100,13 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
+         return S_OK;
+     }
+ 
+-    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    if (IsEqualGUID( iid, &IID_IGamepad2 ))
++    {
++        IInspectable_AddRef( (*out = &impl->IGamepad2_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
+     *out = NULL;
+     return E_NOINTERFACE;
+ }
+@@ -330,6 +337,28 @@ static const struct IGamepadVtbl gamepad_vtbl =
+     gamepad_GetCurrentReading,
+ };
+ 
++DEFINE_IINSPECTABLE_OUTER( gamepad2, IGamepad2, struct gamepad, IGameController_outer )
++
++static HRESULT WINAPI gamepad2_GetButtonLabel(IGamepad2 *iface, GamepadButtons button, GameControllerButtonLabel *value)
++{
++    FIXME( "iface %p, button %#x, value %p stub!\n", iface, button, value );
++    *value = GameControllerButtonLabel_None;
++    return S_OK;
++}
++
++static const struct IGamepad2Vtbl gamepad2_vtbl =
++{
++    gamepad2_QueryInterface,
++    gamepad2_AddRef,
++    gamepad2_Release,
++    /* IInspectable methods */
++    gamepad2_GetIids,
++    gamepad2_GetRuntimeClassName,
++    gamepad2_GetTrustLevel,
++    /* IGamepad2 methods */
++    gamepad2_GetButtonLabel,
++};
++
+ struct gamepad_statics
+ {
+     IActivationFactory IActivationFactory_iface;
+@@ -542,6 +571,7 @@ static HRESULT WINAPI controller_factory_CreateGameController( ICustomGameContro
+     impl->IGameControllerImpl_iface.lpVtbl = &controller_vtbl;
+     impl->IGameControllerInputSink_iface.lpVtbl = &input_sink_vtbl;
+     impl->IGamepad_iface.lpVtbl = &gamepad_vtbl;
++    impl->IGamepad2_iface.lpVtbl = &gamepad2_vtbl;
+     impl->ref = 1;
+ 
+     TRACE( "created Gamepad %p\n", impl );
+diff --git a/dlls/windows.gaming.input/main.c b/dlls/windows.gaming.input/main.c
+index 21808d9c2ad..a20630cd20b 100644
+--- a/dlls/windows.gaming.input/main.c
++++ b/dlls/windows.gaming.input/main.c
+@@ -185,6 +185,15 @@ HRESULT WINAPI DllGetActivationFactory( HSTRING class_str, IActivationFactory **
+     if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_Custom_GameControllerFactoryManager ))
+         IGameControllerFactoryManagerStatics2_QueryInterface( manager_factory, &IID_IActivationFactory, (void **)factory );
+ 
++    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConstantForceEffect ))
++        IInspectable_QueryInterface( constant_effect_factory, &IID_IActivationFactory, (void **)factory );
++    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_RampForceEffect ))
++        IInspectable_QueryInterface( ramp_effect_factory, &IID_IActivationFactory, (void **)factory );
++    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_PeriodicForceEffect ))
++        IInspectable_QueryInterface( periodic_effect_factory, &IID_IActivationFactory, (void **)factory );
++    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_Input_ForceFeedback_ConditionForceEffect ))
++        IInspectable_QueryInterface( condition_effect_factory, &IID_IActivationFactory, (void **)factory );
++
+     if (*factory) return S_OK;
+     return CLASS_E_CLASSNOTAVAILABLE;
+ }
+diff --git a/dlls/windows.gaming.input/periodic_effect.c b/dlls/windows.gaming.input/periodic_effect.c
+new file mode 100644
+index 00000000000..8633a8fb9b9
+--- /dev/null
++++ b/dlls/windows.gaming.input/periodic_effect.c
+@@ -0,0 +1,326 @@
++/* WinRT Windows.Gaming.Input implementation
++ *
++ * Copyright 2022 Rémi Bernon for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include "private.h"
++#include "provider.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(input);
++
++struct periodic_effect
++{
++    IPeriodicForceEffect IPeriodicForceEffect_iface;
++    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
++    LONG ref;
++
++    PeriodicForceEffectKind kind;
++};
++
++static inline struct periodic_effect *impl_from_IPeriodicForceEffect( IPeriodicForceEffect *iface )
++{
++    return CONTAINING_RECORD( iface, struct periodic_effect, IPeriodicForceEffect_iface );
++}
++
++static HRESULT WINAPI effect_QueryInterface( IPeriodicForceEffect *iface, REFIID iid, void **out )
++{
++    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IPeriodicForceEffect ))
++    {
++        IInspectable_AddRef( (*out = &impl->IPeriodicForceEffect_iface) );
++        return S_OK;
++    }
++
++    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
++}
++
++static ULONG WINAPI effect_AddRef( IPeriodicForceEffect *iface )
++{
++    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI effect_Release( IPeriodicForceEffect *iface )
++{
++    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        /* guard against re-entry if inner releases an outer iface */
++        InterlockedIncrement( &impl->ref );
++        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI effect_GetIids( IPeriodicForceEffect *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_GetRuntimeClassName( IPeriodicForceEffect *iface, HSTRING *class_name )
++{
++    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_PeriodicForceEffect,
++                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_PeriodicForceEffect),
++                                class_name );
++}
++
++static HRESULT WINAPI effect_GetTrustLevel( IPeriodicForceEffect *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_get_Kind( IPeriodicForceEffect *iface, PeriodicForceEffectKind *kind )
++{
++    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
++    TRACE( "iface %p, kind %p.\n", iface, kind );
++    *kind = impl->kind;
++    return S_OK;
++}
++
++static HRESULT WINAPI effect_SetParameters( IPeriodicForceEffect *iface, Vector3 direction, FLOAT frequency, FLOAT phase,
++                                            FLOAT bias, TimeSpan duration )
++{
++    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
++    WineForceFeedbackEffectParameters params =
++    {
++        .periodic =
++        {
++            .type = WineForceFeedbackEffectType_Periodic_SquareWave + impl->kind,
++            .direction = direction,
++            .frequency = frequency,
++            .phase = phase,
++            .bias = bias,
++            .duration = duration,
++            .repeat_count = 1,
++            .gain = 1.,
++        },
++    };
++
++    TRACE( "iface %p, direction %s, frequency %f, phase %f, bias %f, duration %I64u.\n", iface,
++           debugstr_vector3( &direction ), frequency, phase, bias, duration.Duration );
++
++    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
++}
++
++static HRESULT WINAPI effect_SetParametersWithEnvelope( IPeriodicForceEffect *iface, Vector3 direction, FLOAT frequency, FLOAT phase, FLOAT bias,
++                                                        FLOAT attack_gain, FLOAT sustain_gain, FLOAT release_gain, TimeSpan start_delay,
++                                                        TimeSpan attack_duration, TimeSpan sustain_duration,
++                                                        TimeSpan release_duration, UINT32 repeat_count )
++{
++    struct periodic_effect *impl = impl_from_IPeriodicForceEffect( iface );
++    WineForceFeedbackEffectParameters params =
++    {
++        .periodic =
++        {
++            .type = WineForceFeedbackEffectType_Periodic_SquareWave + impl->kind,
++            .direction = direction,
++            .frequency = frequency,
++            .phase = phase,
++            .bias = bias,
++            .duration = {attack_duration.Duration + sustain_duration.Duration + release_duration.Duration},
++            .start_delay = start_delay,
++            .repeat_count = repeat_count,
++            .gain = sustain_gain,
++        },
++    };
++    WineForceFeedbackEffectEnvelope envelope =
++    {
++        .attack_gain = attack_gain,
++        .release_gain = release_gain,
++        .attack_duration = attack_duration,
++        .release_duration = release_duration,
++    };
++
++    TRACE( "iface %p, direction %s, frequency %f, phase %f, bias %f, attack_gain %f, sustain_gain %f, release_gain %f, start_delay %I64u, "
++           "attack_duration %I64u, sustain_duration %I64u, release_duration %I64u, repeat_count %u.\n", iface, debugstr_vector3( &direction ),
++           frequency, phase, bias, attack_gain, sustain_gain, release_gain, start_delay.Duration, attack_duration.Duration, sustain_duration.Duration,
++           release_duration.Duration, repeat_count );
++
++    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, &envelope );
++}
++
++static const struct IPeriodicForceEffectVtbl effect_vtbl =
++{
++    effect_QueryInterface,
++    effect_AddRef,
++    effect_Release,
++    /* IInspectable methods */
++    effect_GetIids,
++    effect_GetRuntimeClassName,
++    effect_GetTrustLevel,
++    /* IPeriodicForceEffect methods */
++    effect_get_Kind,
++    effect_SetParameters,
++    effect_SetParametersWithEnvelope,
++};
++
++struct periodic_factory
++{
++    IActivationFactory IActivationFactory_iface;
++    IPeriodicForceEffectFactory IPeriodicForceEffectFactory_iface;
++    LONG ref;
++};
++
++static inline struct periodic_factory *impl_from_IActivationFactory( IActivationFactory *iface )
++{
++    return CONTAINING_RECORD( iface, struct periodic_factory, IActivationFactory_iface );
++}
++
++static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
++{
++    struct periodic_factory *impl = impl_from_IActivationFactory( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IActivationFactory ))
++    {
++        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
++        return S_OK;
++    }
++
++    if (IsEqualGUID( iid, &IID_IPeriodicForceEffectFactory ))
++    {
++        IInspectable_AddRef( (*out = &impl->IPeriodicForceEffectFactory_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
++{
++    struct periodic_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI activation_Release( IActivationFactory *iface )
++{
++    struct periodic_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
++{
++    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
++{
++    FIXME( "iface %p, instance %p stub!\n", iface, instance );
++    return E_NOTIMPL;
++}
++
++static const struct IActivationFactoryVtbl activation_vtbl =
++{
++    activation_QueryInterface,
++    activation_AddRef,
++    activation_Release,
++    /* IInspectable methods */
++    activation_GetIids,
++    activation_GetRuntimeClassName,
++    activation_GetTrustLevel,
++    /* IActivationFactory methods */
++    activation_ActivateInstance,
++};
++
++DEFINE_IINSPECTABLE( factory, IPeriodicForceEffectFactory, struct periodic_factory, IActivationFactory_iface )
++
++static HRESULT WINAPI factory_CreateInstance( IPeriodicForceEffectFactory *iface, enum PeriodicForceEffectKind kind, IForceFeedbackEffect **out )
++{
++    enum WineForceFeedbackEffectType type = WineForceFeedbackEffectType_Periodic + kind;
++    struct periodic_effect *impl;
++    HRESULT hr;
++
++    TRACE( "iface %p, kind %u, out %p.\n", iface, kind, out );
++
++    if (!(impl = calloc( 1, sizeof(struct periodic_effect) ))) return E_OUTOFMEMORY;
++    impl->IPeriodicForceEffect_iface.lpVtbl = &effect_vtbl;
++    impl->ref = 1;
++    impl->kind = kind;
++
++    if (FAILED(hr = force_feedback_effect_create( type, (IInspectable *)&impl->IPeriodicForceEffect_iface, &impl->IWineForceFeedbackEffectImpl_inner )) ||
++        FAILED(hr = IPeriodicForceEffect_QueryInterface( &impl->IPeriodicForceEffect_iface, &IID_IForceFeedbackEffect, (void **)out )))
++    {
++        if (impl->IWineForceFeedbackEffectImpl_inner) IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
++        free( impl );
++        return hr;
++    }
++
++    IPeriodicForceEffect_Release( &impl->IPeriodicForceEffect_iface );
++    TRACE( "created PeriodicForceEffect %p\n", *out );
++    return S_OK;
++}
++
++static const struct IPeriodicForceEffectFactoryVtbl factory_vtbl =
++{
++    factory_QueryInterface,
++    factory_AddRef,
++    factory_Release,
++    /* IInspectable methods */
++    factory_GetIids,
++    factory_GetRuntimeClassName,
++    factory_GetTrustLevel,
++    /* IPeriodicForceEffectFactory methods */
++    factory_CreateInstance,
++};
++
++static struct periodic_factory periodic_statics =
++{
++    {&activation_vtbl},
++    {&factory_vtbl},
++    1,
++};
++
++IInspectable *periodic_effect_factory = (IInspectable *)&periodic_statics.IActivationFactory_iface;
+diff --git a/dlls/windows.gaming.input/private.h b/dlls/windows.gaming.input/private.h
+index 58b2040d3de..f53d5b5bc37 100644
+--- a/dlls/windows.gaming.input/private.h
++++ b/dlls/windows.gaming.input/private.h
+@@ -25,11 +25,13 @@
+ #include "winbase.h"
+ #include "winstring.h"
+ #include "objbase.h"
++#include "dinput.h"
+ 
+ #include "activation.h"
+ 
+ #define WIDL_using_Windows_Foundation
+ #define WIDL_using_Windows_Foundation_Collections
++#define WIDL_using_Windows_Foundation_Numerics
+ #include "windows.foundation.h"
+ #define WIDL_using_Windows_Devices_Power
+ #define WIDL_using_Windows_Gaming_Input
+@@ -37,13 +39,20 @@
+ #define WIDL_using_Windows_Gaming_Input_ForceFeedback
+ #include "windows.gaming.input.custom.h"
+ 
++#include "wine/debug.h"
+ #include "wine/list.h"
+ 
++#include "provider.h"
++
+ extern HINSTANCE windows_gaming_input;
+ extern ICustomGameControllerFactory *controller_factory;
+ extern ICustomGameControllerFactory *gamepad_factory;
+ extern ICustomGameControllerFactory *racing_wheel_factory;
+ extern IGameControllerFactoryManagerStatics2 *manager_factory;
++extern IInspectable *constant_effect_factory;
++extern IInspectable *ramp_effect_factory;
++extern IInspectable *periodic_effect_factory;
++extern IInspectable *condition_effect_factory;
+ 
+ struct vector_iids
+ {
+@@ -64,6 +73,15 @@ extern HRESULT event_handlers_append( struct list *list, IEventHandler_IInspecta
+ extern HRESULT event_handlers_remove( struct list *list, EventRegistrationToken *token );
+ extern void event_handlers_notify( struct list *list, IInspectable *element );
+ 
++extern HRESULT force_feedback_motor_create( IDirectInputDevice8W *device, IForceFeedbackMotor **out );
++extern HRESULT force_feedback_effect_create( enum WineForceFeedbackEffectType type, IInspectable *outer, IWineForceFeedbackEffectImpl **out );
++
++typedef HRESULT (WINAPI *async_operation_callback)( IUnknown *invoker, IUnknown *param, PROPVARIANT *result );
++extern HRESULT async_operation_boolean_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
++                                               IAsyncOperation_boolean **out );
++extern HRESULT async_operation_effect_result_create( IUnknown *invoker, IUnknown *param, async_operation_callback callback,
++                                                     IAsyncOperation_ForceFeedbackLoadEffectResult **out );
++
+ #define DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from, iface_mem, expr )             \
+     static inline impl_type *impl_from( iface_type *iface )                                        \
+     {                                                                                              \
+@@ -103,3 +121,9 @@ extern void event_handlers_notify( struct list *list, IInspectable *element );
+     DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from_##iface_type, iface_type##_iface, &impl->base_iface )
+ #define DEFINE_IINSPECTABLE_OUTER( pfx, iface_type, impl_type, outer_iface )                       \
+     DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from_##iface_type, iface_type##_iface, impl->outer_iface )
++
++static inline const char *debugstr_vector3( const Vector3 *vector )
++{
++    if (!vector) return "(null)";
++    return wine_dbg_sprintf( "[%f, %f, %f]", vector->X, vector->Y, vector->Z );
++}
+diff --git a/dlls/windows.gaming.input/provider.c b/dlls/windows.gaming.input/provider.c
+index 69098e8abb6..d0472727224 100644
+--- a/dlls/windows.gaming.input/provider.c
++++ b/dlls/windows.gaming.input/provider.c
+@@ -141,21 +141,37 @@ static HRESULT WINAPI wine_provider_GetTrustLevel( IWineGameControllerProvider *
+     return E_NOTIMPL;
+ }
+ 
++static BOOL CALLBACK count_ffb_axes( const DIDEVICEOBJECTINSTANCEW *obj, void *args )
++{
++    DWORD *count = args;
++    if (obj->dwType & DIDFT_FFACTUATOR) (*count)++;
++    return DIENUM_CONTINUE;
++}
++
+ static HRESULT WINAPI wine_provider_get_Type( IWineGameControllerProvider *iface, WineGameControllerType *value )
+ {
+     struct provider *impl = impl_from_IWineGameControllerProvider( iface );
+     DIDEVICEINSTANCEW instance = {.dwSize = sizeof(DIDEVICEINSTANCEW)};
++    const WCHAR *tmp;
+     HRESULT hr;
+ 
+     TRACE( "iface %p, value %p.\n", iface, value );
+ 
+     if (FAILED(hr = IDirectInputDevice8_GetDeviceInfo( impl->dinput_device, &instance ))) return hr;
+ 
+-    switch (GET_DIDEVICE_TYPE( instance.dwDevType ))
++    if ((tmp = wcschr( impl->device_path + 8, '#' )) && !wcsnicmp( tmp - 6, L"&XI_", 4 ))
++        *value = WineGameControllerType_Gamepad;
++    else switch (GET_DIDEVICE_TYPE( instance.dwDevType ))
+     {
+     case DI8DEVTYPE_DRIVING: *value = WineGameControllerType_RacingWheel; break;
+-    case DI8DEVTYPE_GAMEPAD: *value = WineGameControllerType_Gamepad; break;
+-    default: *value = WineGameControllerType_Joystick; break;
++    default:
++    {
++        DWORD count = 0;
++        hr = IDirectInputDevice8_EnumObjects( impl->dinput_device, count_ffb_axes, &count, DIDFT_AXIS );
++        if (SUCCEEDED(hr) && count == 1) *value = WineGameControllerType_RacingWheel;
++        else *value = WineGameControllerType_Joystick;
++        break;
++    }
+     }
+ 
+     return S_OK;
+@@ -212,7 +228,7 @@ static HRESULT WINAPI wine_provider_get_State( IWineGameControllerProvider *ifac
+     if (FAILED(hr = IDirectInputDevice8_GetDeviceState( impl->dinput_device, sizeof(state), &state )))
+     {
+         WARN( "Failed to read device state, hr %#lx\n", hr );
+-        return hr;
++        return S_OK;
+     }
+ 
+     i = ARRAY_SIZE(state.rgbButtons);
+@@ -315,6 +331,21 @@ static HRESULT WINAPI wine_provider_put_Vibration( IWineGameControllerProvider *
+     return S_OK;
+ }
+ 
++static HRESULT WINAPI wine_provider_get_ForceFeedbackMotor( IWineGameControllerProvider *iface, IForceFeedbackMotor **value )
++{
++    struct provider *impl = impl_from_IWineGameControllerProvider( iface );
++    DIDEVCAPS caps = {.dwSize = sizeof(DIDEVCAPS)};
++    HRESULT hr;
++
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    if (SUCCEEDED(hr = IDirectInputDevice8_GetCapabilities( impl->dinput_device, &caps )) && (caps.dwFlags & DIDC_FORCEFEEDBACK))
++        return force_feedback_motor_create( impl->dinput_device, value );
++
++    *value = NULL;
++    return S_OK;
++}
++
+ static const struct IWineGameControllerProviderVtbl wine_provider_vtbl =
+ {
+     wine_provider_QueryInterface,
+@@ -332,6 +363,7 @@ static const struct IWineGameControllerProviderVtbl wine_provider_vtbl =
+     wine_provider_get_State,
+     wine_provider_get_Vibration,
+     wine_provider_put_Vibration,
++    wine_provider_get_ForceFeedbackMotor,
+ };
+ 
+ DEFINE_IINSPECTABLE( game_provider, IGameControllerProvider, struct provider, IWineGameControllerProvider_iface )
+@@ -556,7 +588,7 @@ void provider_create( const WCHAR *device_path )
+ 
+     EnterCriticalSection( &provider_cs );
+     LIST_FOR_EACH_ENTRY( entry, &provider_list, struct provider, entry )
+-        if ((found = !wcscmp( entry->device_path, device_path ))) break;
++        if ((found = !wcsicmp( entry->device_path, device_path ))) break;
+     if (!found) list_add_tail( &provider_list, &impl->entry );
+     LeaveCriticalSection( &provider_cs );
+ 
+@@ -576,11 +608,12 @@ void provider_remove( const WCHAR *device_path )
+ 
+     EnterCriticalSection( &provider_cs );
+     LIST_FOR_EACH_ENTRY( entry, &provider_list, struct provider, entry )
+-        if ((found = !wcscmp( entry->device_path, device_path ))) break;
++        if ((found = !wcsicmp( entry->device_path, device_path ))) break;
+     if (found) list_remove( &entry->entry );
+     LeaveCriticalSection( &provider_cs );
+ 
+-    if (found)
++    if (!found) WARN( "provider not found for device %s\n", debugstr_w( device_path ) );
++    else
+     {
+         provider = &entry->IGameControllerProvider_iface;
+         manager_on_provider_removed( provider );
+diff --git a/dlls/windows.gaming.input/provider.idl b/dlls/windows.gaming.input/provider.idl
+index 865a149eaa5..e7b6e96b8aa 100644
+--- a/dlls/windows.gaming.input/provider.idl
++++ b/dlls/windows.gaming.input/provider.idl
+@@ -22,6 +22,7 @@
+ #pragma winrt ns_prefix
+ #endif
+ 
++import "propidl.idl";
+ import "inspectable.idl";
+ import "asyncinfo.idl";
+ import "eventtoken.idl";
+@@ -29,14 +30,25 @@ import "windowscontracts.idl";
+ import "windows.foundation.idl";
+ import "windows.gaming.input.idl";
+ import "windows.gaming.input.custom.idl";
++import "windows.gaming.input.forcefeedback.idl";
+ 
+ namespace Windows.Gaming.Input.Custom {
+     typedef enum WineGameControllerType WineGameControllerType;
++    typedef enum WineForceFeedbackEffectType WineForceFeedbackEffectType;
+     typedef struct WineGameControllerState WineGameControllerState;
+     typedef struct WineGameControllerVibration WineGameControllerVibration;
++    typedef struct WineConditionEffectParameters WineConditionEffectParameters;
++    typedef struct WineConstantEffectParameters WineConstantEffectParameters;
++    typedef struct WineRampEffectParameters WineRampEffectParameters;
++    typedef struct WinePeriodicEffectParameters WinePeriodicEffectParameters;
++    typedef struct WineForceFeedbackEffectEnvelope WineForceFeedbackEffectEnvelope;
++    typedef union WineForceFeedbackEffectParameters WineForceFeedbackEffectParameters;
+     interface IWineGameControllerProvider;
+     runtimeclass WineGameControllerProvider;
+ 
++    /* type-pruning version of AsyncOperationCompletedHandler<T> */
++    delegate HRESULT WineAsyncOperationCompletedHandler([in] IInspectable *async, [in] AsyncStatus status);
++
+     enum WineGameControllerType
+     {
+         Joystick = 0,
+@@ -44,6 +56,27 @@ namespace Windows.Gaming.Input.Custom {
+         RacingWheel = 2,
+     };
+ 
++    enum WineForceFeedbackEffectType
++    {
++        Constant = 1,
++        Ramp = 2,
++
++        Periodic = 10,
++        /* same order as PeriodicForceEffectKind */
++        Periodic_SquareWave = 10,
++        Periodic_SineWave = 11,
++        Periodic_TriangleWave = 12,
++        Periodic_SawtoothWaveUp = 13,
++        Periodic_SawtoothWaveDown = 14,
++
++        Condition = 20,
++        /* same order as ConditionForceEffectKind */
++        Condition_Spring = 20,
++        Condition_Damper = 21,
++        Condition_Inertia = 22,
++        Condition_Friction = 23,
++    };
++
+     struct WineGameControllerState
+     {
+         UINT64 timestamp;
+@@ -60,6 +93,69 @@ namespace Windows.Gaming.Input.Custom {
+         UINT16 right;
+     };
+ 
++    struct WineConditionEffectParameters
++    {
++        WineForceFeedbackEffectType type;
++        Windows.Foundation.Numerics.Vector3 direction;
++        FLOAT positive_coeff;
++        FLOAT negative_coeff;
++        FLOAT max_positive_magnitude;
++        FLOAT max_negative_magnitude;
++        FLOAT deadzone;
++        FLOAT bias;
++    };
++
++    struct WineConstantEffectParameters
++    {
++        WineForceFeedbackEffectType type;
++        Windows.Foundation.Numerics.Vector3 direction;
++        Windows.Foundation.TimeSpan duration;
++        Windows.Foundation.TimeSpan start_delay;
++        UINT32 repeat_count;
++        FLOAT gain;
++    };
++
++    struct WineRampEffectParameters
++    {
++        WineForceFeedbackEffectType type;
++        Windows.Foundation.Numerics.Vector3 start_vector;
++        Windows.Foundation.Numerics.Vector3 end_vector;
++        Windows.Foundation.TimeSpan duration;
++        Windows.Foundation.TimeSpan start_delay;
++        UINT32 repeat_count;
++        FLOAT gain;
++    };
++
++    struct WinePeriodicEffectParameters
++    {
++        WineForceFeedbackEffectType type;
++        Windows.Foundation.Numerics.Vector3 direction;
++        Windows.Foundation.TimeSpan duration;
++        Windows.Foundation.TimeSpan start_delay;
++        UINT32 repeat_count;
++        FLOAT frequency;
++        FLOAT phase;
++        FLOAT bias;
++        FLOAT gain;
++    };
++
++    struct WineForceFeedbackEffectEnvelope
++    {
++        FLOAT attack_gain;
++        FLOAT release_gain;
++        Windows.Foundation.TimeSpan attack_duration;
++        Windows.Foundation.TimeSpan release_duration;
++    };
++
++    union WineForceFeedbackEffectParameters
++    {
++        WineForceFeedbackEffectType type;
++        WineConditionEffectParameters condition;
++        WineConstantEffectParameters constant;
++        WineRampEffectParameters ramp;
++        WinePeriodicEffectParameters periodic;
++    };
++
+     [
+         uuid(06e58977-7684-4dc5-bad1-cda52a4aa06d)
+     ]
+@@ -85,6 +181,29 @@ namespace Windows.Gaming.Input.Custom {
+         [propget] HRESULT State([out, retval] WineGameControllerState *state);
+         [propget] HRESULT Vibration([out, retval] WineGameControllerVibration *vibration);
+         [propput] HRESULT Vibration([in] WineGameControllerVibration vibration);
++
++        [propget] HRESULT ForceFeedbackMotor([out, retval] Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor **motor);
++    }
++
++    [
++        uuid(27833469-7760-417e-adbe-e011a66e16ee)
++    ]
++    interface IWineForceFeedbackEffectImpl : IUnknown
++        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
++    {
++        [propput] HRESULT Parameters([in] WineForceFeedbackEffectParameters parameters,
++                                     [in, optional] WineForceFeedbackEffectEnvelope *envelope);
++    }
++
++    [
++        uuid(83f377ee-c799-11ec-9d64-0242ac120002)
++    ]
++    interface IWineAsyncInfoImpl : IUnknown
++    {
++        [propput] HRESULT Completed([in] WineAsyncOperationCompletedHandler *handler);
++        [propget] HRESULT Completed([out, retval] WineAsyncOperationCompletedHandler **handler);
++        [propget] HRESULT Result([out, retval] PROPVARIANT *result);
++        HRESULT Start();
+     }
+ 
+     [
+diff --git a/dlls/windows.gaming.input/racing_wheel.c b/dlls/windows.gaming.input/racing_wheel.c
+index b4635d03153..d646ca26c03 100644
+--- a/dlls/windows.gaming.input/racing_wheel.c
++++ b/dlls/windows.gaming.input/racing_wheel.c
+@@ -99,7 +99,7 @@ static HRESULT WINAPI controller_QueryInterface( IGameControllerImpl *iface, REF
+         return S_OK;
+     }
+ 
+-    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
+     *out = NULL;
+     return E_NOINTERFACE;
+ }
+@@ -245,8 +245,11 @@ static HRESULT WINAPI racing_wheel_get_MaxWheelAngle( IRacingWheel *iface, DOUBL
+ 
+ static HRESULT WINAPI racing_wheel_get_WheelMotor( IRacingWheel *iface, IForceFeedbackMotor **value )
+ {
+-    FIXME( "iface %p, value %p stub!\n", iface, value );
+-    return E_NOTIMPL;
++    struct racing_wheel *impl = impl_from_IRacingWheel( iface );
++
++    TRACE( "iface %p, value %p\n", iface, value );
++
++    return IWineGameControllerProvider_get_ForceFeedbackMotor( impl->wine_provider, value );
+ }
+ 
+ static HRESULT WINAPI racing_wheel_GetButtonLabel( IRacingWheel *iface, enum RacingWheelButtons button,
+diff --git a/dlls/windows.gaming.input/ramp_effect.c b/dlls/windows.gaming.input/ramp_effect.c
+new file mode 100644
+index 00000000000..fadcf151c04
+--- /dev/null
++++ b/dlls/windows.gaming.input/ramp_effect.c
+@@ -0,0 +1,278 @@
++/* WinRT Windows.Gaming.Input implementation
++ *
++ * Copyright 2022 Rémi Bernon for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include "private.h"
++#include "provider.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(input);
++
++struct ramp_effect
++{
++    IRampForceEffect IRampForceEffect_iface;
++    IWineForceFeedbackEffectImpl *IWineForceFeedbackEffectImpl_inner;
++    LONG ref;
++};
++
++static inline struct ramp_effect *impl_from_IRampForceEffect( IRampForceEffect *iface )
++{
++    return CONTAINING_RECORD( iface, struct ramp_effect, IRampForceEffect_iface );
++}
++
++static HRESULT WINAPI effect_QueryInterface( IRampForceEffect *iface, REFIID iid, void **out )
++{
++    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IRampForceEffect ))
++    {
++        IInspectable_AddRef( (*out = &impl->IRampForceEffect_iface) );
++        return S_OK;
++    }
++
++    return IWineForceFeedbackEffectImpl_QueryInterface( impl->IWineForceFeedbackEffectImpl_inner, iid, out );
++}
++
++static ULONG WINAPI effect_AddRef( IRampForceEffect *iface )
++{
++    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI effect_Release( IRampForceEffect *iface )
++{
++    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++
++    if (!ref)
++    {
++        /* guard against re-entry if inner releases an outer iface */
++        InterlockedIncrement( &impl->ref );
++        IWineForceFeedbackEffectImpl_Release( impl->IWineForceFeedbackEffectImpl_inner );
++        free( impl );
++    }
++
++    return ref;
++}
++
++static HRESULT WINAPI effect_GetIids( IRampForceEffect *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_GetRuntimeClassName( IRampForceEffect *iface, HSTRING *class_name )
++{
++    return WindowsCreateString( RuntimeClass_Windows_Gaming_Input_ForceFeedback_RampForceEffect,
++                                ARRAY_SIZE(RuntimeClass_Windows_Gaming_Input_ForceFeedback_RampForceEffect),
++                                class_name );
++}
++
++static HRESULT WINAPI effect_GetTrustLevel( IRampForceEffect *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI effect_SetParameters( IRampForceEffect *iface, Vector3 start_vector, Vector3 end_vector, TimeSpan duration )
++{
++    WineForceFeedbackEffectParameters params =
++    {
++        .ramp =
++        {
++            .type = WineForceFeedbackEffectType_Ramp,
++            .start_vector = start_vector,
++            .end_vector = end_vector,
++            .duration = duration,
++            .repeat_count = 1,
++            .gain = 1.,
++        },
++    };
++    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
++
++    TRACE( "iface %p, start_vector %s, end_vector %s, duration %I64u.\n", iface,
++           debugstr_vector3( &start_vector ), debugstr_vector3( &end_vector ), duration.Duration );
++
++    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, NULL );
++}
++
++static HRESULT WINAPI effect_SetParametersWithEnvelope( IRampForceEffect *iface, Vector3 start_vector, Vector3 end_vector, FLOAT attack_gain,
++                                                        FLOAT sustain_gain, FLOAT release_gain, TimeSpan start_delay,
++                                                        TimeSpan attack_duration, TimeSpan sustain_duration,
++                                                        TimeSpan release_duration, UINT32 repeat_count )
++{
++    WineForceFeedbackEffectParameters params =
++    {
++        .ramp =
++        {
++            .type = WineForceFeedbackEffectType_Ramp,
++            .start_vector = start_vector,
++            .end_vector = end_vector,
++            .duration = {attack_duration.Duration + sustain_duration.Duration + release_duration.Duration},
++            .start_delay = start_delay,
++            .repeat_count = repeat_count,
++            .gain = sustain_gain,
++        },
++    };
++    WineForceFeedbackEffectEnvelope envelope =
++    {
++        .attack_gain = attack_gain,
++        .release_gain = release_gain,
++        .attack_duration = attack_duration,
++        .release_duration = release_duration,
++    };
++    struct ramp_effect *impl = impl_from_IRampForceEffect( iface );
++
++    TRACE( "iface %p, start_vector %s, end_vector %s, attack_gain %f, sustain_gain %f, release_gain %f, start_delay %I64u, attack_duration %I64u, "
++           "sustain_duration %I64u, release_duration %I64u, repeat_count %u.\n", iface, debugstr_vector3( &start_vector ), debugstr_vector3( &end_vector ),
++           attack_gain, sustain_gain, release_gain, start_delay.Duration, attack_duration.Duration, sustain_duration.Duration,
++           release_duration.Duration, repeat_count );
++
++    return IWineForceFeedbackEffectImpl_put_Parameters( impl->IWineForceFeedbackEffectImpl_inner, params, &envelope );
++}
++
++static const struct IRampForceEffectVtbl effect_vtbl =
++{
++    effect_QueryInterface,
++    effect_AddRef,
++    effect_Release,
++    /* IInspectable methods */
++    effect_GetIids,
++    effect_GetRuntimeClassName,
++    effect_GetTrustLevel,
++    /* IRampForceEffect methods */
++    effect_SetParameters,
++    effect_SetParametersWithEnvelope,
++};
++
++struct ramp_factory
++{
++    IActivationFactory IActivationFactory_iface;
++    LONG ref;
++};
++
++static inline struct ramp_factory *impl_from_IActivationFactory( IActivationFactory *iface )
++{
++    return CONTAINING_RECORD( iface, struct ramp_factory, IActivationFactory_iface );
++}
++
++static HRESULT WINAPI activation_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
++{
++    struct ramp_factory *impl = impl_from_IActivationFactory( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IActivationFactory ))
++    {
++        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI activation_AddRef( IActivationFactory *iface )
++{
++    struct ramp_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI activation_Release( IActivationFactory *iface )
++{
++    struct ramp_factory *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static HRESULT WINAPI activation_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
++{
++    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI activation_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
++{
++    struct ramp_effect *impl;
++    HRESULT hr;
++
++    TRACE( "iface %p, instance %p.\n", iface, instance );
++
++    if (!(impl = calloc( 1, sizeof(struct ramp_effect) ))) return E_OUTOFMEMORY;
++    impl->IRampForceEffect_iface.lpVtbl = &effect_vtbl;
++    impl->ref = 1;
++
++    if (FAILED(hr = force_feedback_effect_create( WineForceFeedbackEffectType_Ramp, (IInspectable *)&impl->IRampForceEffect_iface,
++                                                  &impl->IWineForceFeedbackEffectImpl_inner )))
++    {
++        free( impl );
++        return hr;
++    }
++
++    *instance = (IInspectable *)&impl->IRampForceEffect_iface;
++    TRACE( "created RampForceEffect %p\n", *instance );
++    return S_OK;
++}
++
++static const struct IActivationFactoryVtbl activation_vtbl =
++{
++    activation_QueryInterface,
++    activation_AddRef,
++    activation_Release,
++    /* IInspectable methods */
++    activation_GetIids,
++    activation_GetRuntimeClassName,
++    activation_GetTrustLevel,
++    /* IActivationFactory methods */
++    activation_ActivateInstance,
++};
++
++static struct ramp_factory ramp_statics =
++{
++    {&activation_vtbl},
++    1,
++};
++
++IInspectable *ramp_effect_factory = (IInspectable *)&ramp_statics.IActivationFactory_iface;
+diff --git a/dlls/windows.gaming.input/vector.c b/dlls/windows.gaming.input/vector.c
+index db1a9057682..8958b07c0f2 100644
+--- a/dlls/windows.gaming.input/vector.c
++++ b/dlls/windows.gaming.input/vector.c
+@@ -54,7 +54,7 @@ static HRESULT WINAPI iterator_QueryInterface( IIterator_IInspectable *iface, RE
+         return S_OK;
+     }
+ 
+-    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
+     *out = NULL;
+     return E_NOINTERFACE;
+ }
+@@ -189,7 +189,7 @@ static HRESULT WINAPI vector_view_QueryInterface( IVectorView_IInspectable *ifac
+         return S_OK;
+     }
+ 
+-    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
+     *out = NULL;
+     return E_NOINTERFACE;
+ }
+@@ -384,7 +384,7 @@ static HRESULT WINAPI vector_QueryInterface( IVector_IInspectable *iface, REFIID
+         return S_OK;
+     }
+ 
+-    WARN( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
+     *out = NULL;
+     return E_NOINTERFACE;
+ }
+diff --git a/dlls/windows.gaming.ui.gamebar/Makefile.in b/dlls/windows.gaming.ui.gamebar/Makefile.in
+new file mode 100644
+index 00000000000..a0eefc4b951
+--- /dev/null
++++ b/dlls/windows.gaming.ui.gamebar/Makefile.in
+@@ -0,0 +1,8 @@
++MODULE = windows.gaming.ui.gamebar.dll
++IMPORTS = combase uuid
++
++C_SRCS = \
++	main.c
++
++IDL_SRCS = \
++	classes.idl
+diff --git a/dlls/windows.gaming.ui.gamebar/classes.idl b/dlls/windows.gaming.ui.gamebar/classes.idl
+new file mode 100644
+index 00000000000..ef10fcb6283
+--- /dev/null
++++ b/dlls/windows.gaming.ui.gamebar/classes.idl
+@@ -0,0 +1,33 @@
++/*
++ * Runtime Classes for windows.gaming.ui.gamebar.dll
++ *
++ * Copyright 2022 Paul Gofman for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#pragma makedep register
++
++#ifdef __WIDL__
++#pragma winrt ns_prefix
++#endif
++
++import "inspectable.idl";
++import "eventtoken.idl";
++import "windowscontracts.idl";
++import "windows.foundation.idl";
++
++#define DO_NO_IMPORTS
++#include "windows.gaming.ui.idl"
+diff --git a/dlls/windows.gaming.ui.gamebar/main.c b/dlls/windows.gaming.ui.gamebar/main.c
+new file mode 100644
+index 00000000000..ec6b442cfc0
+--- /dev/null
++++ b/dlls/windows.gaming.ui.gamebar/main.c
+@@ -0,0 +1,282 @@
++/* WinRT Windows.Gaming.UI.GameBar implementation
++ *
++ * Copyright 2022 Paul Gofman for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include <stdarg.h>
++#include <stddef.h>
++
++#define COBJMACROS
++#include "windef.h"
++#include "winbase.h"
++#include "winreg.h"
++#include "winuser.h"
++#include "winstring.h"
++
++#include "initguid.h"
++
++#define WIDL_using_Windows_Foundation
++#define WIDL_using_Windows_Gaming_UI
++#include "activation.h"
++#include "windows.gaming.ui.h"
++
++#include "wine/debug.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(gamebar);
++
++static EventRegistrationToken dummy_token = {.value = 0xdeadbeef};
++
++struct gamebar_statics
++{
++    IActivationFactory IActivationFactory_iface;
++    IGameBarStatics IGameBarStatics_iface;
++    LONG ref;
++};
++
++static inline struct gamebar_statics *impl_from_IActivationFactory( IActivationFactory *iface )
++{
++    return CONTAINING_RECORD( iface, struct gamebar_statics, IActivationFactory_iface );
++}
++
++static HRESULT WINAPI factory_QueryInterface( IActivationFactory *iface, REFIID iid, void **out )
++{
++    struct gamebar_statics *impl = impl_from_IActivationFactory( iface );
++
++    TRACE( "iface %p, iid %s, out %p.\n", iface, debugstr_guid( iid ), out );
++
++    if (IsEqualGUID( iid, &IID_IUnknown ) ||
++        IsEqualGUID( iid, &IID_IInspectable ) ||
++        IsEqualGUID( iid, &IID_IAgileObject ) ||
++        IsEqualGUID( iid, &IID_IActivationFactory ))
++    {
++        IInspectable_AddRef( (*out = &impl->IActivationFactory_iface) );
++        return S_OK;
++    }
++
++    if (IsEqualGUID( iid, &IID_IGameBarStatics ))
++    {
++        IInspectable_AddRef( (*out = &impl->IGameBarStatics_iface) );
++        return S_OK;
++    }
++
++    FIXME( "%s not implemented, returning E_NOINTERFACE.\n", debugstr_guid( iid ) );
++    *out = NULL;
++    return E_NOINTERFACE;
++}
++
++static ULONG WINAPI factory_AddRef( IActivationFactory *iface )
++{
++    struct gamebar_statics *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedIncrement( &impl->ref );
++    TRACE( "iface %p increasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static ULONG WINAPI factory_Release( IActivationFactory *iface )
++{
++    struct gamebar_statics *impl = impl_from_IActivationFactory( iface );
++    ULONG ref = InterlockedDecrement( &impl->ref );
++    TRACE( "iface %p decreasing refcount to %lu.\n", iface, ref );
++    return ref;
++}
++
++static HRESULT WINAPI factory_GetIids( IActivationFactory *iface, ULONG *iid_count, IID **iids )
++{
++    FIXME( "iface %p, iid_count %p, iids %p stub!\n", iface, iid_count, iids );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI factory_GetRuntimeClassName( IActivationFactory *iface, HSTRING *class_name )
++{
++    FIXME( "iface %p, class_name %p stub!\n", iface, class_name );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI factory_GetTrustLevel( IActivationFactory *iface, TrustLevel *trust_level )
++{
++    FIXME( "iface %p, trust_level %p stub!\n", iface, trust_level );
++    return E_NOTIMPL;
++}
++
++static HRESULT WINAPI factory_ActivateInstance( IActivationFactory *iface, IInspectable **instance )
++{
++    FIXME( "iface %p, instance %p stub!\n", iface, instance );
++    return E_NOTIMPL;
++}
++
++static const struct IActivationFactoryVtbl factory_vtbl =
++{
++    factory_QueryInterface,
++    factory_AddRef,
++    factory_Release,
++    /* IInspectable methods */
++    factory_GetIids,
++    factory_GetRuntimeClassName,
++    factory_GetTrustLevel,
++    /* IActivationFactory methods */
++    factory_ActivateInstance,
++};
++
++#define DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from, iface_mem, expr )             \
++    static inline impl_type *impl_from( iface_type *iface )                                        \
++    {                                                                                              \
++        return CONTAINING_RECORD( iface, impl_type, iface_mem );                                   \
++    }                                                                                              \
++    static HRESULT WINAPI pfx##_QueryInterface( iface_type *iface, REFIID iid, void **out )        \
++    {                                                                                              \
++        impl_type *impl = impl_from( iface );                                                      \
++        return IInspectable_QueryInterface( (IInspectable *)(expr), iid, out );                    \
++    }                                                                                              \
++    static ULONG WINAPI pfx##_AddRef( iface_type *iface )                                          \
++    {                                                                                              \
++        impl_type *impl = impl_from( iface );                                                      \
++        return IInspectable_AddRef( (IInspectable *)(expr) );                                      \
++    }                                                                                              \
++    static ULONG WINAPI pfx##_Release( iface_type *iface )                                         \
++    {                                                                                              \
++        impl_type *impl = impl_from( iface );                                                      \
++        return IInspectable_Release( (IInspectable *)(expr) );                                     \
++    }                                                                                              \
++    static HRESULT WINAPI pfx##_GetIids( iface_type *iface, ULONG *iid_count, IID **iids )         \
++    {                                                                                              \
++        impl_type *impl = impl_from( iface );                                                      \
++        return IInspectable_GetIids( (IInspectable *)(expr), iid_count, iids );                    \
++    }                                                                                              \
++    static HRESULT WINAPI pfx##_GetRuntimeClassName( iface_type *iface, HSTRING *class_name )      \
++    {                                                                                              \
++        impl_type *impl = impl_from( iface );                                                      \
++        return IInspectable_GetRuntimeClassName( (IInspectable *)(expr), class_name );             \
++    }                                                                                              \
++    static HRESULT WINAPI pfx##_GetTrustLevel( iface_type *iface, TrustLevel *trust_level )        \
++    {                                                                                              \
++        impl_type *impl = impl_from( iface );                                                      \
++        return IInspectable_GetTrustLevel( (IInspectable *)(expr), trust_level );                  \
++    }
++#define DEFINE_IINSPECTABLE( pfx, iface_type, impl_type, base_iface )                              \
++    DEFINE_IINSPECTABLE_( pfx, iface_type, impl_type, impl_from_##iface_type, iface_type##_iface, &impl->base_iface )
++
++DEFINE_IINSPECTABLE( statics, IGameBarStatics, struct gamebar_statics, IActivationFactory_iface )
++
++static HRESULT WINAPI statics_add_VisibilityChanged( IGameBarStatics *iface,
++                                                          IEventHandler_IInspectable *handler,
++                                                          EventRegistrationToken *token )
++{
++    FIXME( "iface %p, handler %p, token %p stub.\n", iface, handler, token );
++    *token = dummy_token;
++    return S_OK;
++}
++
++static HRESULT WINAPI statics_remove_VisibilityChanged( IGameBarStatics *iface, EventRegistrationToken token )
++{
++    FIXME( "iface %p, token %#I64x stub.\n", iface, token.value );
++    return S_OK;
++}
++
++static HRESULT WINAPI statics_add_IsInputRedirectedChanged( IGameBarStatics *iface,
++                                                          IEventHandler_IInspectable *handler,
++                                                          EventRegistrationToken *token )
++{
++    FIXME( "iface %p, handler %p, token %p stub.\n", iface, handler, token );
++    *token = dummy_token;
++    return S_OK;
++}
++
++static HRESULT WINAPI statics_remove_IsInputRedirectedChanged( IGameBarStatics *iface, EventRegistrationToken token )
++{
++    FIXME( "iface %p, token %#I64x stub.\n", iface, token.value );
++    return S_OK;
++}
++
++static HRESULT WINAPI statics_get_Visible( IGameBarStatics *iface, BOOLEAN *value)
++{
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    if (!value) return E_INVALIDARG;
++    *value = FALSE;
++    return S_OK;
++}
++
++static HRESULT WINAPI statics_get_IsInputRedirected( IGameBarStatics *iface, BOOLEAN *value)
++{
++    TRACE( "iface %p, value %p.\n", iface, value );
++
++    if (!value) return E_INVALIDARG;
++    *value = FALSE;
++    return S_OK;
++}
++
++static const struct IGameBarStaticsVtbl statics_vtbl =
++{
++    statics_QueryInterface,
++    statics_AddRef,
++    statics_Release,
++    /* IInspectable methods */
++    statics_GetIids,
++    statics_GetRuntimeClassName,
++    statics_GetTrustLevel,
++    /* IGameBarStatics methods */
++    statics_add_VisibilityChanged,
++    statics_remove_VisibilityChanged,
++    statics_add_IsInputRedirectedChanged,
++    statics_remove_IsInputRedirectedChanged,
++    statics_get_Visible,
++    statics_get_IsInputRedirected,
++};
++
++static struct gamebar_statics gamebar_statics =
++{
++    {&factory_vtbl},
++    {&statics_vtbl},
++    1,
++};
++
++static IActivationFactory *gamebar_factory = &gamebar_statics.IActivationFactory_iface;
++
++HRESULT WINAPI DllGetClassObject(REFCLSID clsid, REFIID riid, void **out)
++{
++    FIXME("clsid %s, riid %s, out %p stub!\n", debugstr_guid(clsid), debugstr_guid(riid), out);
++
++    return CLASS_E_CLASSNOTAVAILABLE;
++}
++
++HRESULT WINAPI DllGetActivationFactory( HSTRING class_str, IActivationFactory **factory )
++{
++    const WCHAR *buffer = WindowsGetStringRawBuffer( class_str, NULL );
++
++    TRACE( "class %s, factory %p.\n", debugstr_w(buffer), factory );
++
++    *factory = NULL;
++
++    if (!wcscmp( buffer, RuntimeClass_Windows_Gaming_UI_GameBar ))
++        IActivationFactory_QueryInterface( gamebar_factory, &IID_IActivationFactory, (void **)factory );
++
++    if (*factory) return S_OK;
++    return CLASS_E_CLASSNOTAVAILABLE;
++}
++
++BOOL WINAPI DllMain( HINSTANCE instance, DWORD reason, void *reserved )
++{
++    TRACE( "instance %p, reason %lu, reserved %p.\n", instance, reason, reserved );
++
++    switch (reason)
++    {
++    case DLL_PROCESS_ATTACH:
++        DisableThreadLibraryCalls( instance );
++        break;
++    }
++    return TRUE;
++}
+diff --git a/dlls/windows.gaming.ui.gamebar/tests/Makefile.in b/dlls/windows.gaming.ui.gamebar/tests/Makefile.in
+new file mode 100644
+index 00000000000..67d70eee241
+--- /dev/null
++++ b/dlls/windows.gaming.ui.gamebar/tests/Makefile.in
+@@ -0,0 +1,5 @@
++TESTDLL = windows.gaming.ui.gamebar.dll
++IMPORTS = combase
++
++C_SRCS = \
++	gamebar.c
+diff --git a/dlls/windows.gaming.ui.gamebar/tests/gamebar.c b/dlls/windows.gaming.ui.gamebar/tests/gamebar.c
+new file mode 100644
+index 00000000000..14fcb05284f
+--- /dev/null
++++ b/dlls/windows.gaming.ui.gamebar/tests/gamebar.c
+@@ -0,0 +1,91 @@
++/*
++ * Copyright 2022 Paul Gofman for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++#define COBJMACROS
++#include "initguid.h"
++#include <stdarg.h>
++
++#include "windef.h"
++#include "winbase.h"
++#include "winerror.h"
++#include "winstring.h"
++
++#include "roapi.h"
++
++#define WIDL_using_Windows_Foundation
++#define WIDL_using_Windows_Gaming_UI
++#include "windows.foundation.h"
++#include "windows.gaming.ui.h"
++
++#include "wine/test.h"
++
++static void test_GameBarStatics(void)
++{
++    static const WCHAR *gamebar_statics_name = L"Windows.Gaming.UI.GameBar";
++
++    IActivationFactory *factory = NULL;
++    IInspectable *inspectable = NULL, *tmp_inspectable = NULL;
++    IAgileObject *agile_object = NULL, *tmp_agile_object = NULL;
++    IGameBarStatics *gamebar_statics = NULL;
++    HSTRING str;
++    HRESULT hr;
++
++    hr = WindowsCreateString(gamebar_statics_name, wcslen(gamebar_statics_name), &str);
++    ok(hr == S_OK, "WindowsCreateString failed, hr %#lx\n", hr);
++
++    hr = RoGetActivationFactory(str, &IID_IActivationFactory, (void **)&factory);
++    ok(hr == S_OK, "RoGetActivationFactory failed, hr %#lx\n", hr);
++    WindowsDeleteString(str);
++
++    /* interface tests */
++    hr = IActivationFactory_QueryInterface(factory, &IID_IInspectable, (void **)&inspectable);
++    ok(hr == S_OK, "IActivationFactory_QueryInterface IID_IInspectable failed, hr %#lx\n", hr);
++
++    hr = IActivationFactory_QueryInterface(factory, &IID_IAgileObject, (void **)&agile_object);
++    ok(hr == S_OK, "IActivationFactory_QueryInterface IID_IAgileObject failed, hr %#lx\n", hr);
++
++    hr = IActivationFactory_QueryInterface(factory, &IID_IGameBarStatics, (void **)&gamebar_statics);
++    ok(hr == S_OK, "IActivationFactory_QueryInterface IID_IMediaDeviceStatics failed, hr %#lx\n", hr);
++
++    hr = IGameBarStatics_QueryInterface(gamebar_statics, &IID_IInspectable, (void **)&tmp_inspectable);
++    ok(hr == S_OK, "IMediaDeviceStatics_QueryInterface IID_IInspectable failed, hr %#lx\n", hr);
++    ok(tmp_inspectable == inspectable, "IMediaDeviceStatics_QueryInterface IID_IInspectable returned %p, expected %p\n", tmp_inspectable, inspectable);
++    IInspectable_Release(tmp_inspectable);
++
++    hr = IGameBarStatics_QueryInterface(gamebar_statics, &IID_IAgileObject, (void **)&tmp_agile_object);
++    ok(hr == S_OK, "IMediaDeviceStatics_QueryInterface IID_IAgileObject failed, hr %#lx\n", hr);
++    ok(tmp_agile_object == agile_object, "IMediaDeviceStatics_QueryInterface IID_IAgileObject returned %p, expected %p\n", tmp_agile_object, agile_object);
++    IAgileObject_Release(tmp_agile_object);
++
++
++    IAgileObject_Release(agile_object);
++    IInspectable_Release(inspectable);
++    IActivationFactory_Release(factory);
++    IGameBarStatics_Release(gamebar_statics);
++}
++
++START_TEST(gamebar)
++{
++    HRESULT hr;
++
++    hr = RoInitialize(RO_INIT_MULTITHREADED);
++    ok(hr == S_OK, "RoInitialize failed, hr %#lx\n", hr);
++
++    test_GameBarStatics();
++
++    RoUninitialize();
++}
+diff --git a/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec b/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec
+new file mode 100644
+index 00000000000..20a8bfa98ea
+--- /dev/null
++++ b/dlls/windows.gaming.ui.gamebar/windows.gaming.ui.gamebar.spec
+@@ -0,0 +1,3 @@
++@ stdcall -private DllCanUnloadNow()
++@ stdcall -private DllGetActivationFactory(ptr ptr)
++@ stdcall -private DllGetClassObject(ptr ptr ptr)
 diff --git a/dlls/wined3d/adapter_vk.c b/dlls/wined3d/adapter_vk.c
 index f1ccb987750..423faa25648 100644
---- wine/dlls/wined3d/adapter_vk.c
-+++ wine/dlls/wined3d/adapter_vk.c
+--- a/dlls/wined3d/adapter_vk.c
++++ b/dlls/wined3d/adapter_vk.c
 @@ -2264,7 +2264,7 @@ static enum wined3d_feature_level feature_level_from_caps(const struct shader_ca
          return WINED3D_FEATURE_LEVEL_11_1;
  
@@ -77004,8 +76507,8 @@ index f1ccb987750..423faa25648 100644
  }
 diff --git a/dlls/winegstreamer/Makefile.in b/dlls/winegstreamer/Makefile.in
 index 3524cffb399..1b7caa769eb 100644
---- wine/dlls/winegstreamer/Makefile.in
-+++ wine/dlls/winegstreamer/Makefile.in
+--- a/dlls/winegstreamer/Makefile.in
++++ b/dlls/winegstreamer/Makefile.in
 @@ -1,19 +1,22 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  MODULE    = winegstreamer.dll
@@ -77035,7 +76538,7 @@ diff --git a/dlls/winegstreamer/aac_decoder.c b/dlls/winegstreamer/aac_decoder.c
 new file mode 100644
 index 00000000000..97f2824039d
 --- /dev/null
-+++ wine/dlls/winegstreamer/aac_decoder.c
++++ b/dlls/winegstreamer/aac_decoder.c
 @@ -0,0 +1,620 @@
 +/* AAC Decoder Transform
 + *
@@ -77659,8 +77162,8 @@ index 00000000000..97f2824039d
 +}
 diff --git a/dlls/winegstreamer/audioconvert.c b/dlls/winegstreamer/audioconvert.c
 index d5723cdf58f..2e16c9c78f5 100644
---- wine/dlls/winegstreamer/audioconvert.c
-+++ wine/dlls/winegstreamer/audioconvert.c
+--- a/dlls/winegstreamer/audioconvert.c
++++ b/dlls/winegstreamer/audioconvert.c
 @@ -35,6 +35,11 @@ struct audio_converter
      IMFMediaType *input_type;
      IMFMediaType *output_type;
@@ -78273,7 +77776,7 @@ diff --git a/dlls/winegstreamer/colorconvert.c b/dlls/winegstreamer/colorconvert
 new file mode 100644
 index 00000000000..92322e877ec
 --- /dev/null
-+++ wine/dlls/winegstreamer/colorconvert.c
++++ b/dlls/winegstreamer/colorconvert.c
 @@ -0,0 +1,901 @@
 +/* GStreamer Color Converter
 + *
@@ -79180,7 +78683,7 @@ diff --git a/dlls/winegstreamer/decode_transform.c b/dlls/winegstreamer/decode_t
 new file mode 100644
 index 00000000000..fb7f432923f
 --- /dev/null
-+++ wine/dlls/winegstreamer/decode_transform.c
++++ b/dlls/winegstreamer/decode_transform.c
 @@ -0,0 +1,1218 @@
 +/* GStreamer Decoder Transform
 + *
@@ -80402,8 +79905,8 @@ index 00000000000..fb7f432923f
 +}
 diff --git a/dlls/winegstreamer/gst_private.h b/dlls/winegstreamer/gst_private.h
 index f5da807a2ab..c6b256b4fdd 100644
---- wine/dlls/winegstreamer/gst_private.h
-+++ wine/dlls/winegstreamer/gst_private.h
+--- a/dlls/winegstreamer/gst_private.h
++++ b/dlls/winegstreamer/gst_private.h
 @@ -39,7 +39,7 @@
  
  #include "unixlib.h"
@@ -80531,8 +80034,8 @@ index f5da807a2ab..c6b256b4fdd 100644
  {
 diff --git a/dlls/winegstreamer/h264_decoder.c b/dlls/winegstreamer/h264_decoder.c
 index 8bfa15529db..f6a4d47188f 100644
---- wine/dlls/winegstreamer/h264_decoder.c
-+++ wine/dlls/winegstreamer/h264_decoder.c
+--- a/dlls/winegstreamer/h264_decoder.c
++++ b/dlls/winegstreamer/h264_decoder.c
 @@ -23,17 +23,18 @@
  #include "mferror.h"
  #include "mfobjects.h"
@@ -81251,8 +80754,8 @@ index 8bfa15529db..f6a4d47188f 100644
      *ret = &decoder->IMFTransform_iface;
 diff --git a/dlls/winegstreamer/main.c b/dlls/winegstreamer/main.c
 index d88a462d81e..219fde82dc6 100644
---- wine/dlls/winegstreamer/main.c
-+++ wine/dlls/winegstreamer/main.c
+--- a/dlls/winegstreamer/main.c
++++ b/dlls/winegstreamer/main.c
 @@ -25,9 +25,7 @@
  #include "gst_private.h"
  #include "winternl.h"
@@ -81590,8 +81093,8 @@ index d88a462d81e..219fde82dc6 100644
  }
 diff --git a/dlls/winegstreamer/media_source.c b/dlls/winegstreamer/media_source.c
 index f07b83f413e..82a6da1bcbf 100644
---- wine/dlls/winegstreamer/media_source.c
-+++ wine/dlls/winegstreamer/media_source.c
+--- a/dlls/winegstreamer/media_source.c
++++ b/dlls/winegstreamer/media_source.c
 @@ -105,7 +105,6 @@ struct media_source
          SOURCE_RUNNING,
          SOURCE_SHUTDOWN,
@@ -82022,8 +81525,8 @@ index f07b83f413e..82a6da1bcbf 100644
  }
 diff --git a/dlls/winegstreamer/mfplat.c b/dlls/winegstreamer/mfplat.c
 index 97e27bb7301..3ec45d7de4e 100644
---- wine/dlls/winegstreamer/mfplat.c
-+++ wine/dlls/winegstreamer/mfplat.c
+--- a/dlls/winegstreamer/mfplat.c
++++ b/dlls/winegstreamer/mfplat.c
 @@ -29,6 +29,8 @@
  
  WINE_DEFAULT_DEBUG_CHANNEL(mfplat);
@@ -82697,8 +82200,8 @@ index 97e27bb7301..3ec45d7de4e 100644
  }
 diff --git a/dlls/winegstreamer/quartz_parser.c b/dlls/winegstreamer/quartz_parser.c
 index 7b82f3efbc9..e9a3b00016d 100644
---- wine/dlls/winegstreamer/quartz_parser.c
-+++ wine/dlls/winegstreamer/quartz_parser.c
+--- a/dlls/winegstreamer/quartz_parser.c
++++ b/dlls/winegstreamer/quartz_parser.c
 @@ -29,8 +29,8 @@
  #include "dvdmedia.h"
  #include "mmreg.h"
@@ -83019,8 +82522,8 @@ index 7b82f3efbc9..e9a3b00016d 100644
      This->sources = NULL;
 diff --git a/dlls/winegstreamer/unix_private.h b/dlls/winegstreamer/unix_private.h
 index 7bce8263aaf..88566ab1db5 100644
---- wine/dlls/winegstreamer/unix_private.h
-+++ wine/dlls/winegstreamer/unix_private.h
+--- a/dlls/winegstreamer/unix_private.h
++++ b/dlls/winegstreamer/unix_private.h
 @@ -23,14 +23,11 @@
  
  #include "unixlib.h"
@@ -83039,8 +82542,8 @@ index 7bce8263aaf..88566ab1db5 100644
  extern NTSTATUS wg_transform_destroy(void *args) DECLSPEC_HIDDEN;
 diff --git a/dlls/winegstreamer/unixlib.h b/dlls/winegstreamer/unixlib.h
 index f4e2ea4966b..e39cf54fd08 100644
---- wine/dlls/winegstreamer/unixlib.h
-+++ wine/dlls/winegstreamer/unixlib.h
+--- a/dlls/winegstreamer/unixlib.h
++++ b/dlls/winegstreamer/unixlib.h
 @@ -37,8 +37,6 @@ struct wg_format
          WG_MAJOR_TYPE_UNKNOWN,
          WG_MAJOR_TYPE_VIDEO,
@@ -83253,8 +82756,8 @@ index f4e2ea4966b..e39cf54fd08 100644
  
 diff --git a/dlls/winegstreamer/wg_parser.c b/dlls/winegstreamer/wg_parser.c
 index 48b88a4b11c..cbd037e42c8 100644
---- wine/dlls/winegstreamer/wg_parser.c
-+++ wine/dlls/winegstreamer/wg_parser.c
+--- a/dlls/winegstreamer/wg_parser.c
++++ b/dlls/winegstreamer/wg_parser.c
 @@ -30,6 +30,7 @@
  #include <stdarg.h>
  #include <stdio.h>
@@ -85043,8 +84546,8 @@ index 48b88a4b11c..cbd037e42c8 100644
  
 diff --git a/dlls/winegstreamer/wg_transform.c b/dlls/winegstreamer/wg_transform.c
 index 49c7bfaa927..b080894dbe4 100644
---- wine/dlls/winegstreamer/wg_transform.c
-+++ wine/dlls/winegstreamer/wg_transform.c
+--- a/dlls/winegstreamer/wg_transform.c
++++ b/dlls/winegstreamer/wg_transform.c
 @@ -32,98 +32,315 @@
  #include <gst/video/video.h>
  #include <gst/audio/audio.h>
@@ -85903,8 +85406,8 @@ index 49c7bfaa927..b080894dbe4 100644
  }
 diff --git a/dlls/winegstreamer/winegstreamer_classes.idl b/dlls/winegstreamer/winegstreamer_classes.idl
 index 347ee906a52..5762430a5cd 100644
---- wine/dlls/winegstreamer/winegstreamer_classes.idl
-+++ wine/dlls/winegstreamer/winegstreamer_classes.idl
+--- a/dlls/winegstreamer/winegstreamer_classes.idl
++++ b/dlls/winegstreamer/winegstreamer_classes.idl
 @@ -78,4 +78,16 @@ coclass CWMADecMediaObject {};
      threading(both),
      uuid(62ce7e72-4c71-4d20-b15d-452831a87d9d)
@@ -85925,8 +85428,8 @@ index 347ee906a52..5762430a5cd 100644
 +coclass CColorConvertDMO { }
 diff --git a/dlls/winegstreamer/wm_asyncreader.c b/dlls/winegstreamer/wm_asyncreader.c
 index 947b3307a3a..a7ad6a6c45c 100644
---- wine/dlls/winegstreamer/wm_asyncreader.c
-+++ wine/dlls/winegstreamer/wm_asyncreader.c
+--- a/dlls/winegstreamer/wm_asyncreader.c
++++ b/dlls/winegstreamer/wm_asyncreader.c
 @@ -66,7 +66,7 @@ static void open_stream(struct async_reader *reader, IWMReaderCallback *callback
      if (FAILED(hr = IWMReaderCallback_QueryInterface(callback,
              &IID_IWMReaderCallbackAdvanced, (void **)&reader->reader.callback_advanced)))
@@ -86261,8 +85764,8 @@ index 947b3307a3a..a7ad6a6c45c 100644
  
 diff --git a/dlls/winegstreamer/wm_reader.c b/dlls/winegstreamer/wm_reader.c
 index 57ba8633a84..cb667c957b4 100644
---- wine/dlls/winegstreamer/wm_reader.c
-+++ wine/dlls/winegstreamer/wm_reader.c
+--- a/dlls/winegstreamer/wm_reader.c
++++ b/dlls/winegstreamer/wm_reader.c
 @@ -24,7 +24,7 @@ static struct wm_stream *get_stream_by_output_number(struct wm_reader *reader, D
  {
      if (output < reader->stream_count)
@@ -86685,8 +86188,8 @@ index 57ba8633a84..cb667c957b4 100644
  
 diff --git a/dlls/winegstreamer/wm_syncreader.c b/dlls/winegstreamer/wm_syncreader.c
 index c7cccd52c4f..b03aa69d030 100644
---- wine/dlls/winegstreamer/wm_syncreader.c
-+++ wine/dlls/winegstreamer/wm_syncreader.c
+--- a/dlls/winegstreamer/wm_syncreader.c
++++ b/dlls/winegstreamer/wm_syncreader.c
 @@ -65,7 +65,7 @@ static HRESULT WINAPI WMSyncReader_Close(IWMSyncReader2 *iface)
  static HRESULT WINAPI WMSyncReader_GetMaxOutputSampleSize(IWMSyncReader2 *iface, DWORD output, DWORD *max)
  {
@@ -86811,8 +86314,8 @@ index c7cccd52c4f..b03aa69d030 100644
  
 diff --git a/dlls/winegstreamer/wma_decoder.c b/dlls/winegstreamer/wma_decoder.c
 index 57b0f204f9e..021d0beb935 100644
---- wine/dlls/winegstreamer/wma_decoder.c
-+++ wine/dlls/winegstreamer/wma_decoder.c
+--- a/dlls/winegstreamer/wma_decoder.c
++++ b/dlls/winegstreamer/wma_decoder.c
 @@ -1,4 +1,4 @@
 -/* WMA Decoder DMO / MF Transform
 +/* WMA Decoder Transform
@@ -87711,11 +87214,1433 @@ index 57b0f204f9e..021d0beb935 100644
      decoder->refcount = 1;
      decoder->outer = outer ? outer : &decoder->IUnknown_inner;
  
+diff --git a/dlls/winemac.drv/macdrv_main.c b/dlls/winemac.drv/macdrv_main.c
+index 50e926c6aaa..fce8e102387 100644
+--- a/dlls/winemac.drv/macdrv_main.c
++++ b/dlls/winemac.drv/macdrv_main.c
+@@ -507,3 +507,62 @@ BOOL macdrv_SystemParametersInfo( UINT action, UINT int_param, void *ptr_param,
+     }
+     return FALSE;
+ }
++
++#if defined(__x86_64__) && !defined(__i386_on_x86_64__)
++struct macdrv_functions_t
++{
++    void (*macdrv_init_display_devices)(BOOL);
++    struct macdrv_win_data*(*get_win_data)(HWND hwnd);
++    void (*release_win_data)(struct macdrv_win_data *data);
++    macdrv_window(*macdrv_get_cocoa_window)(HWND hwnd, BOOL require_on_screen);
++    macdrv_metal_device (*macdrv_create_metal_device)(void);
++    void (*macdrv_release_metal_device)(macdrv_metal_device d);
++    macdrv_metal_view (*macdrv_view_create_metal_view)(macdrv_view v, macdrv_metal_device d);
++    macdrv_metal_layer (*macdrv_view_get_metal_layer)(macdrv_metal_view v);
++    void (*macdrv_view_release_metal_view)(macdrv_metal_view v);
++    void (*on_main_thread)(dispatch_block_t b);
++    LSTATUS(WINAPI*RegQueryValueExA)(HKEY, LPCSTR, LPDWORD, LPDWORD, BYTE*, LPDWORD);
++    LSTATUS(WINAPI*RegSetValueExA)(HKEY, LPCSTR, DWORD, DWORD, const BYTE*, DWORD);
++    LSTATUS(WINAPI*RegOpenKeyExA)(HKEY, LPCSTR, DWORD, DWORD, HKEY*);
++    LSTATUS(WINAPI*RegCreateKeyExA)(HKEY, LPCSTR, DWORD, LPSTR, DWORD, DWORD, LPSECURITY_ATTRIBUTES, HKEY*, LPDWORD);
++    LSTATUS(WINAPI*RegCloseKey)(HKEY);
++    BOOL(WINAPI*EnumDisplayMonitors)(HDC,LPRECT,MONITORENUMPROC,LPARAM);
++    BOOL(WINAPI*GetMonitorInfoA)(HMONITOR,LPMONITORINFO);
++    BOOL(WINAPI*AdjustWindowRectEx)(LPRECT,DWORD,BOOL,DWORD);
++    LONG_PTR(WINAPI*GetWindowLongPtrW)(HWND,int);
++    BOOL(WINAPI*GetWindowRect)(HWND,LPRECT);
++    BOOL(WINAPI*MoveWindow)(HWND,int,int,int,int,BOOL);
++    BOOL(WINAPI*SetWindowPos)(HWND,HWND,int,int,int,int,UINT);
++    INT(WINAPI*GetSystemMetrics)(INT);
++    LONG_PTR(WINAPI*SetWindowLongPtrW)(HWND,INT,LONG_PTR);
++};
++
++void OnMainThread(dispatch_block_t);
++
++struct macdrv_functions_t macdrv_functions = {
++    &macdrv_init_display_devices,
++    &get_win_data,
++    &release_win_data,
++    &macdrv_get_cocoa_window,
++    &macdrv_create_metal_device,
++    &macdrv_release_metal_device,
++    &macdrv_view_create_metal_view,
++    &macdrv_view_get_metal_layer,
++    &macdrv_view_release_metal_view,
++    &OnMainThread,
++    &RegQueryValueExA,
++    &RegSetValueExA,
++    &RegOpenKeyExA,
++    &RegCreateKeyExA,
++    &RegCloseKey,
++    &EnumDisplayMonitors,
++    &GetMonitorInfoA,
++    &AdjustWindowRectEx,
++    &GetWindowLongPtrW,
++    &GetWindowRect,
++    &MoveWindow,
++    &SetWindowPos,
++    &GetSystemMetrics,
++    &SetWindowLongPtrW,
++};
++#endif
+\ No newline at end of file
+diff --git a/dlls/wintrust/softpub.c b/dlls/wintrust/softpub.c
+index 53df5e7fe60..06b178a98b9 100644
+--- a/dlls/wintrust/softpub.c
++++ b/dlls/wintrust/softpub.c
+@@ -830,16 +830,93 @@ static DWORD WINTRUST_VerifySigner(CRYPT_PROVIDER_DATA *data, DWORD signerIdx)
+     return err;
+ }
+ 
++static void load_secondary_signatures(CRYPT_PROVIDER_DATA *data, HCRYPTMSG msg)
++{
++    CRYPT_PROVIDER_SIGSTATE *s = data->pSigState;
++    CRYPT_ATTRIBUTES *attrs;
++    unsigned int i, j;
++    DWORD size;
++
++    if (!CryptMsgGetParam(msg, CMSG_SIGNER_UNAUTH_ATTR_PARAM, 0, NULL, &size))
++        return;
++
++    if (!(attrs = data->psPfns->pfnAlloc(size)))
++    {
++        ERR("No memory.\n");
++        return;
++    }
++    if (!CryptMsgGetParam(msg, CMSG_SIGNER_UNAUTH_ATTR_PARAM, 0, attrs, &size))
++        goto done;
++
++    for (i = 0; i < attrs->cAttr; ++i)
++    {
++        if (strcmp(attrs->rgAttr[i].pszObjId, szOID_NESTED_SIGNATURE))
++            continue;
++
++        if (!(s->rhSecondarySigs = data->psPfns->pfnAlloc(attrs->rgAttr[i].cValue * sizeof(*s->rhSecondarySigs))))
++        {
++            ERR("No memory");
++            goto done;
++        }
++        s->cSecondarySigs = 0;
++        for (j = 0; j < attrs->rgAttr[i].cValue; ++j)
++        {
++            if (!(msg = CryptMsgOpenToDecode(X509_ASN_ENCODING | PKCS_7_ASN_ENCODING, 0, 0, 0, NULL, NULL)))
++            {
++                ERR("Could not create crypt message.\n");
++                goto done;
++            }
++            if (!CryptMsgUpdate(msg, attrs->rgAttr[i].rgValue[j].pbData, attrs->rgAttr[i].rgValue[j].cbData, TRUE))
++            {
++                ERR("Could not update crypt message, err %lu.\n", GetLastError());
++                CryptMsgClose(msg);
++                goto done;
++            }
++            s->rhSecondarySigs[j] = msg;
++            ++s->cSecondarySigs;
++        }
++        break;
++    }
++done:
++    data->psPfns->pfnFree(attrs);
++}
++
+ HRESULT WINAPI SoftpubLoadSignature(CRYPT_PROVIDER_DATA *data)
+ {
+-    DWORD err;
++    DWORD err = ERROR_SUCCESS;
+ 
+     TRACE("(%p)\n", data);
+ 
+     if (!data->padwTrustStepErrors)
+         return S_FALSE;
+ 
+-    if (data->hMsg)
++    if (data->pSigState)
++    {
++        /* We did not initialize this, probably an unsupported usage. */
++        FIXME("pSigState %p already initialized.\n", data->pSigState);
++    }
++    if (!(data->pSigState = data->psPfns->pfnAlloc(sizeof(*data->pSigState))))
++    {
++        err = ERROR_OUTOFMEMORY;
++    }
++    else
++    {
++        data->pSigState->cbStruct = sizeof(*data->pSigState);
++        data->pSigState->fSupportMultiSig = TRUE;
++        data->pSigState->dwCryptoPolicySupport = WSS_SIGTRUST_SUPPORT | WSS_OBJTRUST_SUPPORT | WSS_CERTTRUST_SUPPORT;
++        if (data->hMsg)
++        {
++            data->pSigState->hPrimarySig = CryptMsgDuplicate(data->hMsg);
++            load_secondary_signatures(data, data->pSigState->hPrimarySig);
++        }
++        if (data->pSigSettings)
++        {
++            if (data->pSigSettings->dwFlags & WSS_GET_SECONDARY_SIG_COUNT)
++                data->pSigSettings->cSecondarySigs = data->pSigState->cSecondarySigs;
++        }
++    }
++
++    if (!err && data->hMsg)
+     {
+         DWORD signerCount, size;
+ 
+@@ -859,8 +936,7 @@ HRESULT WINAPI SoftpubLoadSignature(CRYPT_PROVIDER_DATA *data)
+         else
+             err = TRUST_E_NOSIGNATURE;
+     }
+-    else
+-        err = ERROR_SUCCESS;
++
+     if (err)
+         data->padwTrustStepErrors[TRUSTERROR_STEP_FINAL_SIGPROV] = err;
+     return !err ? S_OK : S_FALSE;
+@@ -1375,6 +1451,13 @@ HRESULT WINAPI SoftpubCleanup(CRYPT_PROVIDER_DATA *data)
+         data->psPfns->pfnFree(data->u.pPDSip->psIndirectData);
+     }
+ 
++    if (WVT_ISINSTRUCT(CRYPT_PROVIDER_DATA, data->cbStruct, pSigState) && data->pSigState)
++    {
++        CryptMsgClose(data->pSigState->hPrimarySig);
++        for (i = 0; i < data->pSigState->cSecondarySigs; ++i)
++            CryptMsgClose(data->pSigState->rhSecondarySigs[i]);
++        data->psPfns->pfnFree(data->pSigState);
++    }
+     CryptMsgClose(data->hMsg);
+ 
+     if (data->fOpenedFile &&
+diff --git a/dlls/wintrust/tests/softpub.c b/dlls/wintrust/tests/softpub.c
+index 8195e6006b1..77e15b2feb4 100644
+--- a/dlls/wintrust/tests/softpub.c
++++ b/dlls/wintrust/tests/softpub.c
+@@ -1123,6 +1123,476 @@ static const BYTE SelfSignedFile64[] =
+     0x9C,0x68,0x1A,0x5D,0x92,0xCD,0xD0,0x5F,0x02,0xA1,0x2C,0xD9,0x56,0x20,0x00,0x00
+ };
+ 
++/* Self-signed 32 bit .exe, built with mingw-gcc, stripped, signed with signtool
++ * (certificates generated with a self-signed CA).
++ *
++ * small.c:
++ * int _start()
++ * {
++ *     return 0;
++ * }
++ *
++ * i686-w64-mingw32-gcc -s -nodefaultlibs -fno-PIC ./small.c -o sign_3certs.exe
++ * strip -R .idata -R .rdata -R .edata -R .eh_fram ./sign_3certs.exe
++ * signtool.exe sign /v /f cert1.pfx /fd SHA256 /t http://timestamp.digicert.com sign_3certs.exe
++ * signtool.exe sign /v /f cert2.pfx /as /fd SHA256 sign_3certs.exe
++ * signtool.exe sign /v /f cert3.pfx /as /fd SHA256 sign_3certs.exe */
++
++static const BYTE self_signed_3certs[] =
++{
++    0x4d,0x5a,0x90,0x00,0x03,0x00,0x00,0x00,0x04,0x00,0x00,0x00,0xff,0xff,0x00,0x00,0xb8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x40,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x0e,0x1f,0xba,0x0e,0x00,0xb4,0x09,0xcd,
++    0x21,0xb8,0x01,0x4c,0xcd,0x21,0x54,0x68,0x69,0x73,0x20,0x70,0x72,0x6f,0x67,0x72,0x61,0x6d,0x20,0x63,0x61,0x6e,0x6e,0x6f,
++    0x74,0x20,0x62,0x65,0x20,0x72,0x75,0x6e,0x20,0x69,0x6e,0x20,0x44,0x4f,0x53,0x20,0x6d,0x6f,0x64,0x65,0x2e,0x0d,0x0d,0x0a,
++    0x24,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x50,0x45,0x00,0x00,0x4c,0x01,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0xe0,0x00,0x0e,0x03,0x0b,0x01,0x02,0x25,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x10,0x00,0x00,0x00,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x00,0x00,0x10,0x00,0x00,0x00,0x02,0x00,0x00,
++    0x04,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x02,0x00,0x00,
++    0x76,0x3e,0x00,0x00,0x03,0x00,0x40,0x01,0x00,0x00,0x20,0x00,0x00,0x10,0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x10,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x00,0x00,0x14,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x04,0x00,0x00,0x48,0x26,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x2e,0x74,0x65,0x78,0x74,0x00,0x00,0x00,
++    0x1c,0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x60,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x55,0x89,0xe5,0xb8,0x00,0x00,0x00,0x00,0x5d,0xc3,0x90,0x90,0xff,0xff,0xff,0xff,
++    0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xff,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
++    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x48,0x26,0x00,0x00,0x00,0x02,0x02,0x00,
++    0x30,0x82,0x26,0x36,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x07,0x02,0xa0,0x82,0x26,0x27,0x30,0x82,0x26,0x23,0x02,
++    0x01,0x01,0x31,0x0f,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x30,0x5c,0x06,0x0a,0x2b,
++    0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x04,0xa0,0x4e,0x30,0x4c,0x30,0x17,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,
++    0x02,0x01,0x0f,0x30,0x09,0x03,0x01,0x00,0xa0,0x04,0xa2,0x02,0x80,0x00,0x30,0x31,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,
++    0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x04,0x20,0xdd,0x8b,0xd7,0x29,0x3b,0xae,0x16,0xec,0xbb,0x81,0x80,0x55,0x15,0xd8,0x87,
++    0xa5,0x3e,0xeb,0x0b,0x74,0x59,0xb6,0x56,0xf1,0x0b,0x2e,0xe1,0xb4,0x42,0x4d,0x8b,0x18,0xa0,0x82,0x16,0x0c,0x30,0x82,0x03,
++    0x01,0x30,0x82,0x01,0xe9,0xa0,0x03,0x02,0x01,0x02,0x02,0x10,0xd1,0x73,0x97,0xaa,0xa7,0x3a,0x31,0xa2,0x44,0xc0,0x4b,0x40,
++    0x69,0x40,0x4b,0xfa,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x12,0x31,0x10,0x30,
++    0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x33,
++    0x30,0x31,0x37,0x31,0x39,0x33,0x32,0x5a,0x17,0x0d,0x33,0x39,0x31,0x32,0x33,0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,
++    0x10,0x31,0x0e,0x30,0x0c,0x06,0x03,0x55,0x04,0x03,0x13,0x05,0x63,0x65,0x72,0x74,0x31,0x30,0x82,0x01,0x22,0x30,0x0d,0x06,
++    0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x03,0x82,0x01,0x0f,0x00,0x30,0x82,0x01,0x0a,0x02,0x82,0x01,
++    0x01,0x00,0xca,0x9c,0xd9,0xd4,0x25,0xb6,0x45,0x61,0x22,0x8d,0xdf,0xe9,0x11,0x0f,0xa1,0x7e,0x45,0xc5,0x0b,0xd0,0x42,0xfc,
++    0x1f,0x3e,0xce,0x20,0xfc,0x1b,0x37,0xe4,0x0d,0x06,0x83,0x1c,0x3a,0x71,0x0f,0x75,0xf5,0xe5,0x06,0x33,0x01,0x77,0xda,0xc5,
++    0xe9,0x2e,0xe3,0x37,0x1e,0x51,0x6e,0x08,0xe2,0x02,0xa1,0x8c,0x11,0xc6,0xfc,0x43,0xa2,0xf5,0x7d,0x74,0x5d,0x5a,0xcc,0x85,
++    0x27,0x38,0xd4,0xfa,0xad,0xd7,0xf9,0x77,0xe4,0xef,0xdd,0xb0,0xb1,0x3e,0xdc,0xf5,0x5d,0x7e,0x62,0xdf,0x16,0x01,0x88,0xcd,
++    0xb0,0xfa,0x06,0x24,0xd7,0xce,0xdc,0xe2,0x27,0xab,0xc3,0x0e,0x44,0x59,0x39,0x38,0xae,0x0a,0x5a,0xbd,0x5c,0xfd,0x11,0xed,
++    0x5e,0xb8,0xd3,0x09,0x9c,0x84,0x80,0x6f,0x38,0xdf,0xd2,0xed,0x12,0x33,0xc9,0x66,0x3e,0x77,0x95,0x40,0xca,0xbb,0x63,0xd8,
++    0x44,0x62,0x1d,0x60,0xc1,0x0d,0x92,0x18,0x68,0x4c,0xc7,0x26,0x83,0x5b,0x38,0x45,0xda,0x8d,0xe6,0x11,0xd0,0x08,0x79,0x0c,
++    0x13,0xb8,0xe0,0xab,0xf5,0x78,0xe2,0x45,0xfd,0x42,0x7f,0x33,0xab,0x6d,0x53,0x10,0xa3,0x02,0x3c,0xd3,0x6f,0xaf,0x50,0x2f,
++    0x20,0xfc,0x92,0xd1,0xab,0x68,0xe8,0x00,0xa0,0x1c,0x4b,0x6f,0x02,0x5a,0xf4,0x1a,0xf1,0x06,0x79,0xa1,0x34,0x8d,0x04,0x5c,
++    0x0d,0xfe,0x2d,0x3c,0x53,0xb6,0xae,0x80,0x7d,0x98,0xb9,0x02,0x60,0x15,0x2c,0xb2,0xe5,0xc7,0x9b,0xcf,0x78,0x53,0x37,0xd9,
++    0xbf,0x84,0x04,0xb0,0x61,0x1c,0xea,0x24,0x7b,0xf7,0xcd,0x71,0x45,0x1a,0x00,0x22,0x21,0xa9,0x02,0x03,0x01,0x00,0x01,0xa3,
++    0x55,0x30,0x53,0x30,0x0c,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x43,0x06,0x03,0x55,0x1d,0x01,
++    0x04,0x3c,0x30,0x3a,0x80,0x10,0x88,0x17,0xf7,0x38,0x65,0x8b,0x78,0x78,0xf6,0x77,0xe3,0x25,0x47,0x54,0x33,0x4c,0xa1,0x14,
++    0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x82,0x10,0x2b,0x59,
++    0xb4,0xc7,0xe2,0xce,0x08,0x97,0x46,0x48,0x32,0x17,0x0f,0x97,0xc5,0x08,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,
++    0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x01,0x01,0x00,0x9d,0x05,0x0e,0xc5,0xa0,0x5e,0x47,0x18,0x31,0x60,0xf2,0x1b,0x37,0xa4,
++    0x89,0xf7,0x05,0x3e,0xea,0xc2,0x00,0x9f,0xcb,0xdd,0x28,0xba,0xc9,0x1f,0xfa,0x7a,0x9b,0x24,0x3d,0xb6,0x47,0x80,0xc1,0xa6,
++    0x67,0x4d,0x48,0x3d,0xe0,0x0b,0x32,0x6a,0xa7,0x93,0xf3,0x40,0x20,0x8a,0xff,0x0f,0x9a,0xe2,0x00,0x95,0xa3,0xb3,0x57,0xc7,
++    0x11,0xe1,0x28,0xc5,0x63,0x01,0xdf,0x4a,0xd2,0x37,0xb2,0x53,0x09,0x5c,0x4e,0x50,0x4e,0x14,0xb8,0x3e,0xb4,0x52,0xfe,0xa5,
++    0x5d,0x14,0x3f,0x07,0x4f,0xda,0x9a,0xb9,0xbe,0x40,0xc5,0x3b,0x90,0x54,0x03,0x2e,0x79,0x0e,0x9b,0xf7,0xa9,0x74,0xeb,0x7c,
++    0x6b,0x71,0x12,0xf2,0xce,0x9f,0xc0,0x3e,0x8a,0x09,0xa4,0x91,0x91,0x93,0x64,0x11,0xcc,0x96,0x7b,0xf9,0xac,0x65,0x6b,0xc3,
++    0x02,0x1d,0xf8,0x0c,0x82,0x72,0x04,0x19,0x05,0x06,0x33,0x44,0x48,0x4f,0x34,0x13,0x04,0x1e,0x6c,0x11,0xc0,0x7b,0x63,0x32,
++    0x1e,0xb3,0x4f,0x79,0xfe,0x9d,0xe6,0x3a,0xbe,0x8e,0xa7,0x5f,0x67,0x1d,0xae,0xad,0x58,0x0e,0x53,0xb8,0x15,0xe3,0x85,0x6e,
++    0x91,0xfe,0x2d,0x81,0x84,0xb9,0xc3,0x23,0x13,0xa0,0x3f,0x72,0xb7,0xb3,0x26,0xda,0x08,0xcf,0x10,0x65,0x1e,0xd5,0x3b,0xf4,
++    0x8f,0x18,0xe0,0xab,0xe7,0x5e,0xfc,0x62,0x9e,0x7e,0x54,0xf9,0x35,0x5a,0xf8,0xfa,0x1f,0x10,0x6f,0x63,0x3d,0xa2,0xe9,0x8a,
++    0xd6,0x49,0xc0,0x40,0x0b,0xa1,0x5e,0x83,0xb0,0x01,0xb6,0x03,0x66,0xa5,0x8a,0xb4,0x29,0x06,0xea,0x27,0x0c,0x28,0x88,0xf3,
++    0x38,0x5e,0x30,0x82,0x05,0x8d,0x30,0x82,0x04,0x75,0xa0,0x03,0x02,0x01,0x02,0x02,0x10,0x0e,0x9b,0x18,0x8e,0xf9,0xd0,0x2d,
++    0xe7,0xef,0xdb,0x50,0xe2,0x08,0x40,0x18,0x5a,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0c,0x05,0x00,
++    0x30,0x65,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x15,0x30,0x13,0x06,0x03,0x55,0x04,0x0a,
++    0x13,0x0c,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x49,0x6e,0x63,0x31,0x19,0x30,0x17,0x06,0x03,0x55,0x04,0x0b,0x13,
++    0x10,0x77,0x77,0x77,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x31,0x24,0x30,0x22,0x06,0x03,0x55,
++    0x04,0x03,0x13,0x1b,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x41,0x73,0x73,0x75,0x72,0x65,0x64,0x20,0x49,0x44,0x20,
++    0x52,0x6f,0x6f,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x38,0x30,0x31,0x30,0x30,0x30,0x30,0x30,0x30,0x5a,
++    0x17,0x0d,0x33,0x31,0x31,0x31,0x30,0x39,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x62,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,
++    0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x15,0x30,0x13,0x06,0x03,0x55,0x04,0x0a,0x13,0x0c,0x44,0x69,0x67,0x69,0x43,0x65,0x72,
++    0x74,0x20,0x49,0x6e,0x63,0x31,0x19,0x30,0x17,0x06,0x03,0x55,0x04,0x0b,0x13,0x10,0x77,0x77,0x77,0x2e,0x64,0x69,0x67,0x69,
++    0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x31,0x21,0x30,0x1f,0x06,0x03,0x55,0x04,0x03,0x13,0x18,0x44,0x69,0x67,0x69,0x43,
++    0x65,0x72,0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x52,0x6f,0x6f,0x74,0x20,0x47,0x34,0x30,0x82,0x02,0x22,0x30,
++    0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x03,0x82,0x02,0x0f,0x00,0x30,0x82,0x02,0x0a,0x02,
++    0x82,0x02,0x01,0x00,0xbf,0xe6,0x90,0x73,0x68,0xde,0xbb,0xe4,0x5d,0x4a,0x3c,0x30,0x22,0x30,0x69,0x33,0xec,0xc2,0xa7,0x25,
++    0x2e,0xc9,0x21,0x3d,0xf2,0x8a,0xd8,0x59,0xc2,0xe1,0x29,0xa7,0x3d,0x58,0xab,0x76,0x9a,0xcd,0xae,0x7b,0x1b,0x84,0x0d,0xc4,
++    0x30,0x1f,0xf3,0x1b,0xa4,0x38,0x16,0xeb,0x56,0xc6,0x97,0x6d,0x1d,0xab,0xb2,0x79,0xf2,0xca,0x11,0xd2,0xe4,0x5f,0xd6,0x05,
++    0x3c,0x52,0x0f,0x52,0x1f,0xc6,0x9e,0x15,0xa5,0x7e,0xbe,0x9f,0xa9,0x57,0x16,0x59,0x55,0x72,0xaf,0x68,0x93,0x70,0xc2,0xb2,
++    0xba,0x75,0x99,0x6a,0x73,0x32,0x94,0xd1,0x10,0x44,0x10,0x2e,0xdf,0x82,0xf3,0x07,0x84,0xe6,0x74,0x3b,0x6d,0x71,0xe2,0x2d,
++    0x0c,0x1b,0xee,0x20,0xd5,0xc9,0x20,0x1d,0x63,0x29,0x2d,0xce,0xec,0x5e,0x4e,0xc8,0x93,0xf8,0x21,0x61,0x9b,0x34,0xeb,0x05,
++    0xc6,0x5e,0xec,0x5b,0x1a,0xbc,0xeb,0xc9,0xcf,0xcd,0xac,0x34,0x40,0x5f,0xb1,0x7a,0x66,0xee,0x77,0xc8,0x48,0xa8,0x66,0x57,
++    0x57,0x9f,0x54,0x58,0x8e,0x0c,0x2b,0xb7,0x4f,0xa7,0x30,0xd9,0x56,0xee,0xca,0x7b,0x5d,0xe3,0xad,0xc9,0x4f,0x5e,0xe5,0x35,
++    0xe7,0x31,0xcb,0xda,0x93,0x5e,0xdc,0x8e,0x8f,0x80,0xda,0xb6,0x91,0x98,0x40,0x90,0x79,0xc3,0x78,0xc7,0xb6,0xb1,0xc4,0xb5,
++    0x6a,0x18,0x38,0x03,0x10,0x8d,0xd8,0xd4,0x37,0xa4,0x2e,0x05,0x7d,0x88,0xf5,0x82,0x3e,0x10,0x91,0x70,0xab,0x55,0x82,0x41,
++    0x32,0xd7,0xdb,0x04,0x73,0x2a,0x6e,0x91,0x01,0x7c,0x21,0x4c,0xd4,0xbc,0xae,0x1b,0x03,0x75,0x5d,0x78,0x66,0xd9,0x3a,0x31,
++    0x44,0x9a,0x33,0x40,0xbf,0x08,0xd7,0x5a,0x49,0xa4,0xc2,0xe6,0xa9,0xa0,0x67,0xdd,0xa4,0x27,0xbc,0xa1,0x4f,0x39,0xb5,0x11,
++    0x58,0x17,0xf7,0x24,0x5c,0x46,0x8f,0x64,0xf7,0xc1,0x69,0x88,0x76,0x98,0x76,0x3d,0x59,0x5d,0x42,0x76,0x87,0x89,0x97,0x69,
++    0x7a,0x48,0xf0,0xe0,0xa2,0x12,0x1b,0x66,0x9a,0x74,0xca,0xde,0x4b,0x1e,0xe7,0x0e,0x63,0xae,0xe6,0xd4,0xef,0x92,0x92,0x3a,
++    0x9e,0x3d,0xdc,0x00,0xe4,0x45,0x25,0x89,0xb6,0x9a,0x44,0x19,0x2b,0x7e,0xc0,0x94,0xb4,0xd2,0x61,0x6d,0xeb,0x33,0xd9,0xc5,
++    0xdf,0x4b,0x04,0x00,0xcc,0x7d,0x1c,0x95,0xc3,0x8f,0xf7,0x21,0xb2,0xb2,0x11,0xb7,0xbb,0x7f,0xf2,0xd5,0x8c,0x70,0x2c,0x41,
++    0x60,0xaa,0xb1,0x63,0x18,0x44,0x95,0x1a,0x76,0x62,0x7e,0xf6,0x80,0xb0,0xfb,0xe8,0x64,0xa6,0x33,0xd1,0x89,0x07,0xe1,0xbd,
++    0xb7,0xe6,0x43,0xa4,0x18,0xb8,0xa6,0x77,0x01,0xe1,0x0f,0x94,0x0c,0x21,0x1d,0xb2,0x54,0x29,0x25,0x89,0x6c,0xe5,0x0e,0x52,
++    0x51,0x47,0x74,0xbe,0x26,0xac,0xb6,0x41,0x75,0xde,0x7a,0xac,0x5f,0x8d,0x3f,0xc9,0xbc,0xd3,0x41,0x11,0x12,0x5b,0xe5,0x10,
++    0x50,0xeb,0x31,0xc5,0xca,0x72,0x16,0x22,0x09,0xdf,0x7c,0x4c,0x75,0x3f,0x63,0xec,0x21,0x5f,0xc4,0x20,0x51,0x6b,0x6f,0xb1,
++    0xab,0x86,0x8b,0x4f,0xc2,0xd6,0x45,0x5f,0x9d,0x20,0xfc,0xa1,0x1e,0xc5,0xc0,0x8f,0xa2,0xb1,0x7e,0x0a,0x26,0x99,0xf5,0xe4,
++    0x69,0x2f,0x98,0x1d,0x2d,0xf5,0xd9,0xa9,0xb2,0x1d,0xe5,0x1b,0x02,0x03,0x01,0x00,0x01,0xa3,0x82,0x01,0x3a,0x30,0x82,0x01,
++    0x36,0x30,0x0f,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x05,0x30,0x03,0x01,0x01,0xff,0x30,0x1d,0x06,0x03,0x55,0x1d,
++    0x0e,0x04,0x16,0x04,0x14,0xec,0xd7,0xe3,0x82,0xd2,0x71,0x5d,0x64,0x4c,0xdf,0x2e,0x67,0x3f,0xe7,0xba,0x98,0xae,0x1c,0x0f,
++    0x4f,0x30,0x1f,0x06,0x03,0x55,0x1d,0x23,0x04,0x18,0x30,0x16,0x80,0x14,0x45,0xeb,0xa2,0xaf,0xf4,0x92,0xcb,0x82,0x31,0x2d,
++    0x51,0x8b,0xa7,0xa7,0x21,0x9d,0xf3,0x6d,0xc8,0x0f,0x30,0x0e,0x06,0x03,0x55,0x1d,0x0f,0x01,0x01,0xff,0x04,0x04,0x03,0x02,
++    0x01,0x86,0x30,0x79,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x01,0x01,0x04,0x6d,0x30,0x6b,0x30,0x24,0x06,0x08,0x2b,0x06,
++    0x01,0x05,0x05,0x07,0x30,0x01,0x86,0x18,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x6f,0x63,0x73,0x70,0x2e,0x64,0x69,0x67,0x69,
++    0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x30,0x43,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,0x02,0x86,0x37,0x68,0x74,
++    0x74,0x70,0x3a,0x2f,0x2f,0x63,0x61,0x63,0x65,0x72,0x74,0x73,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,
++    0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x41,0x73,0x73,0x75,0x72,0x65,0x64,0x49,0x44,0x52,0x6f,0x6f,0x74,0x43,
++    0x41,0x2e,0x63,0x72,0x74,0x30,0x45,0x06,0x03,0x55,0x1d,0x1f,0x04,0x3e,0x30,0x3c,0x30,0x3a,0xa0,0x38,0xa0,0x36,0x86,0x34,
++    0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x63,0x72,0x6c,0x33,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,
++    0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x41,0x73,0x73,0x75,0x72,0x65,0x64,0x49,0x44,0x52,0x6f,0x6f,0x74,0x43,0x41,
++    0x2e,0x63,0x72,0x6c,0x30,0x11,0x06,0x03,0x55,0x1d,0x20,0x04,0x0a,0x30,0x08,0x30,0x06,0x06,0x04,0x55,0x1d,0x20,0x00,0x30,
++    0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0c,0x05,0x00,0x03,0x82,0x01,0x01,0x00,0x70,0xa0,0xbf,0x43,0x5c,
++    0x55,0xe7,0x38,0x5f,0xa0,0xa3,0x74,0x1b,0x3d,0xb6,0x16,0xd7,0xf7,0xbf,0x57,0x07,0xbd,0x9a,0xac,0xa1,0x87,0x2c,0xec,0x85,
++    0x5e,0xa9,0x1a,0xbb,0x22,0xf8,0x87,0x1a,0x69,0x54,0x22,0xed,0xa4,0x88,0x77,0x6d,0xbd,0x1a,0x14,0xf4,0x13,0x4a,0x7a,0x2f,
++    0x2d,0xb7,0x38,0xef,0xf4,0xff,0x80,0xb9,0xf8,0xa1,0xf7,0xf2,0x72,0xde,0x24,0xbc,0x52,0x03,0xc8,0x4e,0xd0,0x2a,0xde,0xfa,
++    0x2d,0x56,0xcf,0xf9,0xf4,0xf7,0xac,0x30,0x7a,0x9a,0x8b,0xb2,0x5e,0xd4,0xcf,0xd1,0x43,0x44,0x9b,0x43,0x21,0xeb,0x96,0x72,
++    0xa1,0x48,0xb4,0x99,0xcb,0x9d,0x4f,0xa7,0x06,0x03,0x13,0x77,0x27,0x44,0xd4,0xe7,0x7f,0xe8,0x59,0xa8,0xf0,0xbf,0x2f,0x0b,
++    0xa6,0xe9,0xf2,0x34,0x3c,0xec,0xf7,0x03,0xc7,0x87,0xa8,0xd2,0x4c,0x40,0x19,0x35,0x46,0x6a,0x69,0x54,0xb0,0xb8,0xa1,0x56,
++    0x8e,0xec,0xa4,0xd5,0x3d,0xe8,0xb1,0xdc,0xfd,0x1c,0xd8,0xf4,0x77,0x5a,0x5c,0x54,0x8c,0x6f,0xef,0xa1,0x50,0x3d,0xfc,0x76,
++    0x09,0x68,0x84,0x9f,0x6f,0xca,0xdb,0x20,0x8d,0x35,0x60,0x1c,0x02,0x03,0xcb,0x20,0xb0,0xac,0x58,0xa0,0x0e,0x40,0x63,0xc5,
++    0x98,0x22,0xc1,0xb2,0x59,0xf5,0x55,0x6b,0xcf,0x27,0xab,0x6c,0x76,0xce,0x6f,0x23,0x2d,0xf4,0x7e,0x71,0x6a,0x23,0x6b,0x22,
++    0xff,0x12,0xb8,0x54,0x2d,0x27,0x7e,0xd8,0x3a,0xd9,0xf0,0xb6,0x87,0x96,0xfd,0x5b,0xd1,0x5c,0xac,0x18,0xc3,0x4d,0x9f,0x73,
++    0xb7,0x01,0xa9,0x9f,0x57,0xaa,0x5e,0x28,0xe2,0xb9,0x94,0x30,0x82,0x06,0xae,0x30,0x82,0x04,0x96,0xa0,0x03,0x02,0x01,0x02,
++    0x02,0x10,0x07,0x36,0x37,0xb7,0x24,0x54,0x7c,0xd8,0x47,0xac,0xfd,0x28,0x66,0x2a,0x5e,0x5b,0x30,0x0d,0x06,0x09,0x2a,0x86,
++    0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x62,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,
++    0x31,0x15,0x30,0x13,0x06,0x03,0x55,0x04,0x0a,0x13,0x0c,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x49,0x6e,0x63,0x31,
++    0x19,0x30,0x17,0x06,0x03,0x55,0x04,0x0b,0x13,0x10,0x77,0x77,0x77,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,
++    0x6f,0x6d,0x31,0x21,0x30,0x1f,0x06,0x03,0x55,0x04,0x03,0x13,0x18,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x72,
++    0x75,0x73,0x74,0x65,0x64,0x20,0x52,0x6f,0x6f,0x74,0x20,0x47,0x34,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x33,0x32,0x33,0x30,
++    0x30,0x30,0x30,0x30,0x30,0x5a,0x17,0x0d,0x33,0x37,0x30,0x33,0x32,0x32,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x63,0x31,
++    0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x17,0x30,0x15,0x06,0x03,0x55,0x04,0x0a,0x13,0x0e,0x44,
++    0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x2c,0x20,0x49,0x6e,0x63,0x2e,0x31,0x3b,0x30,0x39,0x06,0x03,0x55,0x04,0x03,0x13,0x32,
++    0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x47,0x34,0x20,0x52,0x53,0x41,0x34,
++    0x30,0x39,0x36,0x20,0x53,0x48,0x41,0x32,0x35,0x36,0x20,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x20,
++    0x43,0x41,0x30,0x82,0x02,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x03,0x82,0x02,
++    0x0f,0x00,0x30,0x82,0x02,0x0a,0x02,0x82,0x02,0x01,0x00,0xc6,0x86,0x35,0x06,0x49,0xb3,0xc1,0x3d,0x72,0x49,0x51,0x55,0xc7,
++    0x25,0x03,0xc4,0xf2,0x91,0x37,0xa9,0x97,0x51,0xa1,0xd6,0xd2,0x83,0xd1,0x9e,0x4c,0xa2,0x6d,0xa0,0xb0,0xcc,0x83,0xf9,0x5a,
++    0xf6,0x11,0xa1,0x44,0x15,0x42,0x5f,0xa4,0x88,0xf3,0x68,0xfa,0x7d,0xf3,0x9c,0x89,0x0b,0x7f,0x9d,0x1f,0x9e,0x0f,0x33,0x1f,
++    0x50,0x13,0x0b,0x26,0x73,0x96,0x6d,0xf8,0x57,0xa8,0x02,0x7d,0xfd,0x43,0xb4,0x84,0xda,0x11,0xf1,0x73,0xb1,0xb3,0xee,0x2b,
++    0x80,0x84,0x8a,0x22,0x18,0xdf,0xeb,0xda,0x3d,0xc4,0x17,0x7f,0xab,0x19,0x2b,0x3e,0x42,0xdc,0x67,0x8e,0xea,0x51,0x3d,0xf0,
++    0xd6,0x56,0xd4,0xe7,0x28,0x2d,0xeb,0xd3,0xb1,0xb5,0x75,0xe7,0x1f,0x06,0x65,0x8d,0x94,0x29,0xd3,0xd9,0xec,0x69,0xdf,0xd9,
++    0x90,0x87,0x46,0x00,0x7b,0xdb,0x44,0x41,0x89,0xdc,0x7c,0x6a,0x57,0x7a,0xf0,0x37,0x79,0x9f,0x5d,0xac,0xcb,0xe8,0x84,0x64,
++    0xb4,0x52,0xf2,0x76,0x47,0xf7,0x61,0x83,0x19,0xdd,0x5f,0xb4,0x54,0x0b,0x21,0x68,0x6e,0x37,0x21,0xbb,0x40,0xac,0x5f,0xb2,
++    0xde,0x4a,0x7d,0xce,0xf5,0x39,0x12,0x67,0xef,0x0e,0xa5,0x63,0x6c,0xe4,0xa6,0xc5,0x1d,0xcd,0x36,0x0d,0x5c,0xd5,0xe6,0x1b,
++    0xa8,0xc1,0x64,0x74,0x40,0xa7,0xc0,0x72,0xc5,0xba,0x4e,0x1f,0xb1,0xb5,0x58,0x4d,0x79,0xfe,0xd7,0x8f,0x73,0x93,0xac,0x2c,
++    0x39,0xe2,0xa5,0x48,0xd6,0xf0,0xb0,0x31,0x13,0xa9,0x57,0x29,0x96,0x27,0x2e,0xf5,0x87,0xa6,0x8f,0x4e,0x76,0x15,0x55,0x26,
++    0x70,0x98,0x26,0x7f,0xa0,0x1a,0x47,0x20,0x43,0xe3,0x43,0x63,0x80,0x7b,0x75,0x6e,0x27,0x25,0x90,0x98,0x3a,0x38,0x11,0xb3,
++    0xf6,0xf6,0x9e,0xe6,0x3b,0x5b,0xec,0x81,0xde,0x22,0x14,0xd9,0x82,0x2a,0xc7,0x92,0xbf,0xa0,0xde,0xe3,0x3e,0xa2,0x73,0xfa,
++    0xe7,0x1f,0x5a,0x6c,0x94,0xf2,0x52,0x95,0x11,0x2b,0x58,0x74,0x40,0x28,0xab,0x73,0x43,0xce,0xdf,0x4a,0xa1,0x1c,0x6b,0x38,
++    0xc5,0x29,0xf3,0xca,0xaa,0x96,0x73,0x42,0x68,0x9f,0xb6,0x46,0xb3,0x9d,0x3a,0xa3,0xd5,0x03,0xe0,0xbf,0xf0,0xa2,0x3c,0xca,
++    0x42,0xdc,0x18,0x48,0x7f,0x14,0x34,0xcf,0xd2,0x4c,0xab,0xef,0x9b,0x3d,0xfe,0x0e,0xb8,0x64,0x2a,0xfa,0x75,0x28,0x24,0x41,
++    0xed,0x42,0xbf,0x05,0x9c,0x66,0x49,0x52,0x50,0xf4,0x51,0xf3,0x36,0x49,0x4d,0x8b,0x20,0xd2,0x2c,0x57,0x35,0x79,0x2b,0xa8,
++    0xf3,0x45,0x60,0xbc,0x23,0x8d,0x58,0xf7,0xdc,0x61,0xde,0x93,0xfe,0x39,0xc0,0xf9,0xb2,0x30,0xa5,0x4c,0xd7,0xe9,0x98,0x4a,
++    0x58,0x3e,0xd3,0x03,0x88,0xfe,0xb3,0x8f,0xd3,0x5e,0x4b,0x76,0x12,0x51,0x93,0xc9,0x8c,0x0c,0x3b,0x5b,0x8a,0x22,0xa8,0xc1,
++    0x26,0x08,0xf9,0x14,0x10,0x12,0x03,0x7d,0x5f,0x23,0xbb,0x64,0xe3,0x63,0xe0,0xa6,0xe1,0x3e,0xf6,0xc2,0x74,0xb2,0x3f,0x1e,
++    0x09,0x76,0xec,0xab,0x5d,0x46,0x75,0xe2,0x60,0xa3,0x58,0x09,0x01,0x28,0x00,0x0e,0x84,0x54,0xee,0xce,0xe9,0x5d,0xc8,0x5e,
++    0x30,0x12,0xbd,0x46,0x9e,0xb5,0xd3,0x76,0xb9,0xd2,0x0e,0x6b,0x99,0x0c,0xd2,0x33,0xb4,0xcd,0xb1,0x02,0x03,0x01,0x00,0x01,
++    0xa3,0x82,0x01,0x5d,0x30,0x82,0x01,0x59,0x30,0x12,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x08,0x30,0x06,0x01,0x01,
++    0xff,0x02,0x01,0x00,0x30,0x1d,0x06,0x03,0x55,0x1d,0x0e,0x04,0x16,0x04,0x14,0xba,0x16,0xd9,0x6d,0x4d,0x85,0x2f,0x73,0x29,
++    0x76,0x9a,0x2f,0x75,0x8c,0x6a,0x20,0x8f,0x9e,0xc8,0x6f,0x30,0x1f,0x06,0x03,0x55,0x1d,0x23,0x04,0x18,0x30,0x16,0x80,0x14,
++    0xec,0xd7,0xe3,0x82,0xd2,0x71,0x5d,0x64,0x4c,0xdf,0x2e,0x67,0x3f,0xe7,0xba,0x98,0xae,0x1c,0x0f,0x4f,0x30,0x0e,0x06,0x03,
++    0x55,0x1d,0x0f,0x01,0x01,0xff,0x04,0x04,0x03,0x02,0x01,0x86,0x30,0x13,0x06,0x03,0x55,0x1d,0x25,0x04,0x0c,0x30,0x0a,0x06,
++    0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x03,0x08,0x30,0x77,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x01,0x01,0x04,0x6b,0x30,
++    0x69,0x30,0x24,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,0x01,0x86,0x18,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x6f,0x63,
++    0x73,0x70,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x30,0x41,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,
++    0x07,0x30,0x02,0x86,0x35,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x63,0x61,0x63,0x65,0x72,0x74,0x73,0x2e,0x64,0x69,0x67,0x69,
++    0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,
++    0x52,0x6f,0x6f,0x74,0x47,0x34,0x2e,0x63,0x72,0x74,0x30,0x43,0x06,0x03,0x55,0x1d,0x1f,0x04,0x3c,0x30,0x3a,0x30,0x38,0xa0,
++    0x36,0xa0,0x34,0x86,0x32,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x63,0x72,0x6c,0x33,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,
++    0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x52,0x6f,0x6f,
++    0x74,0x47,0x34,0x2e,0x63,0x72,0x6c,0x30,0x20,0x06,0x03,0x55,0x1d,0x20,0x04,0x19,0x30,0x17,0x30,0x08,0x06,0x06,0x67,0x81,
++    0x0c,0x01,0x04,0x02,0x30,0x0b,0x06,0x09,0x60,0x86,0x48,0x01,0x86,0xfd,0x6c,0x07,0x01,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,
++    0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x02,0x01,0x00,0x7d,0x59,0x8e,0xc0,0x93,0xb6,0x6f,0x98,0xa9,0x44,0x22,
++    0x01,0x7e,0x66,0xd6,0xd8,0x21,0x42,0xe1,0xb0,0x18,0x2e,0x10,0x4d,0x13,0xcf,0x30,0x53,0xce,0xbf,0x18,0xfb,0xc7,0x50,0x5d,
++    0xe2,0x4b,0x29,0xfb,0x70,0x8a,0x0d,0xaa,0x29,0x69,0xfc,0x69,0xc1,0xcf,0x1d,0x07,0xe9,0x3e,0x60,0xc8,0xd8,0x0b,0xe5,0x5c,
++    0x5b,0xd7,0x6d,0x87,0xfa,0x84,0x20,0x25,0x34,0x31,0x67,0xcd,0xb6,0x12,0x96,0x6f,0xc4,0x50,0x4c,0x62,0x1d,0x0c,0x08,0x82,
++    0xa8,0x16,0xbd,0xa9,0x56,0xcf,0x15,0x73,0x8d,0x01,0x22,0x25,0xce,0x95,0x69,0x3f,0x47,0x77,0xfb,0x72,0x74,0x14,0xd7,0xff,
++    0xab,0x4f,0x8a,0x2c,0x7a,0xab,0x85,0xcd,0x43,0x5f,0xed,0x60,0xb6,0xaa,0x4f,0x91,0x66,0x9e,0x2c,0x9e,0xe0,0x8a,0xac,0xe5,
++    0xfd,0x8c,0xbc,0x64,0x26,0x87,0x6c,0x92,0xbd,0x9d,0x7c,0xd0,0x70,0x0a,0x7c,0xef,0xa8,0xbc,0x75,0x4f,0xba,0x5a,0xf7,0xa9,
++    0x10,0xb2,0x5d,0xe9,0xff,0x28,0x54,0x89,0xf0,0xd5,0x8a,0x71,0x76,0x65,0xda,0xcc,0xf0,0x72,0xa3,0x23,0xfa,0xc0,0x27,0x82,
++    0x44,0xae,0x99,0x27,0x1b,0xab,0x24,0x1e,0x26,0xc1,0xb7,0xde,0x2a,0xeb,0xf6,0x9e,0xb1,0x79,0x99,0x81,0xa3,0x56,0x86,0xab,
++    0x0a,0x45,0xc9,0xdf,0xc4,0x8d,0xa0,0xe7,0x98,0xfb,0xfb,0xa6,0x9d,0x72,0xaf,0xc4,0xc7,0xc1,0xc1,0x6a,0x71,0xd9,0xc6,0x13,
++    0x80,0x09,0xc4,0xb6,0x9f,0xcd,0x87,0x87,0x24,0xbb,0x4f,0xa3,0x49,0xb9,0x77,0x66,0x91,0xf1,0x72,0x9c,0xe9,0x4b,0x02,0x52,
++    0xa7,0x37,0x7e,0x93,0x53,0xac,0x3b,0x1d,0x08,0x49,0x0f,0x94,0xcd,0x39,0x7a,0xdd,0xff,0x25,0x63,0x99,0x27,0x2c,0x3d,0x3f,
++    0x6b,0xa7,0xf1,0x66,0xc3,0x41,0xcd,0x4f,0xb6,0x40,0x9b,0x21,0x21,0x40,0xd0,0xb7,0x13,0x24,0xcd,0xdc,0x1d,0x78,0x3a,0xe4,
++    0x9e,0xad,0xe5,0x34,0x71,0x92,0xd7,0x26,0x6b,0xe4,0x38,0x73,0xab,0xa6,0x01,0x4f,0xbd,0x3f,0x3b,0x78,0xad,0x4c,0xad,0xfb,
++    0xc4,0x95,0x7b,0xed,0x0a,0x5f,0x33,0x39,0x87,0x41,0x78,0x7a,0x38,0xe9,0x9c,0xe1,0xdd,0x23,0xfd,0x1d,0x28,0xd3,0xc7,0xf9,
++    0xe8,0xf1,0x98,0x5f,0xfb,0x2b,0xd8,0x7e,0xf2,0x46,0x9d,0x75,0x2c,0x1e,0x27,0x2c,0x26,0xdb,0x6f,0x15,0x7b,0x1e,0x19,0x8b,
++    0x36,0xb8,0x93,0xd4,0xe6,0xf2,0x17,0x99,0x59,0xca,0x70,0xf0,0x37,0xbf,0x98,0x00,0xdf,0x20,0x16,0x4f,0x27,0xfb,0x60,0x67,
++    0x16,0xa1,0x66,0xba,0xdd,0x55,0xc0,0x3a,0x29,0x86,0xb0,0x98,0xa0,0x2b,0xed,0x95,0x41,0xb7,0x3a,0xd5,0x15,0x98,0x31,0xb4,
++    0x62,0x09,0x0f,0x0a,0xbd,0x81,0xd9,0x13,0xfe,0xbf,0xa4,0xd1,0xf3,0x57,0xd9,0xbc,0x04,0xfa,0x82,0xde,0x32,0xdf,0x04,0x89,
++    0xf0,0x00,0xcd,0x5d,0xc2,0xf9,0xd0,0x23,0x7f,0x00,0x0b,0xe4,0x76,0x02,0x26,0xd9,0xf0,0x65,0x76,0x42,0xa6,0x29,0x87,0x09,
++    0x47,0x2b,0xe6,0x7f,0x1a,0xa4,0x85,0x0f,0xfc,0x98,0x96,0xf6,0x55,0x54,0x2b,0x1f,0x80,0xfa,0xc0,0xf2,0x0e,0x2b,0xe5,0xd6,
++    0xfb,0xa9,0x2f,0x44,0x15,0x4a,0xe7,0x13,0x0e,0x1d,0xdb,0x37,0x38,0x1a,0xa1,0x2b,0xf6,0xed,0xd6,0x7c,0xfc,0x30,0x82,0x06,
++    0xc0,0x30,0x82,0x04,0xa8,0xa0,0x03,0x02,0x01,0x02,0x02,0x10,0x0c,0x4d,0x69,0x72,0x4b,0x94,0xfa,0x3c,0x2a,0x4a,0x3d,0x29,
++    0x07,0x80,0x3d,0x5a,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x63,0x31,0x0b,0x30,
++    0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,0x17,0x30,0x15,0x06,0x03,0x55,0x04,0x0a,0x13,0x0e,0x44,0x69,0x67,
++    0x69,0x43,0x65,0x72,0x74,0x2c,0x20,0x49,0x6e,0x63,0x2e,0x31,0x3b,0x30,0x39,0x06,0x03,0x55,0x04,0x03,0x13,0x32,0x44,0x69,
++    0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x47,0x34,0x20,0x52,0x53,0x41,0x34,0x30,0x39,
++    0x36,0x20,0x53,0x48,0x41,0x32,0x35,0x36,0x20,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x20,0x43,0x41,
++    0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x32,0x31,0x30,0x30,0x30,0x30,0x30,0x30,0x5a,0x17,0x0d,0x33,0x33,0x31,0x31,0x32,
++    0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x46,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,0x06,0x13,0x02,0x55,0x53,0x31,
++    0x11,0x30,0x0f,0x06,0x03,0x55,0x04,0x0a,0x13,0x08,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x31,0x24,0x30,0x22,0x06,0x03,
++    0x55,0x04,0x03,0x13,0x1b,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,0x20,0x54,0x69,0x6d,0x65,0x73,0x74,0x61,0x6d,0x70,0x20,
++    0x32,0x30,0x32,0x32,0x20,0x2d,0x20,0x32,0x30,0x82,0x02,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,
++    0x01,0x05,0x00,0x03,0x82,0x02,0x0f,0x00,0x30,0x82,0x02,0x0a,0x02,0x82,0x02,0x01,0x00,0xcf,0xec,0xa5,0x26,0x3a,0xc6,0xa9,
++    0xf2,0x6b,0xbb,0x8d,0xc1,0x0d,0x9a,0xdb,0xa1,0xe8,0x14,0x85,0x74,0x33,0x1a,0x26,0xac,0xd0,0x1c,0x55,0x1e,0x1e,0x36,0x6d,
++    0xbc,0x92,0x55,0x0c,0x61,0xf4,0x9d,0x09,0x77,0x3d,0x15,0x96,0x08,0x2f,0x6b,0x64,0xa4,0xfd,0x06,0x83,0x16,0xd7,0x91,0x92,
++    0x38,0x1c,0x31,0x02,0x96,0xfb,0x72,0xb1,0x97,0x3a,0x55,0xaf,0x33,0xec,0x61,0x8a,0xe9,0xa6,0x28,0xdb,0x90,0x63,0x5c,0xbd,
++    0x89,0x53,0xe0,0x3a,0x2d,0x8c,0x87,0x42,0xae,0x26,0xa4,0xe4,0xbb,0x78,0x78,0xb9,0x7a,0x16,0xe1,0x56,0xc6,0xc0,0xba,0x64,
++    0x53,0xbb,0x2a,0x16,0xe7,0x50,0x48,0xbb,0x88,0x69,0x0c,0x88,0xc6,0xf1,0xbe,0xe0,0x2f,0x7d,0x3b,0xb1,0xca,0x53,0x8d,0x40,
++    0x83,0x1e,0xe7,0xcb,0x72,0x49,0x28,0x1e,0x4c,0x80,0x1e,0x85,0x56,0xe7,0x85,0xed,0xf2,0x61,0xbc,0xaa,0x3a,0x07,0x7d,0xf6,
++    0xab,0x6e,0xe5,0x66,0xdd,0xe2,0x5c,0xf5,0x2f,0xed,0x8d,0xd4,0x4d,0x95,0x84,0x68,0xe3,0x80,0xcb,0x6a,0x79,0xd1,0xd2,0x10,
++    0x91,0x46,0x29,0xeb,0x3e,0x26,0xf2,0xb4,0x8c,0xcd,0x4c,0xb9,0x66,0xc8,0xbb,0xaa,0x50,0x38,0x0d,0xe5,0x8c,0x94,0x5d,0x19,
++    0x5a,0xbf,0xf5,0x7b,0x40,0x6e,0x6f,0x16,0xa8,0x9a,0x9c,0x95,0x47,0x86,0x85,0x79,0x3e,0x0c,0x5e,0x66,0x8c,0x1a,0x0a,0x24,
++    0xbe,0x9c,0xaa,0xd2,0x9c,0xb6,0xf7,0x4f,0x6e,0x78,0xc4,0x28,0x3f,0xa3,0x1c,0x0f,0x50,0x06,0x37,0xba,0x08,0xd9,0x35,0xa6,
++    0xb5,0x1e,0xda,0x78,0x58,0x1d,0x39,0xe8,0xf8,0x4c,0x91,0x10,0x96,0x7e,0x4d,0xe1,0xdd,0xc2,0xad,0xa5,0x7e,0xf8,0x2d,0x1b,
++    0x1f,0xec,0x2b,0x46,0x18,0xa3,0x19,0xf6,0x39,0xf7,0xf5,0xc1,0x4f,0x71,0x2e,0x89,0x03,0x11,0xa2,0x4b,0xbb,0x98,0xbf,0xfa,
++    0x4f,0xe4,0x7b,0x36,0xef,0x06,0x44,0xe4,0x55,0xff,0x36,0xea,0xe5,0x7c,0x31,0xe7,0xf3,0xc2,0x52,0xc4,0xe6,0x16,0x7b,0x5a,
++    0x7e,0xa5,0x25,0x73,0xdb,0xc0,0x6a,0x99,0x21,0x2d,0x63,0xe5,0x59,0xf5,0x4d,0x2f,0x90,0x1f,0x27,0xb7,0xd2,0xab,0x14,0xe5,
++    0x38,0x66,0x87,0x51,0x08,0x6b,0xfb,0x53,0x43,0x39,0xd0,0x64,0xfa,0x56,0xcf,0xe0,0xf4,0x0a,0xe6,0x14,0x6d,0x64,0x78,0xbb,
++    0x98,0xfd,0x94,0xc3,0x73,0x21,0xf3,0x2f,0xc2,0x2e,0x20,0xd7,0x81,0xac,0xd3,0xf1,0x07,0xd4,0xe1,0xbd,0xd9,0x5d,0x4b,0x6e,
++    0x31,0x94,0x29,0x8b,0xe6,0x41,0xa4,0x65,0x94,0xc0,0x58,0xe5,0xe5,0x2e,0x29,0x90,0xa6,0xb7,0x61,0x64,0xfa,0xd9,0x20,0x6c,
++    0x18,0x51,0x60,0xba,0xa6,0x81,0x0f,0x09,0x25,0x53,0xf1,0xbf,0x3b,0xe9,0xab,0x07,0x0e,0x6a,0x07,0x39,0x62,0x19,0xc9,0xd6,
++    0x85,0x7f,0x13,0xd9,0x8d,0x79,0xcf,0x62,0xc5,0xec,0xe1,0x7b,0xb9,0xcc,0x67,0x13,0x07,0x9a,0xc1,0x78,0xed,0xc6,0x88,0xc8,
++    0xb0,0x6e,0x32,0x79,0xc7,0x0b,0x59,0x83,0x8d,0xc6,0xee,0xf5,0x2c,0x7c,0x7b,0x8e,0xcb,0x64,0x89,0xf1,0xb1,0xc4,0xb8,0xe7,
++    0x53,0x5e,0x5f,0x55,0xd2,0x7d,0x19,0x29,0x59,0x03,0x4e,0xfa,0x5d,0xea,0x45,0x73,0x1c,0x84,0x7e,0xd7,0xce,0xe2,0xd4,0x3a,
++    0x77,0x02,0x03,0x01,0x00,0x01,0xa3,0x82,0x01,0x8b,0x30,0x82,0x01,0x87,0x30,0x0e,0x06,0x03,0x55,0x1d,0x0f,0x01,0x01,0xff,
++    0x04,0x04,0x03,0x02,0x07,0x80,0x30,0x0c,0x06,0x03,0x55,0x1d,0x13,0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x16,0x06,0x03,
++    0x55,0x1d,0x25,0x01,0x01,0xff,0x04,0x0c,0x30,0x0a,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x03,0x08,0x30,0x20,0x06,0x03,
++    0x55,0x1d,0x20,0x04,0x19,0x30,0x17,0x30,0x08,0x06,0x06,0x67,0x81,0x0c,0x01,0x04,0x02,0x30,0x0b,0x06,0x09,0x60,0x86,0x48,
++    0x01,0x86,0xfd,0x6c,0x07,0x01,0x30,0x1f,0x06,0x03,0x55,0x1d,0x23,0x04,0x18,0x30,0x16,0x80,0x14,0xba,0x16,0xd9,0x6d,0x4d,
++    0x85,0x2f,0x73,0x29,0x76,0x9a,0x2f,0x75,0x8c,0x6a,0x20,0x8f,0x9e,0xc8,0x6f,0x30,0x1d,0x06,0x03,0x55,0x1d,0x0e,0x04,0x16,
++    0x04,0x14,0x62,0x8a,0xde,0xd0,0x61,0xfc,0x8f,0x31,0x14,0xed,0x97,0x0b,0xcd,0x3d,0x2a,0x94,0x14,0xdf,0x52,0x9c,0x30,0x5a,
++    0x06,0x03,0x55,0x1d,0x1f,0x04,0x53,0x30,0x51,0x30,0x4f,0xa0,0x4d,0xa0,0x4b,0x86,0x49,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,
++    0x63,0x72,0x6c,0x33,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,0x69,0x43,0x65,
++    0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x47,0x34,0x52,0x53,0x41,0x34,0x30,0x39,0x36,0x53,0x48,0x41,0x32,0x35,0x36,
++    0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x43,0x41,0x2e,0x63,0x72,0x6c,0x30,0x81,0x90,0x06,0x08,0x2b,
++    0x06,0x01,0x05,0x05,0x07,0x01,0x01,0x04,0x81,0x83,0x30,0x81,0x80,0x30,0x24,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,
++    0x01,0x86,0x18,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x6f,0x63,0x73,0x70,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,
++    0x63,0x6f,0x6d,0x30,0x58,0x06,0x08,0x2b,0x06,0x01,0x05,0x05,0x07,0x30,0x02,0x86,0x4c,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,
++    0x63,0x61,0x63,0x65,0x72,0x74,0x73,0x2e,0x64,0x69,0x67,0x69,0x63,0x65,0x72,0x74,0x2e,0x63,0x6f,0x6d,0x2f,0x44,0x69,0x67,
++    0x69,0x43,0x65,0x72,0x74,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x47,0x34,0x52,0x53,0x41,0x34,0x30,0x39,0x36,0x53,0x48,0x41,
++    0x32,0x35,0x36,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x43,0x41,0x2e,0x63,0x72,0x74,0x30,0x0d,0x06,
++    0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x02,0x01,0x00,0x55,0xaa,0x2a,0x1a,0xf3,0x46,0xf3,
++    0x78,0x57,0x37,0x30,0xfc,0x75,0xe3,0x4f,0xd6,0x85,0x23,0xf1,0xfc,0xf9,0x95,0x39,0x9b,0x25,0xe6,0xf7,0x72,0x8a,0x98,0xc3,
++    0x77,0xd4,0x64,0xfc,0x15,0xfb,0x36,0xc2,0x49,0x51,0x2c,0x78,0x88,0x63,0x55,0x09,0x46,0x39,0x00,0xfc,0x69,0xd4,0xca,0x9b,
++    0x29,0xfb,0xa3,0x3f,0xc0,0xc9,0x00,0x9b,0x13,0x1d,0xb0,0x98,0x89,0xdc,0x78,0xf2,0xcd,0x7c,0x85,0xcd,0x53,0x9d,0xaf,0x62,
++    0xe2,0x61,0x66,0xa3,0x14,0x2a,0x45,0x87,0x4a,0x98,0x42,0x2b,0x50,0xfc,0x1b,0xb5,0x9e,0x08,0x30,0x09,0xfa,0xe4,0x2d,0xd7,
++    0x09,0x89,0x79,0xf9,0x09,0xe6,0x88,0xce,0x7d,0x1b,0xb8,0x6a,0xa2,0x9b,0xc1,0x53,0x60,0x09,0xe8,0xa3,0xb8,0x9d,0xd7,0xad,
++    0x1f,0x1c,0xb8,0xec,0x98,0x41,0xf0,0xf6,0x0e,0x80,0xfb,0xe4,0xff,0xdf,0x9d,0x10,0xa7,0xeb,0x00,0xba,0x5f,0x4a,0x8f,0x1a,
++    0x3a,0x52,0xb4,0xea,0xbf,0x09,0x49,0x15,0x35,0x36,0x59,0x9a,0x0f,0x54,0xd2,0xb2,0x1b,0x7f,0x7e,0x5e,0x09,0xad,0x76,0x54,
++    0x8a,0x74,0x6d,0xca,0xd2,0x05,0x67,0x2b,0x76,0xeb,0xff,0x98,0xb2,0x26,0x95,0x38,0x19,0x88,0x44,0x14,0xe5,0x0a,0x59,0xa2,
++    0x6b,0xe7,0x22,0x3e,0x44,0x21,0xd2,0x3f,0x1c,0xc0,0x9b,0xed,0x7c,0x48,0xb2,0xd8,0x92,0x0c,0x91,0x4f,0x3c,0x66,0x94,0xaf,
++    0x5d,0x02,0x53,0xeb,0x9e,0xe2,0x9e,0xe4,0xd3,0x1f,0x86,0x01,0x64,0x9c,0x00,0xc2,0xe9,0x5a,0x74,0x75,0x0d,0x3d,0xe1,0x79,
++    0x88,0xbf,0x1c,0x01,0x97,0xc9,0x19,0x23,0x80,0xd7,0x36,0x5a,0x5f,0x96,0x16,0xb1,0x63,0x0c,0xc6,0x46,0x40,0x3b,0xce,0x5d,
++    0x35,0xd4,0x59,0x3e,0x43,0x9a,0x18,0xae,0xc3,0xc9,0xcb,0xc3,0xfb,0x9b,0x13,0x5f,0x6a,0xb5,0xc7,0xe0,0xf3,0x05,0xc3,0x59,
++    0xdf,0x27,0x62,0x2b,0xde,0x41,0xc9,0x53,0xb9,0xff,0x34,0x10,0x67,0xf6,0x26,0x32,0x98,0x7b,0xfe,0x5c,0x42,0x94,0x81,0x94,
++    0x82,0x9d,0xac,0x0a,0x8b,0xc6,0x4b,0x15,0x4a,0xd3,0x98,0x90,0x45,0x60,0x33,0x80,0xe0,0x23,0xde,0xf8,0x03,0xa4,0xf6,0x45,
++    0x47,0xe5,0xce,0xb8,0x03,0x42,0x47,0xe8,0x41,0x36,0x71,0x77,0xad,0xfd,0xa2,0xe8,0x97,0x74,0x4e,0x2e,0xda,0x1e,0x1d,0x8c,
++    0x5a,0xc8,0x1e,0x9a,0xd5,0xc2,0xf0,0xc6,0x22,0xa8,0x4f,0x9b,0xbd,0xd8,0x1c,0x9a,0x51,0xc4,0x2f,0x9a,0xf6,0x5f,0xa7,0x27,
++    0x97,0xba,0x96,0x2e,0x85,0x57,0xc0,0x60,0xe7,0x78,0x56,0x7f,0x6a,0xef,0xc2,0x95,0x9a,0x4b,0x11,0x02,0xc8,0x82,0x9c,0xc9,
++    0x1a,0x05,0x7c,0xba,0x71,0xb5,0x4e,0x7a,0x99,0x6c,0xf4,0xe8,0x9e,0xd4,0x5a,0x98,0xc8,0x9f,0xbf,0x8d,0xbb,0x18,0x5c,0x43,
++    0xf5,0xd0,0x2a,0xe8,0xe2,0x62,0xee,0x78,0x04,0xdb,0xbd,0xd1,0xfb,0x5b,0x0a,0xa8,0x70,0x7e,0xf0,0x97,0x84,0x78,0xe3,0x08,
++    0x03,0x5d,0x47,0x2c,0x63,0xa8,0x25,0x38,0x97,0x01,0xd2,0x3f,0x3a,0xda,0xe5,0xe5,0xf6,0xe6,0x9b,0xdc,0x7e,0x2c,0xcc,0xff,
++    0x17,0x4c,0x4d,0x00,0xa2,0xd8,0xd6,0x01,0x0e,0xb8,0x8b,0xee,0xe6,0xe0,0x72,0x55,0x89,0x2c,0x27,0x19,0x61,0xf6,0x77,0x01,
++    0x8c,0x31,0x82,0x0f,0x9d,0x30,0x82,0x0f,0x99,0x02,0x01,0x01,0x30,0x26,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,
++    0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x02,0x10,0xd1,0x73,0x97,0xaa,0xa7,0x3a,0x31,0xa2,0x44,0xc0,0x4b,0x40,
++    0x69,0x40,0x4b,0xfa,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0xa0,0x5e,0x30,0x10,0x06,
++    0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x0c,0x31,0x02,0x30,0x00,0x30,0x19,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,
++    0x0d,0x01,0x09,0x03,0x31,0x0c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x04,0x30,0x2f,0x06,0x09,0x2a,0x86,
++    0x48,0x86,0xf7,0x0d,0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xcb,0xa1,0x2f,0x7b,0x0f,0x6a,0x14,0x06,0x26,0x77,0x7b,0xee,0xd1,
++    0x90,0x34,0x1c,0xa7,0xcd,0x94,0x65,0xe0,0xe4,0x24,0x12,0x0c,0x4e,0xa2,0x89,0xeb,0x2d,0xe5,0xbb,0x30,0x0d,0x06,0x09,0x2a,
++    0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,0x01,0x00,0x73,0xb7,0xdf,0xb4,0xd2,0x60,0x31,0x2d,0x14,0x63,
++    0x71,0x87,0x5b,0xd9,0xee,0x66,0x85,0x88,0xbe,0x1e,0xc3,0x5e,0x30,0x25,0x62,0x05,0x66,0x6e,0x9b,0x51,0xaa,0x5b,0xee,0xed,
++    0xe4,0x4c,0x83,0x19,0x7e,0x7b,0x78,0xe0,0x04,0xb5,0xdb,0xb3,0x48,0xba,0xa3,0xa4,0x54,0xb2,0x3e,0xe4,0x99,0xf1,0xb2,0x6e,
++    0xb7,0x7a,0x44,0x76,0x11,0xb4,0x51,0xae,0xe3,0xec,0xc2,0x43,0x65,0xf5,0x95,0x1c,0x57,0x9e,0x4d,0x49,0x4d,0x4c,0xee,0x09,
++    0xdd,0xdb,0xab,0xf3,0x14,0x89,0xec,0x6e,0x94,0xd2,0xac,0xd8,0xed,0xe3,0xbb,0x8a,0xf0,0x05,0x9d,0x1d,0xbe,0x8b,0x7f,0x34,
++    0x63,0xe7,0x87,0x04,0x25,0x5a,0xff,0xc9,0xca,0xa9,0xab,0xd5,0xf2,0x16,0xf6,0x26,0x5d,0xf9,0xf9,0xbf,0xb4,0xce,0x86,0x55,
++    0xd4,0x95,0x91,0x1e,0x12,0x25,0x36,0x43,0x37,0x6e,0x93,0x14,0xf0,0x86,0xad,0xc6,0x7d,0x07,0x86,0xe5,0x18,0x4f,0x3d,0xe3,
++    0x92,0x67,0x7b,0x74,0xbf,0xa9,0x71,0x5a,0x49,0xcf,0xf5,0x60,0xf4,0x09,0x65,0x38,0xfd,0x13,0xe2,0x03,0x8a,0x84,0x17,0xc7,
++    0x83,0x7a,0xd5,0x42,0x95,0x47,0xd8,0x9d,0x76,0x52,0xb5,0xbc,0x11,0x63,0x78,0x53,0x66,0x0e,0x95,0xc8,0xd4,0xfa,0x6e,0x3d,
++    0x3b,0x1b,0x56,0xf2,0x98,0xc3,0x4c,0xc8,0xdc,0x1f,0x7e,0xa3,0x8b,0x1a,0x3b,0xa6,0x4d,0xed,0x70,0x75,0x55,0xcd,0x0c,0xf9,
++    0x4e,0xfb,0xa6,0x84,0xcb,0xbc,0xf5,0x28,0x89,0x2e,0x30,0x07,0x8f,0x1d,0x8d,0x10,0x03,0x20,0xe9,0xb0,0x56,0x53,0x9d,0xf9,
++    0x43,0xfb,0xba,0xb7,0x25,0x5d,0xa1,0x82,0x0d,0xe8,0x30,0x82,0x03,0x1c,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,
++    0x06,0x31,0x82,0x03,0x0d,0x30,0x82,0x03,0x09,0x02,0x01,0x01,0x30,0x77,0x30,0x63,0x31,0x0b,0x30,0x09,0x06,0x03,0x55,0x04,
++    0x06,0x13,0x02,0x55,0x53,0x31,0x17,0x30,0x15,0x06,0x03,0x55,0x04,0x0a,0x13,0x0e,0x44,0x69,0x67,0x69,0x43,0x65,0x72,0x74,
++    0x2c,0x20,0x49,0x6e,0x63,0x2e,0x31,0x3b,0x30,0x39,0x06,0x03,0x55,0x04,0x03,0x13,0x32,0x44,0x69,0x67,0x69,0x43,0x65,0x72,
++    0x74,0x20,0x54,0x72,0x75,0x73,0x74,0x65,0x64,0x20,0x47,0x34,0x20,0x52,0x53,0x41,0x34,0x30,0x39,0x36,0x20,0x53,0x48,0x41,
++    0x32,0x35,0x36,0x20,0x54,0x69,0x6d,0x65,0x53,0x74,0x61,0x6d,0x70,0x69,0x6e,0x67,0x20,0x43,0x41,0x02,0x10,0x0c,0x4d,0x69,
++    0x72,0x4b,0x94,0xfa,0x3c,0x2a,0x4a,0x3d,0x29,0x07,0x80,0x3d,0x5a,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,
++    0x02,0x01,0x05,0x00,0xa0,0x69,0x30,0x18,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x03,0x31,0x0b,0x06,0x09,0x2a,
++    0x86,0x48,0x86,0xf7,0x0d,0x01,0x07,0x01,0x30,0x1c,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x05,0x31,0x0f,0x17,
++    0x0d,0x32,0x32,0x30,0x39,0x33,0x30,0x31,0x37,0x35,0x33,0x34,0x33,0x5a,0x30,0x2f,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,
++    0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xbf,0x5c,0x03,0xc6,0x50,0xb0,0xde,0xd1,0x96,0x6d,0x74,0x64,0xa4,0xda,0x0f,0x51,0x71,
++    0x0f,0x5a,0x87,0x97,0x78,0x2e,0x17,0x99,0xc6,0xa2,0x7b,0xa7,0x9b,0x75,0xeb,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,
++    0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,0x02,0x00,0x0e,0xb2,0xbf,0xf0,0xf2,0x35,0x55,0xc7,0x9d,0x49,0xce,0x0a,0xac,0x3a,
++    0x6a,0xd8,0x85,0xa0,0x2b,0x81,0x97,0x85,0xc2,0x16,0x4d,0x6d,0x77,0x72,0xdf,0x2e,0x0a,0x6b,0x2e,0xbd,0xd6,0xb4,0x66,0x22,
++    0x7b,0x43,0x1b,0x7e,0x7a,0x1b,0xdb,0x72,0xfb,0x1d,0xd5,0xe9,0x84,0x01,0xe1,0x64,0x15,0x05,0x0d,0xb5,0x85,0x1d,0x93,0xf0,
++    0xcf,0x72,0x77,0x07,0x30,0x82,0xa9,0x6e,0x9c,0x5d,0xc9,0x39,0xda,0x19,0x9b,0xca,0x34,0x05,0xf0,0xe4,0xd7,0x02,0xbe,0x8a,
++    0x5f,0x74,0x39,0xe6,0xe9,0xb4,0xdf,0x00,0x4a,0xeb,0xb4,0x0d,0xf6,0xb2,0x5b,0x7f,0x10,0xb1,0xef,0x05,0x53,0xfc,0x74,0x41,
++    0x5b,0x83,0xeb,0xf9,0x37,0x9f,0x03,0xc2,0x1a,0x98,0x13,0xc9,0x6c,0x1c,0xd8,0x82,0xd8,0xd7,0xbf,0x13,0x07,0x20,0xf9,0xf2,
++    0xea,0x96,0x46,0xb7,0x2d,0x51,0x2f,0xc3,0x40,0x12,0x3f,0x35,0xeb,0x88,0xfa,0x3c,0x66,0x30,0xd9,0x16,0xe2,0x4b,0x05,0x14,
++    0x11,0x07,0x9a,0x64,0xc5,0x92,0x01,0xec,0xdb,0x5d,0x01,0x91,0x08,0x4f,0x1e,0xec,0x12,0xdd,0x7d,0xa0,0x32,0x5a,0x84,0x2a,
++    0x7c,0xb9,0x25,0x34,0x57,0x12,0x0c,0x86,0x2d,0xcd,0x01,0x26,0x85,0x17,0x8c,0x7d,0x07,0x3f,0x2c,0x08,0xb6,0xac,0xc3,0xca,
++    0x72,0x17,0xfe,0x4c,0xef,0xbb,0x69,0x20,0x11,0x33,0x63,0xf8,0xca,0x0a,0xe1,0x8c,0xf5,0x31,0x4e,0x83,0x87,0xfb,0xa9,0xd2,
++    0x29,0x4b,0x82,0x84,0x27,0xfa,0x01,0x31,0x48,0xc1,0x25,0xe5,0x51,0x49,0xf5,0x52,0x60,0xdb,0x64,0x08,0x36,0xd2,0x2f,0x4e,
++    0x7a,0x5d,0x92,0xee,0x06,0xec,0xe4,0x3b,0x5d,0xdc,0xc3,0x49,0xa1,0x8e,0x96,0xa6,0x17,0x00,0x2d,0x0d,0xee,0x6e,0x88,0x16,
++    0x1e,0xea,0x9c,0x9b,0x55,0x9d,0xea,0x4a,0xa5,0xbb,0x54,0x33,0xaa,0x72,0x8c,0x5f,0xb7,0xe6,0x22,0xe9,0x1d,0xca,0xbc,0x6d,
++    0xdf,0x7b,0x68,0xb5,0x71,0x3b,0x9f,0xfd,0x2b,0x53,0x35,0xa6,0xbb,0x78,0xf2,0x5a,0x41,0x69,0x52,0x5c,0x47,0xdc,0xf0,0x3e,
++    0x06,0xef,0x60,0xb6,0xd3,0xb1,0x30,0xda,0x41,0xee,0x5a,0x2e,0x8e,0x24,0x0e,0x1e,0xcd,0x6c,0xa6,0x2e,0x9b,0x3c,0x77,0x02,
++    0x21,0x86,0x16,0x68,0xfc,0xd6,0x64,0x84,0x46,0x1e,0xd1,0xe6,0x86,0x6f,0xee,0x5f,0x5c,0xca,0xb6,0xc9,0x9b,0xb8,0x03,0x46,
++    0x1b,0x67,0x52,0x48,0x48,0x1c,0x07,0xad,0xbd,0x3c,0x2f,0x1b,0xd1,0xe3,0xb5,0xba,0x21,0x20,0x3b,0x6d,0xfb,0x30,0xa6,0x6d,
++    0x2d,0xd7,0xb0,0x67,0xa4,0x19,0x0f,0x38,0xff,0xb0,0xad,0xf0,0xc3,0xb3,0xd7,0x7c,0x92,0xa0,0xe8,0x9c,0x22,0x60,0x0f,0x88,
++    0x08,0xa7,0xf0,0xfa,0x90,0x45,0x2c,0x26,0xa6,0x88,0x25,0x24,0x7b,0x69,0x23,0x0b,0x20,0x04,0x89,0xd4,0x66,0x89,0x7d,0xb6,
++    0x50,0x0e,0xb3,0xfe,0xf9,0xd0,0x91,0x2b,0x1d,0x17,0x62,0x6d,0xad,0x8e,0xf9,0x52,0x63,0x8f,0xe9,0x93,0xe6,0xea,0xb8,0xe6,
++    0xce,0x0c,0x69,0xc9,0x47,0xd7,0x7e,0xb4,0x0d,0x49,0xbe,0xcb,0x05,0xe4,0xac,0x0b,0xd4,0xa1,0x6b,0x66,0x0f,0xff,0xe7,0x01,
++    0x5a,0x91,0x05,0xa8,0xc0,0x2b,0xda,0xe9,0x5c,0x18,0xfb,0xe3,0x4d,0x60,0x0f,0x34,0x19,0x68,0x30,0x82,0x0a,0xc4,0x06,0x0a,
++    0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x04,0x01,0x31,0x82,0x0a,0xb4,0x30,0x82,0x05,0x56,0x06,0x09,0x2a,0x86,0x48,0x86,
++    0xf7,0x0d,0x01,0x07,0x02,0xa0,0x82,0x05,0x47,0x30,0x82,0x05,0x43,0x02,0x01,0x01,0x31,0x0f,0x30,0x0d,0x06,0x09,0x60,0x86,
++    0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x30,0x5c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x04,0xa0,
++    0x4e,0x30,0x4c,0x30,0x17,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x0f,0x30,0x09,0x03,0x01,0x00,0xa0,0x04,
++    0xa2,0x02,0x80,0x00,0x30,0x31,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x04,0x20,0xdd,
++    0x8b,0xd7,0x29,0x3b,0xae,0x16,0xec,0xbb,0x81,0x80,0x55,0x15,0xd8,0x87,0xa5,0x3e,0xeb,0x0b,0x74,0x59,0xb6,0x56,0xf1,0x0b,
++    0x2e,0xe1,0xb4,0x42,0x4d,0x8b,0x18,0xa0,0x82,0x03,0x05,0x30,0x82,0x03,0x01,0x30,0x82,0x01,0xe9,0xa0,0x03,0x02,0x01,0x02,
++    0x02,0x10,0x8d,0x01,0xec,0xa9,0x68,0x41,0x93,0x8f,0x40,0x42,0x93,0x4a,0x72,0x6b,0x03,0xcc,0x30,0x0d,0x06,0x09,0x2a,0x86,
++    0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,
++    0x73,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x33,0x30,0x31,0x37,0x32,0x34,0x31,0x39,0x5a,0x17,0x0d,
++    0x33,0x39,0x31,0x32,0x33,0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x10,0x31,0x0e,0x30,0x0c,0x06,0x03,0x55,0x04,0x03,
++    0x13,0x05,0x63,0x65,0x72,0x74,0x33,0x30,0x82,0x01,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,
++    0x05,0x00,0x03,0x82,0x01,0x0f,0x00,0x30,0x82,0x01,0x0a,0x02,0x82,0x01,0x01,0x00,0xf4,0x21,0x90,0xec,0x4a,0x19,0xca,0xa7,
++    0x1f,0x25,0x80,0x0b,0x92,0x21,0x2d,0x53,0xb4,0x25,0xa3,0x37,0x40,0xae,0xce,0xf1,0x46,0xf6,0xda,0x21,0xd3,0x54,0x8e,0x02,
++    0x95,0xfe,0x37,0x3a,0xff,0xb9,0x36,0x88,0x70,0xf2,0x33,0x0c,0x5c,0x60,0x36,0xbf,0x8d,0x51,0xef,0x18,0x5d,0x47,0x68,0xbc,
++    0xda,0xd8,0xf8,0x94,0xaf,0xcf,0xa6,0x48,0x61,0x78,0x04,0xcd,0x73,0x03,0xa0,0x6c,0xdb,0x24,0x94,0x20,0x54,0xbb,0x19,0xf2,
++    0xb6,0xf9,0x0d,0xf4,0x31,0xbd,0x79,0xb5,0x98,0x12,0xc4,0x62,0x06,0xfb,0x16,0x08,0x51,0xa2,0xbf,0x12,0xcf,0x88,0xf4,0x4c,
++    0x26,0xec,0x80,0xc7,0xa7,0xeb,0x89,0x24,0x6a,0xe4,0x1e,0x3a,0x1d,0x4a,0x7c,0x42,0xaa,0x03,0x5e,0x47,0xde,0x21,0xc4,0x06,
++    0x86,0x57,0x0d,0xce,0xe0,0x27,0xf2,0x43,0x56,0x2a,0x60,0x1b,0x18,0xf5,0x03,0x91,0xa4,0xda,0x86,0x1c,0xcb,0x2c,0x2d,0x21,
++    0x54,0xc5,0xd8,0xe2,0xe2,0x02,0x19,0xb0,0x73,0xe0,0xf8,0x95,0x5c,0x4f,0x1d,0x8f,0xd2,0xe0,0x4a,0x7c,0x20,0x9e,0x29,0xec,
++    0x05,0x34,0xb0,0x4c,0x1a,0xaf,0x2a,0x01,0xf1,0x0f,0x26,0xdc,0x38,0x68,0x85,0xbd,0xc0,0x73,0xec,0x10,0x17,0x3a,0xd8,0x6d,
++    0x33,0x3b,0xab,0xd3,0x79,0x61,0x2c,0xac,0x11,0xe1,0x09,0x5e,0xe0,0x7b,0xd3,0xc0,0xb8,0xf8,0xb5,0x9a,0x20,0x68,0xa7,0xf0,
++    0x66,0x9b,0xc2,0xe8,0x83,0x14,0x7d,0x3c,0x7f,0x7a,0x85,0x95,0xc9,0x05,0x74,0xf4,0xee,0xa9,0x83,0x6a,0x55,0xa5,0x78,0xa8,
++    0xa8,0xb4,0x6d,0xb1,0xab,0x49,0x50,0xd1,0x02,0x03,0x01,0x00,0x01,0xa3,0x55,0x30,0x53,0x30,0x0c,0x06,0x03,0x55,0x1d,0x13,
++    0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x43,0x06,0x03,0x55,0x1d,0x01,0x04,0x3c,0x30,0x3a,0x80,0x10,0x88,0x17,0xf7,0x38,
++    0x65,0x8b,0x78,0x78,0xf6,0x77,0xe3,0x25,0x47,0x54,0x33,0x4c,0xa1,0x14,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,
++    0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x82,0x10,0x2b,0x59,0xb4,0xc7,0xe2,0xce,0x08,0x97,0x46,0x48,0x32,0x17,
++    0x0f,0x97,0xc5,0x08,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x01,0x01,0x00,
++    0x8e,0xe0,0xc9,0x58,0x24,0x1b,0x16,0x6a,0x8a,0x4f,0x67,0xac,0xd7,0x75,0x62,0x53,0x94,0xfc,0xeb,0x8b,0x36,0x2a,0x9f,0x9c,
++    0x8b,0x8f,0x60,0x42,0xdd,0x37,0x13,0x10,0x5f,0x5a,0x52,0xc8,0xee,0x51,0x92,0x18,0xaf,0x84,0x18,0x5f,0x27,0x69,0xf4,0xde,
++    0x22,0x4b,0x9c,0xaa,0x18,0x9e,0xde,0x04,0xc0,0xc4,0xfd,0x74,0x08,0x25,0x43,0xbf,0x00,0x1d,0xc2,0xd6,0xb2,0x4e,0xa4,0x4a,
++    0x73,0xa1,0xff,0x71,0x3d,0xa5,0xf1,0x21,0xcf,0x4d,0xb4,0x5c,0x55,0x54,0x6f,0x94,0x50,0x21,0xbb,0x85,0xcb,0x54,0xeb,0x07,
++    0xaf,0x74,0x62,0x21,0xf5,0x89,0x43,0xcb,0x10,0x62,0xd6,0xbe,0xc0,0x3a,0xb3,0x6b,0x9f,0x80,0xde,0xe0,0xc0,0x6e,0x8a,0x0a,
++    0xe7,0x1f,0x08,0x9b,0x89,0x38,0xc2,0x30,0xfa,0xd9,0xc2,0x8c,0xf7,0xbd,0xbd,0xd4,0x6b,0x99,0xbd,0x5f,0x0e,0xb1,0x76,0xd6,
++    0x5b,0x1f,0x1a,0xd7,0x27,0x5d,0x5b,0x19,0x1c,0x6d,0x5a,0x91,0x81,0x06,0x83,0x82,0x6d,0xaf,0x48,0x70,0x72,0x8b,0x7c,0x8e,
++    0x57,0xcd,0x35,0x5d,0x7d,0x96,0xe5,0x2d,0x31,0xd2,0xa9,0xf8,0xad,0x9d,0x13,0xb4,0x89,0x75,0x7e,0xbc,0x39,0x11,0x27,0x9d,
++    0xc3,0x7b,0xf1,0x40,0x2a,0x23,0xed,0x50,0xee,0x10,0x1b,0x97,0x13,0x71,0x1c,0x5a,0x7f,0x06,0xab,0x9b,0x51,0x2b,0x1f,0x85,
++    0x27,0x99,0x11,0x18,0x62,0x97,0xcb,0x08,0x24,0x6d,0xf5,0x08,0x56,0xb5,0x36,0x00,0xf3,0x6b,0x3d,0xa9,0x13,0xd3,0xcf,0x0c,
++    0x94,0x6f,0x9e,0x05,0x62,0xeb,0x9c,0x52,0x9d,0x0c,0x15,0x81,0x4d,0x7d,0xe3,0x2f,0x31,0x82,0x01,0xc4,0x30,0x82,0x01,0xc0,
++    0x02,0x01,0x01,0x30,0x26,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,
++    0x41,0x02,0x10,0x8d,0x01,0xec,0xa9,0x68,0x41,0x93,0x8f,0x40,0x42,0x93,0x4a,0x72,0x6b,0x03,0xcc,0x30,0x0d,0x06,0x09,0x60,
++    0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0xa0,0x71,0x30,0x10,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,
++    0x01,0x0c,0x31,0x02,0x30,0x00,0x30,0x11,0x06,0x0a,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x19,0x04,0x31,0x03,0x02,0x01,
++    0x02,0x30,0x19,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x03,0x31,0x0c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,
++    0x37,0x02,0x01,0x04,0x30,0x2f,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xcb,0xa1,0x2f,
++    0x7b,0x0f,0x6a,0x14,0x06,0x26,0x77,0x7b,0xee,0xd1,0x90,0x34,0x1c,0xa7,0xcd,0x94,0x65,0xe0,0xe4,0x24,0x12,0x0c,0x4e,0xa2,
++    0x89,0xeb,0x2d,0xe5,0xbb,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,0x01,0x00,
++    0x68,0xfc,0x34,0xac,0x24,0xe1,0x93,0x00,0xec,0x8d,0x29,0xe1,0x32,0x03,0xe6,0x8a,0xd6,0x39,0x79,0x07,0x85,0x97,0xf4,0xb8,
++    0x0c,0xf1,0x24,0xa0,0x16,0x09,0x0c,0xf8,0x02,0x40,0x94,0xdb,0x19,0x7a,0x6f,0x91,0xee,0x24,0x36,0x77,0x32,0x02,0xb5,0xd1,
++    0xf9,0xe0,0xa2,0xdd,0xe0,0xe1,0x14,0x30,0x11,0xe1,0x25,0x02,0x0a,0x7c,0x10,0xdb,0xbd,0xb0,0x4e,0xbb,0x36,0xef,0x87,0xf0,
++    0x17,0x49,0x77,0x45,0xa0,0x9e,0x47,0x70,0x1a,0xe2,0x87,0x39,0x41,0x24,0x1c,0xe0,0x09,0xb0,0xe0,0xfa,0xc5,0xf3,0xba,0xba,
++    0x03,0x65,0x64,0xf9,0xa8,0x7d,0xe5,0x0e,0x84,0xc8,0xd1,0xe2,0xf5,0x44,0xa4,0x6f,0x33,0xac,0xbb,0x15,0x3b,0x0a,0x1a,0x04,
++    0x6e,0xc2,0x54,0xa7,0x78,0x77,0x7d,0x32,0x21,0x4d,0x0c,0x3f,0x7b,0x0a,0x61,0x18,0x58,0xdb,0x59,0x02,0x3f,0xcf,0xb2,0xd0,
++    0x5c,0xa5,0xea,0x96,0xd4,0x5c,0xd2,0x09,0xd3,0x18,0x61,0x73,0x6e,0x9f,0xdf,0xcb,0x17,0x4f,0xd1,0xc0,0xa2,0x2d,0x8b,0xf5,
++    0x46,0xdf,0xf8,0xb8,0x4f,0x47,0x98,0xf4,0x44,0xa6,0xa1,0x5b,0xcb,0xfa,0xc1,0x31,0x4e,0xc4,0x03,0xea,0x06,0x1b,0x9b,0x94,
++    0xa6,0xc8,0x1c,0x7a,0x69,0x3b,0x8d,0x8d,0x83,0x20,0x56,0x18,0xf1,0xe0,0xd2,0xfb,0xbc,0xaf,0xf7,0xdc,0x17,0x3b,0xcd,0xac,
++    0x2b,0x07,0x86,0xc6,0x7f,0x25,0xc3,0xa2,0x6c,0x7c,0x49,0xa9,0xc1,0xe2,0x5e,0x40,0x05,0xfb,0x2f,0xab,0xd5,0x98,0x3a,0x69,
++    0xbb,0x83,0x1c,0xbd,0xde,0x55,0xc0,0x74,0x71,0x8d,0xdb,0xc7,0x95,0xf4,0xf5,0xca,0x30,0x82,0x05,0x56,0x06,0x09,0x2a,0x86,
++    0x48,0x86,0xf7,0x0d,0x01,0x07,0x02,0xa0,0x82,0x05,0x47,0x30,0x82,0x05,0x43,0x02,0x01,0x01,0x31,0x0f,0x30,0x0d,0x06,0x09,
++    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x30,0x5c,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,
++    0x04,0xa0,0x4e,0x30,0x4c,0x30,0x17,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,0x37,0x02,0x01,0x0f,0x30,0x09,0x03,0x01,0x00,
++    0xa0,0x04,0xa2,0x02,0x80,0x00,0x30,0x31,0x30,0x0d,0x06,0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0x04,
++    0x20,0xdd,0x8b,0xd7,0x29,0x3b,0xae,0x16,0xec,0xbb,0x81,0x80,0x55,0x15,0xd8,0x87,0xa5,0x3e,0xeb,0x0b,0x74,0x59,0xb6,0x56,
++    0xf1,0x0b,0x2e,0xe1,0xb4,0x42,0x4d,0x8b,0x18,0xa0,0x82,0x03,0x05,0x30,0x82,0x03,0x01,0x30,0x82,0x01,0xe9,0xa0,0x03,0x02,
++    0x01,0x02,0x02,0x10,0xae,0xfb,0x3e,0x08,0x15,0xa4,0xe3,0xa7,0x4d,0x91,0x6a,0x85,0x68,0x5b,0x58,0xa1,0x30,0x0d,0x06,0x09,
++    0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,
++    0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x30,0x1e,0x17,0x0d,0x32,0x32,0x30,0x39,0x33,0x30,0x31,0x37,0x32,0x33,0x30,0x33,0x5a,
++    0x17,0x0d,0x33,0x39,0x31,0x32,0x33,0x31,0x32,0x33,0x35,0x39,0x35,0x39,0x5a,0x30,0x10,0x31,0x0e,0x30,0x0c,0x06,0x03,0x55,
++    0x04,0x03,0x13,0x05,0x63,0x65,0x72,0x74,0x32,0x30,0x82,0x01,0x22,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,
++    0x01,0x01,0x05,0x00,0x03,0x82,0x01,0x0f,0x00,0x30,0x82,0x01,0x0a,0x02,0x82,0x01,0x01,0x00,0xca,0x01,0x2f,0x98,0x69,0x71,
++    0x64,0x63,0x56,0x38,0xd7,0xc4,0xad,0x64,0x02,0x34,0xd4,0x31,0xc2,0x27,0x5d,0xd7,0x8f,0x72,0xd0,0x70,0x95,0xd9,0x75,0x65,
++    0x2e,0x8c,0x5b,0x76,0xcd,0x54,0x3f,0xd9,0x0a,0xcc,0x3f,0x03,0x8f,0x74,0x2b,0x8c,0x3d,0x3d,0x4c,0xd3,0xaa,0x3c,0x97,0xf1,
++    0x44,0x46,0x57,0x92,0xa9,0xdd,0xd9,0xf0,0xc7,0x8b,0x39,0xf5,0x8d,0x28,0x41,0x18,0xaf,0xca,0x99,0xd1,0xf1,0xe4,0xab,0x93,
++    0x0a,0xb6,0xd4,0xad,0x2b,0x9f,0x60,0x27,0x4c,0xf2,0xc9,0x14,0xde,0xf2,0xc6,0xbe,0x82,0x14,0x83,0x65,0x13,0x9f,0x9c,0x8d,
++    0xfa,0xac,0x95,0x12,0x00,0xd0,0xa4,0x36,0x4d,0xf0,0x8f,0xfc,0x1a,0x43,0x47,0xc3,0xff,0xce,0x1b,0x24,0xd6,0xcf,0x63,0xd1,
++    0x41,0x23,0xb8,0x62,0x5f,0x31,0x4e,0x30,0x3f,0x63,0x64,0xff,0x72,0xb5,0x9d,0xe5,0xaa,0x22,0xbc,0x1d,0xb3,0x23,0xc9,0x16,
++    0x49,0x10,0xed,0x51,0x02,0xd2,0x90,0xc6,0x86,0x47,0x40,0x7e,0xf1,0xcf,0xc1,0x17,0xa0,0x72,0xaf,0x40,0xb1,0x23,0x3d,0x5a,
++    0xa1,0xf9,0xed,0xc8,0xb6,0x66,0xa7,0x94,0x39,0x09,0x03,0x6d,0x16,0x4e,0xc4,0x2a,0x4b,0x1f,0x5b,0x22,0x39,0xf7,0x60,0x1c,
++    0x71,0x65,0x4c,0x11,0x29,0x59,0x96,0x5e,0x9e,0xfe,0xaf,0x23,0xd1,0xe3,0x2c,0xce,0xd2,0x31,0x8c,0x80,0x29,0x6c,0x82,0x99,
++    0xe8,0x68,0xbd,0x7e,0x66,0xaa,0x35,0x0c,0xae,0x61,0xde,0x59,0x7d,0x5b,0x16,0x09,0x07,0x52,0x6a,0x14,0x26,0x3c,0x48,0x3e,
++    0x03,0xdb,0xd4,0x8a,0xea,0x0e,0x46,0x1a,0x24,0xbd,0x02,0x03,0x01,0x00,0x01,0xa3,0x55,0x30,0x53,0x30,0x0c,0x06,0x03,0x55,
++    0x1d,0x13,0x01,0x01,0xff,0x04,0x02,0x30,0x00,0x30,0x43,0x06,0x03,0x55,0x1d,0x01,0x04,0x3c,0x30,0x3a,0x80,0x10,0x88,0x17,
++    0xf7,0x38,0x65,0x8b,0x78,0x78,0xf6,0x77,0xe3,0x25,0x47,0x54,0x33,0x4c,0xa1,0x14,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,
++    0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,0x20,0x43,0x41,0x82,0x10,0x2b,0x59,0xb4,0xc7,0xe2,0xce,0x08,0x97,0x46,0x48,
++    0x32,0x17,0x0f,0x97,0xc5,0x08,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x0b,0x05,0x00,0x03,0x82,0x01,
++    0x01,0x00,0xd1,0x0d,0xdd,0x83,0x0c,0xd8,0xf9,0x0c,0x71,0xe3,0x2f,0x7c,0xc9,0xd7,0x8e,0x33,0x27,0xb6,0x6b,0x34,0x3c,0x41,
++    0xf0,0x13,0x03,0xd6,0x5a,0xe2,0x55,0x12,0x42,0x06,0x20,0x03,0xb1,0x74,0xc7,0xc0,0x08,0x00,0x21,0xbe,0x90,0xe7,0xfd,0xac,
++    0xe0,0x67,0x42,0xe7,0x53,0x86,0xcf,0x53,0x55,0x40,0xf1,0xbc,0xfc,0x87,0xab,0x67,0xb6,0x09,0xe1,0xf1,0xa2,0xce,0xf6,0xbf,
++    0xe6,0x1d,0x43,0x4f,0x41,0xf0,0xf5,0xc0,0xfa,0xc5,0xd2,0x14,0x2d,0xd9,0x23,0x8e,0x9c,0xeb,0x68,0xff,0x3c,0x5f,0x18,0xca,
++    0x4b,0x09,0xad,0xcd,0xbd,0x23,0x62,0x33,0x4e,0x02,0x10,0xf9,0xe3,0x68,0x6f,0x22,0xb0,0x86,0x0b,0x5a,0xbe,0xd3,0xee,0x8a,
++    0x0b,0x4c,0x92,0x9e,0x06,0x31,0x1f,0x95,0x4f,0xbf,0x27,0x7f,0x1f,0xcd,0xcc,0x9c,0x70,0xa1,0x51,0x07,0x7a,0x09,0x36,0x3f,
++    0x0a,0x2f,0x16,0x77,0x26,0x9b,0xb4,0xc9,0x1e,0x86,0xe3,0xb3,0xb7,0xc3,0xcc,0xf1,0x44,0x6e,0x2e,0xf4,0xc9,0x5b,0x23,0x08,
++    0x0a,0xc0,0xdb,0xc1,0x1a,0x37,0xb3,0xb1,0x91,0xce,0x24,0x26,0x56,0x7f,0x26,0x37,0x88,0xa0,0x02,0x37,0x6e,0x9c,0xca,0xc1,
++    0x8c,0x19,0x99,0xca,0x6c,0x9a,0x98,0x75,0x89,0xfc,0x6d,0x92,0xfc,0xb5,0x12,0x5b,0x29,0xb1,0x88,0x68,0x3b,0xef,0xf0,0xc0,
++    0x8f,0x82,0x5e,0x33,0xf9,0x67,0x6b,0xe8,0x60,0x1b,0x14,0xec,0x9c,0xdf,0x21,0x38,0xbb,0x0d,0x3f,0xd9,0xbc,0xd2,0x01,0x2a,
++    0x92,0x0c,0xc2,0x97,0x2e,0x12,0x22,0x54,0x76,0xeb,0x80,0x51,0x99,0x9d,0x0f,0x26,0x12,0xb7,0x31,0x82,0x01,0xc4,0x30,0x82,
++    0x01,0xc0,0x02,0x01,0x01,0x30,0x26,0x30,0x12,0x31,0x10,0x30,0x0e,0x06,0x03,0x55,0x04,0x03,0x13,0x07,0x54,0x65,0x73,0x74,
++    0x20,0x43,0x41,0x02,0x10,0xae,0xfb,0x3e,0x08,0x15,0xa4,0xe3,0xa7,0x4d,0x91,0x6a,0x85,0x68,0x5b,0x58,0xa1,0x30,0x0d,0x06,
++    0x09,0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x01,0x05,0x00,0xa0,0x71,0x30,0x10,0x06,0x0a,0x2b,0x06,0x01,0x04,0x01,0x82,
++    0x37,0x02,0x01,0x0c,0x31,0x02,0x30,0x00,0x30,0x11,0x06,0x0a,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x19,0x04,0x31,0x03,
++    0x02,0x01,0x01,0x30,0x19,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x03,0x31,0x0c,0x06,0x0a,0x2b,0x06,0x01,0x04,
++    0x01,0x82,0x37,0x02,0x01,0x04,0x30,0x2f,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x09,0x04,0x31,0x22,0x04,0x20,0xcb,
++    0xa1,0x2f,0x7b,0x0f,0x6a,0x14,0x06,0x26,0x77,0x7b,0xee,0xd1,0x90,0x34,0x1c,0xa7,0xcd,0x94,0x65,0xe0,0xe4,0x24,0x12,0x0c,
++    0x4e,0xa2,0x89,0xeb,0x2d,0xe5,0xbb,0x30,0x0d,0x06,0x09,0x2a,0x86,0x48,0x86,0xf7,0x0d,0x01,0x01,0x01,0x05,0x00,0x04,0x82,
++    0x01,0x00,0x26,0x76,0xb3,0xf2,0xc9,0xb1,0x73,0x13,0xb5,0xd2,0xc5,0xb7,0x01,0x5c,0xc6,0x94,0x38,0x9f,0xc7,0x57,0x56,0x95,
++    0xb0,0xf4,0x6d,0xc2,0xd4,0x6a,0xf1,0x4d,0x09,0xa1,0x51,0xa6,0x91,0xf0,0x0e,0x84,0xc0,0x2c,0x74,0xa3,0x97,0x1f,0x41,0xe0,
++    0x4a,0xfa,0x1a,0x78,0xa9,0xd5,0x3c,0x85,0x29,0x2b,0xaf,0xbb,0xc3,0x61,0x0d,0x50,0x20,0x20,0xf5,0x80,0x0d,0x6a,0x15,0x4b,
++    0x38,0x6c,0x55,0xd9,0xf9,0xd0,0x44,0x22,0x46,0x98,0xe6,0x07,0xd4,0xba,0x3d,0x9d,0x50,0xa7,0x8e,0x1f,0xa8,0x82,0x25,0x7e,
++    0x39,0xda,0xe1,0x49,0xc7,0x24,0x3f,0x31,0xfb,0x4b,0xba,0x75,0xdb,0x10,0x0a,0xbe,0xc5,0xad,0x3e,0x30,0x16,0x9b,0x15,0xbb,
++    0xc0,0x59,0xf2,0xf5,0x4f,0xf5,0x56,0xc6,0x28,0xd0,0x1e,0x7d,0x8f,0x2e,0x2b,0xb6,0x76,0x94,0x52,0x87,0x99,0xa3,0x66,0x3d,
++    0x94,0x0d,0x73,0xb0,0xd5,0xd4,0x76,0x5b,0x69,0x95,0x0a,0x16,0x4f,0x5c,0xf4,0x95,0x5b,0x42,0x45,0x04,0x5c,0x53,0xb7,0x1a,
++    0x61,0x6c,0x82,0xdc,0x95,0x94,0x38,0x64,0x34,0x01,0x98,0x2e,0xf8,0xcf,0xf8,0x66,0xae,0xba,0xf8,0x70,0x9e,0x9e,0xde,0xa2,
++    0x7f,0x56,0x8d,0xd9,0x6a,0x7b,0x41,0x02,0x46,0x05,0x5c,0xba,0xed,0x43,0x98,0x56,0x39,0x52,0xc0,0x0b,0x3c,0xe1,0x7d,0x1b,
++    0xf5,0xac,0x03,0x5b,0xbb,0x7a,0x65,0x80,0x4b,0xcb,0xb7,0x51,0xa7,0x19,0x8a,0x38,0x75,0x76,0x75,0xc2,0x1f,0x12,0xc4,0x68,
++    0x96,0xe0,0x89,0x9f,0x37,0x3d,0xab,0xfd,0x6b,0x03,0xb3,0xa1,0x51,0xf8,0x69,0x17,0xea,0xff,0x00,0x00,0x00,0x00,0x00,0x00,
++};
++
+ static void call_winverify(WCHAR *pathW, LONG *status, BOOL hash_only)
+ {
+     static GUID WVTPolicyGUID = WINTRUST_ACTION_GENERIC_VERIFY_V2;
+@@ -1312,6 +1782,116 @@ static void test_get_known_usages(void)
+      "expected ERROR_INVALID_PARAMETER, got %ld\n", GetLastError());
+ }
+ 
++static void test_multiple_signatures(void)
++{
++    static const BYTE serials[][16] =
++    {
++        { 0xfa, 0x4b, 0x40, 0x69, 0x40, 0x4b, 0xc0, 0x44, 0xa2, 0x31, 0x3a, 0xa7, 0xaa, 0x97, 0x73, 0xd1, },
++        { 0xcc, 0x03, 0x6b, 0x72, 0x4a, 0x93, 0x42, 0x40, 0x8f, 0x93, 0x41, 0x68, 0xa9, 0xec, 0x01, 0x8d, },
++        { 0xa1, 0x58, 0x5b, 0x68, 0x85, 0x6a, 0x91, 0x4d, 0xa7, 0xe3, 0xa4, 0x15, 0x08, 0x3e, 0xfb, 0xae, },
++    };
++    static GUID WVTPolicyGUID = WINTRUST_ACTION_GENERIC_VERIFY_V2;
++    WINTRUST_SIGNATURE_SETTINGS settings = { sizeof(settings) };
++    WINTRUST_FILE_INFO file_info = { sizeof(file_info) };
++    WINTRUST_DATA data = { sizeof(data) };
++    CRYPT_PROVIDER_DATA *prov;
++    WCHAR pathW[MAX_PATH];
++    CERT_INFO *cert_info;
++    unsigned int i;
++    BYTE buf[4096];
++    DWORD written;
++    LONG status;
++    HANDLE file;
++    DWORD size;
++    BOOL bret;
++
++    file = create_temp_file(pathW);
++    ok(file != INVALID_HANDLE_VALUE, "Failed to create temporary file.\n");
++    bret = WriteFile(file, self_signed_3certs, sizeof(self_signed_3certs), &written, NULL);
++    ok(bret, "Failed, err %lu.\n", GetLastError());
++    CloseHandle(file);
++
++    file_info.pcwszFilePath = pathW;
++    data.dwUIChoice = WTD_UI_NONE;
++    data.fdwRevocationChecks = WTD_REVOKE_NONE;
++    data.dwUnionChoice = WTD_CHOICE_FILE;
++    data.pFile = &file_info;
++    data.dwStateAction = WTD_STATEACTION_VERIFY;
++    data.dwProvFlags = 0;
++    data.pSignatureSettings = &settings;
++
++    settings.cSecondarySigs = 0xcccccccc;
++    settings.dwVerifiedSigIndex = 0xcccccccc;
++    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
++    todo_wine ok(status == CERT_E_UNTRUSTEDROOT || status == CERT_E_CHAINING, "Failed, ret %#lx\n", status);
++    ok(settings.cSecondarySigs == 0xcccccccc, "Got %lu.\n", settings.cSecondarySigs);
++    todo_wine ok(settings.dwVerifiedSigIndex == 2, "Got %lu.\n", settings.dwVerifiedSigIndex);
++
++    prov = (CRYPT_PROVIDER_DATA *)data.hWVTStateData;
++    ok(prov->cbStruct == sizeof(*prov), "Got size %lu.\n", prov->cbStruct);
++    ok(prov->csSigners == 1, "Got %lu.\n", prov->csSigners);
++    ok(prov->pSigSettings == &settings, "Got %p, expected %p.\n", prov->pSigSettings, &settings);
++    ok(!!prov->pSigState, "Got %p, expected %p.\n", prov->pSigSettings, &settings);
++    if (prov->cbStruct == sizeof(*prov) && prov->pSigState)
++    {
++        ok(prov->pSigState->cbStruct == sizeof(*prov->pSigState)
++                || broken(prov->pSigState->cbStruct == offsetof(CRYPT_PROVIDER_SIGSTATE, iAttemptCount)) /* Win7 */,
++                "Got %lu.\n", prov->pSigState->cbStruct);
++        ok(prov->pSigState->fSupportMultiSig, "Got %d.\n", prov->pSigState->fSupportMultiSig);
++        ok(prov->pSigState->dwCryptoPolicySupport == (WSS_SIGTRUST_SUPPORT | WSS_OBJTRUST_SUPPORT
++                | WSS_CERTTRUST_SUPPORT), "Got %#lx.\n", prov->pSigState->dwCryptoPolicySupport);
++        ok(prov->pSigState->cSecondarySigs == 2, "Got %lu.\n", prov->pSigState->cSecondarySigs);
++
++        size = sizeof(buf);
++        bret = CryptMsgGetParam(prov->pSigState->hPrimarySig, CMSG_SIGNER_CERT_INFO_PARAM, 0, buf, &size);
++        ok(bret, "Failed, err %#lx.\n", GetLastError());
++        cert_info = (CERT_INFO *)buf;
++        ok(cert_info->SerialNumber.cbData == sizeof(serials[0]), "Got %lu.\n", cert_info->SerialNumber.cbData);
++        ok(!memcmp(cert_info->SerialNumber.pbData, serials[0], sizeof(serials[0])), "Data does not match.\n");
++        for (i = 0; i < prov->pSigState->cSecondarySigs; ++i)
++        {
++            bret = CryptMsgGetParam(prov->pSigState->rhSecondarySigs[i], CMSG_SIGNER_CERT_INFO_PARAM, 0, buf, &size);
++            ok(bret, "Failed, err %#lx.\n", GetLastError());
++            ok(cert_info->SerialNumber.cbData == sizeof(serials[0]), "Got %lu.\n", cert_info->SerialNumber.cbData);
++            ok(!memcmp(cert_info->SerialNumber.pbData, serials[i + 1], sizeof(serials[0])), "Data does not match.\n");
++        }
++    }
++
++    data.dwStateAction = WTD_STATEACTION_CLOSE;
++    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
++    ok(status == S_OK, "Failed, ret %#lx\n", status);
++
++    data.dwStateAction = WTD_STATEACTION_VERIFY;
++    settings.dwFlags = WSS_GET_SECONDARY_SIG_COUNT;
++    settings.cSecondarySigs = 0xcccccccc;
++    settings.dwVerifiedSigIndex = 0xcccccccc;
++    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
++    todo_wine ok(status == CERT_E_UNTRUSTEDROOT || status == CERT_E_CHAINING, "Failed, ret %#lx\n", status);
++    ok(settings.cSecondarySigs == 2, "Got %lu.\n", settings.cSecondarySigs);
++    todo_wine ok(settings.dwVerifiedSigIndex == 2, "Got %lu.\n", settings.dwVerifiedSigIndex);
++
++    data.dwStateAction = WTD_STATEACTION_CLOSE;
++    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
++    ok(status == S_OK, "Failed, ret %#lx\n", status);
++
++    data.dwStateAction = WTD_STATEACTION_VERIFY;
++    settings.dwFlags = WSS_VERIFY_SPECIFIC | WSS_GET_SECONDARY_SIG_COUNT;
++    settings.cSecondarySigs = 0xcccccccc;
++    settings.dwVerifiedSigIndex = 0xcccccccc;
++    settings.dwIndex = 1;
++    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
++    todo_wine ok(status == CERT_E_UNTRUSTEDROOT || status == CERT_E_CHAINING, "Failed, ret %#lx\n", status);
++    ok(settings.cSecondarySigs == 2, "Got %lu.\n", settings.cSecondarySigs);
++    todo_wine ok(settings.dwVerifiedSigIndex == 1, "Got %lu.\n", settings.dwVerifiedSigIndex);
++    settings.dwIndex = 0;
++
++    data.dwStateAction = WTD_STATEACTION_CLOSE;
++    status = WinVerifyTrust(NULL, &WVTPolicyGUID, &data);
++    ok(status == S_OK, "Failed, ret %#lx\n", status);
++
++    DeleteFileW(pathW);
++}
++
+ START_TEST(softpub)
+ {
+     InitFunctionPtrs();
+@@ -1320,4 +1900,5 @@ START_TEST(softpub)
+     test_wintrust();
+     test_wintrust_digest();
+     test_get_known_usages();
++    test_multiple_signatures();
+ }
+diff --git a/dlls/wintrust/wintrust_main.c b/dlls/wintrust/wintrust_main.c
+index 33695008b24..925ae7ca85a 100644
+--- a/dlls/wintrust/wintrust_main.c
++++ b/dlls/wintrust/wintrust_main.c
+@@ -294,6 +294,10 @@ static LONG WINTRUST_DefaultVerify(HWND hwnd, GUID *actionID,
+ 
+     data->hWVTStateData = provData;
+     provData->pWintrustData = data;
++
++    if (WVT_ISINSTRUCT(WINTRUST_DATA, data->cbStruct, pSignatureSettings))
++        provData->pSigSettings = data->pSignatureSettings;
++
+     if (hwnd == INVALID_HANDLE_VALUE)
+         provData->hWndParent = GetDesktopWindow();
+     else
+diff --git a/include/Makefile.in b/include/Makefile.in
+index 19d0088e431..99d74baec43 100644
+--- a/include/Makefile.in
++++ b/include/Makefile.in
+@@ -414,6 +414,7 @@ SOURCES = \
+ 	mcx.h \
+ 	mediaerr.h \
+ 	mediaobj.idl \
++	memoryapi.h \
+ 	metahost.idl \
+ 	mfapi.h \
+ 	mfd3d12.idl \
+@@ -788,8 +789,10 @@ SOURCES = \
+ 	windows.foundation.collections.idl \
+ 	windows.foundation.idl \
+ 	windows.foundation.metadata.idl \
++	windows.foundation.numerics.idl \
+ 	windows.gaming.input.custom.idl \
+ 	windows.gaming.input.forcefeedback.idl \
++	windows.gaming.ui.idl \
+ 	windows.gaming.input.idl \
+ 	windows.globalization.idl \
+ 	windows.h \
+diff --git a/include/distversion.h b/include/distversion.h
+new file mode 100644
+index 00000000000..b8a3724b76b
+--- /dev/null
++++ b/include/distversion.h
+@@ -0,0 +1,12 @@
++/* ---------------------------------------------------------------
++*   distversion.c
++*
++* Copyright 2013, CodeWeavers, Inc.
++*
++* Information from DISTVERSION which needs to find
++* its way into the wine tree.
++* --------------------------------------------------------------- */
++
++#define WINDEBUG_WHAT_HAPPENED_MESSAGE "This can be caused by a problem in the program or a deficiency in Wine. You may want to check <a href=\"http://www.codeweavers.com/compatibility/\">http://www.codeweavers.com/compatibility/</a> for tips about running this application."
++
++#define WINDEBUG_USER_SUGGESTION_MESSAGE "If this problem is not present under Windows and has not been reported yet, you can save the detailed information to a file using the \"Save As\" button, then <a href=\"http://www.codeweavers.com/support/tickets/enter/\">file a bug report</a> and attach that file to the report."
+\ No newline at end of file
+diff --git a/include/memoryapi.h b/include/memoryapi.h
+new file mode 100644
+index 00000000000..6728b832fa7
+--- /dev/null
++++ b/include/memoryapi.h
+@@ -0,0 +1,46 @@
++/*
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++typedef enum WIN32_MEMORY_INFORMATION_CLASS
++{
++    MemoryRegionInfo
++} WIN32_MEMORY_INFORMATION_CLASS;
++
++typedef struct WIN32_MEMORY_REGION_INFORMATION
++{
++    PVOID AllocationBase;
++    ULONG AllocationProtect;
++    union
++    {
++        ULONG Flags;
++        struct
++        {
++            ULONG Private : 1;
++            ULONG MappedDataFile : 1;
++            ULONG MappedImage : 1;
++            ULONG MappedPageFile : 1;
++            ULONG MappedPhysical : 1;
++            ULONG DirectMapped : 1;
++            ULONG Reserved : 26;
++        } DUMMYSTRUCTNAME;
++    } DUMMYUNIONNAME;
++    SIZE_T RegionSize;
++    SIZE_T CommitSize;
++} WIN32_MEMORY_REGION_INFORMATION;
++
++DWORD WINAPI DiscardVirtualMemory(void *addr, SIZE_T size);
++BOOL WINAPI QueryVirtualMemoryInformation(HANDLE process,const void *addr,
++        WIN32_MEMORY_INFORMATION_CLASS info_class, void *info, SIZE_T size, SIZE_T *ret_size);
+diff --git a/include/perflib.h b/include/perflib.h
+index eb65f0802a4..40704aeb6f7 100644
+--- a/include/perflib.h
++++ b/include/perflib.h
+@@ -83,6 +83,28 @@ typedef struct _PROVIDER_CONTEXT {
+     LPVOID pMemContext;
+ } PERF_PROVIDER_CONTEXT, * PPERF_PROVIDER_CONTEXT;
+ 
++typedef struct _PERF_COUNTER_IDENTIFIER {
++    GUID CounterSetGuid;
++    ULONG Status;
++    ULONG Size;
++    ULONG CounterId;
++    ULONG InstanceId;
++    ULONG Index;
++    ULONG Reserved;
++} PERF_COUNTER_IDENTIFIER, *PPERF_COUNTER_IDENTIFIER;
++
++#define PERF_WILDCARD_COUNTER  0xFFFFFFFF
++#define PERF_WILDCARD_INSTANCE L"*"
++
++typedef struct _PERF_DATA_HEADER {
++    ULONG dwTotalSize;
++    ULONG dwNumCounters;
++    LONGLONG PerfTimeStamp;
++    LONGLONG PerfTime100NSec;
++    LONGLONG PerfFreq;
++    SYSTEMTIME SystemTime;
++} PERF_DATA_HEADER, *PPERF_DATA_HEADER;
++
+ PERF_COUNTERSET_INSTANCE WINAPI *PerfCreateInstance(HANDLE, const GUID *, const WCHAR *, ULONG);
+ ULONG WINAPI PerfDeleteInstance(HANDLE, PERF_COUNTERSET_INSTANCE *);
+ ULONG WINAPI PerfSetCounterRefValue(HANDLE, PERF_COUNTERSET_INSTANCE *, ULONG, void *);
+@@ -91,6 +113,11 @@ ULONG WINAPI PerfStartProvider(GUID *, PERFLIBREQUEST, HANDLE *);
+ ULONG WINAPI PerfStartProviderEx(GUID *, PERF_PROVIDER_CONTEXT *, HANDLE *);
+ ULONG WINAPI PerfStopProvider(HANDLE);
+ 
++ULONG WINAPI PerfAddCounters(HANDLE, PERF_COUNTER_IDENTIFIER *, DWORD);
++ULONG WINAPI PerfCloseQueryHandle(HANDLE);
++ULONG WINAPI PerfOpenQueryHandle(const WCHAR *, HANDLE *);
++ULONG WINAPI PerfQueryCounterData(HANDLE, PERF_DATA_HEADER *, DWORD, DWORD *);
++
+ #ifdef __cplusplus
+ }       /* extern "C" */
+ #endif
+diff --git a/include/processthreadsapi.h b/include/processthreadsapi.h
+index 8cdaff4796a..d266b7a727b 100644
+--- a/include/processthreadsapi.h
++++ b/include/processthreadsapi.h
+@@ -23,8 +23,23 @@
+ extern "C" {
+ #endif
+ 
++typedef enum _THREAD_INFORMATION_CLASS
++{
++    ThreadMemoryPriority,
++    ThreadAbsoluteCpuPriority,
++    ThreadDynamicCodePolicy,
++    ThreadPowerThrottling,
++    ThreadInformationClassMax
++} THREAD_INFORMATION_CLASS;
++
++typedef struct _MEMORY_PRIORITY_INFORMATION
++{
++    ULONG MemoryPriority;
++} MEMORY_PRIORITY_INFORMATION, *PMEMORY_PRIORITY_INFORMATION;
++
+ WINBASEAPI HRESULT WINAPI GetThreadDescription(HANDLE,PWSTR *);
+ WINBASEAPI HRESULT WINAPI SetThreadDescription(HANDLE,PCWSTR);
++WINBASEAPI BOOL WINAPI SetThreadInformation(HANDLE,THREAD_INFORMATION_CLASS,LPVOID,DWORD);
+ 
+ #ifdef __cplusplus
+ }
+diff --git a/include/winbase.h b/include/winbase.h
+index c8c893d8c91..55a5c59c364 100644
+--- a/include/winbase.h
++++ b/include/winbase.h
+@@ -45,6 +45,7 @@ extern "C" {
+ #include <processthreadsapi.h>
+ #include <synchapi.h>
+ #include <threadpoolapiset.h>
++#include <memoryapi.h>
+ 
+   /* Windows Exit Procedure flag values */
+ #define	WEP_FREE_DLL        0
+diff --git a/include/wincrypt.h b/include/wincrypt.h
+index db2c30c7d68..29735f6225d 100644
+--- a/include/wincrypt.h
++++ b/include/wincrypt.h
+@@ -21,8 +21,6 @@
+ #ifndef __WINE_WINCRYPT_H
+ #define __WINE_WINCRYPT_H
+ 
+-#include "wine/winheader_enter.h"
+-
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+@@ -1088,6 +1086,7 @@ typedef struct _CERT_CHAIN_POLICY_STATUS {
+ #define CERT_CHAIN_POLICY_TRUST_TESTROOT_FLAG                    0x00004000
+ #define CERT_CHAIN_POLICY_ALLOW_TESTROOT_FLAG                    0x00008000
+ #define MICROSOFT_ROOT_CERT_CHAIN_POLICY_ENABLE_TEST_ROOT_FLAG   0x00010000
++#define MICROSOFT_ROOT_CERT_CHAIN_POLICY_CHECK_APPLICATION_ROOT_FLAG 0x00020000
+ 
+ typedef struct _AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA {
+     DWORD             cbSize;
+@@ -3353,8 +3352,10 @@ typedef struct _CTL_FIND_SUBJECT_PARA
+ #define CERT_NAME_URL_TYPE              7
+ #define CERT_NAME_UPN_TYPE              8
+ 
+-#define CERT_NAME_ISSUER_FLAG           0x00000001
+-#define CERT_NAME_DISABLE_IE4_UTF8_FLAG 0x00010000
++#define CERT_NAME_ISSUER_FLAG              0x00000001
++#define CERT_NAME_SEARCH_ALL_NAMES_FLAG    0x00000002
++#define CERT_NAME_DISABLE_IE4_UTF8_FLAG    0x00010000
++#define CERT_NAME_STR_ENABLE_PUNYCODE_FLAG 0x00200000
+ 
+ /* CryptFormatObject flags */
+ #define CRYPT_FORMAT_STR_MULTI_LINE 0x0001
+@@ -4695,6 +4696,4 @@ HRESULT WINAPI FindCertsByIssuer(PCERT_CHAIN pCertChains, DWORD *pcbCertChains,
+ }
+ #endif
+ 
+-#include "wine/winheader_exit.h"
+-
+ #endif
+diff --git a/include/windows.foundation.numerics.idl b/include/windows.foundation.numerics.idl
+new file mode 100644
+index 00000000000..eca99ca29bc
+--- /dev/null
++++ b/include/windows.foundation.numerics.idl
+@@ -0,0 +1,39 @@
++/*
++ * Copyright 2022 Rémi Bernon for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#ifdef __WIDL__
++#pragma winrt ns_prefix
++#endif
++
++import "inspectable.idl";
++import "asyncinfo.idl";
++import "eventtoken.idl";
++import "windowscontracts.idl";
++import "windows.foundation.idl";
++
++namespace Windows.Foundation.Numerics {
++    typedef struct Vector3 Vector3;
++
++    [contract(Windows.Foundation.UniversalApiContract, 1.0)]
++    struct Vector3
++    {
++        FLOAT X;
++        FLOAT Y;
++        FLOAT Z;
++    };
++}
+diff --git a/include/windows.gaming.input.forcefeedback.idl b/include/windows.gaming.input.forcefeedback.idl
+index 432b60a5592..82fb083b34b 100644
+--- a/include/windows.gaming.input.forcefeedback.idl
++++ b/include/windows.gaming.input.forcefeedback.idl
+@@ -20,23 +20,41 @@
+ #pragma winrt ns_prefix
+ #endif
+ 
++#ifndef DO_NO_IMPORTS
+ import "inspectable.idl";
+ import "asyncinfo.idl";
+ import "eventtoken.idl";
+ import "windowscontracts.idl";
+ import "windows.foundation.idl";
++import "windows.foundation.numerics.idl";
++#endif
+ 
+ namespace Windows.Gaming.Input.ForceFeedback {
+     typedef enum ForceFeedbackEffectAxes ForceFeedbackEffectAxes;
+     typedef enum ForceFeedbackEffectState ForceFeedbackEffectState;
+     typedef enum ForceFeedbackLoadEffectResult ForceFeedbackLoadEffectResult;
++    typedef enum PeriodicForceEffectKind PeriodicForceEffectKind;
++    typedef enum ConditionForceEffectKind ConditionForceEffectKind;
+     interface IForceFeedbackEffect;
++    interface IPeriodicForceEffect;
++    interface IPeriodicForceEffectFactory;
++    interface IConditionForceEffect;
++    interface IConditionForceEffectFactory;
++    interface IConstantForceEffect;
++    interface IRampForceEffect;
+     runtimeclass ForceFeedbackMotor;
++    runtimeclass PeriodicForceEffect;
++    runtimeclass ConditionForceEffect;
++    runtimeclass ConstantForceEffect;
++    runtimeclass RampForceEffect;
+ 
+     declare {
+         interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>;
+         interface Windows.Foundation.IAsyncOperation<Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult>;
++        interface Windows.Foundation.Collections.IIterator<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
++        interface Windows.Foundation.Collections.IIterable<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
+         interface Windows.Foundation.Collections.IVectorView<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
++        interface Windows.Foundation.Collections.IVector<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor *>;
+     }
+ 
+     [
+@@ -68,6 +86,25 @@ namespace Windows.Gaming.Input.ForceFeedback {
+         EffectNotSupported = 2
+     };
+ 
++    [contract(Windows.Foundation.UniversalApiContract, 3.0)]
++    enum PeriodicForceEffectKind
++    {
++        SquareWave       = 0,
++        SineWave         = 1,
++        TriangleWave     = 2,
++        SawtoothWaveUp   = 3,
++        SawtoothWaveDown = 4,
++    };
++
++    [contract(Windows.Foundation.UniversalApiContract, 3.0)]
++    enum ConditionForceEffectKind
++    {
++        Spring   = 0,
++        Damper   = 1,
++        Inertia  = 2,
++        Friction = 3,
++    };
++
+     [
+         contract(Windows.Foundation.UniversalApiContract, 3.0),
+         uuid(a17fba0c-2ae4-48c2-8063-eabd0777cb89)
+@@ -105,6 +142,91 @@ namespace Windows.Gaming.Input.ForceFeedback {
+                                      [out, retval] Windows.Foundation.IAsyncOperation<boolean> **async_op);
+     }
+ 
++    [
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        exclusiveto(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect),
++        uuid(5c5138d7-fc75-4d52-9a0a-efe4cab5fe64)
++    ]
++    interface IPeriodicForceEffect : IInspectable
++        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
++    {
++        [propget] HRESULT Kind([out, retval] Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind *value);
++        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 vector, [in] FLOAT frequency, [in] FLOAT phase,
++                              [in] FLOAT bias, [in] Windows.Foundation.TimeSpan duration);
++        HRESULT SetParametersWithEnvelope([in] Windows.Foundation.Numerics.Vector3 vector, [in] FLOAT frequency, [in] FLOAT phase,
++                                          [in] FLOAT bias, [in] FLOAT attack_gain, [in] FLOAT sustain_gain, [in] FLOAT release_gain,
++                                          [in] Windows.Foundation.TimeSpan start_delay, [in] Windows.Foundation.TimeSpan attack_duration,
++                                          [in] Windows.Foundation.TimeSpan sustain_duration, [in] Windows.Foundation.TimeSpan release_duration,
++                                          [in] UINT32 repeat_count);
++    }
++
++    [
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        exclusiveto(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect),
++        uuid(6f62eb1a-9851-477b-b318-35ecaa15070f)
++    ]
++    interface IPeriodicForceEffectFactory : IInspectable
++    {
++        HRESULT CreateInstance([in] Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind kind,
++                               [out, retval] Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect **value);
++    }
++
++    [
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        exclusiveto(Windows.Gaming.Input.ForceFeedback.ConditionForceEffect),
++        uuid(32d1ea68-3695-4e69-85c0-cd1944189140)
++    ]
++    interface IConditionForceEffect : IInspectable
++        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
++    {
++        [propget] HRESULT Kind([out, retval] Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind *value);
++        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 direction, [in] FLOAT positive_coeff,
++                              [in] FLOAT negative_coeff, [in] FLOAT max_positive_magnitude, [in] FLOAT max_negative_magnitude,
++                              [in] FLOAT deadzone, [in] FLOAT bias);
++    }
++
++    [
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        exclusiveto(Windows.Gaming.Input.ForceFeedback.ConditionForceEffect),
++        uuid(91a99264-1810-4eb6-a773-bfd3b8cddbab)
++    ]
++    interface IConditionForceEffectFactory : IInspectable
++    {
++        HRESULT CreateInstance([in] Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind kind,
++                               [out, retval] Windows.Gaming.Input.ForceFeedback.ConditionForceEffect **value);
++    }
++
++    [
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        exclusiveto(Windows.Gaming.Input.ForceFeedback.ConstantForceEffect),
++        uuid(9bfa0140-f3c7-415c-b068-0f068734bce0)
++    ]
++    interface IConstantForceEffect : IInspectable
++        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
++    {
++        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 vector, [in] Windows.Foundation.TimeSpan duration);
++        HRESULT SetParametersWithEnvelope([in] Windows.Foundation.Numerics.Vector3 vector, [in] FLOAT attack_gain,
++                                          [in] FLOAT sustain_gain, [in] FLOAT release_gain, [in] Windows.Foundation.TimeSpan start_delay,
++                                          [in] Windows.Foundation.TimeSpan attack_duration, [in] Windows.Foundation.TimeSpan sustain_duration,
++                                          [in] Windows.Foundation.TimeSpan release_duration, [in] UINT32 repeat_count);
++    }
++
++    [
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        exclusiveto(Windows.Gaming.Input.ForceFeedback.RampForceEffect),
++        uuid(f1f81259-1ca6-4080-b56d-b43f3354d052)
++    ]
++    interface IRampForceEffect : IInspectable
++        requires Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
++    {
++        HRESULT SetParameters([in] Windows.Foundation.Numerics.Vector3 start_vector, [in] Windows.Foundation.Numerics.Vector3 end_vector,
++                              [in] Windows.Foundation.TimeSpan duration);
++        HRESULT SetParametersWithEnvelope([in] Windows.Foundation.Numerics.Vector3 start_vector, [in] Windows.Foundation.Numerics.Vector3 end_vector,
++                                          [in] FLOAT attack_gain, [in] FLOAT sustain_gain, [in] FLOAT release_gain, [in] Windows.Foundation.TimeSpan start_delay,
++                                          [in] Windows.Foundation.TimeSpan attack_duration, [in] Windows.Foundation.TimeSpan sustain_duration,
++                                          [in] Windows.Foundation.TimeSpan release_duration, [in] UINT32 repeat_count);
++    }
++
+     [
+         contract(Windows.Foundation.UniversalApiContract, 3.0),
+         marshaling_behavior(agile),
+@@ -114,4 +236,52 @@ namespace Windows.Gaming.Input.ForceFeedback {
+     {
+         [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackMotor;
+     }
++
++    [
++        activatable(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffectFactory, Windows.Foundation.UniversalApiContract, 3.0),
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        marshaling_behavior(agile),
++        threading(both)
++    ]
++    runtimeclass PeriodicForceEffect
++    {
++        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
++        interface Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffect;
++    }
++
++    [
++        activatable(Windows.Gaming.Input.ForceFeedback.IConditionForceEffectFactory, Windows.Foundation.UniversalApiContract, 3.0),
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        marshaling_behavior(agile),
++        threading(both)
++    ]
++    runtimeclass ConditionForceEffect
++    {
++        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
++        interface Windows.Gaming.Input.ForceFeedback.IConditionForceEffect;
++    }
++
++    [
++        activatable(Windows.Foundation.UniversalApiContract, 3.0),
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        marshaling_behavior(agile),
++        threading(both)
++    ]
++    runtimeclass ConstantForceEffect
++    {
++        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
++        interface Windows.Gaming.Input.ForceFeedback.IConstantForceEffect;
++    }
++
++    [
++        activatable(Windows.Foundation.UniversalApiContract, 3.0),
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        marshaling_behavior(agile),
++        threading(both)
++    ]
++    runtimeclass RampForceEffect
++    {
++        [default] interface Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect;
++        interface Windows.Gaming.Input.ForceFeedback.IRampForceEffect;
++    }
+ }
+diff --git a/include/windows.gaming.input.idl b/include/windows.gaming.input.idl
+index fdae3aa70b1..5fc5265247d 100644
+--- a/include/windows.gaming.input.idl
++++ b/include/windows.gaming.input.idl
+@@ -446,6 +446,19 @@ namespace Windows.Gaming.Input {
+         HRESULT GetCurrentReading([out, retval] Windows.Gaming.Input.GamepadReading *value);
+     }
+ 
++    [
++        contract(Windows.Foundation.UniversalApiContract, 3.0),
++        exclusiveto(Windows.Gaming.Input.Gamepad),
++        uuid(3c1689bd-5915-4245-b0c0-c89fae0308ff)
++    ]
++    interface IGamepad2 : IInspectable
++        requires Windows.Gaming.Input.IGamepad,
++                 Windows.Gaming.Input.IGameController
++    {
++        HRESULT GetButtonLabel([in] Windows.Gaming.Input.GamepadButtons button,
++                               [out, retval] Windows.Gaming.Input.GameControllerButtonLabel *value);
++    }
++
+     [
+         contract(Windows.Foundation.UniversalApiContract, 3.0),
+         exclusiveto(Windows.Gaming.Input.RacingWheel),
+diff --git a/include/windows.gaming.ui.idl b/include/windows.gaming.ui.idl
+new file mode 100644
+index 00000000000..730f5dd90f7
+--- /dev/null
++++ b/include/windows.gaming.ui.idl
+@@ -0,0 +1,61 @@
++/*
++ * Copyright 2022 Paul Gofman for CodeWeavers
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#ifdef __WIDL__
++#pragma winrt ns_prefix
++#endif
++
++#ifndef DO_NO_IMPORTS
++import "inspectable.idl";
++import "eventtoken.idl";
++import "windowscontracts.idl";
++import "windows.foundation.idl";
++#endif
++
++namespace Windows.Gaming.UI {
++    runtimeclass GameBar;
++
++    declare {
++        interface Windows.Foundation.EventHandler<IInspectable *>;
++    }
++
++    [
++        contract(Windows.Foundation.UniversalApiContract, 2.0),
++        exclusiveto(Windows.Gaming.UI.GameBar),
++        uuid(1db9a292-cc78-4173-be45-b61e67283ea7)
++    ]
++    interface IGameBarStatics : IInspectable
++    {
++        [eventadd] HRESULT VisibilityChanged([in] Windows.Foundation.EventHandler<IInspectable *> *handler, [out, retval] EventRegistrationToken *token);
++        [eventremove] HRESULT VisibilityChanged([in] EventRegistrationToken token);
++        [eventadd] HRESULT IsInputRedirectedChanged([in] Windows.Foundation.EventHandler<IInspectable *> *handler, [out, retval] EventRegistrationToken *token);
++        [eventremove] HRESULT IsInputRedirectedChanged([in] EventRegistrationToken token);
++        [propget] HRESULT Visible([out] [retval] boolean* value);
++        [propget] HRESULT IsInputRedirected([out] [retval] boolean* value);
++    }
++
++    [
++        contract(Windows.Foundation.UniversalApiContract, 2.0),
++        marshaling_behavior(agile),
++        static(Windows.Gaming.UI.IGameBarStatics, Windows.Foundation.UniversalApiContract, 2.0),
++        threading(both)
++    ]
++    runtimeclass GameBar
++    {
++    }
++}
+diff --git a/include/wine/server_protocol.h b/include/wine/server_protocol.h
+index 8e5ffb8dc9a..b0b49271367 100644
+--- a/include/wine/server_protocol.h
++++ b/include/wine/server_protocol.h
+@@ -4526,6 +4526,8 @@ struct get_token_groups_request
+ {
+     struct request_header __header;
+     obj_handle_t    handle;
++    unsigned int    attr_mask;
++    char __pad_20[4];
+ };
+ struct get_token_groups_reply
+ {
+@@ -6455,6 +6457,7 @@ union generic_reply
+ 
+ /* ### protocol_version begin ### */
+ 
++/* NOTE: This was 750 -> 751 in the original commit */
+ #define SERVER_PROTOCOL_VERSION 755
+ 
+ /* ### protocol_version end ### */
 diff --git a/include/wine/strmbase.h b/include/wine/strmbase.h
-index 4d569e1fc6c..319717e9497 100644
---- wine/include/wine/strmbase.h
-+++ wine/include/wine/strmbase.h
-@@ -122,6 +122,7 @@ void strmbase_sink_cleanup(struct strmbase_sink *pin);
+index 4d569e1fc6c..02cd1c50e6e 100644
+--- a/include/wine/strmbase.h
++++ b/include/wine/strmbase.h
+@@ -38,7 +38,6 @@ struct strmbase_pin
+     struct strmbase_filter *filter;
+     PIN_DIRECTION dir;
+     WCHAR name[128];
+-    WCHAR id[128];
+     IPin *peer;
+     AM_MEDIA_TYPE mt;
+ 
+@@ -108,6 +107,8 @@ struct strmbase_sink_ops
+ };
+ 
+ /* Base Pin */
++HRESULT WINAPI BaseOutputPinImpl_GetDeliveryBuffer(struct strmbase_source *pin, IMediaSample **sample, REFERENCE_TIME *start, REFERENCE_TIME *stop, DWORD flags);
++HRESULT WINAPI BaseOutputPinImpl_InitAllocator(struct strmbase_source *pin, IMemAllocator **allocator);
+ HRESULT WINAPI BaseOutputPinImpl_DecideAllocator(struct strmbase_source *pin, IMemInputPin *peer, IMemAllocator **allocator);
+ HRESULT WINAPI BaseOutputPinImpl_AttemptConnection(struct strmbase_source *pin, IPin *peer, const AM_MEDIA_TYPE *mt);
+ 
+@@ -122,6 +123,7 @@ void strmbase_sink_cleanup(struct strmbase_sink *pin);
  struct strmbase_filter
  {
      IBaseFilter IBaseFilter_iface;
@@ -87723,10 +88648,39 @@ index 4d569e1fc6c..319717e9497 100644
      IUnknown IUnknown_inner;
      IUnknown *outer_unk;
      LONG refcount;
+diff --git a/include/wintrust.h b/include/wintrust.h
+index 28df37c1626..eeb149822b4 100644
+--- a/include/wintrust.h
++++ b/include/wintrust.h
+@@ -19,8 +19,6 @@
+ #ifndef __WINE_WINTRUST_H
+ #define __WINE_WINTRUST_H
+ 
+-#include "wine/winheader_enter.h"
+-
+ #include <wincrypt.h>
+ 
+ 
+@@ -477,6 +475,8 @@ CRYPT_PROVIDER_SGNR * WINAPI WTHelperGetProvSignerFromChain(
+ CRYPT_PROVIDER_DATA * WINAPI WTHelperProvDataFromStateData(HANDLE hStateData);
+ CRYPT_PROVIDER_PRIVDATA * WINAPI WTHelperGetProvPrivateDataFromChain(CRYPT_PROVIDER_DATA *,GUID *);
+ 
++#define szOID_NESTED_SIGNATURE       "1.3.6.1.4.1.311.2.4.1"
++
+ #define SPC_INDIRECT_DATA_OBJID      "1.3.6.1.4.1.311.2.1.4"
+ #define SPC_SP_AGENCY_INFO_OBJID     "1.3.6.1.4.1.311.2.1.10"
+ #define SPC_STATEMENT_TYPE_OBJID     "1.3.6.1.4.1.311.2.1.11"
+@@ -664,6 +664,4 @@ typedef struct _WIN_TRUST_SUBJECT_FILE_AND_DISPLAY
+ }
+ #endif
+ 
+-#include "wine/winheader_exit.h"
+-
+ #endif
 diff --git a/libs/strmbase/Makefile.in b/libs/strmbase/Makefile.in
 index 8b6ea8a3b43..c9b4a9ebb5c 100644
---- wine/libs/strmbase/Makefile.in
-+++ wine/libs/strmbase/Makefile.in
+--- a/libs/strmbase/Makefile.in
++++ b/libs/strmbase/Makefile.in
 @@ -1,3 +1,4 @@
 +EXTRADEFS = -DWINE_NO_LONG_TYPES
  STATICLIB = libstrmbase.a
@@ -87734,8 +88688,8 @@ index 8b6ea8a3b43..c9b4a9ebb5c 100644
  C_SRCS = \
 diff --git a/libs/strmbase/dispatch.c b/libs/strmbase/dispatch.c
 index 061655d4693..562c8c12ee6 100644
---- wine/libs/strmbase/dispatch.c
-+++ wine/libs/strmbase/dispatch.c
+--- a/libs/strmbase/dispatch.c
++++ b/libs/strmbase/dispatch.c
 @@ -46,7 +46,7 @@ HRESULT strmbase_get_typeinfo(enum strmbase_type_id tid, ITypeInfo **ret)
          hr = LoadRegTypeLib(&LIBID_QuartzTypeLib, 1, 0, LOCALE_SYSTEM_DEFAULT, &typelib);
          if (FAILED(hr))
@@ -87756,8 +88710,8 @@ index 061655d4693..562c8c12ee6 100644
          if (InterlockedCompareExchangePointer((void **)(control_typeinfo + tid), typeinfo, NULL))
 diff --git a/libs/strmbase/filter.c b/libs/strmbase/filter.c
 index ee41611a198..b30ef6daf4f 100644
---- wine/libs/strmbase/filter.c
-+++ wine/libs/strmbase/filter.c
+--- a/libs/strmbase/filter.c
++++ b/libs/strmbase/filter.c
 @@ -87,7 +87,7 @@ static ULONG WINAPI enum_pins_AddRef(IEnumPins *iface)
  {
      struct enum_pins *enum_pins = impl_from_IEnumPins(iface);
@@ -87901,8 +88855,8 @@ index ee41611a198..b30ef6daf4f 100644
      filter->refcount = 1;
 diff --git a/libs/strmbase/mediatype.c b/libs/strmbase/mediatype.c
 index 33af6f2e636..6f66999c390 100644
---- wine/libs/strmbase/mediatype.c
-+++ wine/libs/strmbase/mediatype.c
+--- a/libs/strmbase/mediatype.c
++++ b/libs/strmbase/mediatype.c
 @@ -60,7 +60,7 @@ static const char *debugstr_fourcc(DWORD fourcc)
      char str[4] = {fourcc, fourcc >> 8, fourcc >> 16, fourcc >> 24};
      if (isprint(str[0]) && isprint(str[1]) && isprint(str[2]) && isprint(str[3]))
@@ -87995,8 +88949,8 @@ index 33af6f2e636..6f66999c390 100644
      else
 diff --git a/libs/strmbase/pin.c b/libs/strmbase/pin.c
 index 03330837477..36b3fdf1425 100644
---- wine/libs/strmbase/pin.c
-+++ wine/libs/strmbase/pin.c
+--- a/libs/strmbase/pin.c
++++ b/libs/strmbase/pin.c
 @@ -97,7 +97,7 @@ static ULONG WINAPI enum_media_types_AddRef(IEnumMediaTypes *iface)
  {
      struct enum_media_types *enummt = impl_from_IEnumMediaTypes(iface);
@@ -88116,8 +89070,8 @@ index 03330837477..36b3fdf1425 100644
      pin->pAllocator = pin->preferred_allocator = allocator;
 diff --git a/libs/strmbase/pospass.c b/libs/strmbase/pospass.c
 index 03cb7783f97..7478c0e67c5 100644
---- wine/libs/strmbase/pospass.c
-+++ wine/libs/strmbase/pospass.c
+--- a/libs/strmbase/pospass.c
++++ b/libs/strmbase/pospass.c
 @@ -296,11 +296,7 @@ static HRESULT WINAPI MediaSeekingPassThru_ConvertTimeFormat(IMediaSeeking * ifa
      struct strmbase_passthrough *This = impl_from_IMediaSeeking(iface);
      IMediaSeeking *seek;
@@ -88172,8 +89126,8 @@ index 03cb7783f97..7478c0e67c5 100644
      if (SUCCEEDED(hr = strmbase_get_typeinfo(IMediaPosition_tid, &typeinfo)))
 diff --git a/libs/strmbase/renderer.c b/libs/strmbase/renderer.c
 index dc421f499ed..da257555a19 100644
---- wine/libs/strmbase/renderer.c
-+++ wine/libs/strmbase/renderer.c
+--- a/libs/strmbase/renderer.c
++++ b/libs/strmbase/renderer.c
 @@ -526,7 +526,7 @@ static HRESULT WINAPI quality_control_Notify(IQualityControl *iface, IBaseFilter
      struct strmbase_renderer *filter = impl_from_IQualityControl(iface);
      HRESULT hr = S_FALSE;
@@ -88185,8 +89139,8 @@ index dc421f499ed..da257555a19 100644
      if (filter->qc_sink)
 diff --git a/libs/strmbase/seeking.c b/libs/strmbase/seeking.c
 index b3991f0a5b3..67ef660ba3d 100644
---- wine/libs/strmbase/seeking.c
-+++ wine/libs/strmbase/seeking.c
+--- a/libs/strmbase/seeking.c
++++ b/libs/strmbase/seeking.c
 @@ -220,10 +220,7 @@ HRESULT WINAPI SourceSeekingImpl_SetPositions(IMediaSeeking * iface, LONGLONG *
      BOOL bChangeCurrent = FALSE, bChangeStop = FALSE;
      LONGLONG llNewCurrent, llNewStop;
@@ -88210,8 +89164,8 @@ index b3991f0a5b3..67ef660ba3d 100644
      This->llStop = llNewStop;
 diff --git a/libs/strmiids/strmiids.c b/libs/strmiids/strmiids.c
 index 1a7005bde3c..d07da38bb16 100644
---- wine/libs/strmiids/strmiids.c
-+++ wine/libs/strmiids/strmiids.c
+--- a/libs/strmiids/strmiids.c
++++ b/libs/strmiids/strmiids.c
 @@ -39,4 +39,4 @@
  #include "amstream.h"
  #include "qedit.h"
@@ -88219,389 +89173,10 @@ index 1a7005bde3c..d07da38bb16 100644
 -#include "videoacc.h"
 +#include "videoacc.h"
 \ No newline at end of file
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/mfreadwrite/reader.c b/dlls/mfreadwrite/reader.c
-index e7b7b55..ea0058b 100644
---- wine/dlls/mfreadwrite/reader.c
-+++ wine/dlls/mfreadwrite/reader.c
-@@ -2472,6 +2472,92 @@ failed:
-     return hr;
- }
- 
-+static HRESULT bytestream_get_url_hint(IMFByteStream *stream, WCHAR const **url)
-+{
-+    static const unsigned char asfmagic[]  = {0x30,0x26,0xb2,0x75,0x8e,0x66,0xcf,0x11,0xa6,0xd9,0x00,0xaa,0x00,0x62,0xce,0x6c};
-+    static const unsigned char wavmagic[]  = { 'R', 'I', 'F', 'F',0x00,0x00,0x00,0x00, 'W', 'A', 'V', 'E', 'f', 'm', 't', ' '};
-+    static const unsigned char wavmask[]   = {0xff,0xff,0xff,0xff,0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff};
-+    static const unsigned char isommagic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'i', 's', 'o', 'm',0x00,0x00,0x00,0x00};
-+    static const unsigned char mp4_magic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'M', 'S', 'N', 'V',0x00,0x00,0x00,0x00};
-+    static const unsigned char mp42magic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'm', 'p', '4', '2',0x00,0x00,0x00,0x00};
-+    static const unsigned char mp4vmagic[] = {0x00,0x00,0x00,0x00, 'f', 't', 'y', 'p', 'M', '4', 'V', ' ',0x00,0x00,0x00,0x00};
-+    static const unsigned char mp4mask[]   = {0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x00,0x00,0x00,0x00};
-+    static const struct stream_content_url_hint
-+    {
-+        const unsigned char *magic;
-+        const WCHAR *url;
-+        const unsigned char *mask;
-+    }
-+    url_hints[] =
-+    {
-+        { asfmagic,  L".asf" },
-+        { wavmagic,  L".wav", wavmask },
-+        { isommagic, L".mp4", mp4mask },
-+        { mp42magic, L".mp4", mp4mask },
-+        { mp4_magic, L".mp4", mp4mask },
-+        { mp4vmagic, L".m4v", mp4mask },
-+    };
-+    unsigned char buffer[4 * sizeof(unsigned int)], pattern[4 * sizeof(unsigned int)];
-+    unsigned int i, j, length = 0, caps = 0;
-+    IMFAttributes *attributes;
-+    QWORD position;
-+    HRESULT hr;
-+
-+    *url = NULL;
-+
-+    if (SUCCEEDED(IMFByteStream_QueryInterface(stream, &IID_IMFAttributes, (void **)&attributes)))
-+    {
-+        IMFAttributes_GetStringLength(attributes, &MF_BYTESTREAM_CONTENT_TYPE, &length);
-+        IMFAttributes_Release(attributes);
-+    }
-+
-+    if (length)
-+        return S_OK;
-+
-+    if (FAILED(hr = IMFByteStream_GetCapabilities(stream, &caps)))
-+        return hr;
-+
-+    if (!(caps & MFBYTESTREAM_IS_SEEKABLE))
-+        return S_OK;
-+
-+    if (FAILED(hr = IMFByteStream_GetCurrentPosition(stream, &position)))
-+        return hr;
-+
-+    hr = IMFByteStream_Read(stream, buffer, sizeof(buffer), &length);
-+    IMFByteStream_SetCurrentPosition(stream, position);
-+    if (FAILED(hr))
-+        return hr;
-+
-+    if (length < sizeof(buffer))
-+        return S_OK;
-+
-+    for (i = 0; i < ARRAY_SIZE(url_hints); ++i)
-+    {
-+        memcpy(pattern, buffer, sizeof(buffer));
-+        if (url_hints[i].mask)
-+        {
-+            unsigned int *mask = (unsigned int *)url_hints[i].mask;
-+            unsigned int *data = (unsigned int *)pattern;
-+
-+            for (j = 0; j < sizeof(buffer) / sizeof(unsigned int); ++j)
-+                data[j] &= mask[j];
-+
-+        }
-+        if (!memcmp(pattern, url_hints[i].magic, sizeof(pattern)))
-+        {
-+            *url = url_hints[i].url;
-+            break;
-+        }
-+    }
-+
-+    if (*url)
-+        TRACE("Stream type guessed as %s from %s.\n", debugstr_w(*url), debugstr_an((char *)buffer, length));
-+    else
-+        WARN("Unrecognized content type %s.\n", debugstr_an((char *)buffer, length));
-+
-+    return S_OK;
-+}
-+
- static HRESULT create_source_reader_from_stream(IMFByteStream *stream, IMFAttributes *attributes,
-         REFIID riid, void **out)
- {
-@@ -2479,8 +2565,13 @@ static HRESULT create_source_reader_from_stream(IMFByteStream *stream, IMFAttrib
-     IMFSourceResolver *resolver;
-     MF_OBJECT_TYPE obj_type;
-     IMFMediaSource *source;
-+    const WCHAR *url;
-     HRESULT hr;
- 
-+    /* If stream does not have content type set, try to guess from starting byte sequence. */
-+    if (FAILED(hr = bytestream_get_url_hint(stream, &url)))
-+        return hr;
-+
-     if (FAILED(hr = MFCreateSourceResolver(&resolver)))
-         return hr;
- 
-@@ -2488,7 +2579,7 @@ static HRESULT create_source_reader_from_stream(IMFByteStream *stream, IMFAttrib
-         IMFAttributes_GetUnknown(attributes, &MF_SOURCE_READER_MEDIASOURCE_CONFIG, &IID_IPropertyStore,
-                 (void **)&props);
- 
--    hr = IMFSourceResolver_CreateObjectFromByteStream(resolver, stream, NULL, MF_RESOLUTION_MEDIASOURCE
-+    hr = IMFSourceResolver_CreateObjectFromByteStream(resolver, stream, url, MF_RESOLUTION_MEDIASOURCE
-             | MF_RESOLUTION_CONTENT_DOES_NOT_HAVE_TO_MATCH_EXTENSION_OR_MIME_TYPE, props, &obj_type, (IUnknown **)&source);
-     IMFSourceResolver_Release(resolver);
-     if (props)
-diff --git a/include/wine/strmbase.h b/include/wine/strmbase.h
-index 319717e..02cd1c5 100644
---- wine/include/wine/strmbase.h
-+++ wine/include/wine/strmbase.h
-@@ -38,7 +38,6 @@ struct strmbase_pin
-     struct strmbase_filter *filter;
-     PIN_DIRECTION dir;
-     WCHAR name[128];
--    WCHAR id[128];
-     IPin *peer;
-     AM_MEDIA_TYPE mt;
- 
-@@ -108,6 +107,8 @@ struct strmbase_sink_ops
- };
- 
- /* Base Pin */
-+HRESULT WINAPI BaseOutputPinImpl_GetDeliveryBuffer(struct strmbase_source *pin, IMediaSample **sample, REFERENCE_TIME *start, REFERENCE_TIME *stop, DWORD flags);
-+HRESULT WINAPI BaseOutputPinImpl_InitAllocator(struct strmbase_source *pin, IMemAllocator **allocator);
- HRESULT WINAPI BaseOutputPinImpl_DecideAllocator(struct strmbase_source *pin, IMemInputPin *peer, IMemAllocator **allocator);
- HRESULT WINAPI BaseOutputPinImpl_AttemptConnection(struct strmbase_source *pin, IPin *peer, const AM_MEDIA_TYPE *mt);
- 
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/kernel32/kernel32.spec b/dlls/kernel32/kernel32.spec
-index 51a14338..3626c740 100644
---- wine/dlls/kernel32/kernel32.spec
-+++ wine/dlls/kernel32/kernel32.spec
-@@ -370,6 +370,7 @@
- @ stdcall -import DeleteProcThreadAttributeList(ptr)
- # @ stub DisableThreadProfiling
- @ stdcall DisassociateCurrentThreadFromCallback(ptr) NTDLL.TpDisassociateCallback
-+@ stdcall DiscardVirtualMemory(ptr long) kernelbase.DiscardVirtualMemory
- @ stdcall DeleteTimerQueue(long)
- @ stdcall -import DeleteTimerQueueEx(long long)
- @ stdcall -import DeleteTimerQueueTimer(long long long)
-diff --git a/dlls/kernelbase/kernelbase.spec b/dlls/kernelbase/kernelbase.spec
-index 3fb2192b..ae6bc842 100644
---- wine/dlls/kernelbase/kernelbase.spec
-+++ wine/dlls/kernelbase/kernelbase.spec
-@@ -269,7 +269,7 @@
- @ stdcall DisablePredefinedHandleTableInternal(long)
- @ stdcall DisableThreadLibraryCalls(long)
- @ stdcall DisassociateCurrentThreadFromCallback(ptr) ntdll.TpDisassociateCallback
--# @ stub DiscardVirtualMemory
-+@ stdcall DiscardVirtualMemory(ptr long)
- @ stdcall DisconnectNamedPipe(long)
- @ stdcall DnsHostnameToComputerNameExW(wstr ptr ptr)
- # @ stub DsBindWithSpnExW
-@@ -1247,7 +1247,7 @@
- @ stdcall QueryThreadpoolStackInformation(ptr ptr)
- @ stdcall QueryUnbiasedInterruptTime(ptr) ntdll.RtlQueryUnbiasedInterruptTime
- # @ stub QueryUnbiasedInterruptTimePrecise
--# @ stub QueryVirtualMemoryInformation
-+@ stdcall QueryVirtualMemoryInformation(long ptr long ptr long ptr)
- @ stdcall QueryWorkingSet(long ptr long)
- @ stdcall QueryWorkingSetEx(long ptr long)
- @ stdcall QueueUserAPC(ptr long long)
-diff --git a/dlls/kernelbase/memory.c b/dlls/kernelbase/memory.c
-index e5ad1e5a..83a40a7c 100644
---- wine/dlls/kernelbase/memory.c
-+++ wine/dlls/kernelbase/memory.c
-@@ -49,6 +49,19 @@ WINE_DECLARE_DEBUG_CHANNEL(globalmem);
-  ***********************************************************************/
- 
- 
-+/***********************************************************************
-+ *             DiscardVirtualMemory   (kernelbase.@)
-+ */
-+DWORD WINAPI DECLSPEC_HOTPATCH DiscardVirtualMemory( void *addr, SIZE_T size )
-+{
-+    NTSTATUS status;
-+    LPVOID ret = addr;
-+
-+    status = NtAllocateVirtualMemory( GetCurrentProcess(), &ret, 0, &size, MEM_RESET, PAGE_NOACCESS );
-+    return RtlNtStatusToDosError( status );
-+}
-+
-+
- /***********************************************************************
-  *             FlushViewOfFile   (kernelbase.@)
-  */
-@@ -1286,6 +1299,23 @@ LPVOID WINAPI DECLSPEC_HOTPATCH VirtualAllocExNuma( HANDLE process, void *addr,
- }
- 
- 
-+/***********************************************************************
-+ *             QueryVirtualMemoryInformation   (kernelbase.@)
-+ */
-+BOOL WINAPI DECLSPEC_HOTPATCH QueryVirtualMemoryInformation( HANDLE process, const void *addr,
-+        WIN32_MEMORY_INFORMATION_CLASS info_class, void *info, SIZE_T size, SIZE_T *ret_size)
-+{
-+    switch (info_class)
-+    {
-+        case MemoryRegionInfo:
-+            return set_ntstatus( NtQueryVirtualMemory( process, addr, MemoryRegionInformation, info, size, ret_size ));
-+        default:
-+            FIXME("Unsupported info class %u.\n", info_class);
-+            return FALSE;
-+    }
-+}
-+
-+
- /***********************************************************************
-  * CPU functions
-  ***********************************************************************/
-diff --git a/include/Makefile.in b/include/Makefile.in
-index f262c7a9..8cf0db6d 100644
---- wine/include/Makefile.in
-+++ wine/include/Makefile.in
-@@ -413,6 +413,7 @@ SOURCES = \
- 	mcx.h \
- 	mediaerr.h \
- 	mediaobj.idl \
-+	memoryapi.h \
- 	metahost.idl \
- 	mfapi.h \
- 	mfd3d12.idl \
-diff --git a/include/memoryapi.h b/include/memoryapi.h
-new file mode 100644
-index 00000000..6728b832
---- /dev/null
-+++ wine/include/memoryapi.h
-@@ -0,0 +1,46 @@
-+/*
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-+ */
-+
-+typedef enum WIN32_MEMORY_INFORMATION_CLASS
-+{
-+    MemoryRegionInfo
-+} WIN32_MEMORY_INFORMATION_CLASS;
-+
-+typedef struct WIN32_MEMORY_REGION_INFORMATION
-+{
-+    PVOID AllocationBase;
-+    ULONG AllocationProtect;
-+    union
-+    {
-+        ULONG Flags;
-+        struct
-+        {
-+            ULONG Private : 1;
-+            ULONG MappedDataFile : 1;
-+            ULONG MappedImage : 1;
-+            ULONG MappedPageFile : 1;
-+            ULONG MappedPhysical : 1;
-+            ULONG DirectMapped : 1;
-+            ULONG Reserved : 26;
-+        } DUMMYSTRUCTNAME;
-+    } DUMMYUNIONNAME;
-+    SIZE_T RegionSize;
-+    SIZE_T CommitSize;
-+} WIN32_MEMORY_REGION_INFORMATION;
-+
-+DWORD WINAPI DiscardVirtualMemory(void *addr, SIZE_T size);
-+BOOL WINAPI QueryVirtualMemoryInformation(HANDLE process,const void *addr,
-+        WIN32_MEMORY_INFORMATION_CLASS info_class, void *info, SIZE_T size, SIZE_T *ret_size);
-diff --git a/include/winbase.h b/include/winbase.h
-index c8c893d8..55a5c59c 100644
---- wine/include/winbase.h
-+++ wine/include/winbase.h
-@@ -45,6 +45,7 @@ extern "C" {
- #include <processthreadsapi.h>
- #include <synchapi.h>
- #include <threadpoolapiset.h>
-+#include <memoryapi.h>
- 
-   /* Windows Exit Procedure flag values */
- #define	WEP_FREE_DLL        0
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/winemac.drv/macdrv_main.c b/dlls/winemac.drv/macdrv_main.c
-index 50e926c6aaa..35f0c3e9204 100644
---- wine/dlls/winemac.drv/macdrv_main.c
-+++ wine/dlls/winemac.drv/macdrv_main.c
-@@ -507,3 +507,62 @@ BOOL macdrv_SystemParametersInfo( UINT action, UINT int_param, void *ptr_param,
-     }
-     return FALSE;
- }
-+
-+#if defined(__x86_64__) && !defined(__i386_on_x86_64__)
-+struct macdrv_functions_t
-+{
-+    void (*macdrv_init_display_devices)(BOOL);
-+    struct macdrv_win_data*(*get_win_data)(HWND hwnd);
-+    void (*release_win_data)(struct macdrv_win_data *data);
-+    macdrv_window(*macdrv_get_cocoa_window)(HWND hwnd, BOOL require_on_screen);
-+    macdrv_metal_device (*macdrv_create_metal_device)(void);
-+    void (*macdrv_release_metal_device)(macdrv_metal_device d);
-+    macdrv_metal_view (*macdrv_view_create_metal_view)(macdrv_view v, macdrv_metal_device d);
-+    macdrv_metal_layer (*macdrv_view_get_metal_layer)(macdrv_metal_view v);
-+    void (*macdrv_view_release_metal_view)(macdrv_metal_view v);
-+    void (*on_main_thread)(dispatch_block_t b);
-+    LSTATUS(WINAPI*RegQueryValueExA)(HKEY, LPCSTR, LPDWORD, LPDWORD, BYTE*, LPDWORD);
-+    LSTATUS(WINAPI*RegSetValueExA)(HKEY, LPCSTR, DWORD, DWORD, const BYTE*, DWORD);
-+    LSTATUS(WINAPI*RegOpenKeyExA)(HKEY, LPCSTR, DWORD, DWORD, HKEY*);
-+    LSTATUS(WINAPI*RegCreateKeyExA)(HKEY, LPCSTR, DWORD, LPSTR, DWORD, DWORD, LPSECURITY_ATTRIBUTES, HKEY*, LPDWORD);
-+    LSTATUS(WINAPI*RegCloseKey)(HKEY);
-+    BOOL(WINAPI*EnumDisplayMonitors)(HDC,LPRECT,MONITORENUMPROC,LPARAM);
-+    BOOL(WINAPI*GetMonitorInfoA)(HMONITOR,LPMONITORINFO);
-+    BOOL(WINAPI*AdjustWindowRectEx)(LPRECT,DWORD,BOOL,DWORD);
-+    LONG_PTR(WINAPI*GetWindowLongPtrW)(HWND,int);
-+    BOOL(WINAPI*GetWindowRect)(HWND,LPRECT);
-+    BOOL(WINAPI*MoveWindow)(HWND,int,int,int,int,BOOL);
-+    BOOL(WINAPI*SetWindowPos)(HWND,HWND,int,int,int,int,UINT);
-+    INT(WINAPI*GetSystemMetrics)(INT);
-+    LONG_PTR(WINAPI*SetWindowLongPtrW)(HWND,INT,LONG_PTR);
-+};
-+
-+void OnMainThread(dispatch_block_t);
-+
-+struct macdrv_functions_t macdrv_functions = {
-+    &macdrv_init_display_devices,
-+    &get_win_data,
-+    &release_win_data,
-+    &macdrv_get_cocoa_window,
-+    &macdrv_create_metal_device,
-+    &macdrv_release_metal_device,
-+    &macdrv_view_create_metal_view,
-+    &macdrv_view_get_metal_layer,
-+    &macdrv_view_release_metal_view,
-+    &OnMainThread,
-+    &RegQueryValueExA,
-+    &RegSetValueExA,
-+    &RegOpenKeyExA,
-+    &RegCreateKeyExA,
-+    &RegCloseKey,
-+    &EnumDisplayMonitors,
-+    &GetMonitorInfoA,
-+    &AdjustWindowRectEx,
-+    &GetWindowLongPtrW,
-+    &GetWindowRect,
-+    &MoveWindow,
-+    &SetWindowPos,
-+    &GetSystemMetrics,
-+    &SetWindowLongPtrW,
-+};
-+#endif
-\ No newline at end of file
--- 
-2.39.2 (Apple Git-144)
-
 diff --git a/loader/preloader_mac.c b/loader/preloader_mac.c
 index 8b924f78c15..412bd638a3a 100644
---- wine/loader/preloader_mac.c
-+++ wine/loader/preloader_mac.c
+--- a/loader/preloader_mac.c
++++ b/loader/preloader_mac.c
 @@ -299,6 +299,7 @@ void *wld_munmap( void *start, size_t len );
  SYSCALL_FUNC( wld_munmap, 73 /* SYS_munmap */ );
  
@@ -88627,834 +89202,105 @@ index 8b924f78c15..412bd638a3a 100644
      /* load the main binary */
      if (!(mod = pdlopen( argv[1], RTLD_NOW )))
          fatal_error( "%s: could not load binary\n", argv[1] );
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/ntdll/unix/signal_x86_64.c b/dlls/ntdll/unix/signal_x86_64.c
-index 3d85d46abfc..950b6da44d3 100644
---- wine/dlls/ntdll/unix/signal_x86_64.c
-+++ wine/dlls/ntdll/unix/signal_x86_64.c
-@@ -2949,6 +2949,20 @@ static void usr1_handler( int signal, siginfo_t *siginfo, void *ucontext )
-     }
+diff --git a/server/protocol.def b/server/protocol.def
+index 6232eebd261..d89a750811a 100644
+--- a/server/protocol.def
++++ b/server/protocol.def
+@@ -3202,6 +3202,7 @@ enum caret_state
+ 
+ @REQ(get_token_groups)
+     obj_handle_t    handle;       /* handle to the token */
++    unsigned int    attr_mask;    /* mask for wanted attributes */
+ @REPLY
+     data_size_t     attr_len;     /* length needed to store attrs */
+     data_size_t     sid_len;      /* length needed to store sids */
+diff --git a/server/request.h b/server/request.h
+index 6f9f6a8dfc7..d124ba07fc7 100644
+--- a/server/request.h
++++ b/server/request.h
+@@ -1995,7 +1995,8 @@ C_ASSERT( sizeof(struct get_token_sid_request) == 24 );
+ C_ASSERT( FIELD_OFFSET(struct get_token_sid_reply, sid_len) == 8 );
+ C_ASSERT( sizeof(struct get_token_sid_reply) == 16 );
+ C_ASSERT( FIELD_OFFSET(struct get_token_groups_request, handle) == 12 );
+-C_ASSERT( sizeof(struct get_token_groups_request) == 16 );
++C_ASSERT( FIELD_OFFSET(struct get_token_groups_request, attr_mask) == 16 );
++C_ASSERT( sizeof(struct get_token_groups_request) == 24 );
+ C_ASSERT( FIELD_OFFSET(struct get_token_groups_reply, attr_len) == 8 );
+ C_ASSERT( FIELD_OFFSET(struct get_token_groups_reply, sid_len) == 12 );
+ C_ASSERT( sizeof(struct get_token_groups_reply) == 16 );
+diff --git a/server/token.c b/server/token.c
+index 76a6bc279a5..b6a2d841093 100644
+--- a/server/token.c
++++ b/server/token.c
+@@ -82,7 +82,6 @@ static const struct sid local_sid = { SID_REVISION, 1, SECURITY_LOCAL_SID_AUTHOR
+ static const struct sid interactive_sid = { SID_REVISION, 1, SECURITY_NT_AUTHORITY, { SECURITY_INTERACTIVE_RID } };
+ static const struct sid anonymous_logon_sid = { SID_REVISION, 1, SECURITY_NT_AUTHORITY, { SECURITY_ANONYMOUS_LOGON_RID } };
+ static const struct sid authenticated_user_sid = { SID_REVISION, 1, SECURITY_NT_AUTHORITY, { SECURITY_AUTHENTICATED_USER_RID } };
+-static const struct sid builtin_logon_sid = { SID_REVISION, 3, SECURITY_NT_AUTHORITY, { SECURITY_LOGON_IDS_RID, 0, 0 } };
+ 
+ static struct luid prev_luid_value = { 1000, 0 };
+ 
+@@ -745,7 +744,7 @@ struct token *token_create_admin( unsigned primary, int impersonation_level, int
+     struct sid alias_admins_sid = { SID_REVISION, 2, SECURITY_NT_AUTHORITY, { SECURITY_BUILTIN_DOMAIN_RID, DOMAIN_ALIAS_RID_ADMINS }};
+     struct sid alias_users_sid = { SID_REVISION, 2, SECURITY_NT_AUTHORITY, { SECURITY_BUILTIN_DOMAIN_RID, DOMAIN_ALIAS_RID_USERS }};
+     /* on Windows, this value changes every time the user logs on */
+-    struct sid logon_sid = { SID_REVISION, 3, SECURITY_NT_AUTHORITY, { SECURITY_LOGON_IDS_RID, 0, 1 /* FIXME: should be randomly generated when tokens are inherited by new processes */ }};
++    struct sid logon_sid = { SID_REVISION, 3, SECURITY_NT_AUTHORITY, { SECURITY_LOGON_IDS_RID, 0, 0 /* FIXME: should be randomly generated when tokens are inherited by new processes */ }};
+     const struct sid *user_sid = security_unix_uid_to_sid( getuid() );
+     struct acl *default_dacl = create_default_dacl( user_sid );
+     const struct luid_attr admin_privs[] =
+@@ -1368,9 +1367,6 @@ DECL_HANDLER(get_token_sid)
+         case TokenOwner:
+             sid = token->owner;
+             break;
+-        case TokenLogonSid:
+-            sid = &builtin_logon_sid;
+-            break;
+         default:
+             set_error( STATUS_INVALID_PARAMETER );
+             break;
+@@ -1398,6 +1394,7 @@ DECL_HANDLER(get_token_groups)
+ 
+         LIST_FOR_EACH_ENTRY( group, &token->groups, const struct group, entry )
+         {
++            if (req->attr_mask && !(group->attrs & req->attr_mask)) continue;
+             group_count++;
+             reply->sid_len += sid_len( &group->sid );
+         }
+@@ -1420,6 +1417,7 @@ DECL_HANDLER(get_token_groups)
+                     if (group->deny_only) *attr_ptr |= SE_GROUP_USE_FOR_DENY_ONLY;
+                     if (group->resource) *attr_ptr |= SE_GROUP_RESOURCE;
+                     if (group->logon) *attr_ptr |= SE_GROUP_LOGON_ID;
++                    if (req->attr_mask && !(group->attrs & req->attr_mask)) continue;
+                     sid = copy_sid( sid, &group->sid );
+                     attr_ptr++;
+                 }
+diff --git a/server/trace.c b/server/trace.c
+index 62a1a4a2368..50433115728 100644
+--- a/server/trace.c
++++ b/server/trace.c
+@@ -3889,6 +3889,7 @@ static void dump_get_token_sid_reply( const struct get_token_sid_reply *req )
+ static void dump_get_token_groups_request( const struct get_token_groups_request *req )
+ {
+     fprintf( stderr, " handle=%04x", req->handle );
++    fprintf( stderr, ", attr_mask=%08x", req->attr_mask );
  }
  
-+static void sigsys_handler( int signal, siginfo_t *siginfo, void *sigcontext )
-+{
-+    ucontext_t *ctx = sigcontext;
-+    void ***rsp;
-+
-+    TRACE("SIGSYS, rax %#llx, rip %#llx.\n", RAX_sig(ctx), RIP_sig(ctx));
-+    
-+    rsp = (void ***)&RSP_sig(ctx);
-+    *rsp -= 1;
-+    **rsp = (void *)(RIP_sig(ctx) + 0xb);
-+
-+    RIP_sig(ctx) = ((ULONG64)__wine_syscall_dispatcher);
-+}
-+
+ static void dump_get_token_groups_reply( const struct get_token_groups_reply *req )
+diff --git a/tools/make_specfiles b/tools/make_specfiles
+index 3c4c40544b8..cdaf0ccf209 100755
+--- a/tools/make_specfiles
++++ b/tools/make_specfiles
+@@ -139,6 +139,11 @@ my @dll_groups =
+   "sppc",
+   "slc",
+  ],
++ [
++    "ntdll",
++    "powrprof",
++    "api-ms-win-power-base-l1-1-0",
++ ]
+ );
  
- /***********************************************************************
-  *           LDT support
-@@ -3292,6 +3311,8 @@ void signal_init_process(void)
-     if (sigaction( SIGSEGV, &sig_act, NULL ) == -1) goto error;
-     if (sigaction( SIGILL, &sig_act, NULL ) == -1) goto error;
-     if (sigaction( SIGBUS, &sig_act, NULL ) == -1) goto error;
-+    sig_act.sa_sigaction = sigsys_handler;
-+    if (sigaction( SIGSYS, &sig_act, NULL ) == -1) goto error;
-     return;
+ my $update_flags = 0;
  
-  error:
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/atiadlxx/atiadlxx.spec b/dlls/atiadlxx/atiadlxx.spec
-index 1e447f38ded..80efd6eebb6 100644
---- wine/dlls/atiadlxx/atiadlxx.spec
-+++ wine/dlls/atiadlxx/atiadlxx.spec
-@@ -17,10 +17,10 @@
- @ stub ADL2_Adapter_Active_Get
- @ stub ADL2_Adapter_Active_Set
- @ stub ADL2_Adapter_Active_SetPrefer
--@ stub ADL2_Adapter_AdapterInfoX2_Get
-+@ stdcall ADL2_Adapter_AdapterInfoX2_Get(ptr ptr)
- @ stub ADL2_Adapter_AdapterInfoX3_Get
- @ stub ADL2_Adapter_AdapterInfoX4_Get
--@ stub ADL2_Adapter_AdapterInfo_Get
-+@ stdcall ADL2_Adapter_AdapterInfo_Get(ptr ptr long)
- @ stub ADL2_Adapter_AdapterList_Disable
- @ stub ADL2_Adapter_AdapterLocationPath_Get
- @ stub ADL2_Adapter_Aspects_Get
-@@ -82,7 +82,7 @@
- @ stub ADL2_Adapter_FrameMetrics_Stop
- @ stub ADL2_Adapter_Gamma_Get
- @ stub ADL2_Adapter_Gamma_Set
--@ stub ADL2_Adapter_Graphic_Core_Info_Get
-+@ stdcall ADL2_Adapter_Graphic_Core_Info_Get(ptr long ptr)
- @ stub ADL2_Adapter_HBC_Caps
- @ stub ADL2_Adapter_HBM_ECC_UC_Check
- @ stub ADL2_Adapter_Headless_Get
-@@ -452,7 +452,7 @@
- @ stub ADL2_MMD_Video_Caps
- @ stub ADL2_Main_ControlX2_Create
- @ stdcall ADL2_Main_Control_Create(ptr long ptr)
--@ stub ADL2_Main_Control_Destroy
-+@ stdcall ADL2_Main_Control_Destroy()
- @ stub ADL2_Main_Control_GetProcAddress
- @ stub ADL2_Main_Control_IsFunctionValid
- @ stub ADL2_Main_Control_Refresh
-@@ -553,7 +553,7 @@
- @ stub ADL2_OverdriveN_ThrottleNotification_Get
- @ stub ADL2_OverdriveN_ZeroRPMFan_Get
- @ stub ADL2_OverdriveN_ZeroRPMFan_Set
--@ stub ADL2_Overdrive_Caps
-+@ stdcall ADL2_Overdrive_Caps(ptr long ptr ptr ptr)
- @ stub ADL2_PPLogSettings_Get
- @ stub ADL2_PPLogSettings_Set
- @ stub ADL2_PPW_Caps
-@@ -745,7 +745,7 @@
- @ stdcall ADL_Adapter_NumberOfAdapters_Get(ptr)
- @ stdcall ADL_Adapter_ObservedClockInfo_Get(long ptr ptr)
- @ stub ADL_Adapter_ObservedGameClockInfo_Get
--@ stub ADL_Adapter_Primary_Get
-+@ stdcall ADL_Adapter_Primary_Get(long)
- @ stub ADL_Adapter_Primary_Set
- @ stub ADL_Adapter_RegValueInt_Get
- @ stub ADL_Adapter_RegValueInt_Set
-@@ -853,7 +853,7 @@
- @ stub ADL_Display_DitherState_Set
- @ stub ADL_Display_Downscaling_Caps
- @ stub ADL_Display_DpMstInfo_Get
--@ stub ADL_Display_EdidData_Get
-+@ stdcall ADL_Display_EdidData_Get(long long ptr)
- @ stub ADL_Display_EdidData_Set
- @ stub ADL_Display_EnumDisplays_Get
- @ stub ADL_Display_FilterSVideo_Get
-diff --git a/dlls/atiadlxx/atiadlxx_main.c b/dlls/atiadlxx/atiadlxx_main.c
-index 21dfbe71096..9b35cac4fb1 100644
---- wine/dlls/atiadlxx/atiadlxx_main.c
-+++ wine/dlls/atiadlxx/atiadlxx_main.c
-@@ -171,6 +171,24 @@ typedef struct ADLDisplayMap
-     int iDisplayMapValue;
- } ADLDisplayMap, *LPADLDisplayMap;
- 
-+typedef struct ADLGraphicInfoCore
-+{
-+    union
-+    {
-+        int iNumPEsPerCU;
-+        int iNumPEsPerWGP;
-+    };
-+    union
-+    {
-+        int iNumCUs;
-+        int iNumWGPs;
-+    };
-+    int iGCGen;
-+    int iNumROPs;
-+    int iNumSIMDs;
-+    int iReserved[11];
-+} ADLGraphicInfoCore, *LPADLGraphicInfoCore;
-+
- static const ADLVersionsInfo version = {
-     "22.20.19.16-221003a-384125E-AMD-Software-Adrenalin-Edition",
-     "",
-@@ -184,10 +202,11 @@ static const ADLVersionsInfoX2 version2 = {
-     "http://support.amd.com/drivers/xml/driver_09_us.xml",
- };
- 
-+int WINAPI ADL_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg);
- int WINAPI ADL2_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg, ADL_CONTEXT_HANDLE *ptr)
- {
-     FIXME("cb %p, arg %d, ptr %p stub!\n", cb, arg, ptr);
--    return ADL_OK;
-+    return ADL_Main_Control_Create(cb, arg);
- }
- 
- int WINAPI ADL_Main_Control_Create(ADL_MAIN_MALLOC_CALLBACK cb, int arg)
-@@ -212,15 +231,20 @@ int WINAPI ADL_Main_Control_Destroy(void)
-     return ADL_OK;
- }
- 
--int WINAPI ADL2_Adapter_NumberOfAdapters_Get(ADL_CONTEXT_HANDLE *ptr, int *count)
-+int WINAPI ADL2_Main_Control_Destroy(void)
- {
--    FIXME("ptr %p, count %p stub!\n", ptr, count);
--
--    *count = 0;
-+    FIXME("stub!\n");
- 
-     return ADL_OK;
- }
- 
-+int WINAPI ADL_Adapter_NumberOfAdapters_Get(int *count);
-+int WINAPI ADL2_Adapter_NumberOfAdapters_Get(ADL_CONTEXT_HANDLE *ptr, int *count)
-+{
-+    FIXME("ptr %p, count %p stub!\n", ptr, count);
-+    return ADL_Adapter_NumberOfAdapters_Get(count);
-+}
-+
- int WINAPI ADL2_Graphics_VersionsX2_Get(ADL_CONTEXT_HANDLE *ptr, ADLVersionsInfoX2 *ver)
- {
-     FIXME("ptr %p, ver %p stub!\n", ptr, ver);
-@@ -235,6 +259,21 @@ int WINAPI ADL_Graphics_Versions_Get(ADLVersionsInfo *ver)
-     return ADL_OK;
- }
- 
-+int WINAPI ADL2_Adapter_Graphic_Core_Info_Get(ADL_CONTEXT_HANDLE *ptr, int iAdapterIndex, LPADLGraphicInfoCore pGraphicsInfo)
-+{
-+    FIXME("ptr %p, iAdapterIndex %u, pGraphicsInfo %p\n", ptr, iAdapterIndex, pGraphicsInfo);
-+    return ADL_OK;
-+}
-+
-+int WINAPI ADL2_Overdrive_Caps(ADL_CONTEXT_HANDLE *ptr, int iAdapterIndex, int *iSupported, int *iEnabled, int *iVersion)
-+{
-+    FIXME("ptr %p, iAdapterIndex %u\n");
-+    *iSupported = 0;
-+    *iEnabled = 0;
-+    *iVersion = 0;
-+    return ADL_OK;
-+}
-+
- int WINAPI ADL_Adapter_NumberOfAdapters_Get(int *count)
- {
-     IDXGIAdapter *adapter;
-@@ -275,6 +314,36 @@ static int convert_vendor_id(int id)
-     return atoi(str);
- }
- 
-+int WINAPI ADL_Adapter_AdapterInfo_Get(ADLAdapterInfo *adapters, int input_size);
-+
-+int WINAPI ADL2_Display_EdidData_Get(int adapter_index, int display_index, void* edid_data)
-+{
-+    FIXME("adapter_index %d, display_index %p, edid_data %p\n", 
-+        adapter_index, display_index, edid_data);
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
-+
-+int WINAPI ADL2_Adapter_AdapterInfoX2_Get(ADL_CONTEXT_HANDLE* ptr, ADLAdapterInfo **adapters)
-+{
-+    TRACE("\n");
-+    *adapters = (ADLAdapterInfo*)adl_malloc(sizeof(ADLAdapterInfo) * 1);
-+    return ADL_Adapter_AdapterInfo_Get(*adapters, sizeof(ADLAdapterInfo) * 1);
-+}
-+
-+int WINAPI ADL2_Adapter_AdapterInfo_Get(ADL_CONTEXT_HANDLE* ptr, ADLAdapterInfo *adapters, int bufferSize)
-+{
-+    TRACE("\n");
-+    ADLAdapterInfo adapterInfo;
-+    ADL_Adapter_AdapterInfo_Get(&adapterInfo, sizeof(ADLAdapterInfo));
-+    if (bufferSize <= sizeof(ADLAdapterInfo))
-+    {
-+        memcpy(adapters, &adapterInfo, bufferSize);
-+        return ADL_OK;
-+    }
-+
-+    return ADL_ERR;
-+}
-+
- int WINAPI ADL_Adapter_AdapterInfo_Get(ADLAdapterInfo *adapters, int input_size)
- {
-     int count, i;
-@@ -452,6 +521,13 @@ int WINAPI ADL_Adapter_MemoryInfo_Get(int adapter_index, ADLMemoryInfo *mem_info
-     return ADL_OK;
- }
- 
-+int WINAPI ADL_Adapter_Primary_Get(int* adapter_index)
-+{
-+    FIXME("stub!\n");
-+    *adapter_index = 0;
-+    return ADL_OK;
-+}
-+
- int WINAPI ADL_Graphics_Platform_Get(int *platform)
- {
-     DXGI_ADAPTER_DESC adapter_desc;
-@@ -491,3 +567,10 @@ int WINAPI ADL_Display_DisplayMapConfig_Get(int adapter_index, int *display_map_
- 
-     return ADL_ERR;
- }
-+
-+int WINAPI ADL_Display_EdidData_Get(int adapter_index, int display_index, void* edid_data)
-+{
-+    FIXME("adapter_index %d, display_index %p, edid_data %p\n", 
-+        adapter_index, display_index, edid_data);
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/ntdll/loader.c b/dlls/ntdll/loader.c
-index fd0af32e..51c619b7 100644
---- wine/dlls/ntdll/loader.c
-+++ wine/dlls/ntdll/loader.c
-@@ -2294,6 +2294,12 @@ static NTSTATUS build_module( LPCWSTR load_path, const UNICODE_STRING *nt_name,
-     TRACE_(loaddll)( "Loaded %s at %p: %s\n", debugstr_w(wm->ldr.FullDllName.Buffer), *module,
-                      is_builtin ? "builtin" : "native" );
- 
-+#if defined(__x86_64__)
-+    if (is_builtin == FALSE)
-+    {
-+        unix_funcs->pe_module_loaded(*module, (void*)((BYTE*)*module + map_size));
-+    }
-+#endif
-     wm->ldr.LoadCount = 1;
-     *pwm = wm;
-     *module = NULL;
-@@ -3477,8 +3483,8 @@ static NTSTATUS load_dll( const WCHAR *load_path, const WCHAR *libname, DWORD fl
- 
-     case STATUS_SUCCESS:  /* valid PE file */
-         nts = load_native_dll( load_path, &nt_name, mapping, &image_info, &id, flags, system, pwm );
--#ifdef __x86_64__
--        if (nts == STATUS_SUCCESS && !wcscmp( libname, L"libcef.dll" ))
-+#if defined(__APPLE__) && defined(__x86_64__)
-+        if (nts == STATUS_SUCCESS && !wcscmp( libname, L"libcef.dll" ) && unix_funcs->gs_patching_needed())
-             patch_libcef( pwm );
- #endif
-         break;
-diff --git a/dlls/ntdll/unix/loader.c b/dlls/ntdll/unix/loader.c
-index e086c88e..bed76762 100644
---- wine/dlls/ntdll/unix/loader.c
-+++ wine/dlls/ntdll/unix/loader.c
-@@ -1544,6 +1544,44 @@ NTSTATUS WINAPI __wine_unix_call( unixlib_handle_t handle, unsigned int code, vo
-     return ((unixlib_entry_t*)(UINT_PTR)handle)[code]( args );
- }
- 
-+#if defined(__APPLE__) && defined(__x86_64__)
-+static void* non_native_support_lib;
-+static void (*register_non_native_code_region) (void*, void*);
-+static bool (*supports_non_native_code_regions) (void);
-+static void init_non_native_support(void)
-+{
-+    register_non_native_code_region = NULL;
-+    register_non_native_code_region = NULL;
-+    non_native_support_lib = dlopen("@rpath/libd3dshared.dylib", RTLD_LOCAL);
-+    if (non_native_support_lib)
-+    {
-+        register_non_native_code_region = dlsym(non_native_support_lib, "register_non_native_code_region");
-+        supports_non_native_code_regions = dlsym(non_native_support_lib, "supports_non_native_code_regions");
-+    }
-+}
-+
-+static void CDECL pe_module_loaded(void* start, void* end)
-+{
-+    if ((supports_non_native_code_regions && supports_non_native_code_regions()))
-+    {
-+        TRACE("Marking non_native_code_region: %p, %p", start, end);
-+        register_non_native_code_region(start, end);
-+    }
-+}
-+static BOOL CDECL gs_patching_needed(void)
-+{
-+    return (supports_non_native_code_regions && supports_non_native_code_regions() == false);
-+}
-+#elif defined(__x86_64__)
-+static void CDECL pe_module_loaded(void* start, void* end)
-+{
-+
-+}
-+static BOOL CDECL gs_patching_needed(void)
-+{
-+    return false;
-+}
-+#endif
- 
- /***********************************************************************
-  *           load_so_dll
-@@ -2345,6 +2383,10 @@ static struct unix_funcs unix_funcs =
- #ifdef __aarch64__
-     NtCurrentTeb,
- #endif
-+#if defined(__x86_64__)
-+    pe_module_loaded,
-+    gs_patching_needed,
-+#endif
- };
- 
- 
-@@ -2460,6 +2502,10 @@ static void start_main_thread(void)
-             dlopen_32on64_opengl32();
- #endif
-     }
-+    else
-+    {
-+        init_non_native_support();
-+    }
-     load_apiset_dll();
-     ntdll_init_syscalls( 0, &syscall_table, p__wine_syscall_dispatcher );
-     status = p__wine_set_unix_funcs( NTDLL_UNIXLIB_VERSION, &unix_funcs );
-diff --git a/dlls/ntdll/unixlib.h b/dlls/ntdll/unixlib.h
-index cb184431..1ea1a3b4 100644
---- wine/dlls/ntdll/unixlib.h
-+++ wine/dlls/ntdll/unixlib.h
-@@ -26,7 +26,7 @@
- struct _DISPATCHER_CONTEXT;
- 
- /* increment this when you change the function table */
--#define NTDLL_UNIXLIB_VERSION 134
-+#define NTDLL_UNIXLIB_VERSION 135
- 
- struct unix_funcs
- {
-@@ -40,6 +40,10 @@ struct unix_funcs
- #ifdef __aarch64__
-     TEB *         (WINAPI *NtCurrentTeb)(void);
- #endif
-+#if defined(__x86_64__)
-+    void          (CDECL *pe_module_loaded)(void* start, void* end);
-+    BOOL          (CDECL *gs_patching_needed)(void);
-+#endif
- };
- 
- #endif /* __NTDLL_UNIXLIB_H */
-diff --git a/dlls/atiadlxx/atiadlxx.spec b/dlls/atiadlxx/atiadlxx.spec
-index 80efd6ee..752e805a 100644
---- wine/dlls/atiadlxx/atiadlxx.spec
-+++ wine/dlls/atiadlxx/atiadlxx.spec
-@@ -94,7 +94,7 @@
- @ stub ADL2_Adapter_MVPU_Set
- @ stub ADL2_Adapter_MaxCursorSize_Get
- @ stub ADL2_Adapter_MemoryInfo2_Get
--@ stub ADL2_Adapter_MemoryInfo_Get
-+@ stdcall ADL2_Adapter_MemoryInfo_Get(ptr long ptr)
- @ stub ADL2_Adapter_MirabilisSupport_Get
- @ stub ADL2_Adapter_ModeSwitch
- @ stub ADL2_Adapter_ModeTimingOverride_Caps
-@@ -249,7 +249,7 @@
- @ stub ADL2_Display_DCE_Get
- @ stub ADL2_Display_DCE_Set
- @ stub ADL2_Display_DDCBlockAccess_Get
--@ stub ADL2_Display_DDCInfo2_Get
-+@ stdcall ADL2_Display_DDCInfo2_Get(ptr long long ptr)
- @ stub ADL2_Display_DDCInfo_Get
- @ stub ADL2_Display_Deflicker_Get
- @ stub ADL2_Display_Deflicker_Set
-@@ -257,9 +257,9 @@
- @ stub ADL2_Display_DisplayContent_Cap
- @ stub ADL2_Display_DisplayContent_Get
- @ stub ADL2_Display_DisplayContent_Set
--@ stub ADL2_Display_DisplayInfo_Get
-+@ stdcall ADL2_Display_DisplayInfo_Get(ptr long ptr ptr long)
- @ stub ADL2_Display_DisplayMapConfigX2_Set
--@ stub ADL2_Display_DisplayMapConfig_Get
-+@ stdcall ADL2_Display_DisplayMapConfig_Get(ptr long ptr ptr ptr ptr long)
- @ stub ADL2_Display_DisplayMapConfig_PossibleAddAndRemove
- @ stub ADL2_Display_DisplayMapConfig_Set
- @ stub ADL2_Display_DisplayMapConfig_Validate
-@@ -281,7 +281,7 @@
- @ stub ADL2_Display_FormatsOverride_Set
- @ stub ADL2_Display_FreeSyncState_Get
- @ stub ADL2_Display_FreeSyncState_Set
--@ stub ADL2_Display_FreeSync_Cap
-+@ stdcall ADL2_Display_FreeSync_Cap(ptr long long ptr)
- @ stub ADL2_Display_GamutMapping_Get
- @ stub ADL2_Display_GamutMapping_Reset
- @ stub ADL2_Display_GamutMapping_Set
-@@ -315,7 +315,7 @@
- @ stub ADL2_Display_ModeTimingOverride_Delete
- @ stub ADL2_Display_ModeTimingOverride_Get
- @ stub ADL2_Display_ModeTimingOverride_Set
--@ stub ADL2_Display_Modes_Get
-+@ stdcall ADL2_Display_Modes_Get(ptr long long ptr ptr)
- @ stub ADL2_Display_Modes_Set
- @ stub ADL2_Display_Modes_X2_Get
- @ stub ADL2_Display_MonitorPowerState_Set
-@@ -744,7 +744,7 @@
- @ stub ADL_Adapter_NumberOfActivatableSources_Get
- @ stdcall ADL_Adapter_NumberOfAdapters_Get(ptr)
- @ stdcall ADL_Adapter_ObservedClockInfo_Get(long ptr ptr)
--@ stub ADL_Adapter_ObservedGameClockInfo_Get
-+@ stdcall ADL_Adapter_ObservedGameClockInfo_Get(ptr long ptr ptr ptr ptr)
- @ stdcall ADL_Adapter_Primary_Get(long)
- @ stub ADL_Adapter_Primary_Set
- @ stub ADL_Adapter_RegValueInt_Get
-diff --git a/dlls/atiadlxx/atiadlxx_main.c b/dlls/atiadlxx/atiadlxx_main.c
-index 9b35cac4..3018336c 100644
---- wine/dlls/atiadlxx/atiadlxx_main.c
-+++ wine/dlls/atiadlxx/atiadlxx_main.c
-@@ -63,6 +63,14 @@ typedef void *ADL_CONTEXT_HANDLE;
- ADL_MAIN_MALLOC_CALLBACK adl_malloc;
- #define ADL_MAX_PATH 256
- 
-+typedef struct ADLDDCInfo2 {
-+
-+} ADLDDCInfo2;
-+
-+typedef struct ADLFreeSyncCap {
-+
-+} ADLFreeSyncCap;
-+
- typedef struct ADLVersionsInfo
- {
-     char strDriverVer[ADL_MAX_PATH];
-@@ -325,15 +333,15 @@ int WINAPI ADL2_Display_EdidData_Get(int adapter_index, int display_index, void*
- 
- int WINAPI ADL2_Adapter_AdapterInfoX2_Get(ADL_CONTEXT_HANDLE* ptr, ADLAdapterInfo **adapters)
- {
--    TRACE("\n");
-+    FIXME("stub!\n");
-     *adapters = (ADLAdapterInfo*)adl_malloc(sizeof(ADLAdapterInfo) * 1);
-     return ADL_Adapter_AdapterInfo_Get(*adapters, sizeof(ADLAdapterInfo) * 1);
- }
- 
- int WINAPI ADL2_Adapter_AdapterInfo_Get(ADL_CONTEXT_HANDLE* ptr, ADLAdapterInfo *adapters, int bufferSize)
- {
--    TRACE("\n");
-     ADLAdapterInfo adapterInfo;
-+    TRACE("stub!");
-     ADL_Adapter_AdapterInfo_Get(&adapterInfo, sizeof(ADLAdapterInfo));
-     if (bufferSize <= sizeof(ADLAdapterInfo))
-     {
-@@ -346,7 +354,7 @@ int WINAPI ADL2_Adapter_AdapterInfo_Get(ADL_CONTEXT_HANDLE* ptr, ADLAdapterInfo
- 
- int WINAPI ADL_Adapter_AdapterInfo_Get(ADLAdapterInfo *adapters, int input_size)
- {
--    int count, i;
-+    int count, i, j;
-     DXGI_ADAPTER_DESC adapter_desc;
- 
-     FIXME("adapters %p, input_size %d, stub!\n", adapters, input_size);
-@@ -362,11 +370,18 @@ int WINAPI ADL_Adapter_AdapterInfo_Get(ADLAdapterInfo *adapters, int input_size)
-     {
-         adapters[i].iSize = sizeof(ADLAdapterInfo);
-         adapters[i].iAdapterIndex = i;
- 
-         if (get_adapter_desc(i, &adapter_desc) != ADL_OK)
-             return ADL_ERR;
- 
-         adapters[i].iVendorID = convert_vendor_id(adapter_desc.VendorId);
-+
-+        for (j = 0; j < 128; ++j)
-+        {
-+            adapters[i].strAdapterName[j] = (char)adapter_desc.Description[j];
-+            if (adapters[i].strAdapterName[j] == 0)
-+               break;
-+        }
-     }
- 
-     return ADL_OK;
-@@ -411,6 +434,12 @@ int WINAPI ADL_Display_DisplayInfo_Get(int adapter_index, int *num_displays, ADL
-     return ADL_OK;
- }
- 
-+int WINAPI ADL2_Display_DisplayInfo_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int *num_displays, ADLDisplayInfo **info, int force_detect)
-+{
-+    FIXME("adapter: %d, stub!\n", adapter_index);
-+    return ADL_Display_DisplayInfo_Get(adapter_index, num_displays, info, force_detect);    
-+}
-+
- int WINAPI ADL_Adapter_Crossfire_Caps(int adapter_index, int *preffered, int *num_comb, ADLCrossfireComb** comb)
- {
-     FIXME("adapter %d, preffered %p, num_comb %p, comb %p stub!\n", adapter_index, preffered, num_comb, comb);
-@@ -501,6 +530,23 @@ int WINAPI ADL_Adapter_ObservedClockInfo_Get(int adapter_index, int *core_clock,
-     return ADL_OK;
- }
- 
-+int WINAPI ADL_Adapter_ObservedGameClockInfo_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int* base_clock, int* game_clock, int* boost_clock, int* memory_clock)
-+{
-+    int retStatus;
-+    FIXME("adapter: %d, stub!\n", adapter_index);
-+    retStatus = ADL_Adapter_ObservedClockInfo_Get(adapter_index, base_clock, memory_clock);
-+    if (retStatus == ADL_OK)
-+    {
-+        *game_clock = *base_clock;
-+        *boost_clock = *base_clock;
-+
-+        TRACE("*base_clock: %i, *game_clock: %i, *boost_clock: %i, *memory_clock: %i\n", 
-+                *base_clock, *game_clock, *boost_clock, *memory_clock);
-+    }
-+    return retStatus;
-+}
-+
-+
- /* documented in the "Linux Specific APIs" section, present and used on Windows */
- int WINAPI ADL_Adapter_MemoryInfo_Get(int adapter_index, ADLMemoryInfo *mem_info)
- {
-@@ -521,6 +567,12 @@ int WINAPI ADL_Adapter_MemoryInfo_Get(int adapter_index, ADLMemoryInfo *mem_info
-     return ADL_OK;
- }
- 
-+int WINAPI ADL2_Adapter_MemoryInfo_Get(ADL_CONTEXT_HANDLE context, int adapter_index, ADLMemoryInfo *mem_info)
-+{
-+    FIXME("adapter %d, stub!\n", adapter_index);
-+    return ADL_Adapter_MemoryInfo_Get(adapter_index, mem_info);
-+}
-+
- int WINAPI ADL_Adapter_Primary_Get(int* adapter_index)
- {
-     FIXME("stub!\n");
-@@ -565,7 +617,14 @@ int WINAPI ADL_Display_DisplayMapConfig_Get(int adapter_index, int *display_map_
-             adapter_index, display_map_count, display_maps, display_target_count,
-             display_targets, options);
- 
--    return ADL_ERR;
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
-+
-+int WINAPI ADL2_Display_DisplayMapConfig_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int *display_map_count, ADLDisplayMap **display_maps,
-+        int *display_target_count, ADLDisplayTarget **display_targets, int options)
-+{
-+    FIXME("adapter_index %d, stub!\n", adapter_index);
-+    return ADL_Display_DisplayMapConfig_Get(adapter_index, display_map_count, display_maps, display_target_count, display_targets, options);
- }
- 
- int WINAPI ADL_Display_EdidData_Get(int adapter_index, int display_index, void* edid_data)
-@@ -574,3 +633,21 @@ int WINAPI ADL_Display_EdidData_Get(int adapter_index, int display_index, void*
-         adapter_index, display_index, edid_data);
-     return ADL_ERR_NOT_SUPPORTED;
- }
-+
-+int WINAPI ADL2_Display_Modes_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int display_index, int *num_modes, ADLMode *modes)
-+{
-+    FIXME("adapter: %d, display: %d, stub!\n", adapter_index, display_index);
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
-+
-+int WINAPI ADL2_Display_DDCInfo2_Get(ADL_CONTEXT_HANDLE context, int adapter_index, int display_index, ADLDDCInfo2 *info)
-+{
-+    FIXME("adapter: %d, display: %d, stub!\n", adapter_index, display_index);
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
-+
-+int WINAPI ADL2_Display_FreeSync_Cap(ADL_CONTEXT_HANDLE context, int adapter_index, int display_index, ADLFreeSyncCap *cap)
-+{
-+    FIXME("adapter: %d, display: %d, stub!\n", adapter_index, display_index);
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
-\ No newline at end of file
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/atiadlxx/atiadlxx.spec b/dlls/atiadlxx/atiadlxx.spec
-index 752e805a..147f6bad 100644
---- wine/dlls/atiadlxx/atiadlxx.spec
-+++ wine/dlls/atiadlxx/atiadlxx.spec
-@@ -10,17 +10,17 @@
- @ stub ADL2_AdapterLimitation_Caps
- @ stub ADL2_AdapterX2_Caps
- @ stub ADL2_Adapter_AMDAndNonAMDDIsplayClone_Get
--@ stub ADL2_Adapter_ASICFamilyType_Get
-+@ stdcall ADL2_Adapter_ASICFamilyType_Get(long long ptr ptr)
- @ stub ADL2_Adapter_ASICInfo_Get
- @ stub ADL2_Adapter_Accessibility_Get
- @ stub ADL2_Adapter_AceDefaults_Restore
- @ stub ADL2_Adapter_Active_Get
- @ stub ADL2_Adapter_Active_Set
- @ stub ADL2_Adapter_Active_SetPrefer
--@ stdcall ADL2_Adapter_AdapterInfoX2_Get(ptr ptr)
-+@ stdcall ADL2_Adapter_AdapterInfoX2_Get(long ptr)
- @ stub ADL2_Adapter_AdapterInfoX3_Get
--@ stub ADL2_Adapter_AdapterInfoX4_Get
--@ stdcall ADL2_Adapter_AdapterInfo_Get(ptr ptr long)
-+@ stdcall ADL2_Adapter_AdapterInfoX4_Get(long long ptr ptr)
-+@ stdcall ADL2_Adapter_AdapterInfo_Get(long ptr long)
- @ stub ADL2_Adapter_AdapterList_Disable
- @ stub ADL2_Adapter_AdapterLocationPath_Get
- @ stub ADL2_Adapter_Aspects_Get
-@@ -93,7 +93,7 @@
- @ stub ADL2_Adapter_LocalDisplayState_Get
- @ stub ADL2_Adapter_MVPU_Set
- @ stub ADL2_Adapter_MaxCursorSize_Get
--@ stub ADL2_Adapter_MemoryInfo2_Get
-+@ stdcall ADL2_Adapter_MemoryInfo2_Get(long long ptr)
- @ stdcall ADL2_Adapter_MemoryInfo_Get(ptr long ptr)
- @ stub ADL2_Adapter_MirabilisSupport_Get
- @ stub ADL2_Adapter_ModeSwitch
-diff --git a/dlls/atiadlxx/atiadlxx_main.c b/dlls/atiadlxx/atiadlxx_main.c
-index 3018336c..5d35aff2 100644
---- wine/dlls/atiadlxx/atiadlxx_main.c
-+++ wine/dlls/atiadlxx/atiadlxx_main.c
-@@ -104,6 +104,26 @@ typedef struct ADLAdapterInfo {
-     int iOSDisplayIndex;
- } ADLAdapterInfo, *LPADLAdapterInfo;
- 
-+typedef struct ADLAdapterInfoX2 { //Matches ADLAdapterInfo until iInfoMask
-+    int iSize;
-+    int iAdapterIndex;
-+    char strUDID[ADL_MAX_PATH];
-+    int iBusNumber;
-+    int iDeviceNumber;
-+    int iFunctionNumber;
-+    int iVendorID;
-+    char strAdapterName[ADL_MAX_PATH];
-+    char strDisplayName[ADL_MAX_PATH];
-+    int iPresent;
-+    int iExist;
-+    char strDriverPath[ADL_MAX_PATH];
-+    char strDriverPathExt[ADL_MAX_PATH];
-+    char strPNPString[ADL_MAX_PATH];
-+    int iOSDisplayIndex;
-+    int iInfoMask;
-+    int iInfoValue;
-+} ADLAdapterInfoX2, *LPADLAdapterInfoX2;
-+
- typedef struct ADLDisplayID
- {
-     int iDisplayLogicalIndex;
-@@ -145,6 +165,16 @@ typedef struct ADLMemoryInfo
-     long long iMemoryBandwidth;
- } ADLMemoryInfo, *LPADLMemoryInfo;
- 
-+typedef struct ADLMemoryInfo2
-+{
-+    long long iHyperMemorySize;
-+    long long iInvisibleMemorySize;
-+    long long iMemoryBandwidth;
-+    long long iMemorySize;
-+    long long iVisibleMemorySize;
-+    char strMemoryType[ADL_MAX_PATH];
-+} ADLMemoryInfo2, *LPADLMemoryInfo2;
-+
- typedef struct ADLDisplayTarget
- {
-     ADLDisplayID displayID;
-@@ -331,14 +361,37 @@ int WINAPI ADL2_Display_EdidData_Get(int adapter_index, int display_index, void*
-     return ADL_ERR_NOT_SUPPORTED;
- }
- 
--int WINAPI ADL2_Adapter_AdapterInfoX2_Get(ADL_CONTEXT_HANDLE* ptr, ADLAdapterInfo **adapters)
-+int WINAPI ADL2_Adapter_AdapterInfoX2_Get(ADL_CONTEXT_HANDLE handle, ADLAdapterInfo **adapters)
- {
-     FIXME("stub!\n");
-     *adapters = (ADLAdapterInfo*)adl_malloc(sizeof(ADLAdapterInfo) * 1);
-     return ADL_Adapter_AdapterInfo_Get(*adapters, sizeof(ADLAdapterInfo) * 1);
- }
- 
--int WINAPI ADL2_Adapter_AdapterInfo_Get(ADL_CONTEXT_HANDLE* ptr, ADLAdapterInfo *adapters, int bufferSize)
-+int WINAPI ADL2_Adapter_AdapterInfoX4_Get(ADL_CONTEXT_HANDLE handle, int adapter_index, int *num_adapters, ADLAdapterInfoX2 **info)
-+{
-+    int status;
-+    FIXME("adapter: %u, stub!\n", adapter_index);
-+    if (adapter_index == -1)
-+    {
-+        adapter_index = 0;
-+    }
-+    if (num_adapters)
-+    {
-+        *num_adapters = 1;
-+    }
-+    *info = (ADLAdapterInfoX2*)adl_malloc(sizeof(ADLAdapterInfoX2) * 1);
-+    memset(*info, 0, sizeof(ADLAdapterInfoX2));
-+    status = ADL_Adapter_AdapterInfo_Get(*info, sizeof(ADLAdapterInfo));
-+    if (status == ADL_OK)
-+    {
-+        info[0]->iInfoMask = 1; 
-+        info[0]->iInfoValue = 1;
-+    }
-+    return status;
-+}
-+
-+int WINAPI ADL2_Adapter_AdapterInfo_Get(ADL_CONTEXT_HANDLE handle, ADLAdapterInfo *adapters, int bufferSize)
- {
-     ADLAdapterInfo adapterInfo;
-     TRACE("stub!");
-@@ -473,6 +526,12 @@ int WINAPI ADL_Adapter_ASICFamilyType_Get(int adapter_index, int *asic_type, int
-     return ADL_OK;
- }
- 
-+int WINAPI ADL2_Adapter_ASICFamilyType_Get(ADL_CONTEXT_HANDLE handle, int adapter_index, int *asic_types, int *valids)
-+{
-+    FIXME("adapter_index: %u, stub!\n", adapter_index);
-+    return ADL_Adapter_ASICFamilyType_Get(adapter_index, asic_types, valids);
-+}
-+
- static int get_max_clock(const char *clock, int default_value)
- {
-     char path[MAX_PATH], line[256];
-@@ -573,6 +632,25 @@ int WINAPI ADL2_Adapter_MemoryInfo_Get(ADL_CONTEXT_HANDLE context, int adapter_i
-     return ADL_Adapter_MemoryInfo_Get(adapter_index, mem_info);
- }
- 
-+int WINAPI ADL2_Adapter_MemoryInfo2_Get(ADL_CONTEXT_HANDLE context, int adapter_index, ADLMemoryInfo2 *mem_info)
-+{
-+    ADLMemoryInfo meminfo1;
-+    int status;
-+    FIXME("adapter %d, stub!\n", adapter_index);
-+    
-+    status = ADL2_Adapter_MemoryInfo_Get(context, adapter_index, &meminfo1);
-+    if (status == ADL_OK)
-+    {
-+        mem_info->iHyperMemorySize = 0;
-+        mem_info->iInvisibleMemorySize = 0;
-+        mem_info->iMemoryBandwidth = meminfo1.iMemoryBandwidth;
-+        mem_info->iMemorySize = meminfo1.iMemorySize;
-+        mem_info->iVisibleMemorySize = mem_info->iMemorySize;
-+        memcpy(mem_info->strMemoryType, meminfo1.strMemoryType, ADL_MAX_PATH);
-+    }
-+    return status;
-+}
-+
- int WINAPI ADL_Adapter_Primary_Get(int* adapter_index)
- {
-     FIXME("stub!\n");
--- 
-2.39.2 (Apple Git-144)
-
-diff --git a/dlls/atiadlxx/atiadlxx.spec b/dlls/atiadlxx/atiadlxx.spec
-index 147f6bad..222fb744 100644
---- wine/dlls/atiadlxx/atiadlxx.spec
-+++ wine/dlls/atiadlxx/atiadlxx.spec
-@@ -464,7 +464,7 @@
- @ stub ADL2_Overdrive5_FanSpeedToDefault_Set
- @ stub ADL2_Overdrive5_FanSpeed_Get
- @ stub ADL2_Overdrive5_FanSpeed_Set
--@ stub ADL2_Overdrive5_ODParameters_Get
-+@ stdcall ADL2_Overdrive5_ODParameters_Get(ptr long ptr)
- @ stub ADL2_Overdrive5_ODPerformanceLevels_Get
- @ stub ADL2_Overdrive5_ODPerformanceLevels_Set
- @ stub ADL2_Overdrive5_PowerControlAbsValue_Caps
-@@ -997,7 +997,7 @@
- @ stub ADL_Overdrive5_FanSpeedToDefault_Set
- @ stub ADL_Overdrive5_FanSpeed_Get
- @ stub ADL_Overdrive5_FanSpeed_Set
--@ stub ADL_Overdrive5_ODParameters_Get
-+@ stdcall ADL_Overdrive5_ODParameters_Get(long ptr)
- @ stub ADL_Overdrive5_ODPerformanceLevels_Get
- @ stub ADL_Overdrive5_ODPerformanceLevels_Set
- @ stub ADL_Overdrive5_PowerControlAbsValue_Caps
-diff --git a/dlls/atiadlxx/atiadlxx_main.c b/dlls/atiadlxx/atiadlxx_main.c
-index d5f8a1b4..9f887387 100644
---- wine/dlls/atiadlxx/atiadlxx_main.c
-+++ wine/dlls/atiadlxx/atiadlxx_main.c
-@@ -227,6 +227,25 @@ typedef struct ADLGraphicInfoCore
-     int iReserved[11];
- } ADLGraphicInfoCore, *LPADLGraphicInfoCore;
- 
-+typedef struct ADLODParameterRange
-+{
-+   int iMin;
-+   int iMax;
-+   int iStep;
-+} ADLODParameterRange;
-+  
-+typedef struct ADLODParameters
-+{
-+   int iSize;
-+   int iNumberOfPerformanceLevels;
-+   int iActivityReportingSupported;
-+   int iDiscretePerformanceLevels;
-+   int iReserved;
-+   ADLODParameterRange sEngineClock;
-+   ADLODParameterRange sMemoryClock;
-+   ADLODParameterRange sVddc;
-+} ADLODParameters;
-+
- static const ADLVersionsInfo version = {
-     "22.20.19.16-221003a-384125E-AMD-Software-Adrenalin-Edition",
-     "",
-@@ -720,4 +739,14 @@ int WINAPI ADL2_Display_FreeSync_Cap(ADL_CONTEXT_HANDLE context, int adapter_ind
- {
-     FIXME("adapter: %d, display: %d, stub!\n", adapter_index, display_index);
-     return ADL_ERR_NOT_SUPPORTED;
--}
-\ No newline at end of file
-+}
-+
-+int WINAPI ADL_Overdrive5_ODParameters_Get(int iAdapterIndex, ADLODParameters *lpOdParameters)
-+{
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
-+
-+int WINAPI ADL2_Overdrive5_ODParameters_Get(ADL_CONTEXT_HANDLE context, int iAdapterIndex, ADLODParameters *lpOdParameters)
-+{
-+    return ADL_ERR_NOT_SUPPORTED;
-+}
