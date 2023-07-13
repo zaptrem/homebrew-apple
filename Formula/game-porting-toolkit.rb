@@ -33,7 +33,7 @@ class GamePortingToolkit < Formula
   patch :p0, :DATA
 
   depends_on arch: :x86_64
-  depends_on "game-porting-toolkit-compiler"
+  depends_on "apple/apple/game-porting-toolkit-compiler"
   depends_on "bison" => :build
   uses_from_macos "flex" => :build
   depends_on "mingw-w64" => :build
