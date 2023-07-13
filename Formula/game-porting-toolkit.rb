@@ -63,7 +63,7 @@ class GamePortingToolkit < Formula
   def install
     # Bypass the Homebrew shims to build native binaries with the dedicated compiler.
     # (PE binaries will be built with mingw32-gcc.)
-    compiler = Formula["game-porting-toolkit-compiler"]
+    compiler = Formula["apple/apple/game-porting-toolkit-compiler"]
     compiler_options = ["CC=#{compiler.bin}/clang",
                         "CXX=#{compiler.bin}/clang++"]
 
